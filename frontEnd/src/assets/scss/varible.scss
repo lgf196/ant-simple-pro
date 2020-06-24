@@ -1,0 +1,70 @@
+$siderbarWidth: 220px;
+$topbarHeight: 48px;
+$siderbarBackgroundColor: #424f63;
+$siderbarBgColor: #545c64;
+$siderbarTextColor: #ffffff;
+$siderbarActiveTextColor: #ffd04b;
+$siderbarWidth: 220px;
+$topbarHeight: 48px;
+$mainBackgroundColor: #f5f5f5;
+$topbarBackgroundColor: #ffffff;
+$cardBackgroundColor: #0277BD;
+$cardTextColor: #fff;
+// border的颜色
+$borderColor: #e6ebf5;
+$tableHeaderBgColor: #f5f7fa;
+
+@mixin flexContainer($jc){
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: $jc;
+} 
+@mixin flexItem($n) {
+  box-sizing: border-box;
+  flex-grow: $n;
+}
+@mixin style($size,$color){  
+  font-size:$size;
+  color: $color;
+}
+@mixin wh($w,$h){
+  width: $w;
+  height: $h;
+}
+@mixin center(){
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%)
+}
+@mixin textOverflow($n){
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  /* autoprefixer: off */  //针对打包不显示的问题
+  -webkit-box-orient: vertical; 
+  /* autoprefixer: on */
+  -webkit-line-clamp:$n; 
+}
+@mixin cicle($size:8px){ 
+  border-radius:$size;
+}
+@mixin lh($h){
+  line-height:$h;
+}
+@mixin fixed($t,$l){
+  position: fixed;
+  top: $t;
+  left:$l;
+}
+@mixin textAlign($h){
+ height:$h;
+ line-height: $h;
+ text-align: center;
+ vertical-align: middle;
+}
+@mixin  auto($l,$r) {
+  margin: $l auto $r auto;
+}
+
+

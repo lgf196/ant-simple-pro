@@ -1,0 +1,233 @@
+:root {
+  --space-root: 1rem;
+  --space-xs: calc(var(--space-root) / 2);
+  --space-s: calc(var(--space-root) / 1.5);
+  --space-m: var(--space-root);
+  --space-l: calc(var(--space-root) * 1.5);
+  --space-xl: calc(var(--space-root) * 2);
+  --color-primary: mediumslateblue;
+  --color-secondary: black;
+  --color-tertiary: hotpink;
+  --base-border-radius: 0.25rem;
+  --ease: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --duration: 350ms;
+  --font-family: 'Roboto', sans-serif;
+  --font-size: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  padding: var(--space-m);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  line-height: 1.2;
+  background-color: var(--color-tertiary);
+}
+
+a {
+  color: var(--color-primary);
+}
+a:focus {
+  color: var(--color-secondary);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: calc(var(--font-size) * 1.5);
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  -webkit-transform: skewY(-5deg) translateY(10%) scale(0.94);
+          transform: skewY(-5deg) translateY(10%) scale(0.94);
+  -webkit-transition: box-shadow var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+  transition: box-shadow var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+  transition: box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease);
+  transition: box-shadow var(--duration) var(--ease), transform var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+}
+.form:before, .form:after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  background-color: #ebebeb;
+  width: 25%;
+  height: 100%;
+  -webkit-transition: background-color var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+  transition: background-color var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+  transition: background-color var(--duration) var(--ease), transform var(--duration) var(--ease);
+  transition: background-color var(--duration) var(--ease), transform var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+}
+.form:before {
+  top: 0;
+  right: calc(100% - 1px);
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  -webkit-transform: skewY(-35deg) scaleX(-1);
+          transform: skewY(-35deg) scaleX(-1);
+  z-index: -1;
+}
+.form:after {
+  top: 0;
+  left: calc(100% - 1px);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: skewY(-35deg) scaleX(-1);
+          transform: skewY(-35deg) scaleX(-1);
+  z-index: 2;
+}
+.form:hover, .form:focus-within {
+  -webkit-transform: scale(1.0001);
+          transform: scale(1.0001);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+.form:hover:before, .form:hover:after, .form:focus-within:before, .form:focus-within:after {
+  background-color: white;
+  -webkit-transform: skewY(0);
+          transform: skewY(0);
+}
+
+.form-inner {
+  padding: var(--space-xl);
+  background-color: white;
+  z-index: 1;
+}
+.form-inner > * + * {
+  margin-top: var(--space-xl);
+}
+
+.input-wrapper:focus-within label {
+  color: var(--color-secondary);
+}
+.input-wrapper:focus-within .icon {
+  background-color: var(--color-secondary);
+}
+.input-wrapper:focus-within input {
+  border-color: var(--color-secondary);
+}
+.input-wrapper + .input-wrapper {
+  margin-top: var(--space-l);
+}
+
+.input-group {
+  position: relative;
+}
+.input-group input {
+  border-radius: var(--base-border-radius);
+  padding-left: calc(var(--space-s) + 60px);
+}
+.input-group .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-top-left-radius: var(--base-border-radius);
+  border-bottom-left-radius: var(--base-border-radius);
+  pointer-events: none;
+}
+
+label {
+  font-size: calc(var(--font-size) / 1.65);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.065rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary);
+}
+
+.icon {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+          flex: 0 1 auto;
+  padding: var(--space-m);
+  background-color: var(--color-primary);
+}
+.icon svg {
+  width: 1.25em;
+  height: 1.25em;
+  fill: white;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: -webkit-transform var(--duration) var(--ease);
+  transition: -webkit-transform var(--duration) var(--ease);
+  transition: transform var(--duration) var(--ease);
+  transition: transform var(--duration) var(--ease), -webkit-transform var(--duration) var(--ease);
+}
+
+input {
+  -webkit-box-flex: 1;
+          flex: 1 1 0;
+  width: 100%;
+  outline: none;
+  padding: var(--space-m);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+}
+input:focus {
+  color: var(--color-primary);
+}
+
+.btn-group {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+.btn-group > * + * {
+  margin-left: var(--space-s);
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  outline: none;
+  padding: var(--space-m) var(--space-l);
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--base-border-radius);
+}
+
+.btn--primary {
+  font-size: calc(var(--font-size) / 1.65);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.065rem;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+.btn--primary:focus {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn--text {
+  font-size: calc(var(--font-size) / 1.5);
+  padding: 0;
+}
