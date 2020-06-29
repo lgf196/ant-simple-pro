@@ -4,6 +4,6 @@ import authorToken from '../middleware/author'
 const router = Router();
 
 router.get('/user',userInfo);
-router.post('/login',authorToken.verifyToken,login);
+router.post('/login',login);
 
 export default router

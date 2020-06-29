@@ -5,5 +5,9 @@ export interface dbType{
   data:any[] | any
 }
 export interface sucessCallbackValType extends dbType{
-   mes:string
+   mes?:string,
+   success?:boolean
+}
+export interface sucessCallbackValInterface {
+  (code:codes,data:any,mes?:string,success?:boolean):sucessCallbackValType
 }

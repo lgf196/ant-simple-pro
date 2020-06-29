@@ -1,7 +1,11 @@
 import {codes} from '../interface'
+import {sucessCallbackValInterface} from '../interface'
  export enum code {          //定义状态码
-    successCode='000',          //成功
-    failedCode='111',         //失败
+    failedCode=111,         //失败
+    successCode='000',        //成功
+    noLoginTokenCode=401,   //无token
+    noRouterCode=404,        //路劲找不到
+    serverErrorCode=500      //服务错误
 }
 
-export const sucessCallbackVal=(code:codes,data:any,mes?:string,success?:boolean)=>({code,data,mes,success});
+export const sucessCallbackVal:sucessCallbackValInterface=(code,data,mes,success)=>({code,data,mes,success});
