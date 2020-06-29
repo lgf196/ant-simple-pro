@@ -1,0 +1,20 @@
+@import '@/assets/scss/varible.scss';
+.black{
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    @include wh(50px,50px);
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0,0,0,.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i{
+       @include style(30px,#409eff);
+    }
+    &:hover{
+      background: #f2f6fc;
+    }
+  }

@@ -1,14 +1,9 @@
 import { Router } from 'express';
-import mysqlDb from '../config/db'
-import {code,sucessCallbackVal} from '../utils/variable'
+import {userInfo,login} from '../controllers/userController'
+import authorToken from '../middleware/author'
 const router = Router();
-router.get('/user',async (req, res,next)=>{
-    const sqlStr = `select * from a_user`;
-    const db=await mysqlDb.execute(sqlStr);
-    if(db.code===code.successCode){
-        res.send(sucessCallbackVal(code.successCode,db.data,'成功'));
-    }else{
-        res.send(sucessCallbackVal(code.failedCode,db.data,'失败'));
-    }
-});
+
+router.get('/user',userInfo);
+router.post('/login',authorToken.verifyToken,login);
+
 export default router

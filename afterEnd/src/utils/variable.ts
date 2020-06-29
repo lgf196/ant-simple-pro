@@ -4,4 +4,4 @@ import {codes} from '../interface'
     failedCode='111',         //失败
 }
 
-export const sucessCallbackVal=(code:codes,data:any,mes?:string)=>({code,data,mes});
+export const sucessCallbackVal=(code:codes,data:any,mes?:string,success?:boolean)=>({code,data,mes,success});

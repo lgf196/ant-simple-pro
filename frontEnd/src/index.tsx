@@ -10,7 +10,7 @@ ReactDOM.render(
   <>
    <ConfigProvider locale={zh_CN}>
       <Routers />
-  </ConfigProvider>,
+  </ConfigProvider>
   </>,
   document.getElementById('root')
 );
