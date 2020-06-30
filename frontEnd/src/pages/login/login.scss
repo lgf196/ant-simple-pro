@@ -29,7 +29,7 @@
 		background-position: 0% 50%;
 	}
 }
-body {
+.warpLayout {
   display: grid;
   place-items: center;
   margin: 0;
@@ -49,7 +49,7 @@ h2 {
 .form {
   position: relative;
   width: 100%;
-  max-width: 450px;
+  max-width: 400px;
   margin: 0 auto;
   -webkit-transform: skewY(-5deg) translateY(10%) scale(0.94);
           transform: skewY(-5deg) translateY(10%) scale(0.94);

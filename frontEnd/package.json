@@ -42,6 +42,7 @@
     "fs-extra": "^8.1.0",
     "history": "^5.0.0",
     "html-webpack-plugin": "4.0.0-beta.11",
+    "http-proxy-middleware": "^1.0.4",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
     "jest-environment-jsdom-fourteen": "1.0.1",
