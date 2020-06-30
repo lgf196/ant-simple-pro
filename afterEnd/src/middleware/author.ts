@@ -3,6 +3,7 @@ import { Request, Response, NextFunction, RequestHandler } from 'express';
 import asyncHandler from '../middleware/asyncHandler'
 import ErrorResponse from '../utils/errorResponse';
 import {code} from '../utils/variable'
+import {RequestHaveDecoded} from '../interface'
 class SetToken<T> {
   public screenKey: jwt.Secret;
   public expiresIn: number | undefined;  //有效时间
@@ -15,7 +16,7 @@ class SetToken<T> {
   public createToken(tokenJson: string | object) {
     return jwt.sign(tokenJson, this.screenKey, { expiresIn: this.expiresIn });
   }
-  public verifyToken = asyncHandler(async (req: any, res: Response, next: NextFunction) => { //判断是否含有token
+  public verifyToken = asyncHandler(async (req: RequestHaveDecoded, res: Response, next: NextFunction) => { //判断是否含有token
     let token;
     if (req.headers.accesstoken) { //获取前端请求头发送过来的AccessToken
       token = req.headers.accesstoken;
@@ -31,7 +32,6 @@ class SetToken<T> {
           new ErrorResponse('没有权限', code.noLoginTokenCode)
         );
       }
-      console.log('decoded', decoded)
       req.decoded = decoded;
       next();
     }

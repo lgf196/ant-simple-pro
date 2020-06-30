@@ -18,7 +18,6 @@ class mysqlDb<T> {   //创建数据库class
                     reject(err)
                 } else {
                     connection.query(sql, (err, rows) => {
-                        console.log('rows', rows)
                       err? resolve(sucessCallbackVal(code.failedCode,err)):resolve(sucessCallbackVal(code.successCode,rows));
                       connection.release();    // 结束会话
                     })
