@@ -1,14 +1,24 @@
 import React from 'react'
 import { Form, Button } from 'antd';
 import InputComponent from '@/components/input'
+import {login} from '@/api/login'
+import { useHistory } from "react-router-dom";
+import {requestCode} from '@/utils/varbile'
 import './login.scss'
 const Login:React.FC=()=>{
-      const tailLayout = {
+    const history=useHistory();
+    const tailLayout = {
         wrapperCol: { offset: 8, span: 16 },
-      };
-      const onFinish = (values:any) => {
-        console.log('Success:', values);
-      }
+    };
+    const onFinish =async (values:any) => {
+        const {email,password} = values
+        let res=await login({email,password});
+        if(res.code===requestCode.successCode){
+            localStorage.setItem('token',res.data);
+            history.push("/home");
+        }
+    console.log('res:', res);
+    }
     return (
         <div className='warpLayout'>
           <div className="form"  >
@@ -22,7 +32,7 @@ const Login:React.FC=()=>{
                     >
                     <Form.Item
                         label="邮箱"
-                        name="username"
+                        name="email"
                         rules={[{ required: true, message: '请输入邮箱' }]}
                     >
                         <InputComponent placeholder='请填写邮箱'/>

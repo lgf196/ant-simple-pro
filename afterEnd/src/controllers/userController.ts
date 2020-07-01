@@ -27,7 +27,7 @@ export const login=asyncHandler(async (req: Request, res: Response, next: NextFu
             console.log('createToken', createToken)
             res.status(200).json(sucessCallbackVal(code.successCode,createToken,'成功',true));
         }else{
-            res.status(200).json(sucessCallbackVal(code.failedCode,'未查到此用户','失败',false));
+            res.status(200).json(sucessCallbackVal(code.failedCode,'未查到此用户','未查到此用户',false));
         }
     }else{
         res.status(500).json(sucessCallbackVal(code.failedCode,'服务器出错','失败',false));
