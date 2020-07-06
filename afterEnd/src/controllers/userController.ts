@@ -4,9 +4,12 @@ import mysqlDb from '../config/db'
 import author from '../middleware/author'
 import {code,sucessCallbackVal} from '../utils/variable'
 import {RequestHaveDecoded} from '../interface'
+import xlsx from 'node-xlsx';
 export const userInfo=asyncHandler(async (req: RequestHaveDecoded, res: Response, next: NextFunction)=>{
     const sqlStr = `select * from a_user`;
     const db=await mysqlDb.execute(sqlStr);
+    const rowAverage = [11];
+const buffer = xlsx.build([{name: "Average Formula", data: rowAverage}]);
     if(db.code===code.successCode){
         console.log(' req.decoded',req.decoded)
         res.send(sucessCallbackVal(code.successCode,db.data,'成功'));
@@ -18,8 +21,8 @@ export const userInfo=asyncHandler(async (req: RequestHaveDecoded, res: Response
 
 export const login=asyncHandler(async (req: Request, res: Response, next: NextFunction)=>{
     const {email,password}=req.body;
-    const sql = `select id,email,password,username,introduct,iconUrl from user where email='${email}' and password='${password}'`;
-    const db=await mysqlDb.execute(sql);
+    const sql = `select id,email,password,username,introduct,iconUrl from user where email=? and password=?`;
+    const db=await mysqlDb.execute(sql,[email,password]);
     if(db.code===code.successCode){
         if(db.data.length){
             const {id,email} =db.data[0]; //获取重要的属性

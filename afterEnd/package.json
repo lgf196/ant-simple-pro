@@ -24,7 +24,8 @@
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "node-xlsx": "^0.15.0"
   },
   "devDependencies": {
     "ts-node": "^8.10.2",
