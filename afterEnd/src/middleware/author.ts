@@ -16,7 +16,7 @@ class SetToken<T> {
   public createToken(tokenJson: string | object) {
     return jwt.sign(tokenJson, this.screenKey, { expiresIn: this.expiresIn });
   }
-  public verifyToken = asyncHandler(async (req: RequestHaveDecoded, res: Response, next: NextFunction) => { //判断是否含有token
+  public verifyToken = asyncHandler(async (req: Request, res: Response, next: NextFunction) => { //判断是否含有token
     let token;
     if (req.headers.accesstoken) { //获取前端请求头发送过来的AccessToken
       token = req.headers.accesstoken;
