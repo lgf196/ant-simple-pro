@@ -17,7 +17,6 @@ const Login:React.FC=()=>{
             localStorage.setItem('token',res.data);
             history.push("/home");
         }
-    console.log('res:', res);
     }
     return (
         <div className='warpLayout'>

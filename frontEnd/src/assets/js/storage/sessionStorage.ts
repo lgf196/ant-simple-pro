@@ -4,10 +4,11 @@ class SessionStorage<T> {
     this.sessionStorage = window.sessionStorage;
   }
  public getItem (key:string) {
+    const getVal=this.sessionStorage.getItem(key) || '{}';
     try {
-      return JSON.parse(this.sessionStorage.getItem(key) || '{}');
+      return JSON.parse(getVal);
     } catch (err) {
-      return null;
+      return getVal || null;
     }
   }
   public setItem (key:string, val:any) {

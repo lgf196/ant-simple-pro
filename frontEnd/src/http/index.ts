@@ -1,13 +1,14 @@
 import axios from 'axios'
-import { localStorage } from '@/assets/js/storage'
+import { localStorage as localStorages} from '@/assets/js/storage'
 import { history } from '@/assets/js/history'
 import { requestCode } from '../utils/varbile'
 import { toast } from '../utils/function'
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = '/api'
+
 axios.interceptors.request.use(config => {
-    if (localStorage.getItem('token')) {
-        config.headers['accesstoken'] = localStorage.getItem('token');
+    if (localStorages.getItem('token')) {
+        config.headers['accesstoken'] = localStorages.getItem('token');
     }
     return config
 }, error => {
@@ -26,7 +27,7 @@ axios.interceptors.response.use((response) => {
     return Promise.reject(error)
 });
 
-export const resquest = (method: string, url: string, data: any = {}): Promise<any> => {
+export const resquest = (method: string, url: string, data: any = {},responseType:string= 'json'): Promise<any> => {
     return new Promise((resolve) => {
         let params = {};
         if (method === 'get') {
@@ -35,7 +36,9 @@ export const resquest = (method: string, url: string, data: any = {}): Promise<a
         };
         let option = {
             method, url, params, ...data,
-            headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+            headers:{
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
             transformRequest: [
                 function (data:any) {
                    let ret = ''
@@ -46,9 +49,9 @@ export const resquest = (method: string, url: string, data: any = {}): Promise<a
                    return ret
                 }
             ],
+            responseType
         };
         axios.request(option).then(res => {
-            console.log('data', data)
             if (res.data.code === requestCode.successCode) {
                 resolve(res.data);
             } else if (res.data.code === requestCode.noLoginTokenCode) {
@@ -58,8 +61,7 @@ export const resquest = (method: string, url: string, data: any = {}): Promise<a
                 resolve(res.data);
             }
         }, error => {
-            toast(requestCode.failedCode, '请求出错，请重试');
-
+            error.response && error.response.data ? toast(requestCode.failedCode, error.response.data.mes):toast(requestCode.failedCode, '请求出错，请重试');
         }).catch((err) => {
             toast(requestCode.serverErrorCode, '服务异常');
         })

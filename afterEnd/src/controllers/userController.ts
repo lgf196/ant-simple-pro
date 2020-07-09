@@ -46,9 +46,20 @@ export const fileDown=asyncHandler(async (req: Request, res: Response, next: Nex
     }
     const options = {'!cols': [{wch: 20}, {wch: 20}, {wch: 20}]};
     const buffer = xlsx.build([{name:"Excel",data:datas}],options); //创建下载对象
+    if(db.data.length>1000){
+        res.status(200).json(sucessCallbackVal(code.failedCode,null,'下载数据量过大，不能超过1000',false));
+    }
+    if(buffer.byteLength){
+        res.status(200).json(sucessCallbackVal(code.successCode,buffer,'成功',true));
+    }
+    else{
+        res.status(500).json(sucessCallbackVal(code.failedCode,null,'下载失败',false));
+    }
+  
+    /*第二
     res.set({
         'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        'Content-Disposition': `filename=33`,
+        'Content-Disposition': `filename=user.xlsx`,
         'Content-Length': buffer.length
       });
       const excelPath=path.resolve(__dirname,'../public/template.xlsx');
@@ -64,7 +75,7 @@ export const fileDown=asyncHandler(async (req: Request, res: Response, next: Nex
          }else{
              res.status(500).json(sucessCallbackVal(code.failedCode,err,'失败',false));
          }  
-     });
+     });*/
 });
 
 

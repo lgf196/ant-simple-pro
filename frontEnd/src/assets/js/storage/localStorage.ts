@@ -4,10 +4,11 @@ class LocalStorage<T> {
     this.localStorages = window.localStorage;
   }
   public getItem(key: string) {
+     const getVal=this.localStorages.getItem(key)  || '{}';
     try {
-      return JSON.parse(this.localStorages.getItem(key) || '{}');
+      return JSON.parse(getVal);
     } catch (err) {
-      return null;
+      return getVal || null;
     }
   }
   public setItem(key: string, val: any) {
@@ -23,4 +24,4 @@ class LocalStorage<T> {
     return this.localStorages.keys();
   }
 }
-export default new LocalStorage();
+ export default new LocalStorage();
