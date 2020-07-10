@@ -1,0 +1,13 @@
+@import 'src/assets/scss/varible.scss';
+.layout{
+    .content-wrapper{
+        position: fixed;
+        left: $siderbarWidth;
+        right: 0;
+        top:90px;
+        bottom: 0;
+        padding: 16px;
+        overflow: auto;
+        transition: all 0.3s ease-in-out;
+      }
+}

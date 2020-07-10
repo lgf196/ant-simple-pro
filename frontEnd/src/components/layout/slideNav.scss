@@ -1,0 +1,103 @@
+@import '@/assets/scss/varible.scss';
+@include gradientBG;
+.siderbar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width:200px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    height: 100%;
+	animation: gradientBG 15s ease infinite;
+    // background-color: $siderbarBackgroundColor;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    a{
+        color: #fff;
+        &:hover{
+            color: #fff;
+        }
+    }
+    .logo-wrapper {
+        background:trans;
+        height: 40px;
+        line-height: 40px;
+        padding: 16px 0;
+        text-align: center;
+        font-size: 24px;
+        color: #65CEA7;
+      }
+    .menu{
+        // background:#424f63;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        position: absolute;
+        top: 70px;
+        bottom: 0;
+        width: 100%;
+        border-right: none;
+        transition: all 0.3s ease-in-out;
+        // overflow: hidden;
+          overflow-y: auto;
+          overflow-x: hidden;
+       &::-webkit-scrollbar {/*滚动条整体样式*/
+            width: 7px;     /*高宽分别对应横竖滚动条的尺寸*/
+            height: 7px;
+        }
+        &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(101, 206, 167,.3);
+            background: rgba(101, 206, 167,1);
+        }
+         &::-webkit-scrollbar-track {/*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            border-radius:5px;
+            background: rgba(0,0,0,0.1);
+        }
+    }
+    .ant-menu-dark{
+        color: #fff;
+    }
+    .ant-menu-dark .ant-menu-item > a {
+        color: #fff;
+    }
+    .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title{
+        height: 50px;
+        line-height: 50px;
+    }
+    //一级菜单
+    .ant-menu-inline .ant-menu-submenu-title:hover{
+        // background-color: #353F4F;
+        background-color: transparent;
+        // color: #65CEA7
+         color: #fff
+    }
+    //二级子菜单
+    .ant-menu-dark.ant-menu-inline .ant-menu-item:hover{
+        //  background-color: #353F4F;
+         background-color: transparent;
+        &>a{
+            // color: #65CEA7
+            color: #fff
+        }
+    }
+    .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after ,.ant-menu-submenu-title .ant-menu-submenu-arrow::before{
+        background: #fff;
+    }
+    .ant-menu-item-active{
+        color: #fff;
+        // background: red;
+    }
+    .ant-menu-submenu-title{
+        color: #fff;
+    }
+    .ant-menu-submenu > .ant-menu{
+        background: transparent;
+    }
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item{
+        height: 40px;
+        line-height: 40px;
+    }
+ }
