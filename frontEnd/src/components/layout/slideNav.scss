@@ -70,25 +70,26 @@
     //一级菜单
     .ant-menu-inline .ant-menu-submenu-title:hover{
         // background-color: #353F4F;
-        background-color: transparent;
+        background: rgba(255,255,255,0.3);
         // color: #65CEA7
          color: #fff
-    }
-    //二级子菜单
-    .ant-menu-dark.ant-menu-inline .ant-menu-item:hover{
-        //  background-color: #353F4F;
-         background-color: transparent;
-        &>a{
-            // color: #65CEA7
-            color: #fff
-        }
     }
     .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after ,.ant-menu-submenu-title .ant-menu-submenu-arrow::before{
         background: #fff;
     }
-    .ant-menu-item-active{
+    .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::after ,
+    .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::before{
+        background: #fff;
+    }
+    .ant-menu-item-active{ //二级hover
         color: #fff;
-        // background: red;
+        background: rgba(255,255,255,0.3);
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{ //选中的样式
+        background: rgba(255,255,255,0.3);
+    }
+    .ant-menu-inline .ant-menu-item::after{
+        border: none;
     }
     .ant-menu-submenu-title{
         color: #fff;
