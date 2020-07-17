@@ -11,7 +11,7 @@ const errorHandler: ErrorRequestHandler = (
   res.status(error.statusCode ?? code.serverErrorCode).json({
     success: false,
     // error: error.message ?? 'Server Error',
-    code:error.statusCode,
+    code:error.statusCode ?? code.serverErrorCode,
     mes:error.message ?? 'Server Error'
   });
 };

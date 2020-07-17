@@ -1,6 +1,9 @@
 import mysql from 'mysql'
 import {code,sucessCallbackVal} from '../utils/variable'
 import {dbType} from '../interface'
+import express, { Request, Response, NextFunction } from 'express';
+import ErrorResponse from '../utils/errorResponse';
+const app = express();
 class mysqlDb<T> {   //创建数据库class
     public connect(){
       let connection= mysql.createPool({  //连接mysql配置
@@ -18,7 +21,7 @@ class mysqlDb<T> {   //创建数据库class
                     reject(err)
                 } else {
                     connection.query(sql,params, (err, rows) => {
-                      err? resolve(sucessCallbackVal(code.failedCode,err)):resolve(sucessCallbackVal(code.successCode,rows));
+                      err? reject(err):resolve(sucessCallbackVal(code.successCode,rows));
                       connection.release();    // 结束会话
                     })
                   }

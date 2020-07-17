@@ -22,3 +22,11 @@ export interface userInfoType {
   email:string;
   introduct:string
 }
+export interface menuAccessType {  //权限列表
+  id:number;
+  pid:number;
+  title:string;
+  icon:string;
+  url:string;
+  children?:menuAccessType[]
+}

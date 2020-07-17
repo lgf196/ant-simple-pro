@@ -1,5 +1,5 @@
 import userRouter from './user';
-import listRouter from './list';
+import accseeRouter from './access'
 export {
-    userRouter,listRouter
+    userRouter,accseeRouter
 }
