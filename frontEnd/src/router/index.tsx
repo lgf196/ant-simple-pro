@@ -1,11 +1,13 @@
 import React from 'react'
-import { Switch, Route, Redirect ,BrowserRouter as Router} from 'react-router-dom'
+import { Switch, Route, Redirect} from 'react-router-dom'
 import Login from '@/pages/login'
 import Home from '@/pages/home'
 import Layout from '@/components/layout'
+import { history } from '@/assets/js/history'
+import { ConnectedRouter } from 'connected-react-router'
 const Routers: React.FC = () => {
     return (
-        <Router>
+        <ConnectedRouter history={history}>
             <Switch>
                 <Route path="/login" exact component={Login} />
                 <Layout>
@@ -13,7 +15,7 @@ const Routers: React.FC = () => {
                     <Route path="/home" exact component={Home} />
                 </Layout>
             </Switch>
-        </Router>
+        </ConnectedRouter>
     )
 }
 export default Routers;

@@ -3,6 +3,8 @@ import { localStorage as localStorages} from '@/assets/js/storage'
 import { history } from '@/assets/js/history'
 import { requestCode } from '../utils/varbile'
 import { toast } from '../utils/function'
+import store from '@/redux/store'
+import { push } from 'connected-react-router'
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = '/api'
 
@@ -55,7 +57,7 @@ export const resquest = (method: string, url: string, data: any = {},responseTyp
             if (res.data.code === requestCode.successCode) {
                 resolve(res.data);
             } else if (res.data.code === requestCode.noLoginTokenCode) {
-                history.push('/login');
+                store.dispatch(push('/login'));
             } else {
                 toast(requestCode.failedCode, res.data.mes);
                 resolve(res.data);

@@ -28,5 +28,6 @@ export interface menuAccessType {  //权限列表
   title:string;
   icon:string;
   url:string;
+  createTime:Date;
   children?:menuAccessType[]
 }

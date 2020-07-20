@@ -1,0 +1,2 @@
+export const SAGA_GETMENUTREE='GETMENUTREE'; //权限树获取
+export type SAGA_GETMENUTREE=typeof SAGA_GETMENUTREE; 

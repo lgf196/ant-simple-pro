@@ -2,7 +2,7 @@ import React from 'react'
 import { Modal,message } from 'antd';
 import {ExclamationCircleOutlined} from '@ant-design/icons';
 import {requestCode} from './varbile'
-import {statusCode} from '../types'
+import {statusCode} from '@/interfaces'
 
 export const toast=(status:statusCode=requestCode.successCode,content:string='操作成功'):void=>{
     if(status==requestCode.successCode){

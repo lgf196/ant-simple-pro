@@ -1,9 +1,6 @@
 import mysql from 'mysql'
 import {code,sucessCallbackVal} from '../utils/variable'
 import {dbType} from '../interface'
-import express, { Request, Response, NextFunction } from 'express';
-import ErrorResponse from '../utils/errorResponse';
-const app = express();
 class mysqlDb<T> {   //创建数据库class
     public connect(){
       let connection= mysql.createPool({  //连接mysql配置
