@@ -5,7 +5,9 @@ import createSagaMiddleware from 'redux-saga'
 import reducer from '@/redux/reduce'
 import rootSaga  from '@/redux/saga'
 const sagaMiddleware = createSagaMiddleware();
-const tools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-let store = createStore(reducer, tools(applyMiddleware(routerMiddleware(history),sagaMiddleware)));
+const middlewares=[routerMiddleware(history),sagaMiddleware];
+const tools =process.env.NODE_ENV==='development'? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose:compose;
+const enhancer =tools(applyMiddleware(...middlewares));
+let store = createStore(reducer, enhancer);
 sagaMiddleware.run(rootSaga);
 export default store;
