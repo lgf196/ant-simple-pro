@@ -1,12 +1,12 @@
-import {GETMENUTREE} from '@/redux/constants/actionType'
-
+import * as types from '@/redux/constants/actionType'
+import {actionType} from '@/redux/action/interfaces'
 const  initialState={
     getMenuTree:[]
 };
 
-export default (state = initialState, action:any)=> {
+export default (state = initialState, action:actionType )=> {
     switch (action.type) {
-        case GETMENUTREE:
+        case types.GETMENUTREE:
             return {...state,getMenuTree:action.data};
         default: 
             return state

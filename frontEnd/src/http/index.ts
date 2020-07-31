@@ -1,13 +1,12 @@
 import axios from 'axios'
 import { localStorage as localStorages} from '@/assets/js/storage'
-import { history } from '@/assets/js/history'
 import { requestCode } from '../utils/varbile'
 import { toast } from '../utils/function'
 import store from '@/redux/store'
 import { push } from 'connected-react-router'
+
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = '/api'
-
 axios.interceptors.request.use(config => {
     if (localStorages.getItem('token')) {
         config.headers['accesstoken'] = localStorages.getItem('token');
