@@ -81,7 +81,7 @@
     .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::before{
         background: #fff;
     }
-    .ant-menu-item-active{ //二级hover
+    .ant-menu-item-active{ //一级，二级hover
         color: #fff;
         background: rgba(255,255,255,0.3);
     }
@@ -101,4 +101,7 @@
         height: 40px;
         line-height: 40px;
     }
+    .ant-menu-inline-collapsed > .ant-menu-item,.ant-menu-inline-collapsed > .ant-menu-submenu > .ant-menu-submenu-title{
+          padding: 0 18px;
+    } 
  }

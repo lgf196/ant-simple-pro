@@ -8,4 +8,7 @@ export interface menuAccessType {  //权限列表
     url:string;
     createTime:Date;
     children?:menuAccessType[]
-  }
+}
+export interface layoutProps {
+  collapsed:boolean
+}

@@ -18,28 +18,29 @@
       text-align: center;
       cursor: pointer;
       .icon{
-        font-size: 18px;
         font-weight: bold;
         padding-top:15px;
+        @include style(18px,$topbarColor);
       }
     }
     .title {
       height: 100%;
       font-weight: bold;
-      @include style(17px,rgba(105,123,140,.7));
+      @include style(17px,$topbarColor);
     }
     .menu-list {
       display: flex;
       padding-right: 15px;
       .icon{
-        padding-right: 10px;
-        font-size: 18px;
+        padding:8px;
         font-weight: bold;
+        @include style(18px,$topbarColor);
       }
       .propsUser{
         cursor: pointer;
          span{
            padding-left: 3px;
+           color: $topbarColor;
          }
       }
     }

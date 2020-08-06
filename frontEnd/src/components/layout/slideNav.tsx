@@ -1,13 +1,13 @@
 import React, { memo } from 'react'
-import { Menu } from 'antd';
+import { Menu, Layout} from 'antd';
 import { Link,withRouter,RouteComponentProps} from 'react-router-dom'
 import IconComponent from '@/components/icon'
 import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import {menuAccessType} from '@/interfaces'
+import {menuAccessType,layoutProps} from '@/interfaces'
 import './slideNav.scss'
-export interface SlideNavProps {
+export interface SlideNavProps extends layoutProps{
    dispatch:Dispatch,
    getMenuTree:menuAccessType[]
 }
@@ -31,6 +31,7 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
     }
     rednerMenu = (getMenuTree:menuAccessType[]) => { 
         const { SubMenu } = Menu;
+        const {collapsed} =this.props;
         return getMenuTree.map((item)=>{
             if(!item.children){
                 return (<Menu.Item key={item.id} icon={<IconComponent name={item.icon}/>}><Link to={item.url}>{item.title}</Link></Menu.Item>);
@@ -55,16 +56,21 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         }
     };
     render() { 
-        const {getMenuTree} =this.props;
+        const { Sider} = Layout;
+        const {getMenuTree,collapsed} =this.props;
         return (  
-            <div  className='siderbar' style={{width:'200px'}}>
-                <div className="logo-wrapper" style={{fontSize:'24px'}}>
-                    <Link to="/home" style={{color:'#65CEA7'}}>LGF-View</Link>
-                </div>  
-                <Menu mode="inline" openKeys={this.state.openKeys} onOpenChange={this.onOpenChange}  className='menu'>
-                    {this.rednerMenu(getMenuTree)}
-                </Menu>
-            </div>
+            // <Sider trigger={null} collapsible collapsed={collapsed}>
+                <div  className='siderbar' style={{width:collapsed?'50px':'200px'}}>
+                    <div className="logo-wrapper" style={{fontSize:collapsed?'16px':'24px'}}>
+                        <Link to="/home" style={{color:'#65CEA7'}}>LGF-View</Link>
+                    </div>  
+                    <Menu mode="inline" openKeys={this.state.openKeys} 
+                    onOpenChange={this.onOpenChange}  
+                    inlineCollapsed={collapsed} className='menu'>
+                        {this.rednerMenu(getMenuTree)}
+                    </Menu>
+                </div>
+            // </Sider>
         );
     }
 }
