@@ -3,10 +3,11 @@ import {Tooltip,Dropdown,Menu } from 'antd'
 import {Link } from "react-router-dom"
 import {MenuFoldOutlined,MenuUnfoldOutlined,FullscreenOutlined,CaretDownOutlined } from  '@ant-design/icons';
 import {layoutProps} from '@/interfaces'
+import SvgIcon from '@/components/svgIcon'
 import './topBar.scss'
 type topbarProps={onToggle:Function} & layoutProps;
 const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle}) {
-    const [fullscreen,setFullscreen]=useState<Boolean>(false);
+    const [fullscreen,setFullscreen]=useState<boolean>(false);
     const  handleFullScreen=()=> {   // 全屏事件
             let element = document.documentElement;
             if (fullscreen) {
@@ -52,6 +53,7 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle}) 
                     {collapsed ?<MenuUnfoldOutlined  className='icon'/>:<MenuFoldOutlined className='icon'/>}
                 </div>
                  <div className="title fl">LGF-VIEW -管理系统</div>
+                 <SvgIcon iconClass='qp'/>
                 <div className='menu-list fr'>
                 <div>
                     <Tooltip title={fullscreen?'取消':'全屏'}  placement="bottom">
