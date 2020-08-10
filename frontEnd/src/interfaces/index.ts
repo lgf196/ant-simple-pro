@@ -14,8 +14,8 @@ export interface layoutProps {
 }
 
 export interface tagPropsType {
-  name:string;
-  path:string;
+  name?:string;
+  path: string;
   title:string;
-  [parms:string]:any
+  [params:string]:any
 }

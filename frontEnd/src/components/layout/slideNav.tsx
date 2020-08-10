@@ -6,10 +6,12 @@ import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import {menuAccessType,layoutProps} from '@/interfaces'
+import {Location,UnregisterCallback} from 'history'
 import './slideNav.scss'
-export interface SlideNavProps extends layoutProps{
+export interface SlideNavProps extends layoutProps,RouteComponentProps{
    dispatch:Dispatch,
-   getMenuTree:menuAccessType[]
+   getMenuTree:menuAccessType[],
+//    location:Location
 }
  
 export interface SlideNavState extends layoutProps{
@@ -18,6 +20,7 @@ export interface SlideNavState extends layoutProps{
 }
  
 class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
+    unlisten!: UnregisterCallback;
     constructor(props: SlideNavProps) {
         super(props);
         this.state = {
@@ -26,20 +29,24 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
             collapsed:false
         };
     }
-    componentDidMount(){
-       this.props.dispatch({type:SAGA_GETMENUTREE})
+   componentWillUnmount(){
+        this.unlisten(); //取消监听
     }
-    componentDidUpdate(){
-        console.log('this.props', this.props)
+    componentDidMount(){
+        this.unlisten = this.props.history.listen((location:Location) => {  //这样可以监听全局路由的变化
+            this.defaultOpenUrl(location.pathname);
+        });
+       this.props.dispatch({type:SAGA_GETMENUTREE});
+       this.defaultOpenUrl(this.props.location.pathname);
     }
     rednerMenu = (getMenuTree:menuAccessType[]) => { 
         const { SubMenu } = Menu;
         return getMenuTree.map((item)=>{
             if(!item.children){
-                return (<Menu.Item key={item.id} icon={<IconComponent name={item.icon}/>}><Link to={item.url}>{item.title}</Link></Menu.Item>);
+                return (<Menu.Item key={item.url} icon={<IconComponent name={item.icon}/>}><Link to={item.url}>{item.title}</Link></Menu.Item>);
             }else{
                  return (
-                    <SubMenu key={item.id} icon={<IconComponent name={item.icon}/>} title={item.title}>
+                    <SubMenu key={item.url} icon={<IconComponent name={item.icon}/>} title={item.title}>
                        {this.rednerMenu(item.children)}
                     </SubMenu>
                  )
@@ -70,9 +77,9 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         return null
     }
     onOpenChange = (openKeys: string[]) => {
-        const rootSubmenuKeys=this.props.getMenuTree.map(item=>item.id);
-        const latestOpenKey = openKeys.find((key: string) => this.state.openKeys.indexOf(key) === -1);
-        if (rootSubmenuKeys.indexOf(Number(latestOpenKey)) === -1) {
+        const rootSubmenuKeys=this.props.getMenuTree.map(item=>item.url);
+        const latestOpenKey = openKeys.find((key: string) => this.state.openKeys.indexOf(key) === -1)!;
+        if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
           this.setState({ openKeys });
         } else {
           this.setState({
@@ -80,11 +87,18 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
           });
         }
     };
+    defaultOpenUrl=(url:string)=>{ //获取当前页的路劲，防止刷新看不到选中的样式
+        let openKeys='/'+url.split('/')[1];
+        this.setState({openKeys:[openKeys]});
+    }
     render() { 
         const { Sider} = Layout;
-        const {getMenuTree,collapsed} =this.props;
+        const {getMenuTree,collapsed,location} =this.props;
         const {openKeys}=this.state;
         const defaultProps = collapsed ? {} : { openKeys }; 
+        const defaultSelectedKeys=location.pathname;
+        console.log('openKeys', openKeys)
+        console.log('this.props', this.props)
         return (  
             <Sider trigger={null} collapsible collapsed={collapsed}   width={200}>
                 <div  className='siderbar' style={{width:collapsed?'50px':'200px'}}>
@@ -93,7 +107,9 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
                     </div>  
                     <Menu mode="inline" 
                     openKeys={openKeys} 
-                    onOpenChange={this.onOpenChange}  
+                    onOpenChange={this.onOpenChange} 
+                    defaultSelectedKeys={[defaultSelectedKeys]}
+                     selectedKeys={[defaultSelectedKeys]}
                     {...defaultProps}
                     className='menu'>
                         {this.rednerMenu(getMenuTree)}
@@ -104,7 +120,8 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
     }
 }
  
-export default connect(({user}:reduceStoreType)=>({
+export default withRouter(connect(({user}:reduceStoreType)=>({
     getMenuTree:user.getMenuTree
-}))(SlideNav);
+}))(SlideNav));
+
 

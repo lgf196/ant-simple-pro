@@ -1,4 +1,3 @@
-import {localStorage} from '@/assets/js/storage'
 export enum requestCode {
     failedCode=111,         //失败
     successCode='000',        //成功
