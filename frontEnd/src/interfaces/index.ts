@@ -12,3 +12,10 @@ export interface menuAccessType {  //权限列表
 export interface layoutProps {
   collapsed:boolean
 }
+
+export interface tagPropsType {
+  name:string;
+  path:string;
+  title:string;
+  [parms:string]:any
+}

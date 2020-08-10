@@ -14,7 +14,7 @@ const Layout:React.FC = memo(function Layout(props) {
         <div className='layout' style={{left:'200px'}}>
             <SliderNav collapsed={collapsed}></SliderNav>
             <TobBar {...topBarProps()}></TobBar>
-            <Tag></Tag>
+            <Tag collapsed={collapsed}></Tag>
             <div className="content-wrapper" style={{left:collapsed?'50px':'200px'}}>
                 {props.children}
             </div>
