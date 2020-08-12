@@ -21,13 +21,13 @@
     }
     .tags-li {
         float: left;
-        margin: 3px 5px 2px 3px;
+        margin: 2px 5px 2px 3px;
         border-radius: 3px;
         font-size: 12px;
         overflow: hidden;
         cursor: pointer;
-        height: 25px;
-        line-height: 25px;
+        height: 26px;
+        // line-height: 26px;
         border: 1px solid #e9eaec;
          background: #fff;
         vertical-align: middle;
@@ -35,6 +35,9 @@
         -webkit-transition: all .3s ease-in;
         -moz-transition: all .3s ease-in;
         transition: all .3s ease-in;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .tags-li-title {
         float: left;
@@ -43,14 +46,14 @@
         padding:0 5px;
     }
     .selected{
-         background:#409eff ;
-        color: #fff;
+        background:rgba(230,247,255,1);
+        color: #1890ff;
     }
     .tags-li:not(.selected):hover {
         background: #f8f8f8;
     }
     .tags-li.selected .tags-li-title{
-        color: #fff;
+        color: #1890ff;
     }
     .del{
         padding:0 5px 0 0;

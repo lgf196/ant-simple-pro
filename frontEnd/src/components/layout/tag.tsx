@@ -23,13 +23,13 @@ class Tag extends React.Component<TagProps, TagState> {
           let routeArr=null;
           try {
               routeArr=route.routes?matchRoutes(route.routes,location.pathname)[0].route:route;
-              this.setTags(routeArr)
+              this.setTags(routeArr as tagPropsType)
           }catch (error) {
              history.push('/404');
           }  
         }
     }
-    setTags=(route:any)=>{  //生成动态的路由tag
+    setTags=(route:tagPropsType)=>{  //生成动态的路由tag
         const isExist = this.state.tagsList.some(item => {
             return item.path === route.path;
         })
@@ -58,7 +58,7 @@ class Tag extends React.Component<TagProps, TagState> {
         })
     }
     render() { 
-        const {collapsed} = this.props;
+        const {collapsed,location} = this.props;
         const {tagsList}=this.state;
         return ( 
             <div className='tag-wrapper' style={{left:collapsed?'50px':'200px'}}>
@@ -66,8 +66,8 @@ class Tag extends React.Component<TagProps, TagState> {
                     {
                         tagsList.map((item,index)=>{
                             return (
-                                <li className={item.path ===this.props.location.pathname?'tags-li selected':'tags-li'} key={index}>
-                                    <NavLink to={item.path}  className='tags-li-title'>
+                                <li className={item.path ===location.pathname?'tags-li selected':'tags-li'} key={index}>
+                                    <NavLink to={item.path}  className='tags-li-title' title={item.title}>
                                         {item.title}
                                     </NavLink>
                                     {

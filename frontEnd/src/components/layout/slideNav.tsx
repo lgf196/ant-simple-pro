@@ -76,8 +76,21 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         }
         return null
     }
+    filterFilterMenu=(arr:menuAccessType[])=>{
+        let urlArr: string[]=[]
+       arr.forEach((item)=>{
+          if(item.children){
+             this.filterFilterMenu(item.children);
+          }else{
+            urlArr.push(item.url); 
+          }
+       })
+       return urlArr;
+    }
     onOpenChange = (openKeys: string[]) => {
+        console.log('sss', this.filterFilterMenu(this.props.getMenuTree))
         const rootSubmenuKeys=this.props.getMenuTree.map(item=>item.url);
+        console.log('rootSubmenuKeys', rootSubmenuKeys)
         const latestOpenKey = openKeys.find((key: string) => this.state.openKeys.indexOf(key) === -1)!;
         if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
           this.setState({ openKeys });
@@ -98,7 +111,6 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         const defaultProps = collapsed ? {} : { openKeys }; 
         const defaultSelectedKeys=location.pathname;
         console.log('openKeys', openKeys)
-        console.log('this.props', this.props)
         return (  
             <Sider trigger={null} collapsible collapsed={collapsed}   width={200}>
                 <div  className='siderbar' style={{width:collapsed?'50px':'200px'}}>
