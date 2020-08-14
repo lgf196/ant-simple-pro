@@ -20,14 +20,24 @@ class Tag extends React.Component<TagProps, TagState> {
     componentDidUpdate(prevProps:TagProps){ //如果props改变就调用
         const {location,route,history} =this.props;
         if(location.pathname!=prevProps.location.pathname){
-          let routeArr=null;
           try {
-              routeArr=route.routes?matchRoutes(route.routes,location.pathname)[0].route:route;
-              this.setTags(routeArr as tagPropsType)
+              this.setTags(this.filterRouters(route,location))
           }catch (error) {
              history.push('/404');
           }  
         }
+    }
+    filterRouters=(route:RouteConfig,location:any):tagPropsType=>{
+        let arr=null;
+         if(route.routes){
+            arr=matchRoutes(route.routes,location.pathname)[0].route;
+            if(arr.routes){
+              arr=this.filterRouters(arr,location);
+            }
+         }else{
+             arr=route;
+         }
+         return arr as tagPropsType;
     }
     setTags=(route:tagPropsType)=>{  //生成动态的路由tag
         const isExist = this.state.tagsList.some(item => {

@@ -28,6 +28,32 @@ export const menuRouter:RouteConfig[]=[
                 ]
             },
             {
+                path: '/component',
+                title: '组件',
+                component: FatherLayout,
+                routes: [
+                    {
+                        path: '/component/mapTable',
+                        component:FatherLayout,
+                        title: '图表管理',
+                        routes: [
+                            {
+                                exact: true,
+                                path:'/component/mapTable/rice',
+                                component:HocRouter(lazy(()=> import('@/pages/stystem/find'))),
+                                title: '园表组件', 
+                            }
+                        ]
+                    },
+                    {
+                        exact: true,
+                        path: '/component/button',
+                        component:HocRouter(lazy(()=> import('@/pages/stystem/menu'))),
+                        title: '按钮管理',
+                    },
+                ]
+            },
+            {
                 path: '/404',
                 title: '404',
                 component: Error,

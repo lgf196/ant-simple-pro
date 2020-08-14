@@ -11,7 +11,6 @@ import './slideNav.scss'
 export interface SlideNavProps extends layoutProps,RouteComponentProps{
    dispatch:Dispatch,
    getMenuTree:menuAccessType[],
-//    location:Location
 }
  
 export interface SlideNavState extends layoutProps{
@@ -76,21 +75,8 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         }
         return null
     }
-    filterFilterMenu=(arr:menuAccessType[])=>{
-        let urlArr: string[]=[]
-       arr.forEach((item)=>{
-          if(item.children){
-             this.filterFilterMenu(item.children);
-          }else{
-            urlArr.push(item.url); 
-          }
-       })
-       return urlArr;
-    }
     onOpenChange = (openKeys: string[]) => {
-        console.log('sss', this.filterFilterMenu(this.props.getMenuTree))
         const rootSubmenuKeys=this.props.getMenuTree.map(item=>item.url);
-        console.log('rootSubmenuKeys', rootSubmenuKeys)
         const latestOpenKey = openKeys.find((key: string) => this.state.openKeys.indexOf(key) === -1)!;
         if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
           this.setState({ openKeys });
@@ -101,8 +87,21 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         }
     };
     defaultOpenUrl=(url:string)=>{ //获取当前页的路劲，防止刷新看不到选中的样式
-        let openKeys='/'+url.split('/')[1];
-        this.setState({openKeys:[openKeys]});
+        let openKeys:string[]=[],arrUrl:string[]=[];
+        arrUrl=url.split('/'); arrUrl.splice(0,1);
+        if(arrUrl.length<=2){
+            openKeys.push(`/${arrUrl[0]}`)
+        }else{  //如果有超过2层的，就执行
+            let str='',newArr:string[]=[];
+            arrUrl.forEach((item,index)=>{
+                if(index<=arrUrl.length-2){ //不计算最后一个
+                    str+=`/${item}`;
+                    newArr.push(str);
+                }
+            })
+            openKeys.push(...newArr)
+        }
+          this.setState({openKeys});
     }
     render() { 
         const { Sider} = Layout;
@@ -110,7 +109,6 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         const {openKeys}=this.state;
         const defaultProps = collapsed ? {} : { openKeys }; 
         const defaultSelectedKeys=location.pathname;
-        console.log('openKeys', openKeys)
         return (  
             <Sider trigger={null} collapsible collapsed={collapsed}   width={200}>
                 <div  className='siderbar' style={{width:collapsed?'50px':'200px'}}>
