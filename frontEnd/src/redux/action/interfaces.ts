@@ -5,4 +5,7 @@ export interface getMenuTreeActionType {
     type:types.GETMENUTREE,
     data:menuAccessType[]
 }
-export type actionType=getMenuTreeActionType | CallHistoryMethodAction;
+export interface getMenuListActionType extends Pick<getMenuTreeActionType,'data'>{
+    type:types.GETMENULIST,
+}
+export type actionType=getMenuTreeActionType | getMenuListActionType | CallHistoryMethodAction;

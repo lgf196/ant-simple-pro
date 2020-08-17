@@ -50,7 +50,9 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle}) 
     return (
             <div className='topbar-wrapper clearfix' style={{left:collapsed?'50px':'200px'}}>
                 <div className="menu-collapse-wrapper fl"  onClick={()=>onToggle()}>
-                    {collapsed ?<MenuUnfoldOutlined  className='icon'/>:<MenuFoldOutlined className='icon'/>}
+                    <Tooltip title={collapsed?'张开':'缩起'}  placement="bottom">
+                        {collapsed ?<MenuUnfoldOutlined  className='icon'/>:<MenuFoldOutlined className='icon'/>}
+                    </Tooltip>
                 </div>
                  <div className="title fl">LGF-VIEW -管理系统</div>
                  <SvgIcon iconClass='qp'/>

@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 
-const Nodata:React.FC<{data:string}> = memo(function Nodata({data}) {
+const Nodata:React.FC<{data:string | null}> = memo(function Nodata({data}) {
     return (
         <>
-            { data.length?<span>{data}</span>:<span>/</span> }
+            { data?<span>{data}</span>:<span>/</span> }
         </>
     )
 })

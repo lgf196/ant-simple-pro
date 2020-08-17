@@ -34,7 +34,10 @@ interface responseData {  //定义全局的response相应数据模型
     success?:boolean
 } 
 
-interface reduceStoreType {  //所有reduce模块中的store类型
-    user:userStore //对应userReduce
+interface Date{
+    Format(parps:string):string
 }
+
+
+
 

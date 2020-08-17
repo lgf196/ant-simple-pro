@@ -1,8 +1,9 @@
 import {menuAccessType} from '@/interfaces'
-import {GETMENUTREE} from '../constants/actionType'
+import * as types from '../constants/actionType'
 export const getMenuTree = (data:menuAccessType[]) => {
     return {
-      type:GETMENUTREE,
+      type:types.GETMENUTREE,
       data
     }
-  }
+}
+export const getMenuList=(data:menuAccessType[])=>({ type:types.GETMENULIST,data});

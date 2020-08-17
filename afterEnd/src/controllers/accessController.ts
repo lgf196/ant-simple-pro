@@ -26,7 +26,10 @@ class AccessModule {
             sendResponse(res,200,sucessCallbackVal(code.successCode,fatherElement,'成功',true));
     }))
     public getMenuList=asyncHandler(async(req: Request, res: Response)=>{
-        let result=await  this.findMenuList();
+        let result=await this.findMenuList();
+        if(result.data.length){
+            result.data=result.data.map((item:menuAccessType)=>Object.assign({},item,{createTime:new Date(item.createTime).getTime()}));
+        }
         sendResponse(res,200,sucessCallbackVal(code.successCode,result.data,'成功',true));
     })
 }
