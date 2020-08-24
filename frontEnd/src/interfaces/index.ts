@@ -1,6 +1,7 @@
 import {requestCode} from '@/utils/varbile'
 import {buttonProps} from '@/components/button'
 export type statusCode=requestCode;
+export type sortType='desc' | 'asc';
 export interface menuAccessType {  //权限列表
     id:number;
     pid:number;
@@ -30,4 +31,14 @@ export interface LayoutTableProps {
     btnGrounp?:(buttonProps & Pick<grounpProps,'func'>)[],
     iconGrounp?:grounpProps[],
     tableTitle?:string
+}
+
+export interface pagaTionBackData {
+  list:menuAccessType[],
+  total:number
+}
+export interface pagationType {
+  page?:number;
+  size?:number;
+  sort?:sortType;
 }

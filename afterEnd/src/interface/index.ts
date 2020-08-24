@@ -1,5 +1,6 @@
 import {code as codeStatus} from '../utils/variable'
 import { Request } from 'express';
+import { type } from 'os';
 export type codes=codeStatus;
 export interface dbType{
   code:codes;
@@ -30,4 +31,12 @@ export interface menuAccessType {  //权限列表
   url:string;
   createTime:Date;
   children?:menuAccessType[]
+}
+
+export type sortType='desc' | 'asc';
+
+export interface pagationType {
+   page?:number;
+   size?:number;
+   sort?:sortType
 }

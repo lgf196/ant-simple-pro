@@ -28,3 +28,14 @@ export const confirm=(func:Function,content:string='确定要删除吗？',onCan
         },
     }); 
 }
+
+export const animateStop=()=>{
+    let scrollTop,spend,times,ele=document.querySelector('.content-wrapper')!; //父元素不是document是这个标签,用！表示绝对有scrollTop属性
+    scrollTop=ele.scrollTop ;
+    spend=scrollTop/3;
+    ele.scrollTop-= Math.ceil(spend);
+    times=setTimeout(() => {
+       animateStop();
+    },10);
+    scrollTop<5&&clearTimeout(times);
+}

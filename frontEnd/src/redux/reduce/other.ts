@@ -1,19 +1,15 @@
 import * as types from '@/redux/constants/actionType'
 import {actionType} from '@/redux/action/interfaces'
 const  initialState={
-    getMenuTree:[],
-    getMenuList:{
-        list:[],
-        total:0
-    }
+    loading:false
 };
 
 export default (state = initialState, action:actionType )=> {
     switch (action.type) {
-        case types.GETMENUTREE:
-            return {...state,getMenuTree:action.data};
-        case types.GETMENULIST:
-            return {...state,getMenuList:action.data}
+        case types.LOADING_START:
+            return {...state,loading:true};
+        case types.LOADING_END:
+            return {...state,loading:false};
         default: 
             return state
     }

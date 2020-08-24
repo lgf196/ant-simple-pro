@@ -1,15 +1,17 @@
-import axios from 'axios'
+import axios,{AxiosRequestConfig, Method,ResponseType} from 'axios'
 import { requestCode } from '../utils/varbile'
 import { toast } from '../utils/function'
 import store from '@/redux/store'
 import { push } from 'connected-react-router'
 import tools from '@/utils'
+import * as types from '@/redux/constants/actionType'
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = '/api'
 axios.interceptors.request.use(config => {
     if (localStorage.getItem('token')) {
         config.headers['accesstoken'] = localStorage.getItem('token');
     }
+    store.dispatch({type:types.LOADING_START}); //触发loading设置为true
     return config
 }, error => {
     return Promise.reject(error)
@@ -21,22 +23,20 @@ axios.interceptors.response.use((response) => {
         axios.defaults.headers.common['accesstoken'] = token;
     }
     if (response.status === 200) {
+        store.dispatch({type:types.LOADING_END}); //触发loading设置为false
     }
     return response
 }, (error) => {
     return Promise.reject(error)
 });
 
-export const resquest = (method: string, url: string, data: any = {},responseType:string= 'json'): Promise<any> => {
+export const resquest = (method: Method='get', url: string, data: any = {},responseType:ResponseType= 'json'): Promise<any> => {
     return new Promise((resolve) => {
-        let params = {};
-        if (method === 'get') {
-            Object.keys(data).forEach((key) => (data[key] === null || data[key] === '' || data[key]===undefined) && delete data[key]); //删除为空的字符串
-            params = data;
-        }
-        console.log('data', data)
-        let option = {
-            method, url, params, ...data,
+        let option:AxiosRequestConfig = {
+            method,
+            url,
+            params:method ==='get' ? tools.delEmptyString(data):{},
+            data:method ==='post' ? tools.delEmptyString(data):{},
             headers:{
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
@@ -62,8 +62,10 @@ export const resquest = (method: string, url: string, data: any = {},responseTyp
                 resolve(res.data);
             }
         }, error => {
+            store.dispatch({type:types.LOADING_END}); //触发loading设置为false
             error.response && error.response.data ? toast(requestCode.failedCode, error.response.data.mes):toast(requestCode.failedCode, '请求出错，请重试');
         }).catch((err) => {
+            store.dispatch({type:types.LOADING_END}); //触发loading设置为false
             toast(requestCode.serverErrorCode, '服务异常');
         })
     })

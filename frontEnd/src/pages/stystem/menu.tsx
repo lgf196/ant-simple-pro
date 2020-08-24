@@ -7,7 +7,7 @@ import {Tooltip } from 'antd'
 import { Dispatch } from 'redux';
 import Table from '@/components/table'
 import NoData from '@/components/noData'
-import {menuAccessType,LayoutTableProps} from '@/interfaces'
+import {menuAccessType,LayoutTableProps,pagaTionBackData} from '@/interfaces'
 import Buttons from '@/components/button'
 import Pagination from '@/components/pagination'
 import {SyncOutlined} from '@ant-design/icons';
@@ -15,11 +15,12 @@ import '@/assets/scss/common.scss'
 import Line from '@/components/line'
 import LayoutTableComponent from '@/components/layout/layoutTable'
 import MenuOption from '@/container/stystem/option'
-export interface menuListType{
-    dispatch:Dispatch,
-    getMenuList:menuAccessType[]
+import {sagaGetMenuListType} from '@/redux/saga/user'
+export interface menuListType extends loading{
+    dispatch:Dispatch<sagaGetMenuListType>,
+    listData:pagaTionBackData,
 }
-const Menu:React.FC<menuListType> = memo(function Menu({dispatch,getMenuList}) {
+const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loading}) {
     const columns:ColumnProps<{id:number}>[]=[
         {
             key: 'index',
@@ -78,9 +79,10 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,getMenuList}) {
         }
     ];
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
+    const [pagaTion, setPagaTion] = useSetState();
     useEffect(() => {
-        dispatch({type:SAGA_GETMENULIST});
-    }, [])
+        dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
+    }, [pagaTion])
     const aaa=(par:string,event:React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
         event.persist()
         console.log('11', par,event)
@@ -111,10 +113,10 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,getMenuList}) {
     return (
         <>
             <LayoutTableComponent {...datas}>
-                <Table columns={columns} dataSource={getMenuList} loading={false}/>
-                <Pagination total={10}   onChanges={(page:number, size:number)=>{}}/>
+                <Table columns={columns} dataSource={listData.list} loading={loading}/>
+                <Pagination total={listData.total}   onChanges={(page:number, size:number)=>setPagaTion({page, size})} className='view-pagitaion'/>
             </LayoutTableComponent>
-            <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST})}/>
+            <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
             {/* <div className='layout-table'>
                 <div className='header-option'>
                     <div className='header-option-title'>查询表格</div>
@@ -141,6 +143,7 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,getMenuList}) {
     )
 })
 
-export default connect(({user}:reduceStoreType)=>({
-    getMenuList:user.getMenuList
+export default connect(({user,other}:reduceStoreType)=>({
+    listData:user.getMenuList,
+    loading:other.loading
 }))(Menu);

@@ -3,8 +3,12 @@ import {requestCode} from '@/utils/varbile'
 import * as SAGA from '@/redux/constants/sagaType'
 import {getAccessMenuList,getAccessMenu} from '@/api/login'
 import {getMenuTree,getMenuList} from '@/redux/action/user'
-import {menuAccessType} from '@/interfaces'
+import {menuAccessType,pagationType} from '@/interfaces'
 import tools from '@/utils'
+export interface sagaGetMenuListType {
+    type:SAGA.SAGA_GETMENULIST;
+    payload:pagationType
+};
 export const effects={
     *getMenTree(){
        try {
@@ -16,12 +20,16 @@ export const effects={
             yield put(getMenuTree([]));
        }
     },
-    *getMenuList(){
+    *getMenuList({payload}:sagaGetMenuListType){
         try {
-            const res:responseData=yield call(getAccessMenu);
-            res.code===requestCode.successCode &&  (yield put(getMenuList(res.data.map((item:menuAccessType)=>Object.assign({},item,{createTime:tools.formatDate(item.createTime,'YYYY-MM-DD hh:mm:ss')})))));
+            const res:responseData=yield call(getAccessMenu,payload);
+            let {list=[],total=0}=res.data;
+            if(res.code===requestCode.successCode && list.length){
+                list=list.map((item:menuAccessType)=>Object.assign({},item,{createTime:tools.formatDate(item.createTime,'YYYY-MM-DD hh:mm:ss')}));
+            }
+            yield put(getMenuList({list,total}))
         } catch (error) {
-            yield put(getMenuList([]));
+            yield put(getMenuList({list:[],total:0}));
         }
     }
 }
