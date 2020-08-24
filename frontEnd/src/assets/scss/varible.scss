@@ -3,6 +3,7 @@ $topbarHeight: 48px;
 $siderbarWidth: 220px;
 $topbarHeight: 48px;
 $topbarColor:rgba(105,123,140,.7);
+$color1:#fff;
 @mixin flexContainer($jc){
   display: flex;
   flex-direction: row;

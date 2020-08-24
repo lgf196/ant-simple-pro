@@ -1,21 +1,20 @@
 import React, { memo } from 'react'
 import { Button } from 'antd';
 import {ButtonProps} from 'antd/lib/button/button'
-const Buttons:React.FC<ButtonProps> = memo(function Buttons({type,size,style,onClick,htmlType,loading,ghost,icon,title,danger}) {
+import SvgIcon,{svgProps} from '@/components/svgIcon'
+export type buttonProps=ButtonProps & {title:string} & svgProps;
+const Buttons:React.FC<buttonProps> = memo(function Buttons({title,iconClass,fill,...props}) {
     return (
         <>
-            <Button type={type} size={size} style={style} onClick={onClick} htmlType={htmlType} loading={loading} ghost={ghost} danger={danger}>
-                <i className={`iconfont ${icon}`}></i>
-                {title}
+            <Button {...props}>
+                {iconClass? <SvgIcon iconClass={iconClass} fill={fill} />:null}
+                <span style={{paddingLeft:'3px'}}>{title}</span>
             </Button>
         </>
     )
 })
 Buttons.defaultProps={
     type:'primary',
-    loading:false,
-    ghost:false,
-    icon:'',
-    danger:false
+    fill:'#fff'
 }
 export default Buttons

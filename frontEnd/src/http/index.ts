@@ -3,7 +3,7 @@ import { requestCode } from '../utils/varbile'
 import { toast } from '../utils/function'
 import store from '@/redux/store'
 import { push } from 'connected-react-router'
-
+import tools from '@/utils'
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = '/api'
 axios.interceptors.request.use(config => {
@@ -31,9 +31,10 @@ export const resquest = (method: string, url: string, data: any = {},responseTyp
     return new Promise((resolve) => {
         let params = {};
         if (method === 'get') {
-            Object.keys(data).forEach((key) => (data[key] == null || data[key] == '') && delete data[key]); //删除为空的字符串
+            Object.keys(data).forEach((key) => (data[key] === null || data[key] === '' || data[key]===undefined) && delete data[key]); //删除为空的字符串
             params = data;
-        };
+        }
+        console.log('data', data)
         let option = {
             method, url, params, ...data,
             headers:{

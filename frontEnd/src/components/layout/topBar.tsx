@@ -55,7 +55,7 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle}) 
                     </Tooltip>
                 </div>
                  <div className="title fl">LGF-VIEW -管理系统</div>
-                 <SvgIcon iconClass='qp'/>
+                 {/* <SvgIcon iconClass='qp'/> */}
                 <div className='menu-list fr'>
                 <div>
                     <Tooltip title={fullscreen?'取消':'全屏'}  placement="bottom">

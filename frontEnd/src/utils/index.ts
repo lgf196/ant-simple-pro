@@ -27,6 +27,11 @@ class Tools {
         }
         return new Date($date).Format($format);
    }
+   delEmptyString(parps:object){
+        let data=Object.assign(parps);
+        Object.keys(parps).forEach((key) => (data[key] === null || data[key] === '' || data[key]===undefined) && delete data[key]);
+        return data;
+   }
 }
 
 export default new Tools();

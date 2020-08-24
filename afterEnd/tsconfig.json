@@ -9,6 +9,8 @@
     "skipLibCheck": true,                   
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./",
+    "noImplicitAny":true,
+    "suppressImplicitAnyIndexErrors":true,
     "paths": {
         "*" : ["src/types/*"]
     }  

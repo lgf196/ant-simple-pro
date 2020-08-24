@@ -4,10 +4,11 @@
         position: fixed;
         left: $siderbarWidth;
         right: 0;
-        top:90px;
+        top:85px;
         bottom: 0;
-        padding: 16px;
+        padding:12px;
         overflow: auto;
         transition: all 0.3s ease-in-out;
+        background: #f0f2f5;
       }
 }

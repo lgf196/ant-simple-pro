@@ -1,4 +1,5 @@
 import {resquest} from '../http'
+import {menuAccessType} from '@/interfaces'
 type loginType={
     email:string;
     password:string
@@ -8,6 +9,4 @@ export  const xlsxFileDown=<T>(data?:T):Promise<any>=>resquest('get',`/fileDown`
 export  const getUserList=<T>(data?:T):Promise<any>=>resquest('get',`/user`,data,'blod');  
 export  const getAccessMenuList=<T>(data?:T):Promise<responseData>=>resquest('get',`/menu/getCurrentUserMenuAuthTree`);  
 export  const getAccessMenu=<T>(data?:T):Promise<responseData>=>resquest('get',`/menu/getCurrentList`);  
-
-
-
+export  const getAccesstOption=(data:Partial<menuAccessType>):Promise<responseData>=>resquest('post',`/menu/getCurrentOption`,{data});  

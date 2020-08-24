@@ -1,7 +1,7 @@
 import React, { memo ,useMemo} from 'react'
 
-type svgProps={
-    iconClass:string,
+export type svgProps={
+    iconClass?:string,
     fill?:string,
     fontSize?:string
 }
@@ -21,7 +21,7 @@ const svgStyle={
 }
 
 SvgIcon.defaultProps={
-    fill: "currentColor",  //颜色值
-    fontSize:'1em'         //字体大小
+    fill: "#000000a6",  //颜色值
+    fontSize:'1.1em'         //字体大小
 }
 export default SvgIcon
