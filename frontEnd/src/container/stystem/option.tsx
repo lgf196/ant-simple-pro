@@ -1,34 +1,63 @@
-import React, { memo,useEffect,useMemo } from 'react'
-import { Button, Modal, Form} from 'antd';
+import React, { memo,useEffect,useMemo,useState} from 'react'
 import Inputs from '@/components/input'
+import tools from '@/utils'
+import { Button, Modal, Form,Cascader } from 'antd';
 import {useFormLayout} from '@/hooks'
+import { Dispatch } from 'redux';
 import {requestCode} from '@/utils/varbile'
 import {toast} from '@/utils/function'
 import {getAccesstOption} from '@/api/login'
-const Option:React.FC<any> = memo(function Option({visible,detailData,onCancel,sucessCallback}) {
+import { connect } from 'react-redux';
+import {menuAccessType} from '@/interfaces'
+import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
+import { CascaderValueType } from 'antd/lib/cascader';
+export interface OptionType extends editDetailType<Partial<menuAccessType>>,loading{
+  getMenuTree:menuAccessType[];
+  dispatch:Dispatch;
+}
+const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
+  onCancel,sucessCallback,getMenuTree,dispatch,loading}) {
     const [form] = Form.useForm();
     const [formItemLayout]=useFormLayout();
+    const [requireIcon,setRequireIcon]=useState<boolean>(true)
     const isDetailData=useMemo(()=> detailData.id,[visible]);
     const text=isDetailData?'编辑':'创建';
     useEffect(() => {
         if (visible) {
-           
+          let {title,url,icon,pid}=detailData;
+          pid=tools.findAncestry(getMenuTree,pid as number);
+          form.setFieldsValue({title,url,icon,pid});
+          setRequireIcon(isDetailData?false:true);
         }
     }, [visible]);
+    // useEffect(() => {
+    //   // form.validateFields(['icon']);
+    // }, [requireIcon]);
     const  handleSubmit = () => {  //提交
         form.validateFields().then(async (values) => {
-           let res=null;
-            res=await getAccesstOption(values);
+           let res=null,formData=null;
+            formData=Object.assign(values,{
+                pid:values.pid!=undefined && values.pid.length?values.pid[values.pid.length-1]:0
+            })
+            res=isDetailData? await getAccesstOption({id:detailData.id,...formData}):await getAccesstOption(formData);
             if(res.code===requestCode.successCode){
-              toast();sucessCallback();handCancel()
+              dispatch({type:SAGA_GETMENUTREE});
+              toast();sucessCallback();handCancel();
             }
-             console.log('values', values)
         })
-        .catch(info => {});
     };
     const handCancel=()=>{
-        onCancel()
+        onCancel();form.resetFields();
     }
+    const CascaderChange=(value: CascaderValueType)=>{
+      if(isDetailData){
+        if(detailData.id===value[value.length-1]){
+          toast(requestCode.failedCode,'不能选择相同的菜单，作为上级菜单');
+          form.setFieldsValue({pid:undefined});
+        }
+      }
+      setRequireIcon(value.length?false:true);
+    };
     return (
         <Modal
         forceRender
@@ -38,8 +67,8 @@ const Option:React.FC<any> = memo(function Option({visible,detailData,onCancel,s
         onCancel={handCancel}
         bodyStyle={{paddingLeft:'10px'}}
         footer={[
-        <Button key="submit" type="primary"  onClick={handleSubmit} >{text}</Button>,
-            <Button key="back">重置</Button>  
+        <Button key="submit" type="primary"  onClick={handleSubmit} loading={loading}>{text}</Button>,
+        <Button key="back" onClick={()=>form.resetFields()}>重置</Button>  
         ]}
       >
         <Form   {...formItemLayout} form={form} name="form_in_modal">
@@ -49,11 +78,25 @@ const Option:React.FC<any> = memo(function Option({visible,detailData,onCancel,s
             <Form.Item label="菜单url" name='url'  rules={[{required: true,message: '菜单url必填'}]}>
               <Inputs/>
             </Form.Item>
-            <Form.Item label="菜单icon" name='icon'>
+            <Form.Item label="菜单icon" name='icon' rules={[{required: requireIcon,message: '父级菜单icon必填'}]}>
               <Inputs/>
+            </Form.Item>
+            <Form.Item label="上级菜单" name='pid'>
+              <Cascader
+                fieldNames={{ label: 'title', value: 'id', children: 'children' }}
+                options={getMenuTree}
+                placeholder="请选择上级菜单"
+                changeOnSelect
+                expandTrigger="hover"
+                size='large'
+                onChange={CascaderChange}
+              />
             </Form.Item>
         </Form>
       </Modal>
     )
 })
-export default  Option;
+export default connect(({user,other}:reduceStoreType)=>({
+  getMenuTree:user.getMenuTree,
+  loading:other.loading
+}))(Option);

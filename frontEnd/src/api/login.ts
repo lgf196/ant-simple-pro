@@ -10,3 +10,4 @@ export  const getUserList=<T>(data?:T):Promise<any>=>resquest('get',`/user`,data
 export  const getAccessMenuList=<T>(data?:T):Promise<responseData>=>resquest('get',`/menu/getCurrentUserMenuAuthTree`);  
 export  const getAccessMenu=<T extends pagationType>(data:T):Promise<responseData>=>resquest('get',`/menu/getCurrentList`,data);  
 export  const getAccesstOption=(data:Partial<menuAccessType>):Promise<responseData>=>resquest('post',`/menu/getCurrentOption`,data);  
+export  const delteAccesstOption=(data:Pick<menuAccessType,'id'>):Promise<responseData>=>resquest('post',`/menu/delete`,data);  

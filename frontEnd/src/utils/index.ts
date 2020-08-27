@@ -1,4 +1,4 @@
-class Tools {
+class Tools{
     createALabel(path:string,fileName:string='用户信息.xlsx'){
         let link = document.createElement('a')
         link.style.display = 'none'
@@ -32,6 +32,32 @@ class Tools {
         Object.keys(parps).forEach((key) => (data[key] === null || data[key] === '' || data[key]===undefined) && delete data[key]);
         return data;
    }
+    findAncestry (data2:any[], nodeId2:number) {
+        let arrRes :any[]= [];
+        if (data2.length == 0) {
+            if (!!nodeId2) {
+                arrRes.unshift(data2)
+            }
+            return arrRes.map(item=>item.id);
+        }
+        let rev = (data:any[], nodeId:number) => {
+            for (let i = 0, length = data.length; i < length; i++) {
+                let node = data[i];
+                if (node.id == nodeId) {
+                    arrRes.unshift(node)
+                    rev(data2, node.pid);
+                    break;
+                }
+                else {
+                    if (!!node.children) {
+                        rev(node.children, nodeId);
+                    }
+                }
+            }
+            return arrRes;
+        };
+        arrRes = rev(data2, nodeId2);
+        return arrRes.map(item=>item.id);;
+  }
 }
-
 export default new Tools();

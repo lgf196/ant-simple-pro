@@ -1,23 +1,25 @@
 import React, { memo,useEffect } from 'react'
-import {SAGA_GETMENULIST} from '@/redux/constants/sagaType'
-import { ColumnProps } from 'antd/lib/table';
-import useSetState from '@/hooks/useSetState'
-import { connect } from 'react-redux';
-import {Tooltip } from 'antd'
-import { Dispatch } from 'redux';
-import Table from '@/components/table'
-import NoData from '@/components/noData'
-import {menuAccessType,LayoutTableProps,pagaTionBackData} from '@/interfaces'
-import Buttons from '@/components/button'
-import Pagination from '@/components/pagination'
-import {SyncOutlined} from '@ant-design/icons';
-import '@/assets/scss/common.scss'
 import Line from '@/components/line'
 import LayoutTableComponent from '@/components/layout/layoutTable'
+import useSetState from '@/hooks/useSetState'
+import Table from '@/components/table'
+import NoData from '@/components/noData'
 import MenuOption from '@/container/stystem/option'
+import {SAGA_GETMENULIST,SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
+import { ColumnProps } from 'antd/lib/table';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import {LayoutTableProps,pagaTionBackData} from '@/interfaces'
+import Pagination from '@/components/pagination'
+import {SyncOutlined} from '@ant-design/icons';
 import {sagaGetMenuListType} from '@/redux/saga/user'
+import {confirm,toast} from '@/utils/function'
+import {delteAccesstOption} from '@/api/login'
+import { requestCode } from '@/utils/varbile';
+import '@/assets/scss/common.scss'
+type dispatchProps=sagaGetMenuListType | {type:SAGA_GETMENUTREE};
 export interface menuListType extends loading{
-    dispatch:Dispatch<sagaGetMenuListType>,
+    dispatch:Dispatch<dispatchProps>,
     listData:pagaTionBackData,
 }
 const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loading}) {
@@ -71,9 +73,9 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
             title: '操作',
             render: (text, record) => (
                 <>
-                    <a>编辑</a>
+                    <a onClick={()=>handle(2,record)}>编辑</a>
                     <Line/>
-                    <a style={{color:'#ff4d4f'}}>删除</a>
+                    <a onClick={()=>handle(3,record)} style={{color:'#ff4d4f'}}>删除</a>
                 </>
             ),
         }
@@ -83,10 +85,10 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
     useEffect(() => {
         dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
     }, [pagaTion])
-    const aaa=(par:string,event:React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
-        event.persist()
-        console.log('11', par,event)
-    }
+    // const funcs=(par:string,event:React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
+    //     event.persist()
+    //     console.log('11', par,event)
+    // }
     const datas:LayoutTableProps={
         btnGrounp:[
            {
@@ -98,16 +100,23 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
         iconGrounp:[
             {
                 title:'刷新',
-                func:(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>aaa('rr',e),
+                func:(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),
                 icon:<SyncOutlined/>
             }
         ],
     }
     const handle=(state:number,detailData:any={})=>{
-        if(state==1){ 
+        if(state===1 || state===2){ 
             setEditData({visible:true,detailData});
-       }else if(state==2){
-           
+       }else{
+            confirm(async ()=>{
+                let res=await delteAccesstOption({id:detailData.id});
+                if(res.code===requestCode.successCode){
+                    dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
+                    toast(requestCode.successCode,'删除成功');
+                    dispatch({type:SAGA_GETMENUTREE});
+                }
+            });
        }
     }
     return (
@@ -117,28 +126,6 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
                 <Pagination total={listData.total}   onChanges={(page:number, size:number)=>setPagaTion({page, size})} className='view-pagitaion'/>
             </LayoutTableComponent>
             <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
-            {/* <div className='layout-table'>
-                <div className='header-option'>
-                    <div className='header-option-title'>查询表格</div>
-                    <div className='header-option-func'>
-                        <div className='option-btn'>
-                            <Buttons title='新增'  iconClass='add'/>
-                        </div>
-                        <div className='option-icon'>
-                             <Line/>
-                            <div className='icon-grounp'>
-                                <div className='update-data'>
-                                    <Tooltip title='刷新'  placement="bottom" >
-                                        <SyncOutlined />
-                                    </Tooltip>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-                <Table columns={columns} dataSource={getMenuList} loading={false}/>
-            </div> */}
         </>
     )
 })

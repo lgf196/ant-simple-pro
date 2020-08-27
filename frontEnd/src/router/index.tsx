@@ -5,7 +5,6 @@ import { renderRoutes } from 'react-router-config'
 import {menuRouter} from './staticRouter'
 import Home from '@/pages/home'
 import Layout from '@/components/layout'
-
 import { history } from '@/assets/js/history'
 import { ConnectedRouter } from 'connected-react-router'
 const Routers: React.FC = () => {

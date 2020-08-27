@@ -7,7 +7,9 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import {menuAccessType,layoutProps} from '@/interfaces'
 import {Location,UnregisterCallback} from 'history'
+import SvgIcon from '@/components/svgIcon'
 import './slideNav.scss'
+import '@/assets/scss/common.scss'
 export interface SlideNavProps extends layoutProps,RouteComponentProps{
    dispatch:Dispatch,
    getMenuTree:menuAccessType[],
@@ -42,10 +44,12 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         const { SubMenu } = Menu;
         return getMenuTree.map((item)=>{
             if(!item.children){
-                return (<Menu.Item key={item.url} icon={<IconComponent name={item.icon}/>}><Link to={item.url}>{item.title}</Link></Menu.Item>);
+                return (<Menu.Item key={item.url} icon={item.icon?<SvgIcon iconClass={item.icon}  
+                    className='svg-style'/>:null}><Link to={{ pathname:item.url,state:item.title}}>{item.title}</Link></Menu.Item>);
             }else{
                  return (
-                    <SubMenu key={item.url} icon={<IconComponent name={item.icon}/>} title={item.title}>
+                    <SubMenu key={item.url} icon={item.icon?<SvgIcon iconClass={item.icon}  
+                    className='svg-style'/>:null} title={item.title}>
                        {this.rednerMenu(item.children)}
                     </SubMenu>
                  )
@@ -110,8 +114,8 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
         const defaultProps = collapsed ? {} : { openKeys }; 
         const defaultSelectedKeys=location.pathname;
         return (  
-            <Sider trigger={null} collapsible collapsed={collapsed}   width={200}>
-                <div  className='siderbar' style={{width:collapsed?'50px':'200px'}}>
+             <Sider trigger={null} collapsible collapsed={collapsed}   collapsedWidth={collapsed?80:200}>
+                <div  className='siderbar' style={{width:collapsed?'80px':'200px'}}>
                     <div className="logo-wrapper" style={{fontSize:collapsed?'16px':'24px'}}>
                         <Link to="/home" style={{color:'#65CEA7'}}>LGF</Link>
                     </div>  
@@ -125,7 +129,7 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
                         {this.rednerMenu(getMenuTree)}
                     </Menu>
                 </div>
-            </Sider>
+             </Sider>
         );
     }
 }

@@ -43,4 +43,10 @@ interface loading {
     loading:boolean
 }
 
+interface editDetailType<T=any> {
+    visible:boolean;
+    detailData:T;
+    onCancel:Function;
+    sucessCallback:Function;
+}
 

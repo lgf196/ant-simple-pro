@@ -4,7 +4,7 @@ export type statusCode=requestCode;
 export type sortType='desc' | 'asc';
 export interface menuAccessType {  //权限列表
     id:number;
-    pid:number;
+    pid:number | number[];
     title:string;
     icon:string;
     url:string;

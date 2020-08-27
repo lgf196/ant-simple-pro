@@ -1,4 +1,20 @@
 @import 'src/assets/scss/varible.scss';
+.fade-enter {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+  
+  .fade-enter-active,
+  .fade-exit-active {
+    opacity: 1;
+    transition: all .3s ease-in;
+    transform: translateX(0);
+  }
+  
+  .fade-exit {
+    opacity: 0;
+    transform: translateX(25px);
+  }
 .top-10px{
     margin-bottom: 10px;
 }
@@ -28,6 +44,7 @@
            .option-icon{
                width: 100%;
                display: flex;
+               cursor: pointer;
                .line{
                     position: relative;
                     top: -.06em;
@@ -44,5 +61,13 @@
 }
 .view-pagitaion{
    text-align: right;
-   padding-right: 20px;
+   padding-right: 20px!important;
+}
+.Error404{
+    background: $color1;
+    min-height: 100%;
+}
+.svg-style{
+    font-size:18px!important;
+    fill: #fff!important;
 }
