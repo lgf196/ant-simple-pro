@@ -1,22 +1,20 @@
-import React, { memo,useEffect } from 'react'
+import React, { memo,useEffect} from 'react'
 import Line from '@/components/line'
-import LayoutTableComponent from '@/components/layout/layoutTable'
 import useSetState from '@/hooks/useSetState'
-import Table from '@/components/table'
 import NoData from '@/components/noData'
 import MenuOption from '@/container/stystem/option'
+import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GETMENULIST,SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
-import { ColumnProps } from 'antd/lib/table';
+import { ColumnProps} from 'antd/lib/table';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import {LayoutTableProps,pagaTionBackData} from '@/interfaces'
-import Pagination from '@/components/pagination'
-import {SyncOutlined} from '@ant-design/icons';
+import {pagaTionBackData} from '@/interfaces'
 import {sagaGetMenuListType} from '@/redux/saga/user'
 import {confirm,toast} from '@/utils/function'
 import {delteAccesstOption} from '@/api/login'
 import { requestCode } from '@/utils/varbile';
 import '@/assets/scss/common.scss'
+import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
 type dispatchProps=sagaGetMenuListType | {type:SAGA_GETMENUTREE};
 export interface menuListType extends loading{
     dispatch:Dispatch<dispatchProps>,
@@ -89,21 +87,21 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
     //     event.persist()
     //     console.log('11', par,event)
     // }
-    const datas:LayoutTableProps={
+    const datas:LayoutTablePropsType={
         btnGrounp:[
-           {
-               title:'新增',
-               iconClass:'add', 
-               func:(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>handle(1),
-           }
-        ],
-        iconGrounp:[
             {
-                title:'刷新',
-                func:(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),
-                icon:<SyncOutlined/>
+               title:'新增',
+               onClick:(e:React.MouseEvent<HTMLDivElement, MouseEvent>)=>handle(1),
+               iconClass:'add' 
             }
         ],
+        tableProps:{columns,dataSource:listData.list},
+        pagaTionProps:{
+            total: listData.total,
+            onChanges:(page:number, size?:number)=>setPagaTion({page, size})
+        },
+        receive:()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),
+        loading
     }
     const handle=(state:number,detailData:any={})=>{
         if(state===1 || state===2){ 
@@ -121,15 +119,11 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
     }
     return (
         <>
-            <LayoutTableComponent {...datas}>
-                <Table columns={columns} dataSource={listData.list} loading={loading}/>
-                <Pagination total={listData.total}   onChanges={(page:number, size:number)=>setPagaTion({page, size})} className='view-pagitaion'/>
-            </LayoutTableComponent>
-            <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
+            <LayoutTableComponent {...datas}/>
+             <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
         </>
     )
 })
-
 export default connect(({user,other}:reduceStoreType)=>({
     listData:user.getMenuList,
     loading:other.loading

@@ -23,9 +23,11 @@ export interface TagState{
 class Tag extends React.Component<TagProps, TagState> {
     constructor(props: TagProps) {
         super(props);
-        this.state = { tagsList:[
-             {name:props.location.state as string,path:props.location.pathname,title:props.location.state as string}
-        ]};
+        this.state = { tagsList:[{
+            name:props.location.state?props.location.state:props.route.title,
+            path:props.location.pathname?props.location.pathname:props.route.path as string,
+            title:props.location.state?props.location.state:props.route.title
+        }]};
     }
     componentDidUpdate(prevProps:TagProps){ //如果props改变就调用
         const {location,route,history} =this.props;

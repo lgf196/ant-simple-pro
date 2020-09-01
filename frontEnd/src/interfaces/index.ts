@@ -23,14 +23,15 @@ export interface tagPropsType {
 }
 
 export type grounpProps={
-    title:string,
+    title?:string,
     func?:Function,
-    icon:React.ReactNode
+    icon?:React.ReactNode,
+    component?:React.ReactNode,
 }
 export interface LayoutTableProps {
-    btnGrounp?:(buttonProps & Pick<grounpProps,'func'>)[],
+    btnGrounp?:(buttonProps & Pick<grounpProps,'func' | 'component'>)[],
     iconGrounp?:grounpProps[],
-    tableTitle?:string
+    tableTitle?:string,
 }
 
 export interface pagaTionBackData {

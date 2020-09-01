@@ -3,7 +3,7 @@ import {Tooltip,Dropdown,Menu } from 'antd'
 import {Link } from "react-router-dom"
 import {MenuFoldOutlined,MenuUnfoldOutlined,FullscreenOutlined,CaretDownOutlined } from  '@ant-design/icons';
 import {layoutProps} from '@/interfaces'
-import SvgIcon from '@/components/svgIcon'
+import {FullScreeOut} from '@/components/layout/layoutTable'
 import './topBar.scss'
 type topbarProps={onToggle:Function} & layoutProps;
 const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle}) {
@@ -55,12 +55,12 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle}) 
                     </Tooltip>
                 </div>
                  <div className="title fl">LGF-VIEW -管理系统</div>
-                 {/* <SvgIcon iconClass='qp'/> */}
                 <div className='menu-list fr'>
                 <div>
-                    <Tooltip title={fullscreen?'取消':'全屏'}  placement="bottom">
+                    {/* <Tooltip title={fullscreen?'取消':'全屏'}  placement="bottom">
                         <FullscreenOutlined  onClick={handleFullScreen} className='icon'/>
-                    </Tooltip>
+                    </Tooltip> */}
+                    <FullScreeOut className='icon'/>
                 </div>
                     <Dropdown overlay={dropdown} placement="bottomCenter">
                         <div className='propsUser'>

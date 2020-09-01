@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { Table } from 'antd';
 import {TableProps} from 'antd/lib/table/Table'
 
-const TableCompent:React.FC<TableProps<any>> = memo(function TableCompent({columns,dataSource,loading=true,rowSelection,bordered=false}) {
+const TableCompent:React.FC<TableProps<any>> = memo(function TableCompent({columns,dataSource,loading=true,rowSelection,bordered=false,...props}) {
     return (
         <>
              <Table
@@ -14,6 +14,7 @@ const TableCompent:React.FC<TableProps<any>> = memo(function TableCompent({colum
                 bordered={bordered}
                 rowSelection={rowSelection}
                 loading={loading}
+                {...props}
             />
         </>
     )
