@@ -15,6 +15,11 @@ export const menuRouter:RouteConfig[]=[
                 title: '系统信息',
             },
             {
+                path: '/chart',
+                title: '图表',
+                component: HocRouter(lazy(()=> import('@/pages/chart'))),
+            },
+            {
                 path: '/system',
                 title: '系统',
                 component: FatherLayout,

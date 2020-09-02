@@ -8,6 +8,8 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import store from '@/redux/store'
 import SvgIcon from '@/icons';
+import './assets/scss/common.scss'
+
 SvgIcon();
 ReactDOM.render(
    <ConfigProvider locale={zh_CN}>

@@ -6,7 +6,6 @@ import { push } from 'connected-react-router'
 import tools from '@/utils'
 import * as types from '@/redux/constants/actionType'
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = '/api'
 axios.interceptors.request.use(config => {
     if (localStorage.getItem('token')) {
         config.headers['accesstoken'] = localStorage.getItem('token');
@@ -30,7 +29,7 @@ axios.interceptors.response.use((response) => {
     return Promise.reject(error)
 });
 
-export const resquest = (method: Method='get', url: string, data: any = {},responseType:ResponseType= 'json'): Promise<any> => {
+export const resquest = (method: Method='get', url: string, data: any = {},baseURL:string='/api',responseType:ResponseType= 'json'): Promise<any> => {
     return new Promise((resolve) => {
         let option:AxiosRequestConfig = {
             method,
@@ -50,6 +49,7 @@ export const resquest = (method: Method='get', url: string, data: any = {},respo
                    return ret
                 }
             ],
+            baseURL,
             responseType
         };
         axios.request(option).then(res => {
