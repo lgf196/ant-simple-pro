@@ -120,7 +120,7 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
     return (
         <>
             <LayoutTableComponent {...datas}/>
-             <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
+            <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
         </>
     )
 })

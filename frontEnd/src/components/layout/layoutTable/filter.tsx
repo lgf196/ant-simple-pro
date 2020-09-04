@@ -1,4 +1,4 @@
-import React, { memo ,useEffect} from 'react'
+import React, { memo} from 'react'
 import {FilterOutlined} from '@ant-design/icons';
 import {Tooltip,Popover ,Checkbox } from 'antd'
 import { ColumnsType} from 'antd/lib/table';
@@ -32,7 +32,7 @@ const Filter:React.FC<FilterProps> = memo(function Filter({tablecolumns,filterCo
         <>
            
                 <Popover placement="bottom"  content={filterComponent}>
-                    <Tooltip title='过滤'  placement="top">
+                    <Tooltip title='过滤'  placement="left">
                          <FilterOutlined className={className}/>
                     </Tooltip>
                 </Popover>

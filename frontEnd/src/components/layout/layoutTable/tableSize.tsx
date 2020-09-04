@@ -1,4 +1,4 @@
-import React, { memo,useMemo } from 'react'
+import React, { memo } from 'react'
 import {ColumnHeightOutlined} from '@ant-design/icons';
 import {Tooltip,Dropdown,Menu } from 'antd'
 import { ClickParam } from 'antd/lib/menu';
@@ -13,7 +13,7 @@ const TableSize:React.FC<{tableSize:Function;className?:string}>= memo(function 
       );
     return (
         <>
-             <Tooltip title='密度'  placement="top">
+             <Tooltip title='密度'  placement="left">
                 <Dropdown  overlay={menu} placement="bottomCenter">
                     <ColumnHeightOutlined className={className}/>
                 </Dropdown>

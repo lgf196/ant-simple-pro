@@ -1,5 +1,5 @@
 import React, { memo,useState,useRef} from 'react'
-import {Tooltip } from 'antd'
+import {Tooltip ,ConfigProvider} from 'antd'
 import Buttons from '@/components/button'
 import Line from '@/components/line'
 import {TableProps,ColumnProps} from 'antd/lib/table';
@@ -41,9 +41,12 @@ const LayoutTable:React.FC<LayoutTablePropsType> = memo(function LayoutTable({bt
             component: (<Filter tablecolumns={tableProps.columns!} filterColunsFunc={filterColunsFunc} className='svg-fontSize'/>)
         },{
             component: (<TableSize tableSize={tableSizeFunc} className='svg-fontSize'/>)
+        },{
+            component: (<FullScreeOut elementObj={elemet.current!} className='svg-fontSize'/>)
         }
     ];
     return (
+        <ConfigProvider  getPopupContainer={() => ((elemet.current || document.body) as any) as HTMLElement}>
             <div className='layout-table' ref={elemet}>
                     <div className='header-option'>
                         <div className='header-option-title'>{tableTitle}</div>
@@ -93,6 +96,7 @@ const LayoutTable:React.FC<LayoutTablePropsType> = memo(function LayoutTable({bt
                  className='view-pagitaion' size={pagaTionSize}/>
                  {children}
             </div>
+        </ConfigProvider>
     )
 })
 

@@ -1,20 +1,19 @@
 import React, { memo,useState } from 'react'
 import {Tooltip } from 'antd'
 import { FullscreenExitOutlined, FullscreenOutlined  } from  '@ant-design/icons';
-import screenfull from 'screenfull'
+import screenfull,{Screenfull} from 'screenfull'
 export interface FullScreeOutProps {
     className?:string;
-    elementObj?:Element | null
+    elementObj?:Element
 }
 const FullScreeOut:React.FC<FullScreeOutProps> = memo(function FullScreeOut({className,elementObj}) {
     const [fullscreen,setFullscreen]=useState<boolean>(false);
     const  handleFullScreen=()=> {   // 全屏事件
         let element = elementObj;
         if (screenfull.isEnabled) {
-            screenfull.request(element!)
-            screenfull.exit()
+            screenfull.toggle(element);
+            screenfull.on('change', () => setFullscreen((screenfull as Screenfull).isFullscreen)); 
         } 
-        setFullscreen(!fullscreen);
 }
     return (
         <>
