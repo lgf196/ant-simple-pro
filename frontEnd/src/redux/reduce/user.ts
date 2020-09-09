@@ -5,7 +5,8 @@ const  initialState={
     getMenuList:{
         list:[],
         total:0
-    }
+    },
+    getUserList:[]
 };
 
 export default (state = initialState, action:actionType )=> {
@@ -13,7 +14,9 @@ export default (state = initialState, action:actionType )=> {
         case types.GETMENUTREE:
             return {...state,getMenuTree:action.data};
         case types.GETMENULIST:
-            return {...state,getMenuList:action.data}
+            return {...state,getMenuList:action.data};
+        case types.GET_USER_LIST:
+            return {...state,getUserList:action.data}
         default: 
             return state
     }

@@ -16,7 +16,7 @@ type sizeProps=TableProps<any>['size'];
 type pagaTionProps=PaginationProps['size'] ;
 export type LayoutTablePropsType ={
     tableProps:TableProps<any>;
-    pagaTionProps:PaginationProps | {onChanges:PaginationProps['onChange']}
+    pagaTionProps?:PaginationProps | {onChanges:PaginationProps['onChange']}
 } & LayoutTableProps & loading & {receive:Function};
 
 const LayoutTable:React.FC<LayoutTablePropsType> = memo(function LayoutTable({btnGrounp,

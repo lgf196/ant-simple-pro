@@ -9,3 +9,6 @@ export type LOADING_START=typeof LOADING_START;
 
 export const LOADING_END='LOADING_END';  
 export type LOADING_END=typeof LOADING_END;  
+
+export const GET_USER_LIST='GET_USER_LIST';  
+export type GET_USER_LIST=typeof GET_USER_LIST;  

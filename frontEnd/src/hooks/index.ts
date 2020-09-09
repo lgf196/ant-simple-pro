@@ -1,7 +1,4 @@
-import useSetState from './useSetState'
-import useFormLayout from './useFormLayout'
-import useChangeStatus from './useChangeState'
-import useDel from './useDelte'
-export {
-    useSetState,useFormLayout,useChangeStatus,useDel
-}
+export {default as useSetState} from './useSetState'
+export {default as useFormLayout} from './useFormLayout'
+export {default as useChangeStatus} from './useChangeState'
+export {default as useDel} from './useDelte'

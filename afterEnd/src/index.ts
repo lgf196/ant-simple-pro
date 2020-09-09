@@ -13,8 +13,8 @@ app.all('*', function(req, res, next) {
   next();  
 }); 
 app.use(express.static(path.join(__dirname, 'public'))); //全局设置静态文件目录路劲
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.json({limit: '500mb'}));
+app.use(bodyParser.urlencoded({limit: '500mb', extended: true}));
 app.use(express.json());
 app.use(cookieParser());
 app.use('/api',[userRouter,accseeRouter]);

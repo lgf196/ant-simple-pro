@@ -1,8 +1,8 @@
 import { put, takeEvery ,call,takeLatest} from 'redux-saga/effects'
 import {requestCode} from '@/utils/varbile'
 import * as SAGA from '@/redux/constants/sagaType'
-import {getAccessMenuList,getAccessMenu} from '@/api/login'
-import {getMenuTree,getMenuList} from '@/redux/action/user'
+import {getAccessMenuList,getAccessMenu,userList} from '@/api/login'
+import {getMenuTree,getMenuList,getUserList} from '@/redux/action/user'
 import {menuAccessType,pagationType} from '@/interfaces'
 import tools from '@/utils'
 export interface sagaGetMenuListType {
@@ -31,9 +31,18 @@ export const effects={
         } catch (error) {
             yield put(getMenuList({list:[],total:0}));
         }
-    }
+    },
+    *getUserData(){
+        try {
+            const res:responseData=yield call(userList);
+            res.code===requestCode.successCode &&  (yield put(getUserList(res.data)));
+        } catch (error) {
+             yield put(getUserList([]));
+        }
+    },
 }
 export default function* users(){
     yield takeEvery(SAGA.SAGA_GETMENUTREE, effects.getMenTree);
     yield takeLatest(SAGA.SAGA_GETMENULIST, effects.getMenuList);
+    yield takeEvery(SAGA.SAGA_GET_USER_LIST, effects.getUserData);
 }

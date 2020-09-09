@@ -2,7 +2,7 @@ import {requestCode} from '@/utils/varbile'
 import {buttonProps} from '@/components/button'
 export type statusCode=requestCode;
 export type sortType='desc' | 'asc';
-export interface menuAccessType {  //权限列表
+export interface menuAccessType{  //权限列表
     id:number;
     pid:number | number[];
     title:string;
@@ -42,4 +42,11 @@ export interface pagationType {
   page?:number;
   size?:number;
   sort?:sortType;
+}
+export interface getUserType<T=string>{
+  id:number,
+  email:T,
+  username:T,
+  introduct:T,
+  iconUrl:T
 }

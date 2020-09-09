@@ -33,6 +33,12 @@ export const menuRouter:RouteConfig[]=[
                 ]
             },
             {
+                exact: true,
+                path: '/userManage',
+                title: '用户管理',
+                component: HocRouter(lazy(()=> import('@/pages/user'))),
+            },
+            {
                 path: '/component',
                 title: '组件',
                 component: FatherLayout,

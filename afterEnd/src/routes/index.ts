@@ -1,5 +1,2 @@
-import userRouter from './user';
-import accseeRouter from './access'
-export {
-    userRouter,accseeRouter
-}
+export {default as userRouter} from './user';
+export {default as accseeRouter} from './access';
