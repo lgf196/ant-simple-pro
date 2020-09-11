@@ -1,4 +1,4 @@
-import { put, takeEvery ,call,takeLatest} from 'redux-saga/effects'
+import { put, takeEvery ,call,takeLatest,takeLeading} from 'redux-saga/effects'
 import {requestCode} from '@/utils/varbile'
 import * as SAGA from '@/redux/constants/sagaType'
 import {getAccessMenuList,getAccessMenu,userList} from '@/api/login'
@@ -43,6 +43,6 @@ export const effects={
 }
 export default function* users(){
     yield takeEvery(SAGA.SAGA_GETMENUTREE, effects.getMenTree);
-    yield takeLatest(SAGA.SAGA_GETMENULIST, effects.getMenuList);
-    yield takeEvery(SAGA.SAGA_GET_USER_LIST, effects.getUserData);
+    yield takeLeading(SAGA.SAGA_GETMENULIST, effects.getMenuList);
+    yield takeLeading(SAGA.SAGA_GET_USER_LIST, effects.getUserData);
 }

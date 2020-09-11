@@ -30,9 +30,6 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
           setRequireIcon(isDetailData?false:true);
         }
     }, [visible]);
-    // useEffect(() => {
-    //   // form.validateFields(['icon']);
-    // }, [requireIcon]);
     const  handleSubmit = () => {  //提交
         form.validateFields().then(async (values) => {
            let res=null,formData=null;

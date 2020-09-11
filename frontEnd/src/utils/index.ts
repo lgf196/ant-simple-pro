@@ -29,7 +29,7 @@ class Tools{
    }
    delEmptyString(parps:object){
         let data=Object.assign(parps);
-        Object.keys(parps).forEach((key) => (data[key] === null || data[key] === '' || data[key]===undefined) && delete data[key]);
+        Object.keys(parps).forEach((key) => (data[key] === null  || data[key]===undefined) && delete data[key]);
         return data;
    }
     findAncestry (data2:any[], nodeId2:number) {

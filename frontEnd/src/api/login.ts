@@ -1,5 +1,5 @@
 import {resquest} from '../http'
-import {menuAccessType,pagationType} from '@/interfaces'
+import {menuAccessType,pagationType,getUserType} from '@/interfaces'
 type loginType={
     email:string;
     password:string
@@ -12,3 +12,4 @@ export  const getAccessMenu=<T extends pagationType>(data:T):Promise<responseDat
 export  const getAccesstOption=(data:Partial<menuAccessType>):Promise<responseData>=>resquest('post',`/menu/getCurrentOption`,data);  
 export  const delteAccesstOption=(data:Pick<menuAccessType,'id'>):Promise<responseData>=>resquest('post',`/menu/delete`,data);  
 export  const userList=<T>(data?:T):Promise<responseData>=>resquest('get',`/user/find`);  
+export  const userOption=(data?:Partial<getUserType>):Promise<responseData>=>resquest('post',`/user/edit`,data);  

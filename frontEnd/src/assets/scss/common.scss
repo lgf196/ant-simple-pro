@@ -39,3 +39,7 @@
 .bgW{
   background:$color1;
 }
+.headerIMage{
+  border-radius: 3px;
+  @include wh(55px,55px)
+}

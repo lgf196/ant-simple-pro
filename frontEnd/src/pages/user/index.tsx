@@ -1,26 +1,22 @@
-import React, { memo ,useEffect} from 'react'
-import {useSetState,useDel} from '@/hooks'
+import React, { memo ,useEffect,useCallback} from 'react'
+import {useSetState} from '@/hooks'
 import NoData from '@/components/noData'
-import MenuOption from '@/container/stystem/option'
 import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GET_USER_LIST} from '@/redux/constants/sagaType'
 import { ColumnProps} from 'antd/lib/table';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import {getUserType} from '@/interfaces'
-import {sagaGetMenuListType} from '@/redux/saga/user'
-import {confirm,toast} from '@/utils/function'
-import {delteAccesstOption} from '@/api/login'
-import { requestCode } from '@/utils/varbile';
-import '@/assets/scss/common.scss'
 import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
-
+import EditComponent from '@/container/user-module/userEdit'
+import { requestCode } from '@/utils/varbile'
+import '@/assets/scss/common.scss'
 export interface UserProps extends loading{
     dispatch:Dispatch,
     getUserList:getUserType[]
 }
 const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loading}) {
-    const columns:ColumnProps<{id:number}>[]=[
+    const columns:ColumnProps<getUserType>[]=[
         {
             key: 'index',
             align:'center',
@@ -58,34 +54,51 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
             title: '头像',
             dataIndex: 'iconUrl',
             key: 'iconUrl',
-            render:(text)=><NoData data={text}/>
+            render:(text)=>(
+                <>
+                  {text.length?<img src={text} alt="头像" className='headerIMage'/>:<NoData data={text}/>}
+                </>
+            )
         },
         {
             align:'center',
             title: '操作',
             render: (text, record) => (
                 <>
-                    <a onClick={()=>{}}>编辑</a>
+                    <a  onClick={()=>handle(record)}>编辑</a>
                 </>
             ),
         }
     ];
     const [pagaTion, setPagaTion] = useSetState();
-    useEffect(() => {
+    const [editData, setEditData] =useSetState({visible:false,detailData:{}});
+    const initFetch=useCallback(()=> dispatch({type:SAGA_GET_USER_LIST}),[pagaTion,dispatch]);
+    /*useEffect(() => {
         dispatch({type:SAGA_GET_USER_LIST});
-    }, [pagaTion])
+    }, [pagaTion,dispatch])*/
+    useEffect(() => {
+        initFetch()
+    }, [initFetch])
     const datas:LayoutTablePropsType={
         tableProps:{columns,dataSource:getUserList},
         pagaTionProps:{
             total: getUserList.length,
             onChanges:(page:number, size?:number)=>setPagaTion({page, size})
         },
-        receive:()=>dispatch({type:SAGA_GET_USER_LIST}),
+        // receive:()=>dispatch({type:SAGA_GET_USER_LIST}),
+        receive:()=> initFetch(),
         loading
+    }
+    const handle=(detailData:editDataProps<getUserType>['detailData'])=>{
+        setEditData({visible:true,detailData:Object.assign({},detailData,{
+            iconUrl:detailData.iconUrl.length?detailData.iconUrl.split(',').map((item) => ({uid:Math.random()*100,url:item,response:{code:requestCode.successCode,data:{url:item}}})):[]
+        })});
     }
     return (
         <>
              <LayoutTableComponent {...datas}/>
+             {/* <EditComponent {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GET_USER_LIST})}/> */}
+             <EditComponent {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>initFetch()}/>
         </>
     )
 })

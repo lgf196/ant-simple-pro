@@ -4,7 +4,7 @@ class Tools {
         for (const  key in parps) {
             if (Object.prototype.hasOwnProperty.call(parps, key)) {
                 const item =parps[key];
-                if(item && key!=='id'){
+                if((item!==null || item!=undefined) && key!=='id'){
                     sqlKey.push(`${key}=?`);
                     sqlObj[key]=item;
                 }

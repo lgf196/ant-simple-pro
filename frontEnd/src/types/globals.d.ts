@@ -45,9 +45,14 @@ interface loading {
 
 interface editDetailType<T=unknown,K=unknown> {
     visible:boolean;
-    detailData:T & K;
+    detailData:T;
     onCancel:Function;
     sucessCallback:Function;
     [parps:string]:any
+}
+
+interface editDataProps<T=any>{
+    visible:boolean;
+    detailData:T;
 }
 

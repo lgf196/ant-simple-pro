@@ -45,8 +45,8 @@ export interface pagationType {
 }
 export interface getUserType<T=string>{
   id:number,
-  email:T,
-  username:T,
-  introduct:T,
+  email:string,
+  username:string,
+  introduct:string,
   iconUrl:T
 }

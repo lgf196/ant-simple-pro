@@ -63,7 +63,7 @@ export const upload=asyncHandler(async (req: Request, res: Response, next: NextF
                 const result = yield client.put(key, localFile);
                 const imageSrc =alyOssBucketUrl+ (result as unknown as PutObjectResult).name;   //自定义使用域名访问图片，（别忘记把域名解析至oss）
                 fs.unlinkSync(localFile);    // 上传之后删除本地文件
-                sendResponse(res, 200, sucessCallbackVal(code.successCode, imageSrc, '成功',true));
+                sendResponse(res, 200, sucessCallbackVal(code.successCode,{url:imageSrc}, '成功',true));
             }).catch(function (err) {
                 fs.unlinkSync(localFile);    // 上传之后删除本地文件
                 sendResponse(res, 102, sucessCallbackVal(code.failedCode, err, '上传失败',false));

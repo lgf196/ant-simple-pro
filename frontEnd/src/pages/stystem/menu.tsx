@@ -1,4 +1,4 @@
-import React, { memo,useEffect} from 'react'
+import React, { memo,useEffect,useCallback} from 'react'
 import Line from '@/components/line'
 import {useSetState,useDel} from '@/hooks'
 import NoData from '@/components/noData'
@@ -72,25 +72,26 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
                 <>
                     <a onClick={()=>handle(2,record)}>编辑</a>
                     <Line/>
-                    <a onClick={()=>setReceiptDelte({...record,listen:Math.random()*1000})} style={{color:'#ff4d4f'}}>删除</a>
+                    <a  onClick={()=>setReceiptDelte({...record,listen:Math.random()*1000})} style={{color:'#ff4d4f'}}>删除</a>
                 </>
             ),
         }
     ];
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
     const [pagaTion, setPagaTion] = useSetState();
+    const initFetch=useCallback(()=> dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),[pagaTion,dispatch]);
     const [setReceiptDelte] =useDel(delteAccesstOption,()=>{
-        dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
+        // dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
+        initFetch();
         toast(requestCode.successCode,'删除成功');
         dispatch({type:SAGA_GETMENUTREE});
     });
-    useEffect(() => {
+    /*useEffect(() => {
         dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
-    }, [pagaTion])
-    // const funcs=(par:string,event:React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
-    //     event.persist()
-    //     console.log('11', par,event)
-    // }
+    }, [pagaTion,dispatch]);*/
+    useEffect(() => {
+        initFetch()
+    }, [initFetch]);
     const datas:LayoutTablePropsType={
         btnGrounp:[
             {
@@ -104,7 +105,8 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
             total: listData.total,
             onChanges:(page:number, size?:number)=>setPagaTion({page, size})
         },
-        receive:()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),
+        //  receive:()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),
+         receive:()=>initFetch(),
         loading
     }
     const handle=(state:number,detailData:editDetailType<Partial<menuAccessType>>['detailData']={})=>{
@@ -115,7 +117,8 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
     return (
         <>
             <LayoutTableComponent {...datas}/>
-             <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/>
+            {/* <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GETMENULIST,payload:pagaTion})}/> */}
+            <MenuOption {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>initFetch()}/>
         </>
     )
 })
