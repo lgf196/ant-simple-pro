@@ -12,3 +12,6 @@ export type LOADING_END=typeof LOADING_END;
 
 export const GET_USER_LIST='GET_USER_LIST';  
 export type GET_USER_LIST=typeof GET_USER_LIST;  
+
+export const GET_USER_INFO='GET_USER_INFO';  
+export type GET_USER_INFO=typeof GET_USER_INFO;  

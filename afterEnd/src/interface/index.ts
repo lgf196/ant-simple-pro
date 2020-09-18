@@ -14,9 +14,9 @@ export interface sucessCallbackValInterface {
   (code:codes,data:any,mes?:string | Error,success?:boolean):sucessCallbackValType
 }
 
-export interface RequestHaveDecoded extends Request{  //将decoded属性扩展Request对象上
-  decoded:string | object | undefined
-}
+// export interface RequestHaveDecoded extends Request{  //将decoded属性扩展Request对象上
+//   decoded:string | object | undefined
+// }
 
 export interface userInfoType {
   username:string;

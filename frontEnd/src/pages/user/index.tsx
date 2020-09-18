@@ -70,9 +70,8 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
             ),
         }
     ];
-    const [pagaTion, setPagaTion] = useSetState();
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
-    const initFetch=useCallback(()=> dispatch({type:SAGA_GET_USER_LIST}),[pagaTion,dispatch]);
+    const initFetch=useCallback(()=> dispatch({type:SAGA_GET_USER_LIST}),[dispatch]);
     /*useEffect(() => {
         dispatch({type:SAGA_GET_USER_LIST});
     }, [pagaTion,dispatch])*/
@@ -81,10 +80,6 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
     }, [initFetch])
     const datas:LayoutTablePropsType={
         tableProps:{columns,dataSource:getUserList},
-        pagaTionProps:{
-            total: getUserList.length,
-            onChanges:(page:number, size?:number)=>setPagaTion({page, size})
-        },
         // receive:()=>dispatch({type:SAGA_GET_USER_LIST}),
         receive:()=> initFetch(),
         loading

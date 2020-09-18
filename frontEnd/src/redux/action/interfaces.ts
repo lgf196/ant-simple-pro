@@ -17,5 +17,19 @@ export interface loadingType {
     type:types.LOADING_START | types.LOADING_END,
     data?:boolean
 }
-export type actionType=getMenuTreeActionType | getMenuListActionType 
-                       | CallHistoryMethodAction | loadingType | getUserListActionType;
+export interface getUserInfoActionType {
+    type:types.GET_USER_INFO,
+    data:getUserType
+}
+/**
+ * @description 非redux异步模块的类型
+ */
+export type otherModuleType=CallHistoryMethodAction | loadingType;
+/**
+ * @description user模块action类型申明
+*/
+export type userActionTypeDeclare=getMenuTreeActionType | getMenuListActionType | getUserListActionType | getUserInfoActionType;
+/**
+ * @description 对所有action模块申明合并导出
+ */
+export type actionType=otherModuleType | userActionTypeDeclare;

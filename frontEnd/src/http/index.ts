@@ -21,9 +21,9 @@ axios.interceptors.response.use((response) => {
     if (token) {
         axios.defaults.headers.common['accesstoken'] = token;
     }
-    if (response.status === 200) {
+    // if (response.status === 200) {
         store.dispatch({type:types.LOADING_END}); //触发loading设置为false
-    }
+    // }
     return response
 }, (error) => {
     return Promise.reject(error)

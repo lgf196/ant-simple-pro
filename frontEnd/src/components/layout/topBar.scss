@@ -30,16 +30,17 @@
     }
     .menu-list {
       display: flex;
+      align-items: center;
       padding-right: 15px;
       .icon{
-        padding:8px;
+        padding:0px 15px;
         font-weight: bold;
         @include style(18px,$topbarColor);
       }
       .propsUser{
         cursor: pointer;
          span{
-           padding-left: 3px;
+           padding-left: 5px;
            color: $topbarColor;
          }
       }

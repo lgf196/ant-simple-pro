@@ -4,8 +4,13 @@ import InputComponent from '@/components/input'
 import {login} from '@/api/login'
 import { useHistory } from "react-router-dom";
 import {requestCode} from '@/utils/varbile'
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 import './login.scss'
-const Login:React.FC=()=>{
+export interface LoginProps extends loading{
+    dispatch:Dispatch,
+}
+const Login:React.FC<LoginProps>=({loading})=>{
     const history=useHistory();
     const tailLayout = {
         wrapperCol: { offset: 8, span: 16 },
@@ -44,7 +49,7 @@ const Login:React.FC=()=>{
                         <InputComponent type='password' placeholder='请填写密码'/>
                     </Form.Item>
                     <Form.Item {...tailLayout}>
-                        <Button type="primary" htmlType="submit">
+                        <Button type="primary" htmlType="submit" loading={loading}>
                         登录
                         </Button>
                     </Form.Item>
@@ -54,4 +59,7 @@ const Login:React.FC=()=>{
         </div>
     )
 }
-export default Login;
+export default  connect(({other}:reduceStoreType)=>({
+    loading:other.loading
+}))(Login);
+

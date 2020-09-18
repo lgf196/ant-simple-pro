@@ -63,7 +63,11 @@ class Tag extends React.Component<TagProps, TagState> {
                 this.setState((state)=>({tagsList:[]}));
                 return false;
             }
-            this.setState((state)=>({tagsList:[...state.tagsList,{name:(location.state as string),path:route.path,title:(location.state as string)}]}))
+            this.setState((state)=>({tagsList:[...state.tagsList,{
+                name:(location.state?location.state:route.title) as string,
+                path:route.path,
+                title:(location.state?location.state:route.title) as string
+            }]}))
         }
     } 
     closeTags(index: number,path: string,e: { stopPropagation: () => void }){ //删除标签

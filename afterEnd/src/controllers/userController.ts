@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, RequestHandler } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import xlsx from 'node-xlsx';
 import co from 'co';
 import fs from 'fs'
@@ -17,10 +17,21 @@ export const userInfo=asyncHandler(async (req: Request, res: Response, next: Nex
     sendResponse(res, 200, sucessCallbackVal(code.successCode, db.data, '成功', true));
 });
 /**
+ * @description 查询用户的信息
+ */
+
+export const findUserInfo=asyncHandler(async (req: Request, res: Response, next: NextFunction)=>{
+    let result = null;
+    const decoded=req.decoded; //更具token的信息来查找
+    const sqlStr = `select id,email,username,introduct,iconUrl from user where id=?`;
+    result = await mysqlDb.execute(sqlStr,  [decoded.id]);
+    sendResponse(res, 200, sucessCallbackVal(code.successCode, result.data[0], '成功', true));
+});
+/**
  * @description 用户修改
  */
 export const userEdit=asyncHandler(async (req: Request, res: Response, next: NextFunction)=>{
-    const { iconUrl, introduct, username, id } = req.body;
+    let { iconUrl, introduct, username, id } = req.body;
     const { sqlKey, sqlVal } = tools.sqlDeal(req.body);
     let result = null;
     if (id) { 
@@ -71,6 +82,9 @@ export const upload=asyncHandler(async (req: Request, res: Response, next: NextF
         }
     });
 });
+/**
+ * @description 登录
+ */
 export const login=asyncHandler(async (req: Request, res: Response, next: NextFunction)=>{
     const {email,password}=req.body;
     const sql = `select * from user where email=? and password=?`;

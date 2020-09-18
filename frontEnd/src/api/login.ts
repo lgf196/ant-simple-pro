@@ -13,3 +13,4 @@ export  const getAccesstOption=(data:Partial<menuAccessType>):Promise<responseDa
 export  const delteAccesstOption=(data:Pick<menuAccessType,'id'>):Promise<responseData>=>resquest('post',`/menu/delete`,data);  
 export  const userList=<T>(data?:T):Promise<responseData>=>resquest('get',`/user/find`);  
 export  const userOption=(data?:Partial<getUserType>):Promise<responseData>=>resquest('post',`/user/edit`,data);  
+export  const userInfo=():Promise<responseData>=>resquest('get',`/user/info`);  

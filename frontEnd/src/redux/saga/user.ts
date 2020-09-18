@@ -1,8 +1,8 @@
 import { put, takeEvery ,call,takeLatest,takeLeading} from 'redux-saga/effects'
 import {requestCode} from '@/utils/varbile'
 import * as SAGA from '@/redux/constants/sagaType'
-import {getAccessMenuList,getAccessMenu,userList} from '@/api/login'
-import {getMenuTree,getMenuList,getUserList} from '@/redux/action/user'
+import {getAccessMenuList,getAccessMenu,userList,userInfo} from '@/api/login'
+import {getMenuTree,getMenuList,getUserList,getUserInfo} from '@/redux/action/user'
 import {menuAccessType,pagationType} from '@/interfaces'
 import tools from '@/utils'
 export interface sagaGetMenuListType {
@@ -34,15 +34,25 @@ export const effects={
     },
     *getUserData(){
         try {
+           
             const res:responseData=yield call(userList);
             res.code===requestCode.successCode &&  (yield put(getUserList(res.data)));
         } catch (error) {
-             yield put(getUserList([]));
+            yield put(getUserList([]));
+        }
+    },
+    *getUserInfoData(){
+        try {
+            const res:responseData=yield call(userInfo);
+            res.code===requestCode.successCode &&  (yield put(getUserInfo(res.data)));
+        } catch (error) {
+             yield put(getUserInfo({}));
         }
     },
 }
 export default function* users(){
     yield takeEvery(SAGA.SAGA_GETMENUTREE, effects.getMenTree);
-    yield takeLeading(SAGA.SAGA_GETMENULIST, effects.getMenuList);
-    yield takeLeading(SAGA.SAGA_GET_USER_LIST, effects.getUserData);
+    yield takeLatest(SAGA.SAGA_GETMENULIST, effects.getMenuList);
+    yield takeLatest(SAGA.SAGA_GET_USER_LIST, effects.getUserData);
+    yield takeLeading(SAGA.SAGA_GET_USER_INFO, effects.getUserInfoData);
 }

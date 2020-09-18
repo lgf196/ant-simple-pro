@@ -9,12 +9,12 @@ import { connect } from 'react-redux';
 import {getUserType} from '@/interfaces'
 import {userOption} from '@/api/login'
 import ImgUpload,{ImgUploadFile} from '@/components/upload/imgUpload'
-
+import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType';
 export interface UserEditProps extends editDetailType<Partial<getUserType>>,loading{
     dispatch:Dispatch;
 }
 const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailData,
-    onCancel,sucessCallback,loading}) {
+    onCancel,sucessCallback,loading,dispatch}) {
     const [form] = Form.useForm();
     const [formItemLayout]=useFormLayout();
     useEffect(() => {
@@ -31,7 +31,7 @@ const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailD
             })
             res=await userOption({...formData,id:detailData.id});
             if(res.code===requestCode.successCode){
-                toast();sucessCallback();onCancel();
+                toast();sucessCallback();onCancel(); dispatch({type:SAGA_GET_USER_INFO});
             }
         })
         

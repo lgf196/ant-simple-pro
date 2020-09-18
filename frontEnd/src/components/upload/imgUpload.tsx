@@ -1,5 +1,5 @@
 import React from 'react'
-import { Upload} from 'antd'
+import { Upload,Modal} from 'antd'
 import { PlusOutlined} from '@ant-design/icons';
 import {UploadProps,UploadChangeParam} from 'antd/lib/upload'
 import {requestCode} from '@/utils/varbile'
@@ -9,9 +9,13 @@ import { UploadFile, UploadFileStatus } from 'antd/lib/upload/interface';
 export interface ImgUploadProps extends UploadProps{
     limit:number
 }
+export interface ImgUploadState{
+    previewVisible:boolean;
+    previewImage:string;
+}
 export type ImgUploadFile=UploadFile;  //导出文件类型
 
-class ImgUpload extends React.Component<ImgUploadProps,{}> {
+class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
     static defaultProps={  
         action:'api/fileUpload',
         fileList:[],
@@ -19,6 +23,16 @@ class ImgUpload extends React.Component<ImgUploadProps,{}> {
     };
     constructor(props: ImgUploadProps) {
         super(props);
+        this.state ={
+            previewVisible:false,
+            previewImage:''
+        }
+    }
+    handlePreview=(file:UploadFile)=>{
+        this.setState({
+            previewImage: file.url!,
+            previewVisible: true
+        });
     }
     handleCurrencyChange = (currency:UploadChangeParam) => {
         let fileList:Partial<UploadFile>[]=[...currency.fileList] || [];
@@ -42,14 +56,25 @@ class ImgUpload extends React.Component<ImgUploadProps,{}> {
     }
     render() { 
         const {fileList,action,limit} =this.props
+        const {previewVisible,previewImage}=this.state;
         return ( 
-            <Upload name="file"  
-               {...this.props}
-                onChange={this.handleCurrencyChange} 
-                fileList={fileList} action={action} 
-                listType="picture-card">
-                 {fileList!.length>=limit?null:<PlusOutlined/>} 
-            </Upload>
+            <>
+                <Upload name="file"  
+                {...this.props}
+                    onChange={this.handleCurrencyChange} 
+                    fileList={fileList} action={action} 
+                    onPreview={this.handlePreview}
+                    listType="picture-card">
+                    {fileList!.length>=limit?null:<PlusOutlined/>} 
+                </Upload>
+                <Modal
+                    visible={previewVisible}
+                    footer={null}
+                    onCancel={()=> this.setState({previewVisible:false})}
+                >
+                    <img alt="example" style={{ width: '100%'}} src={previewImage} />
+                </Modal>
+            </>
          );
     }
 }

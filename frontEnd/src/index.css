@@ -24,3 +24,7 @@ input,textarea{border:none;outline:none;resize: none;background: transparent;}
 .clearfix::after{content:"\200B";display:block;height:0;clear:both; }
 .fl{float:left}
 .fr{float:right}
+img{
+   vertical-align: middle;
+    border-style: none;
+}

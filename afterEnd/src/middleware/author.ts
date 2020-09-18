@@ -1,9 +1,8 @@
 import jwt, { VerifyCallback } from 'jsonwebtoken';
-import { Request, Response, NextFunction, RequestHandler } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import asyncHandler from '../middleware/asyncHandler'
 import ErrorResponse from '../utils/errorResponse';
 import {code} from '../utils/variable'
-import {RequestHaveDecoded} from '../interface'
 class SetToken<T> {
   public screenKey: jwt.Secret;
   public expiresIn: number | undefined;  //有效时间
@@ -32,7 +31,7 @@ class SetToken<T> {
           new ErrorResponse('没有权限', code.noLoginTokenCode)
         );
       }
-      req.decoded = decoded;
+      req.decoded = decoded as decodedType;
       next();
     }
     jwt.verify(token, this.screenKey, callback);
