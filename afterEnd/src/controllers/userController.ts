@@ -12,7 +12,13 @@ import {userInfoType} from '../interface'
 import { sendResponse } from '../middleware/response'
 
 export const userInfo=asyncHandler(async (req: Request, res: Response, next: NextFunction)=>{
-    const sqlStr = `select id,email,username,introduct,iconUrl from user`;
+    const {username}=req.query;
+    let sqlStr=null;
+    if(username){  //如果含有username就进行模糊匹配
+        sqlStr=`select id,email,username,introduct,iconUrl from user where username like '%${username}%'`;
+    }else{
+        sqlStr = `select id,email,username,introduct,iconUrl from user`;
+    }
     const db=await mysqlDb.execute(sqlStr);
     sendResponse(res, 200, sucessCallbackVal(code.successCode, db.data, '成功', true));
 });

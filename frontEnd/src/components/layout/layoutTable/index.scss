@@ -2,12 +2,16 @@
 .layout-table{
     background: $color1;
     // padding-bottom: 20px;
+    .header-others{
+        width: 100%;
+        padding:20px 20px 0 20px;
+    }
     .header-option{
         padding:20px;
         display: flex;
         width: 100%;
         align-items: center;
-        justify-content: space-around;
+         justify-content: space-around;
         &-title{
             flex: 1 1;
             font-weight: 500;

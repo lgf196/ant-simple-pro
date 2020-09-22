@@ -1,6 +1,8 @@
-import React, { memo ,useEffect,useCallback} from 'react'
+import React, { memo ,useEffect,useCallback,useState} from 'react'
 import {useSetState} from '@/hooks'
 import NoData from '@/components/noData'
+import EditComponent from '@/container/user-module/userEdit'
+import UserSearch from '@/container/user-module/userSearch'
 import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GET_USER_LIST} from '@/redux/constants/sagaType'
 import { ColumnProps} from 'antd/lib/table';
@@ -8,11 +10,13 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import {getUserType} from '@/interfaces'
 import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
-import EditComponent from '@/container/user-module/userEdit'
 import { requestCode } from '@/utils/varbile'
+import { Input } from 'antd';
+import {sagaGetUserDataType} from '@/redux/saga/user'
+import {userListType} from '@/api/login'
 import '@/assets/scss/common.scss'
 export interface UserProps extends loading{
-    dispatch:Dispatch,
+    dispatch:Dispatch<sagaGetUserDataType>,
     getUserList:getUserType[]
 }
 const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loading}) {
@@ -71,17 +75,24 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
         }
     ];
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
-    const initFetch=useCallback(()=> dispatch({type:SAGA_GET_USER_LIST}),[dispatch]);
-    /*useEffect(() => {
-        dispatch({type:SAGA_GET_USER_LIST});
-    }, [pagaTion,dispatch])*/
+    const { Search } = Input;
+    const [username,setUsername]=useState<userListType['username']>(undefined);
+    const initFetch=useCallback((username)=> dispatch({type:SAGA_GET_USER_LIST,payload:{username}}),[dispatch]);
     useEffect(() => {
-        initFetch()
-    }, [initFetch])
+        initFetch(username)
+    }, [initFetch,username])
     const datas:LayoutTablePropsType={
+        btnGrounp:[{
+            component: <Search
+            enterButton 
+            placeholder="请输入用户名"
+            onSearch={(value) =>setUsername(value?value:undefined)}
+            style={{ width: 200 }}
+            allowClear
+          />
+        }],
         tableProps:{columns,dataSource:getUserList},
-        // receive:()=>dispatch({type:SAGA_GET_USER_LIST}),
-        receive:()=> initFetch(),
+        receive:()=> initFetch(username),
         loading
     }
     const handle=(detailData:editDataProps<getUserType>['detailData'])=>{
@@ -91,9 +102,10 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
     }
     return (
         <>
-             <LayoutTableComponent {...datas}/>
-             {/* <EditComponent {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>dispatch({type:SAGA_GET_USER_LIST})}/> */}
-             <EditComponent {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>initFetch()}/>
+             <LayoutTableComponent {...datas}>
+                <UserSearch setUsername={setUsername}/>
+             </LayoutTableComponent>
+             <EditComponent {...editData} onCancel={()=>setEditData({visible:false})} sucessCallback={()=>initFetch(username)}/>
         </>
     )
 })
