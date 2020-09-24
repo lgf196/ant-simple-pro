@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 import {ColumnHeightOutlined} from '@ant-design/icons';
 import {Tooltip,Dropdown,Menu } from 'antd'
-import { ClickParam } from 'antd/lib/menu';
+import { MenuInfo } from 'rc-menu/lib/interface';
 const TableSize:React.FC<{tableSize:Function;className?:string}>= memo(function TableSize({tableSize,className}) {
-    const handleClick=(e:ClickParam)=>tableSize(e.key)
+    const handleClick=(e:MenuInfo)=>tableSize(e.key)
     const menu = (
         <Menu onClick={handleClick} selectable defaultSelectedKeys={['middle']}>
           <Menu.Item key='middle'>默认</Menu.Item>
@@ -12,6 +12,7 @@ const TableSize:React.FC<{tableSize:Function;className?:string}>= memo(function 
         </Menu>
       );
     return (
+
         <>
              <Tooltip title='密度'  placement="left">
                 <Dropdown  overlay={menu} placement="bottomCenter">

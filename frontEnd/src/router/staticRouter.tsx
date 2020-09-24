@@ -6,7 +6,9 @@ import { RouteConfig} from 'react-router-config'
 import { Redirect } from 'react-router-dom'
 import Error from '@/pages/error'
 import Login from '@/pages/login'
-
+/** 
+ * @description 没有权限和不依赖layout组价的路由
+*/
 export const noMenuRouter=[  
     {
         path: '/',
@@ -25,11 +27,6 @@ export const menuRouter:RouteConfig[]=[
         path: '/home',
         component:HocRouter(lazy(()=> import('@/pages/home'))),
         title: '系统信息',
-    },
-    {
-        path: '/chart',
-        title: '图表',
-        component: HocRouter(lazy(()=> import('@/pages/chart'))),
     },
     {
         path: '/system',
@@ -54,7 +51,7 @@ export const menuRouter:RouteConfig[]=[
         exact: true,
         path: '/userInfo',
         title: '用户信息',
-         component: HocRouter(lazy(()=> import('@/pages/user/userInfo'))),
+        component: HocRouter(lazy(()=> import('@/pages/user/userInfo'))),
     },
     {
         path: '/component',
@@ -62,23 +59,16 @@ export const menuRouter:RouteConfig[]=[
         component: FatherLayout,
         routes: [
             {
-                path: '/component/mapTable',
-                component:FatherLayout,
-                title: '图表管理',
-                routes: [
-                    {
-                        exact: true,
-                        path:'/component/mapTable/rice',
-                        component:HocRouter(lazy(()=> import('@/pages/stystem/find'))),
-                        title: '园表组件', 
-                    }
-                ]
+                exact: true,
+                path: '/component/chart',
+                title: '图表',
+                component: HocRouter(lazy(()=> import('@/pages/package/chart'))),
             },
             {
                 exact: true,
-                path: '/component/button',
-                component:HocRouter(lazy(()=> import('@/pages/stystem/menu'))),
-                title: '按钮管理',
+                path: '/component/everUse',
+                component:HocRouter(lazy(()=> import('@/pages/package/everUse'))),
+                title: '按钮',
             },
         ]
     },
@@ -89,9 +79,8 @@ export const menuRouter:RouteConfig[]=[
     },
     {
         path: '*',
-        title: '404',
-        component: Error,
-    }
+        render: () => <Redirect to={{ pathname: '/404'}}/>
+    },
 ]
 
 export default [
@@ -102,6 +91,6 @@ export default [
     },
     {
         path: '*',
-        component: Error,
-    }
+        render: () => <Redirect to={{ pathname: '/404'}}/>
+    },
 ]

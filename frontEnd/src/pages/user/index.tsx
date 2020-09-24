@@ -11,7 +11,7 @@ import { Dispatch } from 'redux';
 import {getUserType} from '@/interfaces'
 import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
 import { requestCode } from '@/utils/varbile'
-import { Input } from 'antd';
+import { Input,Image } from 'antd';
 import {sagaGetUserDataType} from '@/redux/saga/user'
 import {userListType} from '@/api/login'
 import '@/assets/scss/common.scss'
@@ -60,7 +60,7 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
             key: 'iconUrl',
             render:(text)=>(
                 <>
-                  {text.length?<img src={text} alt="头像" className='headerIMage'/>:<NoData data={text}/>}
+                  {text.length?<Image src={text} alt="头像" style={{cursor:'pointer'}} width={50} height={50}/>:<NoData data={text}/>}
                 </>
             )
         },

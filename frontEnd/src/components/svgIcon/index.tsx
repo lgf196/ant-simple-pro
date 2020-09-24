@@ -1,7 +1,7 @@
 import React, { memo ,useMemo} from 'react'
 import Icon from '@ant-design/icons';
 export type svgProps={
-    iconClass?:string,
+    iconClass:string,
     fill?:string,
     fontSize?:string,
     className?:string

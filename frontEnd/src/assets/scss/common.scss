@@ -40,7 +40,11 @@
 .bgW{
   background:$color1;
 }
-.headerIMage{
-  border-radius: 3px;
-  @include wh(55px,55px)
+code{
+  margin: 0 1px;
+    padding: .2em .4em;
+    font-size: .9em;
+    background: #f2f4f5;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
 }

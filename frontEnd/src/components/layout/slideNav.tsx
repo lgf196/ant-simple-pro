@@ -1,13 +1,13 @@
 import React from 'react'
 import { Menu, Layout} from 'antd';
 import { Link,withRouter,RouteComponentProps} from 'react-router-dom'
-import IconComponent from '@/components/icon'
 import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import {menuAccessType,layoutProps} from '@/interfaces'
 import {Location,UnregisterCallback} from 'history'
 import SvgIcon from '@/components/svgIcon'
+import { OpenEventHandler  } from 'rc-menu/lib/interface';
 import './slideNav.scss'
 import '@/assets/scss/common.scss'
 export interface SlideNavProps extends layoutProps,RouteComponentProps{
@@ -121,7 +121,7 @@ class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
                     </div>  
                     <Menu mode="inline" 
                     openKeys={openKeys} 
-                    onOpenChange={this.onOpenChange} 
+                    onOpenChange={this.onOpenChange as OpenEventHandler} 
                     defaultSelectedKeys={[defaultSelectedKeys]}
                      selectedKeys={[defaultSelectedKeys]}
                     {...defaultProps}
