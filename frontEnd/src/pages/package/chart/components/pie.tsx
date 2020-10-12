@@ -46,7 +46,6 @@ const Pie = memo(function Pie(props) {
         legend:{
             text:{
                 formatter:(text:any,cfg:any):string=>{
-                    console.log('object', text,cfg)
                     const value=data.filter((item)=>item.type===text)[0].value;
                    return text +'  |  ' +value+'%'
                 }

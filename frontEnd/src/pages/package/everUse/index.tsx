@@ -4,6 +4,7 @@ import Button from '@/components/button'
 import {FilterOutlined} from '@ant-design/icons';
 import SvgIcon from '@/components/svgIcon'
 import ImgUpload,{ImgUploadFile,UploadChangeParams} from '@/components/upload/imgUpload'
+import Select from '@/components/select'
 import { requestCode } from '@/utils/varbile';
 const EverUse = memo(function EverUse(props) {
     const fileList= [
@@ -22,6 +23,11 @@ const EverUse = memo(function EverUse(props) {
           thumbUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600943901147&di=8ecded57b624cfcea1564f56fe7c0f1b&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170614%2F8d13542028fd458e8d92fe99037dda70_th.jpg',
           response:'服务异常'
         },
+      ];
+      const selectList=[
+        {name:'react',id:1},
+        {name:'vue',id:2},
+        {name:'angular',id:3}
       ];
       const handChange = (val:UploadChangeParams) => {
         console.log('handChange', val)
@@ -59,6 +65,18 @@ const EverUse = memo(function EverUse(props) {
                     </div>
                     <p><span className={style.toast}>温馨提示</span>：我们在antd <code>Upload</code> 组件的基础上进行了二次封装，新增了
                     <code>limit，typeModule等属性</code> 具体的请看源码，和提供的案例 ，antd <code>Upload</code> 原有的属性依旧支持，具体请查看antd官网。</p>
+                </li>
+                <li>
+                    <h3>Select组件</h3>
+                    <div>
+                       <Select data={selectList} valKey='id' valName='name' style={{width:'200px',marginRight:'10px'}}/>
+                       <Select data={selectList} valKey='id' valName='name' style={{width:'200px'}} value={2} size='large'/>
+                    </div>
+                    <p><span className={style.toast}>温馨提示</span>：我们在antd <code>Select</code> 组件的基础上进行了二次封装，新增了
+                    <code>data，valKey,valName等属性</code> 具体的请看源码，和提供的案例 ，antd <code>Select</code> 原有的属性依旧支持，具体请查看antd官网。</p>
+                </li>
+                <li  className={style.toast}>
+                    我们还提供了一些其它的组件，具体请参看项目源码和案例。
                 </li>
             </ul>
         </div>

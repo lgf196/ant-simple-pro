@@ -1,3 +1,6 @@
+/**
+ * @description 状态码
+ */
 export enum requestCode {
     failedCode=111,         //失败
     successCode='000',        //成功
@@ -5,6 +8,13 @@ export enum requestCode {
     noRouterCode=404,        //路劲找不到
     serverErrorCode=500      //服务错误
 };
+
+/**
+ * @description 响应式的配置参数
+ */
+export enum responsiveConfig {
+
+}
 
 /**
  * @description token的判断

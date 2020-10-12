@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import {  Select } from 'antd';
-import {SelectProps} from 'antd/lib/select'
+import {SelectProps, SelectValue} from 'antd/lib/select'
 const { Option } = Select;
 
 interface SelectsType extends SelectProps<any>{
@@ -8,15 +8,15 @@ interface SelectsType extends SelectProps<any>{
     valKey:string;
     valName:string
 }
-
-const Selects:React.FC<SelectsType> = memo(function Selects({data,valKey,valName,onChange,value,mode,optionFilterProp,style}) {
-   const handleCurrencyChange = (currency: any ,option: any)=> {
+const Selects:React.FC<SelectsType> = memo(function Selects({data,valKey,valName,onChange,value,...props}) {
+   const handleCurrencyChange = (currency: SelectValue,option:any)=> {
         onChange &&  onChange(currency,option);
    };
     return (
         <>
-              <Select  style={style} placeholder='请选择' size='large'  onChange={handleCurrencyChange} 
-               value={value} allowClear={true} mode={mode} optionFilterProp={optionFilterProp}>
+              <Select  {...props} placeholder='请选择'   onChange={handleCurrencyChange} value={value}   showSearch 
+              allowClear={true}  filterOption={(input, option:any) =>option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+              >
                     {
                          data.map((item,index)=>(
                               <Option value={item[valKey]} key={index}>{item[valName]}</Option>)
@@ -26,6 +26,4 @@ const Selects:React.FC<SelectsType> = memo(function Selects({data,valKey,valName
         </>
     )
 })
-
-
 export default Selects

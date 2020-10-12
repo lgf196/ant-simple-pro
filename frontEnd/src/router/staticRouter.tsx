@@ -68,7 +68,19 @@ export const menuRouter:RouteConfig[]=[
                 exact: true,
                 path: '/component/everUse',
                 component:HocRouter(lazy(()=> import('@/pages/package/everUse'))),
-                title: '按钮',
+                title: '常用组件',
+            },
+            {
+                exact: true,
+                path: '/component/form',
+                component:HocRouter(lazy(()=> import('@/pages/package/form'))),
+                title: '表单组件',
+            },
+            {
+                exact: true,
+                path: '/component/table',
+                component:HocRouter(lazy(()=> import('@/pages/package/table'))),
+                title: 'table组件',
             },
         ]
     },

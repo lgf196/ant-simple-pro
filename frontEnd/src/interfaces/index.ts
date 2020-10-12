@@ -12,7 +12,9 @@ export interface menuAccessType{  //权限列表
     children?:menuAccessType[]
 }
 export interface layoutProps {
-  collapsed:boolean
+  collapsed:boolean,
+  width?:number,
+  setIsMobileDrawer?:Function
 }
 
 export interface tagPropsType {

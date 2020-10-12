@@ -7,7 +7,7 @@ interface PagationType extends PaginationProps{
 }
 const Pagation:React.FC<PagationType> = memo(function Pagation({pageSizeOptions,defaultPageSize,total=0,onChanges,...props}) {
     const Change=(page: number, pageSize?: number | undefined)=>{
-        onChanges!(page, pageSize);
+        onChanges && onChanges(page, pageSize);
         animateStop();
     }
     return (
