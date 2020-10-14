@@ -5,14 +5,18 @@
       right: 0;
       top:48px;
       bottom: 0;
+      overflow: hidden;
       transition: all 0.3s ease-in-out;
       background: #f0f2f5;   
     }
     .content {
       width: auto;
       height: 100%;
-      padding: 10px;
+      padding: 10px 10px 25px 10px;
       overflow-y: scroll;
       box-sizing: border-box;
+      .pageContent{
+        min-height:calc(100vh - 185px);
+      }
   }
 

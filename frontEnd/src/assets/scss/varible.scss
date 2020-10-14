@@ -14,9 +14,10 @@ $color1:#fff;
   box-sizing: border-box;
   flex-grow: $n;
 }
-@mixin style($size,$color){  
+@mixin style($size,$color,$bold:normal){  
   font-size:$size;
   color: $color;
+  font-weight: $bold;
 }
 @mixin wh($w,$h){
   width: $w;

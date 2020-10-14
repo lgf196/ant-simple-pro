@@ -11,6 +11,7 @@ import store from '@/redux/store'
 import SvgIcon from '@/icons';
 // import './il8n'
 import './assets/scss/common.scss'
+import './assets/scss/update.antd.css'
 SvgIcon();
 ReactDOM.render(
    <ConfigProvider locale={locale}>

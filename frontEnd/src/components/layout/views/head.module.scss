@@ -7,21 +7,27 @@
      background-color: #fff;
      box-shadow: 0 2px 8px #f0f1f2;
      z-index: 10;
-    .collapses{
-      height: 100%;
-      width: 48px;
-      text-align: center;
-      cursor: pointer;
-      .icon{
-        font-weight: bold;
-        padding-top:15px;
-        @include style(18px,$topbarColor);
-      }
-    }
-    .title {
-      height: 100%;
-      font-weight: bold;
-      @include style(17px,$topbarColor);
+     overflow: hidden;
+     .headLeft{
+       display: flex;
+       padding-left: 20px;
+       .logon{
+          a{
+            display: flex;
+            height: 100%;
+            align-items: center;
+            h2{
+            height: 32px;
+            margin: 0 0 0 12px;
+            line-height: 32px;
+            @include style(18px,#1890ff,600);
+            }
+          }
+        }
+        .menu{
+          @include style(18px,#666,600);
+          padding-left: 40px;
+        }
     }
     .menuList {
       display: flex;

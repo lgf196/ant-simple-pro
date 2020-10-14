@@ -9,6 +9,8 @@ import { Dispatch } from 'redux';
 import {SAGA_GET_USER_INFO} from '@/redux/constants/sagaType'
 import HeadImage from '@/components/headImage'
 import style from './head.module.scss'
+import  {responsiveConfig} from '@/utils/varbile'
+import SvgIcon from '@/components/svgIcon'
 export type topbarProps={onToggle:Function,getUserInfo:getUserType,dispatch:Dispatch} & layoutProps;
 const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,getUserInfo,dispatch,width,setIsMobileDrawer}) {
     useEffect(() => {
@@ -25,17 +27,23 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
                         </Menu.Item>
                     </Menu>);
     const options=()=>{
-        setIsMobileDrawer!(width!<750?true:false);
+        setIsMobileDrawer!(width!<responsiveConfig.mobileInnerWidth?true:false);
         onToggle(!collapsed);  
     }
     return (
             <div className={`${style.head} clearfix`}>
-               
-                <div className={`${style.title} fl`}>Antd Simple Pro</div>
-                <div className={`${style.collapses} fl`}  onClick={options}>
-                    <Tooltip title={collapsed?'张开':'缩起'}  placement="bottom">
+                <div className={`${style.headLeft} fl`}>
+                    <div className={style.logon}>
+                        <Link to="/home">
+                            <SvgIcon iconClass='logon' fontSize='30px'/>
+                            {
+                               !collapsed?<h2>Ant Simple Pro</h2>:null
+                            }
+                        </Link>
+                    </div>
+                    <div className={`${style.menu}`}  onClick={options}>
                         {collapsed ?<MenuUnfoldOutlined  className={style.icon}/>:<MenuFoldOutlined className='icon'/>}
-                    </Tooltip>
+                    </div>
                 </div>
                 <div className={`${style.menuList} fr`}>
                     <FullScreeOut className={style.icon}/>

@@ -10,7 +10,7 @@ import Pagination from '@/components/pagination'
 import { PaginationProps } from 'antd/lib/pagination'
 import { TableSize, FullScreeOut, Filter } from '@/components/layout/layoutTable'
 import '@/assets/scss/common.scss'
-import './index.scss'
+import style from './index.module.scss'
 
 type sizeProps = TableProps<any>['size'];
 type pagaTionProps = PaginationProps['size'];
@@ -47,15 +47,15 @@ const LayoutTable: React.FC<LayoutTablePropsType> = memo(function LayoutTable({ 
     ];
     return (
         <ConfigProvider getPopupContainer={() => ((elemet.current || document.body) as any) as HTMLElement}>
-            <div className='layout-table' ref={elemet}>
+            <div className={style.layoutTable} ref={elemet}>
                 {
                     // 占位，可以是select或者其他外传的组件
-                    children?<div className='header-others'>{children}</div>:null
+                    children?<div className={style['header-others']}>{children}</div>:null
                 }
-                <div className='header-option'>
-                    <div className='header-option-title'>{tableTitle}</div>
-                    <div className='header-option-func'>
-                        <div className='option-btn'>
+                <div className={style['header-option']}>
+                    <div className={style['header-option-title']}>{tableTitle}</div>
+                    <div className={style['header-option-func']}>
+                        <div className={style['option-btn']}>
                             {
                                 btnGrounp?.length ? btnGrounp.map((item, index) => (
                                     <div key={index}>
@@ -71,17 +71,17 @@ const LayoutTable: React.FC<LayoutTablePropsType> = memo(function LayoutTable({ 
                                 )) : null
                             }
                         </div>
-                        <div className='option-icon'>
+                        <div className={style['option-icon']}>
                             {(btnGrounp?.length) ? <Line /> : null}
-                            <div className='icon-grounp'>
+                            <div className={style['icon-grounp']}>
                                 {
-                                    defauluIcon.map((item, index) => <div className='icon-data' key={index}>
+                                    defauluIcon.map((item, index) => <div className={style['icon-data']} key={index}>
                                         <div>{item.component}</div>
                                     </div>)
                                 }
                                 {
                                     iconGrounp ? iconGrounp.map((item, index) => (
-                                        (<div className='icon-data' key={index}>
+                                        (<div className={style['icon-data']} key={index}>
                                             {
                                                 item.component ? <div>{item.component}</div> : (
                                                     <Tooltip title={item.title} placement="bottom">
@@ -96,8 +96,7 @@ const LayoutTable: React.FC<LayoutTablePropsType> = memo(function LayoutTable({ 
                     </div>
                 </div>
                 <Table loading={loading} size={tableSize} {...tableProps} columns={columns} />
-                <Pagination {...pagaTionProps}
-                    className='view-pagitaion' size={pagaTionSize} />
+                <Pagination {...pagaTionProps} className='view-pagitaion' size={pagaTionSize} />
             </div>
         </ConfigProvider>
     )
