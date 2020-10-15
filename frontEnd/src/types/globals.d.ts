@@ -42,7 +42,9 @@ interface Date{
 interface loading {
     loading:boolean
 }
-
+interface className {
+    className?:string
+}
 interface editDetailType<T=unknown,K=unknown> {
     visible:boolean;
     detailData:T;

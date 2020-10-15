@@ -44,7 +44,7 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
                         <Tag collapsed={collapsed}  route={routeArr}></Tag>
                         <div className={style.content} id='content'>
                             <div className={style.pageContent}>{renderRoutes(route.routes,{},{location})}</div>
-                            <Footer/>
+                            <Footer name='Ant Simple Pro' ahthor='Lgf&qyh'/>
                         </div>
                     {/* </CSSTransition>
                 </TransitionGroup> */}
