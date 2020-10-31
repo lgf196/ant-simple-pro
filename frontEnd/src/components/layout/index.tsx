@@ -23,7 +23,6 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
     }, [width]); 
     return (
         <div className='layouts'>
-            {/* <SliderNav collapsed={collapsed}></SliderNav> */}
             <Head {...topBarProps()} width={width} setIsMobileDrawer={setIsMobileStatus}></Head>
             {
                 width<responsiveConfig.mobileInnerWidth?<Drawer bodyStyle={{padding:'0'}} placement='left' closable={false} 
@@ -31,7 +30,6 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
                     <SlideNav collapsed={collapsed}/>
                 </Drawer>: <SlideNav collapsed={collapsed}/>
             }
-            {/* <Tag collapsed={collapsed}  route={routeArr}></Tag> */}
             <div className={style.contentWrapper} 
                style={{left:collapsed?width<responsiveConfig.mobileInnerWidth&&!isMobileStatus?`${responsiveConfig.sliderMobileLeft}`:`${responsiveConfig.sliderPackUpLeft}px`:`${responsiveConfig.sliderExpansionLeft}px`}}>
                 {/* <TransitionGroup style={{height:'100%'}}>
@@ -41,7 +39,7 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
                         classNames="fade"
                         unmountOnExit
                         > */}
-                        <Tag collapsed={collapsed}  route={routeArr}></Tag>
+                        <Tag collapsed={collapsed}  route={routeArr} width={width}></Tag>
                         <div className={style.content} id='content'>
                             <div className={style.pageContent}>{renderRoutes(route.routes,{},{location})}</div>
                             <Footer name='Ant Simple Pro' ahthor='Lgf&qyh'/>

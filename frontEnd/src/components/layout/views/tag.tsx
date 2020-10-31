@@ -2,16 +2,21 @@ import React from "react";
 import {layoutProps,tagPropsType} from '@/interfaces'
 import { NavLink ,RouteComponentProps,withRouter} from 'react-router-dom'
 import {matchRoutes,RouteConfig } from 'react-router-config'
-import {CloseOutlined} from  '@ant-design/icons'
+import {CloseOutlined,DownOutlined } from  '@ant-design/icons'
 import {Location} from 'history'
 import  style from './tag.module.scss'
-import { Divider } from "antd";
+import { Dropdown,Menu} from "antd";
+import { MenuInfo  } from 'rc-menu/lib/interface';
+import { CSSTransition } from 'react-transition-group';
+import '@/assets/scss/animate.scss'
+import { responsiveConfig } from "@/utils/varbile";
 export interface TagProps extends layoutProps,RouteComponentProps {
     route:RouteConfig
 }
  
 export interface TagState{
-    tagsList:tagPropsType[]
+    tagsList:tagPropsType[],
+    isHiddleTag:boolean,
 }
  /**
   * @note 该组件，我做的复杂了，同学们可以不需要用react-router-config中的route来获取title和path,
@@ -23,13 +28,16 @@ export interface TagState{
 class Tag extends React.Component<TagProps, TagState> {
     constructor(props: TagProps) {
         super(props);
-        this.state = { tagsList:[{
-            name:props.location.state?props.location.state:props.route.title,
-            path:props.location.pathname?props.location.pathname:props.route.path as string,
-            title:props.location.state?props.location.state:props.route.title
-        }]};
+        this.state = { 
+            tagsList:[{
+                name:props.location.state?props.location.state:props.route.title,
+                path:props.location.pathname?props.location.pathname:props.route.path as string,
+                title:props.location.state?props.location.state:props.route.title
+            }],
+            isHiddleTag:false,
+        };
     }
-    componentDidUpdate(prevProps:TagProps){ //如果props改变就调用
+    componentDidUpdate(prevProps:TagProps,prevState:TagState){ //如果props改变就调用
         const {location,route,history} =this.props;
         if(location.pathname!=prevProps.location.pathname){
           try {
@@ -83,32 +91,57 @@ class Tag extends React.Component<TagProps, TagState> {
             }
         })
     }
+    menu=()=>(
+        <Menu onClick={this.tagOption}>
+            <Menu.Item key="1">关闭其他</Menu.Item>
+            <Menu.Item key="2">关闭标签</Menu.Item>
+        </Menu>)
+    tagOption=({ key}:MenuInfo)=>{
+       if(key==1){
+            const tagsList = this.state.tagsList.filter(item => item.path === this.props.location.pathname);
+            this.setState({tagsList});
+       }else{
+           this.setState({isHiddleTag:true});
+       }
+    }
     render() { 
-        const {collapsed,location} = this.props;
-        const {tagsList}=this.state;
+        const {location} = this.props;
+        const {tagsList,isHiddleTag}=this.state;
         return ( 
-                   <div className={style['tag-wrapper']}>
-                       {
-                           tagsList.length? (<ul className={style["tags"]}> 
-                           {
-                               tagsList.map((item,index)=>{
-                                   return (
-                                       <li className={item.path ===location.pathname?`${style['tags-li']} ${style['selected']}`:`${style['tags-li']}`} key={index}>
-                                           <NavLink to={item.path}  className={style['tags-li-title']} title={item.title}>
-                                               {item.title}
-                                           </NavLink>
-                                           {
-                                               this.state.tagsList.length>1 && <CloseOutlined  className={style['del']} onClick={(e) => this.closeTags(index,item.path, e)}/>
-                                           }
-                                       </li> 
-                                   )
-                               })
-                           }  
-                          </ul>):<p className={style["tags"]}>未匹配到相关的路径~</p>
-                       }
-                       
-                    </div>        
-                
+                <>
+                  <CSSTransition  in={!isHiddleTag}  classNames="fade" timeout={100} unmountOnExit>
+                        <div className={style['tag-wrapper']}>
+                            <div className={style.slider}>
+                                {
+                                        tagsList.length? (<ul className={`${style["tags"]}`}> 
+                                        {
+                                            tagsList.map((item,index)=>{
+                                                return (
+                                                    <li className={item.path ===location.pathname?`${style['tags-li']} ${style['selected']}`:`${style['tags-li']}`} key={index}>
+                                                        <NavLink to={item.path}  className={style['tags-li-title']} title={item.title}>
+                                                            {item.title}
+                                                        </NavLink>
+                                                        {
+                                                            this.state.tagsList.length>1 && <CloseOutlined  className={style['del']} onClick={(e) => this.closeTags(index,item.path, e)}/>
+                                                        }
+                                                    </li> 
+                                                )
+                                            })
+                                        }  
+                                        </ul>):<p className={style["tags"]}>未匹配到相关的路径~</p>
+                                    }
+                            </div>
+                            <div className={style.option}>
+                                    <Dropdown overlay={this.menu} arrow trigger={['click']}>
+                                        <a  onClick={e => e.preventDefault()}>
+                                            <span className={style.title}>标签设置</span>
+                                            <DownOutlined />
+                                        </a>
+                                    </Dropdown>
+                            </div>
+                        </div>
+                    </CSSTransition>
+                </>  
          );
     }
 }

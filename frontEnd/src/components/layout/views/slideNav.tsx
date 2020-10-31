@@ -19,7 +19,7 @@ export interface SlideNavState extends layoutProps{
     lastOpenKeys:string[];
 }
  
-class SlideNav extends React.Component<SlideNavProps, SlideNavState> {
+class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     unlisten!: UnregisterCallback;
     constructor(props: SlideNavProps) {
         super(props);

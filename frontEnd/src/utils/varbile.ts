@@ -25,3 +25,5 @@ export enum responsiveConfig {
  * @return {Boolean} 
  */
 export const isToken=():boolean=> localStorage.getItem('token')?true:false;
+
+
