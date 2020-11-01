@@ -22,7 +22,7 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
         setCollapsed(width<responsiveConfig.collapsedInnerWidth?true:false);
     }, [width]); 
     return (
-        <div className='layouts'>
+        <div className={style.layouts}>
             <Head {...topBarProps()} width={width} setIsMobileDrawer={setIsMobileStatus}></Head>
             {
                 width<responsiveConfig.mobileInnerWidth?<Drawer bodyStyle={{padding:'0'}} placement='left' closable={false} 
