@@ -18,15 +18,16 @@
             align-items: center;
             h2{
             height: 32px;
-            margin: 0 0 0 12px;
+            margin:0 12px;
             line-height: 32px;
             @include style(18px,#1890ff,600);
             }
           }
         }
         .menu{
-          @include style(18px,#666,600);
-          padding-left: 40px;
+          @include style(20px,#666,600);
+          padding-left: 12px;
+          cursor: pointer;
         }
     }
     .menuList {

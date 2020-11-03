@@ -1,5 +1,5 @@
-import React, { memo,useEffect} from 'react'
-import {Tooltip,Dropdown,Menu } from 'antd'
+import React, { memo,useEffect,useMemo} from 'react'
+import {Dropdown,Menu } from 'antd'
 import {Link } from "react-router-dom"
 import {MenuFoldOutlined,MenuUnfoldOutlined} from  '@ant-design/icons';
 import {layoutProps,getUserType} from '@/interfaces'
@@ -11,23 +11,25 @@ import HeadImage from '@/components/headImage'
 import style from './head.module.scss'
 import  {responsiveConfig} from '@/utils/varbile'
 import SvgIcon from '@/components/svgIcon'
+import { CSSTransition } from 'react-transition-group';
 export type topbarProps={onToggle:Function,getUserInfo:getUserType,dispatch:Dispatch} & layoutProps;
 const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,getUserInfo,dispatch,width,setIsMobileDrawer}) {
     useEffect(() => {
         dispatch({type:SAGA_GET_USER_INFO});
     }, [dispatch])
+    const isMobileDevice=useMemo(()=>width!<responsiveConfig.mobileInnerWidth?true:false,[width]);
     const  dropdown=()=>(
-                    <Menu>
-                        <Menu.Item key="0">
-                        <Link to="/userInfo">个人信息</Link>
-                        </Menu.Item>
-                        <Menu.Divider/>
-                        <Menu.Item key="2">
-                            <span>退出登录</span>
-                        </Menu.Item>
-                    </Menu>);
+            <Menu>
+                <Menu.Item key="0">
+                <Link to="/userInfo">个人信息</Link>
+                </Menu.Item>
+                <Menu.Divider/>
+                <Menu.Item key="2">
+                    <span>退出登录</span>
+                </Menu.Item>
+            </Menu>);
     const options=()=>{
-        setIsMobileDrawer!(width!<responsiveConfig.mobileInnerWidth?true:false);
+        setIsMobileDrawer!(isMobileDevice);
         onToggle(!collapsed);  
     }
     return (
@@ -36,9 +38,9 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
                     <div className={style.logon}>
                         <Link to="/home">
                             <SvgIcon iconClass='logon' fontSize='30px'/>
-                            {
-                               !collapsed?<h2>Ant Simple Pro</h2>:null
-                            }
+                            <CSSTransition  in={!isMobileDevice}  classNames="fade" timeout={200} unmountOnExit>
+                               <h2>Ant Simple Pro</h2>
+                            </CSSTransition>
                         </Link>
                     </div>
                     <div className={`${style.menu}`}  onClick={options}>

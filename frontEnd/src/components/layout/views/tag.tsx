@@ -8,7 +8,6 @@ import  style from './tag.module.scss'
 import { Dropdown,Menu} from "antd";
 import { MenuInfo  } from 'rc-menu/lib/interface';
 import { CSSTransition } from 'react-transition-group';
-import '@/assets/scss/animate.scss'
 import { responsiveConfig } from "@/utils/varbile";
 export interface TagProps extends layoutProps,RouteComponentProps {
     route:RouteConfig

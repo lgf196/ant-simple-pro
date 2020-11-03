@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import Routers from '@/router'
 import { ConfigProvider } from 'antd'; 
 import 'moment/locale/zh-cn';
@@ -10,8 +9,10 @@ import { Provider } from 'react-redux'
 import store from '@/redux/store'
 import SvgIcon from '@/icons';
 // import './il8n'
+import './index.css';
 import './assets/scss/common.scss'
 import './assets/scss/update.antd.css'
+import './assets/scss/animate.scss'
 SvgIcon();
 ReactDOM.render(
    <ConfigProvider locale={locale}>

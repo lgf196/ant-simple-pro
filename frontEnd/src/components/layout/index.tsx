@@ -9,6 +9,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { Drawer} from 'antd';
 import style from './index.module.scss'
 import  {responsiveConfig} from '@/utils/varbile'
+import 'src/assets/scss/common.scss'
 const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
     const [collapsed,setCollapsed]=useState<boolean>(false);
     const [isMobileStatus,setIsMobileStatus]=useState<boolean>(false); //用来控制是否到了手机端的尺寸
@@ -39,7 +40,7 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
                         classNames="fade"
                         unmountOnExit
                         > */}
-                        <Tag collapsed={collapsed}  route={routeArr} width={width}></Tag>
+                        <Tag collapsed={collapsed}  route={routeArr}/>
                         <div className={style.content} id='content'>
                             <div className={style.pageContent}>{renderRoutes(route.routes,{},{location})}</div>
                             <Footer name='Ant Simple Pro' ahthor='Lgf&qyh'/>
