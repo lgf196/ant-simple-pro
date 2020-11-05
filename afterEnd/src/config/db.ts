@@ -19,7 +19,8 @@ class mysqlDb<T> {   //创建数据库class
                 } else {
                     connection.query(sql,params, (err, rows) => {
                       err? reject(err):resolve(sucessCallbackVal(code.successCode,rows));
-                      connection.release();    // 结束会话
+                      //connection.release();    // 结束会话
+                      connection.destroy();  
                     })
                   }
             });
