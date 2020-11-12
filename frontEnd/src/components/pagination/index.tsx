@@ -1,14 +1,14 @@
 import React, { memo } from 'react'
 import { Pagination } from 'antd';
 import {PaginationProps} from 'antd/lib/pagination/Pagination'
-import {animateStop} from '@/utils/function'
+import {backTopAnimate} from '@/utils/function'
 interface PagationType extends PaginationProps{
     onChanges?:Function
 }
 const Pagation:React.FC<PagationType> = memo(function Pagation({pageSizeOptions,defaultPageSize,total=0,onChanges,...props}) {
     const Change=(page: number, pageSize?: number | undefined)=>{
         onChanges && onChanges(page, pageSize);
-        animateStop();
+        backTopAnimate(document.querySelector('#content')!);
     }
     return (
         <>

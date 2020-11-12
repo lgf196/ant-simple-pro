@@ -29,13 +29,30 @@ export const confirm=(func:Function,content:string='确定要删除吗？',onCan
     }); 
 }
 
-export const animateStop=()=>{
-    let scrollTop,spend,times,ele=document.querySelector('.content')!; //父元素不是document是这个标签,用！表示绝对有scrollTop属性
-    scrollTop=ele.scrollTop ;
-    spend=scrollTop/3;
-    ele.scrollTop-= Math.ceil(spend);
-    times=setTimeout(() => {
-       animateStop();
-    },10);
-    scrollTop<5&&clearTimeout(times);
+export const easeInOutCubic=(t: number, b: number, c: number, d: number)=> {
+    const cc = c - b;
+    t /= d / 2;
+    if (t < 1) {
+      return (cc / 2) * t * t * t + b;
+    }
+    return (cc / 2) * ((t -= 2) * t * t + 2) + b;
+}
+
+/**
+ * 
+ * @param target    |  @description 滚动事件的元素
+ * @param duration  |  @description 回到顶部所需时间（ms）
+ */
+export const backTopAnimate=(target: Element=document.documentElement || document.body,duration:number=450)=>{
+    const scrollTop=target.scrollTop;
+    const startTime = Date.now();
+    const frameFunc=()=>{
+        const timestamp = Date.now();
+        const time = timestamp - startTime;
+        const nextScrollTop =Math.ceil(easeInOutCubic(time > duration ? duration : time, scrollTop, 0, duration));
+        target.scrollTop=nextScrollTop;
+        // console.log('nextScrollTop', nextScrollTop)
+        time < duration && window.requestAnimationFrame(frameFunc);
+    }
+    window.requestAnimationFrame(frameFunc);
 }

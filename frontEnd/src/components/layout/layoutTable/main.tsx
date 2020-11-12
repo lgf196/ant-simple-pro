@@ -34,15 +34,15 @@ const LayoutTable: React.FC<LayoutTablePropsType> = memo(function LayoutTable({ 
     }
     const defauluIcon: grounpProps[] = [
         {
-            component: (<Tooltip title='刷新' placement="bottom">
+            component: ()=>(<Tooltip title='刷新' placement="bottom">
                 <SyncOutlined onClick={(event) => receive(event)} className='svg-fontSize' />
             </Tooltip>)
         }, {
-            component: (<Filter tablecolumns={tableProps.columns!} filterColunsFunc={filterColunsFunc} className='svg-fontSize' />)
+            component:()=> (<Filter tablecolumns={tableProps.columns!} filterColunsFunc={filterColunsFunc} className='svg-fontSize' />)
         }, {
-            component: (<TableSize tableSize={tableSizeFunc} className='svg-fontSize' />)
+            component:()=> (<TableSize tableSize={tableSizeFunc} className='svg-fontSize' />)
         }, {
-            component: (<FullScreeOut elementObj={elemet.current!} className='svg-fontSize' />)
+            component:()=> (<FullScreeOut elementObj={elemet.current!} className='svg-fontSize' />)
         }
     ];
     return (

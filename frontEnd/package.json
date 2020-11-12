@@ -31,6 +31,7 @@
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "connected-react-router": "^6.8.0",
+    "core-js": "^3.7.0",
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -90,7 +91,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "dev": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -104,12 +105,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie > 9"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie > 9"
     ]
   },
   "jest": {
@@ -179,7 +182,7 @@
   },
   "devDependencies": {
     "@types/webpack-env": "^1.15.2",
-    "node-sass": "^4.14.1",
+    "sass": "^1.29.0",
     "svg-sprite-loader": "^5.0.0"
   },
   "homepage": "."

@@ -11,9 +11,11 @@ import { Dispatch } from 'redux';
 import {getUserType} from '@/interfaces'
 import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
 import { requestCode } from '@/utils/varbile'
-import { Input,Image } from 'antd';
+import { Input,Image, Tooltip } from 'antd';
 import {sagaGetUserDataType} from '@/redux/saga/user'
-import {userListType} from '@/api/login'
+import {userListType,xlsxFileDown} from '@/api/login'
+import { ArrowDownOutlined } from '@ant-design/icons';
+import tools from '@/utils'
 import '@/assets/scss/common.scss'
 export interface UserProps extends loading{
     dispatch:Dispatch<sagaGetUserDataType>,
@@ -81,9 +83,18 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
     useEffect(() => {
         initFetch(username)
     }, [initFetch,username])
+    const downFile=async ()=>{
+        let res=await xlsxFileDown();
+        if(res.code===requestCode.successCode){
+           let delBuffer = Buffer.from(res.data, "binary");
+           const blob = new Blob([delBuffer], { type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+           let url = window.URL.createObjectURL(blob);
+           tools.createALabel(url);
+       }
+   }
     const datas:LayoutTablePropsType={
         btnGrounp:[{
-            component: <Search
+            component: ()=><Search
             enterButton 
             placeholder="请输入用户名"
             onSearch={(value) =>setUsername(value?value:undefined)}
@@ -91,6 +102,15 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
             allowClear
           />
         }],
+        iconGrounp:[
+            {
+                // component: (<Tooltip title='下载' placement="bottom">
+                //     <ArrowDownOutlined  className='svg-fontSize' onClick={downFile}/>
+                // </Tooltip>)
+                icon:()=><div>4444</div>,
+                title:'33'
+            }
+        ],
         tableProps:{columns,dataSource:getUserList},
         receive:()=> initFetch(username),
         loading

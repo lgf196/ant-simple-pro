@@ -14,9 +14,11 @@ function menuRouter<T extends object>(WrappedComponent:React.ComponentType<T>){
                 return (<Redirect to={{ pathname: '/login',search: `?referrer=${Math.random()*10000}`}} />)
            }
             return ( 
+                <>
                   <Suspense fallback={<RoterLoading/>}>
                         <WrappedComponent {...this.props as T}/>
                   </Suspense>
+                </>
              );
         }
     }

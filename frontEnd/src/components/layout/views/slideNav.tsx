@@ -9,6 +9,8 @@ import {Location,UnregisterCallback} from 'history'
 import SvgIcon from '@/components/svgIcon'
 import { OpenEventHandler  } from 'rc-menu/lib/interface';
 import style from './slideNav.module.scss'
+import { backTopAnimate } from '@/utils/function';
+
 export interface SlideNavProps extends layoutProps,RouteComponentProps{
    dispatch:Dispatch,
    getMenuTree:menuAccessType[],
@@ -34,6 +36,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     }
     componentDidMount(){
         this.unlisten = this.props.history.listen((location:Location) => {  //这样可以监听全局路由的变化
+            backTopAnimate(document.querySelector('#content')!,10);
             this.defaultOpenUrl(location.pathname);
         });
        this.props.dispatch({type:SAGA_GETMENUTREE});
@@ -112,7 +115,6 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         const {openKeys}=this.state;
         const defaultProps = collapsed ? {} : { openKeys }; 
         const defaultSelectedKeys=location.pathname;
-        console.log('openKeys', openKeys)
         return (  
             <Layout className={style.siderbar}>
                 <Sider trigger={null} collapsible collapsed={collapsed}   collapsedWidth={collapsed?80:200}>
