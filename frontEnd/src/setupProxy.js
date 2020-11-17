@@ -1,5 +1,5 @@
 /**
- * des:{配置代理}
+ * @description :{配置代理}
  */
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function(app) {

@@ -83,7 +83,7 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
     }, [initFetch,username])
     const datas:LayoutTablePropsType={
         btnGrounp:[{
-            component:()=> <Search
+            component:<Search
             enterButton 
             placeholder="请输入用户名"
             onSearch={(value) =>setUsername(value?value:undefined)}

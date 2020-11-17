@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Layout} from 'antd';
+import { Menu, Layout,Empty } from 'antd';
 import { Link,withRouter,RouteComponentProps} from 'react-router-dom'
 import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
@@ -10,10 +10,11 @@ import SvgIcon from '@/components/svgIcon'
 import { OpenEventHandler  } from 'rc-menu/lib/interface';
 import style from './slideNav.module.scss'
 import { backTopAnimate } from '@/utils/function';
-
+import LoadingData from '@/components/routerLoading'
 export interface SlideNavProps extends layoutProps,RouteComponentProps{
    dispatch:Dispatch,
    getMenuTree:menuAccessType[],
+   loadingMenuTree:boolean
 }
  
 export interface SlideNavState extends layoutProps{
@@ -111,14 +112,16 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     }
     render() { 
         const { Sider} = Layout;
-        const {getMenuTree,collapsed,location} =this.props;
+        const {getMenuTree,collapsed,location,loadingMenuTree} =this.props;
         const {openKeys}=this.state;
         const defaultProps = collapsed ? {} : { openKeys }; 
         const defaultSelectedKeys=location.pathname;
         return (  
             <Layout className={style.siderbar}>
                 <Sider trigger={null} collapsible collapsed={collapsed}   collapsedWidth={collapsed?80:200}>
-                        <Menu mode="inline" 
+                    {
+                      loadingMenuTree?
+                        (getMenuTree.length?( <Menu mode="inline" 
                         onOpenChange={this.onOpenChange as OpenEventHandler} 
                         defaultSelectedKeys={[defaultSelectedKeys]}
                         selectedKeys={[defaultSelectedKeys]}
@@ -126,7 +129,8 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
                         {...defaultProps}
                         className={style.menu}>
                             {this.rednerMenu(getMenuTree)}
-                        </Menu>
+                        </Menu>):<Empty image={Empty.PRESENTED_IMAGE_SIMPLE} className={style.empty}/>): <LoadingData />
+                    }
                 </Sider>
             </Layout>
         );
@@ -134,7 +138,8 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
 }
  
 export default withRouter(connect(({user}:reduceStoreType)=>({
-    getMenuTree:user.getMenuTree
+    getMenuTree:user.getMenuTree,
+    loadingMenuTree:user.loadingMenuTree
 }))(SlideNav));
 
 

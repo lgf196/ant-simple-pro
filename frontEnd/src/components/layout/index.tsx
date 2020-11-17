@@ -2,7 +2,6 @@ import React, { memo,useState,useEffect } from 'react'
 import { renderRoutes ,RouteConfig,matchRoutes} from 'react-router-config'
 import {useOnResize} from '@/hooks'
 import {Head,SlideNav,Tag,Footer,BackTop} from '@/components/layout/views'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { Drawer} from 'antd';
 import style from './index.module.scss'
 import  {responsiveConfig} from '@/utils/varbile'

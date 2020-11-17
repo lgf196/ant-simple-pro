@@ -1,6 +1,5 @@
 import React from 'react'
 import { Form, Button, Input } from 'antd';
-import InputComponent from '@/components/input'
 import {login} from '@/api/login'
 import { useHistory } from "react-router-dom";
 import {requestCode} from '@/utils/varbile'

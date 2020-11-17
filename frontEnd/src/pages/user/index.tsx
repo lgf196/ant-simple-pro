@@ -94,7 +94,7 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
    }
     const datas:LayoutTablePropsType={
         btnGrounp:[{
-            component: ()=><Search
+            component:<Search
             enterButton 
             placeholder="请输入用户名"
             onSearch={(value) =>setUsername(value?value:undefined)}
@@ -107,8 +107,6 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
                 // component: (<Tooltip title='下载' placement="bottom">
                 //     <ArrowDownOutlined  className='svg-fontSize' onClick={downFile}/>
                 // </Tooltip>)
-                icon:()=><div>4444</div>,
-                title:'33'
             }
         ],
         tableProps:{columns,dataSource:getUserList},

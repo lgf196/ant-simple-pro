@@ -26,4 +26,32 @@ export enum responsiveConfig {
  */
 export const isToken=():boolean=> localStorage.getItem('token')?true:false;
 
-
+/**
+ * @description node运行环境说明
+ * @return string
+ */
+export const environment=()=>{
+    const env=process.env.NODE_ENV;
+    let parps=null;
+    switch (env) {
+        case 'development':  //开发环境下
+            parps='development';
+            break;
+        case 'beta':         //测试环境下
+            parps='beta';
+            break;
+        case 'release':      //预发布环境下
+            parps='release';
+            break;
+        case 'production':    //正式生产环境下
+            parps='production';
+            break;
+        case 'test':         //单元测试环境下
+            parps='test';
+            break;
+        default:
+            parps='development';
+            break;
+    }
+    return parps;
+}

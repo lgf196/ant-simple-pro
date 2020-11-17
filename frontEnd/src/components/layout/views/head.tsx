@@ -1,5 +1,5 @@
 import React, { memo,useEffect,useMemo} from 'react'
-import {Dropdown,Menu } from 'antd'
+import {Dropdown,Menu, Spin } from 'antd'
 import {Link } from "react-router-dom"
 import {MenuFoldOutlined,MenuUnfoldOutlined} from  '@ant-design/icons';
 import {layoutProps,getUserType} from '@/interfaces'
@@ -12,19 +12,32 @@ import style from './head.module.scss'
 import  {responsiveConfig} from '@/utils/varbile'
 import SvgIcon from '@/components/svgIcon'
 import { CSSTransition } from 'react-transition-group';
-export type topbarProps={onToggle:Function,getUserInfo:getUserType,dispatch:Dispatch} & layoutProps;
-const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,getUserInfo,dispatch,width,setIsMobileDrawer}) {
+import { MenuInfo  } from 'rc-menu/lib/interface';
+import {confirm} from '@/utils/function'
+import { useHistory } from "react-router-dom";
+import {localStorage} from '@/assets/js/storage'
+export type topbarProps={onToggle:Function,getUserInfo:getUserType,dispatch:Dispatch,loadingUserInfo:boolean} & layoutProps;
+const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,getUserInfo,dispatch,width,setIsMobileDrawer,loadingUserInfo}) {
+    const history=useHistory();
     useEffect(() => {
         dispatch({type:SAGA_GET_USER_INFO});
     }, [dispatch])
     const isMobileDevice=useMemo(()=>width!<responsiveConfig.mobileInnerWidth?true:false,[width]);
+    const tagOption=({ key}:MenuInfo)=>{
+       if(key==='2'){
+            confirm(()=>{
+                localStorage.clear();
+                history.push(`/login?rp=${+new Date()}`);
+            },'确定要退出登录吗？');
+       }
+    }
     const  dropdown=()=>(
-            <Menu>
-                <Menu.Item key="0">
-                <Link to="/userInfo">个人信息</Link>
+            <Menu onClick={tagOption}>
+                <Menu.Item key='1'>
+                   <Link to="/userInfo">个人信息</Link>
                 </Menu.Item>
                 <Menu.Divider/>
-                <Menu.Item key="2">
+                <Menu.Item key='2'>
                     <span>退出登录</span>
                 </Menu.Item>
             </Menu>);
@@ -51,8 +64,12 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
                     <FullScreeOut className={style.icon}/>
                     <Dropdown overlay={dropdown} placement="bottomCenter">
                         <div className={`${style.propsUser}`}>
-                            <HeadImage url={getUserInfo.iconUrl}/>
-                            <span>{getUserInfo.username?getUserInfo.username:'帅锋锋'}</span>
+                            {
+                               loadingUserInfo?<>
+                                    <HeadImage url={getUserInfo.iconUrl}/>
+                                    <span>{getUserInfo.username?getUserInfo.username:'帅锋锋'}</span>
+                               </>:<Spin size="small"/>  
+                            }
                         </div>
                     </Dropdown>
                 </div>
@@ -61,6 +78,7 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
 })
 
 export default connect(({user}:reduceStoreType)=>({
-    getUserInfo:user.getUserInfo
+    getUserInfo:user.getUserInfo,
+    loadingUserInfo:user.loadingUserInfo
 }))(TopBar);
 

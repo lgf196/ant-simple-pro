@@ -1,6 +1,9 @@
 export const GETMENUTREE='GETMENUTREE'; //权限树获取
 export type GETMENUTREE=typeof GETMENUTREE; //权限树获取
 
+export const LOADING_MENU_TREE='LOADING_MENU_TREE';    //是否加载出权限tree
+export type LOADING_MENU_TREE=typeof LOADING_MENU_TREE; 
+
 export const GETMENULIST='GETMENULIST'; //权限
 export type GETMENULIST=typeof GETMENULIST; 
 
@@ -15,3 +18,6 @@ export type GET_USER_LIST=typeof GET_USER_LIST;
 
 export const GET_USER_INFO='GET_USER_INFO';  
 export type GET_USER_INFO=typeof GET_USER_INFO;  
+
+export const LOADING_USER_INFO='LOADING_USER_INFO';  
+export type LOADING_USER_INFO=typeof LOADING_USER_INFO;  

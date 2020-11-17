@@ -96,7 +96,7 @@ class Tag extends React.Component<TagProps, TagState> {
             <Menu.Item key="2">关闭标签</Menu.Item>
         </Menu>)
     tagOption=({ key}:MenuInfo)=>{
-       if(key==1){
+       if(key==='1'){
             const tagsList = this.state.tagsList.filter(item => item.path === this.props.location.pathname);
             this.setState({tagsList});
        }else{

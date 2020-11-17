@@ -28,7 +28,7 @@ export type grounpProps={
     title?:string,
     func?:Function,
     icon?:React.ReactNode,
-    component?:React.ComponentType<any>,
+    component?:React.ReactNode,
 }
 export interface LayoutTableProps {
     btnGrounp?:(buttonProps & Pick<grounpProps,'func' | 'component'>)[],

@@ -21,4 +21,8 @@
             -webkit-box-shadow: inset 0 0 5px #fff;
         }
     }
+    .empty{
+        position: absolute;
+        @include center()
+    }
  }
