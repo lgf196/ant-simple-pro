@@ -3,17 +3,20 @@ import { Form, Button, Input } from 'antd';
 import {login} from '@/api/login'
 import { useHistory } from "react-router-dom";
 import {requestCode} from '@/utils/varbile'
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import {useSelector} from 'react-redux';
 import SvgIcon from '@/components/svgIcon'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Footer} from '@/components/layout/views'
 import style from './login.module.scss'
-export interface LoginProps extends loading{
-    dispatch:Dispatch,
-}
-const Login:React.FC<LoginProps>=({loading})=>{
+import { createSelector } from 'reselect'
+
+const Login:React.FC=()=>{
     const history=useHistory();
+    const selectNumOfDoneTodos = createSelector(
+        [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
+        (user, other) =>[user.getUserInfo,other.loading] 
+    ) 
+    const loading=useSelector(({other}:reduceStoreType) => other.loading);
     const onFinish =async (values:any) => {
         const {email,password} = values
         let res=await login({email,password});
@@ -69,7 +72,5 @@ const Login:React.FC<LoginProps>=({loading})=>{
         </div>
     )
 }
-export default  connect(({other}:reduceStoreType)=>({
-    loading:other.loading
-}))(Login);
+export default Login;
 

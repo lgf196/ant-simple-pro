@@ -6,7 +6,7 @@ import UserSearch from '@/container/user-module/userSearch'
 import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GET_USER_LIST} from '@/redux/constants/sagaType'
 import { ColumnProps} from 'antd/lib/table';
-import { connect } from 'react-redux';
+import {useSelector,useDispatch} from 'react-redux';
 import { Dispatch } from 'redux';
 import {getUserType} from '@/interfaces'
 import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
@@ -15,13 +15,11 @@ import { Input,Image, Tooltip } from 'antd';
 import {sagaGetUserDataType} from '@/redux/saga/user'
 import {userListType,xlsxFileDown} from '@/api/login'
 import { ArrowDownOutlined } from '@ant-design/icons';
+import { createSelector } from 'reselect'
 import tools from '@/utils'
 import '@/assets/scss/common.scss'
-export interface UserProps extends loading{
-    dispatch:Dispatch<sagaGetUserDataType>,
-    getUserList:getUserType[]
-}
-const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loading}) {
+
+const User:React.FC = memo(function User() {
     const columns:ColumnProps<getUserType>[]=[
         {
             key: 'index',
@@ -77,12 +75,26 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
         }
     ];
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
+
     const { Search } = Input;
+
     const [username,setUsername]=useState<userListType['username']>(undefined);
+
+    const selectNumOfDoneTodos = createSelector(            //只计算，给的数据，其他的数据不会重新计算
+        [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
+        (user, other) =>[user.getUserList,other.loading] as const
+    );
+
+    const dispatch = useDispatch<Dispatch<sagaGetUserDataType>>(); //这里取代connect里面的dispatch
+
+    const [getUserList,loading]=useSelector(selectNumOfDoneTodos); //获取redux里面的数据，这里取代了connect函数
+
     const initFetch=useCallback((username)=> dispatch({type:SAGA_GET_USER_LIST,payload:{username}}),[dispatch]);
+
     useEffect(() => {
         initFetch(username)
     }, [initFetch,username])
+
     const downFile=async ()=>{
         let res=await xlsxFileDown();
         if(res.code===requestCode.successCode){
@@ -92,6 +104,7 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
            tools.createALabel(url);
        }
    }
+
     const datas:LayoutTablePropsType={
         btnGrounp:[{
             component:<Search
@@ -104,20 +117,22 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
         }],
         iconGrounp:[
             {
-                // component: (<Tooltip title='下载' placement="bottom">
-                //     <ArrowDownOutlined  className='svg-fontSize' onClick={downFile}/>
-                // </Tooltip>)
+                component: (<Tooltip title='下载' placement="bottom">
+                    <ArrowDownOutlined  className='svg-fontSize' onClick={downFile}/>
+                </Tooltip>)
             }
         ],
         tableProps:{columns,dataSource:getUserList},
         receive:()=> initFetch(username),
         loading
     }
+
     const handle=(detailData:editDataProps<getUserType>['detailData'])=>{
         setEditData({visible:true,detailData:Object.assign({},detailData,{
             iconUrl:detailData.iconUrl.length?detailData.iconUrl.split(',').map((item) => ({uid:Math.random()*100,url:item,response:{code:requestCode.successCode,data:{url:item}}})):[]
         })});
     }
+
     return (
         <>
              <LayoutTableComponent {...datas}>
@@ -128,7 +143,4 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
     )
 })
 
-export default connect(({user,other}:reduceStoreType)=>({
-    getUserList:user.getUserList,
-    loading:other.loading
-}))(User);
+export default User;

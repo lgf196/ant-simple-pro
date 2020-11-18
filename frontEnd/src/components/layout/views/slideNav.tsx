@@ -3,7 +3,7 @@ import { Menu, Layout,Empty } from 'antd';
 import { Link,withRouter,RouteComponentProps} from 'react-router-dom'
 import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import { Dispatch} from 'redux';
 import {menuAccessType,layoutProps} from '@/interfaces'
 import {Location,UnregisterCallback} from 'history'
 import SvgIcon from '@/components/svgIcon'
@@ -11,17 +11,16 @@ import { OpenEventHandler  } from 'rc-menu/lib/interface';
 import style from './slideNav.module.scss'
 import { backTopAnimate } from '@/utils/function';
 import LoadingData from '@/components/routerLoading'
+import {composes} from '@/utils/compose'
 export interface SlideNavProps extends layoutProps,RouteComponentProps{
    dispatch:Dispatch,
    getMenuTree:menuAccessType[],
    loadingMenuTree:boolean
 }
- 
 export interface SlideNavState extends layoutProps{
     openKeys:string[];
     lastOpenKeys:string[];
 }
- 
 class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     unlisten!: UnregisterCallback;
     constructor(props: SlideNavProps) {
@@ -136,10 +135,15 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         );
     }
 }
- 
-export default withRouter(connect(({user}:reduceStoreType)=>({
-    getMenuTree:user.getMenuTree,
-    loadingMenuTree:user.loadingMenuTree
-}))(SlideNav));
-
-
+// export default withRouter(connect(({user}:reduceStoreType)=>({
+//     getMenuTree:user.getMenuTree,
+//     loadingMenuTree:user.loadingMenuTree
+// }))(SlideNav));
+const enhance=composes(
+    withRouter,
+    connect(({user}:reduceStoreType)=>({
+        getMenuTree:user.getMenuTree,
+        loadingMenuTree:user.loadingMenuTree
+    }))
+)
+export default enhance(SlideNav);
