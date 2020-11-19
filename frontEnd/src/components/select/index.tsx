@@ -8,10 +8,12 @@ interface SelectsType extends SelectProps<any>{
     valKey:string;
     valName:string
 }
+
 const Selects:React.FC<SelectsType> = memo(function Selects({data,valKey,valName,onChange,value,...props}) {
    const handleCurrencyChange = (currency: SelectValue,option:any)=> {
         onChange &&  onChange(currency,option);
    };
+
     return (
         <>
               <Select  {...props} placeholder='请选择'   onChange={handleCurrencyChange} value={value}   showSearch 
@@ -26,4 +28,5 @@ const Selects:React.FC<SelectsType> = memo(function Selects({data,valKey,valName
         </>
     )
 })
+
 export default Selects

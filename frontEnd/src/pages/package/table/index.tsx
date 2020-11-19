@@ -75,12 +75,17 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
         }
     ];
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
+
     const { Search } = Input;
+
     const [username,setUsername]=useState<userListType['username']>(undefined);
+
     const initFetch=useCallback((username)=> dispatch({type:SAGA_GET_USER_LIST,payload:{username}}),[dispatch]);
+    
     useEffect(() => {
         initFetch(username)
-    }, [initFetch,username])
+    }, [initFetch,username]);
+
     const datas:LayoutTablePropsType={
         btnGrounp:[{
             component:<Search
@@ -99,11 +104,13 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
         receive:()=> initFetch(username),
         loading
     }
+
     const handle=(detailData:editDataProps<getUserType>['detailData'])=>{
         setEditData({visible:true,detailData:Object.assign({},detailData,{
             iconUrl:detailData.iconUrl.length?detailData.iconUrl.split(',').map((item) => ({uid:Math.random()*100,url:item,response:{code:requestCode.successCode,data:{url:item}}})):[]
         })});
     }
+    
     return (
         <>
              <LayoutTableComponent {...datas}>

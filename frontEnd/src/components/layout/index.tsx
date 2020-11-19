@@ -7,17 +7,24 @@ import style from './index.module.scss'
 import  {responsiveConfig} from '@/utils/varbile'
 import 'src/assets/scss/common.scss'
 const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
+
     const [collapsed,setCollapsed]=useState<boolean>(false);
+
     const [isMobileStatus,setIsMobileStatus]=useState<boolean>(false); //用来控制是否到了手机端的尺寸
+
     const {width}=useOnResize();
+
     let  routeArr= matchRoutes(route.routes,location!.pathname)[0].route; //取出当前的路由信息
+
     const topBarProps=()=>({
         collapsed,
         onToggle:(collapsed:boolean)=>setCollapsed(collapsed)
     })
+
     useEffect(() => {
         setCollapsed(width<responsiveConfig.collapsedInnerWidth?true:false);
     }, [width]); 
+
     return (
         <div className={style.layouts}>
             <Head {...topBarProps()} width={width} setIsMobileDrawer={setIsMobileStatus}></Head>
@@ -39,4 +46,5 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
         </div>
     )
 })
+
 export default Layout

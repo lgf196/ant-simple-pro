@@ -8,6 +8,7 @@ export interface footerPopps extends className{
     name:string;
     ahthor:string,
 }
+
 const Footer:React.FC<footerPopps> = memo(function Footer({svgName,iconComponent,name,ahthor,className}) {
     return (
         <div className={`${style.footer} ${className}`}>
@@ -24,5 +25,6 @@ const Footer:React.FC<footerPopps> = memo(function Footer({svgName,iconComponent
 Footer.defaultProps={
     svgName:'logon'
 }
+
 export default Footer
 

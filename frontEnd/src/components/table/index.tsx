@@ -19,4 +19,5 @@ const TableCompent:React.FC<TableProps<any>> = memo(function TableCompent({colum
         </>
     )
 })
+
 export default TableCompent

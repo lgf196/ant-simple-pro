@@ -5,11 +5,13 @@ import {backTopAnimate} from '@/utils/function'
 interface PagationType extends PaginationProps{
     onChanges?:Function
 }
+
 const Pagation:React.FC<PagationType> = memo(function Pagation({pageSizeOptions,defaultPageSize,total=0,onChanges,...props}) {
     const Change=(page: number, pageSize?: number | undefined)=>{
         onChanges && onChanges(page, pageSize);
         backTopAnimate(document.querySelector('#content')!);
     }
+
     return (
         <>
             {total?<Pagination {...props} showSizeChanger showQuickJumper  total={total}  showTotal={total => `共 ${total} 页`}  

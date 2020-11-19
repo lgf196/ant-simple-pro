@@ -6,6 +6,7 @@ export type svgProps={
     fontSize?:string,
     className?:string
 }
+
 const SvgIcon:React.FC<svgProps>= memo(function SvgIcon({iconClass,fill,fontSize,className,...props}) {
     const iconName=useMemo(()=>("#icon-" + iconClass),[iconClass]);
     return (
@@ -14,6 +15,7 @@ const SvgIcon:React.FC<svgProps>= memo(function SvgIcon({iconClass,fill,fontSize
         </Icon>
     )
 })
+
 const svgStyle={
     width: '1em',
     height: '1em',
@@ -22,4 +24,5 @@ const svgStyle={
     fill:'currentColor',  //颜色值
     fontSize:'1.1em'      
 }
+
 export default SvgIcon

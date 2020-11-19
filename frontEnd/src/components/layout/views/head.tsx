@@ -16,13 +16,18 @@ import { MenuInfo  } from 'rc-menu/lib/interface';
 import {confirm} from '@/utils/function'
 import { useHistory } from "react-router-dom";
 import {localStorage} from '@/assets/js/storage'
+
 export type topbarProps={onToggle:Function,getUserInfo:getUserType,dispatch:Dispatch,loadingUserInfo:boolean} & layoutProps;
+
 const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,getUserInfo,dispatch,width,setIsMobileDrawer,loadingUserInfo}) {
     const history=useHistory();
+
     useEffect(() => {
         dispatch({type:SAGA_GET_USER_INFO});
-    }, [dispatch])
+    }, [dispatch]);
+
     const isMobileDevice=useMemo(()=>width!<responsiveConfig.mobileInnerWidth?true:false,[width]);
+
     const tagOption=({ key}:MenuInfo)=>{
        if(key==='2'){
             confirm(()=>{
@@ -31,6 +36,7 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
             },'确定要退出登录吗？');
        }
     }
+
     const  dropdown=()=>(
             <Menu onClick={tagOption}>
                 <Menu.Item key='1'>
@@ -40,11 +46,14 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
                 <Menu.Item key='2'>
                     <span>退出登录</span>
                 </Menu.Item>
-            </Menu>);
+            </Menu>
+    );
+
     const options=()=>{
         setIsMobileDrawer!(isMobileDevice);
         onToggle(!collapsed);  
     }
+    
     return (
             <div className={`${style.head} clearfix`}>
                 <div className={`${style.headLeft} fl`}>

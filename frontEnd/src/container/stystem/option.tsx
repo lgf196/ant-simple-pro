@@ -3,25 +3,39 @@ import Inputs from '@/components/input'
 import tools from '@/utils'
 import { Button, Modal, Form,Cascader } from 'antd';
 import {useFormLayout} from '@/hooks'
-import { Dispatch } from 'redux';
 import {requestCode} from '@/utils/varbile'
 import {toast} from '@/utils/function'
 import {getAccesstOption} from '@/api/login'
-import { connect } from 'react-redux';
+import {useDispatch ,useSelector} from 'react-redux';
 import {menuAccessType} from '@/interfaces'
 import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { CascaderValueType } from 'antd/lib/cascader';
-export interface OptionType extends editDetailType<Partial<menuAccessType>>,loading{
-  getMenuTree:menuAccessType[];
-  dispatch:Dispatch;
+import { createSelector } from 'reselect'
+export interface OptionType extends editDetailType<Partial<menuAccessType>>{
+ 
 }
+
 const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
-  onCancel,sucessCallback,getMenuTree,dispatch,loading}) {
+  onCancel,sucessCallback}) {
+    const dispatch = useDispatch(); 
+
     const [form] = Form.useForm();
+
     const [formItemLayout]=useFormLayout();
-    const [requireIcon,setRequireIcon]=useState<boolean>(true)
+
+    const [requireIcon,setRequireIcon]=useState<boolean>(true);
+
     const isDetailData=useMemo(()=> detailData.id,[visible]);
+
     const text=isDetailData?'编辑':'创建';
+
+    const selectNumOfDoneTodos = createSelector(           
+      [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
+      (user, other) =>[user.getMenuTree,other.loading] as const
+    );
+
+    const [getMenuTree,loading]=useSelector(selectNumOfDoneTodos); 
+
     useEffect(() => {
         if (visible) {
           let {title,url,icon,pid}=detailData;
@@ -30,6 +44,7 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
           setRequireIcon(isDetailData?false:true);
         }
     }, [visible]);
+
     const  handleSubmit = () => {  //提交
         form.validateFields().then(async (values) => {
            let res=null,formData=null;
@@ -43,9 +58,11 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
             }
         })
     };
+    
     const handCancel=()=>{
         onCancel();form.resetFields();
-    }
+    };
+
     const CascaderChange=(value: CascaderValueType)=>{
       if(isDetailData){
         if(detailData.id===value[value.length-1]){
@@ -55,6 +72,7 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
       }
       setRequireIcon(value.length?false:true);
     };
+
     return (
         <Modal
         forceRender
@@ -93,7 +111,5 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
       </Modal>
     )
 })
-export default connect(({user,other}:reduceStoreType)=>({
-  getMenuTree:user.getMenuTree,
-  loading:other.loading
-}))(Option);
+
+export default Option;

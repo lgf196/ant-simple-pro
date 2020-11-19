@@ -15,7 +15,9 @@ export interface ImgUploadState{
     previewImage:string;
     fileLists:UploadFile[]
 }
+
 export type ImgUploadFile=UploadFile;  //导出文件类型
+
 export type UploadChangeParams=UploadChangeParam;  //导出文件类型
 
 class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
@@ -25,6 +27,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
         limit:10,
         typeModule:1 //1默认表单组件，2非表单
     };
+
     constructor(props: ImgUploadProps) {
         super(props);
         this.state ={
@@ -33,6 +36,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
             fileLists:props.fileList || []
         }
     }
+
     handlePreview=(file:UploadFile)=>{
         console.log('file', file)
         this.setState({
@@ -40,6 +44,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
             previewVisible: true
         });
     }
+
     handleCurrencyChange = (currency:UploadChangeParam) => {
         const { onChange,typeModule} = this.props;
             let fileList:Partial<UploadFile>[]=[...currency.fileList] || [];
@@ -61,6 +66,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
         typeModule===2 && this.setState({ fileLists:fileList as UploadFile[]});
         onChange &&  onChange(fileList as unknown as  UploadChangeParam<UploadFile>);
     }
+
     render() { 
       /*
       success模式下fileList接收的值
@@ -75,7 +81,9 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
         }
       */
         const {fileList,action,limit,typeModule} =this.props
+
         const {previewVisible,previewImage,fileLists}=this.state;
+
         return ( 
             <>
                 <Upload name="file"  
@@ -97,4 +105,5 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
          );
     }
 }
+
 export default ImgUpload;

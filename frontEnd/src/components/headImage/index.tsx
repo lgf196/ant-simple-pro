@@ -1,11 +1,11 @@
 import React, { memo } from 'react'
-
 export interface HeadImageProps {
     url:string;
     width?:number;
     height?:number;
     className?:string;
 }
+
 const HeadImage:React.FC<HeadImageProps> = memo(function HeadImage({url,width,height,className}) {
     return (
         <>
@@ -17,8 +17,10 @@ const HeadImage:React.FC<HeadImageProps> = memo(function HeadImage({url,width,he
 const HeadImagetyle={
     borderRadius: '50%',
 }
+
 HeadImage.defaultProps={
     width:26,
     height:26
 }
+
 export default HeadImage

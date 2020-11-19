@@ -23,6 +23,7 @@ export interface SlideNavState extends layoutProps{
 }
 class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     unlisten!: UnregisterCallback;
+
     constructor(props: SlideNavProps) {
         super(props);
         this.state = {
@@ -31,17 +32,22 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
             collapsed:false
         };
     }
+
    componentWillUnmount(){
         this.unlisten(); //取消监听
     }
+
     componentDidMount(){
         this.unlisten = this.props.history.listen((location:Location) => {  //这样可以监听全局路由的变化
             backTopAnimate(document.querySelector('#content')!,10);
             this.defaultOpenUrl(location.pathname);
         });
+
        this.props.dispatch({type:SAGA_GETMENUTREE});
+       
        this.defaultOpenUrl(this.props.location.pathname);
     }
+
     rednerMenu = (getMenuTree:menuAccessType[]) => { 
         const { SubMenu } = Menu;
         return getMenuTree.map((item)=>{
@@ -81,6 +87,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         }
         return null
     }
+
     onOpenChange = (openKeys: string[]) => {
         const rootSubmenuKeys=this.props.getMenuTree.map(item=>item.url);
         const latestOpenKey = openKeys.find((key: string) => this.state.openKeys.indexOf(key) === -1)!;
@@ -92,6 +99,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
           });
         }
     };
+
     defaultOpenUrl=(url:string)=>{ //获取当前页的路劲，防止刷新看不到选中的样式
         let openKeys:string[]=[],arrUrl:string[]=[];
         arrUrl=url.split('/'); arrUrl.splice(0,1);
@@ -109,6 +117,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         }
         this.setState({openKeys,lastOpenKeys:openKeys});
     }
+
     render() { 
         const { Sider} = Layout;
         const {getMenuTree,collapsed,location,loadingMenuTree} =this.props;
@@ -135,10 +144,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         );
     }
 }
-// export default withRouter(connect(({user}:reduceStoreType)=>({
-//     getMenuTree:user.getMenuTree,
-//     loadingMenuTree:user.loadingMenuTree
-// }))(SlideNav));
+
 const enhance=composes(
     withRouter,
     connect(({user}:reduceStoreType)=>({
@@ -146,4 +152,5 @@ const enhance=composes(
         loadingMenuTree:user.loadingMenuTree
     }))
 )
+
 export default enhance(SlideNav);

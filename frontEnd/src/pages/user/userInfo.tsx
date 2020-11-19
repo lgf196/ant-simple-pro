@@ -1,23 +1,32 @@
 import React, { memo, useEffect } from 'react'
 import { Button, Form, Input} from 'antd';
 import {useFormLayout} from '@/hooks'
-import { connect } from 'react-redux';
+import { useDispatch ,useSelector} from 'react-redux';
 import {getUserType} from '@/interfaces'
 import { requestCode } from '@/utils/varbile'
 import {userOption} from '@/api/login'
 import ImgUpload,{ImgUploadFile} from '@/components/upload/imgUpload'
 import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType';
 import {toast} from '@/utils/function'
-import { Dispatch } from 'redux';
+import { createSelector } from 'reselect'
 import './userInfo.scss'
-export interface UserInfoProps extends loading{
-    getUserInfo:getUserType;
-    dispatch:Dispatch
-}
-const UserInfo:React.FC<UserInfoProps> = memo(function UserInfo({getUserInfo,dispatch,loading}) {
+
+const UserInfo:React.FC = memo(function UserInfo() {
     const [formItemLayout]=useFormLayout();
+
     const [form] = Form.useForm();
+
     const { TextArea } = Input;
+
+    const dispatch = useDispatch(); 
+
+    const selectNumOfDoneTodos = createSelector(           
+        [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
+        (user, other) =>[user.getUserInfo,other.loading] as const
+    );
+     
+    const [getUserInfo,loading]=useSelector(selectNumOfDoneTodos); 
+
     useEffect(() => {
           let { username,introduct,iconUrl='',email}=getUserInfo;
           form.setFieldsValue({
@@ -26,6 +35,7 @@ const UserInfo:React.FC<UserInfoProps> = memo(function UserInfo({getUserInfo,dis
                 iconUrl:iconUrl.length?iconUrl.split(',').map((item) =>({uid:Math.random()*100,url:item,response:{code:requestCode.successCode,data:{url:item}}})):[]
             });
     }, [getUserInfo]);
+
     const  handleSubmit = () => {  //提交
         form.validateFields().then(async (values:Partial<getUserType<ImgUploadFile[]>>) => {
             let res=null,formData=null;
@@ -38,6 +48,7 @@ const UserInfo:React.FC<UserInfoProps> = memo(function UserInfo({getUserInfo,dis
             }
         })
     };
+
     return (
         <div className='bgW userInfo'>
              <Form name="basic"   layout='vertical' {...formItemLayout} className='userForm'  form={form}>
@@ -60,7 +71,5 @@ const UserInfo:React.FC<UserInfoProps> = memo(function UserInfo({getUserInfo,dis
         </div>
     )
 })
-export default connect(({other,user}:reduceStoreType)=>({
-    loading:other.loading,
-    getUserInfo:user.getUserInfo
-}))(UserInfo);
+
+export default UserInfo;

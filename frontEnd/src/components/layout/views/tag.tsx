@@ -36,6 +36,7 @@ class Tag extends React.Component<TagProps, TagState> {
             isHiddleTag:false,
         };
     }
+
     componentDidUpdate(prevProps:TagProps,prevState:TagState){ //如果props改变就调用
         const {location,route,history} =this.props;
         if(location.pathname!=prevProps.location.pathname){
@@ -46,6 +47,7 @@ class Tag extends React.Component<TagProps, TagState> {
           }  
         }
     }
+
     filterRouters=(route:RouteConfig,location:Location):tagPropsType=>{
         let arr=null;
          if(route.routes){
@@ -58,6 +60,7 @@ class Tag extends React.Component<TagProps, TagState> {
          }
          return arr as tagPropsType;
     }
+
     setTags=(route:tagPropsType,location:Location)=>{  //生成动态的路由tag
         const isExist = this.state.tagsList.some(item => {
             return item.path === route.path;
@@ -77,6 +80,7 @@ class Tag extends React.Component<TagProps, TagState> {
             }]}))
         }
     } 
+
     closeTags(index: number,path: string,e: { stopPropagation: () => void }){ //删除标签
         e.stopPropagation();
         this.setState((state)=>({
@@ -90,11 +94,14 @@ class Tag extends React.Component<TagProps, TagState> {
             }
         })
     }
+    
     menu=()=>(
         <Menu onClick={this.tagOption}>
             <Menu.Item key="1">关闭其他</Menu.Item>
             <Menu.Item key="2">关闭标签</Menu.Item>
-        </Menu>)
+        </Menu>
+    )
+
     tagOption=({ key}:MenuInfo)=>{
        if(key==='1'){
             const tagsList = this.state.tagsList.filter(item => item.path === this.props.location.pathname);
@@ -103,6 +110,7 @@ class Tag extends React.Component<TagProps, TagState> {
            this.setState({isHiddleTag:true});
        }
     }
+
     render() { 
         const {location} = this.props;
         const {tagsList,isHiddleTag}=this.state;
@@ -144,4 +152,5 @@ class Tag extends React.Component<TagProps, TagState> {
          );
     }
 }
+
 export default withRouter(Tag);

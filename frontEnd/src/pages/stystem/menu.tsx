@@ -1,25 +1,24 @@
 import React, { memo,useEffect,useCallback} from 'react'
 import Line from '@/components/line'
-import {useSetState,useDel} from '@/hooks'
 import NoData from '@/components/noData'
 import MenuOption from '@/container/stystem/option'
+import {useSetState,useDel} from '@/hooks'
 import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GETMENULIST,SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { ColumnProps} from 'antd/lib/table';
-import { connect } from 'react-redux';
+import { useDispatch ,useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
-import {pagaTionBackData,menuAccessType} from '@/interfaces'
+import {menuAccessType} from '@/interfaces'
 import {sagaGetMenuListType} from '@/redux/saga/user'
 import {toast} from '@/utils/function'
 import {delteAccesstOption} from '@/api/login'
 import { requestCode } from '@/utils/varbile';
 import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
+import { createSelector } from 'reselect'
+
 type dispatchProps=sagaGetMenuListType | {type:SAGA_GETMENUTREE};
-export interface menuListType extends loading{
-    dispatch:Dispatch<dispatchProps>,
-    listData:pagaTionBackData,
-}
-const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loading}) {
+
+const Menu:React.FC = memo(function Menu() {
     const columns:ColumnProps<{id:number}>[]=[
         {
             key: 'index',
@@ -77,21 +76,37 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
             ),
         }
     ];
+
+    const dispatch = useDispatch<Dispatch<dispatchProps>>(); 
+
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
+
     const [pagaTion, setPagaTion] = useSetState();
+
     const initFetch=useCallback(()=> dispatch({type:SAGA_GETMENULIST,payload:pagaTion}),[pagaTion,dispatch]);
+
     const [setReceiptDelte] =useDel(delteAccesstOption,()=>{
         // dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
         initFetch();
         toast(requestCode.successCode,'删除成功');
         dispatch({type:SAGA_GETMENUTREE});
     });
+
+    const selectNumOfDoneTodos = createSelector(           
+        [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
+        (user, other) =>[user.getMenuList,other.loading] as const
+    );
+     
+    const [listData,loading]=useSelector(selectNumOfDoneTodos); 
+
     /*useEffect(() => {
         dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
     }, [pagaTion,dispatch]);*/
+
     useEffect(() => {
         initFetch()
     }, [initFetch]);
+
     const datas:LayoutTablePropsType={
         btnGrounp:[
             {
@@ -109,11 +124,13 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
          receive:()=>initFetch(),
         loading
     }
+
     const handle=(state:number,detailData:editDetailType<Partial<menuAccessType>>['detailData']={})=>{
         if(state===1 || state===2){ 
             setEditData({visible:true,detailData});
        }
     }
+
     return (
         <>
             <LayoutTableComponent {...datas}/>
@@ -122,7 +139,5 @@ const Menu:React.FC<menuListType> = memo(function Menu({dispatch,listData,loadin
         </>
     )
 })
-export default connect(({user,other}:reduceStoreType)=>({
-    listData:user.getMenuList,
-    loading:other.loading
-}))(Menu);
+
+export default Menu;

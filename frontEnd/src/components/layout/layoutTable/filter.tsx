@@ -15,8 +15,9 @@ const Filter:React.FC<FilterProps> = memo(function Filter({tablecolumns,filterCo
         const filterColunsData=tablecolumns.filter((item)=>checkedValue.includes(item.key as string));
         filterColunsFunc(filterColunsData)
     }
+
     const filterComponent = (
-        <div>
+        <>
             <Checkbox.Group  onChange={onChange} defaultValue={(tablecolumns as {key:CheckboxValueType}[]).map((item)=>item.key)}>
                 <ul>
                     {
@@ -26,8 +27,9 @@ const Filter:React.FC<FilterProps> = memo(function Filter({tablecolumns,filterCo
                     }
                 </ul>
            </Checkbox.Group>
-        </div>
-      );
+        </>
+    );
+
     return (
         <>
            

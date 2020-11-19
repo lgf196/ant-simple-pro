@@ -5,26 +5,36 @@ import store from '@/redux/store'
 import { push } from 'connected-react-router'
 import tools from '@/utils'
 import * as types from '@/redux/constants/actionType'
+
 axios.defaults.withCredentials = true;
+
 axios.interceptors.request.use(config => {
     if (localStorage.getItem('token')) {
         config.headers['accesstoken'] = localStorage.getItem('token');
     }
+
     store.dispatch({type:types.LOADING_START}); //触发loading设置为true
-    return config
+
+    return config;
+
 }, error => {
     return Promise.reject(error)
 });
 
 axios.interceptors.response.use((response) => {
+
     let token = response.headers.accesstoken;
+
     if (token) {
         axios.defaults.headers.common['accesstoken'] = token;
     }
+
     // if (response.status === 200) {
         store.dispatch({type:types.LOADING_END}); //触发loading设置为false
     // }
-    return response
+
+    return response;
+
 }, (error) => {
     return Promise.reject(error)
 });
@@ -39,6 +49,7 @@ export const resquest = (method: Method='get', url: string, data: any = {},baseU
             headers:{
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
+
             transformRequest: [
                 function (data:any) {
                    let ret = ''
@@ -63,9 +74,11 @@ export const resquest = (method: Method='get', url: string, data: any = {},baseU
             }
         }, error => {
             store.dispatch({type:types.LOADING_END}); //触发loading设置为false
+
             error.response && error.response.data ? toast(requestCode.failedCode, error.response.data.mes):toast(requestCode.failedCode, '请求出错，请重试');
         }).catch((err) => {
             store.dispatch({type:types.LOADING_END}); //触发loading设置为false
+
             toast(requestCode.serverErrorCode, '服务异常');
         })
     })

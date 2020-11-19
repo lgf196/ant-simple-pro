@@ -13,7 +13,9 @@ import '@/assets/scss/common.scss'
 import style from './index.module.scss'
 
 type sizeProps = TableProps<any>['size'];
+
 type pagaTionProps = PaginationProps['size'];
+
 export type LayoutTablePropsType = {
     tableProps: TableProps<any>;
     pagaTionProps?: PaginationProps | { onChanges: PaginationProps['onChange'] }
@@ -21,17 +23,24 @@ export type LayoutTablePropsType = {
 
 const LayoutTable: React.FC<LayoutTablePropsType> = memo(function LayoutTable({ btnGrounp,
     iconGrounp, tableTitle, tableProps, pagaTionProps, loading, receive, children }) {
+
     const [tableSize, setTableSize] = useState<sizeProps>('middle');
+
     const [pagaTionSize, setPagaTionSize] = useState<pagaTionProps>('default');
+
     const [columns, setColumns] = useState(tableProps.columns);
+
     const elemet = useRef(null);
+
     const tableSizeFunc = (size: sizeProps) => {
         setTableSize(size)
         setPagaTionSize(size === "small" ? 'small' : 'default')
     }
+
     const filterColunsFunc = (val: ColumnProps<any>[]) => {  //动态控制colum
         setColumns(val);
     }
+    
     const defauluIcon: grounpProps[] = [
         {
             component:<Tooltip title='刷新' placement="bottom">

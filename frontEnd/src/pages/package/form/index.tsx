@@ -13,9 +13,11 @@ interface FormCompentType {
 const FormCompent = memo(function FormCompent(props) {
       const onFinish = (values:FormCompentType) => {
         const rangeValue = values['date'];
+
         const val=Object.assign({},values,{
             date:[rangeValue[0].format('YYYY-MM-DD'), rangeValue[1].format('YYYY-MM-DD')],
         });
+
         console.log('Success:', val);
       };
       const layout = {
@@ -28,9 +30,13 @@ const FormCompent = memo(function FormCompent(props) {
             lg:{ span:9},
         },
       };
+
       const { RangePicker } = DatePicker;
+
       const { TextArea } = Input;
+
       const [form] = Form.useForm();
+
       const selectList=[
           {name:'react',id:1},
           {name:'vue',id:2},
@@ -41,6 +47,7 @@ const FormCompent = memo(function FormCompent(props) {
           {name:'typescript',id:7},
           {name:'qiankun',id:8},
       ];
+
       const hobbyOptions = [
         { label: '篮球', value:1 },
         { label: '乒乓球', value: 2},
@@ -48,10 +55,12 @@ const FormCompent = memo(function FormCompent(props) {
         { label: '游泳', value: 4 },
         { label: '跑步', value: 5 },
       ];
+
       const sexList=[
         { label: '男', value:1 },
         { label: '女', value: 2}, 
       ];
+
     useEffect(() => {
           form.setFieldsValue({
             username:'枫叶' ,
@@ -72,6 +81,7 @@ const FormCompent = memo(function FormCompent(props) {
               },]
           });
     }, []);
+    
     return (
         <div className='bgW padding-10px'>
             <Form  {...layout} form={form} labelAlign='left' onFinish={onFinish}>

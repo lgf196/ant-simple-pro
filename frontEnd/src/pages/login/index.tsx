@@ -8,15 +8,12 @@ import SvgIcon from '@/components/svgIcon'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Footer} from '@/components/layout/views'
 import style from './login.module.scss'
-import { createSelector } from 'reselect'
 
 const Login:React.FC=()=>{
     const history=useHistory();
-    const selectNumOfDoneTodos = createSelector(
-        [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
-        (user, other) =>[user.getUserInfo,other.loading] 
-    ) 
+
     const loading=useSelector(({other}:reduceStoreType) => other.loading);
+
     const onFinish =async (values:any) => {
         const {email,password} = values
         let res=await login({email,password});
@@ -24,7 +21,8 @@ const Login:React.FC=()=>{
             localStorage.setItem('token',res.data);
             history.push("/home");
         }
-    }
+    };
+
     return (
         <div className={style.login}>
             <div className={style.content}>
@@ -72,5 +70,6 @@ const Login:React.FC=()=>{
         </div>
     )
 }
+
 export default Login;
 

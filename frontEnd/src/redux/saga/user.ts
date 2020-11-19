@@ -17,39 +17,50 @@ export const effects={
     *getMenTree(){
        try {
         const res:responseData=yield call(getAccessMenuList);
-            yield put(loadingMenuTree(false))
+            yield put(loadingMenuTree(false));
+
             if (res.code===requestCode.successCode) {
-              yield put(loadingMenuTree(true))
-              yield put(getMenuTree(res.data));
+              yield race([put(loadingMenuTree(true)),put(getMenuTree(res.data))])   
             }
+
        } catch (error) {
             yield put(getMenuTree([]));
        }
     },
+
     *getMenuList({payload}:sagaGetMenuListType){
         try {
             const res:responseData=yield call(getAccessMenu,payload);
+
             let {list=[],total=0}=res.data;
+
             if(res.code===requestCode.successCode && list.length){
                 list=list.map((item:menuAccessType)=>Object.assign({},item,{createTime:tools.formatDate(item.createTime,'YYYY-MM-DD hh:mm:ss')}));
             }
-            yield put(getMenuList({list,total}))
+
+            yield put(getMenuList({list,total}));
+
         } catch (error) {
             yield put(getMenuList({list:[],total:0}));
         }
     },
+
     *getUserData({payload}:sagaGetUserDataType){
         try {
             const res:responseData=yield call(userList,payload);
+
             res.code===requestCode.successCode &&  (yield put(getUserList(res.data)));
         } catch (error) {
             yield put(getUserList([]));
         }
     },
+
     *getUserInfoData(){
         try {
             const res:responseData=yield call(userInfo);
-            yield put(loadingUserInfo(false))
+
+            yield put(loadingUserInfo(false));
+            
             res.code===requestCode.successCode &&  (yield race([put(loadingUserInfo(true)),put(getUserInfo(res.data))]));
         } catch (error) {
              yield put(getUserInfo({}));

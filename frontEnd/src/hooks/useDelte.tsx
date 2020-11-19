@@ -11,6 +11,7 @@ export type dataType ={
 
 const useDel = (interfaces:Function,successCallBack:Function,data:Partial<dataType>={}):[(data:dataType)=>void] =>{
     const [receipt, setReceipt] = useSetState(data);
+
     useEffect(() => {
         if(receipt.id){
             confirm(async ()=>{
@@ -20,6 +21,7 @@ const useDel = (interfaces:Function,successCallBack:Function,data:Partial<dataTy
         }
         return ()=>{setReceipt({})}
     }, [receipt.id,receipt.listen]); //receipt.listen,防止重复点击没效果
+    
     return [setReceipt];
 }
 export default useDel;

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import {isToken} from '@/utils/varbile'
 interface propsType{   //必须要继承，不写的话，传入的组件将会报错
 }
+
 function menuRouter<T extends object>(WrappedComponent:React.ComponentType<T>){
    return class Menu extends React.Component<T & propsType, {}> {
         constructor(props: T & propsType) {
@@ -23,4 +24,5 @@ function menuRouter<T extends object>(WrappedComponent:React.ComponentType<T>){
         }
     }
 }
+
 export default menuRouter;

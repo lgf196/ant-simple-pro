@@ -4,11 +4,13 @@ export interface useWindowSizeType {
     width:number;
     height:number;
 }
+
 const useWindowSize=():useWindowSizeType=> {
     const [windowSize, setWindowSize] = useState<useWindowSizeType>({
       width:0,
       height: 0,
     });
+
     useEffect(() => {
       function handleResize() {
         setWindowSize({
@@ -20,6 +22,7 @@ const useWindowSize=():useWindowSizeType=> {
       handleResize();
       return () => window.removeEventListener("resize", handleResize);
     }, []); 
+
     return windowSize 
 }
 export default useWindowSize;

@@ -2,27 +2,34 @@ import React, { memo,useEffect } from 'react'
 import Inputs from '@/components/input'
 import { Button, Modal, Form } from 'antd';
 import {useFormLayout} from '@/hooks'
-import { Dispatch } from 'redux';
 import {requestCode} from '@/utils/varbile'
 import {toast} from '@/utils/function'
-import { connect } from 'react-redux';
+import { useDispatch ,useSelector} from 'react-redux';
 import {getUserType} from '@/interfaces'
 import {userOption} from '@/api/login'
 import ImgUpload,{ImgUploadFile} from '@/components/upload/imgUpload'
 import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType';
-export interface UserEditProps extends editDetailType<Partial<getUserType>>,loading{
-    dispatch:Dispatch;
+export interface UserEditProps extends editDetailType<Partial<getUserType>>{
+   
 }
+
 const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailData,
-    onCancel,sucessCallback,loading,dispatch}) {
+    onCancel,sucessCallback}) {
+    const dispatch = useDispatch(); 
+
     const [form] = Form.useForm();
+
     const [formItemLayout]=useFormLayout();
+
+    const loading=useSelector(({other}:reduceStoreType) => other.loading);
+
     useEffect(() => {
         if (visible) {
           let { username,introduct,iconUrl}=detailData;
           form.setFieldsValue({username,introduct,iconUrl});
         }
     }, [visible]);
+
     const  handleSubmit = () => {  //提交
         form.validateFields().then(async (values:Partial<getUserType<ImgUploadFile[]>>) => {
             let res=null,formData=null;
@@ -34,8 +41,8 @@ const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailD
                 toast();sucessCallback();onCancel(); dispatch({type:SAGA_GET_USER_INFO});
             }
         })
-        
     };
+
     return (
         <>
             <Modal
@@ -66,6 +73,4 @@ const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailD
     )
 })
 
-export default connect(({other}:reduceStoreType)=>({
-    loading:other.loading
-}))(UserEdit);
+export default UserEdit;

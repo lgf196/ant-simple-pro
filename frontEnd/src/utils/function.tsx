@@ -45,7 +45,9 @@ export const easeInOutCubic=(t: number, b: number, c: number, d: number)=> {
  */
 export const backTopAnimate=(target: Element=document.documentElement || document.body,duration:number=450)=>{
     const scrollTop=target.scrollTop;
+
     const startTime = Date.now();
+
     const frameFunc=()=>{
         const timestamp = Date.now();
         const time = timestamp - startTime;
@@ -54,5 +56,6 @@ export const backTopAnimate=(target: Element=document.documentElement || documen
         // console.log('nextScrollTop', nextScrollTop)
         time < duration && window.requestAnimationFrame(frameFunc);
     }
+    
     window.requestAnimationFrame(frameFunc);
 }

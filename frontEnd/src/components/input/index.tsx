@@ -4,6 +4,7 @@ import {InputProps} from 'antd/lib/input/Input'
 interface InputsType extends InputProps{
   
 }
+
 const Inputs:React.FC<InputsType> = memo(function Inputs({onChange,placeholder,size,value,...props}) {
   const  handleCurrencyChange = (currency:React.ChangeEvent<HTMLInputElement>) => {
         onChange &&  onChange(currency);
