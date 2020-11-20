@@ -93,9 +93,9 @@
   },
   "scripts": {
     "dev": "node scripts/start.js",
-    "build:beta": "cross-env NODE_ENV=beta node scripts/start.js",
-    "build:release": "cross-env NODE_ENV=release node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build:beta": "cross-env NODE_ENV=beta node scripts/build.js",
+    "build:release": "cross-env NODE_ENV=release node scripts/build.js",
+    "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {

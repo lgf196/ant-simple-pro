@@ -1,4 +1,4 @@
-import { put, takeEvery ,call,takeLatest,takeLeading,race} from 'redux-saga/effects'
+import { put, takeEvery ,call,takeLatest,race} from 'redux-saga/effects'
 import {requestCode} from '@/utils/varbile'
 import * as SAGA from '@/redux/constants/sagaType'
 import {getAccessMenuList,getAccessMenu,userList,userInfo,userListType} from '@/api/login'

@@ -2,10 +2,9 @@ import React, { memo,useEffect,useMemo} from 'react'
 import {Dropdown,Menu, Spin } from 'antd'
 import {Link } from "react-router-dom"
 import {MenuFoldOutlined,MenuUnfoldOutlined} from  '@ant-design/icons';
-import {layoutProps,getUserType} from '@/interfaces'
+import {layoutProps} from '@/interfaces'
 import {FullScreeOut} from '@/components/layout/layoutTable'
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
+import {useDispatch ,useSelector} from 'react-redux';
 import {SAGA_GET_USER_INFO} from '@/redux/constants/sagaType'
 import HeadImage from '@/components/headImage'
 import style from './head.module.scss'
@@ -16,16 +15,27 @@ import { MenuInfo  } from 'rc-menu/lib/interface';
 import {confirm} from '@/utils/function'
 import { useHistory } from "react-router-dom";
 import {localStorage} from '@/assets/js/storage'
+import { createSelector } from 'reselect'
+import News from './new'
 
-export type topbarProps={onToggle:Function,getUserInfo:getUserType,dispatch:Dispatch,loadingUserInfo:boolean} & layoutProps;
+export type topbarProps={onToggle:Function} & layoutProps;
 
-const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,getUserInfo,dispatch,width,setIsMobileDrawer,loadingUserInfo}) {
+const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,width,setIsMobileDrawer}) {
     const history=useHistory();
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch({type:SAGA_GET_USER_INFO});
     }, [dispatch]);
 
+    const selectNumOfDoneTodos = createSelector(           
+        [(state:reduceStoreType) => state.user.getUserInfo,(state:reduceStoreType) => state.user.loadingUserInfo],
+        (getUserInfo, loadingUserInfo) =>[getUserInfo,loadingUserInfo] as const
+    );
+  
+    const [getUserInfo,loadingUserInfo]=useSelector(selectNumOfDoneTodos); 
+    
     const isMobileDevice=useMemo(()=>width!<responsiveConfig.mobileInnerWidth?true:false,[width]);
 
     const tagOption=({ key}:MenuInfo)=>{
@@ -70,6 +80,7 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
                     </div>
                 </div>
                 <div className={`${style.menuList} fr`}>
+                    <News/>
                     <FullScreeOut className={style.icon}/>
                     <Dropdown overlay={dropdown} placement="bottomCenter">
                         <div className={`${style.propsUser}`}>
@@ -86,8 +97,5 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,ge
     )
 })
 
-export default connect(({user}:reduceStoreType)=>({
-    getUserInfo:user.getUserInfo,
-    loadingUserInfo:user.loadingUserInfo
-}))(TopBar);
+export default TopBar;
 

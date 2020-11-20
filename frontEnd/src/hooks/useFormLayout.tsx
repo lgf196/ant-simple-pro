@@ -12,7 +12,7 @@ const useModelLayout = ( labelColSm:number= 6, wrapperColSm:number=18, labelColX
         },
     };
     
-    const [formItemLayout, useFormItemLayout] = useSetState(formItemLayouts);
+    const [formItemLayout] = useSetState(formItemLayouts);
   
     return [formItemLayout] as const;
 }

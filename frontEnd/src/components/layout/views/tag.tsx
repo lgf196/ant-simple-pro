@@ -8,7 +8,6 @@ import  style from './tag.module.scss'
 import { Dropdown,Menu} from "antd";
 import { MenuInfo  } from 'rc-menu/lib/interface';
 import { CSSTransition } from 'react-transition-group';
-import { responsiveConfig } from "@/utils/varbile";
 export interface TagProps extends layoutProps,RouteComponentProps {
     route:RouteConfig
 }
@@ -39,7 +38,7 @@ class Tag extends React.Component<TagProps, TagState> {
 
     componentDidUpdate(prevProps:TagProps,prevState:TagState){ //如果props改变就调用
         const {location,route,history} =this.props;
-        if(location.pathname!=prevProps.location.pathname){
+        if(location.pathname!==prevProps.location.pathname){
           try {
               this.setTags(this.filterRouters(route,location),location)
           }catch (error) {
@@ -69,7 +68,7 @@ class Tag extends React.Component<TagProps, TagState> {
             if(this.state.tagsList.length >= 8){
                 this.state.tagsList.shift();
             }
-            if(route.path=='*' || route.path=='/404'){
+            if(route.path==='*' || route.path==='/404'){
                 this.setState((state)=>({tagsList:[]}));
                 return false;
             }
@@ -84,7 +83,7 @@ class Tag extends React.Component<TagProps, TagState> {
     closeTags(index: number,path: string,e: { stopPropagation: () => void }){ //删除标签
         e.stopPropagation();
         this.setState((state)=>({
-            tagsList:state.tagsList.filter((item,i)=>i!=index)
+            tagsList:state.tagsList.filter((item,i)=>i!==index)
         }),()=>{
             const item = this.state.tagsList[index] ? this.state.tagsList[index] : this.state.tagsList[index - 1];
             if (item) {

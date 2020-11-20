@@ -35,7 +35,7 @@
       align-items: center;
       padding-right: 15px;
       .icon{
-        padding:0px 15px;
+        padding:0 20px;
         font-weight: bold;
         @include style(18px,$topbarColor);
       }
@@ -48,3 +48,10 @@
       }
     }
   }
+.newList{
+  width:300px;
+  background: #fff;
+  padding:15px;
+  border-radius:4px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}

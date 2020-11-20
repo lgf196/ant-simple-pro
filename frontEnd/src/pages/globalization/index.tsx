@@ -7,6 +7,7 @@ import { RadioChangeEvent } from 'antd/lib/radio';
 import '@/il8n';
 const Globalization = memo(function Globalization(props) {
     const { t, i18n } = useTranslation();
+    
     const listData: any[] | undefined = [];
     for (let i = 0; i <3; i++) {
         listData.push({
@@ -17,16 +18,19 @@ const Globalization = memo(function Globalization(props) {
             content:t('content')
         });
     }
+    
     const IconText = ({ icon, text }: any) => (
         <Space>
             {React.createElement(icon)}
             {text}
         </Space>
     );
+
     const change=(val:RadioChangeEvent)=>{
         const lang=val.target.value;
         i18n.changeLanguage(lang);
     }
+
     return (
         <div className='bgW padding-10px'>
             <div>

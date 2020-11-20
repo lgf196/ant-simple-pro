@@ -5,9 +5,9 @@ import {requestCode} from './varbile'
 import {statusCode} from '@/interfaces'
 
 export const toast=(status:statusCode=requestCode.successCode,content:string='操作成功'):void=>{
-    if(status==requestCode.successCode){
+    if(status===requestCode.successCode){
         message.success(content);
-    }else if(status==requestCode.failedCode){
+    }else if(status===requestCode.failedCode){
         message.error(content);
     }
 }

@@ -48,7 +48,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
     handleCurrencyChange = (currency:UploadChangeParam) => {
         const { onChange,typeModule} = this.props;
             let fileList:Partial<UploadFile>[]=[...currency.fileList] || [];
-            if(currency.file.status=='done'){
+            if(currency.file.status==='done'){
                 fileList=fileList.map(item=>{
                     let filterData=null;
                         if(item.response) {
@@ -59,7 +59,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
                         }
                     return filterData || {uid:item.uid,status:'error',response:{},thumbUrl:item.thumbUrl};
                 });
-            }else if(currency.file.status=='error'){
+            }else if(currency.file.status==='error'){
                 toast(requestCode.failedCode,'上传失败');
                 fileList=fileList.map((item,index)=>index===fileList.length-1?{uid:currency.file.uid,status:'error',response:'服务异常',thumbUrl:item.thumbUrl}:item);
             }
