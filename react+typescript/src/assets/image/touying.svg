@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="552px" height="302px" viewBox="0 0 552 302" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>touying@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-47.2%" y="-312.5%" width="194.3%" height="725.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="登录7" transform="translate(-1269.000000, -624.000000)" fill="#1890FF">
+            <g id="登录" transform="translate(1305.000000, 337.000000)">
+                <rect id="touying" filter="url(#filter-1)" x="81" y="414" width="318" height="48" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

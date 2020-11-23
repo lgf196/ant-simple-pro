@@ -1,0 +1,55 @@
+@import 'src/assets/scss/varible.scss';
+.layoutTable{
+    background: $color1;
+    // padding-bottom: 20px;
+    .header-others{
+        width: 100%;
+        padding:20px 20px 0 20px;
+    }
+    .header-option{
+        padding:20px;
+        display: flex;
+        width: 100%;
+        align-items: center;
+         justify-content: space-around;
+        &-title{
+            flex: 1 1;
+            font-weight: 500;
+            line-height: 24px;
+            opacity: .85;
+            @include style(16px,rgba(0,0,0,.85))
+        }
+        &-func{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .option-btn{
+                display: flex;
+                div{
+                    margin-left:8px;
+                }
+            }
+           .option-icon{
+            //    width: 100%;
+               display: flex;
+               cursor: pointer;
+               .line{
+                    position: relative;
+                    top: -.06em;
+                    display: inline-block;
+                    height: 1.5em;
+                    margin: 0 8px;
+                    vertical-align: middle;
+                    border-top: 0;
+                    border-left: 1px solid rgba(0,0,0,.06);
+               }
+               .icon-grounp{
+                   display: flex;
+                   div{
+                     margin-right:5px;
+                   }
+               }
+           } 
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@import 'src/assets/scss/varible.scss';
+.login{
+  padding: 0 10% 0 5%;
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  @include wh(100%,100vh);
+.content{
+  flex: 1;
+  width: 100%;
+  display: flex;
+    align-items: center;
+  justify-content: space-between;
+}
+  .bg{
+    width:calc(100% - 360px - 18%);
+    img{
+      @include wh(100%,100%)
+    }
+  }
+  .fill {
+    width: 360px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px 0px rgba(24, 144, 255, 0.1),0 55px 85px -60px rgba(24, 144, 255, 0.31);
+    border-radius: 2px;
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+    .logon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2{
+        padding-left:8px;
+        @include style(16px,rgba(24, 144, 255, 1));
+      }
+    }
+    .from{
+      padding-top:30px;
+      .space{
+        width: 100%;
+        margin-top:50px;
+        margin-bottom: 0;
+      }
+      .submit{
+        width: 100%;
+      }
+    }
+  }
+}
