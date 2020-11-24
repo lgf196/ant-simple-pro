@@ -1,4 +1,4 @@
-class Tools{
+export default class Tools<T>{
     createALabel(path:string,fileName:string='用户信息.xlsx'){
         let link = document.createElement('a')
         link.style.display = 'none'
@@ -60,4 +60,3 @@ class Tools{
         return arrRes.map(item=>item.id);;
   }
 }
-export default new Tools();

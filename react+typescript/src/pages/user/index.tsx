@@ -16,7 +16,7 @@ import {sagaGetUserDataType} from '@/redux/saga/user'
 import {userListType,xlsxFileDown} from '@/api/login'
 import { ArrowDownOutlined } from '@ant-design/icons';
 import { createSelector } from 'reselect'
-import tools from '@/utils'
+import Tools from '@/utils'
 import '@/assets/scss/common.scss'
 
 const User:React.FC = memo(function User() {
@@ -74,6 +74,9 @@ const User:React.FC = memo(function User() {
             ),
         }
     ];
+
+    const  tools=new Tools();
+    
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
 
     const { Search } = Input;

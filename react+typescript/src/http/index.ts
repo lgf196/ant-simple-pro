@@ -3,8 +3,10 @@ import { requestCode } from '../utils/varbile'
 import { toast } from '../utils/function'
 import store from '@/redux/store'
 import { push } from 'connected-react-router'
-import tools from '@/utils'
+import Tools from '@/utils'
 import * as types from '@/redux/constants/actionType'
+
+const  tools=new Tools();
 
 axios.defaults.withCredentials = true;
 
@@ -49,7 +51,6 @@ export const resquest = (method: Method='get', url: string, data: any = {},baseU
             headers:{
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-
             transformRequest: [
                 function (data:any) {
                    let ret = ''

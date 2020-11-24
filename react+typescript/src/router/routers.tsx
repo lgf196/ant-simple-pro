@@ -29,7 +29,7 @@ export const staticRouter:RouteConfig[]=[
         exact: true,
         path: '/home',
         component:HocRouter(lazy(()=> import('@/pages/home'))),
-        title: '系统信息',
+        title: '首页',
     },
     {
         exact: true,

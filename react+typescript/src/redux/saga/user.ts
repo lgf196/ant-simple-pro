@@ -4,7 +4,9 @@ import * as SAGA from '@/redux/constants/sagaType'
 import {getAccessMenuList,getAccessMenu,userList,userInfo,userListType} from '@/api/login'
 import {getMenuTree,getMenuList,getUserList,getUserInfo,loadingMenuTree,loadingUserInfo} from '@/redux/action/user'
 import { menuAccessType,pagationType} from '@/interfaces'
-import tools from '@/utils'
+import Tools from '@/utils'
+
+const  tools=new Tools();
 export interface sagaGetMenuListType {
     type:SAGA.SAGA_GETMENULIST;
     payload:pagationType

@@ -1,6 +1,6 @@
 import React, { memo,useEffect,useMemo,useState} from 'react'
 import Inputs from '@/components/input'
-import tools from '@/utils'
+import Tools from '@/utils'
 import { Button, Modal, Form,Cascader } from 'antd';
 import {useFormLayout} from '@/hooks'
 import {requestCode} from '@/utils/varbile'
@@ -17,6 +17,8 @@ export interface OptionType extends editDetailType<Partial<menuAccessType>>{
 
 const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
   onCancel,sucessCallback}) {
+    const  tools=new Tools();
+
     const dispatch = useDispatch(); 
 
     const [form] = Form.useForm();
