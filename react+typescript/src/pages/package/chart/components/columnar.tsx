@@ -36,23 +36,25 @@ const Columnar = memo(function Columnar() {
           sales: 38,
         },
     ];
-    const config = {
-        title: {
-          visible: true,
-          text: '基础柱状图',
-        },
-        forceFit: true,
-        data,
-        padding: 'auto',
+
+    const config:any = {
+        data: data,
         xField: 'type',
         yField: 'sales',
-        meta: {
-          type: { alias: '类别' },
-          sales: { alias: '销售额(万)' },
+        label: {
+            position: 'middle',
+            style: {
+                fill: '#FFFFFF',
+                opacity: 0.6
+            }
         },
+        meta: {
+            type: { alias: '类别' },
+            sales: { alias: '销售额' }
+        }
       };
     return (
-        <div className='bgW'>
+        <div className='bgW padding-10px'>
               <Column {...config} />
         </div>
     )

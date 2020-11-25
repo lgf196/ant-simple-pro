@@ -2,47 +2,35 @@ import React, { memo } from 'react'
 import { Bar } from '@ant-design/charts';
 const BarComponent = memo(function BarComponent() {
     const data = [
-        {
-          地区: '华东',
-          销售额: 4684506.442,
-        },
-        {
-          地区: '中南',
-          销售额: 4137415.0929999948,
-        },
-        {
-          地区: '东北',
-          销售额: 2681567.469000001,
-        },
-        {
-          地区: '华北',
-          销售额: 2447301.017000004,
-        },
-        {
-          地区: '西南',
-          销售额: 1303124.508000002,
-        },
-        {
-          地区: '西北',
-          销售额: 815039.5959999998,
-        },
-      ];
+      {
+        action: '浏览网站',
+        pv: 50000,
+      },
+      {
+        action: '放入购物车',
+        pv: 35000,
+      },
+      {
+        action: '生成订单',
+        pv: 25000,
+      },
+      {
+        action: '支付订单',
+        pv: 15000,
+      },
+      {
+        action: '完成交易',
+        pv: 8500,
+      },
+    ];
       const config = {
-        title: {
-          visible: true,
-          text: '基础条形图',
-        },
-        forceFit: true,
-        data,
-        xField: '销售额',
-        yField: '地区',
-        label: {
-          visible: true,
-          formatter: (v:any) => Math.round(v / 10000) + '万',
-        },
+        data: data,
+        xField: 'pv',
+        yField: 'action',
+        conversionTag: {},
       };
     return (
-        <div className='bgW'>
+        <div className='bgW padding-10px'>
              <Bar {...config} />
         </div>
     )
