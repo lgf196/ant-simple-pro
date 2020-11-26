@@ -1,21 +1,16 @@
 import { h } from 'vue'
 import {
-  SyncOutlined,
-  FilterOutlined,
-  ColumnHeightOutlined,
-  FullscreenOutlined
+  SyncOutlined
 } from '@ant-design/icons-vue'
 import { Table } from 'ant-design-vue'
+import FilterColumns from './filter-columns'
+import TableSize from './table-size'
+import Fullscreen from '@/components/fullscreen'
 import './index.less'
 
 export default {
   name: 'LayoutTable',
-  components: {
-    SyncOutlined,
-    FilterOutlined,
-    ColumnHeightOutlined,
-    FullscreenOutlined
-  },
+  emits: ['change'],
   props: {
     tableTitle: {
       type: String
@@ -30,10 +25,18 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    onRefresh: {
+      type: Function,
+      default: () => {} // eslint-disable-line
     }
   },
   data() {
-    return {}
+    const columns = this.tableProps.columns || []
+    return {
+      columns,
+      size: 'middle'
+    }
   },
   render() {
     const {
@@ -42,45 +45,55 @@ export default {
       extraIcons = () => {}, // eslint-disable-line
       ...restSlots
     } = this.$slots
+    const tableProps = {
+      ...this.tableProps,
+      columns: this.columns,
+      size: this.size
+    }
+    const columns = this.tableProps.columns || []
+    const onFilterChange = (keys) => {
+      this.columns = columns.filter(column => keys.indexOf(column.key) >= 0)
+    }
+    const onTableSizeChange = (e) => {
+      this.size = e.key
+    }
     return (
-      <a-spin spinning={this.loading}>
-        <div class="layout-table">
-          <div class="layout-table__header">
-            {search()}
-          </div>
-          <div class="layout-table__toolbar">
-            <div class="toolbar-left">{this.tableTitle}</div>
-            <div class="toolbar-right">
-              <div class="toolbar-right__buttons">
-                {buttons()}
+      <a-config-provider getPopupContainer={() => this.$refs.wrapper}>
+        <div ref="wrapper" class="wrapper">
+          <a-spin spinning={this.loading}>
+            <div class="layout-table">
+              <div class="layout-table__header">
+                {search()}
               </div>
-              {this.$slots.buttons ? <a-divider type="vertical" /> : null}
-              <div class="toolbar-right__icons">
-                <a-tooltip title="刷新" placement="bottom">
-                  <SyncOutlined />
-                </a-tooltip>
-                <a-tooltip title="过滤" placement="left">
-                  <FilterOutlined />
-                </a-tooltip>
-                <a-tooltip title="密度" placement="left">
-                  <ColumnHeightOutlined />
-                </a-tooltip>
-                <a-tooltip title="全屏" placement="bottom">
-                  <FullscreenOutlined />
-                </a-tooltip>
-                {extraIcons()}
+              <div class="layout-table__toolbar">
+                <div class="toolbar-left">{this.tableTitle}</div>
+                <div class="toolbar-right">
+                  <div class="toolbar-right__buttons">
+                    {buttons()}
+                  </div>
+                  {this.$slots.buttons ? <a-divider type="vertical" /> : null}
+                  <div class="toolbar-right__icons">
+                    <a-tooltip title="刷新" placement="bottom">
+                      <SyncOutlined onClick={this.onRefresh} />
+                    </a-tooltip>
+                    <FilterColumns columns={columns} onChange={onFilterChange} />
+                    <TableSize onChange={onTableSizeChange} />
+                    <Fullscreen el={this.$refs.wrapper} />
+                    {extraIcons()}
+                  </div>
+                </div>
               </div>
+              {
+                h(
+                  Table,
+                  tableProps,
+                  restSlots
+                )
+              }
             </div>
-          </div>
-          {
-            h(
-              Table,
-              this.tableProps,
-              restSlots
-            )
-          }
+          </a-spin>
         </div>
-      </a-spin>
+      </a-config-provider>
     )
   }
 }

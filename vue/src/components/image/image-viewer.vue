@@ -1,59 +1,59 @@
 <template>
-  <transition name="viewer-fade">
-    <div tabindex="-1" ref="com-image-viewer__wrapper" class="com-image-viewer__wrapper" :style="{ 'z-index': zIndex }" v-if="visible">
-      <div class="com-image-viewer__mask"></div>
-      <!-- CLOSE -->
-      <span class="com-image-viewer__btn com-image-viewer__close" @click="hide">
-        <a-icon class="com-icon-circle-close" type="close-circle" />
+  <div tabindex="-1" ref="com-image-viewer__wrapper" class="com-image-viewer__wrapper" :style="{ 'z-index': zIndex }">
+    <div class="com-image-viewer__mask"></div>
+    <!-- CLOSE -->
+    <span class="com-image-viewer__btn com-image-viewer__close" @click="hide">
+      <CloseCircleOutlined class="com-icon-circle-close" />
+    </span>
+    <!-- ARROW -->
+    <template v-if="!isSingle">
+      <span
+        class="com-image-viewer__btn com-image-viewer__prev"
+        :class="{ 'is-disabled': !infinite && isFirst }"
+        @click="prev">
+        <ComSvgIcon name="arrow-left"></ComSvgIcon>
       </span>
-      <!-- ARROW -->
-      <template v-if="!isSingle">
-        <span
-          class="com-image-viewer__btn com-image-viewer__prev"
-          :class="{ 'is-disabled': !infinite && isFirst }"
-          @click="prev">
-          <ComSvgIcon name="arrow-left"></ComSvgIcon>
-        </span>
-        <span
-          class="com-image-viewer__btn com-image-viewer__next"
-          :class="{ 'is-disabled': !infinite && isLast }"
-          @click="next">
-          <ComSvgIcon name="arrow-right"></ComSvgIcon>
-        </span>
-      </template>
-      <!-- ACTIONS -->
-      <div class="com-image-viewer__btn com-image-viewer__actions">
-        <div class="com-image-viewer__actions__inner">
-          <ComSvgIcon name="zoom-out" @click="handleActions('zoomOut')"></ComSvgIcon>
-          <ComSvgIcon name="zoom-in" @click="handleActions('zoomIn')"></ComSvgIcon>
-          <i class="com-image-viewer__actions__divider"></i>
-          <ComSvgIcon :name="mode.icon" @click="toggleMode"></ComSvgIcon>
-          <i class="com-image-viewer__actions__divider"></i>
-          <ComSvgIcon name="refresh-left" @click="handleActions('anticlocelise')"></ComSvgIcon>
-          <ComSvgIcon name="refresh-right" @click="handleActions('clocelise')"></ComSvgIcon>
-        </div>
-      </div>
-      <!-- CANVAS -->
-      <div class="com-image-viewer__canvas">
-        <img
-          v-for="(url, i) in currentUrlList"
-          ref="img"
-          class="com-image-viewer__img"
-          :key="i"
-          :src="currentImg"
-          :style="imgStyle"
-          @load="handleImgLoad"
-          @error="handleImgError"
-          @mousedown="handleMouseDown">
+      <span
+        class="com-image-viewer__btn com-image-viewer__next"
+        :class="{ 'is-disabled': !infinite && isLast }"
+        @click="next">
+        <ComSvgIcon name="arrow-right"></ComSvgIcon>
+      </span>
+    </template>
+    <!-- ACTIONS -->
+    <div class="com-image-viewer__btn com-image-viewer__actions">
+      <div class="com-image-viewer__actions__inner">
+        <ComSvgIcon name="zoom-out" @click="handleActions('zoomOut')"></ComSvgIcon>
+        <ComSvgIcon name="zoom-in" @click="handleActions('zoomIn')"></ComSvgIcon>
+        <i class="com-image-viewer__actions__divider"></i>
+        <ComSvgIcon :name="mode.icon" @click="toggleMode"></ComSvgIcon>
+        <i class="com-image-viewer__actions__divider"></i>
+        <ComSvgIcon name="refresh-left" @click="handleActions('anticlocelise')"></ComSvgIcon>
+        <ComSvgIcon name="refresh-right" @click="handleActions('clocelise')"></ComSvgIcon>
       </div>
     </div>
-  </transition>
+    <!-- CANVAS -->
+    <div class="com-image-viewer__canvas">
+      <img
+        v-for="(url, i) in currentUrlList"
+        :ref="setImgRef"
+        class="com-image-viewer__img"
+        :key="i"
+        :src="currentImg"
+        :style="imgStyle"
+        @load="handleImgLoad"
+        @error="handleImgError"
+        @mousedown="handleMouseDown">
+    </div>
+  </div>
 </template>
 
 <script>
 import { on, off } from '@/utils/dom'
 import { rafThrottle } from '@/utils'
 import { isFirefox } from '@/utils/system'
+import { CloseCircleOutlined } from '@ant-design/icons-vue'
+import ComSvgIcon from '@/components/svg-icon'
 
 const Mode = {
   CONTAIN: {
@@ -90,16 +90,19 @@ export default {
       type: Function,
       default: () => {} // eslint-disable-line
     },
+    destroy: {
+      type: Function,
+      default: () => {} // eslint-disable-line
+    },
     initialIndex: {
       type: Number,
       default: 0
-    },
-    visible: {
-      type: Boolean,
-      default: false
     }
   },
-
+  components: {
+    CloseCircleOutlined,
+    ComSvgIcon
+  },
   data() {
     return {
       index: this.initialIndex,
@@ -113,7 +116,8 @@ export default {
         offsetX: 0,
         offsetY: 0,
         enableTransition: false
-      }
+      },
+      imgRefs: []
     }
   },
   computed: {
@@ -155,32 +159,46 @@ export default {
     },
     currentImg() {
       this.$nextTick(() => {
-        const $img = this.$refs.img[0]
+        const $img = this.imgRefs[0]
         if (!$img.complete) {
           this.loading = true
         }
       })
-    },
-    visible(val) {
-      if (val) {
-        // prevent body scroll
-        prevOverflow = document.body.style.overflow
-        document.body.style.overflow = 'hidden'
-      } else {
-        document.body.style.overflow = prevOverflow
-      }
     }
+    // visible(val) {
+    //   if (val) {
+    //     // prevent body scroll
+    //     prevOverflow = document.body.style.overflow
+    //     document.body.style.overflow = 'hidden'
+    //   } else {
+    //     document.body.style.overflow = prevOverflow
+    //   }
+    // }
   },
   mounted() {
     this.deviceSupportInstall()
     // add tabindex then wrapper can be focusable via Javascript
     // focus wrapper so arrow key can't cause inner scroll behavior underneath
-    this.$refs['com-image-viewer__wrapper'].focus()
+    const wrapper = this.$refs['com-image-viewer__wrapper']
+    wrapper && wrapper.focus()
+    // prevent body scroll
+    prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+  },
+  beforeUpdate() {
+    this.imgRefs = []
+  },
+  beforeUnmount() {
+    document.body.style.overflow = prevOverflow
   },
   methods: {
+    setImgRef(el) {
+      this.imgRefs.push(el)
+    },
     hide() {
       this.deviceSupportUninstall()
-      this.onClose()
+      // this.onClose()
+      this.destroy()
     },
     deviceSupportInstall() {
       this._keyDownHandler = rafThrottle(e => {
@@ -193,7 +211,7 @@ export default {
           39: () => this.next(), // RIGHT_ARROW
           40: () => this.handleActions('zoomOut') // DOWN_ARROW
         }[keyCode]
-        handler()
+        handler && handler()
       })
       this._mouseWheelHandler = rafThrottle(e => {
         const delta = e.wheelDelta ? e.wheelDelta : -e.detail

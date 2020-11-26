@@ -1,4 +1,5 @@
 import { omit } from 'lodash'
+import { saveAs } from 'file-saver'
 
 /**
  * 生成随机字符串
@@ -74,4 +75,13 @@ export function rafThrottle(fn) {
       locked = false
     })
   }
+}
+
+export function downloadExcel(data, filename) {
+  const buf = Buffer.from(data, 'binary')
+  const b = new Blob(
+    [buf],
+    { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }
+  )
+  saveAs(b, filename)
 }

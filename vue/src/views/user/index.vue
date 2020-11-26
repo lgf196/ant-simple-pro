@@ -9,6 +9,7 @@
         rowKey: v => v.id
       }"
       :pagination="false"
+      :onRefresh="run"
     >
       <template #search>
         <a-form
@@ -42,7 +43,7 @@
       </template>
       <template #extraIcons>
         <a-tooltip title="下载" placement="bottom">
-          <ArrowDownOutlined />
+          <ArrowDownOutlined @click="onDownload" />
         </a-tooltip>
       </template>
       <template #index="{ index }">
@@ -51,7 +52,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage className="avatar" :src="text" preview>
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -71,8 +72,9 @@ import {
   ArrowDownOutlined,
   UserOutlined
 } from '@ant-design/icons-vue'
-import { getUsers } from './service'
+import { getUsers, getUsersBuffer } from './service'
 import useRequest from '@/hooks/useRequest'
+import { downloadExcel } from '@/utils'
 const columns = [
   {
     dataIndex: 'index',
@@ -132,6 +134,11 @@ export default {
       columns
     }
   },
+  computed: {
+    urlList() {
+      return this.userList.map(v => v.iconUrl)
+    }
+  },
   setup() {
     const username = ref('')
     const { data: userList = [], run, loading } = useRequest(() => getUsers({
@@ -160,6 +167,20 @@ export default {
     onReset() {
       this.username = ''
       this.run()
+    },
+    onImageClick(url) {
+      this.$imagePreview({
+        urlList: this.urlList,
+        initialIndex: this.urlList.findIndex(v => v === url)
+      })
+    },
+    async onDownload() {
+      try {
+        const data = await getUsersBuffer()
+        downloadExcel(data, '用户信息.xlsx')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }
@@ -170,5 +191,6 @@ export default {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
   }
 </style>

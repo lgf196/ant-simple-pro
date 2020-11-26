@@ -1,32 +1,26 @@
-import { defineComponent, nextTick, createApp } from 'vue'
+import { createApp } from 'vue'
 import ImageViewer from './image-viewer'
 
-let instance = null
+let app = null
 
-export default {
-  open(options = {}) {
-    if (!instance) {
-      const c = defineComponent({
-        extends: ImageViewer,
-        data: () => options
-      })
-      console.log(c)
-      instance = createApp(c)
-    }
-    if (instance.visible) return
-    instance.urlList = Array.isArray(options) ? options : options.urlList || []
-    // document.body.appendChild(instance.$el)
-    instance.mount(document.createElement('div'))
-    console.log(instance)
-
-    nextTick(() => {
-      instance.visible = true
-    })
-  },
-
-  close() {
-    if (instance) {
-      instance.visible = false
+export default function(options = {}) {
+  const div = document.createElement('div')
+  document.body.appendChild(div)
+  const destroy = () => {
+    app.unmount(div)
+    if (div.parentNode) {
+      div.parentNode.removeChild(div)
     }
   }
+  const props = {
+    ...options,
+    destroy
+  }
+  app = createApp({
+    render() {
+      return <ImageViewer {...props} />
+    }
+  })
+  app.mount(div)
+  return destroy
 }

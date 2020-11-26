@@ -10,6 +10,13 @@ export const getUsers = (params, loadingCb) => {
   })
 }
 
+export const getUsersBuffer = () => {
+  return request({
+    method: 'get',
+    url: '/fileDown'
+  })
+}
+
 export const saveUser = (data, loadingCb, cancelCallback) => {
   return request({
     method: 'post',

@@ -14,14 +14,14 @@
       :src="src"
       :style="imageStyle"
       :class="{ 'com-image__inner--center': alignCenter, 'com-image__preview': preview }">
-    <template v-if="preview">
-      <image-viewer :z-index="zIndex" :initial-index="imageIndex" v-model:visible="showViewer" :on-close="closeViewer" :url-list="previewSrcList"/>
+    <template v-if="!preview">
+      <!-- <image-viewer :zIndex="zIndex" :initialIndex="imageIndex" v-model:visible="showViewer" :onClose="closeViewer" :urlList="previewSrcList"/> -->
     </template>
   </div>
 </template>
 
 <script>
-import ImageViewer from './image-viewer'
+// import ImageViewer from './image-viewer'
 import { on, off, getScrollContainer, isInContainer } from '@/utils/dom'
 import { isString, isHtmlElement } from '@/utils/type'
 import { throttle } from 'lodash'
@@ -43,7 +43,7 @@ export default {
   inheritAttrs: false,
 
   components: {
-    ImageViewer
+    // ImageViewer
   },
 
   props: {
@@ -221,7 +221,6 @@ export default {
         return
       }
       this.showViewer = true
-      console.log(this.showViewer)
     },
     closeViewer() {
       this.showViewer = false

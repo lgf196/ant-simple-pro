@@ -7,7 +7,7 @@
           :key="index"
           class="nav-tag"
           visible
-          :ref="'navTag' + index"
+          :ref="setItemRef"
           :data-route-item="item"
           :color="isActive(item) ? 'blue' : ''"
           :closable="!isAffix(item)"
@@ -63,7 +63,8 @@ export default {
       tagNavList: getTagNav() || [],
       menuStyle: {},
       visible: false,
-      selectedTag: {}
+      selectedTag: {},
+      tagRefs: []
     }
   },
   watch: {
@@ -95,10 +96,16 @@ export default {
     //   setTagNav(this.tagNavList)
     // })
   },
+  beforeUpdate() {
+    this.tagRefs = []
+  },
   beforeUnmount() {
     document.body.removeEventListener('click', this.closeMenu)
   },
   methods: {
+    setItemRef(el) {
+      this.tagRefs.push(el)
+    },
     isActive(route) {
       return route.path === this.$route.path
     },
@@ -147,12 +154,7 @@ export default {
     },
     getTagElementByRoute(route) {
       this.$nextTick(() => {
-        const refTagKeys = Object.keys(this.$refs).filter(key => key.indexOf('navTag') >= 0)
-        if (!refTagKeys.length) {
-          return
-        }
-        refTagKeys.forEach(key => {
-          const item = this.$refs[key]
+        this.tagRefs.forEach(item => {
           if (item && route.path === item.$attrs['data-route-item'].path) {
             const tag = item.$el
             this.moveToView(tag)

@@ -19,6 +19,15 @@ module.exports = {
       warnings: true,
       errors: true
     },
+    before(app) {
+      app.post('/upload', (req, res) => {
+        setTimeout(() => {
+          res.send({
+            data: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1605845717285.png'
+          })
+        }, 1500)
+      })
+    },
     proxy: {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       '/server/mock': {

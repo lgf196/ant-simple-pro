@@ -20,6 +20,12 @@ export default {
     FullscreenOutlined,
     FullscreenExitOutlined
   },
+  emits: ['change'],
+  props: {
+    el: {
+      type: HTMLElement
+    }
+  },
   data() {
     return {
       isFullscreen: false
@@ -43,7 +49,11 @@ export default {
           content: '您的浏览器不支持全屏功能'
         })
       }
-      screenfull.toggle()
+      if (this.el) {
+        screenfull.toggle(this.el)
+      } else {
+        screenfull.toggle()
+      }
     },
     change() {
       this.isFullscreen = screenfull.isFullscreen
