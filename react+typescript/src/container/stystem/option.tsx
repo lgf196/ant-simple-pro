@@ -47,7 +47,7 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
         }
     }, [visible]);
 
-    const  handleSubmit = () => {  //提交
+    const  handleSubmit = () => {  // 提交
         form.validateFields().then(async (values) => {
            let res=null,formData=null;
             formData=Object.assign(values,{

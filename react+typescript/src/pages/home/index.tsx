@@ -5,7 +5,7 @@ import SvgIcon from '@/components/svgIcon';
 
 const index:React.FC = memo(function index() {
   const { Meta } = Card;
-
+  debugger
   const list = [
     {
       title: 'vue',
@@ -31,7 +31,7 @@ const index:React.FC = memo(function index() {
 
   var data = [
     {
-      type: 'typescript',
+      type: 'ts',
       value: 60,
     },
     {
@@ -51,8 +51,7 @@ const index:React.FC = memo(function index() {
       value: 5,
     }
   ];
-
-
+  
   var config:any = {
     appendPadding:10,
     data:data,
@@ -88,64 +87,64 @@ const index:React.FC = memo(function index() {
   }
 
     return (
-        <>
-          <List
-                grid={{
-                  gutter: 16,
-                  xs: 1,
-                  sm: 2,
-                  md: 4,
-                  lg: 4,
-                  xl: 4,
-                  xxl: 4,
-                }}
-              dataSource={list}
-              renderItem={item => (
-                <List.Item>
-                  <Card  hoverable  
-                  cover={<img src={require('../../assets/image/pic.svg')} alt="logon"/>}>
+        <> 
+          <Row gutter={[10,10]}>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                  <Card
+                    hoverable
+                    cover={<img src={require('../../assets/image/pic.svg')} alt="logon" height={250}/>}>
                     <Meta
-                        avatar={
-                          <Avatar src={item.img}  shape="square"/>
-                        }
-                        title={item.title}
-                        description={item.des}
-                      />
+                      avatar={
+                        <SvgIcon iconClass='logon' fontSize='30px'/>
+                      }
+                      title='Ant-Simple-Pro'
+                      description='简洁，美观，快速上手，组件丰富；Simple, beautiful, quick to use, rich in components'
+                    />
+                    <ul style={{marginTop:'10px'}}>
+                      {
+                        data.map((item,index)=>(
+                          <li key={index}>
+                            <div>{item.type}</div>
+                            <Progress percent={item.value} status="active" />
+                        </li>
+                        ))
+                      }
+                    </ul>
                   </Card>
-                </List.Item>
-              )}
-          />
-           <Row gutter={[10,10]}>
-              <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-                <Card
-                  hoverable
-                  cover={<img src={require('../../assets/image/pic.svg')} alt="logon" height={250}/>}>
-                  <Meta
-                    avatar={
-                      <SvgIcon iconClass='logon' fontSize='30px'/>
-                    }
-                    title='Ant-Simple-Pro'
-                    description='简洁，美观，快速上手，组件丰富；Simple, beautiful, quick to use, rich in components'
-                  />
-                  <ul style={{marginTop:'10px'}}>
-                    {
-                      data.map((item,index)=>(
-                        <li key={index}>
-                          <div>{item.type}</div>
-                          <Progress percent={item.value} status="active" />
-                       </li>
-                      ))
-                    }
-                  </ul>
-                </Card>
-              </Col>
-              <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-                 <Pie  {...config} className='bgW padding-10px'/>
-              </Col>
-              <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-               <Bar {...barConfig} className='bgW padding-10px'></Bar>
-              </Col>
-           </Row>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                  <Pie  {...config} className='bgW padding-10px'/>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={8} xl={8}>
+                <Bar {...barConfig} className='bgW padding-10px'></Bar>
+                </Col>
+            </Row>
+            <List
+                  grid={{
+                    gutter: 16,
+                    xs: 1,
+                    sm: 2,
+                    md: 4,
+                    lg: 4,
+                    xl: 4,
+                    xxl: 4,
+                  }}
+                dataSource={list}
+                renderItem={item => (
+                  <List.Item>
+                    <Card  hoverable  
+                    cover={<img src={require('../../assets/image/pic.svg')} alt="logon"/>}>
+                      <Meta
+                          avatar={
+                            <Avatar src={item.img}  shape="square"/>
+                          }
+                          title={item.title}
+                          description={item.des}
+                        />
+                    </Card>
+                  </List.Item>
+                )}
+            />
         </>
     )
 })

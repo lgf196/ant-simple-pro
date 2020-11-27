@@ -69,7 +69,7 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
             title: '操作',
             render: (text, record) => (
                 <>
-                    <a  onClick={()=>handle(record)}>编辑</a>
+                    <a  onClick={()=>handle(record)} href=''>编辑</a>
                 </>
             ),
         }

@@ -21,7 +21,7 @@ const svgStyle={
     height: '1em',
     verticalAlign: '-0.15em',
     overflow:'hidden',
-    fill:'currentColor',  //颜色值
+    fill:'currentColor',  // 颜色值
     fontSize:'1.1em'      
 }
 

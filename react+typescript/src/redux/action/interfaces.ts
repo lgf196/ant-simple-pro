@@ -5,7 +5,7 @@ export interface getMenuTreeActionType {
     type:types.GETMENUTREE,
     data:menuAccessType[]
 }
-export interface loadingMenuTreeActionType{  //是否加载出权限tree
+export interface loadingMenuTreeActionType{  // 是否加载出权限tree
     type:types.LOADING_MENU_TREE,
     data?:boolean
 }
@@ -25,7 +25,7 @@ export interface getUserInfoActionType {
     type:types.GET_USER_INFO,
     data:getUserType
 }
-export interface loadingUserInfoActionType{  //是否加载出用户信息
+export interface loadingUserInfoActionType{  // 是否加载出用户信息
     type:types.LOADING_USER_INFO,
     data?:boolean
 }

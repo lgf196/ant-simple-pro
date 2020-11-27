@@ -57,7 +57,8 @@ const PieCompent = memo(function Pies(props) {
       ]
     };
 
-      /*const config = {
+      /*
+      const config = {
         forceFit: true,
         title: {
           visible: true,
@@ -80,7 +81,8 @@ const PieCompent = memo(function Pies(props) {
                 }
             }
         },
-      };*/
+      };
+    */
     return (
         <div className='bgW padding-10px'>
             <Pie {...config} />

@@ -65,7 +65,7 @@ const New:React.FC<{className?:string}> = memo(function New(props) {
                             <List.Item>
                                 <List.Item.Meta
                                 avatar={<SvgIcon iconClass='logon' fontSize='25px'/>}
-                                title={<a href="">{item.title}</a>}
+                                title={<a href="javascript:void(0)">{item.title}</a>}
                                 description="简单上手快，ui设计漂亮"
                                 />
                                  <Button type="primary" size='small' ghost onClick={()=>isRead(item)} disabled={item.isRead}>

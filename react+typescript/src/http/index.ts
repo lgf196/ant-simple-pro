@@ -15,7 +15,7 @@ axios.interceptors.request.use(config => {
         config.headers['accesstoken'] = localStorage.getItem('token');
     }
 
-    store.dispatch({type:types.LOADING_START}); //触发loading设置为true
+    store.dispatch({type:types.LOADING_START}); // 触发loading设置为true
 
     return config;
 
@@ -32,7 +32,7 @@ axios.interceptors.response.use((response) => {
     }
 
     // if (response.status === 200) {
-        store.dispatch({type:types.LOADING_END}); //触发loading设置为false
+        store.dispatch({type:types.LOADING_END}); // 触发loading设置为false
     // }
 
     return response;
@@ -74,11 +74,11 @@ export const resquest = (method: Method='get', url: string, data: any = {},baseU
                 resolve(res.data);
             }
         }, error => {
-            store.dispatch({type:types.LOADING_END}); //触发loading设置为false
+            store.dispatch({type:types.LOADING_END}); // 触发loading设置为false
 
             error.response && error.response.data ? toast(requestCode.failedCode, error.response.data.mes):toast(requestCode.failedCode, '请求出错，请重试');
         }).catch((err) => {
-            store.dispatch({type:types.LOADING_END}); //触发loading设置为false
+            store.dispatch({type:types.LOADING_END}); // 触发loading设置为false
 
             toast(requestCode.serverErrorCode, '服务异常');
         })

@@ -18,7 +18,7 @@ i18n
   .use(initReactI18next)
   .init({
     react: { 
-        useSuspense: false //防止在ts中报错   
+        useSuspense: false // 防止在ts中报错   
     },
     lng: 'en',
     resources,

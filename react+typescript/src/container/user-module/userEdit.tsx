@@ -30,7 +30,7 @@ const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailD
         }
     }, [visible]);
 
-    const  handleSubmit = () => {  //提交
+    const  handleSubmit = () => {  // 提交
         form.validateFields().then(async (values:Partial<getUserType<ImgUploadFile[]>>) => {
             let res=null,formData=null;
             formData=Object.assign(values,{

@@ -99,9 +99,11 @@ const Menu:React.FC = memo(function Menu() {
      
     const [listData,loading]=useSelector(selectNumOfDoneTodos); 
 
-    /*useEffect(() => {
+    /*
+    useEffect(() => {
         dispatch({type:SAGA_GETMENULIST,payload:pagaTion});
-    }, [pagaTion,dispatch]);*/
+    }, [pagaTion,dispatch]);
+    */
 
     useEffect(() => {
         initFetch()

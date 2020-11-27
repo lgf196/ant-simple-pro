@@ -2,12 +2,12 @@ import React from "react";
 import {layoutProps,tagPropsType} from '@/interfaces'
 import { NavLink ,RouteComponentProps,withRouter} from 'react-router-dom'
 import {matchRoutes,RouteConfig } from 'react-router-config'
-import {CloseOutlined,DownOutlined } from  '@ant-design/icons'
+import {CloseOutlined,DownOutlined} from  '@ant-design/icons'
 import {Location} from 'history'
-import  style from './tag.module.scss'
-import { Dropdown,Menu} from "antd";
-import { MenuInfo  } from 'rc-menu/lib/interface';
-import { CSSTransition } from 'react-transition-group';
+import style from './tag.module.scss'
+import {Dropdown,Menu} from "antd";
+import {MenuInfo} from 'rc-menu/lib/interface';
+import {CSSTransition} from 'react-transition-group';
 export interface TagProps extends layoutProps,RouteComponentProps {
     route:RouteConfig
 }
@@ -36,7 +36,7 @@ class Tag extends React.Component<TagProps, TagState> {
         };
     }
 
-    componentDidUpdate(prevProps:TagProps,prevState:TagState){ //如果props改变就调用
+    componentDidUpdate(prevProps:TagProps,prevState:TagState){ // 如果props改变就调用
         const {location,route,history} =this.props;
         if(location.pathname!==prevProps.location.pathname){
           try {
@@ -60,7 +60,7 @@ class Tag extends React.Component<TagProps, TagState> {
          return arr as tagPropsType;
     }
 
-    setTags=(route:tagPropsType,location:Location)=>{  //生成动态的路由tag
+    setTags=(route:tagPropsType,location:Location)=>{ // 生成动态的路由tag
         const isExist = this.state.tagsList.some(item => {
             return item.path === route.path;
         })
@@ -80,7 +80,7 @@ class Tag extends React.Component<TagProps, TagState> {
         }
     } 
 
-    closeTags(index: number,path: string,e: { stopPropagation: () => void }){ //删除标签
+    closeTags(index: number,path: string,e: { stopPropagation: () => void }){ // 删除标签
         e.stopPropagation();
         this.setState((state)=>({
             tagsList:state.tagsList.filter((item,i)=>i!==index)
@@ -115,7 +115,7 @@ class Tag extends React.Component<TagProps, TagState> {
         const {tagsList,isHiddleTag}=this.state;
         return ( 
                 <>
-                  <CSSTransition  in={!isHiddleTag}  classNames="fade" timeout={100} unmountOnExit>
+                  <CSSTransition in={!isHiddleTag} classNames="fade" timeout={100} unmountOnExit>
                         <div className={style['tag-wrapper']}>
                             <div className={style.slider}>
                                 {
@@ -124,11 +124,11 @@ class Tag extends React.Component<TagProps, TagState> {
                                             tagsList.map((item,index)=>{
                                                 return (
                                                     <li className={item.path ===location.pathname?`${style['tags-li']} ${style['selected']}`:`${style['tags-li']}`} key={index}>
-                                                        <NavLink to={item.path}  className={style['tags-li-title']} title={item.title}>
+                                                        <NavLink to={item.path} className={style['tags-li-title']} title={item.title}>
                                                             {item.title}
                                                         </NavLink>
                                                         {
-                                                            this.state.tagsList.length>1 && <CloseOutlined  className={style['del']} onClick={(e) => this.closeTags(index,item.path, e)}/>
+                                                          this.state.tagsList.length>1 && <CloseOutlined className={style['del']} onClick={(e) => this.closeTags(index,item.path,e)}/>
                                                         }
                                                     </li> 
                                                 )
@@ -139,7 +139,7 @@ class Tag extends React.Component<TagProps, TagState> {
                             </div>
                             <div className={style.option}>
                                     <Dropdown overlay={this.menu} arrow trigger={['click']}>
-                                        <a  onClick={e => e.preventDefault()}>
+                                        <a onClick={e =>e.preventDefault()} href="javascript:void(0)">
                                             <span className={style.title}>标签设置</span>
                                             <DownOutlined />
                                         </a>

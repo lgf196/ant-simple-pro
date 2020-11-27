@@ -1,5 +1,5 @@
 import {menuAccessType,pagaTionBackData,getUserType} from '@/interfaces'
-export interface userStore{    //user模块
+export interface userStore{    // user模块
     getMenuTree:menuAccessType[],
     loadingMenuTree:boolean,
     getMenuList:pagaTionBackData,

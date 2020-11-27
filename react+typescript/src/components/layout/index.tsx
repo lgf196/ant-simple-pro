@@ -10,11 +10,11 @@ const Layout:React.FC = memo(function Layout({route,location}:RouteConfig) {
 
     const [collapsed,setCollapsed]=useState<boolean>(false);
 
-    const [isMobileStatus,setIsMobileStatus]=useState<boolean>(false); //用来控制是否到了手机端的尺寸
+    const [isMobileStatus,setIsMobileStatus]=useState<boolean>(false); // 用来控制是否到了手机端的尺寸
 
     const {width}=useOnResize();
 
-    let  routeArr= matchRoutes(route.routes,location!.pathname)[0].route; //取出当前的路由信息
+    let  routeArr= matchRoutes(route.routes,location!.pathname)[0].route; // 取出当前的路由信息
 
     const topBarProps=()=>({
         collapsed,

@@ -83,14 +83,14 @@ const User:React.FC = memo(function User() {
 
     const [username,setUsername]=useState<userListType['username']>(undefined);
 
-    const selectNumOfDoneTodos = createSelector(            //只计算，给的数据，其他的数据不会重新计算
+    const selectNumOfDoneTodos = createSelector(            // 只计算，给的数据，其他的数据不会重新计算
         [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
         (user, other) =>[user.getUserList,other.loading] as const
     );
 
-    const dispatch = useDispatch<Dispatch<sagaGetUserDataType>>(); //这里取代connect里面的dispatch
+    const dispatch = useDispatch<Dispatch<sagaGetUserDataType>>(); // 这里取代connect里面的dispatch
 
-    const [getUserList,loading]=useSelector(selectNumOfDoneTodos); //获取redux里面的数据，这里取代了connect函数
+    const [getUserList,loading]=useSelector(selectNumOfDoneTodos); // 获取redux里面的数据，这里取代了connect函数
 
     const initFetch=useCallback((username)=> dispatch({type:SAGA_GET_USER_LIST,payload:{username}}),[dispatch]);
 

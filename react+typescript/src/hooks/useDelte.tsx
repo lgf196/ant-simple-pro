@@ -20,7 +20,7 @@ const useDel = (interfaces:Function,successCallBack:Function,data:Partial<dataTy
             });  
         }
         return ()=>{setReceipt({})}
-    }, [receipt.id,receipt.listen]); //receipt.listen,防止重复点击没效果
+    }, [receipt.id,receipt.listen]); // receipt.listen,防止重复点击没效果
     
     return [setReceipt];
 }

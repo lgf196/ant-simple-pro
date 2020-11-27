@@ -16,16 +16,16 @@ export interface ImgUploadState{
     fileLists:UploadFile[]
 }
 
-export type ImgUploadFile=UploadFile;  //导出文件类型
+export type ImgUploadFile=UploadFile;  // 导出文件类型
 
-export type UploadChangeParams=UploadChangeParam;  //导出文件类型
+export type UploadChangeParams=UploadChangeParam;  // 导出文件类型
 
 class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
     static defaultProps={  
         action:'/api/fileUpload',
         fileList:[],
         limit:10,
-        typeModule:1 //1默认表单组件，2非表单
+        typeModule:1 // 1默认表单组件，2非表单
     };
 
     constructor(props: ImgUploadProps) {
@@ -54,7 +54,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
                         if(item.response) {
                             const response=item.response;
                             if(response.code===requestCode.successCode){
-                                filterData={uid:item.uid,response,url:response.data.url,status:'success' as UploadFileStatus}; //必须含有uid
+                                filterData={uid:item.uid,response,url:response.data.url,status:'success' as UploadFileStatus}; // 必须含有uid
                             }
                         }
                     return filterData || {uid:item.uid,status:'error',response:{},thumbUrl:item.thumbUrl};

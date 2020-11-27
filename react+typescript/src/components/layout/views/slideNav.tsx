@@ -1,13 +1,13 @@
 import React from 'react'
-import { Menu, Layout,Empty } from 'antd';
-import { Link,withRouter,RouteComponentProps} from 'react-router-dom'
+import {Menu,Layout,Empty} from 'antd';
+import {Link,withRouter,RouteComponentProps} from 'react-router-dom'
 import {SAGA_GETMENUTREE} from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
 import { Dispatch} from 'redux';
 import {menuAccessType,layoutProps} from '@/interfaces'
 import {Location,UnregisterCallback} from 'history'
 import SvgIcon from '@/components/svgIcon'
-import { OpenEventHandler  } from 'rc-menu/lib/interface';
+import { OpenEventHandler } from 'rc-menu/lib/interface';
 import style from './slideNav.module.scss'
 import { backTopAnimate } from '@/utils/function';
 import LoadingData from '@/components/routerLoading'
@@ -34,11 +34,11 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     }
 
    componentWillUnmount(){
-        this.unlisten(); //取消监听
+        this.unlisten(); // 取消监听
     }
 
     componentDidMount(){
-        this.unlisten = this.props.history.listen((location:Location) => {  //这样可以监听全局路由的变化
+        this.unlisten = this.props.history.listen((location:Location) =>{  // 这样可以监听全局路由的变化
             backTopAnimate(document.querySelector('#content')!,10);
             this.defaultOpenUrl(location.pathname);
         });
@@ -100,15 +100,15 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         }
     };
 
-    defaultOpenUrl=(url:string)=>{ //获取当前页的路劲，防止刷新看不到选中的样式
+    defaultOpenUrl=(url:string)=>{ // 获取当前页的路劲，防止刷新看不到选中的样式
         let openKeys:string[]=[],arrUrl:string[]=[];
         arrUrl=url.split('/'); arrUrl.splice(0,1);
         if(arrUrl.length<=2){
             openKeys.push(`/${arrUrl[0]}`)
-        }else{  //如果有超过2层的，就执行
+        }else{  // 如果有超过2层的，就执行
             let str='',newArr:string[]=[];
             arrUrl.forEach((item,index)=>{
-                if(index<=arrUrl.length-2){ //不计算最后一个
+                if(index<=arrUrl.length-2){ // 不计算最后一个
                     str+=`/${item}`;
                     newArr.push(str);
                 }
