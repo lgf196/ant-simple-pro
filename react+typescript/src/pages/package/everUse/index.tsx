@@ -61,7 +61,7 @@ const EverUse = memo(function EverUse(props) {
                 <li>
                     <h3>ImgUpload组件</h3>
                     <div>
-                        <ImgUpload  fileList={[...fileList] as ImgUploadFile[]} typeModule={2} onChange={handChange}/>
+                        <ImgUpload fileList={[...fileList] as ImgUploadFile[]} typeModule={2} onChange={handChange}/>
                     </div>
                     <p><span className={style.toast}>温馨提示</span>：我们在antd <code>Upload</code> 组件的基础上进行了二次封装，新增了
                     <code>limit，typeModule等属性</code> 具体的请看源码，和提供的案例 ，antd <code>Upload</code> 原有的属性依旧支持，具体请查看antd官网。</p>
@@ -75,7 +75,7 @@ const EverUse = memo(function EverUse(props) {
                     <p><span className={style.toast}>温馨提示</span>：我们在antd <code>Select</code> 组件的基础上进行了二次封装，新增了
                     <code>data，valKey,valName等属性</code> 具体的请看源码，和提供的案例 ，antd <code>Select</code> 原有的属性依旧支持，具体请查看antd官网。</p>
                 </li>
-                <li  className={style.toast}>
+                <li className={style.toast}>
                     我们还提供了一些其它的组件，具体请参看项目源码和案例。
                 </li>
             </ul>

@@ -16,8 +16,8 @@ const TableSize:React.FC<{tableSize:Function;className?:string}>= memo(function 
 
     return (
         <>
-             <Tooltip title='密度'  placement="left">
-                <Dropdown  overlay={menu} placement="bottomCenter">
+             <Tooltip title='密度' placement="left">
+                <Dropdown overlay={menu} placement="bottomCenter">
                     <ColumnHeightOutlined className={className}/>
                 </Dropdown>
             </Tooltip>

@@ -2,7 +2,7 @@ import React from "react";
 import {layoutProps,tagPropsType} from '@/interfaces'
 import { NavLink ,RouteComponentProps,withRouter} from 'react-router-dom'
 import {matchRoutes,RouteConfig } from 'react-router-config'
-import {CloseOutlined,DownOutlined} from  '@ant-design/icons'
+import {CloseOutlined,DownOutlined} from '@ant-design/icons'
 import {Location} from 'history'
 import style from './tag.module.scss'
 import {Dropdown,Menu} from "antd";
@@ -139,7 +139,7 @@ class Tag extends React.Component<TagProps, TagState> {
                             </div>
                             <div className={style.option}>
                                     <Dropdown overlay={this.menu} arrow trigger={['click']}>
-                                        <a onClick={e =>e.preventDefault()} href="javascript:void(0)">
+                                        <a onClick={e =>e.preventDefault()}>
                                             <span className={style.title}>标签设置</span>
                                             <DownOutlined />
                                         </a>

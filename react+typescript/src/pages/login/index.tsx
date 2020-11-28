@@ -35,16 +35,16 @@ const Login:React.FC=()=>{
                         <h2>Ant Simple Pro</h2>
                     </div>
                     <div className={style.from}>
-                        <Form name="basic" initialValues={{ remember: true }} layout='vertical'   onFinish={onFinish}>
-                            <Form.Item  name="email" rules={[{ required: true, message: '请输入邮箱' }]}>
+                        <Form name="basic" initialValues={{ remember: true }} layout='vertical' onFinish={onFinish}>
+                            <Form.Item name="email" rules={[{ required: true, message: '请输入邮箱' }]}>
                             <Input 
-                                prefix={<UserOutlined  style={{color:'rgba(0, 0, 0, 0.25)'}}/>} 
+                                prefix={<UserOutlined style={{color:'rgba(0, 0, 0, 0.25)'}}/>} 
                                 placeholder="请填写邮箱" 
                                 size='large'
                                 allowClear
                                 />
                             </Form.Item>
-                            <Form.Item  name="password" rules={[{ required: true, message: '请输入密码' }]}>
+                            <Form.Item name="password" rules={[{ required: true, message: '请输入密码' }]}>
                                 <Input
                                     prefix={<LockOutlined style={{color:'rgba(0, 0, 0, 0.25)'}}/>}
                                     type="password"

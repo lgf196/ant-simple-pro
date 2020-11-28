@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import {BackTop} from 'antd';
-import {VerticalAlignTopOutlined} from  '@ant-design/icons';
+import {VerticalAlignTopOutlined} from '@ant-design/icons';
 import style from './backTop.module.scss'
 import { BackTopProps } from 'antd/lib/back-top';
 interface backTopProps extends BackTopProps{

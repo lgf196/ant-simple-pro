@@ -2,7 +2,7 @@
  * @param {...Function} funcs
  * @returns {Function} 
  */
-export  function composes(...funcs: Function[]) {
+export function composes(...funcs: Function[]) {
     if (funcs.length === 0) {
       return (arg: any) => arg
     }

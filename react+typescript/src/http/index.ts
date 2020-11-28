@@ -6,7 +6,7 @@ import { push } from 'connected-react-router'
 import Tools from '@/utils'
 import * as types from '@/redux/constants/actionType'
 
-const  tools=new Tools();
+const tools=new Tools();
 
 axios.defaults.withCredentials = true;
 

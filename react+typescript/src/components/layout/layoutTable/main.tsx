@@ -37,7 +37,7 @@ const LayoutTable: React.FC<LayoutTablePropsType> = memo(function LayoutTable({ 
         setPagaTionSize(size === "small" ? 'small' : 'default')
     }
 
-    const filterColunsFunc = (val: ColumnProps<any>[]) => {  // 动态控制colum
+    const filterColunsFunc = (val: ColumnProps<any>[]) => { // 动态控制colum
         setColumns(val);
     }
     

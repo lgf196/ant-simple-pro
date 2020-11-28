@@ -17,7 +17,7 @@ export interface OptionType extends editDetailType<Partial<menuAccessType>>{
 
 const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
   onCancel,sucessCallback}) {
-    const  tools=new Tools();
+    const tools=new Tools();
 
     const dispatch = useDispatch(); 
 
@@ -47,7 +47,7 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
         }
     }, [visible]);
 
-    const  handleSubmit = () => {  // 提交
+    const handleSubmit = () => { // 提交
         form.validateFields().then(async (values) => {
            let res=null,formData=null;
             formData=Object.assign(values,{
@@ -84,15 +84,15 @@ const Option:React.FC<OptionType> = memo(function Option({visible,detailData,
         onCancel={handCancel}
         bodyStyle={{paddingLeft:'10px'}}
         footer={[
-        <Button key="submit" type="primary"  onClick={handleSubmit} loading={loading}>{text}</Button>,
+        <Button key="submit" type="primary" onClick={handleSubmit} loading={loading}>{text}</Button>,
         <Button key="back" onClick={()=>form.resetFields()}>重置</Button>  
         ]}
       >
-        <Form   {...formItemLayout} form={form} name="form_in_modal">
-            <Form.Item label="菜单名字" name='title'  rules={[{required: true,message: '菜单名字必填'}]}>
+        <Form {...formItemLayout} form={form} name="form_in_modal">
+            <Form.Item label="菜单名字" name='title' rules={[{required: true,message: '菜单名字必填'}]}>
               <Inputs/>
             </Form.Item>
-            <Form.Item label="菜单url" name='url'  rules={[{required: true,message: '菜单url必填'}]}>
+            <Form.Item label="菜单url" name='url' rules={[{required: true,message: '菜单url必填'}]}>
               <Inputs/>
             </Form.Item>
             <Form.Item label="菜单icon" name='icon' rules={[{required: requireIcon,message: '父级菜单icon必填'}]}>

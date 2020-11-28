@@ -18,7 +18,7 @@ const Filter:React.FC<FilterProps> = memo(function Filter({tablecolumns,filterCo
 
     const filterComponent = (
         <>
-            <Checkbox.Group  onChange={onChange} defaultValue={(tablecolumns as {key:CheckboxValueType}[]).map((item)=>item.key)}>
+            <Checkbox.Group onChange={onChange} defaultValue={(tablecolumns as {key:CheckboxValueType}[]).map((item)=>item.key)}>
                 <ul>
                     {
                        tablecolumns.length?tablecolumns.map((item,index)=>(
@@ -33,8 +33,8 @@ const Filter:React.FC<FilterProps> = memo(function Filter({tablecolumns,filterCo
     return (
         <>
            
-                <Popover placement="bottom"  content={filterComponent}>
-                    <Tooltip title='过滤'  placement="left">
+                <Popover placement="bottom" content={filterComponent}>
+                    <Tooltip title='过滤' placement="left">
                          <FilterOutlined className={className}/>
                     </Tooltip>
                 </Popover>

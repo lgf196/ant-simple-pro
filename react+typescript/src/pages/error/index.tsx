@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import {  Result,Button} from 'antd';
+import {Result,Button} from 'antd';
 import { Link} from 'react-router-dom'
 import '@/assets/scss/common.scss'
 const Error = memo(function Error() {

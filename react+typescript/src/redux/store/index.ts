@@ -3,7 +3,7 @@ import { routerMiddleware } from 'connected-react-router'
 import { history } from '@/assets/js/history'
 import createSagaMiddleware from 'redux-saga'
 import reducer from '@/redux/reduce'
-import rootSaga  from '@/redux/saga'
+import rootSaga from '@/redux/saga'
 const sagaMiddleware = createSagaMiddleware();
 
 const middlewares=[routerMiddleware(history),sagaMiddleware];

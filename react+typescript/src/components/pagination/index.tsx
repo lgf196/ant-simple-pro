@@ -14,7 +14,7 @@ const Pagation:React.FC<PagationType> = memo(function Pagation({pageSizeOptions,
 
     return (
         <>
-            {total?<Pagination {...props} showSizeChanger showQuickJumper  total={total}  showTotal={total => `共 ${total} 页`}  
+            {total?<Pagination {...props} showSizeChanger showQuickJumper total={total} showTotal={total => `共 ${total} 页`}  
              onChange={Change} onShowSizeChange={Change} pageSizeOptions={pageSizeOptions} 
              defaultPageSize={defaultPageSize} style={{marginTop:'20px'}} defaultCurrent={1}/>:null}
         </>

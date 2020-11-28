@@ -113,7 +113,7 @@ const index:React.FC = memo(function index() {
                   </Card>
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-                  <Pie  {...config} className='bgW padding-10px'/>
+                  <Pie {...config} className='bgW padding-10px'/>
                 </Col>
                 <Col xs={24} sm={24} md={12} lg={8} xl={8}>
                 <Bar {...barConfig} className='bgW padding-10px'></Bar>
@@ -132,11 +132,11 @@ const index:React.FC = memo(function index() {
                 dataSource={list}
                 renderItem={item => (
                   <List.Item>
-                    <Card  hoverable  
+                    <Card hoverable  
                     cover={<img src={require('../../assets/image/pic.svg')} alt="logon"/>}>
                       <Meta
                           avatar={
-                            <Avatar src={item.img}  shape="square"/>
+                            <Avatar src={item.img} shape="square"/>
                           }
                           title={item.title}
                           description={item.des}

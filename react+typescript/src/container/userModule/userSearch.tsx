@@ -11,17 +11,17 @@ export type UserSearchProps ={
 const UserSearch:React.FC<UserSearchProps> = memo(function UserSearch({setUsername}) {
     const [form] = Form.useForm();
 
-    const handleSubmit = (values:userListType)  => setUsername(values.username?values.username:undefined);
+    const handleSubmit = (values:userListType) => setUsername(values.username?values.username:undefined);
     
     return (
         <>
-            <Form layout="inline"  form={form} name="form" onFinish={handleSubmit}>
+            <Form layout="inline" form={form} name="form" onFinish={handleSubmit}>
                     <Form.Item label="名称" name='username'>
                         <Inputs size='middle'/>
                     </Form.Item>
                     <Form.Item>
                         <Buttons title='查询' htmlType="submit" />
-                        <Buttons title='重置'  onClick={()=>[form.resetFields(),setUsername(form.resetFields())]} type='default' className='left-10px'/>
+                        <Buttons title='重置' onClick={()=>[form.resetFields(),setUsername(form.resetFields())]} type='default' className='left-10px'/>
                     </Form.Item>
              </Form>
         </>

@@ -34,9 +34,9 @@ const UserInfo:React.FC = memo(function UserInfo() {
                 email,
                 iconUrl:iconUrl.length?iconUrl.split(',').map((item) =>({uid:Math.random()*100,url:item,response:{code:requestCode.successCode,data:{url:item}}})):[]
             });
-    }, [getUserInfo]);
+    },[getUserInfo]);
 
-    const  handleSubmit = () => {  // 提交
+    const handleSubmit = () => { // 提交
         form.validateFields().then(async (values:Partial<getUserType<ImgUploadFile[]>>) => {
             let res=null,formData=null;
             formData=Object.assign(values,{
@@ -51,7 +51,7 @@ const UserInfo:React.FC = memo(function UserInfo() {
 
     return (
         <div className='bgW userInfo'>
-             <Form name="basic"   layout='vertical' {...formItemLayout} className='userForm'  form={form}>
+             <Form name="basic" layout='vertical' {...formItemLayout} className='userForm' form={form}>
                 <Form.Item label="头像" name="iconUrl" valuePropName='fileList'>
                     <ImgUpload limit={1}/>
                 </Form.Item>

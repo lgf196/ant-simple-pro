@@ -1,6 +1,6 @@
 import * as types from '@/redux/constants/actionType'
 import {actionType} from '@/redux/action/interfaces'
-const  initialState={
+const initialState={
     getMenuTree:[],
     loadingMenuTree:false,
     getMenuList:{

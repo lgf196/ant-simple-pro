@@ -16,9 +16,9 @@ export interface ImgUploadState{
     fileLists:UploadFile[]
 }
 
-export type ImgUploadFile=UploadFile;  // 导出文件类型
+export type ImgUploadFile=UploadFile; // 导出文件类型
 
-export type UploadChangeParams=UploadChangeParam;  // 导出文件类型
+export type UploadChangeParams=UploadChangeParam; // 导出文件类型
 
 class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
     static defaultProps={  
@@ -64,7 +64,7 @@ class ImgUpload extends React.Component<ImgUploadProps,ImgUploadState> {
                 fileList=fileList.map((item,index)=>index===fileList.length-1?{uid:currency.file.uid,status:'error',response:'服务异常',thumbUrl:item.thumbUrl}:item);
             }
         typeModule===2 && this.setState({ fileLists:fileList as UploadFile[]});
-        onChange &&  onChange(fileList as unknown as  UploadChangeParam<UploadFile>);
+        onChange && onChange(fileList as unknown as UploadChangeParam<UploadFile>);
     }
 
     render() { 

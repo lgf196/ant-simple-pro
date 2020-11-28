@@ -6,7 +6,7 @@ import {getMenuTree,getMenuList,getUserList,getUserInfo,loadingMenuTree,loadingU
 import { menuAccessType,pagationType} from '@/interfaces'
 import Tools from '@/utils'
 
-const  tools=new Tools();
+const tools=new Tools();
 export interface sagaGetMenuListType {
     type:SAGA.SAGA_GETMENULIST;
     payload:pagationType
@@ -51,7 +51,7 @@ export const effects={
         try {
             const res:responseData=yield call(userList,payload);
 
-            res.code===requestCode.successCode &&  (yield put(getUserList(res.data)));
+            res.code===requestCode.successCode && (yield put(getUserList(res.data)));
         } catch (error) {
             yield put(getUserList([]));
         }
@@ -63,7 +63,7 @@ export const effects={
 
             yield put(loadingUserInfo(false));
             
-            res.code===requestCode.successCode &&  (yield race([put(loadingUserInfo(true)),put(getUserInfo(res.data))]));
+            res.code===requestCode.successCode && (yield race([put(loadingUserInfo(true)),put(getUserInfo(res.data))]));
         } catch (error) {
              yield put(getUserInfo({}));
         }

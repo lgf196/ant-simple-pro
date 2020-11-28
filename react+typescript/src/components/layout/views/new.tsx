@@ -1,5 +1,5 @@
 import React, { memo ,useState} from 'react'
-import {BellOutlined} from  '@ant-design/icons';
+import {BellOutlined} from '@ant-design/icons';
 import { Badge,Dropdown,Tabs, List,Button} from 'antd';
 import style from './head.module.scss'
 import SvgIcon from '@/components/svgIcon';
@@ -65,7 +65,7 @@ const New:React.FC<{className?:string}> = memo(function New(props) {
                             <List.Item>
                                 <List.Item.Meta
                                 avatar={<SvgIcon iconClass='logon' fontSize='25px'/>}
-                                title={<a href="javascript:void(0)">{item.title}</a>}
+                                title={<a>{item.title}</a>}
                                 description="简单上手快，ui设计漂亮"
                                 />
                                  <Button type="primary" size='small' ghost onClick={()=>isRead(item)} disabled={item.isRead}>
@@ -75,7 +75,7 @@ const New:React.FC<{className?:string}> = memo(function New(props) {
                             )}
                         />
                     </TabPane>
-                    <TabPane  tab={`消息(${data2.filter(item=>!item.isRead).length})`} key="2">
+                    <TabPane tab={`消息(${data2.filter(item=>!item.isRead).length})`} key="2">
                     <List
                         itemLayout="horizontal"
                         dataSource={data2}

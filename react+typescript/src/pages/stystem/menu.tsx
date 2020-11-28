@@ -71,7 +71,7 @@ const Menu:React.FC = memo(function Menu() {
                 <>
                     <a onClick={()=>handle(2,record)}>编辑</a>
                     <Line/>
-                    <a  onClick={()=>setReceiptDelte({...record,listen:Math.random()*1000})} style={{color:'#ff4d4f'}}>删除</a>
+                    <a onClick={()=>setReceiptDelte({...record,listen:Math.random()*1000})} style={{color:'#ff4d4f'}}>删除</a>
                 </>
             ),
         }

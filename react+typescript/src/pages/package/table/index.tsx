@@ -1,8 +1,8 @@
 import React, { memo ,useEffect,useCallback,useState} from 'react'
 import {useSetState} from '@/hooks'
 import NoData from '@/components/noData'
-import EditComponent from '@/container/user-module/userEdit'
-import UserSearch from '@/container/user-module/userSearch'
+import EditComponent from '@/container/userModule/userEdit'
+import UserSearch from '@/container/userModule/userSearch'
 import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GET_USER_LIST} from '@/redux/constants/sagaType'
 import { ColumnProps} from 'antd/lib/table';
@@ -69,7 +69,7 @@ const User:React.FC<UserProps> = memo(function User({dispatch,getUserList,loadin
             title: '操作',
             render: (text, record) => (
                 <>
-                    <a  onClick={()=>handle(record)} href=''>编辑</a>
+                    <a onClick={()=>handle(record)} href=''>编辑</a>
                 </>
             ),
         }

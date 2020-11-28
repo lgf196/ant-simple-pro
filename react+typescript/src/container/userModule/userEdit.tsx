@@ -30,7 +30,7 @@ const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailD
         }
     }, [visible]);
 
-    const  handleSubmit = () => {  // 提交
+    const handleSubmit = () => { // 提交
         form.validateFields().then(async (values:Partial<getUserType<ImgUploadFile[]>>) => {
             let res=null,formData=null;
             formData=Object.assign(values,{
@@ -53,12 +53,12 @@ const UserEdit:React.FC<UserEditProps> = memo(function UserEdit({visible,detailD
                 onCancel={()=>onCancel()}
                 bodyStyle={{paddingLeft:'10px'}}
                 footer={[
-                <Button key="submit" type="primary"  onClick={handleSubmit} loading={loading}>编辑</Button>,
+                <Button key="submit" type="primary" onClick={handleSubmit} loading={loading}>编辑</Button>,
                 <Button key="back" onClick={()=>form.resetFields()}>重置</Button>  
                 ]}
             >
-                <Form   {...formItemLayout} form={form} name="form_in_modal">
-                    <Form.Item label="名称" name='username'  rules={[{required: true,message: '名称必填'}]}>
+                <Form {...formItemLayout} form={form} name="form_in_modal">
+                    <Form.Item label="名称" name='username' rules={[{required: true,message: '名称必填'}]}>
                         <Inputs/>
                     </Form.Item>
                     <Form.Item label="介绍" name='introduct'>

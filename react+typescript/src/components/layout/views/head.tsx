@@ -1,17 +1,17 @@
 import React, { memo,useEffect,useMemo} from 'react'
 import {Dropdown,Menu, Spin } from 'antd'
 import {Link } from "react-router-dom"
-import {MenuFoldOutlined,MenuUnfoldOutlined} from  '@ant-design/icons';
+import {MenuFoldOutlined,MenuUnfoldOutlined} from '@ant-design/icons';
 import {layoutProps} from '@/interfaces'
 import {FullScreeOut} from '@/components/layout/layoutTable'
 import {useDispatch ,useSelector} from 'react-redux';
 import {SAGA_GET_USER_INFO} from '@/redux/constants/sagaType'
 import HeadImage from '@/components/headImage'
 import style from './head.module.scss'
-import  {responsiveConfig} from '@/utils/varbile'
+import {responsiveConfig} from '@/utils/varbile'
 import SvgIcon from '@/components/svgIcon'
 import { CSSTransition } from 'react-transition-group';
-import { MenuInfo  } from 'rc-menu/lib/interface';
+import { MenuInfo } from 'rc-menu/lib/interface';
 import {confirm} from '@/utils/function'
 import { useHistory } from "react-router-dom";
 import {localStorage} from '@/assets/js/storage'
@@ -47,7 +47,7 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,wi
        }
     }
 
-    const  dropdown=()=>(
+    const dropdown=()=>(
             <Menu onClick={tagOption}>
                 <Menu.Item key='1'>
                    <Link to="/userInfo">个人信息</Link>
@@ -70,13 +70,13 @@ const TopBar:React.FC<topbarProps> = memo(function TopBar({collapsed,onToggle,wi
                     <div className={style.logon}>
                         <Link to="/home">
                             <SvgIcon iconClass='logon' fontSize='30px'/>
-                            <CSSTransition  in={!isMobileDevice}  classNames="fade" timeout={200} unmountOnExit>
+                            <CSSTransition in={!isMobileDevice} classNames="fade" timeout={200} unmountOnExit>
                                <h2>Ant Simple Pro</h2>
                             </CSSTransition>
                         </Link>
                     </div>
-                    <div className={`${style.menu}`}  onClick={options}>
-                        {collapsed ?<MenuUnfoldOutlined  className={style.icon}/>:<MenuFoldOutlined className='icon'/>}
+                    <div className={`${style.menu}`} onClick={options}>
+                        {collapsed ?<MenuUnfoldOutlined className={style.icon}/>:<MenuFoldOutlined className='icon'/>}
                     </div>
                 </div>
                 <div className={`${style.menuList} fr`}>

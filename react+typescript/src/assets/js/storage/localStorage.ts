@@ -12,7 +12,7 @@ class LocalStorage<T> {
            return getVal;
          }
      }else{
-        return  null;
+        return null;
      }
   }
   public setItem(key: string, val: any) {

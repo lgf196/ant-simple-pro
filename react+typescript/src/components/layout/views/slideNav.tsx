@@ -38,7 +38,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     }
 
     componentDidMount(){
-        this.unlisten = this.props.history.listen((location:Location) =>{  // 这样可以监听全局路由的变化
+        this.unlisten = this.props.history.listen((location:Location) =>{ // 这样可以监听全局路由的变化
             backTopAnimate(document.querySelector('#content')!,10);
             this.defaultOpenUrl(location.pathname);
         });
@@ -105,7 +105,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         arrUrl=url.split('/'); arrUrl.splice(0,1);
         if(arrUrl.length<=2){
             openKeys.push(`/${arrUrl[0]}`)
-        }else{  // 如果有超过2层的，就执行
+        }else{ // 如果有超过2层的，就执行
             let str='',newArr:string[]=[];
             arrUrl.forEach((item,index)=>{
                 if(index<=arrUrl.length-2){ // 不计算最后一个
@@ -126,7 +126,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
         const defaultSelectedKeys=location.pathname;
         return (  
             <Layout className={style.siderbar}>
-                <Sider trigger={null} collapsible collapsed={collapsed}   collapsedWidth={collapsed?80:200}>
+                <Sider trigger={null} collapsible collapsed={collapsed} collapsedWidth={collapsed?80:200}>
                     {
                       loadingMenuTree?
                         (getMenuTree.length?( <Menu mode="inline" 

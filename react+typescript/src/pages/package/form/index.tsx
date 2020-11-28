@@ -84,7 +84,7 @@ const FormCompent = memo(function FormCompent(props) {
     
     return (
         <div className='bgW padding-10px'>
-            <Form  {...layout} form={form} labelAlign='left' onFinish={onFinish}>
+            <Form {...layout} form={form} labelAlign='left' onFinish={onFinish}>
                 <Form.Item label="姓名" name="username" rules={[{ required: true, message: '请填写' }]}>
                     <InputCompent size='middle'/>
                 </Form.Item>
@@ -101,7 +101,7 @@ const FormCompent = memo(function FormCompent(props) {
                     <RangePicker/>
                 </Form.Item> 
                 <Form.Item label="技术栈" name="skill">
-                    <Select  mode="multiple"  data={selectList} valName='name' valKey='id'/>
+                    <Select mode="multiple" data={selectList} valName='name' valKey='id'/>
                 </Form.Item> 
                 <Form.Item label="照片" name="photo" valuePropName="fileList">
                     <ImgUpload/>
@@ -109,7 +109,7 @@ const FormCompent = memo(function FormCompent(props) {
                 <Form.Item label="描述" name="description">
                     <TextArea autoSize={{ minRows: 2}} placeholder='请输入'/>
                 </Form.Item> 
-                <Form.Item  name="remember" valuePropName="checked">
+                <Form.Item name="remember" valuePropName="checked">
                     <Checkbox>记住</Checkbox>
                 </Form.Item>
                 <Form.Item >

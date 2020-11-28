@@ -1,8 +1,8 @@
 import React, { memo ,useEffect,useCallback,useState} from 'react'
 import {useSetState} from '@/hooks'
 import NoData from '@/components/noData'
-import EditComponent from '@/container/user-module/userEdit'
-import UserSearch from '@/container/user-module/userSearch'
+import EditComponent from '@/container/userModule/userEdit'
+import UserSearch from '@/container/userModule/userSearch'
 import {LayoutTableComponent} from '@/components/layout/layoutTable'
 import {SAGA_GET_USER_LIST} from '@/redux/constants/sagaType'
 import { ColumnProps} from 'antd/lib/table';
@@ -69,13 +69,13 @@ const User:React.FC = memo(function User() {
             title: '操作',
             render: (text, record) => (
                 <>
-                    <a  onClick={()=>handle(record)}>编辑</a>
+                    <a onClick={()=>handle(record)}>编辑</a>
                 </>
             ),
         }
     ];
 
-    const  tools=new Tools();
+    const tools=new Tools();
     
     const [editData, setEditData] =useSetState({visible:false,detailData:{}});
 
@@ -83,7 +83,7 @@ const User:React.FC = memo(function User() {
 
     const [username,setUsername]=useState<userListType['username']>(undefined);
 
-    const selectNumOfDoneTodos = createSelector(            // 只计算，给的数据，其他的数据不会重新计算
+    const selectNumOfDoneTodos = createSelector( // 只计算，给的数据，其他的数据不会重新计算
         [(state:reduceStoreType) => state.user,(state:reduceStoreType) => state.other],
         (user, other) =>[user.getUserList,other.loading] as const
     );
@@ -121,7 +121,7 @@ const User:React.FC = memo(function User() {
         iconGrounp:[
             {
                 component: (<Tooltip title='下载' placement="bottom">
-                    <ArrowDownOutlined  className='svg-fontSize' onClick={downFile}/>
+                    <ArrowDownOutlined className='svg-fontSize' onClick={downFile}/>
                 </Tooltip>)
             }
         ],

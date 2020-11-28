@@ -25,4 +25,4 @@ const useTitle=(title: string, options: UseTitleOptions = DEFAULT_USE_TITLE_OPTI
   
 }
 
-export default typeof document !== 'undefined' ? useTitle : (_title: string) => {};
+export default typeof document !== 'undefined' && useTitle;
