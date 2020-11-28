@@ -4,16 +4,16 @@ class LocalStorage<T> {
     this.localStorages = window.localStorage;
   }
   public getItem(key: string) {
-     const getVal=this.localStorages.getItem(key);
-     if(getVal){  
-         if(typeof JSON.parse(getVal)==='object'){
-            return JSON.parse(getVal) || '{}';
-         }else{
-           return getVal;
-         }
-     }else{
-        return null;
-     }
+    const getVal = this.localStorages.getItem(key);
+    if (getVal) {
+      if (typeof JSON.parse(getVal) === 'object') {
+        return JSON.parse(getVal) || '{}';
+      } else {
+        return getVal;
+      }
+    } else {
+      return null;
+    }
   }
   public setItem(key: string, val: any) {
     this.localStorages.setItem(key, JSON.stringify(val));
@@ -28,4 +28,4 @@ class LocalStorage<T> {
     return this.localStorages.keys();
   }
 }
- export default new LocalStorage();
+export default new LocalStorage();

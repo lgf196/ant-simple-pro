@@ -4,10 +4,10 @@ import ReactConfig from './routers'
 import { history } from '@/assets/js/history'
 import { ConnectedRouter } from 'connected-react-router'
 const Routers: React.FC = () => {
-    return (
-        <ConnectedRouter history={history}>
-            {renderRoutes(ReactConfig)}
-        </ConnectedRouter>
-    )
+  return (
+    <ConnectedRouter history={history}>
+      {renderRoutes(ReactConfig)}
+    </ConnectedRouter>
+  )
 }
 export default Routers;
