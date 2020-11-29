@@ -52,7 +52,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage className="avatar" :src="text" @click="onImageClick(text)">
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -62,6 +62,12 @@
         </span>
       </template>
     </LayoutTable>
+    <UpdateUserModal
+      v-model:visible="visible"
+      :currentRow="currentRow"
+      @updateSuccess="run"
+    >
+    </UpdateUserModal>
   </div>
 </template>
 
@@ -75,6 +81,7 @@ import {
 import { getUsers, getUsersBuffer } from './service'
 import useRequest from '@/hooks/useRequest'
 import { downloadExcel } from '@/utils'
+import UpdateUserModal from './update-user-modal'
 const columns = [
   {
     dataIndex: 'index',
@@ -127,11 +134,14 @@ export default {
   components: {
     LayoutTable,
     ArrowDownOutlined,
-    UserOutlined
+    UserOutlined,
+    UpdateUserModal
   },
   data() {
     return {
-      columns
+      columns,
+      visible: false,
+      currentRow: {}
     }
   },
   computed: {
@@ -157,7 +167,8 @@ export default {
       this.run()
     },
     onUpdate(row) {
-      console.log(row)
+      this.currentRow = row
+      this.visible = true
     },
     onSearch() {
       setTimeout(() => {

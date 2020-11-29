@@ -1,5 +1,6 @@
 const path = require('path')
 const dayjs = require('dayjs')
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
 // const isDev = process.env.NODE_ENV === 'development'
 const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
 
@@ -59,6 +60,11 @@ module.exports = {
       preProcessor: 'less',
       patterns: [resolve('./src/assets/styles/var.less')]
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new AntdDayjsWebpackPlugin()
+    ]
   },
   chainWebpack(config) {
     config.plugins.delete('prefetch')

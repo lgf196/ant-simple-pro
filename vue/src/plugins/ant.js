@@ -22,7 +22,9 @@ import {
   Tabs,
   Spin,
   Popover,
-  Upload
+  Upload,
+  Select,
+  DatePicker
 } from 'ant-design-vue'
 
 export default function(app) {
@@ -52,6 +54,8 @@ export default function(app) {
     .use(Spin)
     .use(Popover)
     .use(Upload)
+    .use(Select)
+    .use(DatePicker)
 
   g.$message = message
   g.$info = Modal.info

@@ -27,11 +27,13 @@ export const saveUser = (data, loadingCb, cancelCallback) => {
   })
 }
 
-export const updateUser = data => {
+export const updateUser = (data, loadingCb, cancelCallback) => {
   return request({
-    method: 'put',
-    url: '/user',
-    data
+    method: 'post',
+    url: '/user/edit',
+    data,
+    loadingCb,
+    cancelToken: new axios.CancelToken(cancelCallback)
   })
 }
 
