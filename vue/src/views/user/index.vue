@@ -65,7 +65,7 @@
     <UpdateUserModal
       v-model:visible="visible"
       :currentRow="currentRow"
-      @updateSuccess="run"
+      @updateSuccess="onUpdateSuccess"
     >
     </UpdateUserModal>
   </div>
@@ -192,6 +192,10 @@ export default {
       } catch (err) {
         console.log(err)
       }
+    },
+    onUpdateSuccess() {
+      this.run()
+      this.$store.dispatch('user/GetUserInfo')
     }
   }
 }

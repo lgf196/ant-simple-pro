@@ -33,6 +33,14 @@ export default {
     }
   },
   actions: {
+    async GetUserInfo({ commit }) {
+      const user = await getUserInfo()
+      commit('SET_USERINFO', user)
+    },
+    async GetAccessMenus({ commit }) {
+      const menus = await getAccessMenus()
+      commit('SET_ACCESS_MENUS', menus)
+    },
     async GetUserData({ commit }) {
       const [user, menus] = await Promise.all([
         getUserInfo(),

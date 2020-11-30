@@ -23,7 +23,8 @@ export default {
   emits: ['change'],
   props: {
     el: {
-      type: HTMLElement
+      type: Function,
+      default: () => {} // eslint-disable-line
     }
   },
   data() {
@@ -49,8 +50,9 @@ export default {
           content: '您的浏览器不支持全屏功能'
         })
       }
-      if (this.el) {
-        screenfull.toggle(this.el)
+      console.log(this.el())
+      if (this.el()) {
+        screenfull.toggle(this.el())
       } else {
         screenfull.toggle()
       }

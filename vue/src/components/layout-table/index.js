@@ -2,7 +2,7 @@ import { h } from 'vue'
 import {
   SyncOutlined
 } from '@ant-design/icons-vue'
-import { Table } from 'ant-design-vue'
+import { Table, Pagination } from 'ant-design-vue'
 import FilterColumns from './filter-columns'
 import TableSize from './table-size'
 import Fullscreen from '@/components/fullscreen'
@@ -20,7 +20,8 @@ export default {
       default: () => ({})
     },
     pagination: {
-      type: [Object, Boolean]
+      type: [Object, Boolean],
+      default: false
     },
     loading: {
       type: Boolean,
@@ -48,7 +49,8 @@ export default {
     const tableProps = {
       ...this.tableProps,
       columns: this.columns,
-      size: this.size
+      size: this.size,
+      pagination: false
     }
     const columns = this.tableProps.columns || []
     const onFilterChange = (keys) => {
@@ -57,6 +59,19 @@ export default {
     const onTableSizeChange = (e) => {
       this.size = e.key
     }
+    const p = this.pagination || {}
+    const { page, size, onChange, ...restP } = p
+    const paginationProps = Object.assign({}, {
+      showSizeChanger: true,
+      showQuickJumper: true,
+      showTotal: total => `共 ${total} 条`,
+      hideOnSinglePage: true,
+      defaultPageSize: p.size || 10,
+      current: page,
+      pageSize: size,
+      onChange,
+      onShowSizeChange: onChange
+    }, restP)
     return (
       <a-config-provider getPopupContainer={() => this.$refs.wrapper}>
         <div ref="wrapper" class="wrapper">
@@ -78,7 +93,7 @@ export default {
                     </a-tooltip>
                     <FilterColumns columns={columns} onChange={onFilterChange} />
                     <TableSize onChange={onTableSizeChange} />
-                    <Fullscreen el={this.$refs.wrapper} />
+                    <Fullscreen el={() => this.$refs.wrapper} />
                     {extraIcons()}
                   </div>
                 </div>
@@ -90,6 +105,14 @@ export default {
                   restSlots
                 )
               }
+              <div class="layout-table__pagination">
+                {
+                  h(
+                    Pagination,
+                    paginationProps
+                  )
+                }
+              </div>
             </div>
           </a-spin>
         </div>

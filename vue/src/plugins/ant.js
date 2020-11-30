@@ -24,7 +24,9 @@ import {
   Popover,
   Upload,
   Select,
-  DatePicker
+  DatePicker,
+  Pagination,
+  Cascader
 } from 'ant-design-vue'
 
 export default function(app) {
@@ -56,6 +58,8 @@ export default function(app) {
     .use(Upload)
     .use(Select)
     .use(DatePicker)
+    .use(Pagination)
+    .use(Cascader)
 
   g.$message = message
   g.$info = Modal.info
