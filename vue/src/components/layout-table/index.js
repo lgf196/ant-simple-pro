@@ -65,7 +65,7 @@ export default {
       showSizeChanger: true,
       showQuickJumper: true,
       showTotal: total => `共 ${total} 条`,
-      hideOnSinglePage: true,
+      hideOnSinglePage: false,
       defaultPageSize: p.size || 10,
       current: page,
       pageSize: size,

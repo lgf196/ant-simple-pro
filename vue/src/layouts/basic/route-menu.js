@@ -6,7 +6,7 @@ const generateMenus = (menus) => {
     if (item.children && item.children.length) {
       const title = (
         <span>
-          <MenuIcon />
+          <MenuIcon name={item.icon} />
           <span>{item.title}</span>
         </span>
       )
@@ -19,7 +19,7 @@ const generateMenus = (menus) => {
     return (
       <a-menu-item key={item.url}>
         <router-link to={item.url}>
-          <MenuIcon />
+          <MenuIcon name={item.icon} />
           <span>{item.title}</span>
         </router-link>
       </a-menu-item>

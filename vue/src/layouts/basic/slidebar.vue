@@ -4,16 +4,16 @@
     v-model:collapsed="collapsed"
     :trigger="null"
     collapsible
-    :width="210"
+    :width="200"
     :collapsedWidth="60"
     theme="light"
   >
-    <router-link class="logo-container" to="/" title="Ant Simple Pro">
+    <!-- <router-link class="logo-container" to="/" title="Ant Simple Pro">
       <ComImage className="image" :src="require('@/assets/images/logo.png')" alt="logo" />
       <transition name="title-fade">
         <h1 v-show="!collapsed" class="title">Ant Simple Pro</h1>
       </transition>
-    </router-link>
+    </router-link> -->
     <RouteMenu
       :menus="accessMenus"
       :collapsed="collapsed"
@@ -64,8 +64,8 @@ export default {
   .logo-container {
     display: block;
     width: 100%;
-    height: 60px;
-    line-height: 60px;
+    height: @header-height;
+    line-height: @header-height;
     text-align: center;
     margin-bottom: 16px;
     .image {

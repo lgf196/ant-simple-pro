@@ -10,8 +10,8 @@ export default {
   },
 
   mutations: {
-    TOGGLE_SLIDE_BAR(state) {
-      state.collapsed = !state.collapsed
+    TOGGLE_SLIDE_BAR(state, value) {
+      state.collapsed = typeof value !== 'undefined' ? value : !state.collapsed
       setCollapse(state.collapsed)
     },
     SET_LOADING(state, value) {
