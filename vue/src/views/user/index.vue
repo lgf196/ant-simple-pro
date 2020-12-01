@@ -8,7 +8,9 @@
         dataSource: userList,
         rowKey: v => v.id
       }"
-      :pagination="false"
+      :pagination="{
+        hideOnSinglePage: true
+      }"
       :onRefresh="run"
     >
       <template #search>

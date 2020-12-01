@@ -17,16 +17,6 @@ export const getUsersBuffer = () => {
   })
 }
 
-export const saveUser = (data, loadingCb, cancelCallback) => {
-  return request({
-    method: 'post',
-    url: '/user',
-    data,
-    loadingCb,
-    cancelToken: new axios.CancelToken(cancelCallback)
-  })
-}
-
 export const updateUser = (data, loadingCb, cancelCallback) => {
   return request({
     method: 'post',
@@ -34,14 +24,5 @@ export const updateUser = (data, loadingCb, cancelCallback) => {
     data,
     loadingCb,
     cancelToken: new axios.CancelToken(cancelCallback)
-  })
-}
-
-export const patchUser = (data, loadingCb) => {
-  return request({
-    method: 'patch',
-    url: '/user',
-    data,
-    loadingCb
   })
 }

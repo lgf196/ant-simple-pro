@@ -275,7 +275,10 @@ export default {
     transition: left .3s ease;
   }
   .nav-tag {
-    margin-top: 6px;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 4px;
+    border: 1px solid #e9eaec;
     background: #fff;
     cursor: pointer;
     &::v-deep.ant-tag-blue {

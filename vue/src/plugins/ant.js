@@ -6,6 +6,7 @@ import {
   Input,
   Checkbox,
   Row,
+  Col,
   Layout,
   Menu,
   Dropdown,
@@ -39,6 +40,7 @@ export default function(app) {
     .use(Input)
     .use(Checkbox)
     .use(Row)
+    .use(Col)
     .use(Layout)
     .use(Menu)
     .use(Dropdown)

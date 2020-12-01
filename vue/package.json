@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^5.1.5",
+    "@antv/g2": "^4.0.15",
     "ant-design-vue": "^2.0.0-beta.10",
     "axios": "^0.20.0",
     "core-js": "^3.6.5",

@@ -10,3 +10,7 @@ export function isEdge() {
 export function isFirefox() {
   return !!window.navigator.userAgent.match(/firefox/i)
 }
+
+export function isMobile() {
+  return /Android|webOS|i?Phone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent)
+}
