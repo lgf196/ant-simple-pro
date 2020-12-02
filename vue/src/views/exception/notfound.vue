@@ -1,5 +1,5 @@
 <template>
-  <a-row class="notfound" type="flex" align="center">
+  <a-row class="notfound" type="flex" align="middle">
     <ComSvgIcon name="404" class="notfound-image"></ComSvgIcon>
     <h3 class="title">404</h3>
     <p class="subtitle">抱歉，该页面不存在</p>
@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
   .notfound {
     flex-direction: column;
     padding-top: 48px;

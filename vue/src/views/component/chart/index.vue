@@ -25,27 +25,34 @@
         :md="24"
         :lg="24"
         :xl="12"
-      ></a-col>
+      >
+        <Line></Line>
+      </a-col>
       <a-col
         :xs="24"
         :sm="24"
         :md="24"
         :lg="24"
         :xl="12"
-      ></a-col>
+      >
+        <Pie></Pie>
+      </a-col>
     </a-row>
-    <div id="container"></div>
   </div>
 </template>
 
 <script>
 import Column from './components/column'
 import Bar from './components/bar'
+import Line from './components/line'
+import Pie from './components/pie'
 export default {
   name: 'Chart',
   components: {
     Column,
-    Bar
+    Bar,
+    Line,
+    Pie
   },
   data() {
     return {}
