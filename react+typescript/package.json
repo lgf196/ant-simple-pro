@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "ant-simple-pro",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@ant-design/charts": "^1.0.9",
@@ -92,11 +92,11 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "dev": "cross-env EXTEND_ESLINT=true node scripts/start.js",
-    "build:beta": "cross-env NODE_ENV=beta node scripts/build.js",
-    "build:release": "cross-env NODE_ENV=release node scripts/build.js",
-    "build": "cross-env GENERATE_SOURCEMAP=false node scripts/build.js",
-    "test": "node scripts/test.js"
+    "dev":"cross-env REACT_APP_ENV=dev EXTEND_ESLINT=true node scripts/start.js",
+    "build:alpha":"cross-env REACT_APP_ENV=alpha node scripts/build.js",
+    "build:preprod":"cross-env REACT_APP_ENV=preprod node scripts/build.js",
+    "build:prod":"cross-env REACT_APP_ENV=prod GENERATE_SOURCEMAP=false node scripts/build.js",
+    "test":"node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app",

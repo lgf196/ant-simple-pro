@@ -31,23 +31,20 @@ export const isToken = (): boolean => localStorage.getItem('token') ? true : fal
  * @return string
  */
 export const environment = () => {
-  const env = process.env.NODE_ENV;
+  const env = process.env.REACT_APP_ENV;
   let parps = null;
   switch (env) {
-    case 'development': // 开发环境下
-      parps = 'development';
+    case 'dev': // 开发环境下
+      parps = 'dev';
       break;
-    case 'beta': // 测试环境下
-      parps = 'beta';
+    case 'alpha': // 测试环境下
+      parps = 'alpha';
       break;
-    case 'release': // 预发布环境下
-      parps = 'release';
+    case 'preprod': // 预发布环境下
+      parps = 'preprod';
       break;
-    case 'production': // 正式生产环境下
-      parps = 'production';
-      break;
-    case 'test': // 单元测试环境下
-      parps = 'test';
+    case 'prod': // 正式生产环境下
+      parps = 'prod';
       break;
     default:
       parps = 'development';

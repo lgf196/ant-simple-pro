@@ -2,8 +2,9 @@ import React, { memo } from 'react'
 import { List, Card, Avatar, Progress, Col, Row } from 'antd';
 import { Pie, Bar } from '@ant-design/charts';
 import SvgIcon from '@/components/svgIcon';
-
+import { environment } from '@/utils/varbile'
 const index: React.FC = memo(function index() {
+  console.log('packaged environment===>', environment())
   const { Meta } = Card
   const list = [
     {
