@@ -1,5 +1,6 @@
 import BasicLayout from '@/layouts/basic'
 import BlankLayout from '@/layouts/blank'
+import NotFound from '@/views/exception/notfound'
 
 export const basicRoutes = [
   {
@@ -58,7 +59,7 @@ export const basicRoutes = [
         path: '/component/chart',
         component: () => import('@/views/component/chart'),
         meta: {
-          title: '图表'
+          title: '图表组件'
         }
       },
       {
@@ -123,5 +124,9 @@ export default [
     component: BasicLayout,
     children: basicRoutes
   },
-  ...blankRoutes
+  ...blankRoutes,
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFound
+  }
 ]

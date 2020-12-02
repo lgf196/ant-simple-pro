@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
   .forbidden {
     flex-direction: column;
     padding-top: 48px;

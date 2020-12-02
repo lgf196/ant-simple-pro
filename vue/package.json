@@ -6,13 +6,11 @@
     "start": "npm run serve",
     "dev": "npm run serve",
     "serve": "vue-cli-service serve --copy --color",
-    "build:test": "vue-cli-service build --mode test",
+    "build:alpha": "vue-cli-service build --mode alpha",
+    "build:preprod": "vue-cli-service build --mode preprod",
     "build:prod": "vue-cli-service build --mode prod",
-    "build:hash": "vue-cli-service build --mode hash",
     "lint": "vue-cli-service lint",
-    "lint:fix": "eslint --fix --ext .js,.vue src",
-    "predeploy": "npm run build:hash",
-    "deploy": "gh-pages -d dist"
+    "lint:fix": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^5.1.5",
@@ -49,7 +47,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "gh-pages": "^3.1.0",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",
     "style-resources-loader": "^1.3.3",

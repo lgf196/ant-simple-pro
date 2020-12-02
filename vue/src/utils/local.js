@@ -1,6 +1,6 @@
 import { Base64 } from 'js-base64'
 
-const baseName = 'e-admin-antdv'
+const baseName = 'ant-simple-pro'
 const TOKEN = `${baseName}-token`
 const COLLAPSE = `${baseName}-collapse`
 const REMEMBER_LOGIN_USER = `${baseName}-remember-user`
