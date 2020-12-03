@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useMemo } from 'react'
 import { Dropdown, Menu, Spin } from 'antd'
 import { Link } from "react-router-dom"
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined} from '@ant-design/icons';
 import { layoutProps } from '@/interfaces'
 import { FullScreeOut } from '@/components/layout/layoutTable'
 import { useDispatch, useSelector } from 'react-redux';
@@ -50,10 +50,14 @@ const TopBar: React.FC<topbarProps> = memo(function TopBar({ collapsed, onToggle
   const dropdown = () => (
     <Menu onClick={tagOption}>
       <Menu.Item key='1'>
-        <Link to="/userInfo">个人信息</Link>
+        <Link to="/userInfo">
+          <UserOutlined />
+          <span>个人信息</span>
+        </Link>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key='2'>
+        <LogoutOutlined />
         <span>退出登录</span>
       </Menu.Item>
     </Menu>
@@ -87,7 +91,7 @@ const TopBar: React.FC<topbarProps> = memo(function TopBar({ collapsed, onToggle
             {
               loadingUserInfo ? <>
                 <HeadImage url={getUserInfo.iconUrl} />
-                <span>{getUserInfo.username ? getUserInfo.username : '帅锋锋'}</span>
+                <span>{getUserInfo.username ? getUserInfo.username : '珍珍'}</span>
               </> : <Spin size="small" />
             }
           </div>
