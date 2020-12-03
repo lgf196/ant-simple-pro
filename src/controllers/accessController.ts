@@ -69,9 +69,13 @@ class AccessModule {
         sendResponse(res, 200, sucessCallbackVal(code.successCode, null, '成功', true));
     })
     public deleteGetMenu = asyncHandler(async (req: Request, res: Response) => {
+        const defaultIdList=[29,28,27,26,24,19,18,20,22];
         const { id } = req.body;
         if (!id) {
-            return sendResponse(res, 400, sucessCallbackVal(code.failedCode, null, 'id必须', false));
+            return sendResponse(res, 200, sucessCallbackVal(code.failedCode, null, 'id必须', false));
+        }
+        if(defaultIdList.includes(parseInt(id))){
+            return sendResponse(res, 200, sucessCallbackVal(code.failedCode, null, '默认路由不得删除', false));
         }
         const sqlStr = `delete from access where id=?`;
         await mysqlDb.execute(sqlStr, [id]);
