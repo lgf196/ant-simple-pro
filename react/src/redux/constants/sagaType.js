@@ -1,0 +1,7 @@
+export const SAGA_GETMENUTREE='SAGA_GETMENUTREE'; // 权限树获取
+
+export const SAGA_GETMENULIST='SAGA_GETMENULIST'; // 权限
+
+export const SAGA_GET_USER_LIST='SAGA_GET_USER_LIST';
+
+export const SAGA_GET_USER_INFO='SAGA_GET_USER_INFO';
