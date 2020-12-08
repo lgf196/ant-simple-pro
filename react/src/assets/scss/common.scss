@@ -1,19 +1,4 @@
 @import 'src/assets/scss/varible.scss';
-.fade-enter {
-    opacity: 0;
-    transform: translateX(-25px);
-  }
-  .fade-enter-active,
-  .fade-exit-active {
-    opacity: 1;
-    transition: all .3s ease-in;
-    transform: translateX(0);
-  }
-  
-  .fade-exit {
-    opacity: 0;
-    transform: translateX(25px);
-  }
 .top-10px{
     margin-bottom: 10px;
 }

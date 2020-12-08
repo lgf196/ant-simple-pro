@@ -10,7 +10,6 @@ import style from './head.module.scss'
 import { responsiveConfig } from '@/utils/varbile'
 import SvgIcon from '@/components/svgIcon'
 import { CSSTransition } from 'react-transition-group';
-import { MenuInfo } from 'rc-menu/lib/interface';
 import { confirm } from '@/utils/function'
 import { useHistory } from "react-router-dom";
 import { localStorage } from '@/assets/js/storage'
@@ -62,7 +61,7 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
 
   const options = () => {
     setIsMobileDrawer(isMobileDevice);
-    onToggle(collapsed);
+    onToggle(!collapsed);
   }
 
   return (
@@ -71,7 +70,7 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
         <div className={style.logon}>
           <Link to="/home">
             <SvgIcon iconClass='logon' fontSize='30px' />
-            <CSSTransition in={isMobileDevice} classNames="fade" timeout={200} unmountOnExit>
+            <CSSTransition in={!isMobileDevice} classNames="fade" timeout={200} unmountOnExit>
               <h2>Ant Simple Pro</h2>
             </CSSTransition>
           </Link>
@@ -87,7 +86,7 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
           <div className={`${style.propsUser}`}>
             {
               loadingUserInfo ? <>
-                <HeadImage url={getUserInfo.iconUrl} />
+                <HeadImage url={getUserInfo.iconUrl ? getUserInfo.iconUrl : 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1605845717285.png'} />
                 <span>{getUserInfo.username ? getUserInfo.username : '珍珍'}</span>
               </> : <Spin size="small" />
             }

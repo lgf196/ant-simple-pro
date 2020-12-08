@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Routers from '@/router'
 import { ConfigProvider } from 'antd';
 import 'moment/locale/zh-cn';
 import locale from 'antd/es/locale/zh_CN';
@@ -14,7 +15,7 @@ import './assets/scss/animate.scss'
 ReactDOM.render(
   <ConfigProvider locale={locale}>
     <Provider store={store}>
-      <>111</>
+      <Routers />
     </Provider>
  </ConfigProvider>,
   document.getElementById('root')

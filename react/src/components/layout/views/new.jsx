@@ -56,7 +56,7 @@ const New = memo(function New(props) {
 
   const dropdown = () =>
   (<div className={style.newList}>
-    <Tabs defaultActiveKey="1" onChange={callback} centered>
+    <Tabs defaultActiveKey="1" onChange={callback} centered animated tabPosition='top'>
       <TabPane tab={`通知(${data.filter(item => !item.isRead).length})`} key="1">
         <List
           itemLayout="horizontal"

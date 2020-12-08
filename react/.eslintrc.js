@@ -5,6 +5,7 @@ module.exports = {
     'react-app/jest'
   ],
   "rules": {
+    'react-hooks/exhaustive-deps':'off',
     "jsx-a11y/anchor-is-valid":"off",  //注销a标签的警告
     'no-debugger':0,
     'default-case': 1, // 要求 switch 语句中有 default 分支

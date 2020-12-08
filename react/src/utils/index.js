@@ -57,6 +57,6 @@ export default class Tools {
       return arrRes;
     };
     arrRes = rev(data2, nodeId2);
-    return arrRes.map(item => item.id);;
+    return arrRes.map(item => item.id);
   }
 }

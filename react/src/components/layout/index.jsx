@@ -5,7 +5,7 @@ import { Head, SlideNav, Tag, Footer, BackTop } from '@/components/layout/views'
 import { Drawer } from 'antd';
 import style from './index.module.scss'
 import { responsiveConfig } from '@/utils/varbile'
-import 'src/assets/scss/common.scss'
+import '@/assets/scss/common.scss'
 const Layout = memo(function Layout({ route, location }) {
 
   const [collapsed, setCollapsed] = useState(false);

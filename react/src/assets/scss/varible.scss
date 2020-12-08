@@ -57,18 +57,6 @@ $color1:#fff;
 @mixin  auto($l,$r) {
   margin: $l auto $r auto;
 }
-@mixin  gradientBG (){
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-}
+
 
 
