@@ -1,11 +1,8 @@
 import React from 'react'
 import { Upload, Modal } from 'antd'
 import { PlusOutlined } from '@ant-design/icons';
-import { UploadChangeParam } from 'antd/lib/upload'
 import { requestCode } from '@/utils/varbile'
 import { toast } from '@/utils/function'
-import { UploadFile, UploadFileStatus } from 'antd/lib/upload/interface';
-
 class ImgUpload extends React.Component{
   static defaultProps = {
     action: '/api/fileUpload',
