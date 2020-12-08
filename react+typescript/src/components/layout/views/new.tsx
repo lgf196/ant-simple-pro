@@ -70,7 +70,7 @@ const New: React.FC<{ className?: string }> = memo(function New(props) {
               />
               <Button type="primary" size='small' ghost onClick={() => isRead(item)} disabled={item.isRead}>
                 未读
-                                </Button>
+              </Button>
             </List.Item>
           )}
         />
