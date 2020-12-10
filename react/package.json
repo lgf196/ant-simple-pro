@@ -24,6 +24,7 @@
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "connected-react-router": "^6.8.0",
+    "core-js": "^3.8.1",
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -87,8 +88,10 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "cross-env EXTEND_ESLINT=true node scripts/start.js",
-    "build": "node scripts/build.js",
+    "dev": "cross-env REACT_APP_ENV=dev EXTEND_ESLINT=true node scripts/start.js",
+    "build:alpha": "cross-env REACT_APP_ENV=alpha node scripts/build.js",
+    "build:preprod": "cross-env REACT_APP_ENV=preprod node scripts/build.js",
+    "build:prod": "cross-env REACT_APP_ENV=prod GENERATE_SOURCEMAP=false node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
@@ -101,12 +104,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie 11"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie 11"
     ]
   },
   "jest": {
