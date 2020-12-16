@@ -8,7 +8,7 @@ import { SyncOutlined } from '@ant-design/icons';
 import { LayoutTableProps, grounpProps } from '@/interfaces'
 import Pagination from '@/components/pagination'
 import { PaginationProps } from 'antd/lib/pagination'
-import { TableSize, FullScreeOut, Filter } from '@/components/layout/layoutTable'
+import { TableSize, FullScreeOut, Filter } from '@/components/layoutTable'
 import '@/assets/scss/common.scss'
 import style from './index.module.scss'
 

@@ -3,13 +3,13 @@ import { useSetState } from '@/hooks'
 import NoData from '@/components/noData'
 import EditComponent from '@/container/userModule/userEdit'
 import UserSearch from '@/container/userModule/userSearch'
-import { LayoutTableComponent } from '@/components/layout/layoutTable'
+import { LayoutTableComponent } from '@/components/layoutTable'
 import { SAGA_GET_USER_LIST } from '@/redux/constants/sagaType'
 import { ColumnProps } from 'antd/lib/table';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { getUserType } from '@/interfaces'
-import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
+import { LayoutTablePropsType } from '@/components/layoutTable/main'
 import { requestCode } from '@/utils/varbile'
 import { Input, Image } from 'antd';
 import { sagaGetUserDataType } from '@/redux/saga/user'

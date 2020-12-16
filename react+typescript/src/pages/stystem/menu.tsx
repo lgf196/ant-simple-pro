@@ -3,7 +3,7 @@ import Line from '@/components/line'
 import NoData from '@/components/noData'
 import MenuOption from '@/container/stystem/option'
 import { useSetState, useDel } from '@/hooks'
-import { LayoutTableComponent } from '@/components/layout/layoutTable'
+import { LayoutTableComponent } from '@/components/layoutTable'
 import { SAGA_GETMENULIST, SAGA_GETMENUTREE } from '@/redux/constants/sagaType'
 import { ColumnProps } from 'antd/lib/table';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ import { sagaGetMenuListType } from '@/redux/saga/user'
 import { toast } from '@/utils/function'
 import { delteAccesstOption } from '@/api/login'
 import { requestCode } from '@/utils/varbile';
-import { LayoutTablePropsType } from '@/components/layout/layoutTable/main'
+import { LayoutTablePropsType } from '@/components/layoutTable/main'
 import { createSelector } from 'reselect'
 
 type dispatchProps = sagaGetMenuListType | { type: SAGA_GETMENUTREE };

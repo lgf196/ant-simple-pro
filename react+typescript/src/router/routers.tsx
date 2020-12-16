@@ -1,15 +1,15 @@
 import React, { lazy } from 'react'
-import Layout from '@/components/layout'
 import HocRouter from './routeInterceptor'
-import FatherLayout from '@/components/layout/fatherLayout'
+import FatherLayout from '@/layouts/basic/fatherLayout'
+import BasicLayout from '@/layouts/basic'
 import { RouteConfig } from 'react-router-config'
 import { Redirect } from 'react-router-dom'
 import Error from '@/pages/error'
 import Login from '@/pages/login'
 /**
- * @description 没有权限和不依赖layout组价的路由
+ * @description 没有权限和不依赖BasicLayout组价的路由
 */
-export const noLayoutRouter: RouteConfig[] = [
+export const noBasicLayoutRouter: RouteConfig[] = [
   {
     path: '/',
     exact: true,
@@ -22,7 +22,7 @@ export const noLayoutRouter: RouteConfig[] = [
   }
 ]
 /**
- * @descriptio 含layout布局路由，静态
+ * @descriptio 含BasicLayout布局路由，静态
  */
 export const staticRouter: RouteConfig[] = [
   {
@@ -109,9 +109,9 @@ export const menuRouter: RouteConfig[] = [
   },
 ]
 export default [
-  ...noLayoutRouter,
+  ...noBasicLayoutRouter,
   {
-    component: Layout,
+    component: BasicLayout,
     routes: [...staticRouter, ...menuRouter]
   },
   {
