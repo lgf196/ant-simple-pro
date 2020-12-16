@@ -6,7 +6,7 @@ import { requestCode } from '@/utils/varbile'
 import { useSelector } from 'react-redux';
 import SvgIcon from '@/components/svgIcon'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Footer } from '@/components/layout/views'
+import { Footer } from '@/layouts/basic/component'
 import style from './login.module.scss'
 import logon from '@/assets/image/pic.svg'
 

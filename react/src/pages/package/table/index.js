@@ -3,7 +3,7 @@ import { useSetState } from '@/hooks'
 import NoData from '@/components/noData'
 import EditComponent from '@/container/userModule/userEdit'
 import UserSearch from '@/container/userModule/userSearch'
-import { LayoutTableComponent } from '@/components/layout/layoutTable'
+import { LayoutTableComponent } from '@/components/layoutTable'
 import { SAGA_GET_USER_LIST } from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
 import { requestCode } from '@/utils/varbile'

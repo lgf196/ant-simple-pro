@@ -5,7 +5,7 @@ import Line from '@/components/line'
 import Table from '@/components/table'
 import { SyncOutlined } from '@ant-design/icons';
 import Pagination from '@/components/pagination'
-import { TableSize, FullScreeOut, Filter } from '@/components/layout/layoutTable'
+import { TableSize, FullScreeOut, Filter } from '@/components/layoutTable'
 import '@/assets/scss/common.scss'
 import style from './index.module.scss'
 

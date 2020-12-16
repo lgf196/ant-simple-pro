@@ -1,7 +1,7 @@
 import React, { memo, useState, useEffect } from 'react'
 import { renderRoutes, matchRoutes } from 'react-router-config'
 import { useOnResize } from '@/hooks'
-import { Head, SlideNav, Tag, Footer, BackTop } from '@/components/layout/views'
+import { Head, SlideNav, Tag, Footer, BackTop } from '@/layouts/basic/component'
 import { Drawer } from 'antd';
 import style from './index.module.scss'
 import { responsiveConfig } from '@/utils/varbile'
@@ -47,4 +47,4 @@ const Layout = memo(function Layout({ route, location }) {
   )
 })
 
-export default Layout
+export default Layout;

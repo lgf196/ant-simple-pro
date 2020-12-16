@@ -3,7 +3,7 @@ import Line from '@/components/line'
 import NoData from '@/components/noData'
 import MenuOption from '@/container/stystem/option'
 import { useSetState, useDel } from '@/hooks'
-import { LayoutTableComponent } from '@/components/layout/layoutTable'
+import { LayoutTableComponent } from '@/components/layoutTable'
 import { SAGA_GETMENULIST, SAGA_GETMENUTREE } from '@/redux/constants/sagaType'
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from '@/utils/function'

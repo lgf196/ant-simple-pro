@@ -2,7 +2,7 @@ import React, { memo, useEffect, useMemo } from 'react'
 import { Dropdown, Menu, Spin } from 'antd'
 import { Link } from "react-router-dom"
 import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined} from '@ant-design/icons';
-import { FullScreeOut } from '@/components/layout/layoutTable'
+import { FullScreeOut } from '@/components/layoutTable'
 import { useDispatch, useSelector } from 'react-redux';
 import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType'
 import HeadImage from '@/components/headImage'
