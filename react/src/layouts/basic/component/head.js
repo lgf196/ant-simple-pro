@@ -67,14 +67,6 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
   return (
     <div className={`${style.head} clearfix`}>
       <div className={`${style.headLeft} fl`}>
-        <div className={style.logon}>
-          <Link to="/home">
-            <SvgIcon iconClass='logon' fontSize='30px' />
-            <CSSTransition in={!isMobileDevice} classNames="fade" timeout={200} unmountOnExit>
-              <h2>Ant Simple Pro</h2>
-            </CSSTransition>
-          </Link>
-        </div>
         <div className={`${style.menu}`} onClick={options}>
           {collapsed ? <MenuUnfoldOutlined className={style.icon} /> : <MenuFoldOutlined className='icon' />}
         </div>
