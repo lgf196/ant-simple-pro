@@ -149,7 +149,7 @@ class SlideNav extends React.PureComponent {
                 <BulbOutlined />
               </Tooltip>
             </CSSTransition>
-            <Switch checkedChildren="dark" unChecskedChildren="light"   checked={theme === 'dark'}  onChange={this.changeTheme}/>
+            <Switch checkedChildren="dark" unChecskedChildren="light" checked={theme === 'dark'} onChange={this.changeTheme}/>
           </div>
         </Sider>
     );

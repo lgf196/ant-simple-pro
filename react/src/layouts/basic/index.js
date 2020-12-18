@@ -7,7 +7,7 @@ import style from './index.module.scss'
 import { responsiveConfig } from '@/utils/varbile'
 import '@/assets/scss/common.scss'
 const Layouts = memo(function Layouts({ route, location }) {
-  const { Header, Content } = Layout;
+  const { Header } = Layout;
 
   const [collapsed, setCollapsed] = useState(false);
 

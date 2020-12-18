@@ -32,23 +32,23 @@ const index = memo(function index() {
   var data = [
     {
       type: 'ts',
-      value: 60,
+      value: 40,
     },
     {
       type: 'react',
       value: 20,
     },
     {
-      type: 'javascript',
+      type: 'vue3.0',
+      value: 20,
+    },
+    {
+      type: 'angular',
       value: 10,
     },
     {
-      type: 'scss',
-      value: 5,
-    },
-    {
-      type: 'other',
-      value: 5,
+      type: 'css',
+      value: 10,
     }
   ];
 
@@ -98,7 +98,7 @@ const index = memo(function index() {
                 <SvgIcon iconClass='logon' fontSize='30px' />
               }
               title='Ant-Simple-Pro'
-              description='简洁，美观，快速上手，组件丰富；Simple, beautiful, quick to use, rich in components'
+              description='简洁，美观，快速上手，支持3大框架；Concise, beautiful, quick to get started, support 3 big frameworks'
             />
             <ul style={{ marginTop: '10px' }}>
               {

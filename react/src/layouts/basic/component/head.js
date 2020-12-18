@@ -1,15 +1,13 @@
 import React, { memo, useEffect, useMemo } from 'react'
-import { Dropdown, Menu, Spin } from 'antd'
+import { Dropdown, Menu, Spin, Tooltip, Button } from 'antd'
 import { Link } from "react-router-dom"
-import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined} from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined, QuestionCircleOutlined, DownOutlined} from '@ant-design/icons';
 import { FullScreeOut } from '@/components/layoutTable'
 import { useDispatch, useSelector } from 'react-redux';
 import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType'
 import HeadImage from '@/components/headImage'
 import style from './head.module.scss'
 import { responsiveConfig } from '@/utils/varbile'
-import SvgIcon from '@/components/svgIcon'
-import { CSSTransition } from 'react-transition-group';
 import { confirm } from '@/utils/function'
 import { useHistory } from "react-router-dom";
 import { localStorage } from '@/assets/js/storage'
@@ -17,6 +15,12 @@ import { createSelector } from 'reselect'
 import News from './new'
 
 const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDrawer }) {
+  const moreList = [
+    {title:'ant-simple-pro(vue3.0)',url:'https://www.baidu.com/'},
+    {title:'ant-simple-pro(afterEnd)',url:'https://www.baidu.com/'},
+    {title:'ant-simple-pro(angular)',url:'https://www.baidu.com/'},
+  ];
+
   const history = useHistory();
 
   const dispatch = useDispatch();
@@ -59,6 +63,20 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
     </Menu>
   );
 
+  const more= () => (
+    <Menu>
+      {
+        moreList.map((item,index)=>(
+          <Menu.Item key={index}>
+            <a href={item.url} target='_blank'>
+              <span>{item.title}</span>
+            </a>
+          </Menu.Item>
+        ))
+      }
+    </Menu>
+  );
+
   const options = () => {
     setIsMobileDrawer(isMobileDevice);
     onToggle(!collapsed);
@@ -72,7 +90,12 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
         </div>
       </div>
       <div className={`${style.menuList} fr`}>
-        <News />
+        <a href="https://www.baidu.com/" target='_blank'>
+          <Tooltip title="文档">
+            <QuestionCircleOutlined className={style.icon} />
+          </Tooltip>
+        </a>
+        <News/>
         <FullScreeOut className={style.icon} />
         <Dropdown overlay={dropdown} placement="bottomCenter">
           <div className={`${style.propsUser}`}>
@@ -83,6 +106,12 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
               </> : <Spin size="small" />
             }
           </div>
+        </Dropdown>
+        <Dropdown overlay={more} placement="bottomRight">
+          <Button  size='small' style={{marginLeft:'20px',color:"rgba(105, 123, 140, 0.7)"}}>
+            <span>更多</span>
+            <DownOutlined />
+          </Button>
         </Dropdown>
       </div>
     </div>
