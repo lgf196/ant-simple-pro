@@ -38,11 +38,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, onMounted } from 'vue'
-import { mapGetters } from 'vuex'
+import { defineComponent, reactive, toRefs, onMounted, computed } from 'vue'
+import appStore from '@/store/modules/app'
+import userStore from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { message } from 'ant-design-vue'
-import { useStore } from '@/store'
 import { login } from './service'
 import {
   getRememberUser,
@@ -61,6 +61,7 @@ export default defineComponent({
     FooterBar
   },
   setup() {
+    const loading = computed(() => appStore.loading)
     const state = reactive({
       form: {
         email: '',
@@ -83,7 +84,6 @@ export default defineComponent({
         state.form = rememberUser
       }
     })
-    const store = useStore()
     const router = useRouter()
     const handleFinish = async (values: LoginFormType) => {
       if (values.remember) {
@@ -99,7 +99,7 @@ export default defineComponent({
       try {
         const token = await login(params)
         setToken(token) // save local
-        await store.dispatch('user/GetUserData')
+        await userStore.getUserData()
         router.push('/')
         message.destroy()
         message.success('登录成功')
@@ -109,11 +109,9 @@ export default defineComponent({
     }
     return {
       ...toRefs(state),
-      handleFinish
+      handleFinish,
+      loading
     }
-  },
-  computed: {
-    ...mapGetters(['loading'])
   }
 })
 </script>

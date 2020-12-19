@@ -17,8 +17,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { mapGetters } from 'vuex'
+import { defineComponent, computed } from 'vue'
+import appStore from '@/store/modules/app'
+import userStore from '@/store/modules/user'
 import RouteMenu from './route-menu'
 
 export default defineComponent({
@@ -26,8 +27,13 @@ export default defineComponent({
   components: {
     RouteMenu
   },
-  computed: {
-    ...mapGetters(['collapsed', 'accessMenus'])
+  setup() {
+    const collapsed = computed(() => appStore.collapsed)
+    const accessMenus = computed(() => userStore.accessMenus)
+    return {
+      collapsed,
+      accessMenus
+    }
   }
 })
 </script>

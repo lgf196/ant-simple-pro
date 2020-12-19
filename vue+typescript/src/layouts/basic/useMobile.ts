@@ -1,13 +1,12 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useStore } from '@/store'
+import appStore from '@/store/modules/app'
 import { isMobile } from '@/utils/system'
 export default function() {
   const mobile = ref(false)
-  const store = useStore()
   const onResize = () => {
     const val = isMobile()
     mobile.value = val
-    store.commit('app/TOGGLE_SLIDE_BAR', val)
+    appStore.TOGGLE_SLIDE_BAR(val)
   }
   onResize()
   onMounted(() => {

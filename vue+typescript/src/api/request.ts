@@ -2,7 +2,8 @@ import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
 import qs from 'qs'
 import { message } from 'ant-design-vue'
 import { getToken } from '@/utils/local'
-import store from '@/store'
+import appStore from '@/store/modules/app'
+import userStore from '@/store/modules/user'
 // import router from '@/router'
 import { paramsSerializer, addPending, removePending } from './utils'
 
@@ -20,15 +21,15 @@ let loadingCount = 0
 
 function startCount() {
   loadingCount++
-  if (!store.getters.loading) {
-    store.commit('app/SET_LOADING', true)
+  if (!appStore.loading) {
+    appStore.SET_LOADING(true)
   }
 }
 
 function endCount() {
   loadingCount--
   if (loadingCount === 0) {
-    store.commit('app/SET_LOADING', false)
+    appStore.SET_LOADING(false)
   }
 }
 
@@ -105,7 +106,7 @@ const requestThenEnd = (options: RequestThenEndType) => {
     return responseData.data
   }
   if (responseData.code === 202) {
-    store.dispatch('user/Logout').then(() => {
+    userStore.logout().then(() => {
       // this.$router.replace('/login')
       location.reload(true)
     })

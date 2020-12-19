@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-import { mapGetters } from 'vuex'
+import { defineComponent, computed } from 'vue'
+import appStore from '@/store/modules/app'
 import HeaderBar from './components/headerbar.vue'
 import SlideBar from './components/slidebar.vue'
 import TagsNav from './components/tags-nav.vue'
@@ -34,12 +34,11 @@ export default defineComponent({
   },
   setup() {
     const mobile = useMobile()
+    const collapsed = computed(() => appStore.collapsed)
     return {
-      mobile
+      mobile,
+      collapsed
     }
-  },
-  computed: {
-    ...mapGetters(['collapsed'])
   }
 })
 </script>

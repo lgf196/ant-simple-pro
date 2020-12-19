@@ -98,6 +98,7 @@ module.exports = {
           requireLast: false,
         }
       }
-    ]
+    ],
+    '@typescript-eslint/ban-ts-ignore': 0
   }
 }

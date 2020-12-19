@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, unref, watch, computed, nextTick } from 'vue'
+import { defineComponent, reactive, ref, unref, watch, computed, nextTick, toRefs } from 'vue'
 import { RouteRecordRaw, useRoute, RouteLocationNormalizedLoaded, _RouteLocationBase } from 'vue-router'
 import { CloseOutlined } from '@ant-design/icons-vue'
 import ScrollPane, { ScrollActionType } from '@/components/scrollbar/scroll-pane.vue'
@@ -65,40 +65,41 @@ export default defineComponent({
     }
     function onClickTag(item: RouteRecordRaw) {
       console.log('onClickTag', item)
-      const scroll = unref(scrollPane) as ScrollActionType
-      unref(tagRefs).forEach((item, index) => {
-        if (item && index === 99) {
-          // route.path === item.dataset['route-path']
-          scroll.moveToTarget(item, unref(tagRefs))
-        }
-      })
+      // const scroll = unref(scrollPane) as ScrollActionType
+      // unref(tagRefs).forEach((item, index) => {
+      //   if (item && index === 99) {
+      //     // route.path === item.dataset['route-path']
+      //     scroll.moveToTarget(item, unref(tagRefs))
+      //   }
+      // })
     }
 
     function addTag(item: TagItemType) {
-      if (!route.meta) {
+      if (!item.meta) {
         return
       }
-      if (!route.meta.title) {
+      if (!item.meta.title) {
         return
       }
-      if (route.meta.affix) {
+      if (item.meta.affix) {
         return
       }
-      console.log(unref(state.tags))
-      const currentIndex = state.tags.findIndex(v => v.path === item.path)
-      console.log('currentIndex', currentIndex)
-      if (currentIndex >= 0) { // 存在替换
-        state.tags.splice(currentIndex, 1, item)
-        state.tags = state.tags.map((v, index) => {
-          if (index === currentIndex) {
-            return item
-          }
-          return v
-        })
-      } else { // 不存在添加
-        // state.tags.push(item)
+      const hasCurrent = state.tags.some(v => v.path === item.path)
+      if (!hasCurrent) {
         state.tags = state.tags.concat(item)
       }
+      // if (currentIndex >= 0) { // 存在替换
+      //   state.tags.splice(currentIndex, 1, item)
+      //   state.tags = state.tags.map((v, index) => {
+      //     if (index === currentIndex) {
+      //       return item
+      //     }
+      //     return v
+      //   })
+      // } else { // 不存在添加
+      //   // state.tags.push(item)
+      //   state.tags = state.tags.concat(item)
+      // }
     }
 
     // 移动到可视范围
@@ -116,7 +117,7 @@ export default defineComponent({
       })
     }
     return {
-      ...state,
+      ...toRefs(state),
       totalTags,
       scrollPane,
       setItemRef,

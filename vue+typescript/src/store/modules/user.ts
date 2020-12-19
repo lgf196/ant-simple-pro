@@ -1,4 +1,5 @@
-import { Module, ActionContext } from 'vuex'
+import { VuexModule, getModule, Module, Mutation, Action } from 'vuex-module-decorators'
+import store from '@/store'
 import { getUserInfo, getAccessMenus } from '@/api/global'
 import {
   getUserInfo as getLocalUserInfo,
@@ -10,7 +11,6 @@ import {
   getAccessMenus as getLocalAccessMenus,
   removeAccessMenus
 } from '@/utils/local'
-import { RootState } from '../index'
 
 export type AccessMenuItem = {
   id: number
@@ -21,55 +21,56 @@ export type AccessMenuItem = {
   createTime: number
   children?: AccessMenuItem[]
 }
-export type UserState = {
-  currentUser: object
-  accessMenus: AccessMenuItem[]
-}
-export default {
-  namespaced: true,
 
-  state: {
-    currentUser: getLocalUserInfo() || {},
-    accessMenus: getLocalAccessMenus() || []
-  },
+@Module({ dynamic: true, namespaced: true, store, name: 'user' })
+class User extends VuexModule {
+  currentUser: Record<string, unknown> = getLocalUserInfo() || {}
 
-  mutations: {
-    SET_USERINFO(state, data) {
-      state.currentUser = data || {}
-      setUserInfo(data)
-    },
-    SET_ACCESS_MENUS(state, data) {
-      state.accessMenus = data || []
-      setAccessMenus(data)
-    }
-  },
-  actions: {
-    async GetUserInfo({ commit }) {
-      const user = await getUserInfo()
-      commit('SET_USERINFO', user)
-    },
-    async GetAccessMenus({ commit }) {
-      const menus = await getAccessMenus()
-      commit('SET_ACCESS_MENUS', menus)
-    },
-    async GetUserData({ commit }: ActionContext<UserState, RootState>) {
-      const [user, menus] = await Promise.all([
-        getUserInfo(),
-        getAccessMenus()
-      ])
-      commit('SET_ACCESS_MENUS', menus)
-      commit('SET_USERINFO', user)
-    },
-    Logout({ commit }: ActionContext<UserState, RootState>) {
-      return new Promise((resolve) => {
-        commit('SET_USERINFO', {})
-        removeUserInfo()
-        commit('SET_ACCESS_MENUS', [])
-        removeAccessMenus()
-        removeToken()
-        removeTagNav()
-        resolve()
-      })
-    }
+  accessMenus: AccessMenuItem[] = getLocalAccessMenus() || []
+
+  @Mutation
+  SET_USERINFO(data: Record<string, unknown>) {
+    this.currentUser = data || {}
+    setUserInfo(data)
   }
-} as Module<UserState, RootState>
+
+  @Mutation
+  SET_ACCESS_MENUS(data: AccessMenuItem[]) {
+    this.accessMenus = data || []
+    setAccessMenus(data)
+  }
+
+  @Action
+  async getUserInfo() {
+    const user = await getUserInfo()
+    this.SET_USERINFO(user)
+  }
+
+  @Action
+  async getAccessMenus() {
+    const menus = await getAccessMenus()
+    this.SET_ACCESS_MENUS(menus)
+  }
+
+  @Action
+  async getUserData() {
+    const [user, menus] = await Promise.all([
+      getUserInfo(),
+      getAccessMenus()
+    ])
+    this.SET_USERINFO(user)
+    this.SET_ACCESS_MENUS(menus)
+  }
+
+  @Action
+  async logout() {
+    this.SET_USERINFO({})
+    this.SET_ACCESS_MENUS([])
+    removeUserInfo()
+    removeAccessMenus()
+    removeToken()
+    removeTagNav()
+  }
+}
+
+export default getModule<User>(User)

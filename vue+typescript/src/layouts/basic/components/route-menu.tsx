@@ -112,7 +112,6 @@ export default defineComponent({
       openKeys: this.openKeys,
       selectedKeys: this.selectedKeys,
       onSelect: (menu: {selectedKeys: string[]}) => {
-        console.log(menu)
         this.selectedKeys = menu.selectedKeys
         this.$emit('select', menu)
       },

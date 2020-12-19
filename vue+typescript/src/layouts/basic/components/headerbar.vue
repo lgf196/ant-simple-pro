@@ -42,13 +42,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, createVNode } from 'vue'
+import { defineComponent, createVNode, computed } from 'vue'
 import {
   UserOutlined,
   LogoutOutlined,
   ExclamationCircleOutlined
 } from '@ant-design/icons-vue'
-import { mapGetters } from 'vuex'
+import appStore from '@/store/modules/app'
+import userStore from '@/store/modules/user'
 import Notification from './notification.vue'
 import Fullscreen from '@/components/fullscreen/index.vue'
 export default defineComponent({
@@ -62,12 +63,17 @@ export default defineComponent({
   data() {
     return {}
   },
-  computed: {
-    ...mapGetters(['collapsed', 'user'])
+  setup() {
+    const collapsed = computed(() => appStore.collapsed)
+    const user = computed(() => userStore.currentUser)
+    return {
+      collapsed,
+      user
+    }
   },
   methods: {
     onToggle() {
-      this.$store.commit('app/TOGGLE_SLIDE_BAR')
+      appStore.TOGGLE_SLIDE_BAR()
     },
     onLogout() {
       this.$confirm({
@@ -75,7 +81,7 @@ export default defineComponent({
         content: '确定要退出登录吗',
         icon: createVNode(ExclamationCircleOutlined),
         onOk: () => {
-          this.$store.dispatch('user/Logout').then(() => {
+          userStore.logout().then(() => {
             // this.$router.replace('/login')
             location.reload(true)
           })
