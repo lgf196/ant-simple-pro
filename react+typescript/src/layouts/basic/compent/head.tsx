@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useMemo } from 'react'
-import { Dropdown, Menu, Spin } from 'antd'
+import { Dropdown, Menu, Spin, Tooltip, Button } from 'antd'
 import { Link } from "react-router-dom"
-import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined} from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined,QuestionCircleOutlined, DownOutlined } from '@ant-design/icons';
 import { layoutProps } from '@/interfaces'
 import { FullScreeOut } from '@/components/layoutTable'
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,8 +9,6 @@ import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType'
 import HeadImage from '@/components/headImage'
 import style from './head.module.scss'
 import { responsiveConfig } from '@/utils/varbile'
-import SvgIcon from '@/components/svgIcon'
-import { CSSTransition } from 'react-transition-group';
 import { MenuInfo } from 'rc-menu/lib/interface';
 import { confirm } from '@/utils/function'
 import { useHistory } from "react-router-dom";
@@ -21,6 +19,12 @@ import News from './new'
 export type topbarProps = { onToggle: Function } & layoutProps;
 
 const TopBar: React.FC<topbarProps> = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDrawer }) {
+  const moreList = [
+    {title:'ant-simple-pro(vue3.0)',url:'https://www.baidu.com/'},
+    {title:'ant-simple-pro(afterEnd)',url:'https://www.baidu.com/'},
+    {title:'ant-simple-pro(angular)',url:'https://www.baidu.com/'},
+  ];
+
   const history = useHistory();
 
   const dispatch = useDispatch();
@@ -63,6 +67,20 @@ const TopBar: React.FC<topbarProps> = memo(function TopBar({ collapsed, onToggle
     </Menu>
   );
 
+  const more= () => (
+    <Menu>
+      {
+        moreList.map((item,index)=>(
+          <Menu.Item key={index}>
+            <a href={item.url} target='_blank'>
+              <span>{item.title}</span>
+            </a>
+          </Menu.Item>
+        ))
+      }
+    </Menu>
+  );
+
   const options = () => {
     setIsMobileDrawer!(isMobileDevice);
     onToggle(!collapsed);
@@ -71,19 +89,16 @@ const TopBar: React.FC<topbarProps> = memo(function TopBar({ collapsed, onToggle
   return (
     <div className={`${style.head} clearfix`}>
       <div className={`${style.headLeft} fl`}>
-        <div className={style.logon}>
-          <Link to="/home">
-            <SvgIcon iconClass='logon' fontSize='30px' />
-            <CSSTransition in={!isMobileDevice} classNames="fade" timeout={200} unmountOnExit>
-              <h2>Ant Simple Pro</h2>
-            </CSSTransition>
-          </Link>
-        </div>
         <div className={`${style.menu}`} onClick={options}>
           {collapsed ? <MenuUnfoldOutlined className={style.icon} /> : <MenuFoldOutlined className='icon' />}
         </div>
       </div>
       <div className={`${style.menuList} fr`}>
+       <a href="https://www.baidu.com/" target='_blank'>
+          <Tooltip title="文档">
+            <QuestionCircleOutlined className={style.icon} />
+          </Tooltip>
+        </a>
         <News />
         <FullScreeOut className={style.icon} />
         <Dropdown overlay={dropdown} placement="bottomCenter">
@@ -95,6 +110,12 @@ const TopBar: React.FC<topbarProps> = memo(function TopBar({ collapsed, onToggle
               </> : <Spin size="small" />
             }
           </div>
+        </Dropdown>
+        <Dropdown overlay={more} placement="bottomRight">
+          <Button size='small' style={{marginLeft:'20px',color:"rgba(105, 123, 140, 0.7)"}}>
+            <span>更多</span>
+            <DownOutlined />
+          </Button>
         </Dropdown>
       </div>
     </div>

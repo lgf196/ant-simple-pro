@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Layout, Empty } from 'antd';
+import { Menu, Layout, Empty, Switch, Tooltip } from 'antd';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 import { SAGA_GETMENUTREE } from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
@@ -12,6 +12,9 @@ import style from './slideNav.module.scss'
 import { backTopAnimate } from '@/utils/function';
 import LoadingData from '@/components/routerLoading'
 import { composes } from '@/utils/compose'
+import { BulbOutlined } from '@ant-design/icons';
+import { CSSTransition } from 'react-transition-group';
+import { SwitchChangeEventHandler } from 'antd/lib/switch';
 export interface SlideNavProps extends layoutProps, RouteComponentProps {
   dispatch: Dispatch,
   getMenuTree: menuAccessType[],
@@ -20,6 +23,7 @@ export interface SlideNavProps extends layoutProps, RouteComponentProps {
 export interface SlideNavState extends layoutProps {
   openKeys: string[];
   lastOpenKeys: string[];
+  theme:'light' | 'dark'
 }
 class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
   unlisten!: UnregisterCallback;
@@ -29,7 +33,8 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     this.state = {
       openKeys: [],
       lastOpenKeys: [],
-      collapsed: false
+      collapsed: false,
+      theme:'light'
     };
   }
 
@@ -118,29 +123,52 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
     this.setState({ openKeys, lastOpenKeys: openKeys });
   }
 
+  changeTheme:SwitchChangeEventHandler = (value) => {
+    this.setState({
+      theme: value ? 'dark' : 'light',
+    });
+  };
+
   render() {
     const { Sider } = Layout;
     const { getMenuTree, collapsed, location, loadingMenuTree } = this.props;
-    const { openKeys } = this.state;
+    const { openKeys, theme } = this.state;
     const defaultProps = collapsed ? {} : { openKeys };
     const defaultSelectedKeys = location.pathname;
     return (
-      <Layout className={style.siderbar}>
-        <Sider trigger={null} collapsible collapsed={collapsed} collapsedWidth={collapsed ? 80 : 200}>
-          {
-            loadingMenuTree ?
-              (getMenuTree.length ? (<Menu mode="inline"
-                onOpenChange={this.onOpenChange as OpenEventHandler}
-                defaultSelectedKeys={[defaultSelectedKeys]}
-                selectedKeys={[defaultSelectedKeys]}
-                defaultOpenKeys={openKeys}
-                {...defaultProps}
-                className={style.menu}>
-                {this.rednerMenu(getMenuTree)}
-              </Menu>) : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} className={style.empty} />) : <LoadingData />
-          }
+        <Sider trigger={null} collapsible collapsed={collapsed} collapsedWidth={collapsed ? 80 : 200} className={theme === 'light' ? 'ant-layout-sider-light' : 'ant-layout-sider-dark'}>
+           <div className={theme === 'light' ?`${style.logon} ${style.Shadow}`:`${style.logon}`}>
+            <Link to="/home">
+              <SvgIcon iconClass='logon' fontSize='30px' />
+              <CSSTransition in={!collapsed} classNames="fade" timeout={200} unmountOnExit>
+                 <h2>Ant Simple Pro</h2>
+               </CSSTransition>
+            </Link>
+          </div>
+          <div className={style.menuContainer}>
+            {
+              loadingMenuTree ?
+                (getMenuTree.length ? (<Menu mode="inline"
+                  onOpenChange={this.onOpenChange as OpenEventHandler}
+                  defaultSelectedKeys={[defaultSelectedKeys]}
+                  selectedKeys={[defaultSelectedKeys]}
+                  defaultOpenKeys={openKeys}
+                  {...defaultProps}
+                  theme={theme}
+                  className={style.menu}>
+                  {this.rednerMenu(getMenuTree)}
+                </Menu>) : <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} className={style.empty} />) : <LoadingData />
+            }
+          </div>
+          <div className={style.switchThem}>
+            <CSSTransition in={!collapsed} classNames="fade" timeout={200} unmountOnExit>
+              <Tooltip placement="leftTop" title='主题'>
+                <BulbOutlined />
+              </Tooltip>
+            </CSSTransition>
+            <Switch checkedChildren="dark" unCheckedChildren="light" checked={theme === 'dark'} onChange={this.changeTheme}/>
+          </div>
         </Sider>
-      </Layout>
     );
   }
 }

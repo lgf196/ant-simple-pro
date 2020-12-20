@@ -32,23 +32,23 @@ const index: React.FC = memo(function index() {
   var data = [
     {
       type: 'ts',
-      value: 60,
+      value: 40,
     },
     {
       type: 'react',
       value: 20,
     },
     {
-      type: 'javascript',
+      type: 'vue3.0',
+      value: 20,
+    },
+    {
+      type: 'angular',
       value: 10,
     },
     {
-      type: 'scss',
-      value: 5,
-    },
-    {
-      type: 'other',
-      value: 5,
+      type: 'css',
+      value: 10,
     }
   ];
 

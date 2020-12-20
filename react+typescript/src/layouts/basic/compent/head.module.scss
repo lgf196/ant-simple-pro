@@ -6,24 +6,11 @@
     padding: 0 24px 0 0;
      background-color: #fff;
      box-shadow: 0 2px 8px #f0f1f2;
+    //  box-shadow:0px 12px 8px -12px #f0f1f2;
      z-index: 10;
      overflow: hidden;
      .headLeft{
        display: flex;
-       padding-left: 20px;
-       .logon{
-          a{
-            display: flex;
-            height: 100%;
-            align-items: center;
-            h2{
-            height: 32px;
-            margin:0 12px;
-            line-height: 32px;
-            @include style(18px,#1890ff,600);
-            }
-          }
-        }
         .menu{
           @include style(20px,#666,600);
           padding-left: 12px;
