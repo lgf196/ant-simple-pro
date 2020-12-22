@@ -180,7 +180,9 @@ const instance = axios.create({
   },
   transformRequest: [function(data, headers) {
     if (headers['Content-Type'] === FORMDATA_CONTENT_TYPE) {
-      return qs.stringify(data)
+      return qs.stringify(data, {
+        skipNulls: true
+      })
     }
     return data
   }]

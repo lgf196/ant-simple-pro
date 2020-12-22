@@ -87,9 +87,13 @@ export default defineComponent({
         <div ref="wrapper" class="wrapper">
           <a-spin spinning={this.loading}>
             <div class="layout-table">
-              <div class="layout-table__header">
-                {search()}
-              </div>
+              {
+                this.$slots.search && (
+                  <div class="layout-table__header">
+                    {search()}
+                  </div>
+                )
+              }
               <div class="layout-table__toolbar">
                 <div class="toolbar-left">{this.tableTitle}</div>
                 <div class="toolbar-right">
@@ -110,7 +114,7 @@ export default defineComponent({
               </div>
               {
                 h(
-                  // @ts-ignore
+                  // eslint-disable-next-line
                   Table as any,
                   tableProps,
                   restSlots

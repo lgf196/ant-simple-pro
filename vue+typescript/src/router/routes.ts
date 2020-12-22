@@ -80,7 +80,7 @@ export const basicRoutes: RouteRecordRaw[] = [
       },
       {
         path: '/component/table',
-        component: () => import('@/views/component/table/index.vue'),
+        component: () => import('@/views/user/index.vue'),
         meta: {
           title: '表格组件'
         }

@@ -12,6 +12,8 @@ module '@vue/runtime-core' {
     $route: RouteLocationNormalizedLoaded
     $router: Router
     $store: Store<any>
+    $formatDate: (date: dayjs.ConfigType) => string
+    $formatDateTime: (date: dayjs.ConfigType) => string
     $message: Message
     $info: Modal.info
     $success: Modal.success

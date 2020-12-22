@@ -74,7 +74,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive, toRefs, computed, onMounted } from 'vue'
+import { defineComponent, ref, reactive, toRefs, computed, onMounted, unref } from 'vue'
 import userStore from '@/store/modules/user'
 import LayoutTable from '@/components/layout-table'
 import {
@@ -84,6 +84,7 @@ import {
 import { getUsers, getUsersBuffer } from './service'
 import { downloadExcel } from '@/utils'
 import UpdateUserModal from './update-user-modal.vue'
+import imagePreview from '@/components/image/image-preview'
 const columns = [
   {
     dataIndex: 'index',
@@ -184,11 +185,11 @@ export default defineComponent({
     }
 
     function onImageClick(url: string) {
-      console.log(url)
-      // this.$imagePreview({
-      //   urlList: this.urlList,
-      //   initialIndex: this.urlList.findIndex(v => v === url)
-      // })
+      const urls = unref(urlList)
+      imagePreview({
+        urlList: urls,
+        initialIndex: urls.findIndex(v => v === url)
+      })
     }
 
     function onUpdateSuccess() {

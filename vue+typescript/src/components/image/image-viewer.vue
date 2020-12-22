@@ -53,7 +53,8 @@ import { defineComponent, PropType } from 'vue'
 import { on, off } from '@/utils/dom'
 import { rafThrottle } from '@/utils'
 import { CloseCircleOutlined } from '@ant-design/icons-vue'
-import ComSvgIcon from '@/components/svg-icon.vue'
+import ComSvgIcon from '@/components/svg-icon/index.vue'
+import { ImageViewerPropsType } from './image-preview'
 
 const Mode = {
   CONTAIN: {
@@ -75,7 +76,7 @@ export default defineComponent({
 
   props: {
     urlList: {
-      type: Array as PropType<string[]>,
+      type: Array as PropType<ImageViewerPropsType['urlList']>,
       default: () => []
     },
     zIndex: {
@@ -83,10 +84,6 @@ export default defineComponent({
       default: 2000
     },
     onSwitch: {
-      type: Function,
-      default: () => {} // eslint-disable-line
-    },
-    onClose: {
       type: Function,
       default: () => {} // eslint-disable-line
     },
@@ -118,9 +115,9 @@ export default defineComponent({
         enableTransition: false
       },
       imgRefs: [] as HTMLImageElement[],
-      _keyDownHandler: (() => {}) as (() => void) | null,
-      _mouseWheelHandler: (() => {}) as (() => void) | null,
-      _dragHandler: (() => {}) as (() => void) | null
+      _keyDownHandler: (() => {}) as (() => void) | null, // eslint-disable-line
+      _mouseWheelHandler: (() => {}) as (() => void) | null, // eslint-disable-line
+      _dragHandler: (() => {}) as (() => void) | null // eslint-disable-line
     }
   },
   computed: {
@@ -304,7 +301,7 @@ export default defineComponent({
     handleActions(
       action: 'zoomOut' | 'zoomIn' | 'anticlocelise' | 'clocelise',
       options = {}
-      ) {
+    ) {
       if (this.loading) return
       const { zoomRate, rotateDeg, enableTransition } = {
         zoomRate: 0.2,
