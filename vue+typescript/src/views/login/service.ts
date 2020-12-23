@@ -1,4 +1,4 @@
-import request from '@/api/request'
+import request from '@/utils/request'
 
 type LoginParams = {
   email: string

@@ -93,17 +93,6 @@ export default defineComponent({
     const state = reactive({
       labelCol: { span: 2 },
       wrapperCol: { span: 9 },
-      // form: {
-      //   username: '枫叶',
-      //   nickname: '帅锋锋',
-      //   sex: 2,
-      //   hobby: [2, 4, 5],
-      //   date: ['2020-09-03', '2020-11-22'],
-      //   skill: [1, 6, 7, 8],
-      //   photo: [] as string[],
-      //   description: '',
-      //   remember: true
-      // },
       rules: {
         username: [{ required: true, message: '请输入姓名' }],
         nickname: [{ required: true, message: '请输入外号' }],
@@ -135,7 +124,7 @@ export default defineComponent({
       hobby: [2, 4, 5],
       date: ['2020-09-03', '2020-11-22'],
       skill: [1, 6, 7, 8],
-      photo: [] as string[],
+      photo: reactive([]) as string[],
       description: '',
       remember: true
     })
@@ -151,14 +140,9 @@ export default defineComponent({
 
     onMounted(() => {
       timer = window.setTimeout(() => {
-        // state.form.photo.push(
-        //   'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg'
-        // )
-        form.photo = ['https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg']
-        // state.form = {
-        //   ...state.form,
-        //   photo: ['https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg']
-        // }
+        Object.assign(form, {
+          photo: ['https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg']
+        })
       }, 1000)
     })
 

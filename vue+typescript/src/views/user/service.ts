@@ -1,5 +1,5 @@
 import axios, { Canceler } from 'axios'
-import request, { LoadingCallback } from '@/api/request'
+import request, { LoadingCallback } from '@/utils/request'
 
 export type GetUsersParamsType = {
   username: string

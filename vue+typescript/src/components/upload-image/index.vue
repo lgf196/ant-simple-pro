@@ -30,14 +30,15 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { UploadFile, VcFile, UploadChangeParam } from 'ant-design-vue/types//upload'
+import { UploadFile, VcFile, UploadChangeParam } from 'ant-design-vue/types/upload'
 import {
   LoadingOutlined,
   PlusOutlined
 } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
+import imagePreview from '@/components/image/image-preview'
 export default defineComponent({
-  emits: ['update:value', 'change'],
+  emits: ['update:value', 'change', 'input'],
   components: {
     LoadingOutlined,
     PlusOutlined
@@ -76,8 +77,11 @@ export default defineComponent({
     }
   },
   watch: {
-    value() {
-      this.updateFileList()
+    value: {
+      handler() {
+        this.updateFileList()
+      },
+      deep: true
     }
   },
   mounted() {
@@ -86,9 +90,10 @@ export default defineComponent({
   methods: {
     updateFileList() {
       if (this.isMultiple && !this.inited) {
-        if (!Array.isArray(this.value)) {
+        if (!Array.isArray(this.value) || !this.value.length) {
           return
         }
+        console.log('updateFileList', this.value)
         this.inited = true
         this.fileList = this.value.map(url => ({
           uid: getRandomStr(),
@@ -100,6 +105,7 @@ export default defineComponent({
     emitValue(val: string | string[]) {
       this.$emit('update:value', val)
       this.$emit('change', val)
+      this.$emit('input', val)
     },
     handleChange(info: UploadChangeParam) {
       // console.log(this.fileList)
@@ -145,11 +151,10 @@ export default defineComponent({
       return true
     },
     onPreview(file: UploadFile) {
-      console.log('file', file)
-      // this.$imagePreview({
-      //   urlList: this.fileList.map(v => v.url || (v.response && v.response.data && v.response.data.url) || v.thumbUrl),
-      //   initialIndex: this.fileList.findIndex(v => v.uid === file.uid)
-      // })
+      imagePreview({
+        urlList: this.fileList.map(v => v.url || (v.response && v.response.data && v.response.data.url) || v.thumbUrl),
+        initialIndex: this.fileList.findIndex(v => v.uid === file.uid)
+      })
     }
   }
 })

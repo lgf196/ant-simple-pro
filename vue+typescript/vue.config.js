@@ -1,7 +1,7 @@
 const path = require('path')
 const dayjs = require('dayjs')
 // const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
-// const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development'
 const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
 
 function resolve(dir) {
@@ -9,6 +9,21 @@ function resolve(dir) {
 }
 const publicPath = '/'
 const PORT = process.env.PORT || 9050
+const cdn = {
+  dev: {
+    css: [],
+    js: [
+      publicPath + 'echarts/echarts.js'
+    ]
+  },
+  build: {
+    css: [],
+    js: [
+      publicPath + 'echarts/echarts.min.js'
+    ]
+  }
+}
+
 module.exports = {
   publicPath,
   outputDir: 'dist',
@@ -85,6 +100,12 @@ module.exports = {
       .options({
         symbolId: 'icon-[name]'
       })
+
+
+    config.plugin('html').tap(args => {
+      args[0].cdn = isDev? cdn.dev : cdn.build
+      return args
+    })
 
     config.plugin('define').tap((args) => {
       // DefinePlugin 设置值 必须 JSON 序列化 或者 使用 双引号 包起来

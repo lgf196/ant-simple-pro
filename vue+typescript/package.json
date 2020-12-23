@@ -18,6 +18,7 @@
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "dayjs": "^1.9.7",
+    "echarts": "^4.9.0",
     "file-saver": "^2.0.5",
     "js-base64": "^3.6.0",
     "lodash": "^4.17.20",
@@ -32,6 +33,7 @@
     "vuex-module-decorators": "^1.0.1"
   },
   "devDependencies": {
+    "@types/echarts": "^4.9.0",
     "@types/file-saver": "^2.0.1",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",

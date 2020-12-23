@@ -12,7 +12,7 @@ export const isString = createCheckTypeFn<string>('String')
 export const isObject = createCheckTypeFn<object>('Object')
 export const isNumber = createCheckTypeFn<number>('Number')
 
-// @ts-ignore
+// eslint-disable-next-line
 export function isHtmlElement(node: any) {
   return node && node.nodeType === Node.ELEMENT_NODE
 }
