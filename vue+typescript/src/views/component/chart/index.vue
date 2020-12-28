@@ -10,7 +10,7 @@
       >
         <Column></Column>
       </a-col>
-      <!-- <a-col
+      <a-col
         :xs="24"
         :sm="24"
         :md="24"
@@ -18,7 +18,7 @@
         :xl="12"
       >
         <Bar></Bar>
-      </a-col> -->
+      </a-col>
       <a-col
         :xs="24"
         :sm="24"
@@ -44,14 +44,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Column from './components/column.vue'
-// import Bar from './components/bar'
+import Bar from './components/bar.vue'
 import Line from './components/line.vue'
 import Pie from './components/pie.vue'
 export default defineComponent({
   name: 'Chart',
   components: {
     Column,
-    // Bar,
+    Bar,
     Line,
     Pie
   },

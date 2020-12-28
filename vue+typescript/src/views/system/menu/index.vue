@@ -64,7 +64,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, computed, onMounted, createVNode } from 'vue'
-import { Modal } from 'ant-design-vue'
+import { Modal, message } from 'ant-design-vue'
 import { Canceler } from 'axios'
 import {
   ExclamationCircleOutlined
@@ -212,6 +212,8 @@ export default defineComponent({
               row.id,
               c => (cancel = c)
             )
+            message.destroy()
+            message.success('删除成功')
             query()
             userStore.getAccessMenus()
           } catch (err) {

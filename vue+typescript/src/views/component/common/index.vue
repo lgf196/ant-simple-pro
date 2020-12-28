@@ -24,12 +24,23 @@
           支持双向绑定和多图上传
         </p>
       </li>
+      <li>
+        <h3 class="h3">ImagePreview组件</h3>
+        <div class="preview">
+          <a-button @click="onPreview">点击预览</a-button>
+        </div>
+        <p class="paragraph">
+          ImagePreview 组件基于 element-ui 的 image 组件二次开发，使用直接 从 <code>@/components/image/image-preview</code> 导入 <code>imagePreview</code> 方法，
+          直接调用方法传入对应的参数即可
+        </p>
+      </li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, reactive, toRefs, onBeforeUnmount } from 'vue'
+import imagePreview from '@/components/image/image-preview'
 export default defineComponent({
   name: 'Common',
   setup() {
@@ -47,9 +58,19 @@ export default defineComponent({
     onBeforeUnmount(() => {
       clearTimeout(timer)
     })
+    function onPreview() {
+      imagePreview({
+        urlList: [
+          'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg',
+          'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1606805525442.jpg'
+        ],
+        initialIndex: 1
+      })
+    }
     return {
       url,
-      ...toRefs(state)
+      ...toRefs(state),
+      onPreview
     }
   }
 })

@@ -84,6 +84,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive, toRefs, onMounted, onBeforeUnmount, toRaw } from 'vue'
+import { message } from 'ant-design-vue'
 import { useForm } from '@ant-design-vue/use'
 import { Form } from 'ant-design-vue/types/form/form'
 export default defineComponent({
@@ -154,6 +155,8 @@ export default defineComponent({
       validate()
         .then(() => {
           console.log('form', toRaw(form))
+          message.destroy()
+          message.success('保存成功')
         })
         .catch(console.log)
     }
