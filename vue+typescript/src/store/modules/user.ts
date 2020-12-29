@@ -22,14 +22,23 @@ export type AccessMenuItem = {
   children?: AccessMenuItem[]
 }
 
+export type CurrentUser = {
+  id: number
+  iconUrl: string
+  email: string
+  username: string
+  introduct: string
+  [propName: string]: unknown
+}
+
 @Module({ dynamic: true, namespaced: true, store, name: 'user' })
 class User extends VuexModule {
-  currentUser: Record<string, unknown> = getLocalUserInfo() || {}
+  currentUser: CurrentUser = getLocalUserInfo() || {}
 
   accessMenus: AccessMenuItem[] = getLocalAccessMenus() || []
 
   @Mutation
-  SET_USERINFO(data: Record<string, unknown>) {
+  SET_USERINFO(data: CurrentUser) {
     this.currentUser = data || {}
     setUserInfo(data)
   }
@@ -64,7 +73,7 @@ class User extends VuexModule {
 
   @Action
   async logout() {
-    this.SET_USERINFO({})
+    this.SET_USERINFO({} as CurrentUser)
     this.SET_ACCESS_MENUS([])
     removeUserInfo()
     removeAccessMenus()

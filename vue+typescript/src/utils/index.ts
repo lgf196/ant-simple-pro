@@ -1,5 +1,6 @@
 import { RouteRecordRaw, _RouteLocationBase } from 'vue-router'
 import { saveAs } from 'file-saver'
+import Clipboard from 'clipboard'
 
 export type TagItemType = Partial<_RouteLocationBase>
 
@@ -51,3 +52,18 @@ export function downloadExcel(data: string, filename: string) {
   saveAs(b, filename)
 }
 
+export const copy = (text: string, event: Event) => {
+  const el = event.target as Element
+  const clipboard = new Clipboard(el, {
+    text: () => text
+  })
+  clipboard.on('success', () => {
+    clipboard.destroy()
+  })
+  clipboard.on('error', (err) => {
+    console.log(err)
+    clipboard.destroy()
+  })
+  // @ts-ignore
+  clipboard.onClick(event)
+}

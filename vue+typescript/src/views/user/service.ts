@@ -10,6 +10,7 @@ export type UpdateUsersParamsType = {
   username: string
   introduct: string
   iconUrl: string
+  email?: string
 }
 
 export const getUsers = (params: GetUsersParamsType, loadingCb: LoadingCallback) => {
@@ -31,7 +32,7 @@ export const getUsersBuffer = () => {
 export const updateUser = (
   data: UpdateUsersParamsType,
   loadingCb: LoadingCallback,
-  cancelCallback: (cancel: Canceler) => void
+  cancelCallback: (cancel: Canceler) => void = () => {} // eslint-disable-line
 ) => {
   return request({
     method: 'post',

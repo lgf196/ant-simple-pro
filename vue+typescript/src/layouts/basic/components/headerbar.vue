@@ -89,7 +89,7 @@ export default defineComponent({
       })
     },
     onToPersonCenter() {
-      console.log('onToPersonCenter')
+      this.$router.push('/userInfo')
     }
   }
 })

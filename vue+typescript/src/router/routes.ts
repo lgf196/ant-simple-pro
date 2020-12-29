@@ -1,8 +1,19 @@
+// import { defineAsyncComponent } from 'vue'
 import { RouteRecordRaw } from 'vue-router'
 
 import BasicLayout from '@/layouts/basic/index.vue'
 import BlankLayout from '@/layouts/blank/index.vue'
 import NotFound from '@/views/exception/notfound.vue'
+// import LoadingComponent from '@/components/loading/index.vue'
+
+// function loadable(path: string) {
+//   return defineAsyncComponent({
+//     loader: () => import(path),
+//     loadingComponent: LoadingComponent,
+//     timeout: 15000,
+//     suspensible: false
+//   })
+// }
 
 export const basicRoutes: RouteRecordRaw[] = [
   {
@@ -86,6 +97,11 @@ export const basicRoutes: RouteRecordRaw[] = [
         }
       }
     ]
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: () => import('@/views/icon/index.vue')
   }
 ]
 
