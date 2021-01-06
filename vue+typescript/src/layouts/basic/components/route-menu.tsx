@@ -45,6 +45,10 @@ export default defineComponent({
     },
     collapsed: {
       type: Boolean
+    },
+    theme: {
+      type: String,
+      default: 'light'
     }
   },
   data(): RouteMenuDataType {
@@ -95,7 +99,7 @@ export default defineComponent({
     }
   },
   render() {
-    const { menus, collapsed } = this
+    const { menus, collapsed, theme } = this
     const handleOpenChange = (openKeys: string[]) => {
       const latestOpenKey = openKeys.find(key => !this.openKeys.includes(key))
       if (latestOpenKey && !this.rootSubmenuKeys.includes(latestOpenKey)) {
@@ -107,7 +111,7 @@ export default defineComponent({
     const menuProps = {
       class: 'menu',
       mode: 'inline',
-      theme: 'light',
+      theme,
       inlineCollapsed: collapsed,
       openKeys: this.openKeys,
       selectedKeys: this.selectedKeys,

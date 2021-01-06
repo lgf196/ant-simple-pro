@@ -1,11 +1,12 @@
 import { VuexModule, getModule, Module, Mutation } from 'vuex-module-decorators'
 import { _RouteLocationBase } from 'vue-router'
 import store from '@/store'
-import { getCollapse, setCollapse } from '@/utils/local'
+import { getCollapse, setCollapse, getSideBarTheme, setSideBarTheme } from '@/utils/local'
 import { getAffixTags } from '@/utils'
 import { routes } from '@/router/routes'
 
 export type TagItemType = Partial<_RouteLocationBase>
+export type ThemeValue = 'dark' | 'light'
 
 @Module({ dynamic: true, namespaced: true, store, name: 'app' })
 class App extends VuexModule {
@@ -16,6 +17,8 @@ class App extends VuexModule {
   affixTags: TagItemType[] = getAffixTags(routes) || []
 
   tagNavList: TagItemType[] = []
+
+  sliderTheme: ThemeValue = getSideBarTheme() === 'dark' ? 'dark' : 'light'
 
   get totalTags() {
     return this.affixTags.concat(this.tagNavList)
@@ -39,6 +42,12 @@ class App extends VuexModule {
     if (currentIndex < 0) {
       this.tagNavList = this.tagNavList.concat(item)
     }
+  }
+
+  @Mutation
+  SET_SLIDER_THEME(value: ThemeValue) {
+    this.sliderTheme = value
+    setSideBarTheme(value)
   }
 }
 

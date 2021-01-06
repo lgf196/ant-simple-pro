@@ -5,34 +5,54 @@
     :trigger="null"
     collapsible
     :width="200"
-    :collapsedWidth="60"
-    theme="light"
+    :collapsedWidth="80"
+    :theme="sliderTheme"
   >
     <RouteMenu
       :menus="accessMenus"
       :collapsed="collapsed"
+      :theme="sliderTheme"
     >
     </RouteMenu>
+    <a-row class="toggle-theme" type="flex" justify="space-between" align="middle">
+      <a-tooltip title="主题" v-if="!collapsed" placement="right">
+        <BulbOutlined />
+      </a-tooltip>
+      <a-switch checked-children="dark" v-model:checked="theme" />
+    </a-row>
   </a-layout-sider>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, ref, watch } from 'vue'
+import {
+  BulbOutlined
+} from '@ant-design/icons-vue'
 import appStore from '@/store/modules/app'
 import userStore from '@/store/modules/user'
 import RouteMenu from './route-menu'
-
+import { getSideBarTheme } from '@/utils/local'
+type ThemeValue = 'dark' | 'light'
 export default defineComponent({
   name: 'SlideBar',
   components: {
+    BulbOutlined,
     RouteMenu
   },
   setup() {
     const collapsed = computed(() => appStore.collapsed)
     const accessMenus = computed(() => userStore.accessMenus)
+    const sliderTheme = computed(() => appStore.sliderTheme)
+    const theme = ref(getSideBarTheme() === 'dark')
+    watch(theme, () => {
+      const val = theme.value ? 'dark' : 'light'
+      appStore.SET_SLIDER_THEME(val)
+    })
     return {
       collapsed,
-      accessMenus
+      accessMenus,
+      theme,
+      sliderTheme
     }
   }
 })
@@ -74,6 +94,18 @@ export default defineComponent({
       font-weight: 600;
       font-size: 16px;
     }
+  }
+  .toggle-theme {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    transition: all .3s;
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    overflow: hidden;
   }
   .title-fade {
     &-enter-active {

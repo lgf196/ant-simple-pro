@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, unref, watch, computed, nextTick, toRefs } from 'vue'
-import { RouteRecordRaw, useRoute, RouteLocationNormalizedLoaded, _RouteLocationBase } from 'vue-router'
+import { defineComponent, reactive, ref, unref, watch, nextTick, toRefs, toRaw } from 'vue'
+import { RouteRecordRaw, useRoute, RouteLocationNormalizedLoaded, _RouteLocationBase, useRouter } from 'vue-router'
 import { CloseOutlined } from '@ant-design/icons-vue'
 import ScrollPane, { ScrollActionType } from '@/components/scrollbar/scroll-pane.vue'
 import { routes } from '@/router/routes'
@@ -28,6 +28,7 @@ import { getAffixTags } from '@/utils'
 export type TagItemType = Partial<_RouteLocationBase>
 type StateType = {
   tags: TagItemType[]
+  totalTags: TagItemType[]
 }
 export default defineComponent({
   name: 'TagsNav',
@@ -39,18 +40,25 @@ export default defineComponent({
     const scrollPane = ref<ScrollActionType | null>(null)
     const tagRefs = ref<HTMLElement[]>([])
     const state = reactive<StateType>({
-      tags: []
+      tags: [],
+      totalTags: []
     })
     const route = useRoute()
+    const router = useRouter()
     watch(route, (newRoute) => {
       addTag(newRoute) // eslint-disable-line
       moveToView(newRoute) // eslint-disable-line
     }, {
       immediate: true
     })
-    const totalTags = computed(() => {
-      return [...getAffixTags(routes), ...state.tags]
+    watch(state.tags, () => {
+      state.totalTags = [...getAffixTags(routes), ...state.tags]
+    }, {
+      immediate: true
     })
+    // const totalTags = computed(() => {
+    //   return [...getAffixTags(routes), ...state.tags]
+    // })
     function setItemRef(el: HTMLElement) {
       tagRefs.value.push(el)
     }
@@ -65,6 +73,7 @@ export default defineComponent({
     }
     function onClickTag(item: RouteRecordRaw) {
       console.log('onClickTag', item)
+      router.push(item.path)
       // const scroll = unref(scrollPane) as ScrollActionType
       // unref(tagRefs).forEach((item, index) => {
       //   if (item && index === 99) {
@@ -74,7 +83,9 @@ export default defineComponent({
       // })
     }
 
-    function addTag(item: TagItemType) {
+    function addTag(b: TagItemType) {
+      console.log(b)
+      const item = route
       if (!item.meta) {
         return
       }
@@ -84,10 +95,16 @@ export default defineComponent({
       if (item.meta.affix) {
         return
       }
-      const hasCurrent = state.tags.some(v => v.path === item.path)
-      if (!hasCurrent) {
+      console.log('before', toRaw(state.tags))
+      const current = state.totalTags.find(v => v.path === item.path)
+      if (!current) {
         state.tags = state.tags.concat(item)
       }
+      // const hasCurrent = state.totalTags.some(v => v.path === item.path)
+      // if (!hasCurrent) {
+      //   state.tags = state.tags.concat(item)
+      // }
+      console.log('after', toRaw(state.tags))
       // if (currentIndex >= 0) { // 存在替换
       //   state.tags.splice(currentIndex, 1, item)
       //   state.tags = state.tags.map((v, index) => {
@@ -118,7 +135,7 @@ export default defineComponent({
     }
     return {
       ...toRefs(state),
-      totalTags,
+      // totalTags,
       scrollPane,
       setItemRef,
       isActive,
