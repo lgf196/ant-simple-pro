@@ -115,6 +115,6 @@ If you think this project helped you, you can give the author a like，the autho
 
 ## License
 
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
+[MIT](https://github.com/lgf196/ant-simple-pro/blob/master/LICENSE)
 
 Copyright (c) 2021-present LiGuoFeng
