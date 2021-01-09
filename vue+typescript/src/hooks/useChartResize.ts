@@ -1,10 +1,10 @@
-import { onMounted, onBeforeUnmount, watch } from 'vue'
+import { onMounted, onBeforeUnmount, watch, Ref } from 'vue'
 import echarts from 'echarts'
 import appStore from '@/store/modules/app'
 
-export default function (chart: echarts.ECharts) {
+export default function (chartIns: Ref<echarts.ECharts | null>) {
   function onResize() {
-    chart.resize()
+    chartIns.value && chartIns.value.resize()
   }
 
   let timer: number | null = null

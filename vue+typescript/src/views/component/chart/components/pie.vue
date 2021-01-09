@@ -35,6 +35,8 @@ type StateType = {
 export default defineComponent({
   setup() {
     const chartRef = ref<HTMLDivElement | null>(null)
+    const chartIns = ref<echarts.ECharts | null>(null)
+    useChartResize(chartIns)
 
     const state = reactive<StateType>({
       disabledLegendIndexs: [],
@@ -65,8 +67,7 @@ export default defineComponent({
       if (!chartRef.value) {
         return
       }
-      chart = window.echarts.init(chartRef.value)
-      useChartResize(chart)
+      chart = chartIns.value = window.echarts.init(chartRef.value)
     }
 
     function initData() {
