@@ -157,29 +157,6 @@ export default {
       }
     }
   }
-  .logo-container {
-    display: block;
-    width: @slide-width;
-    height: @header-height;
-    line-height: @header-height;
-    padding-left: 20px;
-    ::v-deep .svg-icon {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 30px;
-    }
-    .title {
-      // .text-overflow;
-      // max-width: 116px;
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-      margin-left: 12px;
-      color: @color-theme;
-      font-weight: 600;
-      font-size: 18px;
-    }
-  }
   .header-inner {
     flex: auto;
     display: flex;
@@ -212,9 +189,11 @@ export default {
   .notification {
     padding: 0 10px;
   }
-  ::v-deep .anticon-question-circle, ::v-deep .icon-bell, .fullscreen {
-    font-size: 18px;
-    color: rgba(105, 123, 140, .7);
+  .header {
+    ::v-deep .anticon-question-circle, ::v-deep .icon-bell, .fullscreen {
+      font-size: 18px;
+      color: rgba(105, 123, 140, .7);
+    }
   }
   .fullscreen {
     height: 100%;

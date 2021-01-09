@@ -1,16 +1,14 @@
 <template>
-  <section class="layout header-fixed slidebar-fixed tag-fixed" :class="{mobile, collapsed}">
-    <section class="layout-content">
-      <SlideBar></SlideBar>
-      <div class="layout-content__inner">
-        <HeaderBar></HeaderBar>
-        <TagsNav></TagsNav>
-        <main class="main">
-          <router-view/>
-        </main>
-        <FooterBar class="footer"></FooterBar>
-      </div>
-    </section>
+  <section class="basic-layout header-fixed slidebar-fixed tag-fixed" :class="{mobile, collapsed}">
+    <SlideBar></SlideBar>
+    <div class="layout-content">
+      <HeaderBar></HeaderBar>
+      <TagsNav></TagsNav>
+      <main class="main">
+        <router-view/>
+      </main>
+      <FooterBar class="footer"></FooterBar>
+    </div>
   </section>
 </template>
 
@@ -54,34 +52,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-  // .layout {
-  //   display: flex;
-  // }
-  .layout-content {
-    flex: auto;
-    display: flex;
-    // flex-direction: column;
-    // min-height: 100vh;
-    background: #f0f2f5;
-    overflow-x: hidden;
-  }
-  .layout-content__inner {
-    flex: auto;
-  }
-  .global-header {
-    display: flex;
-    position: relative;
-    height: 64px;
-    background: #fff;
-    box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
-  }
-  .footer {
-    padding: 15px 0;
-    height: 80px;
-  }
-  .main {
-    min-height: calc(100vh - @header-height - 36px - 80px);
-  }
-</style>

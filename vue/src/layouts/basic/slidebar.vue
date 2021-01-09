@@ -72,33 +72,45 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  ::v-deep {
-    .ant-menu-inline .ant-menu-item::after {
-      right: 1px;
+  .slidebar {
+    ::v-deep(.ant-layout-sider-children) {
+      .ant-menu-inline .ant-menu-item::after {
+        right: 1px;
+      }
+      .ant-menu-item, .ant-menu-submenu {
+        .svg-icon {
+          font-size: 18px;
+        }
+        .anticon, .anticon + span {
+          vertical-align: middle;
+        }
+      }
+      // dark theme hidden logo-container shadow
+      .ant-menu.ant-menu-dark {
+        position: relative;
+        z-index: 201;
+      }
     }
   }
   .menu {
+    padding-top: 10px;
     border-right: 0;
   }
   .logo-container {
     z-index: 200;
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: @header-height;
     line-height: @header-height;
-    padding-left: 16px;
     box-shadow: 0 2px 8px #f0f1f2;
     .logo-icon {
-      display: inline-block;
-      vertical-align: middle;
       font-size: 30px;
     }
     .title {
       white-space: nowrap;
-      max-width: 116px;
-      display: inline-block;
-      vertical-align: middle;
       margin: 0;
       margin-left: 8px;
       color: @color-theme;
