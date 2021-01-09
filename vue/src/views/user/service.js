@@ -17,7 +17,7 @@ export const getUsersBuffer = () => {
   })
 }
 
-export const updateUser = (data, loadingCb, cancelCallback) => {
+export const updateUser = (data, loadingCb, cancelCallback = () => {}) => { // eslint-disable-line
   return request({
     method: 'post',
     url: '/user/edit',

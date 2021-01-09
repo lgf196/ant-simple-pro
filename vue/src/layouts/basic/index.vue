@@ -1,9 +1,9 @@
 <template>
   <section class="layout header-fixed slidebar-fixed tag-fixed" :class="{mobile, collapsed}">
-    <HeaderBar></HeaderBar>
     <section class="layout-content">
       <SlideBar></SlideBar>
       <div class="layout-content__inner">
+        <HeaderBar></HeaderBar>
         <TagsNav></TagsNav>
         <main class="main">
           <router-view/>

@@ -3,6 +3,9 @@
     .header {
       position: fixed;
       top: 0;
+      left: @slide-width;
+      right: 0;
+      transition: all 0.2s;
     }
     .layout-content {
       padding-top: @header-height;
@@ -13,7 +16,7 @@
       z-index: 99;
       position: fixed;
       left: 0;
-      top: @header-height;
+      top: 0;
       bottom: 0;
     }
     .layout-content__inner {
@@ -26,6 +29,11 @@
       }
     }
     &.collapsed {
+      &.header-fixed {
+        .header {
+          left: @slide-width--collapse;
+        }
+      }
       &.tag-fixed {
         .tags-nav {
           left: @slide-width--collapse;
@@ -58,6 +66,9 @@
   }
   .slidebar {
     .menu {
+      position: relative;
+      z-index: 201;
+      padding-top: 10px;
       .ant-menu-item, .ant-menu-submenu {
         .svg-icon {
           font-size: 18px;

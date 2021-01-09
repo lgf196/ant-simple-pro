@@ -29,7 +29,7 @@ const generateMenus = (menus) => {
 
 export default {
   name: 'RouteMenu',
-  props: ['menus', 'collapsed'],
+  props: ['menus', 'collapsed', 'theme'],
   data() {
     return {
       openKeys: ['/components'],
@@ -78,7 +78,7 @@ export default {
     }
   },
   render() {
-    const { menus, collapsed } = this
+    const { menus, collapsed, theme = 'light' } = this
     const handleOpenChange = (openKeys) => {
       const latestOpenKey = openKeys.find(key => !this.openKeys.includes(key))
       if (!this.rootSubmenuKeys.includes(latestOpenKey)) {
@@ -90,7 +90,7 @@ export default {
     const menuProps = {
       class: 'menu',
       mode: 'inline',
-      theme: 'light',
+      theme,
       inlineCollapsed: collapsed,
       openKeys: this.openKeys,
       selectedKeys: this.selectedKeys,

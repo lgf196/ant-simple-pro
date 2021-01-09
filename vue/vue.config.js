@@ -117,7 +117,7 @@ module.exports = {
         lessOptions: {
           modifyVars: {
             '@primary-color': '#1890FF',
-            '@menu-collapsed-width': '60px'
+            '@menu-collapsed-width': '80px'
           },
           javascriptEnabled: true
         }
