@@ -1,16 +1,14 @@
 <template>
   <section class="basic-layout header-fixed slidebar-fixed tag-fixed" :class="{mobile, collapsed}">
-    <HeaderBar></HeaderBar>
-    <section class="layout-content">
-      <SlideBar></SlideBar>
-      <div class="layout-content__inner">
-        <TagsNav></TagsNav>
-        <main class="main">
-          <router-view/>
-        </main>
-        <FooterBar class="footer"></FooterBar>
-      </div>
-    </section>
+    <SlideBar></SlideBar>
+    <div class="layout-content">
+      <HeaderBar></HeaderBar>
+      <TagsNav></TagsNav>
+      <main class="main">
+        <router-view/>
+      </main>
+      <FooterBar class="footer"></FooterBar>
+    </div>
   </section>
 </template>
 

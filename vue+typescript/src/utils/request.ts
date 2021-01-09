@@ -174,7 +174,7 @@ const requestThenEnd = (options: RequestThenEndType) => {
   // not success code
   if (showWarning) {
     message.destroy()
-    message.warning(warningMsg || responseData.msg || '操作失败')
+    message.warning(warningMsg || responseData.mes || '操作失败')
   }
   // 抛出业务错误
   if (throwWarningError) {
