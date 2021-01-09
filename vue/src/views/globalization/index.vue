@@ -102,4 +102,7 @@ export default {
   ::v-deep .ant-list-item {
     padding: 16px 24px;
   }
+  .com-page {
+    padding: 20px;
+  }
 </style>

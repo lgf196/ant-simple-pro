@@ -7,6 +7,7 @@ const REMEMBER_LOGIN_USER = `${baseName}-remember-user`
 const TAG_NAV = `${baseName}-tag-nav`
 const ACCESS_MENU = `${baseName}-access-menu`
 const USERINFO = `${baseName}-userinfo`
+const SLIDER_THEME = `${baseName}-slider-theme`
 
 const local = {
   get(key) {
@@ -110,4 +111,12 @@ export const getUserInfo = () => {
 
 export const removeUserInfo = () => {
   return localStorage.removeItem(USERINFO)
+}
+
+export const getSideBarTheme = () => {
+  return localStorage.getItem(SLIDER_THEME)
+}
+
+export const setSideBarTheme = (value) => {
+  return localStorage.setItem(SLIDER_THEME, value)
 }

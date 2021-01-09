@@ -1,15 +1,21 @@
 <template>
-  <header class="header">
-    <router-link class="logo-container" to="/" title="Ant Simple Pro">
-      <!-- <ComImage className="image" :src="require('@/assets/images/logo.png')" alt="logo" /> -->
+  <header class="header" :class="{dark: sliderTheme === 'dark'}">
+    <!-- <router-link class="logo-container" to="/" title="Ant Simple Pro">
       <ComSvgIcon name="logo"></ComSvgIcon>
-      <h1 class="title">Ant Simple Pro</h1>
-    </router-link>
+      <h1 class="title" v-show="!collapsed">Ant Simple Pro</h1>
+    </router-link> -->
     <div class="header-inner">
       <div class="header-trigger" @click="onToggle">
         <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'"></ComSvgIcon>
       </div>
       <a-row class="header-right" type="flex" align="middle">
+        <a-row class="docs" type="flex" align="middle">
+          <a class="docs-link" href="http://blog.lgf196.top/ant-simple-pro-document/" target='_blank'>
+            <a-tooltip title="文档">
+              <QuestionCircleOutlined />
+            </a-tooltip>
+          </a>
+        </a-row>
         <a-row class="notification" type="flex" align="middle">
           <Notification />
         </a-row>
@@ -37,6 +43,19 @@
             </a-menu>
           </template>
         </a-dropdown>
+        <a-dropdown placement="bottomRight">
+          <a-button size="small" class="more-button"> 更多 <DownOutlined /> </a-button>
+          <template #overlay>
+            <a-menu>
+              <a-menu-item
+                v-for="(item, index) in moreList"
+                :key="index"
+              >
+                <a :href="item.url" target="_blank" rel="noopener noreferrer">{{item.name}}</a>
+              </a-menu-item>
+            </a-menu>
+          </template>
+        </a-dropdown>
       </a-row>
     </div>
   </header>
@@ -46,25 +65,58 @@
 import {
   UserOutlined,
   LogoutOutlined,
+  QuestionCircleOutlined,
+  DownOutlined,
   ExclamationCircleOutlined
 } from '@ant-design/icons-vue'
 import { createVNode } from 'vue'
 import { mapGetters } from 'vuex'
 import Notification from './notification'
 import Fullscreen from '@/components/fullscreen'
+const oriMoreList = [
+  {
+    name: 'ant-simple-pro(afterEnd)',
+    url: 'https://github.com/lgf196/ant-simple-pro/tree/afterEnd'
+  },
+  {
+    name: 'ant-simple-pro(react)',
+    url: 'https://github.com/lgf196/ant-simple-pro/tree/master/react'
+  },
+  {
+    name: 'ant-simple-pro(react+ts)',
+    url: 'https://github.com/lgf196/ant-simple-pro/tree/master/react-typescript'
+  },
+  {
+    name: 'ant-simple-pro(vue3.0)',
+    url: 'https://github.com/lgf196/ant-simple-pro/tree/master/vue'
+  },
+  {
+    name: 'ant-simple-pro(vue3.0+ts)',
+    url: 'https://github.com/lgf196/ant-simple-pro/tree/vue-typescript'
+  },
+  {
+    name: 'ant-simple-pro(angular)',
+    url: 'https://github.com/lgf196/ant-simple-pro/tree/angular/angular'
+  }
+]
+
 export default {
   name: 'HeaderBar',
   components: {
     UserOutlined,
     LogoutOutlined,
+    QuestionCircleOutlined,
+    DownOutlined,
     Notification,
     Fullscreen
   },
   data() {
-    return {}
+    return {
+      moreList: oriMoreList
+    }
   },
   computed: {
-    ...mapGetters(['collapsed', 'user'])
+    ...mapGetters(['collapsed', 'user', 'sliderTheme'])
   },
   methods: {
     onToggle() {
@@ -84,7 +136,7 @@ export default {
       })
     },
     onToPersonCenter() {
-      console.log('onToPersonCenter')
+      this.$router.push('/userinfo')
     }
   }
 }
@@ -95,33 +147,14 @@ export default {
     z-index: 199;
     position: relative;
     display: flex;
-    width: 100%;
     height: @header-height;
     padding-right: 24px;
     background: #fff;
-    box-shadow: 0 2px 8px #f0f1f2;
-  }
-  .logo-container {
-    display: block;
-    width: @slide-width;
-    height: @header-height;
-    line-height: @header-height;
-    padding-left: 20px;
-    ::v-deep .svg-icon {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 30px;
-    }
-    .title {
-      // .text-overflow;
-      // max-width: 116px;
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-      margin-left: 12px;
-      color: @color-theme;
-      font-weight: 600;
-      font-size: 18px;
+    box-shadow: 4px 2px 8px #f0f1f2;
+    &.dark {
+      .logo-container {
+        background-color: #001529;
+      }
     }
   }
   .header-inner {
@@ -144,14 +177,27 @@ export default {
       background-color: #f9f9fc;
     }
   }
-  ::v-deep .icon-bell, .fullscreen {
-    font-size: 18px;
-    color: rgba(105, 123, 140, .7);
+  .header-right {
+    padding-right: 15px;
+  }
+  .docs {
+    padding: 0 10px;
+    .docs-link {
+      display: flex;
+    }
+  }
+  .notification {
+    padding: 0 10px;
+  }
+  .header {
+    ::v-deep .anticon-question-circle, ::v-deep .icon-bell, .fullscreen {
+      font-size: 18px;
+      color: rgba(105, 123, 140, .7);
+    }
   }
   .fullscreen {
     height: 100%;
-    margin-left: 10px;
-    padding: 0 12px;
+    padding: 0 10px;
     cursor: pointer;
   }
   .user-container {
@@ -180,5 +226,8 @@ export default {
       border-radius: 7px;
       background: #ff4d4f;
     }
+  }
+  .more-button {
+    color: rgba(105, 123, 140, 0.7);
   }
 </style>

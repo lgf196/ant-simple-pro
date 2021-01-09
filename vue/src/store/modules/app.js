@@ -1,4 +1,4 @@
-import { getCollapse, setCollapse } from '@/utils/local'
+import { getCollapse, setCollapse, getSideBarTheme, setSideBarTheme } from '@/utils/local'
 
 export default {
   namespaced: true,
@@ -6,7 +6,8 @@ export default {
   state: {
     loading: false,
     collapsed: getCollapse() || false,
-    tagNavList: []
+    tagNavList: [],
+    sliderTheme: getSideBarTheme() === 'dark' ? 'dark' : 'light'
   },
 
   mutations: {
@@ -16,6 +17,10 @@ export default {
     },
     SET_LOADING(state, value) {
       state.loading = value
+    },
+    SET_SLIDER_THEME(state, value) {
+      state.sliderTheme = value
+      setSideBarTheme(value)
     }
   }
 }
