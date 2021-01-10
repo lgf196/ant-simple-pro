@@ -39,25 +39,25 @@ English | [简体中文](./README.zh-CN.md)
 
 ## Preparation
 
-You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally, use [axios](https://github.com for asynchronous request data /axios/axios), all asynchronous interfaces are implemented using node+typescript+mysql+[docker](https://www.docker.com/). The technology stack of this project is based on vue3.0, react, angular, typescrpt, antd and other technologies, so it is best to understand the following knowledge first:
+You need to install [node](http://nodejs.org/) and [git](https://git-scm.com/) locally, use [axios](https://github.com/axios/axios), all asynchronous interfaces are implemented using node+typescript+mysql+[docker](https://www.docker.com/). The technology stack of this project is based on vue3.0, react, angular, typescrpt, antd and other technologies, so it is best to understand the following knowledge first:
 
 #### vue
 
--The new syntax of vue3.0, such as setup, hooks and other synthetic APIs
--vue-cil, vue-router, vuex and other family buckets
+- The new syntax of `vue3.0`, such as setup, hooks and other synthetic api
+- vue-cil, vue-router, vuex and other family buckets
 
 #### react
 
--React basic syntax, such as hooks, class creation components, functional creation components, etc.
--Be familiar with the react family bucket, such as react-router-dom, create-react-app, react-transition-group, etc.
--react data state library, redux, redux-saga, reselect, react-redux, etc.
--React FC mode under typescript, etc.
+- Basic react syntax, such as hooks, class creation components, functional creation components, etc.
+- React family should be familiar with the bucket, such as react-router-dom, create-react-app, react-transition-group, etc.
+- react data state library, redux, redux-saga, reselect, react-redux, etc.
+- React FC mode under typescript, etc.
 
 #### angular
 
--Angular basic syntax, such as html templates, instructions, components, etc.
--Angular family bucket, such as angular-cil, Rx, etc.
--Basic syntax of typescript
+- Basic grammar of angular, such as html templates, instructions, components, etc.
+- Angular family bucket, such as angular-cil, Rx, etc.
+- Basic syntax of typescript
 
 <p align="center">
   <img width="900" src="http://www.bbvdd.com/d/20210108215408tms.png">
