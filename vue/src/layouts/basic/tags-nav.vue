@@ -180,12 +180,12 @@ export default {
       const currentIndex = this.tagNavList.findIndex(item => item.path === route.path)
       if (currentIndex >= 0) {
         // this.tagNavList.splice(currentIndex, 1, route)
-        this.tagNavList = this.tagNavList.map((item, index) => {
-          if (index === currentIndex) {
-            return route
-          }
-          return item
-        })
+        // this.tagNavList = this.tagNavList.map((item, index) => {
+        //   if (index === currentIndex) {
+        //     return route
+        //   }
+        //   return item
+        // })
       } else {
         // this.tagNavList.push(route)
         this.tagNavList = this.tagNavList.concat(route)

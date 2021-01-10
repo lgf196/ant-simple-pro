@@ -1,55 +1,26 @@
 .basic-layout {
+  background: #f0f2f5;
+  overflow-x: hidden;
   > .layout-content {
-    flex: auto;
-    display: flex;
-    background: #f0f2f5;
-    overflow-x: hidden;
-    > .slidebar {
-      &.ant-layout-sider-dark {
-        z-index: 199; // hidden shadow
-      }
-      .menu {
-        .ant-menu-item, .ant-menu-submenu {
-          .svg-icon {
-            font-size: 18px;
-          }
-          .anticon, .anticon + span {
-            vertical-align: middle;
-          }
-        }
-      }
+    > .main {
+      min-height: calc(100vh - @header-height - @tags-nav-header - 80px);
     }
-    > .layout-content__inner {
-      flex: auto;
-      > .main {
-        min-height: calc(100vh - @header-height - @tags-nav-header - 80px);
-      }
-      > .footer {
-        padding: 15px 0;
-        height: 80px;
-      }
+    > .footer {
+      padding: 15px 0;
+      height: 80px;
     }
   }
 }
 .basic-layout {
-  &.header-fixed {
-    .header {
-      position: fixed;
-      top: 0;
-    }
-    .layout-content {
-      padding-top: @header-height;
-    }
-  }
   &.slidebar-fixed {
     .slidebar {
       z-index: 99;
       position: fixed;
       left: 0;
-      top: @header-height;
+      top: 0;
       bottom: 0;
     }
-    .layout-content__inner {
+    .layout-content {
       margin-left: @slide-width;
       transition: all 0.2s;
     }
@@ -64,9 +35,26 @@
           left: @slide-width--collapse;
         }
       }
-      .layout-content__inner {
+      .layout-content {
         margin-left: @slide-width--collapse;
       }
+      &.header-fixed {
+        .header {
+          left: @slide-width--collapse;
+        }
+      }
+    }
+  }
+  &.header-fixed {
+    .header {
+      position: fixed;
+      top: 0;
+      left: @slide-width;
+      right: 0;
+      transition: all 0.2s;
+    }
+    .layout-content {
+      padding-top: @header-height;
     }
   }
   &.tag-fixed {
@@ -77,8 +65,13 @@
       left: @slide-width;
       right: 0;
     }
-    .layout-content__inner {
+    .layout-content {
       padding-top: @tags-nav-header;
+    }
+  }
+  &.header-fixed.tag-fixed {
+    .layout-content {
+      padding-top: @header-height + @tags-nav-header;
     }
   }
   &.mobile {

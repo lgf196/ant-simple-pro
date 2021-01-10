@@ -1,9 +1,5 @@
 <template>
-  <header class="header" :class="{dark: sliderTheme === 'dark'}">
-    <router-link class="logo-container" to="/" title="Ant Simple Pro">
-      <ComSvgIcon name="logo"></ComSvgIcon>
-      <h1 class="title">Ant Simple Pro</h1>
-    </router-link>
+  <header class="header">
     <div class="header-inner">
       <div class="header-trigger" @click="onToggle">
         <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'"></ComSvgIcon>
@@ -115,12 +111,10 @@ export default defineComponent({
   },
   setup() {
     const collapsed = computed(() => appStore.collapsed)
-    const sliderTheme = computed(() => appStore.sliderTheme)
     const user = computed(() => userStore.currentUser)
     const moreList = reactive(oriMoreList)
     return {
       collapsed,
-      sliderTheme,
       user,
       moreList
     }
@@ -154,37 +148,10 @@ export default defineComponent({
     z-index: 199;
     position: relative;
     display: flex;
-    width: 100%;
     height: @header-height;
     padding-right: 24px;
     background: #fff;
-    box-shadow: 0 2px 8px #f0f1f2;
-    &.dark {
-      .logo-container {
-        background-color: #001529;
-      }
-    }
-  }
-  .logo-container {
-    display: block;
-    width: @slide-width;
-    height: @header-height;
-    line-height: @header-height;
-    padding-left: 20px;
-    ::v-deep .svg-icon {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: 30px;
-    }
-    .title {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0;
-      margin-left: 12px;
-      color: @color-theme;
-      font-weight: 600;
-      font-size: 18px;
-    }
+    box-shadow: 4px 2px 8px #f0f1f2;
   }
   .header-inner {
     flex: auto;
@@ -218,9 +185,11 @@ export default defineComponent({
   .notification {
     padding: 0 10px;
   }
-  ::v-deep .anticon-question-circle, ::v-deep .icon-bell, .fullscreen {
-    font-size: 18px;
-    color: rgba(105, 123, 140, .7);
+  .header {
+    ::v-deep .anticon-question-circle, ::v-deep .icon-bell, .fullscreen {
+      font-size: 18px;
+      color: rgba(105, 123, 140, .7);
+    }
   }
   .fullscreen {
     height: 100%;

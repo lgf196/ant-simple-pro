@@ -27,7 +27,10 @@ import {
   Select,
   DatePicker,
   Pagination,
-  Cascader
+  Cascader,
+  Card,
+  Progress,
+  Switch
 } from 'ant-design-vue'
 
 export default function(app) {
@@ -62,6 +65,9 @@ export default function(app) {
     .use(DatePicker)
     .use(Pagination)
     .use(Cascader)
+    .use(Card)
+    .use(Progress)
+    .use(Switch)
 
   g.$message = message
   g.$info = Modal.info

@@ -8,6 +8,12 @@
     :collapsedWidth="80"
     :theme="sliderTheme"
   >
+    <router-link class="logo-container" to="/" title="Ant Simple Pro">
+      <ComSvgIcon name="logo" class="logo-icon"></ComSvgIcon>
+      <transition name="title-fade">
+        <h1 v-show="!collapsed" class="title">Ant Simple Pro</h1>
+      </transition>
+    </router-link>
     <RouteMenu
       :menus="accessMenus"
       :collapsed="collapsed"
@@ -60,39 +66,49 @@ export default defineComponent({
 
 <style lang="less" scoped>
   .slidebar {
-    padding-top: 5px;
-  }
-  ::v-deep {
-    .ant-menu-inline .ant-menu-item::after {
-      right: 1px;
+    ::v-deep(.ant-layout-sider-children) {
+      .ant-menu-inline .ant-menu-item::after {
+        right: 1px;
+      }
+      .ant-menu-item, .ant-menu-submenu {
+        .svg-icon {
+          font-size: 18px;
+        }
+        .anticon, .anticon + span {
+          vertical-align: middle;
+        }
+      }
+      // dark theme hidden logo-container shadow
+      .ant-menu.ant-menu-dark {
+        position: relative;
+        z-index: 201;
+      }
     }
   }
   .menu {
+    padding-top: 10px;
     border-right: 0;
   }
   .logo-container {
-    display: block;
+    z-index: 200;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: @header-height;
     line-height: @header-height;
-    text-align: center;
-    margin-bottom: 16px;
-    .image {
-      width: 48px;
-      height: 48px;
-      display: inline-block;
-      vertical-align: middle;
+    box-shadow: 0 2px 8px #f0f1f2;
+    .logo-icon {
+      font-size: 30px;
     }
     .title {
-      .text-overflow;
-      max-width: 116px;
-      display: inline-block;
-      vertical-align: middle;
+      white-space: nowrap;
       margin: 0;
-      margin-left: 12px;
+      margin-left: 8px;
       color: @color-theme;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 18px;
     }
   }
   .toggle-theme {

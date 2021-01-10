@@ -4,11 +4,17 @@
 
 <script>
 import { defineComponent, ref, onMounted } from 'vue'
-import { getOption } from './bar-option'
+import { getOption } from './pie-option'
 import useChartResize from '@/hooks/useChartResize'
 
 export default defineComponent({
-  setup() {
+  props: {
+    list: {
+      type: Array,
+      default: () => []
+    }
+  },
+  setup(props) {
     const chartRef = ref(null)
     const chartIns = ref(null)
     useChartResize(chartIns)
@@ -22,7 +28,7 @@ export default defineComponent({
         return
       }
       const chart = chartIns.value = window.echarts.init(chartRef.value)
-      chart.setOption(getOption())
+      chart.setOption(getOption(props.list))
     }
 
     return {
@@ -34,6 +40,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
   .chart {
-    height: 400px;
+    height: 100%;
+    background-color: #fff;
   }
 </style>
