@@ -9,10 +9,10 @@
         </a-row>
         <a-form class="form" :model="form" :rules="rules" @finish="handleFinish">
           <a-form-item has-feedback name="email">
-            <a-input v-model:value="form.email" placeholder="账号" autocomplete="off" />
+            <a-input v-model:value="form.email" placeholder="请填写邮箱" autocomplete="off" />
           </a-form-item>
           <a-form-item has-feedback name="password">
-            <a-input type="password" v-model:value="form.password" placeholder="密码" autocomplete="off" />
+            <a-input type="password" v-model:value="form.password" placeholder="请填写密码" autocomplete="off" />
           </a-form-item>
           <a-form-item name="remember">
             <a-checkbox v-model:checked="form.remember">
@@ -70,11 +70,11 @@ export default defineComponent({
       },
       rules: {
         email: [
-          { required: true, message: '请输入邮箱!', trigger: 'blur' },
+          { required: true, message: '请填写邮箱!', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确!', trigger: 'blur' }
         ],
         password: [
-          { required: true, message: '请输入密码!', trigger: 'blur' }
+          { required: true, message: '请填写密码!', trigger: 'blur' }
         ]
       }
     })

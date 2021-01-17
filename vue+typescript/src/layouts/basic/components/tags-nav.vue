@@ -1,6 +1,6 @@
 <template>
-  <div class="tags-nav">
-    <ScrollPane :horizontalBar="false" :verticalBar="false" ref="scrollPane">
+  <div class="tags-nav" v-if="tagsNavVisible">
+    <ScrollPane :horizontalBar="false" :verticalBar="false" ref="scrollPane" class="scroll-pane">
       <div
         v-for="(item, index) in totalTags"
         :key="index"
@@ -14,16 +14,35 @@
         <CloseOutlined v-if="!isAffix(item)" class="nav-tag__icon" @click.stop="onDeleteTag(item)" />
       </div>
     </ScrollPane>
+    <div class="tag-option">
+      <a-dropdown :trigger="['click']">
+        <a class="ant-dropdown-link" @click="e => e.preventDefault()">
+          <span class="title">标签设置</span>
+          <DownOutlined />
+        </a>
+        <template #overlay>
+          <a-menu @click="onTagMenuClick">
+            <a-menu-item key="1">
+              关闭其他
+            </a-menu-item>
+            <a-menu-item key="2">
+              关闭标签
+            </a-menu-item>
+          </a-menu>
+        </template>
+      </a-dropdown>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, unref, watch, nextTick, toRefs, toRaw } from 'vue'
+import { defineComponent, reactive, ref, unref, watch, nextTick, toRefs, toRaw, computed } from 'vue'
 import { RouteRecordRaw, useRoute, RouteLocationNormalizedLoaded, _RouteLocationBase, useRouter } from 'vue-router'
-import { CloseOutlined } from '@ant-design/icons-vue'
+import { CloseOutlined, DownOutlined } from '@ant-design/icons-vue'
 import ScrollPane, { ScrollActionType } from '@/components/scrollbar/scroll-pane.vue'
 import { routes } from '@/router/routes'
 import { getAffixTags } from '@/utils'
+import appStore from '@/store/modules/app'
 
 export type TagItemType = Partial<_RouteLocationBase>
 type StateType = {
@@ -34,9 +53,11 @@ export default defineComponent({
   name: 'TagsNav',
   components: {
     ScrollPane,
-    CloseOutlined
+    CloseOutlined,
+    DownOutlined
   },
   setup() {
+    const tagsNavVisible = computed(() => appStore.tagsNavVisible)
     const scrollPane = ref<ScrollActionType | null>(null)
     const tagRefs = ref<HTMLElement[]>([])
     const state = reactive<StateType>({
@@ -133,7 +154,18 @@ export default defineComponent({
         }
       })
     }
+
+    function onTagMenuClick(e: { key: string }) {
+      console.log(e)
+      if (e.key === '1') {
+        // ...
+      }
+      if (e.key === '2') {
+        appStore.SET_TAGS_NAV_VISIBLE(false)
+      }
+    }
     return {
+      tagsNavVisible,
       ...toRefs(state),
       // totalTags,
       scrollPane,
@@ -141,7 +173,8 @@ export default defineComponent({
       isActive,
       isAffix,
       onDeleteTag,
-      onClickTag
+      onClickTag,
+      onTagMenuClick
     }
   }
 })
@@ -151,11 +184,25 @@ export default defineComponent({
   .tags-nav {
     position: relative;
     height: @tags-nav-header;
+    padding-right: 35px;
     display: flex;
-    align-items: center;
     background-color: #fff;
     border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  }
+  .scroll-pane {
+    width: auto;
+    flex: 1;
+  }
+  .tag-option {
+    padding-left: 7px;
+    box-shadow: -10px 0 15px -5px #f0f1f2;
+    display: flex;
+    align-items: center;
+    .ant-dropdown-link {
+      .title {
+        padding-right: 6px;
+      }
+    }
   }
   .item {
     display: inline-block;

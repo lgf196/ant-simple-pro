@@ -82,4 +82,12 @@
       }
     }
   }
+  &.hidden-tags-nav {
+    > .layout-content {
+      padding-top: @header-height !important;
+      > .main {
+        min-height: calc(100vh - @header-height - 80px);
+      }
+    }
+  }
 }

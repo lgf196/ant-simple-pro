@@ -11,14 +11,14 @@
       <a-form-item label="姓名" name="username">
         <a-input
           v-model:value="form.username"
-          placeholder="请输入"
+          placeholder="请填写"
           allowClear
         />
       </a-form-item>
       <a-form-item label="外号" name="nickname">
         <a-input
           v-model:value="form.nickname"
-          placeholder="请输入"
+          placeholder="请填写"
           allowClear
         />
       </a-form-item>
@@ -69,7 +69,7 @@
         <a-textarea
           v-model:value="form.description"
           :autoSize="{ minRows: 2 }"
-          placeholder="请输入"
+          placeholder="请填写"
         />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }" name="remember">
@@ -95,8 +95,8 @@ export default defineComponent({
       labelCol: { span: 2 },
       wrapperCol: { span: 9 },
       rules: {
-        username: [{ required: true, message: '请输入姓名' }],
-        nickname: [{ required: true, message: '请输入外号' }],
+        username: [{ required: true, message: '请填写姓名' }],
+        nickname: [{ required: true, message: '请填写外号' }],
         date: [{ required: true, message: '请选择日期' }]
       },
       hobbyOptions: [
@@ -130,8 +130,8 @@ export default defineComponent({
       remember: true
     })
     const rulesRef = reactive({
-      username: [{ required: true, message: '请输入姓名' }],
-      nickname: [{ required: true, message: '请输入外号' }],
+      username: [{ required: true, message: '请填写姓名' }],
+      nickname: [{ required: true, message: '请填写外号' }],
       date: [{ required: true, message: '请选择日期' }]
     })
 

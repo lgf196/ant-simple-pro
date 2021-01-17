@@ -20,6 +20,8 @@ class App extends VuexModule {
 
   sliderTheme: ThemeValue = getSideBarTheme() === 'dark' ? 'dark' : 'light'
 
+  tagsNavVisible = true
+
   get totalTags() {
     return this.affixTags.concat(this.tagNavList)
   }
@@ -48,6 +50,11 @@ class App extends VuexModule {
   SET_SLIDER_THEME(value: ThemeValue) {
     this.sliderTheme = value
     setSideBarTheme(value)
+  }
+
+  @Mutation
+  SET_TAGS_NAV_VISIBLE(value: boolean) {
+    this.tagsNavVisible = value
   }
 }
 
