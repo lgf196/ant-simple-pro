@@ -2,8 +2,6 @@ import { VuexModule, getModule, Module, Mutation } from 'vuex-module-decorators'
 import { _RouteLocationBase } from 'vue-router'
 import store from '@/store'
 import { getCollapse, setCollapse, getSideBarTheme, setSideBarTheme } from '@/utils/local'
-import { getAffixTags } from '@/utils'
-import { routes } from '@/router/routes'
 
 export type TagItemType = Partial<_RouteLocationBase>
 export type ThemeValue = 'dark' | 'light'
@@ -14,17 +12,9 @@ class App extends VuexModule {
 
   collapsed: boolean = getCollapse() || false
 
-  affixTags: TagItemType[] = getAffixTags(routes) || []
-
-  tagNavList: TagItemType[] = []
-
   sliderTheme: ThemeValue = getSideBarTheme() === 'dark' ? 'dark' : 'light'
 
   tagsNavVisible = true
-
-  get totalTags() {
-    return this.affixTags.concat(this.tagNavList)
-  }
 
   @Mutation
   TOGGLE_SLIDE_BAR(value?: boolean) {
@@ -35,15 +25,6 @@ class App extends VuexModule {
   @Mutation
   SET_LOADING(value: boolean) {
     this.loading = value
-  }
-
-  @Mutation
-  ADD_TAG(item: TagItemType) {
-    const currentIndex = this.tagNavList.findIndex(v => v.path === item.path)
-    console.log('ADD_TAG currentIndex', currentIndex)
-    if (currentIndex < 0) {
-      this.tagNavList = this.tagNavList.concat(item)
-    }
   }
 
   @Mutation

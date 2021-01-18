@@ -180,3 +180,10 @@ export function isInContainer(el: HTMLElement, container: HTMLElement) {
     elRect.left < containerRect.right
 }
 
+export function getWindowtWidth() {
+  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+}
+
+export function getWindowHeight() {
+  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+}

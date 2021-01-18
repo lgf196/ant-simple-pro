@@ -14,12 +14,14 @@
         <h1 v-show="!collapsed" class="title">Ant Simple Pro</h1>
       </transition>
     </router-link>
-    <RouteMenu
-      :menus="accessMenus"
-      :collapsed="collapsed"
-      :theme="sliderTheme"
-    >
-    </RouteMenu>
+    <div class="menu">
+      <RouteMenu
+        :menus="accessMenus"
+        :collapsed="collapsed"
+        :theme="sliderTheme"
+      >
+      </RouteMenu>
+    </div>
     <a-row class="toggle-theme" type="flex" justify="space-between" align="middle">
       <a-tooltip title="主题" v-if="!collapsed" placement="right">
         <BulbOutlined />
@@ -86,8 +88,22 @@ export default defineComponent({
     }
   }
   .menu {
+    height: calc(100vh - 96px);
     padding-top: 10px;
     border-right: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: rgba(0, 0, 0, .15);
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 5px #fff;
+    }
   }
   .logo-container {
     z-index: 200;

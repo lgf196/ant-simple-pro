@@ -23,7 +23,7 @@
         <template #overlay>
           <a-menu @click="onTagMenuClick">
             <a-menu-item key="1">
-              关闭其他
+              关闭其它
             </a-menu-item>
             <a-menu-item key="2">
               关闭标签
@@ -35,78 +35,51 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, ref, unref, watch, nextTick, toRefs, toRaw, computed } from 'vue'
-import { RouteRecordRaw, useRoute, RouteLocationNormalizedLoaded, _RouteLocationBase, useRouter } from 'vue-router'
+<script>
 import { CloseOutlined, DownOutlined } from '@ant-design/icons-vue'
-import ScrollPane, { ScrollActionType } from '@/components/scrollbar/scroll-pane.vue'
+import ScrollPane from '@/components/scrollbar/scroll-pane'
 import { routes } from '@/router/routes'
 import { getAffixTags } from '@/utils'
-import appStore from '@/store/modules/app'
-
-export type TagItemType = Partial<_RouteLocationBase>
-type StateType = {
-  tags: TagItemType[]
-  totalTags: TagItemType[]
-}
-export default defineComponent({
-  name: 'TagsNav',
+export default {
   components: {
     ScrollPane,
     CloseOutlined,
     DownOutlined
   },
-  setup() {
-    const tagsNavVisible = computed(() => appStore.tagsNavVisible)
-    const scrollPane = ref<ScrollActionType | null>(null)
-    const tagRefs = ref<HTMLElement[]>([])
-    const state = reactive<StateType>({
-      tags: [],
-      totalTags: []
-    })
-    const route = useRoute()
-    const router = useRouter()
-    watch(route, (newRoute) => {
-      addTag(newRoute) // eslint-disable-line
-      moveToView(newRoute) // eslint-disable-line
-    }, {
-      immediate: true
-    })
-    watch(state.tags, () => {
-      state.totalTags = [...getAffixTags(routes), ...state.tags]
-    }, {
-      immediate: true
-    })
-    // const totalTags = computed(() => {
-    //   return [...getAffixTags(routes), ...state.tags]
-    // })
-    function setItemRef(el: HTMLElement) {
-      tagRefs.value.push(el)
+  data() {
+    return {
+      tagRefs: [],
+      tags: []
     }
-    function isActive(item: TagItemType) {
-      return item.path === route.path
+  },
+  watch: {
+    $route: {
+      handler(newRoute) {
+        this.addTag(newRoute)
+        this.moveToView(newRoute)
+      },
+      immediate: true
     }
-    function isAffix(item: TagItemType) {
+  },
+  computed: {
+    tagsNavVisible() {
+      return this.$store.state.app.tagsNavVisible
+    },
+    totalTags() {
+      return getAffixTags(routes).concat(this.tags)
+    }
+  },
+  methods: {
+    setItemRef(el) {
+      this.tagRefs.push(el)
+    },
+    isActive(item) {
+      return item.path === this.$route.path
+    },
+    isAffix(item) {
       return item.meta && item.meta.affix
-    }
-    function onDeleteTag(item: TagItemType) {
-      console.log('onDeleteTag', item)
-    }
-    function onClickTag(item: RouteRecordRaw) {
-      console.log('onClickTag', item)
-      router.push(item.path)
-      // const scroll = unref(scrollPane) as ScrollActionType
-      // unref(tagRefs).forEach((item, index) => {
-      //   if (item && index === 99) {
-      //     // route.path === item.dataset['route-path']
-      //     scroll.moveToTarget(item, unref(tagRefs))
-      //   }
-      // })
-    }
-
-    function addTag(b: TagItemType) {
-      console.log(b)
-      const item = route
+    },
+    addTag(item) {
       if (!item.meta) {
         return
       }
@@ -116,132 +89,131 @@ export default defineComponent({
       if (item.meta.affix) {
         return
       }
-      console.log('before', toRaw(state.tags))
-      const current = state.totalTags.find(v => v.path === item.path)
+      const current = this.totalTags.find(v => v.path === item.path)
       if (!current) {
-        state.tags = state.tags.concat(item)
+        this.tags = this.tags.concat(item)
       }
-      // const hasCurrent = state.totalTags.some(v => v.path === item.path)
-      // if (!hasCurrent) {
-      //   state.tags = state.tags.concat(item)
-      // }
-      console.log('after', toRaw(state.tags))
-      // if (currentIndex >= 0) { // 存在替换
-      //   state.tags.splice(currentIndex, 1, item)
-      //   state.tags = state.tags.map((v, index) => {
-      //     if (index === currentIndex) {
-      //       return item
-      //     }
-      //     return v
-      //   })
-      // } else { // 不存在添加
-      //   // state.tags.push(item)
-      //   state.tags = state.tags.concat(item)
-      // }
-    }
-
-    // 移动到可视范围
-    function moveToView(route: RouteLocationNormalizedLoaded) {
-      nextTick(() => {
-        const scroll = unref(scrollPane) as ScrollActionType
-        for (let i = 0; i < unref(tagRefs).length; i++) {
-          const item = unref(tagRefs)[i]
+    },
+    moveToView(route) {
+      this.$nextTick(() => {
+        const scroll = this.$refs.scrollPane
+        for (let i = 0; i < this.tagRefs.length; i++) {
+          const item = this.tagRefs[i]
           // 找出 tagRefs 中 对应当前路由的 tag
           if (item && item.dataset['route-path'] === route.path) {
-            scroll.moveToTarget(item, unref(tagRefs))
+            scroll.moveToTarget(item, this.tagRefs)
             break
           }
         }
       })
-    }
-
-    function onTagMenuClick(e: { key: string }) {
-      console.log(e)
+    },
+    onDeleteTag(route) {
+      this.tags = this.tags.filter(item => item.path !== route.path)
+      if (this.isActive(route)) {
+        this.toLastView()
+      }
+    },
+    toLastView() {
+      const latestView = this.tags.slice(-1)[0]
+      if (latestView) {
+        this.$router.push(latestView.path)
+      } else {
+        this.$router.push('/')
+      }
+    },
+    onClickTag(route) {
+      const { path, params, query } = route
+      const p = {
+        path
+      }
+      if (params) {
+        p.params = params
+      }
+      if (query) {
+        p.query = query
+      }
+      this.$router.push(p)
+    },
+    onTagMenuClick(e) {
+      // 关闭其它
       if (e.key === '1') {
-        // ...
+        const route = this.$route
+        this.tags = this.tags.filter(item => item.path === route.path)
+        if (!this.isActive(route)) {
+          this.onClickTag(route)
+        }
       }
+      // 关闭标签
       if (e.key === '2') {
-        appStore.SET_TAGS_NAV_VISIBLE(false)
+        this.$store.commit('app/SET_TAGS_NAV_VISIBLE', false)
       }
-    }
-    return {
-      tagsNavVisible,
-      ...toRefs(state),
-      // totalTags,
-      scrollPane,
-      setItemRef,
-      isActive,
-      isAffix,
-      onDeleteTag,
-      onClickTag,
-      onTagMenuClick
     }
   }
-})
+}
 </script>
 
 <style lang="less" scoped>
-  .tags-nav {
-    position: relative;
-    height: @tags-nav-header;
-    padding-right: 35px;
-    display: flex;
-    background-color: #fff;
-    border-top: 1px solid #f0f0f0;
-  }
-  .scroll-pane {
-    width: auto;
-    flex: 1;
-  }
-  .tag-option {
-    padding-left: 7px;
-    box-shadow: -10px 0 15px -5px #f0f1f2;
-    display: flex;
-    align-items: center;
-    .ant-dropdown-link {
-      .title {
-        padding-right: 6px;
-      }
+.tags-nav {
+  position: relative;
+  height: @tags-nav-header;
+  padding-right: 35px;
+  display: flex;
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+.scroll-pane {
+  width: auto;
+  flex: 1;
+}
+.tag-option {
+  padding-left: 7px;
+  box-shadow: -10px 0 15px -5px #f0f1f2;
+  display: flex;
+  align-items: center;
+  .ant-dropdown-link {
+    .title {
+      padding-right: 6px;
     }
   }
-  .item {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    height: 26px;
-    line-height: 26px;
-    border: 1px solid #d8dce5;
-    color: #495060;
-    background: #fff;
-    padding: 0 8px;
-    font-size: 12px;
-    margin-left: 5px;
+}
+.item {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #d8dce5;
+  color: #495060;
+  background: #fff;
+  padding: 0 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.nav-tag {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 4px;
+  margin-left: 5px;
+  background: #fff;
+  border: 1px solid #e9eaec;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  vertical-align: middle;
+  &.active {
+    background: #e6f7ff;
+    color: #1890ff;
   }
-  .nav-tag {
-    display: inline-block;
-    height: 26px;
-    line-height: 26px;
-    margin-top: 4px;
-    margin-left: 5px;
-    background: #fff;
-    border: 1px solid #e9eaec;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 12px;
-    color: #666;
-    font-weight: 400;
-    vertical-align: middle;
-    &.active {
-      background: #e6f7ff;
-      color: #1890ff;
-    }
-    .nav-tag__title {
-      float: left;
-      white-space: nowrap;
-      padding: 0 5px;
-    }
-    .nav-tag__icon {
-      padding: 0 5px 0 0;
-    }
+  .nav-tag__title {
+    float: left;
+    white-space: nowrap;
+    padding: 0 5px;
   }
+  .nav-tag__icon {
+    padding: 0 5px 0 0;
+  }
+}
 </style>

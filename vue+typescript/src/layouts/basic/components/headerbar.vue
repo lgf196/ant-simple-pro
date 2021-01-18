@@ -1,9 +1,11 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <div class="header-trigger" @click="onToggle">
-        <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'"></ComSvgIcon>
+      <div class="header-trigger" @click="onToggle" v-if="!drawerVisible">
+        <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'" v-if="windowWidth > 750"></ComSvgIcon>
+        <ComSvgIcon name="menu-unfold" v-else></ComSvgIcon>
       </div>
+      <div v-else></div>
       <a-row class="header-right" type="flex" align="middle">
         <a-row class="docs" type="flex" align="middle">
           <a class="docs-link" href="http://blog.lgf196.top/ant-simple-pro-document/" target='_blank'>
@@ -98,6 +100,7 @@ const oriMoreList = [
 ]
 export default defineComponent({
   name: 'HeaderBar',
+  emits: ['open-drawer'],
   components: {
     UserOutlined,
     LogoutOutlined,
@@ -105,6 +108,13 @@ export default defineComponent({
     DownOutlined,
     Notification,
     Fullscreen
+  },
+  props: {
+    drawerVisible: Boolean,
+    windowWidth: {
+      type: Number,
+      default: 0
+    }
   },
   data() {
     return {}
@@ -121,7 +131,11 @@ export default defineComponent({
   },
   methods: {
     onToggle() {
-      appStore.TOGGLE_SLIDE_BAR()
+      if (this.windowWidth <= 750) {
+        this.$emit('open-drawer')
+      } else {
+        appStore.TOGGLE_SLIDE_BAR()
+      }
     },
     onLogout() {
       this.$confirm({

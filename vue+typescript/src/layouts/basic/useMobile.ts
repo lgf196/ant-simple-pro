@@ -1,4 +1,4 @@
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
 import appStore from '@/store/modules/app'
 import { isMobile } from '@/utils/system'
 export default function() {
@@ -9,11 +9,11 @@ export default function() {
     appStore.TOGGLE_SLIDE_BAR(val)
   }
   onResize()
-  onMounted(() => {
-    window.addEventListener('resize', onResize)
-  })
-  onBeforeUnmount(() => {
-    window.removeEventListener('resize', onResize)
-  })
+  // onMounted(() => {
+  //   window.addEventListener('resize', onResize)
+  // })
+  // onBeforeUnmount(() => {
+  //   window.removeEventListener('resize', onResize)
+  // })
   return mobile
 }
