@@ -1,13 +1,11 @@
 <template>
   <header class="header" :class="{dark: sliderTheme === 'dark'}">
-    <!-- <router-link class="logo-container" to="/" title="Ant Simple Pro">
-      <ComSvgIcon name="logo"></ComSvgIcon>
-      <h1 class="title" v-show="!collapsed">Ant Simple Pro</h1>
-    </router-link> -->
     <div class="header-inner">
-      <div class="header-trigger" @click="onToggle">
-        <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'"></ComSvgIcon>
+      <div class="header-trigger" @click="onToggle" v-if="!drawerVisible">
+        <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'" v-if="windowWidth > 750"></ComSvgIcon>
+        <ComSvgIcon name="menu-unfold" v-else></ComSvgIcon>
       </div>
+      <div v-else></div>
       <a-row class="header-right" type="flex" align="middle">
         <a-row class="docs" type="flex" align="middle">
           <a class="docs-link" href="http://blog.lgf196.top/ant-simple-pro-document/" target='_blank'>
@@ -102,6 +100,7 @@ const oriMoreList = [
 
 export default {
   name: 'HeaderBar',
+  emits: ['open-drawer'],
   components: {
     UserOutlined,
     LogoutOutlined,
@@ -109,6 +108,13 @@ export default {
     DownOutlined,
     Notification,
     Fullscreen
+  },
+  props: {
+    drawerVisible: Boolean,
+    windowWidth: {
+      type: Number,
+      default: 0
+    }
   },
   data() {
     return {
@@ -120,7 +126,11 @@ export default {
   },
   methods: {
     onToggle() {
-      this.$store.commit('app/TOGGLE_SLIDE_BAR')
+      if (this.windowWidth <= 750) {
+        this.$emit('open-drawer')
+      } else {
+        this.$store.commit('app/TOGGLE_SLIDE_BAR')
+      }
     },
     onLogout() {
       this.$confirm({
@@ -150,7 +160,7 @@ export default {
     height: @header-height;
     padding-right: 24px;
     background: #fff;
-    box-shadow: 4px 2px 8px #f0f1f2;
+    box-shadow: 1 2px 8px #f0f1f2;
     &.dark {
       .logo-container {
         background-color: #001529;

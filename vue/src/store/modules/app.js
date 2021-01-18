@@ -6,8 +6,8 @@ export default {
   state: {
     loading: false,
     collapsed: getCollapse() || false,
-    tagNavList: [],
-    sliderTheme: getSideBarTheme() === 'dark' ? 'dark' : 'light'
+    sliderTheme: getSideBarTheme() === 'dark' ? 'dark' : 'light',
+    tagsNavVisible: true
   },
 
   mutations: {
@@ -21,6 +21,9 @@ export default {
     SET_SLIDER_THEME(state, value) {
       state.sliderTheme = value
       setSideBarTheme(value)
+    },
+    SET_TAGS_NAV_VISIBLE(state, value) {
+      state.tagsNavVisible = value
     }
   }
 }

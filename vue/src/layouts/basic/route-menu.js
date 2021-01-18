@@ -88,7 +88,6 @@ export default {
       }
     }
     const menuProps = {
-      class: 'menu',
       mode: 'inline',
       theme,
       inlineCollapsed: collapsed,

@@ -1,166 +1,116 @@
 <template>
-  <div class="tags-nav">
-    <div ref="scrollWrapper" class="scroll-wrapper" @DOMMouseScroll="handlescroll" @mousewheel="onScroll">
-      <div ref="scrollBody" class="scroll-body" :style="{left: tagBodyLeft + 'px'}">
-        <a-tag
-          v-for="(item, index) in tags"
-          :key="index"
-          class="nav-tag"
-          visible
-          :ref="setItemRef"
-          :data-route-item="item"
-          :color="isActive(item) ? 'blue' : ''"
-          :closable="!isAffix(item)"
-          @close="onDeleteTag(item)"
-          @click="onClickTag(item)"
-          @contextmenu.prevent="onOpenMenu(item, $event)"
-        >
-          {{item.meta && item.meta.title}}
-        </a-tag>
+  <div class="tags-nav" v-if="tagsNavVisible">
+    <ScrollPane :horizontalBar="false" :verticalBar="false" ref="scrollPane" class="scroll-pane">
+      <div
+        v-for="(item, index) in totalTags"
+        :key="index"
+        class="nav-tag"
+        :class="{active: isActive(item)}"
+        :ref="setItemRef"
+        :data-route-path="item.path"
+        @click="onClickTag(item)"
+      >
+        <span class="nav-tag__title">{{item.meta && item.meta.title}}</span>
+        <CloseOutlined v-if="!isAffix(item)" class="nav-tag__icon" @click.stop="onDeleteTag(item)" />
       </div>
+    </ScrollPane>
+    <div class="tag-option">
+      <a-dropdown :trigger="['click']">
+        <a class="ant-dropdown-link" @click="e => e.preventDefault()">
+          <span class="title">标签设置</span>
+          <DownOutlined />
+        </a>
+        <template #overlay>
+          <a-menu @click="onTagMenuClick">
+            <a-menu-item key="1">
+              关闭其它
+            </a-menu-item>
+            <a-menu-item key="2">
+              关闭标签
+            </a-menu-item>
+          </a-menu>
+        </template>
+      </a-dropdown>
     </div>
-    <ul v-show="visible" :style="menuStyle" class="contextmenu">
-      <li @click="onRefreshSelectedTag(selectedTag)">刷新</li>
-      <li v-if="!isAffix(selectedTag)" @click="onCloseSelectedTag(selectedTag)">关闭</li>
-      <li @click="onCloseOthersTags">关闭其他</li>
-      <li @click="onCloseAllTags">关闭所有</li>
-    </ul>
-    <!-- <a-button class="left-button button">
-      <template #icon>
-        <LeftOutlined />
-      </template>
-    </a-button>
-    <div class="right-button-group">
-      <a-button class="right-button button">
-        <template #icon>
-          <RightOutlined />
-        </template>
-      </a-button>
-      <a-button class="setting-button button">
-        <template #icon>
-          <SettingOutlined />
-        </template>
-      </a-button>
-    </div> -->
   </div>
 </template>
 
 <script>
-// import { LeftOutlined, RightOutlined, SettingOutlined } from '@ant-design/icons-vue'
-import { getAffixTags } from '@/utils'
-import { setTagNav, getTagNav } from '@/utils/local'
+import { mapGetters } from 'vuex'
+import { CloseOutlined, DownOutlined } from '@ant-design/icons-vue'
+import ScrollPane from '@/components/scrollbar/scroll-pane'
 import { routes } from '@/router/routes'
+import { getAffixTags } from '@/utils'
 export default {
-  name: 'TagsNav',
   components: {
-    // LeftOutlined,
-    // RightOutlined,
-    // SettingOutlined
+    ScrollPane,
+    CloseOutlined,
+    DownOutlined
   },
   data() {
     return {
-      tagBodyLeft: 0,
-      tagNavList: getTagNav() || [],
-      menuStyle: {},
-      visible: false,
-      selectedTag: {},
-      tagRefs: []
+      tagRefs: [],
+      tags: []
     }
   },
   watch: {
     $route: {
-      immediate: true,
       handler(newRoute) {
         this.addTag(newRoute)
-        this.getTagElementByRoute(newRoute)
-      }
-    },
-    tagNavList(newVal) {
-      setTagNav(newVal)
+        this.moveToView(newRoute)
+      },
+      immediate: true
     }
   },
   computed: {
-    tags() {
-      return getAffixTags(routes).concat(this.tagNavList)
+    ...mapGetters(['tagsNavVisible']),
+    totalTags() {
+      return getAffixTags(routes).concat(this.tags)
     }
-  },
-  mounted() {
-    document.body.addEventListener('click', this.closeMenu)
-    // this.addTag(this.$route)
-    // this.getTagElementByRoute(this.$route)
-    // watchEffect(() => {
-    //   this.addTag(this.$route)
-    //   this.getTagElementByRoute(this.$route)
-    // })
-    // watchEffect(() => {
-    //   setTagNav(this.tagNavList)
-    // })
-  },
-  beforeUpdate() {
-    this.tagRefs = []
-  },
-  beforeUnmount() {
-    document.body.removeEventListener('click', this.closeMenu)
   },
   methods: {
     setItemRef(el) {
       this.tagRefs.push(el)
     },
-    isActive(route) {
-      return route.path === this.$route.path
+    isActive(item) {
+      return item.path === this.$route.path
     },
-    isAffix(route) {
-      return route.meta && route.meta.affix
+    isAffix(item) {
+      return item.meta && item.meta.affix
     },
-    onScroll(e) {
-      const type = e.type
-      let delta = 0
-      if (type === 'DOMMouseScroll' || type === 'mousewheel') {
-        delta = (e.wheelDelta) ? e.wheelDelta : -(e.detail || 0) * 40
+    addTag(item) {
+      if (!item.meta) {
+        return
       }
-      this.handleScroll(delta)
-      this.closeMenu()
-    },
-    handleScroll(offset) {
-      const wrapperWidth = this.$refs.scrollWrapper.offsetWidth
-      const bodyWidth = this.$refs.scrollBody.offsetWidth
-      if (offset > 0) { // 向左滚动
-        this.tagBodyLeft = Math.min(0, this.tagBodyLeft + offset)
-      } else { // 向右滚动
-        if (wrapperWidth < bodyWidth) { // 内容超出容器
-          if (this.tagBodyLeft >= (wrapperWidth - bodyWidth)) {
-            this.tagBodyLeft = Math.max(this.tagBodyLeft + offset, wrapperWidth - bodyWidth)
-          }
-        } else {
-          this.tagBodyLeft = 0
-        }
+      if (!item.meta.title) {
+        return
+      }
+      if (item.meta.affix) {
+        return
+      }
+      const current = this.totalTags.find(v => v.path === item.path)
+      if (!current) {
+        this.tags = this.tags.concat(item)
       }
     },
-    moveToView(tag) {
-      const outerWidth = this.$refs.scrollWrapper.offsetWidth
-      const bodyWidth = this.$refs.scrollBody.offsetWidth
-      if (bodyWidth < outerWidth) {
-        this.tagBodyLeft = 0
-      } else if (tag.offsetLeft < -this.tagBodyLeft) {
-        // 标签在可视区域左侧
-        this.tagBodyLeft = -tag.offsetLeft
-      } else if (tag.offsetLeft > -this.tagBodyLeft && tag.offsetLeft + tag.offsetWidth < -this.tagBodyLeft + outerWidth) {
-        // 标签在可视区域
-        this.tagBodyLeft = Math.min(0, outerWidth - tag.offsetWidth - tag.offsetLeft)
-      } else {
-        // 标签在可视区域右侧
-        this.tagBodyLeft = -(tag.offsetLeft - (outerWidth - tag.offsetWidth))
-      }
-    },
-    getTagElementByRoute(route) {
+    moveToView(route) {
       this.$nextTick(() => {
-        this.tagRefs.forEach(item => {
-          if (item && route.path === item.$attrs['data-route-item'].path) {
-            const tag = item.$el
-            this.moveToView(tag)
+        const scroll = this.$refs.scrollPane
+        for (let i = 0; i < this.tagRefs.length; i++) {
+          const item = this.tagRefs[i]
+          // 找出 tagRefs 中 对应当前路由的 tag
+          if (item && item.dataset['route-path'] === route.path) {
+            scroll.moveToTarget(item, this.tagRefs)
+            break
           }
-        })
+        }
       })
+    },
+    onDeleteTag(route) {
+      this.tags = this.tags.filter(item => item.path !== route.path)
+      if (this.isActive(route)) {
+        this.toLastView()
+      }
     },
     toLastView() {
       const latestView = this.tags.slice(-1)[0]
@@ -168,33 +118,6 @@ export default {
         this.$router.push(latestView.path)
       } else {
         this.$router.push('/')
-      }
-    },
-    addTag(route) {
-      if (!route.meta || !route.meta.title) {
-        return
-      }
-      if (route.meta && route.meta.affix) {
-        return
-      }
-      const currentIndex = this.tagNavList.findIndex(item => item.path === route.path)
-      if (currentIndex >= 0) {
-        // this.tagNavList.splice(currentIndex, 1, route)
-        // this.tagNavList = this.tagNavList.map((item, index) => {
-        //   if (index === currentIndex) {
-        //     return route
-        //   }
-        //   return item
-        // })
-      } else {
-        // this.tagNavList.push(route)
-        this.tagNavList = this.tagNavList.concat(route)
-      }
-    },
-    onDeleteTag(route) {
-      this.tagNavList = this.tagNavList.filter(item => item.path !== route.path)
-      if (this.isActive(route)) {
-        this.toLastView()
       }
     },
     onClickTag(route) {
@@ -210,115 +133,86 @@ export default {
       }
       this.$router.push(p)
     },
-    onRefreshSelectedTag(route) {
-      this.$router.replace({
-        path: '/redirect' + route.path
-      })
-    },
-    onCloseSelectedTag(route) {
-      this.onDeleteTag(route)
-    },
-    onCloseOthersTags() {
-      const route = this.selectedTag
-      this.tagNavList = this.tagNavList.filter(item => item.path === route.path)
-      if (!this.isActive(route)) {
-        this.onClickTag(route)
+    onTagMenuClick(e) {
+      // 关闭其它
+      if (e.key === '1') {
+        const route = this.$route
+        this.tags = this.tags.filter(item => item.path === route.path)
+        if (!this.isActive(route)) {
+          this.onClickTag(route)
+        }
       }
-    },
-    onCloseAllTags() {
-      this.tagNavList = []
-      this.$router.push('/')
-    },
-    onOpenMenu(route, e) {
-      const offsetLeft = this.$el.getBoundingClientRect().left
-      const left = e.clientX - offsetLeft
-      this.visible = true
-      this.selectedTag = route
-      this.menuStyle = {
-        top: e.clientY - 64 + 'px',
-        left: left + 'px'
+      // 关闭标签
+      if (e.key === '2') {
+        this.$store.commit('app/SET_TAGS_NAV_VISIBLE', false)
       }
-    },
-    closeMenu() {
-      this.visible = false
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-  .tags-nav {
-    position: relative;
-    width: 100%;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+.tags-nav {
+  position: relative;
+  height: @tags-nav-header;
+  padding-right: 35px;
+  display: flex;
+  background-color: #fff;
+  border-top: 1px solid #f0f0f0;
+}
+.scroll-pane {
+  width: auto;
+  flex: 1;
+}
+.tag-option {
+  padding-left: 7px;
+  box-shadow: -10px 0 15px -5px #f0f1f2;
+  display: flex;
+  align-items: center;
+  .ant-dropdown-link {
+    .title {
+      padding-right: 6px;
+    }
   }
-  .scroll-wrapper {
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    right: 10px;
-    bottom: 0;
-    overflow: hidden;
+}
+.item {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #d8dce5;
+  color: #495060;
+  background: #fff;
+  padding: 0 8px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+.nav-tag {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 4px;
+  margin-left: 5px;
+  background: #fff;
+  border: 1px solid #e9eaec;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  vertical-align: middle;
+  &.active {
+    background: #e6f7ff;
+    color: #1890ff;
   }
-  .scroll-body {
-    height: 100%;
-    display: inline-block;
-    position: absolute;
-    overflow: hidden;
+  .nav-tag__title {
+    float: left;
     white-space: nowrap;
-    transition: left .3s ease;
+    padding: 0 5px;
   }
-  .nav-tag {
-    height: 26px;
-    line-height: 26px;
-    margin-top: 4px;
-    border: 1px solid #e9eaec;
-    background: #fff;
-    cursor: pointer;
-    &::v-deep.ant-tag-blue {
-      background: #e6f7ff;
-      .anticon-close {
-        color: rgba(24, 144, 255, 0.85);
-        &:hover {
-          color: rgba(24, 144, 255, 0.45);
-        }
-      }
-    }
+  .nav-tag__icon {
+    padding: 0 5px 0 0;
   }
-  .contextmenu {
-    z-index: 3000;
-    background: #fff;
-    position: absolute;
-    padding: 5px 0;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 400;
-    color: #333;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, .1);
-    li {
-      margin: 0;
-      padding: 7px 16px;
-      cursor: pointer;
-      &:hover {
-        background: @primary-bg-color;
-      }
-    }
-  }
-  // .left-button {
-  //   position: absolute;
-  //   left: 0;
-  // }
-  // .right-button-group {
-  //   position: absolute;
-  //   right: 0;
-  // }
-  // .button {
-  //   border: 0;
-  // }
+}
 </style>
