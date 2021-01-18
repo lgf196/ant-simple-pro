@@ -9,17 +9,25 @@
         </a-row>
         <a-form class="form" :model="form" :rules="rules" @finish="handleFinish">
           <a-form-item has-feedback name="email">
-            <a-input v-model:value="form.email" placeholder="账号" autocomplete="off" />
+            <a-input v-model:value="form.email" placeholder="请填写邮箱" size="large">
+              <template #prefix>
+                <UserOutlined class="form-item-prefix" />
+              </template>
+            </a-input>
           </a-form-item>
           <a-form-item has-feedback name="password">
-            <a-input type="password" v-model:value="form.password" placeholder="密码" autocomplete="off" />
+            <a-input type="password" v-model:value="form.password" placeholder="请填写密码" size="large">
+              <template #prefix>
+                <LockOutlined class="form-item-prefix" />
+              </template>
+            </a-input>
           </a-form-item>
-          <a-form-item name="remember">
+          <!-- <a-form-item name="remember">
             <a-checkbox v-model:checked="form.remember">
               记住密码
             </a-checkbox>
-          </a-form-item>
-          <a-form-item>
+          </a-form-item> -->
+          <a-form-item class="form-item--submit">
             <a-button
               class="submit-btn"
               type="primary"
@@ -40,6 +48,10 @@
 <script>
 // import md5 from 'md5'
 import { mapGetters } from 'vuex'
+import {
+  UserOutlined,
+  LockOutlined
+} from '@ant-design/icons-vue'
 import { login } from './service'
 import {
   getRememberUser,
@@ -50,7 +62,9 @@ import {
 import FooterBar from '@/components/footerbar'
 export default {
   components: {
-    FooterBar
+    FooterBar,
+    UserOutlined,
+    LockOutlined
   },
   data() {
     return {
@@ -61,11 +75,11 @@ export default {
       },
       rules: {
         email: [
-          { required: true, message: '请输入邮箱!', trigger: 'blur' },
+          { required: true, message: '请填写邮箱!', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确!', trigger: 'blur' }
         ],
         password: [
-          { required: true, message: '请输入密码!', trigger: 'blur' }
+          { required: true, message: '请填写密码!', trigger: 'blur' }
         ]
       }
     }
@@ -127,38 +141,46 @@ export default {
   background-size: contain;
 }
 .form-container {
-  width: 480px;
-  padding: 64px;
-  border-radius: 6px;
-  box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1);
+  width: 360px;
+  padding: 50px;
+  border-radius: 2px;
+  box-shadow: 0 0 40px 0 rgba(24, 144, 255, .1), 0 55px 85px -60px rgba(24, 144, 255, .31);
   background-color: #fff;
   .logo {
     .image {
-      width: 36px;
-      height: 36px;
-      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
     }
     .title {
       color: @color-theme;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   .form {
-    ::v-deep .ant-input {
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      border-radius: 0;
-      &:focus {
-        box-shadow: 0 0 0 0 rgba(52, 111, 255, 0.2);
-      }
-    }
+    padding-top: 30px;
+    // ::v-deep .ant-input {
+    //   border-top: 0;
+    //   border-left: 0;
+    //   border-right: 0;
+    //   border-radius: 0;
+    //   &:focus {
+    //     box-shadow: 0 0 0 0 rgba(52, 111, 255, 0.2);
+    //   }
+    // }
     .submit-btn {
       width: 100%;
-      height: 48px;
-      margin: 20px 0;
+      // height: 48px;
+      // margin: 20px 0;
       border: 0;
     }
+  }
+  .form-item-prefix {
+    color: rgba(0, 0, 0, 0.25);
+  }
+  .form-item--submit {
+    margin-bottom: 0;
+    padding-top: 26px;
   }
 }
 @media screen and (max-width: 1080px) {
