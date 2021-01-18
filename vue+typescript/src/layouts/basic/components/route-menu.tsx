@@ -109,7 +109,6 @@ export default defineComponent({
       }
     }
     const menuProps = {
-      class: 'menu',
       mode: 'inline',
       theme,
       inlineCollapsed: collapsed,

@@ -11,6 +11,17 @@
     }
   }
 }
+.basic-drawer {
+  .ant-drawer-wrapper-body {
+    overflow: hidden;
+  }
+  .ant-drawer-body {
+    padding: 0;
+  }
+  .slidebar {
+    height: 100vh;
+  }
+}
 .basic-layout {
   &.slidebar-fixed {
     .slidebar {
@@ -88,6 +99,14 @@
       > .main {
         min-height: calc(100vh - @header-height - 80px);
       }
+    }
+  }
+  &.has-drawer {
+    .header {
+      left: 0;
+    }
+    .tags-nav {
+      left: 0;
     }
   }
 }
