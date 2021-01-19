@@ -156,10 +156,12 @@ export default {
 .tags-nav {
   position: relative;
   height: @tags-nav-header;
+  padding-left: 10px;
   padding-right: 35px;
   display: flex;
   background-color: #fff;
   border-top: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px #f0f1f2;
 }
 .scroll-pane {
   width: auto;

@@ -68,7 +68,20 @@ export default defineComponent({
 
 <style lang="less" scoped>
   .slidebar {
+    // dark theme hidden logo-container shadow
+    &.ant-layout-sider-dark {
+      .menu {
+        position: relative;
+        z-index: 201;
+      }
+    }
     ::v-deep(.ant-layout-sider-children) {
+      .ant-menu {
+        padding-top: 10px;
+      }
+      .ant-menu-inline {
+        border-right: 0;
+      }
       .ant-menu-inline .ant-menu-item::after {
         right: 1px;
       }
@@ -80,16 +93,10 @@ export default defineComponent({
           vertical-align: middle;
         }
       }
-      // dark theme hidden logo-container shadow
-      .ant-menu.ant-menu-dark {
-        position: relative;
-        z-index: 201;
-      }
     }
   }
   .menu {
     height: calc(100vh - 96px);
-    padding-top: 10px;
     border-right: 0;
     overflow-x: hidden;
     overflow-y: auto;
