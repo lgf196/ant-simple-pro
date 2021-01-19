@@ -160,7 +160,7 @@ export default {
     height: @header-height;
     padding-right: 24px;
     background: #fff;
-    box-shadow: 1 2px 8px #f0f1f2;
+    box-shadow: 5px 2px 8px #f0f1f2;
     &.dark {
       .logo-container {
         background-color: #001529;
