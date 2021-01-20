@@ -9,7 +9,7 @@
       <a-row class="header-right" type="flex" align="middle">
         <a-row class="docs" type="flex" align="middle">
           <a class="docs-link" href="http://blog.lgf196.top/ant-simple-pro-document/" target='_blank'>
-            <a-tooltip title="文档">
+            <a-tooltip title="文档" placement="bottom">
               <QuestionCircleOutlined />
             </a-tooltip>
           </a>
@@ -160,7 +160,6 @@ export default {
     height: @header-height;
     padding-right: 24px;
     background: #fff;
-    box-shadow: 5px 2px 8px #f0f1f2;
     &.dark {
       .logo-container {
         background-color: #001529;
