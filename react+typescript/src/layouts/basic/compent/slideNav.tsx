@@ -69,13 +69,7 @@ class SlideNav extends React.PureComponent<SlideNavProps, SlideNavState> {
       }
     })
   }
-  /**
-   *
-   * @issue  菜单折叠后，子菜单不消失的 问题，和闪烁的问题
-   * @cause  菜单折叠后，openKeys 并没有清空
-   * @address https://github.com/ant-design/ant-design/issues/14536
-   * @borrow  https://github.com/qyhever/e-admin-react/blob/master/src/layouts/Sidebar.js
-   */
+
   static getDerivedStateFromProps(props: SlideNavProps, state: SlideNavState) {
     if (props.collapsed !== state.collapsed) {
       if (props.collapsed) {
