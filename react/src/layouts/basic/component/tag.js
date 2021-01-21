@@ -5,14 +5,6 @@ import { CloseOutlined, DownOutlined } from '@ant-design/icons'
 import style from './tag.module.scss'
 import { Dropdown, Menu } from "antd";
 import { CSSTransition } from 'react-transition-group';
-
-/**
- * @note 该组件，我做的复杂了，同学们可以不需要用react-router-config中的route来获取title和path,
- *       如果将slideruNav组件中的路由信息写到link组件中的to属性（用对象形式传递title，path等）
- *       那么filterRouters函数就是无用的，并且也就不需要react-router-config中的route了，同学们可以将slideNav
- *       路由变化信息存储到redux中，在componentDidUpdate函数中就可以监听路由变化，重而实现数据共享和最终实现tag组件的功能。
- *
- */
 class Tag extends React.Component {
   constructor(props) {
     super(props);

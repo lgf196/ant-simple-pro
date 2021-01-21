@@ -16,9 +16,9 @@ import News from './new'
 
 const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDrawer }) {
   const moreList = [
-    {title:'ant-simple-pro(vue3.0)',url:'https://www.baidu.com/'},
-    {title:'ant-simple-pro(afterEnd)',url:'https://www.baidu.com/'},
-    {title:'ant-simple-pro(angular)',url:'https://www.baidu.com/'},
+    {title:'ant-simple-pro(vue3.0)',url:'https://lgf196.top/vue/'},
+    {title:'ant-simple-pro(afterEnd)',url:'https://github.com/lgf196/ant-simple-pro/tree/afterEnd'},
+    {title:'ant-simple-pro(angular)',url:'https://github.com/lgf196/ant-simple-pro/tree/angular/angular'},
   ];
 
   const history = useHistory();
@@ -90,7 +90,7 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
         </div>
       </div>
       <div className={`${style.menuList} fr`}>
-        <a href="https://www.baidu.com/" target='_blank'>
+        <a href="http://blog.lgf196.top/ant-simple-pro-document/" target='_blank'>
           <Tooltip title="文档">
             <QuestionCircleOutlined className={style.icon} />
           </Tooltip>

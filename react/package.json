@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^12.2.2",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
-    "antd": "^4.9.1",
+    "antd": "^4.10.2",
     "axios": "^0.21.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",

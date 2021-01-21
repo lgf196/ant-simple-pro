@@ -25,7 +25,7 @@
 
 ## 简介
 
-[ant-simple-pro](http://panjiachen.github.io/vue-element-admin) 是一款支持[vue3.0](https://github.com/vuejs/vue)，[react](https://github.com/facebook/react)，[angular](https://github.com/angular/angular)，[typescript](https://github.com/microsoft/TypeScript)等多框架支持的中台前端解决方案，ui使用[antd](https://github.com/ant-design/ant-design)实现的，它使用了最新的前端技术栈，内置了 i18 国际化解决方案，动态路由，响应式设计，开箱即用，它可以帮助你快速搭建企业级中后台产品原型，不管你是vue开发者，还是react,或者angular，都能在这里找到你想要的版本。
+[ant-simple-pro](https://github.com/lgf196/ant-simple-pro) 是一款支持[vue3.0](https://github.com/vuejs/vue)，[react](https://github.com/facebook/react)，[angular](https://github.com/angular/angular)，[typescript](https://github.com/microsoft/TypeScript)等多框架支持的中台前端解决方案，ui使用[antd](https://github.com/ant-design/ant-design)实现的，它使用了最新的前端技术栈，内置了 i18 国际化解决方案，动态路由，响应式设计，开箱即用，它可以帮助你快速搭建企业级中后台产品原型，不管你是vue开发者，还是react,或者angular，都能在这里找到你想要的版本。
 
 - [在线预览](https://lgf196.top/react/login)
 

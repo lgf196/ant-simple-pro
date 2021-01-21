@@ -26,7 +26,7 @@ English | [简体中文](./README.zh-CN.md)
 
 ## Introduction
 
-[ant-simple-pro](http://panjiachen.github.io/vue-element-admin) is a support [vue3.0](https://github.com/vuejs/vue), [react](https://github.com/facebook/react) [angular](https://github.com/angular/angular), [typescript](https://github.com/microsoft/TypeScript) and other multi-framework The supported front-end solutions for middle and Taiwan, ui is implemented using [antd](https://github.com/ant-design/ant-design), it uses the latest front-end technology stack, and has built-in i18 international solutions, Dynamic routing, responsive design, out-of-the-box use, it can help you quickly build enterprise-level middle and back-end product prototypes, whether you are a vue developer, react, or angular, you can find the version you want here.
+[ant-simple-pro](https://github.com/lgf196/ant-simple-pro) is a support [vue3.0](https://github.com/vuejs/vue), [react](https://github.com/facebook/react) [angular](https://github.com/angular/angular), [typescript](https://github.com/microsoft/TypeScript) and other multi-framework The supported front-end solutions for middle and Taiwan, ui is implemented using [antd](https://github.com/ant-design/ant-design), it uses the latest front-end technology stack, and has built-in i18 international solutions, Dynamic routing, responsive design, out-of-the-box use, it can help you quickly build enterprise-level middle and back-end product prototypes, whether you are a vue developer, react, or angular, you can find the version you want here.
 
 - [Preview](https://lgf196.top/react/login)
 
