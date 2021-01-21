@@ -98,6 +98,11 @@ npm run build:prod
 
 如果您认为该项目对您有所帮助，则可以给作者一个赞，作者非常感激:blush::blush::rose:
 
+- 技术交流群扫码进入，一起学习，一起成长，不懂问题大家一起讨论
+<p align="left">
+  <img width="100" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6d6d3f624f4143fe8833d2458aeaf002~tplv-k3u1fbpfcp-zoom-1.image">
+</p>
+
 ## Browsers support
 
  Modern browsers does not support IE browser
