@@ -7,7 +7,7 @@ const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
-const publicPath = '/'
+const publicPath = '/vue/'
 const PORT = process.env.PORT || 9050
 const cdn = {
   dev: {
