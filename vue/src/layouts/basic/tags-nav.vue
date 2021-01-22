@@ -1,17 +1,26 @@
 <template>
   <div class="tags-nav" v-if="tagsNavVisible">
-    <ScrollPane :horizontalBar="false" :verticalBar="false" ref="scrollPane" class="scroll-pane">
+    <ScrollPane
+      :horizontalBar="false"
+      :verticalBar="false"
+      ref="scrollPane"
+      class="scroll-pane"
+    >
       <div
         v-for="(item, index) in totalTags"
         :key="index"
         class="nav-tag"
-        :class="{active: isActive(item)}"
+        :class="{ active: isActive(item) }"
         :ref="setItemRef"
         :data-route-path="item.path"
         @click="onClickTag(item)"
       >
-        <span class="nav-tag__title">{{item.meta && item.meta.title}}</span>
-        <CloseOutlined v-if="!isAffix(item)" class="nav-tag__icon" @click.stop="onDeleteTag(item)" />
+        <span class="nav-tag__title">{{ item.meta && item.meta.title }}</span>
+        <CloseOutlined
+          v-if="!isAffix(item)"
+          class="nav-tag__icon"
+          @click.stop="onDeleteTag(item)"
+        />
       </div>
     </ScrollPane>
     <div class="tag-option">
@@ -22,12 +31,8 @@
         </a>
         <template #overlay>
           <a-menu @click="onTagMenuClick">
-            <a-menu-item key="1">
-              关闭其它
-            </a-menu-item>
-            <a-menu-item key="2">
-              关闭标签
-            </a-menu-item>
+            <a-menu-item key="1"> 关闭其它 </a-menu-item>
+            <a-menu-item key="2"> 关闭标签 </a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>

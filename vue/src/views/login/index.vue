@@ -4,19 +4,33 @@
       <aside class="aside"></aside>
       <div class="form-container">
         <a-row class="logo" type="flex" align="middle" justify="center">
-          <img class="image" src="@/assets/images/logo.png">
+          <img class="image" src="@/assets/images/logo.png" />
           <h1 class="title">Ant Simple Pro</h1>
         </a-row>
-        <a-form class="form" :model="form" :rules="rules" @finish="handleFinish">
+        <a-form
+          class="form"
+          :model="form"
+          :rules="rules"
+          @finish="handleFinish"
+        >
           <a-form-item has-feedback name="email">
-            <a-input v-model:value="form.email" placeholder="请填写邮箱" size="large">
+            <a-input
+              v-model:value="form.email"
+              placeholder="请填写邮箱"
+              size="large"
+            >
               <template #prefix>
                 <UserOutlined class="form-item-prefix" />
               </template>
             </a-input>
           </a-form-item>
           <a-form-item has-feedback name="password">
-            <a-input type="password" v-model:value="form.password" placeholder="请填写密码" size="large">
+            <a-input
+              type="password"
+              v-model:value="form.password"
+              placeholder="请填写密码"
+              size="large"
+            >
               <template #prefix>
                 <LockOutlined class="form-item-prefix" />
               </template>
@@ -48,10 +62,7 @@
 <script>
 // import md5 from 'md5'
 import { mapGetters } from 'vuex'
-import {
-  UserOutlined,
-  LockOutlined
-} from '@ant-design/icons-vue'
+import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import { login } from './service'
 import {
   getRememberUser,
@@ -78,9 +89,7 @@ export default {
           { required: true, message: '请填写邮箱!', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确!', trigger: 'blur' }
         ],
-        password: [
-          { required: true, message: '请填写密码!', trigger: 'blur' }
-        ]
+        password: [{ required: true, message: '请填写密码!', trigger: 'blur' }]
       }
     }
   },
@@ -130,21 +139,23 @@ export default {
 }
 .login-main {
   flex: auto;
-  &:before, &:after {
-    content: "";
+  &:before,
+  &:after {
+    content: '';
   }
 }
 .aside {
   width: 46.5vw;
   height: 86vh;
-  background: url("~@/assets/images/login.png") center no-repeat;
+  background: url('~@/assets/images/login.png') center no-repeat;
   background-size: contain;
 }
 .form-container {
   width: 360px;
   padding: 50px;
   border-radius: 2px;
-  box-shadow: 0 0 40px 0 rgba(24, 144, 255, .1), 0 55px 85px -60px rgba(24, 144, 255, .31);
+  box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1),
+    0 55px 85px -60px rgba(24, 144, 255, 0.31);
   background-color: #fff;
   .logo {
     .image {
@@ -159,19 +170,8 @@ export default {
   }
   .form {
     padding-top: 30px;
-    // ::v-deep .ant-input {
-    //   border-top: 0;
-    //   border-left: 0;
-    //   border-right: 0;
-    //   border-radius: 0;
-    //   &:focus {
-    //     box-shadow: 0 0 0 0 rgba(52, 111, 255, 0.2);
-    //   }
-    // }
     .submit-btn {
       width: 100%;
-      // height: 48px;
-      // margin: 20px 0;
       border: 0;
     }
   }

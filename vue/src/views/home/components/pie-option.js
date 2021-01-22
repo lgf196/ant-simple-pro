@@ -1,4 +1,4 @@
-export const getOption = (list) => {
+export const getOption = list => {
   const option = {
     color: ['#6394f9', '#62daaa', '#657797', '#f6c021', '#7666f9'],
     legend: {

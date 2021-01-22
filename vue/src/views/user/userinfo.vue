@@ -33,14 +33,24 @@
         />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }">
-        <a-button type="primary" :loading="submitting" @click="onSubmit"> 提交 </a-button>
+        <a-button type="primary" :loading="submitting" @click="onSubmit">
+          提交
+        </a-button>
       </a-form-item>
     </a-form>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref, reactive, toRefs, toRaw, onMounted, computed } from 'vue'
+import {
+  defineComponent,
+  ref,
+  reactive,
+  toRefs,
+  toRaw,
+  onMounted,
+  computed
+} from 'vue'
 import store from '@/store'
 import { message } from 'ant-design-vue'
 import { updateUser } from './service'
@@ -49,8 +59,8 @@ export default defineComponent({
   setup() {
     const formRef = ref(null)
     const state = reactive({
-      labelCol: { xs: {span: 24}, sm: {span: 6} },
-      wrapperCol: { xs: {span: 24}, sm: {span: 18} },
+      labelCol: { xs: { span: 24 }, sm: { span: 6 } },
+      wrapperCol: { xs: { span: 24 }, sm: { span: 18 } },
       rules: {},
       submitting: false
     })
@@ -81,14 +91,12 @@ export default defineComponent({
       if (!formRef.value) {
         return
       }
-      formRef.value.validate()
+      formRef.value
+        .validate()
         .then(async () => {
           const params = toRaw(form)
           console.log('form', params)
-          await updateUser(
-            params,
-            v => (state.submitting = v)
-          )
+          await updateUser(params, v => (state.submitting = v))
           store.dispatch('user/GetUserInfo')
           message.destroy()
           message.success('保存成功')

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import request from '@/utils/request'
 
-export const getMenus = (params) => {
+export const getMenus = params => {
   return request({
     method: 'get',
     url: '/menu/getCurrentList',

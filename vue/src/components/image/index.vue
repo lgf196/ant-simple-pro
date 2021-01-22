@@ -13,7 +13,11 @@
       @click="clickHandler"
       :src="src"
       :style="imageStyle"
-      :class="{ 'com-image__inner--center': alignCenter, 'com-image__preview': preview }">
+      :class="{
+        'com-image__inner--center': alignCenter,
+        'com-image__preview': preview
+      }"
+    />
     <template v-if="!preview">
       <!-- <image-viewer :zIndex="zIndex" :initialIndex="imageIndex" v-model:visible="showViewer" :onClose="closeViewer" :urlList="previewSrcList"/> -->
     </template>
@@ -27,7 +31,8 @@ import { isString, isHtmlElement } from '@/utils/type'
 import { throttle } from 'lodash'
 import './index.less'
 
-const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined
+const isSupportObjectFit = () =>
+  document.documentElement.style.objectFit !== undefined
 
 const ObjectFit = {
   NONE: 'none',
@@ -133,11 +138,10 @@ export default {
 
       // bind html attrs
       // so it can behave consistently
-      Object.keys(this.$attrs)
-        .forEach((key) => {
-          const value = this.$attrs[key]
-          img.setAttribute(key, value)
-        })
+      Object.keys(this.$attrs).forEach(key => {
+        const value = this.$attrs[key]
+        img.setAttribute(key, value)
+      })
       img.src = this.src
     },
     handleLoad(e, img) {
@@ -186,8 +190,8 @@ export default {
       this._lazyLoadHandler = null
     },
     /**
-       * simulate object-fit behavior to compatible with IE11 and other browsers which not support object-fit
-       */
+     * simulate object-fit behavior to compatible with IE11 and other browsers which not support object-fit
+     */
     getImageStyle(fit) {
       const { imageWidth, imageHeight } = this
       const {
@@ -195,12 +199,14 @@ export default {
         clientHeight: containerHeight
       } = this.$el
 
-      if (!imageWidth || !imageHeight || !containerWidth || !containerHeight) return {}
+      if (!imageWidth || !imageHeight || !containerWidth || !containerHeight)
+        return {}
 
       const vertical = imageWidth / imageHeight < 1
 
       if (fit === ObjectFit.SCALE_DOWN) {
-        const isSmaller = imageWidth < containerWidth && imageHeight < containerHeight
+        const isSmaller =
+          imageWidth < containerWidth && imageHeight < containerHeight
         fit = isSmaller ? ObjectFit.NONE : ObjectFit.CONTAIN
       }
 

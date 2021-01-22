@@ -8,11 +8,14 @@ export default function (chartIns) {
 
   let timer = null
 
-  watch(() => store.getters.collapsed, () => {
-    timer = setTimeout(() => {
-      onResize()
-    }, 500)
-  })
+  watch(
+    () => store.getters.collapsed,
+    () => {
+      timer = setTimeout(() => {
+        onResize()
+      }, 500)
+    }
+  )
 
   onMounted(() => {
     window.addEventListener('resize', onResize)

@@ -8,7 +8,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 const publicPath = '/vue/'
-const PORT = process.env.PORT || 9050
+const PORT = process.env.PORT || 3000
 const cdn = {
   dev: {
     css: [],

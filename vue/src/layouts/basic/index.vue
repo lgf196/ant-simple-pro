@@ -24,10 +24,14 @@
       <SlideBar></SlideBar>
     </a-drawer>
     <div class="layout-content">
-      <HeaderBar @open-drawer="onOpenDrawer" :windowWidth="windowWidth" :drawerVisible="drawerVisible"></HeaderBar>
+      <HeaderBar
+        @open-drawer="onOpenDrawer"
+        :windowWidth="windowWidth"
+        :drawerVisible="drawerVisible"
+      ></HeaderBar>
       <TagsNav></TagsNav>
       <main class="main">
-        <router-view/>
+        <router-view />
       </main>
       <FooterBar class="footer"></FooterBar>
     </div>
@@ -67,11 +71,15 @@ export default {
     const drawerVisible = ref(false)
     const { width } = useResizeWidth()
     const store = useStore()
-    watch(width, (newWidth) => {
-      store.commit('app/TOGGLE_SLIDE_BAR', newWidth < 1200)
-    }, {
-      immediate: true
-    })
+    watch(
+      width,
+      newWidth => {
+        store.commit('app/TOGGLE_SLIDE_BAR', newWidth < 1200)
+      },
+      {
+        immediate: true
+      }
+    )
 
     function onOpenDrawer() {
       drawerVisible.value = true

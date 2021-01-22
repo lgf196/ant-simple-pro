@@ -1,9 +1,5 @@
 <template>
-  <a-modal
-    :title="title"
-    :visible="visible"
-    @cancel="onClose"
-  >
+  <a-modal :title="title" :visible="visible" @cancel="onClose">
     <a-form
       ref="form"
       :model="form"
@@ -12,13 +8,25 @@
       :wrapper-col="wrapperCol"
     >
       <a-form-item label="菜单名字" name="title">
-        <a-input v-model:value="form.title" placeholder="请输入" allowClear></a-input>
+        <a-input
+          v-model:value="form.title"
+          placeholder="请输入"
+          allowClear
+        ></a-input>
       </a-form-item>
       <a-form-item label="菜单url" name="url">
-        <a-input v-model:value="form.url" placeholder="请输入" allowClear></a-input>
+        <a-input
+          v-model:value="form.url"
+          placeholder="请输入"
+          allowClear
+        ></a-input>
       </a-form-item>
       <a-form-item label="菜单icon" name="icon">
-        <a-input v-model:value="form.icon" placeholder="请输入" allowClear></a-input>
+        <a-input
+          v-model:value="form.icon"
+          placeholder="请输入"
+          allowClear
+        ></a-input>
       </a-form-item>
       <a-form-item label="上级菜单" name="pid">
         <a-cascader
@@ -34,7 +42,9 @@
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" :loading="submitting" @click="onSubmit">编辑</a-button>
+      <a-button type="primary" :loading="submitting" @click="onSubmit"
+        >编辑</a-button
+      >
       <a-button @click="onReset">重置</a-button>
     </template>
   </a-modal>
@@ -78,15 +88,9 @@ export default {
     },
     rules() {
       return {
-        title: [
-          { required: true, message: '请输入菜单名字' }
-        ],
-        url: [
-          { required: true, message: '请输入菜单url' }
-        ],
-        icon: [
-          { required: !this.currentRow.id, message: '请输入菜单icon' }
-        ]
+        title: [{ required: true, message: '请输入菜单名字' }],
+        url: [{ required: true, message: '请输入菜单url' }],
+        icon: [{ required: !this.currentRow.id, message: '请输入菜单icon' }]
       }
     }
   },
@@ -140,5 +144,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  // ...
+// ...
 </style>

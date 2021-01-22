@@ -27,7 +27,7 @@ export default defineComponent({
       if (!chartRef.value) {
         return
       }
-      const chart = chartIns.value = window.echarts.init(chartRef.value)
+      const chart = (chartIns.value = window.echarts.init(chartRef.value))
       chart.setOption(getOption(props.list))
     }
 
@@ -39,8 +39,8 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-  .chart {
-    height: 100%;
-    background-color: #fff;
-  }
+.chart {
+  height: 100%;
+  background-color: #fff;
+}
 </style>

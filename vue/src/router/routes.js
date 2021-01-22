@@ -91,10 +91,7 @@ export const blankRoutes = [
   // ...
 ]
 
-export const routes = [].concat(
-  basicRoutes,
-  blankRoutes
-)
+export const routes = [].concat(basicRoutes, blankRoutes)
 
 export default [
   {

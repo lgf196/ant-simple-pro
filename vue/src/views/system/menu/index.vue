@@ -18,31 +18,30 @@
       <template #buttons>
         <a-button type="primary" @click="onCreate">
           <template #icon>
-            <ComSvgIcon class="anticon add-button__icon" name="add"></ComSvgIcon>
+            <ComSvgIcon
+              class="anticon add-button__icon"
+              name="add"
+            ></ComSvgIcon>
           </template>
           <span>新增</span>
         </a-button>
       </template>
       <template #index="{ index }">
         <span>
-          {{index + 1}}
+          {{ index + 1 }}
         </span>
       </template>
       <template #createTime="{ text }">
         <span>
-          {{$formatDateTime(text)}}
+          {{ $formatDateTime(text) }}
         </span>
       </template>
       <template #action="{ record }">
         <!-- <a-button type="link" @click="onUpdate(record)">编辑</a-button>
         <a-button type="link" @click="onDelete(record)">删除</a-button> -->
-        <a @click="onUpdate(record)">
-          编辑
-        </a>
+        <a @click="onUpdate(record)"> 编辑 </a>
         <a-divider type="vertical" />
-        <a class="danger" @click="onDelete(record)">
-          删除
-        </a>
+        <a class="danger" @click="onDelete(record)"> 删除 </a>
       </template>
     </LayoutTable>
     <UpdateMenuModal
@@ -59,9 +58,7 @@
 <script>
 // import { toRef } from 'vue'
 import { mapGetters } from 'vuex'
-import {
-  ExclamationCircleOutlined
-} from '@ant-design/icons-vue'
+import { ExclamationCircleOutlined } from '@ant-design/icons-vue'
 import { createVNode } from 'vue'
 import LayoutTable from '@/components/layout-table'
 import { getMenus, getMenuTree, deleteMenu } from './service'
@@ -179,10 +176,7 @@ export default {
         icon: createVNode(ExclamationCircleOutlined),
         onOk: async () => {
           try {
-            await deleteMenu(
-              row.id,
-              cancel => (this.cancel = cancel)
-            )
+            await deleteMenu(row.id, cancel => (this.cancel = cancel))
             this.query()
             this.$store.dispatch('user/GetAccessMenus')
           } catch (err) {
@@ -215,10 +209,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .danger {
-    color: rgb(255, 77, 79);
-  }
-  .add-button__icon {
-    font-size: 18px;
-  }
+.danger {
+  color: rgb(255, 77, 79);
+}
+.add-button__icon {
+  font-size: 18px;
+}
 </style>

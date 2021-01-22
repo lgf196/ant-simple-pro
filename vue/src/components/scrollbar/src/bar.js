@@ -1,4 +1,12 @@
-import { defineComponent, computed, unref, inject, reactive, ref, onBeforeUnmount } from 'vue'
+import {
+  defineComponent,
+  computed,
+  unref,
+  inject,
+  reactive,
+  ref,
+  onBeforeUnmount
+} from 'vue'
 
 import { on, off } from '@/utils/dom'
 import { renderThumbStyle, BAR_MAP } from './util'
@@ -42,9 +50,11 @@ export default defineComponent({
       const rect = el.getBoundingClientRect()
       const offset = (rect[bar.direction] - e[bar.client]) * -1
       const thumbClickPosition = thumbEl[bar.offset] - prevPage
-      const thumbPositionPercentage = ((offset - thumbClickPosition) * 100) / el[bar.offset]
+      const thumbPositionPercentage =
+        ((offset - thumbClickPosition) * 100) / el[bar.offset]
 
-      parentEl[bar.scroll] = (thumbPositionPercentage * parentEl[bar.scrollSize]) / 100
+      parentEl[bar.scroll] =
+        (thumbPositionPercentage * parentEl[bar.scrollSize]) / 100
     }
 
     function mouseUpDocumentHandler() {
@@ -70,14 +80,18 @@ export default defineComponent({
       }
       const bar = unref(barRef)
       const t = e.target
-      const offset = Math.abs(t.getBoundingClientRect()[bar.direction] - e[bar.client])
+      const offset = Math.abs(
+        t.getBoundingClientRect()[bar.direction] - e[bar.client]
+      )
       const thumbEl = unref(thumbRef)
       const parentEl = unref(parentElRef)
       const el = unref(elRef)
       if (!thumbEl || !el || !parentEl) return
       const thumbHalf = thumbEl[bar.offset] / 2
-      const thumbPositionPercentage = ((offset - thumbHalf) * 100) / el[bar.offset]
-      parentEl[bar.scroll] = (thumbPositionPercentage * parentEl[bar.scrollSize]) / 100
+      const thumbPositionPercentage =
+        ((offset - thumbHalf) * 100) / el[bar.offset]
+      parentEl[bar.scroll] =
+        (thumbPositionPercentage * parentEl[bar.scrollSize]) / 100
     }
 
     function clickThumbHandler(e) {
@@ -89,7 +103,9 @@ export default defineComponent({
       }
       startDrag(e)
       const bar = unref(barRef)
-      commonState[bar.axis] = currentTarget[bar.offset] - (e[bar.client] - currentTarget.getBoundingClientRect()[bar.direction])
+      commonState[bar.axis] =
+        currentTarget[bar.offset] -
+        (e[bar.client] - currentTarget.getBoundingClientRect()[bar.direction])
     }
 
     onBeforeUnmount(() => {

@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     'eslint:recommended',
-    '@vue/standard'
+    '@vue/standard',
+    '@vue/prettier'
   ],
   parserOptions: {
     parser: 'babel-eslint'
@@ -41,7 +42,7 @@ module.exports = {
      * 风格指南
      */
     // 'array-bracket-spacing': ['error', 'always'], // 数组方括号内必须空格
-    'space-before-function-paren': 0,
+    'space-before-function-paren': 0, // 函数括号前无需空格
     'array-bracket-spacing': 0, // 数组方括号内必须空格
     'comma-dangle': 2, // 禁止末尾逗号
     'eol-last': 2, // 要求文件末尾存在空行

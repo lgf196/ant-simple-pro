@@ -1,4 +1,3 @@
-
 export function isIE() {
   return !isNaN(Number(document.documentMode))
 }
@@ -12,5 +11,7 @@ export function isFirefox() {
 }
 
 export function isMobile() {
-  return /Android|webOS|i?Phone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent)
+  return /Android|webOS|i?Phone|iPad|iPod|BlackBerry|Mobile/i.test(
+    navigator.userAgent
+  )
 }

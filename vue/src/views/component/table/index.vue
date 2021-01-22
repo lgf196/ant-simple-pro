@@ -14,22 +14,18 @@
       :onRefresh="run"
     >
       <template #search>
-        <a-form
-          ref="form"
-          layout="inline"
-          :model="{}"
-        >
+        <a-form ref="form" layout="inline" :model="{}">
           <a-form-item label="名称">
-            <a-input v-model:value="username" placeholder="请输入" allowClear></a-input>
+            <a-input
+              v-model:value="username"
+              placeholder="请输入"
+              allowClear
+            ></a-input>
           </a-form-item>
           <a-form-item>
             <a-space>
-              <a-button type="primary" @click="handleSubmit">
-                查询
-              </a-button>
-              <a-button @click="onReset">
-                重置
-              </a-button>
+              <a-button type="primary" @click="handleSubmit"> 查询 </a-button>
+              <a-button @click="onReset"> 重置 </a-button>
             </a-space>
           </a-form-item>
         </a-form>
@@ -50,11 +46,16 @@
       </template>
       <template #index="{ index }">
         <span>
-          {{index + 1}}
+          {{ index + 1 }}
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
+        <ComImage
+          className="avatar"
+          :src="text"
+          @click="onImageClick(text)"
+          fit="cover"
+        >
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -76,10 +77,7 @@
 <script>
 import { ref } from 'vue'
 import LayoutTable from '@/components/layout-table'
-import {
-  ArrowDownOutlined,
-  UserOutlined
-} from '@ant-design/icons-vue'
+import { ArrowDownOutlined, UserOutlined } from '@ant-design/icons-vue'
 import { getUsers, getUsersBuffer } from '@/views/user/service'
 import useRequest from '@/hooks/useRequest'
 import { downloadExcel } from '@/utils'
@@ -153,9 +151,11 @@ export default {
   },
   setup() {
     const username = ref('')
-    const { data: userList = [], run, loading } = useRequest(() => getUsers({
-      username: username.value
-    }))
+    const { data: userList = [], run, loading } = useRequest(() =>
+      getUsers({
+        username: username.value
+      })
+    )
     console.log('userList', userList)
     return {
       userList,
@@ -204,10 +204,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 </style>

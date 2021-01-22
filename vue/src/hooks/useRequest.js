@@ -1,8 +1,4 @@
-import {
-  toRefs,
-  reactive,
-  onMounted
-} from 'vue'
+import { toRefs, reactive, onMounted } from 'vue'
 
 export default (pro, options = {}) => {
   const { manual = false } = options

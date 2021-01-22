@@ -109,7 +109,16 @@ export default defineComponent({
     })
 
     return () => {
-      const { native, tag, viewClass, viewStyle, wrapClass, wrapStyle, horizontalBar, verticalBar } = props
+      const {
+        native,
+        tag,
+        viewClass,
+        viewStyle,
+        wrapClass,
+        wrapStyle,
+        horizontalBar,
+        verticalBar
+      } = props
       let style = wrapStyle
       const gutter = scrollbarWidth()
 
@@ -129,7 +138,11 @@ export default defineComponent({
 
       const Tag = tag
       const view = (
-        <Tag class={['scrollbar__view', viewClass]} style={viewStyle} ref={resizeRef}>
+        <Tag
+          class={['scrollbar__view', viewClass]}
+          style={viewStyle}
+          ref={resizeRef}
+        >
           {getSlot(slots)}
         </Tag>
       )
@@ -138,7 +151,11 @@ export default defineComponent({
           ref={wrapElRef}
           style={style}
           onScroll={handleScroll}
-          class={[wrapClass, 'scrollbar__wrap', gutter ? '' : 'scrollbar__wrap--hidden-default']}
+          class={[
+            wrapClass,
+            'scrollbar__wrap',
+            gutter ? '' : 'scrollbar__wrap--hidden-default'
+          ]}
         >
           {[view]}
         </div>
@@ -149,7 +166,9 @@ export default defineComponent({
         nodes = [
           wrap,
           horizontalBar ? <Bar move={moveX} size={sizeWidth}></Bar> : null,
-          verticalBar ? <Bar vertical move={moveY} size={sizeHeight}></Bar> : null
+          verticalBar ? (
+            <Bar vertical move={moveY} size={sizeHeight}></Bar>
+          ) : null
         ]
       } else {
         nodes = [

@@ -1,40 +1,16 @@
 <template>
   <div class="com-page">
     <a-row :gutter="[10, 10]">
-      <a-col
-        :xs="24"
-        :sm="24"
-        :md="24"
-        :lg="24"
-        :xl="12"
-      >
+      <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
         <Column></Column>
       </a-col>
-      <a-col
-        :xs="24"
-        :sm="24"
-        :md="24"
-        :lg="24"
-        :xl="12"
-      >
+      <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
         <Bar></Bar>
       </a-col>
-      <a-col
-        :xs="24"
-        :sm="24"
-        :md="24"
-        :lg="24"
-        :xl="12"
-      >
+      <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
         <Line></Line>
       </a-col>
-      <a-col
-        :xs="24"
-        :sm="24"
-        :md="24"
-        :lg="24"
-        :xl="12"
-      >
+      <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
         <Pie></Pie>
       </a-col>
     </a-row>
@@ -64,7 +40,7 @@ export default {
 .com-page {
   background-color: transparent;
 }
-::v-deep .ant-col > div {
+::v-deep(.ant-col) > div {
   background-color: #fff;
 }
 </style>

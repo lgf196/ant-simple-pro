@@ -47,7 +47,7 @@ export const getCollapse = () => {
   return JSON.parse(localStorage.getItem(COLLAPSE))
 }
 
-export const setRememberUser = (data) => {
+export const setRememberUser = data => {
   return local.set(REMEMBER_LOGIN_USER, data)
 }
 
@@ -59,7 +59,7 @@ export const removeRememberUser = () => {
   return localStorage.removeItem(REMEMBER_LOGIN_USER)
 }
 
-export const setTagNav = (data) => {
+export const setTagNav = data => {
   return localStorage.setItem(TAG_NAV, JSON.stringify(data))
 }
 
@@ -77,7 +77,7 @@ export const removeTagNav = () => {
   return localStorage.removeItem(TAG_NAV)
 }
 
-export const setAccessMenus = (data) => {
+export const setAccessMenus = data => {
   return localStorage.setItem(ACCESS_MENU, JSON.stringify(data))
 }
 
@@ -95,7 +95,7 @@ export const removeAccessMenus = () => {
   return localStorage.removeItem(ACCESS_MENU)
 }
 
-export const setUserInfo = (data) => {
+export const setUserInfo = data => {
   return localStorage.setItem(USERINFO, JSON.stringify(data))
 }
 
@@ -117,6 +117,6 @@ export const getSideBarTheme = () => {
   return localStorage.getItem(SLIDER_THEME)
 }
 
-export const setSideBarTheme = (value) => {
+export const setSideBarTheme = value => {
   return localStorage.setItem(SLIDER_THEME, value)
 }

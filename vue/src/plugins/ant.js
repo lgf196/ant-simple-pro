@@ -35,7 +35,7 @@ import {
   Drawer
 } from 'ant-design-vue'
 
-export default function(app) {
+export default function (app) {
   const g = app.config.globalProperties
 
   app

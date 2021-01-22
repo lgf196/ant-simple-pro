@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
  * @param {dayjs.ConfigType} date 日期
  * @return {String} YYYY-MM-DD 日期
  */
-export const formatDate = (date) => {
+export const formatDate = date => {
   return dayjs(date).format('YYYY-MM-DD')
 }
 
@@ -14,6 +14,6 @@ export const formatDate = (date) => {
  * @param {dayjs.ConfigType} date 时间
  * @return {String} YYYY-MM-DD HH:mm:ss 时间
  */
-export const formatDateTime = (date) => {
+export const formatDateTime = date => {
   return dayjs(date).format('YYYY-MM-DD HH:mm:ss')
 }

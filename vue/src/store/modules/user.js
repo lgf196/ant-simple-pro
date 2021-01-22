@@ -42,10 +42,7 @@ export default {
       commit('SET_ACCESS_MENUS', menus)
     },
     async GetUserData({ commit }) {
-      const [user, menus] = await Promise.all([
-        getUserInfo(),
-        getAccessMenus()
-      ])
+      const [user, menus] = await Promise.all([getUserInfo(), getAccessMenus()])
       commit('SET_ACCESS_MENUS', menus)
       commit('SET_USERINFO', user)
     },
@@ -69,7 +66,7 @@ export default {
     //   })
     // },
     Logout({ commit }) {
-      return new Promise((resolve) => {
+      return new Promise(resolve => {
         commit('SET_USERINFO', {})
         removeUserInfo()
         // commit('SET_RESOURCE_LIST', [])

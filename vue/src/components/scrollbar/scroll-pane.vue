@@ -64,12 +64,18 @@ export default defineComponent({
         const prevTag = tagList[currentIndex - 1]
         const nextTag = tagList[currentIndex + 1]
         // the tag's offsetLeft after of nextTag
-        const afterNextTagOffsetLeft = nextTag.offsetLeft + nextTag.offsetWidth + tagAndTagSpacing
+        const afterNextTagOffsetLeft =
+          nextTag.offsetLeft + nextTag.offsetWidth + tagAndTagSpacing
         // the tag's offsetLeft before of prevTag
         const beforePrevTagOffsetLeft = prevTag.offsetLeft - tagAndTagSpacing
-        if ($scrollWrapper.scrollLeft < afterNextTagOffsetLeft - $containerWidth) { // 当前标签隐藏在右边
+        if (
+          $scrollWrapper.scrollLeft <
+          afterNextTagOffsetLeft - $containerWidth
+        ) {
+          // 当前标签隐藏在右边
           $scrollWrapper.scrollLeft = afterNextTagOffsetLeft - $containerWidth
-        } else if (beforePrevTagOffsetLeft < $scrollWrapper.scrollLeft) { // 当前标签隐藏在左边
+        } else if (beforePrevTagOffsetLeft < $scrollWrapper.scrollLeft) {
+          // 当前标签隐藏在左边
           $scrollWrapper.scrollLeft = beforePrevTagOffsetLeft
         }
       }

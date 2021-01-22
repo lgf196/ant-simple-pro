@@ -16,7 +16,11 @@ export const getRandomStr = () => {
  * @return {Boolean} 是否拥有权限
  */
 export const hasPermission = (route, resourceCodes = []) => {
-  if (route.meta && route.meta.permission && Array.isArray(route.meta.permission)) {
+  if (
+    route.meta &&
+    route.meta.permission &&
+    Array.isArray(route.meta.permission)
+  ) {
     return route.meta.permission.some(code => resourceCodes.includes(code))
   }
   return true
@@ -42,7 +46,7 @@ export const getAccessRoutes = (routes, resourceCodes) => {
  * @param {Array} routes 路由表
  * @return {Array} menus
  */
-export const getAccessMenus = (routes) => {
+export const getAccessMenus = routes => {
   return routes.map(item => {
     if (Array.isArray(item.children)) {
       item.children = getAccessMenus(item.children)
@@ -56,7 +60,7 @@ export const getAccessMenus = (routes) => {
  * @param {Array} menus 菜单
  * @return {Array} affixTags
  */
-export const getAffixTags = (menus) => {
+export const getAffixTags = menus => {
   return menus.filter(item => {
     if (Array.isArray(item.children)) {
       item.children = getAffixTags(item.children)
@@ -67,7 +71,7 @@ export const getAffixTags = (menus) => {
 
 export function rafThrottle(fn) {
   let locked = false
-  return function(...args) {
+  return function (...args) {
     if (locked) return
     locked = true
     window.requestAnimationFrame(() => {
@@ -79,9 +83,8 @@ export function rafThrottle(fn) {
 
 export function downloadExcel(data, filename) {
   const buf = Buffer.from(data, 'binary')
-  const b = new Blob(
-    [buf],
-    { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }
-  )
+  const b = new Blob([buf], {
+    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+  })
   saveAs(b, filename)
 }

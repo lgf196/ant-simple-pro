@@ -13,13 +13,17 @@
     @preview="onPreview"
   >
     <template v-if="isSingle">
-      <ComImage v-if="value" class="image" :src="value" alt="avatar" fit="cover" />
+      <ComImage
+        v-if="value"
+        class="upload-image"
+        :src="value"
+        alt="avatar"
+        fit="cover"
+      />
       <div v-else>
         <LoadingOutlined v-if="loading" />
         <PlusOutlined v-else />
-        <div class="ant-upload-text">
-          上传图片
-        </div>
+        <div class="ant-upload-text">上传图片</div>
       </div>
     </template>
     <template v-else>
@@ -29,10 +33,7 @@
 </template>
 
 <script>
-import {
-  LoadingOutlined,
-  PlusOutlined
-} from '@ant-design/icons-vue'
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
 export default {
   emits: ['update:value', 'change'],
@@ -117,7 +118,11 @@ export default {
       }
     },
     beforeUpload(file) {
-      if (this.isMultiple && this.limit && this.limit === this.fileList.length) {
+      if (
+        this.isMultiple &&
+        this.limit &&
+        this.limit === this.fileList.length
+      ) {
         this.$message.destroy()
         this.$message.error(`最多上传 ${this.limit} 张!`)
         return false
@@ -137,15 +142,18 @@ export default {
       return true
     },
     onRemove(file) {
-      const ret = this.fileList
-        .filter(v => v.uid !== file.uid)
-        .map(v => v.url)
+      const ret = this.fileList.filter(v => v.uid !== file.uid).map(v => v.url)
       this.emitValue(ret)
       return true
     },
     onPreview(file) {
       this.$imagePreview({
-        urlList: this.fileList.map(v => v.url || (v.response && v.response.data && v.response.data.url) || v.thumbUrl),
+        urlList: this.fileList.map(
+          v =>
+            v.url ||
+            (v.response && v.response.data && v.response.data.url) ||
+            v.thumbUrl
+        ),
         initialIndex: this.fileList.findIndex(v => v.uid === file.uid)
       })
     }
@@ -154,21 +162,21 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .image-uploader {
-    ::v-deep {
-      .ant-upload .ant-upload {
-        position: relative;
-      }
-      .com-image {
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        right: 8px;
-        bottom: 0;
-        .image {
-          height: auto;
-        }
+.image-uploader {
+  ::v-deep(.ant-upload) {
+    .ant-upload {
+      position: relative;
+    }
+    .com-image {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 0;
+      .image {
+        height: auto;
       }
     }
   }
+}
 </style>

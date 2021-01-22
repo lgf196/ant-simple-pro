@@ -76,7 +76,14 @@ const requestStart = (config, loadingCb, showLoading) => {
   }
 }
 // 响应正常
-const requestThenEnd = ({response, loadingCb, showLoading, showWarning, warningMsg, throwWarningError}) => {
+const requestThenEnd = ({
+  response,
+  loadingCb,
+  showLoading,
+  showWarning,
+  warningMsg,
+  throwWarningError
+}) => {
   loadingCb(false)
   endCount()
   if (showLoading) {
@@ -84,7 +91,8 @@ const requestThenEnd = ({response, loadingCb, showLoading, showWarning, warningM
   }
   removePending(response.config) // 在请求结束后，移除本次请求
   const responseData = response.data || {}
-  if (responseData.success) { // success code
+  if (responseData.success) {
+    // success code
     return responseData.data
   }
   if (responseData.code === 202) {
@@ -107,13 +115,21 @@ const requestThenEnd = ({response, loadingCb, showLoading, showWarning, warningM
   return genEmptyPromise()
 }
 // 响应异常
-const requestCatchEnd = ({error, loadingCb, showLoading, showError, errorMsg, throwHttpError}) => {
+const requestCatchEnd = ({
+  error,
+  loadingCb,
+  showLoading,
+  showError,
+  errorMsg,
+  throwHttpError
+}) => {
   loadingCb(false)
   endCount()
   if (showLoading) {
     // Loading.close()
   }
-  if (axios.isCancel(error)) { // 取消请求的错误，直接跳过
+  if (axios.isCancel(error)) {
+    // 取消请求的错误，直接跳过
     console.log('cancel request: ' + error.message)
     return genEmptyPromise()
   }
@@ -160,31 +176,35 @@ const pending = new Map()
  * 添加请求
  * @param {Object} config
  */
-const addPending = (config) => {
+const addPending = config => {
   const url = [
     config.method,
     config.url,
     qs.stringify(config.params),
     qs.stringify(config.data)
   ].join('&')
-  config.cancelToken = config.cancelToken || new axios.CancelToken(cancel => {
-    if (!pending.has(url)) { // 如果 pending 中不存在当前请求，则添加进去
-      pending.set(url, cancel)
-    }
-  })
+  config.cancelToken =
+    config.cancelToken ||
+    new axios.CancelToken(cancel => {
+      if (!pending.has(url)) {
+        // 如果 pending 中不存在当前请求，则添加进去
+        pending.set(url, cancel)
+      }
+    })
 }
 /**
  * 移除请求
  * @param {Object} config
  */
-const removePending = (config) => {
+const removePending = config => {
   const url = [
     config.method,
     config.url,
     qs.stringify(config.params),
     qs.stringify(config.data)
   ].join('&')
-  if (pending.has(url)) { // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
+  if (pending.has(url)) {
+    // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
     const cancel = pending.get(url)
     cancel(url)
     pending.delete(url)
@@ -209,12 +229,14 @@ const instance = axios.create({
   headers: {
     'Content-Type': FORMDATA_CONTENT_TYPE
   },
-  transformRequest: [function(data, headers) {
-    if (headers['Content-Type'] === FORMDATA_CONTENT_TYPE) {
-      return qs.stringify(data)
+  transformRequest: [
+    function (data, headers) {
+      if (headers['Content-Type'] === FORMDATA_CONTENT_TYPE) {
+        return qs.stringify(data)
+      }
+      return data
     }
-    return data
-  }]
+  ]
 })
 /**
  * @param {Object} options 请求配置参数
@@ -228,27 +250,39 @@ const instance = axios.create({
  * @param {String} [options.errorMsg=''] http错误提示
  * @return {Promise} Promise
  */
-const request = (
-  {
-    showWarning = true,
-    showError = true,
-    showLoading = true,
+const request = ({
+  showWarning = true,
+  showError = true,
+  showLoading = true,
     loadingCb = () => {}, // eslint-disable-line
-    throwWarningError = false,
-    throwHttpError = false,
-    warningMsg = '',
-    errorMsg = '',
-    ...options
-  } = {}
-) => {
+  throwWarningError = false,
+  throwHttpError = false,
+  warningMsg = '',
+  errorMsg = '',
+  ...options
+} = {}) => {
   requestStart(options, loadingCb, showLoading)
   return instance(options)
     .then(response => {
-      return requestThenEnd({response, loadingCb, showLoading, showWarning, warningMsg, throwWarningError})
+      return requestThenEnd({
+        response,
+        loadingCb,
+        showLoading,
+        showWarning,
+        warningMsg,
+        throwWarningError
+      })
     })
     .catch(error => {
       console.log('request catch', error)
-      return requestCatchEnd({error, loadingCb, showLoading, showError, errorMsg, throwHttpError})
+      return requestCatchEnd({
+        error,
+        loadingCb,
+        showLoading,
+        showError,
+        errorMsg,
+        throwHttpError
+      })
     })
 }
 export default request

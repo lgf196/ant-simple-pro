@@ -3,9 +3,9 @@
  */
 import imagePreview from '@/components/image/image-preview'
 import { formatDate, formatDateTime } from '@/utils/date'
-export default function(app) {
+export default function (app) {
   const g = app.config.globalProperties
-  g.$imageErrorHandler = function() {
+  g.$imageErrorHandler = function () {
     return true
   }
   g.$imagePreview = imagePreview

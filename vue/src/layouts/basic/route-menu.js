@@ -1,7 +1,7 @@
 // import { h } from 'vue'
 import MenuIcon from './menu-icon'
 
-const generateMenus = (menus) => {
+const generateMenus = menus => {
   return menus.map(item => {
     if (item.children && item.children.length) {
       const title = (
@@ -47,10 +47,12 @@ export default {
       this.updateMenu()
     },
     collapsed(val) {
-      if (val) { // 清空 openKeys
+      if (val) {
+        // 清空 openKeys
         this.lastOpenKeys = this.openKeys.slice()
         this.openKeys = []
-      } else { // 恢复 openKeys
+      } else {
+        // 恢复 openKeys
         this.openKeys = this.lastOpenKeys
       }
     }
@@ -79,7 +81,7 @@ export default {
   },
   render() {
     const { menus, collapsed, theme = 'light' } = this
-    const handleOpenChange = (openKeys) => {
+    const handleOpenChange = openKeys => {
       const latestOpenKey = openKeys.find(key => !this.openKeys.includes(key))
       if (!this.rootSubmenuKeys.includes(latestOpenKey)) {
         this.openKeys = openKeys
@@ -99,10 +101,6 @@ export default {
       },
       onOpenChange: handleOpenChange
     }
-    return (
-      <a-menu {...menuProps}>
-        {generateMenus(menus)}
-      </a-menu>
-    )
+    return <a-menu {...menuProps}>{generateMenus(menus)}</a-menu>
   }
 }

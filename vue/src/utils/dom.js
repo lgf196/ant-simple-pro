@@ -29,17 +29,16 @@ export function createImageFileInput() {
  */
 export function scrollTo(el, from = 0, to, duration = 500, endCallback) {
   if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = (
+    window.requestAnimationFrame =
       window.webkitRequestAnimationFrame ||
       window.mozRequestAnimationFrame ||
       window.msRequestAnimationFrame ||
-      function(callback) {
+      function (callback) {
         return window.setTimeout(callback, 1000 / 60)
       }
-    )
   }
   const difference = Math.abs(from - to)
-  const step = Math.ceil(difference / duration * 50)
+  const step = Math.ceil((difference / duration) * 50)
 
   function scroll(start, end, step) {
     if (start === end) {
@@ -47,9 +46,9 @@ export function scrollTo(el, from = 0, to, duration = 500, endCallback) {
       return
     }
 
-    let d = (start + step > end) ? end : start + step
+    let d = start + step > end ? end : start + step
     if (start > end) {
-      d = (start - step < end) ? end : start - step
+      d = start - step < end ? end : start - step
     }
 
     if (el === window) {
@@ -81,7 +80,8 @@ export function hasClass(el, cls) {
   if (!el || !cls) {
     return false
   }
-  if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.')
+  if (cls.indexOf(' ') !== -1)
+    throw new Error('className should not contain space.')
   if (el.classList) {
     return el.classList.contains(cls)
   }
@@ -158,9 +158,11 @@ const ieVersion = Number(document.documentMode)
  * @return {String} style 属性的驼峰格式
  */
 export function camelCase(name) {
-  return name.replace(SPECIAL_CHARS_REGEXP, (_, separator, letter, offset) => {
-    return offset ? letter.toUpperCase() : letter
-  }).replace(MOZ_HACK_REGEXP, 'Moz$1')
+  return name
+    .replace(SPECIAL_CHARS_REGEXP, (_, separator, letter, offset) => {
+      return offset ? letter.toUpperCase() : letter
+    })
+    .replace(MOZ_HACK_REGEXP, 'Moz$1')
 }
 
 /**
@@ -170,15 +172,15 @@ export function camelCase(name) {
  * @return {Function} handler 事件处理函数
  * @return {void}
  */
-export const on = (function() {
+export const on = (function () {
   if (document.addEventListener) {
-    return function(element, event, handler) {
+    return function (element, event, handler) {
       if (element && event && handler) {
         element.addEventListener(event, handler, false)
       }
     }
   }
-  return function(element, event, handler) {
+  return function (element, event, handler) {
     if (element && event && handler) {
       element.attachEvent('on' + event, handler)
     }
@@ -192,15 +194,15 @@ export const on = (function() {
  * @return {Function} handler 事件处理函数
  * @return {void}
  */
-export const off = (function() {
+export const off = (function () {
   if (document.removeEventListener) {
-    return function(element, event, handler) {
+    return function (element, event, handler) {
       if (element && event) {
         element.removeEventListener(event, handler, false)
       }
     }
   }
-  return function(element, event, handler) {
+  return function (element, event, handler) {
     if (element && event) {
       element.detachEvent('on' + event, handler)
     }
@@ -230,39 +232,46 @@ export function isScroll(el, vertical) {
  * @param {String} styleName 样式属性名
  * @return {String} style 样式
  */
-export const getStyle = ieVersion < 9 ? function(element, styleName) {
-  if (!element || !styleName) return null
-  styleName = camelCase(styleName)
-  if (styleName === 'float') {
-    styleName = 'styleFloat'
-  }
-  try {
-    switch (styleName) {
-      case 'opacity':
-        try {
-          return element.filters.item('alpha').opacity / 100
-        } catch (e) {
-          return 1.0
+export const getStyle =
+  ieVersion < 9
+    ? function (element, styleName) {
+        if (!element || !styleName) return null
+        styleName = camelCase(styleName)
+        if (styleName === 'float') {
+          styleName = 'styleFloat'
         }
-      default:
-        return (element.style[styleName] || element.currentStyle ? element.currentStyle[styleName] : null)
-    }
-  } catch (e) {
-    return element.style[styleName]
-  }
-} : function(element, styleName) {
-  if (!element || !styleName) return null
-  styleName = camelCase(styleName)
-  if (styleName === 'float') {
-    styleName = 'cssFloat'
-  }
-  try {
-    const computed = document.defaultView.getComputedStyle(element, '')
-    return element.style[styleName] || computed ? computed[styleName] : null
-  } catch (e) {
-    return element.style[styleName]
-  }
-}
+        try {
+          switch (styleName) {
+            case 'opacity':
+              try {
+                return element.filters.item('alpha').opacity / 100
+              } catch (e) {
+                return 1.0
+              }
+            default:
+              return element.style[styleName] || element.currentStyle
+                ? element.currentStyle[styleName]
+                : null
+          }
+        } catch (e) {
+          return element.style[styleName]
+        }
+      }
+    : function (element, styleName) {
+        if (!element || !styleName) return null
+        styleName = camelCase(styleName)
+        if (styleName === 'float') {
+          styleName = 'cssFloat'
+        }
+        try {
+          const computed = document.defaultView.getComputedStyle(element, '')
+          return element.style[styleName] || computed
+            ? computed[styleName]
+            : null
+        } catch (e) {
+          return element.style[styleName]
+        }
+      }
 
 /**
  * 设置 dom 元素样式
@@ -285,7 +294,9 @@ export function setStyle(element, styleName, value) {
   } else {
     styleName = camelCase(styleName)
     if (styleName === 'opacity' && ieVersion < 9) {
-      element.style.filter = isNaN(value) ? '' : 'alpha(opacity=' + value * 100 + ')'
+      element.style.filter = isNaN(value)
+        ? ''
+        : 'alpha(opacity=' + value * 100 + ')'
     } else {
       element.style[styleName] = value
     }
@@ -321,7 +332,11 @@ export function isInContainer(el, container) {
   const elRect = el.getBoundingClientRect()
   let containerRect = null
 
-  if ([window, document, document.documentElement, null, undefined].includes(container)) {
+  if (
+    [window, document, document.documentElement, null, undefined].includes(
+      container
+    )
+  ) {
     containerRect = {
       top: 0,
       right: window.innerWidth,
@@ -332,16 +347,26 @@ export function isInContainer(el, container) {
     containerRect = container.getBoundingClientRect()
   }
 
-  return elRect.top < containerRect.bottom &&
+  return (
+    elRect.top < containerRect.bottom &&
     elRect.bottom > containerRect.top &&
     elRect.right > containerRect.left &&
     elRect.left < containerRect.right
+  )
 }
 
 export function getWindowtWidth() {
-  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+  return (
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth
+  )
 }
 
 export function getWindowHeight() {
-  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+  return (
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
+  )
 }

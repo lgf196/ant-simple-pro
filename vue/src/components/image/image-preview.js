@@ -3,7 +3,7 @@ import ImageViewer from './image-viewer'
 
 let app = null
 
-export default function(options = {}) {
+export default function (options = {}) {
   const div = document.createElement('div')
   document.body.appendChild(div)
   const destroy = () => {
