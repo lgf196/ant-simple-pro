@@ -81,19 +81,21 @@ export const getOption = (): echarts.EChartOption => {
         `
       }
     },
-    series: [{
-      data: data.map(v => v.value),
-      type: 'bar',
-      barWidth: 25,
-      label: {
-        show: true,
-        position: 'insideLeft',
-        padding: [0, 0, 0, 8],
-        formatter(data: {value: number}) {
-          return data.value + '万'
+    series: [
+      {
+        data: data.map(v => v.value),
+        type: 'bar',
+        barWidth: 25,
+        label: {
+          show: true,
+          position: 'insideLeft',
+          padding: [0, 0, 0, 8],
+          formatter(data: { value: number }) {
+            return data.value + '万'
+          }
         }
       }
-    }],
+    ],
     animationDuration: 1400
   }
   return option

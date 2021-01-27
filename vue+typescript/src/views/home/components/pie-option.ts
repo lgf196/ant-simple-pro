@@ -1,6 +1,4 @@
-export const getOption = (
-  list: ChartDataItem[]
-): echarts.EChartOption => {
+export const getOption = (list: ChartDataItem[]): echarts.EChartOption => {
   const option: echarts.EChartOption = {
     color: ['#6394f9', '#62daaa', '#657797', '#f6c021', '#7666f9'],
     legend: {
@@ -24,7 +22,11 @@ export const getOption = (
         fontSize: 12
       },
       formatter(data) {
-        const { name, value, marker } = data as echarts.EChartOption.Tooltip.Format
+        const {
+          name,
+          value,
+          marker
+        } = data as echarts.EChartOption.Tooltip.Format
         return `
         <p style="margin-bottom: 8px">${name}</p>
         <div>${marker}

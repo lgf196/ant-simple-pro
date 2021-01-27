@@ -9,11 +9,14 @@ export default function (chartIns: Ref<echarts.ECharts | null>) {
 
   let timer: number | null = null
 
-  watch(() => appStore.collapsed, () => {
-    timer = window.setTimeout(() => {
-      onResize()
-    }, 500)
-  })
+  watch(
+    () => appStore.collapsed,
+    () => {
+      timer = window.setTimeout(() => {
+        onResize()
+      }, 500)
+    }
+  )
 
   onMounted(() => {
     window.addEventListener('resize', onResize)

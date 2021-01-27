@@ -1,11 +1,6 @@
 <template>
   <div class="com-page">
-    <a-form
-      ref="formRef"
-      :model="form"
-      layout="vertical"
-      :rules="rules"
-    >
+    <a-form ref="formRef" :model="form" layout="vertical" :rules="rules">
       <a-form-item label="头像" name="iconUrl">
         <ComUploadImage v-model:value="form.iconUrl"></ComUploadImage>
       </a-form-item>
@@ -32,7 +27,9 @@
         />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }">
-        <a-button type="primary" :loading="submitting" @click="onSubmit"> 提交 </a-button>
+        <a-button type="primary" :loading="submitting" @click="onSubmit">
+          提交
+        </a-button>
       </a-form-item>
     </a-form>
   </div>
@@ -49,8 +46,8 @@ export default defineComponent({
   setup() {
     const formRef = ref<Form | null>(null)
     const state = reactive({
-      labelCol: { xs: {span: 24}, sm: {span: 6} },
-      wrapperCol: { xs: {span: 24}, sm: {span: 18} },
+      labelCol: { xs: { span: 24 }, sm: { span: 6 } },
+      wrapperCol: { xs: { span: 24 }, sm: { span: 18 } },
       rules: {},
       submitting: false
     })
@@ -77,14 +74,12 @@ export default defineComponent({
       if (!formRef.value) {
         return
       }
-      formRef.value.validate()
+      formRef.value
+        .validate()
         .then(async () => {
           const params = toRaw(form)
           console.log('form', params)
-          await updateUser(
-            params,
-            v => (state.submitting = v)
-          )
+          await updateUser(params, v => (state.submitting = v))
           userStore.getUserInfo()
           message.destroy()
           message.success('保存成功')

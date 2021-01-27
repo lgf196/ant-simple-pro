@@ -33,7 +33,9 @@ export default defineComponent({
         return
       }
       nextTick(() => {
-        const wrap = scrollbar.$el.querySelector('.scrollbar__wrap') as HTMLElement
+        const wrap = scrollbar.$el.querySelector(
+          '.scrollbar__wrap'
+        ) as HTMLElement
         if (!wrap) {
           return
         }
@@ -61,7 +63,9 @@ export default defineComponent({
         return
       }
       nextTick(() => {
-        const wrap = scrollbar.$el.querySelector('.scrollbar__wrap') as HTMLElement
+        const wrap = scrollbar.$el.querySelector(
+          '.scrollbar__wrap'
+        ) as HTMLElement
         if (!wrap) {
           return
         }

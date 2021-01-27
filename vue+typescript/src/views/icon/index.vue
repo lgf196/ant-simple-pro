@@ -1,7 +1,11 @@
 <template>
   <div class="com-page">
     <div class="grid">
-      <div v-for="item of svgIconList" :key="item" @click="handleClipboard(generateIconCode(item), $event)">
+      <div
+        v-for="item of svgIconList"
+        :key="item"
+        @click="handleClipboard(generateIconCode(item), $event)"
+      >
         <a-tooltip placement="top">
           <template #title>
             {{ generateIconCode(item) }}

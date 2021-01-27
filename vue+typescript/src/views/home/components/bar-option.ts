@@ -1,6 +1,4 @@
-export const getOption = (
-  list: ChartDataItem[]
-): echarts.EChartOption => {
+export const getOption = (list: ChartDataItem[]): echarts.EChartOption => {
   const color = ['#6394f9', '#62daaa', '#657797', '#f6c021', '#7666f9']
   const option: echarts.EChartOption = {
     xAxis: {
@@ -61,25 +59,27 @@ export const getOption = (
         `
       }
     },
-    series: [{
-      data: [...list].reverse().map((v, index) => {
-        return {
-          ...v,
-          itemStyle: {
-            color: color[index]
+    series: [
+      {
+        data: [...list].reverse().map((v, index) => {
+          return {
+            ...v,
+            itemStyle: {
+              color: color[index]
+            }
+          }
+        }),
+        type: 'bar',
+        label: {
+          show: true,
+          position: 'insideLeft',
+          padding: [0, 0, 0, 8],
+          formatter(data: { value: number }) {
+            return data.value + '万'
           }
         }
-      }),
-      type: 'bar',
-      label: {
-        show: true,
-        position: 'insideLeft',
-        padding: [0, 0, 0, 8],
-        formatter(data: {value: number}) {
-          return data.value + '万'
-        }
       }
-    }],
+    ],
     animationDuration: 1400
   }
   return option

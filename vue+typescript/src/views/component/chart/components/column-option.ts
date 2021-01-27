@@ -86,11 +86,13 @@ export const getOption = (): echarts.EChartOption => {
         `
       }
     },
-    series: [{
-      data: data.map(v => v.value),
-      type: 'bar',
-      barWidth: 50
-    }],
+    series: [
+      {
+        data: data.map(v => v.value),
+        type: 'bar',
+        barWidth: 50
+      }
+    ],
     animationDuration: 1400
   }
   return option

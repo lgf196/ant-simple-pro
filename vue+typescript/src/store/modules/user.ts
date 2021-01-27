@@ -1,4 +1,10 @@
-import { VuexModule, getModule, Module, Mutation, Action } from 'vuex-module-decorators'
+import {
+  VuexModule,
+  getModule,
+  Module,
+  Mutation,
+  Action
+} from 'vuex-module-decorators'
 import store from '@/store'
 import { getUserInfo, getAccessMenus } from '@/api/global'
 import {
@@ -63,10 +69,7 @@ class User extends VuexModule {
 
   @Action
   async getUserData() {
-    const [user, menus] = await Promise.all([
-      getUserInfo(),
-      getAccessMenus()
-    ])
+    const [user, menus] = await Promise.all([getUserInfo(), getAccessMenus()])
     this.SET_USERINFO(user)
     this.SET_ACCESS_MENUS(menus)
   }

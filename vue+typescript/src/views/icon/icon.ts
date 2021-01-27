@@ -1,5 +1,6 @@
 const req = require.context('@/assets/icons/svg', false, /\.svg$/)
-const requireAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys()
+const requireAll = (requireContext: __WebpackModuleApi.RequireContext) =>
+  requireContext.keys()
 
 const re = /\.\/(.*)\.svg/
 

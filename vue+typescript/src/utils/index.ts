@@ -20,7 +20,12 @@ export const getRandomStr = () => {
 export const getAffixTags = (routes: RouteRecordRaw[] = []) => {
   let result: TagItemType[] = []
   routes.forEach(item => {
-    if (item.path && item.path !== '/:pathMatch(.*)*' && item.meta && item.meta.affix) {
+    if (
+      item.path &&
+      item.path !== '/:pathMatch(.*)*' &&
+      item.meta &&
+      item.meta.affix
+    ) {
       result.push(item)
     }
     if (Array.isArray(item.children)) {
@@ -32,7 +37,7 @@ export const getAffixTags = (routes: RouteRecordRaw[] = []) => {
 
 export function rafThrottle<T = Event>(fn: (e: T) => void) {
   let locked = false
-  return function(...args: unknown[]) {
+  return function (...args: unknown[]) {
     if (locked) return
     locked = true
     window.requestAnimationFrame(() => {
@@ -45,10 +50,9 @@ export function rafThrottle<T = Event>(fn: (e: T) => void) {
 
 export function downloadExcel(data: string, filename: string) {
   const buf = Buffer.from(data, 'binary')
-  const b = new Blob(
-    [buf],
-    { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }
-  )
+  const b = new Blob([buf], {
+    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+  })
   saveAs(b, filename)
 }
 
@@ -60,7 +64,7 @@ export const copy = (text: string, event: Event) => {
   clipboard.on('success', () => {
     clipboard.destroy()
   })
-  clipboard.on('error', (err) => {
+  clipboard.on('error', err => {
     console.log(err)
     clipboard.destroy()
   })

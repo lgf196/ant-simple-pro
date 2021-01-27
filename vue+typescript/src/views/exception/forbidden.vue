@@ -16,20 +16,20 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .forbidden {
-    flex-direction: column;
-    padding-top: 48px;
-  }
-  .forbidden-image {
-    font-size: 300px;
-  }
-  .title {
-    margin: 18px 0 16px;
-    font-size: 24px;
-    font-weight: 400;
-  }
-  .subtitle {
-    margin-bottom: 18px;
-    color: rgba(0, 0, 0, .45);
-  }
+.forbidden {
+  flex-direction: column;
+  padding-top: 48px;
+}
+.forbidden-image {
+  font-size: 300px;
+}
+.title {
+  margin: 18px 0 16px;
+  font-size: 24px;
+  font-weight: 400;
+}
+.subtitle {
+  margin-bottom: 18px;
+  color: rgba(0, 0, 0, 0.45);
+}
 </style>

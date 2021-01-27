@@ -69,15 +69,17 @@ export const getOption = (): echarts.EChartOption => {
         `
       }
     },
-    series: [{
-      data: data.map(v => v.value),
-      type: 'line',
-      symbolSize: 10,
-      label: {
-        show: true,
-        color: '#3c3c3c'
+    series: [
+      {
+        data: data.map(v => v.value),
+        type: 'line',
+        symbolSize: 10,
+        label: {
+          show: true,
+          color: '#3c3c3c'
+        }
       }
-    }],
+    ],
     animationDuration: 1400
   }
   return option
