@@ -86,7 +86,7 @@ export default {
     }
   }
   ::v-deep(.ant-layout-sider-children) {
-    .ant-menu {
+    .menu > .ant-menu {
       padding-top: 10px;
     }
     .ant-menu-inline {

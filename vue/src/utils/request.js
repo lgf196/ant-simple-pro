@@ -5,12 +5,7 @@ import { getToken } from '@/utils/local'
 import store from '@/store'
 // import router from '@/router'
 
-// 根据 VUE_APP_MODE 来切换接口跟路径
-const baseURL = {
-  dev: '/api',
-  test: 'http://115.29.224.69',
-  prod: 'http://115.29.224.69'
-}[process.env.VUE_APP_MODE]
+const baseURL = '/api'
 
 const FORMDATA_CONTENT_TYPE = 'application/x-www-form-urlencoded'
 

@@ -23,5 +23,5 @@ module.exports = {
   // 不要缩进Vue文件中的脚本和样式标签 default
   vueIndentScriptAndStyle: false,
   // 维持现有的行尾/换行
-  endOfLine: 'auto'
+  endOfLine: 'lf'
 }

@@ -63,6 +63,7 @@ import { createVNode } from 'vue'
 import LayoutTable from '@/components/layout-table'
 import { getMenus, getMenuTree, deleteMenu } from './service'
 import UpdateMenuModal from './update-menu-modal'
+import useAsync from '@/hooks/useAsync'
 const columns = [
   {
     dataIndex: 'index',
@@ -139,8 +140,17 @@ export default {
     ...mapGetters(['loading'])
   },
   created() {
-    this.query()
+    // this.query()
     this.queryMenuTree()
+  },
+  setup() {
+    const data = useAsync(() => {
+      return getMenus({
+        page: 1,
+        size: 10
+      })
+    })
+    console.log(data)
   },
   methods: {
     async query() {
