@@ -28,18 +28,22 @@ type scrollToType = {
   endCallback?: () => void
 }
 
-export function scrollTo({el, to, duration = 500, endCallback}: scrollToType) {
+export function scrollTo({
+  el,
+  to,
+  duration = 500,
+  endCallback
+}: scrollToType) {
   if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = (
+    window.requestAnimationFrame =
       window.webkitRequestAnimationFrame ||
-      function(callback) {
+      function (callback) {
         return window.setTimeout(callback, 1000 / 60)
       }
-    )
   }
   const from = el ? el.scrollTop : window.pageYOffset
   const difference = Math.abs(from - to)
-  const step = Math.ceil(difference / duration * 50)
+  const step = Math.ceil((difference / duration) * 50)
 
   function scroll(start: number, end: number, step: number) {
     if (start === end) {
@@ -47,9 +51,9 @@ export function scrollTo({el, to, duration = 500, endCallback}: scrollToType) {
       return
     }
 
-    let d = (start + step > end) ? end : start + step
+    let d = start + step > end ? end : start + step
     if (start > end) {
-      d = (start - step < end) ? end : start - step
+      d = start - step < end ? end : start - step
     }
 
     if (!el) {
@@ -71,9 +75,11 @@ const MOZ_HACK_REGEXP = /^moz([A-Z])/
  * @return {String} style 属性的驼峰格式
  */
 export function camelCase(name: string) {
-  return name.replace(SPECIAL_CHARS_REGEXP, (_, separator, letter, offset) => {
-    return offset ? letter.toUpperCase() : letter
-  }).replace(MOZ_HACK_REGEXP, 'Moz$1')
+  return name
+    .replace(SPECIAL_CHARS_REGEXP, (_, separator, letter, offset) => {
+      return offset ? letter.toUpperCase() : letter
+    })
+    .replace(MOZ_HACK_REGEXP, 'Moz$1')
 }
 
 /**
@@ -82,7 +88,10 @@ export function camelCase(name: string) {
  * @param {String} styleName 样式属性名 驼峰形式
  * @return {String} style 样式
  */
-export const getStyle = function(element: HTMLElement, styleName: keyof CSSStyleDeclaration) {
+export const getStyle = function (
+  element: HTMLElement,
+  styleName: keyof CSSStyleDeclaration
+) {
   if (!element || !styleName) {
     return null
   }
@@ -121,13 +130,19 @@ export function isScroll(el: HTMLElement, vertical: boolean) {
  * @param {String} value 样式属性值
  * @return {void}
  */
-export function setStyle(element: HTMLElement, styleName: keyof CSSStyleDeclaration, value: number) {
+export function setStyle(
+  element: HTMLElement,
+  styleName: keyof CSSStyleDeclaration,
+  value: number
+) {
   if (!element || !styleName) {
     return
   }
 
   if (styleName === 'opacity') {
-    element.style.filter = isNaN(value) ? '' : 'alpha(opacity=' + value * 100 + ')'
+    element.style.filter = isNaN(value)
+      ? ''
+      : 'alpha(opacity=' + value * 100 + ')'
   } else {
     // @ts-ignore
     element.style[styleName] = value
@@ -163,7 +178,11 @@ export function isInContainer(el: HTMLElement, container: HTMLElement) {
   const elRect = el.getBoundingClientRect()
   let containerRect = null
 
-  if ([window, document, document.documentElement, null, undefined].includes(container)) {
+  if (
+    [window, document, document.documentElement, null, undefined].includes(
+      container
+    )
+  ) {
     containerRect = {
       top: 0,
       right: window.innerWidth,
@@ -174,16 +193,26 @@ export function isInContainer(el: HTMLElement, container: HTMLElement) {
     containerRect = container.getBoundingClientRect()
   }
 
-  return elRect.top < containerRect.bottom &&
+  return (
+    elRect.top < containerRect.bottom &&
     elRect.bottom > containerRect.top &&
     elRect.right > containerRect.left &&
     elRect.left < containerRect.right
+  )
 }
 
 export function getWindowtWidth() {
-  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+  return (
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth
+  )
 }
 
 export function getWindowHeight() {
-  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+  return (
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
+  )
 }

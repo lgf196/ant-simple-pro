@@ -1,7 +1,5 @@
 import { defineComponent, PropType } from 'vue'
-import {
-  FilterOutlined
-} from '@ant-design/icons-vue'
+import { FilterOutlined } from '@ant-design/icons-vue'
 
 import { ColumnItemType } from './index'
 
@@ -20,16 +18,17 @@ export default defineComponent({
   render() {
     const columns = this.columns || []
     const popoverContent = (
-      <a-checkbox-group onChange={this.onChange} defaultValue={columns.map(v => v.key)}>
-        {
-          columns.map((item, index) => (
-            <div key={index}>
-              <a-checkbox value={item.key}>
-                <span>{item.title}</span>
-              </a-checkbox>
-            </div>
-          ))
-        }
+      <a-checkbox-group
+        onChange={this.onChange}
+        defaultValue={columns.map(v => v.key)}
+      >
+        {columns.map((item, index) => (
+          <div key={index}>
+            <a-checkbox value={item.key}>
+              <span>{item.title}</span>
+            </a-checkbox>
+          </div>
+        ))}
       </a-checkbox-group>
     )
     return (

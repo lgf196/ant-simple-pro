@@ -20,7 +20,7 @@ export default defineComponent({
       if (!chartRef.value) {
         return
       }
-      const chart = chartIns.value = window.echarts.init(chartRef.value)
+      const chart = (chartIns.value = window.echarts.init(chartRef.value))
       chart.setOption(getOption())
     }
 
@@ -32,7 +32,7 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-  .chart {
-    height: 400px;
-  }
+.chart {
+  height: 400px;
+}
 </style>

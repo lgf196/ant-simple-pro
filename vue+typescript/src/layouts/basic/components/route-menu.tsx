@@ -68,10 +68,12 @@ export default defineComponent({
       this.updateMenu()
     },
     collapsed(val) {
-      if (val) { // 清空 openKeys
+      if (val) {
+        // 清空 openKeys
         this.lastOpenKeys = this.openKeys.slice()
         this.openKeys = []
-      } else { // 恢复 openKeys
+      } else {
+        // 恢复 openKeys
         this.openKeys = this.lastOpenKeys
       }
     }
@@ -114,16 +116,12 @@ export default defineComponent({
       inlineCollapsed: collapsed,
       openKeys: this.openKeys,
       selectedKeys: this.selectedKeys,
-      onSelect: (menu: {selectedKeys: string[]}) => {
+      onSelect: (menu: { selectedKeys: string[] }) => {
         this.selectedKeys = menu.selectedKeys
         this.$emit('select', menu)
       },
       onOpenChange: handleOpenChange
     }
-    return (
-      <a-menu {...menuProps}>
-        {generateMenus(menus)}
-      </a-menu>
-    )
+    return <a-menu {...menuProps}>{generateMenus(menus)}</a-menu>
   }
 })

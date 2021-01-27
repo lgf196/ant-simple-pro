@@ -1,7 +1,5 @@
 import { h, defineComponent, PropType } from 'vue'
-import {
-  SyncOutlined
-} from '@ant-design/icons-vue'
+import { SyncOutlined } from '@ant-design/icons-vue'
 import { Table, Pagination } from 'ant-design-vue'
 import { Pagination as PaginationType } from 'ant-design-vue/types/pagination'
 import FilterColumns from './filter-columns'
@@ -71,62 +69,56 @@ export default defineComponent({
     }
     const p = this.pagination || {}
     const { current, pageSize, onChange, ...restP } = p
-    const paginationProps = Object.assign({}, {
-      showSizeChanger: true,
-      showQuickJumper: true,
-      showTotal: (total: number) => `共 ${total} 条`,
-      hideOnSinglePage: false,
-      defaultPageSize: p.pageSize || 10,
-      current,
-      pageSize,
-      onChange,
-      onShowSizeChange: onChange
-    }, restP)
+    const paginationProps = Object.assign(
+      {},
+      {
+        showSizeChanger: true,
+        showQuickJumper: true,
+        showTotal: (total: number) => `共 ${total} 条`,
+        hideOnSinglePage: false,
+        defaultPageSize: p.pageSize || 10,
+        current,
+        pageSize,
+        onChange,
+        onShowSizeChange: onChange
+      },
+      restP
+    )
     return (
       <a-config-provider getPopupContainer={() => this.$refs.wrapper}>
         <div ref="wrapper" class="wrapper">
           <a-spin spinning={this.loading}>
             <div class="layout-table">
-              {
-                this.$slots.search && (
-                  <div class="layout-table__header">
-                    {search()}
-                  </div>
-                )
-              }
+              {this.$slots.search && (
+                <div class="layout-table__header">{search()}</div>
+              )}
               <div class="layout-table__toolbar">
                 <div class="toolbar-left">{this.tableTitle}</div>
                 <div class="toolbar-right">
-                  <div class="toolbar-right__buttons">
-                    {buttons()}
-                  </div>
+                  <div class="toolbar-right__buttons">{buttons()}</div>
                   {this.$slots.buttons ? <a-divider type="vertical" /> : null}
                   <div class="toolbar-right__icons">
                     <a-tooltip title="刷新" placement="bottom">
                       <SyncOutlined onClick={this.onRefresh} />
                     </a-tooltip>
-                    <FilterColumns columns={columns} onChange={onFilterChange} />
+                    <FilterColumns
+                      columns={columns}
+                      onChange={onFilterChange}
+                    />
                     <TableSize onChange={onTableSizeChange} />
                     <Fullscreen el={() => this.$refs.wrapper} />
                     {extraIcons()}
                   </div>
                 </div>
               </div>
-              {
-                h(
-                  // eslint-disable-next-line
+              {h(
+                // eslint-disable-next-line
                   Table as any,
-                  tableProps,
-                  restSlots
-                )
-              }
+                tableProps,
+                restSlots
+              )}
               <div class="layout-table__pagination">
-                {
-                  h(
-                    Pagination,
-                    paginationProps
-                  )
-                }
+                {h(Pagination, paginationProps)}
               </div>
             </div>
           </a-spin>

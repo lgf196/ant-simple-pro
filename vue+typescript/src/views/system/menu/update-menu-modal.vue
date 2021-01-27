@@ -1,9 +1,5 @@
 <template>
-  <a-modal
-    :title="title"
-    :visible="visible"
-    @cancel="onClose"
-  >
+  <a-modal :title="title" :visible="visible" @cancel="onClose">
     <a-form
       ref="formRef"
       :model="form"
@@ -12,13 +8,25 @@
       :wrapper-col="wrapperCol"
     >
       <a-form-item label="菜单名字" name="title">
-        <a-input v-model:value="form.title" placeholder="请输入" allowClear></a-input>
+        <a-input
+          v-model:value="form.title"
+          placeholder="请输入"
+          allowClear
+        ></a-input>
       </a-form-item>
       <a-form-item label="菜单url" name="url">
-        <a-input v-model:value="form.url" placeholder="请输入" allowClear></a-input>
+        <a-input
+          v-model:value="form.url"
+          placeholder="请输入"
+          allowClear
+        ></a-input>
       </a-form-item>
       <a-form-item label="菜单icon" name="icon">
-        <a-input v-model:value="form.icon" placeholder="请输入" allowClear></a-input>
+        <a-input
+          v-model:value="form.icon"
+          placeholder="请输入"
+          allowClear
+        ></a-input>
       </a-form-item>
       <a-form-item label="上级菜单" name="pid">
         <a-cascader
@@ -34,14 +42,24 @@
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" :loading="submitting" @click="onSubmit">{{currentRow.id ? '编辑' : '创建'}}</a-button>
+      <a-button type="primary" :loading="submitting" @click="onSubmit">{{
+        currentRow.id ? '编辑' : '创建'
+      }}</a-button>
       <a-button @click="onReset">重置</a-button>
     </template>
   </a-modal>
 </template>
 
 <script lang="ts">
-import { defineComponent, nextTick, ref, reactive, toRefs, watch, computed } from 'vue'
+import {
+  defineComponent,
+  nextTick,
+  ref,
+  reactive,
+  toRefs,
+  watch,
+  computed
+} from 'vue'
 import { Canceler } from 'axios'
 import { message } from 'ant-design-vue'
 import { Form } from 'ant-design-vue/types/form/form'
@@ -90,22 +108,16 @@ export default defineComponent({
 
     const rules = computed(() => {
       return {
-        title: [
-          { required: true, message: '请输入菜单名字' }
-        ],
-        url: [
-          { required: true, message: '请输入菜单url' }
-        ],
-        icon: [
-          { required: !props.currentRow.id, message: '请输入菜单icon' }
-        ]
+        title: [{ required: true, message: '请输入菜单名字' }],
+        url: [{ required: true, message: '请输入菜单url' }],
+        icon: [{ required: !props.currentRow.id, message: '请输入菜单icon' }]
       }
     })
 
     // 打开弹窗时 回显数据
     watch(
       () => props.visible,
-      (newVal) => {
+      newVal => {
         if (newVal) {
           nextTick(() => {
             state.form = {
@@ -172,5 +184,5 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-  // ...
+// ...
 </style>

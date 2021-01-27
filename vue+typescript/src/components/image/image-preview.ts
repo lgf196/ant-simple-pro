@@ -17,7 +17,7 @@ const defaultOptions = {
   urlList: []
 }
 
-export default function(options: OptionsType = defaultOptions) {
+export default function (options: OptionsType = defaultOptions) {
   const div = document.createElement('div')
   document.body.appendChild(div)
   const destroy = () => {

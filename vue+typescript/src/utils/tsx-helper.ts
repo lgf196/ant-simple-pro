@@ -27,7 +27,7 @@ export function getSlot(slots: Slots, slot = 'default', data?: unknown) {
 export function extendSlots(slots: Slots, excludeKeys: string[] = []) {
   const slotKeys = Object.keys(slots)
   const ret: Record<string, unknown> = {}
-  slotKeys.map((key) => {
+  slotKeys.map(key => {
     if (excludeKeys.includes(key)) {
       return null
     }
@@ -39,7 +39,7 @@ export function extendSlots(slots: Slots, excludeKeys: string[] = []) {
 // Get events on attrs
 export function getListeners(attrs: Record<string, unknown>) {
   const listeners: Record<string, unknown> = {}
-  Object.keys(attrs).forEach((key) => {
+  Object.keys(attrs).forEach(key => {
     if (/^on/.test(key)) {
       listeners[key] = attrs[key]
     }

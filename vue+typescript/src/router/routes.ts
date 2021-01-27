@@ -105,9 +105,7 @@ export const basicRoutes: RouteRecordRaw[] = [
   }
 ]
 
-export const routes = [
-  ...basicRoutes
-]
+export const routes = [...basicRoutes]
 
 export default [
   {

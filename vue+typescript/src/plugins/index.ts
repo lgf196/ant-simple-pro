@@ -4,7 +4,7 @@ import initAnt from './ant'
 import initMethod from './method'
 import initGlobalComponent from './component'
 
-export default function(app: App) {
+export default function (app: App) {
   initAnt(app)
   // initConstant(app)
   initMethod(app)

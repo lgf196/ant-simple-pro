@@ -13,7 +13,10 @@ export type UpdateUsersParamsType = {
   email?: string
 }
 
-export const getUsers = (params: GetUsersParamsType, loadingCb: LoadingCallback) => {
+export const getUsers = (
+  params: GetUsersParamsType,
+  loadingCb: LoadingCallback
+) => {
   return request({
     method: 'get',
     url: '/user/find',

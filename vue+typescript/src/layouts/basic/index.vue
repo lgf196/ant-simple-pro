@@ -10,7 +10,7 @@
     }"
   >
     <template v-if="windowWidth > 750">
-      <SlideBar></SlideBar>
+      <SlideBar />
     </template>
     <a-drawer
       v-else
@@ -20,15 +20,19 @@
       v-model:visible="drawerVisible"
       :width="200"
     >
-      <SlideBar></SlideBar>
+      <SlideBar />
     </a-drawer>
     <div class="layout-content">
-      <HeaderBar @open-drawer="onOpenDrawer" :windowWidth="windowWidth" :drawerVisible="drawerVisible"></HeaderBar>
-      <TagsNav></TagsNav>
+      <HeaderBar
+        @open-drawer="onOpenDrawer"
+        :windowWidth="windowWidth"
+        :drawerVisible="drawerVisible"
+      />
+      <TagsNav />
       <main class="main">
-        <router-view/>
+        <router-view />
       </main>
-      <FooterBar class="footer"></FooterBar>
+      <FooterBar class="footer" />
     </div>
     <BackTop />
   </section>
@@ -62,11 +66,15 @@ export default defineComponent({
     const tagsNavVisible = computed(() => appStore.tagsNavVisible)
     const { width } = useResizeWidth()
 
-    watch(width, (newWidth) => {
-      appStore.TOGGLE_SLIDE_BAR(newWidth < 1200)
-    }, {
-      immediate: true
-    })
+    watch(
+      width,
+      newWidth => {
+        appStore.TOGGLE_SLIDE_BAR(newWidth < 1200)
+      },
+      {
+        immediate: true
+      }
+    )
 
     function onOpenDrawer() {
       drawerVisible.value = true

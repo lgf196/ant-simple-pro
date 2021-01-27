@@ -11,13 +11,11 @@
           :key="index"
           :value="item.value"
         >
-          {{item.title}}
+          {{ item.title }}
         </a-radio-button>
       </a-radio-group>
       <a href="https://github.com/intlify/vue-i18n-next" target="_blank">
-        <a-button type="link">
-          了解vue-i18n-next
-        </a-button>
+        <a-button type="link"> 了解vue-i18n-next </a-button>
       </a>
     </div>
     <a-list item-layout="vertical" size="large" :data-source="listData">
@@ -41,7 +39,7 @@
               <a :href="item.href">Ant Simple Pro</a>
             </template>
             <template #avatar>
-              <a-avatar :size="30" style="backgroundColor: #fff">
+              <a-avatar :size="30" style="backgroundcolor: #fff">
                 <template #icon>
                   <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
                 </template>
@@ -57,7 +55,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-vue'
+import {
+  StarOutlined,
+  LikeOutlined,
+  MessageOutlined
+} from '@ant-design/icons-vue'
 type ListDataItem = {
   href: string
   avatar: string
@@ -113,13 +115,13 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-  .com-page {
-    padding: 20px;
-  }
-  .icon-logo {
-    font-size: 30px;
-  }
-  ::v-deep .ant-list-item {
-    padding: 16px 24px;
-  }
+.com-page {
+  padding: 20px;
+}
+.icon-logo {
+  font-size: 30px;
+}
+::v-deep(.ant-list-item) {
+  padding: 16px 24px;
+}
 </style>

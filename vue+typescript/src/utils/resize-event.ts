@@ -5,7 +5,7 @@ export interface ResizeElement extends HTMLElement {
   __ro__: ResizeObserver
 }
 
-const resizeHandler = function(entries: ResizeObserverEntry[]) {
+const resizeHandler = function (entries: ResizeObserverEntry[]) {
   for (const entry of entries) {
     const listeners = (entry.target as ResizeElement).__resizeListeners__ || []
     if (listeners.length) {
@@ -16,7 +16,10 @@ const resizeHandler = function(entries: ResizeObserverEntry[]) {
   }
 }
 
-export const addResizeListener = function(element: ResizeElement, fn: () => void) {
+export const addResizeListener = function (
+  element: ResizeElement,
+  fn: () => void
+) {
   if (!element.__resizeListeners__) {
     element.__resizeListeners__ = []
     element.__ro__ = new ResizeObserver(resizeHandler)
@@ -25,7 +28,10 @@ export const addResizeListener = function(element: ResizeElement, fn: () => void
   element.__resizeListeners__.push(fn)
 }
 
-export const removeResizeListener = function(element: ResizeElement, fn: () => void) {
+export const removeResizeListener = function (
+  element: ResizeElement,
+  fn: () => void
+) {
   if (!element || !element.__resizeListeners__) {
     return
   }

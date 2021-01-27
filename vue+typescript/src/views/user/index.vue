@@ -14,22 +14,18 @@
       :onRefresh="query"
     >
       <template #search>
-        <a-form
-          ref="form"
-          layout="inline"
-          :model="{}"
-        >
+        <a-form ref="form" layout="inline" :model="{}">
           <a-form-item label="名称">
-            <a-input v-model:value="username" placeholder="请输入" allowClear></a-input>
+            <a-input
+              v-model:value="username"
+              placeholder="请输入"
+              allowClear
+            ></a-input>
           </a-form-item>
           <a-form-item>
             <a-space>
-              <a-button type="primary" @click="query">
-                查询
-              </a-button>
-              <a-button @click="onReset">
-                重置
-              </a-button>
+              <a-button type="primary" @click="query"> 查询 </a-button>
+              <a-button @click="onReset"> 重置 </a-button>
             </a-space>
           </a-form-item>
         </a-form>
@@ -50,11 +46,16 @@
       </template>
       <template #index="{ index }">
         <span>
-          {{index + 1}}
+          {{ index + 1 }}
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
+        <ComImage
+          className="avatar"
+          :src="text"
+          @click="onImageClick(text)"
+          fit="cover"
+        >
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -74,13 +75,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive, toRefs, computed, onMounted, unref } from 'vue'
+import {
+  defineComponent,
+  ref,
+  reactive,
+  toRefs,
+  computed,
+  onMounted,
+  unref
+} from 'vue'
 import userStore from '@/store/modules/user'
 import LayoutTable from '@/components/layout-table'
-import {
-  ArrowDownOutlined,
-  UserOutlined
-} from '@ant-design/icons-vue'
+import { ArrowDownOutlined, UserOutlined } from '@ant-design/icons-vue'
 import { getUsers, getUsersBuffer } from './service'
 import { downloadExcel } from '@/utils'
 import UpdateUserModal from './update-user-modal.vue'
@@ -223,10 +229,10 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 </style>

@@ -4,15 +4,18 @@
     <ul class="legend-list">
       <li
         class="legend-item"
-        :class="{disabled: disabledLegendIndexs.includes(index)}"
+        :class="{ disabled: disabledLegendIndexs.includes(index) }"
         v-for="(item, index) in originalList"
         :key="index"
         @click="onLegendItemClick(index)"
       >
-        <div class="round" :style="{backgroundColor: originalColors[index]}"></div>
+        <div
+          class="round"
+          :style="{ backgroundColor: originalColors[index] }"
+        ></div>
         <div class="content">
-          <span class="name">{{item.name}}</span>
-          <span class="percent">{{item.percent}}%</span>
+          <span class="name">{{ item.name }}</span>
+          <span class="percent">{{ item.percent }}%</span>
         </div>
       </li>
     </ul>
@@ -30,7 +33,7 @@ type DataItemType = {
 type StateType = {
   disabledLegendIndexs: number[]
   originalColors: string[]
-  originalList: Array<DataItemType & {percent?: number}>
+  originalList: Array<DataItemType & { percent?: number }>
 }
 export default defineComponent({
   setup() {
@@ -47,7 +50,14 @@ export default defineComponent({
     let chart: echarts.ECharts // eslint-disable-line
     let list: DataItemType[] = []
     let colors: string[] = []
-    const color = ['#6394f9', '#62daaa', '#657797', '#f6c021', '#e96b5a', '#74caed']
+    const color = [
+      '#6394f9',
+      '#62daaa',
+      '#657797',
+      '#f6c021',
+      '#e96b5a',
+      '#74caed'
+    ]
     const chartData = [
       { value: 27, name: '分类一' },
       { value: 25, name: '分类二' },
@@ -75,7 +85,7 @@ export default defineComponent({
       const values = state.originalList.map(v => v.value) // map value
       const total = values.reduce((x, y) => x + y, 0) // calc sum
       state.originalList = state.originalList.map(item => {
-        const percent = item.value / (total || 1) * 100
+        const percent = (item.value / (total || 1)) * 100
         return {
           name: item.name,
           value: item.value,
@@ -86,7 +96,7 @@ export default defineComponent({
       // 根据 数据 list 长度 和 prop color，补全不够的 colorItem
       const colorGroup = color
       const groupLen = color.length
-      const len = Math.ceil((list.length / groupLen) || 1)
+      const len = Math.ceil(list.length / groupLen || 1)
       const flattenColors = [].concat(...Array(len).fill(colorGroup)) // 扁平化
       state.originalColors = flattenColors.slice()
       colors = flattenColors.slice()
@@ -100,14 +110,22 @@ export default defineComponent({
     }
 
     function onLegendItemClick(clickIndex: number) {
-      if (state.disabledLegendIndexs.indexOf(clickIndex) >= 0) { // 选中集合中已有，放出当前点击数据
-        state.disabledLegendIndexs = state.disabledLegendIndexs.filter(v => v !== clickIndex)
-      } else { // 选中集合中没有，排除当前点击数据
+      if (state.disabledLegendIndexs.indexOf(clickIndex) >= 0) {
+        // 选中集合中已有，放出当前点击数据
+        state.disabledLegendIndexs = state.disabledLegendIndexs.filter(
+          v => v !== clickIndex
+        )
+      } else {
+        // 选中集合中没有，排除当前点击数据
         state.disabledLegendIndexs.push(clickIndex)
       }
       // 计算出新的数据后渲染
-      list = state.originalList.filter((_, i) => state.disabledLegendIndexs.indexOf(i) < 0)
-      colors = state.originalColors.filter((_, i) => state.disabledLegendIndexs.indexOf(i) < 0)
+      list = state.originalList.filter(
+        (_, i) => state.disabledLegendIndexs.indexOf(i) < 0
+      )
+      colors = state.originalColors.filter(
+        (_, i) => state.disabledLegendIndexs.indexOf(i) < 0
+      )
       renderChart()
     }
 
@@ -148,7 +166,8 @@ export default defineComponent({
     .round {
       background-color: #999 !important;
     }
-    .name, .percent {
+    .name,
+    .percent {
       color: #999;
     }
   }

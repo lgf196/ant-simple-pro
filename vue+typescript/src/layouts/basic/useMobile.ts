@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import appStore from '@/store/modules/app'
 import { isMobile } from '@/utils/system'
-export default function() {
+export default function () {
   const mobile = ref(false)
   const onResize = () => {
     const val = isMobile()

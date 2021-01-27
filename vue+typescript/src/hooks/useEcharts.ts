@@ -2,7 +2,7 @@ import { onBeforeUnmount, ref, Ref, watch } from 'vue'
 import echarts from 'echarts'
 // import appStore from '@/store/modules/app'
 
-export default function(
+export default function (
   chartDOM: Ref<HTMLDivElement | null>,
   option: Ref<echarts.EChartOption | echarts.EChartsResponsiveOption | null>
 ) {

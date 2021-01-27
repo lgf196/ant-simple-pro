@@ -83,7 +83,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive, toRefs, onMounted, onBeforeUnmount, toRaw } from 'vue'
+import {
+  defineComponent,
+  ref,
+  reactive,
+  toRefs,
+  onMounted,
+  onBeforeUnmount,
+  toRaw
+} from 'vue'
 import { message } from 'ant-design-vue'
 import { useForm } from '@ant-design-vue/use'
 import { Form } from 'ant-design-vue/types/form/form'
@@ -142,7 +150,9 @@ export default defineComponent({
     onMounted(() => {
       timer = window.setTimeout(() => {
         Object.assign(form, {
-          photo: ['https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg']
+          photo: [
+            'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg'
+          ]
         })
       }, 1000)
     })
