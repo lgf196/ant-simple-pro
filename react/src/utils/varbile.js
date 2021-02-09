@@ -31,7 +31,7 @@ export const isToken = () => localStorage.getItem('token') ? true : false;
  * @return string
  */
 export const environment = () => {
-  const env = process.env.REACT_APP_ENV;
+  const env = process.env.REACT_APP_ANT;
   let parps = null;
   switch (env) {
     case 'dev': // 开发环境下

@@ -88,10 +88,10 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "dev": "cross-env REACT_APP_ENV=dev EXTEND_ESLINT=true node scripts/start.js",
-    "build:alpha": "cross-env REACT_APP_ENV=alpha node scripts/build.js",
-    "build:preprod": "cross-env REACT_APP_ENV=preprod node scripts/build.js",
-    "build:prod": "cross-env REACT_APP_ENV=prod GENERATE_SOURCEMAP=false node scripts/build.js",
+    "dev": "cross-env ANT_ENV=dev node scripts/start.js",
+    "build:alpha": "cross-env ANT_ENV=alpha node scripts/build.js",
+    "build:preprod": "cross-env ANT_ENV=preprod node scripts/build.js",
+    "build:prod": "cross-env ANT_ENV=prod node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {

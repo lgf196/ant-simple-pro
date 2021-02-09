@@ -3,9 +3,11 @@ import { List, Card, Avatar, Progress, Col, Row } from 'antd';
 import { Pie, Bar } from '@ant-design/charts';
 import SvgIcon from '@/components/svgIcon';
 import logon from '@/assets/image/pic.svg'
-
+import { environment } from '@/utils/varbile'
 const index = memo(function index() {
+  console.log('environment', environment())
   const { Meta } = Card
+
   const list = [
     {
       title: 'vue',
