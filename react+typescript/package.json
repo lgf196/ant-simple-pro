@@ -92,16 +92,16 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "dev":"cross-env REACT_APP_ENV=dev EXTEND_ESLINT=true node scripts/start.js",
-    "build:alpha":"cross-env REACT_APP_ENV=alpha node scripts/build.js",
-    "build:preprod":"cross-env REACT_APP_ENV=preprod node scripts/build.js",
-    "build:prod":"cross-env REACT_APP_ENV=prod GENERATE_SOURCEMAP=false node scripts/build.js",
-    "test":"node scripts/test.js"
+    "dev": "cross-env ANT_ENV=dev node scripts/start.js",
+    "build:alpha": "cross-env ANT_ENV=alpha node scripts/build.js",
+    "build:preprod": "cross-env ANT_ENV=preprod node scripts/build.js",
+    "build:prod": "cross-env ANT_ENV=prod node scripts/build.js",
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app",
-    "rules":{
-      "jsx-a11y/anchor-is-valid":"off"
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off"
     }
   },
   "browserslist": {
