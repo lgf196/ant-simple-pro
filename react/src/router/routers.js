@@ -98,6 +98,38 @@ export const menuRouter = [
     ]
   },
   {
+    path: '/charts',
+    title: '图表',
+    component: FatherLayout,
+    routes: [
+      {
+        exact: true,
+        path: '/charts/ordinary',
+        component: HocRouter(lazy(() => import('@/pages/charts/ordinary'))),
+        title: '普通图表',
+      },
+      {
+        exact: true,
+        path: '/charts/customize',
+        component: HocRouter(lazy(() => import('@/pages/charts/customize'))),
+        title: '自定义',
+      },
+    ]
+  },
+  {
+    path: '/form',
+    title: '表单页',
+    component: FatherLayout,
+    routes: [
+      {
+        exact: true,
+        path: '/form/basic',
+        component: HocRouter(lazy(() => import('@/pages/form/basic'))),
+        title: '基础表单',
+      },
+    ]
+  },
+  {
     path: '/404',
     title: '404',
     component: Error,
