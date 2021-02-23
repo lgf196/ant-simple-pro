@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Pie } from '@ant-design/charts';
+import Describle from './describle'
+import { Col, Row } from 'antd';
 
 const DemoPie = ({data}) => {
 
@@ -53,6 +55,7 @@ const DemoPie = ({data}) => {
     data,
     angleField: 'value',
     seriesField: 'category',
+    legend: false,
     radius: 1,
     innerRadius: 0.6,
     label: {
@@ -66,7 +69,6 @@ const DemoPie = ({data}) => {
     },
     colorField: 'type',
     color: ({type}) => {
-      console.log('type', type)
       if(type === '销售量'){
         return '#3aa1ff';
       }else if(type === '订单量'){
@@ -105,14 +107,12 @@ const DemoPie = ({data}) => {
     newItem.checked = !newItem.checked;
     const currentLegend = [...legendData];
     currentLegend[i] = newItem;
-
     const filteredLegendData = currentLegend
       .filter((l) => l.checked)
-      .map((l) => l.category);
-
+      .map((l) => l.type);
     const pieChart = ref.current.chart;
     if (pieChart) {
-      pieChart.filter("category", (val) => {
+      pieChart.filter("type", (val) => {
         return filteredLegendData.indexOf(val) > -1;
       });
       pieChart.render();
@@ -124,10 +124,30 @@ const DemoPie = ({data}) => {
   const pieDom = useMemo(() => {
     return <Pie {...config} chartRef={ref} />;
   }, [data]);
-
+  console.log('legendData', legendData)
   return (
     <>
-      {pieDom}
+      <Row gutter={[15, 15]}>
+        <Col xs={24} sm={12} md={12} lg={12} xl={12}>
+          {pieDom}
+        </Col>
+        <Col xs={24} sm={12} md={12} lg={12} xl={12}>
+          <div style={{
+            height:'100%',
+            display:'flex',
+            flexWrap:'wrap',
+            justifyContent:'center',
+            alignItems:'center'
+          }}>
+          {
+            legendData.map((item,index)=>(
+                <Describle title={item.type} key={index} color={item.checked ? item.color : "#aaa" }
+                value={item.value} onClick={()=>handleLegendClick(item, index)}/>
+            ))
+          }
+          </div>
+        </Col>
+      </Row>
     </>
   );
 };

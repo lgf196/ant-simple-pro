@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PieCompent from './components/pieCustomize'
 
 const DemoPie = () => {
+
   var data = [
     {
       type: '销售量',
@@ -22,9 +23,9 @@ const DemoPie = () => {
   ];
 
   return (
-    <>
+    <div className='bgW padding-10px'>
       <PieCompent data={data} />
-    </>
+    </div>
   );
 };
 
