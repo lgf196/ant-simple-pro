@@ -88,9 +88,6 @@ const DemoPie = ({data}) => {
           overflow: 'hidden',
           textOverflow: 'ellipsis',
         },
-        // formatter: function formatter() {
-        //   return 'AntV\nG2Plot';
-        // },
         customHtml:()=>(
           <>
             <p style={{color: 'rgba(0,0,0,.45)',fontWeight: 400,fontSize: '14px'}}>销售额</p>
@@ -124,7 +121,6 @@ const DemoPie = ({data}) => {
   const pieDom = useMemo(() => {
     return <Pie {...config} chartRef={ref} />;
   }, [data]);
-  console.log('legendData', legendData)
   return (
     <>
       <Row gutter={[15, 15]}>

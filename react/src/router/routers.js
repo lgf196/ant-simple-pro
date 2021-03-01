@@ -5,6 +5,9 @@ import BasicLayout from '@/layouts/basic'
 import { Redirect } from 'react-router-dom'
 import Error from '@/pages/error'
 import Login from '@/pages/login'
+import MapCompent from '@/pages/visualization/map'
+import { lazyComponent } from '@/utils/function'
+
 /**
  * @description 没有权限和不依赖BasicLayout组价的路由
 */
@@ -18,7 +21,12 @@ export const noLayoutRouter = [
     path: '/login',
     exact: true,
     component: Login,
-  }
+  },
+  {
+    path: '/map',
+    exact: true,
+    component: MapCompent,
+  },
 ]
 /**
  * @descriptio 含BasicLayout布局路由，静态
@@ -27,20 +35,20 @@ export const staticRouter = [
   {
     exact: true,
     path: '/home',
-    component: HocRouter(lazy(() => import('@/pages/home'))),
+    component: HocRouter(lazyComponent('home')),
     title: '首页',
   },
   {
     exact: true,
     path: '/userInfo',
     title: '用户信息',
-    component: HocRouter(lazy(() => import('@/pages/user/userInfo'))),
+    component: HocRouter(lazyComponent('user/userInfo')),
   },
   {
     exact: true,
     path: '/globalization',
     title: '国际化',
-    component: HocRouter(lazy(() => import('@/pages/globalization'))),
+    component: HocRouter(lazyComponent('globalization')),
   },
 ];
 /**
@@ -55,7 +63,7 @@ export const menuRouter = [
       {
         exact: true,
         path: '/system/menu',
-        component: HocRouter(lazy(() => import('@/pages/stystem/menu'))),
+        component: HocRouter(lazyComponent('stystem/menu')),
         title: '菜单管理',
       },
     ]
@@ -64,7 +72,7 @@ export const menuRouter = [
     exact: true,
     path: '/userManage',
     title: '用户管理',
-    component: HocRouter(lazy(() => import('@/pages/user'))),
+    component: HocRouter(lazyComponent('user')),
   },
   {
     path: '/component',
@@ -105,13 +113,13 @@ export const menuRouter = [
       {
         exact: true,
         path: '/charts/ordinary',
-        component: HocRouter(lazy(() => import('@/pages/charts/ordinary'))),
+        component: HocRouter(lazyComponent('charts/ordinary')),
         title: '普通图表',
       },
       {
         exact: true,
         path: '/charts/customize',
-        component: HocRouter(lazy(() => import('@/pages/charts/customize'))),
+        component: HocRouter(lazyComponent('charts/customize')),
         title: '自定义',
       },
     ]
@@ -124,7 +132,7 @@ export const menuRouter = [
       {
         exact: true,
         path: '/form/basic',
-        component: HocRouter(lazy(() => import('@/pages/form/basic'))),
+        component: HocRouter(lazyComponent('form/basic')),
         title: '基础表单',
       },
     ]

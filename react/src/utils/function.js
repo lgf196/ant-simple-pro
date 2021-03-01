@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ lazy } from 'react'
 import { Modal, message } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { requestCode } from './varbile'
@@ -57,4 +57,8 @@ export const backTopAnimate = (target = document.documentElement || document.bod
   }
 
   window.requestAnimationFrame(frameFunc);
+}
+
+export const lazyComponent= (path)=> {
+  return lazy(() => import(/* webpackChunkName: '[request]' */`@/pages/${path}`))
 }
