@@ -141,6 +141,12 @@ export const menuRouter = [
         component: HocRouter(lazyComponent('form/findTemplate')),
         title: '查询模板',
       },
+      {
+        exact: true,
+        path: '/form/advancedForm',
+        component: HocRouter(lazyComponent('form/advancedForm')),
+        title: '高级表单',
+      },
     ]
   },
   {
