@@ -82,6 +82,7 @@ export const upload=asyncHandler(async (req: Request, res: Response, next: NextF
                 fs.unlinkSync(localFile);    // 上传之后删除本地文件
                 sendResponse(res, 200, sucessCallbackVal(code.successCode,{url:imageSrc}, '成功',true));
             }).catch(function (err) {
+                console.log(`err`, err)
                 fs.unlinkSync(localFile);    // 上传之后删除本地文件
                 sendResponse(res, 102, sucessCallbackVal(code.failedCode, err, '上传失败',false));
             });
