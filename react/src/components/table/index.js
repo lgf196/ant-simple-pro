@@ -1,7 +1,7 @@
 import React, { memo } from 'react'
 import { Table } from 'antd';
 
-const TableCompent = memo(function TableCompent({ columns, dataSource, loading = true, rowSelection, bordered = false, ...props }) {
+const TableCompent = memo(function TableCompent({ columns, id='id',dataSource, loading = true, rowSelection, bordered = false, ...props }) {
   return (
     <>
       <Table
@@ -9,7 +9,7 @@ const TableCompent = memo(function TableCompent({ columns, dataSource, loading =
         columns={columns}
         dataSource={dataSource}
         pagination={false}
-        rowKey='id'
+        rowKey={id}
         bordered={bordered}
         rowSelection={rowSelection}
         loading={loading}

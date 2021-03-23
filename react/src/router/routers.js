@@ -131,6 +131,12 @@ export const menuRouter = [
     routes: [
       {
         exact: true,
+        path: '/form/tableForm',
+        component: HocRouter(lazyComponent('form/tableForm')),
+        title: '表格表单',
+      },
+      {
+        exact: true,
         path: '/form/basic',
         component: HocRouter(lazyComponent('form/basic')),
         title: '基础表单',
@@ -148,6 +154,12 @@ export const menuRouter = [
         title: '高级表单',
       },
     ]
+  },
+  {
+    exact: true,
+    path: '/table',
+    title: '表格',
+    component: HocRouter(lazyComponent('table')),
   },
   {
     path: '/404',
