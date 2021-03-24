@@ -156,6 +156,19 @@ export const menuRouter = [
     ]
   },
   {
+    path: '/editor',
+    title: '编辑器',
+    component: FatherLayout,
+    routes: [
+      {
+        exact: true,
+        path: '/editor/codemirror',
+        component: HocRouter(lazyComponent('editor/codemirror')),
+        title: '代码编辑器',
+      }
+    ]
+  },
+  {
     exact: true,
     path: '/table',
     title: '表格',
