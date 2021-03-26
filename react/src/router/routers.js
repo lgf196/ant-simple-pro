@@ -165,6 +165,18 @@ export const menuRouter = [
         path: '/editor/codemirror',
         component: HocRouter(lazyComponent('editor/codemirror')),
         title: '代码编辑器',
+      },
+      {
+        exact: true,
+        path: '/editor/jsonEditor',
+        component: HocRouter(lazyComponent('editor/jsonEditor')),
+        title: 'json编辑器',
+      },
+      {
+        exact: true,
+        path: '/editor/richTextEditor',
+        component: HocRouter(lazyComponent('editor/richTextEditor')),
+        title: '富文本编辑器',
       }
     ]
   },
