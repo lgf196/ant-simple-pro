@@ -177,6 +177,12 @@ export const menuRouter = [
         path: '/editor/richTextEditor',
         component: HocRouter(lazyComponent('editor/richTextEditor')),
         title: '富文本编辑器',
+      },
+      {
+        exact: true,
+        path: '/editor/graphicsEditor',
+        component: HocRouter(lazyComponent('editor/graphicsEditor')),
+        title: '图形编辑器',
       }
     ]
   },

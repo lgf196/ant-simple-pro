@@ -1,0 +1,17 @@
+@import 'src/assets/scss/varible.scss';
+.graphics{
+  @include wh(100%,500px);
+  display: flex;
+}
+.sidebar{
+  width: $siderbarWidth;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+.content{
+  height: 100%;
+  flex: 1;
+  margin-left: 8px;
+  margin-right: 8px;
+  box-shadow: 0 0 10px 1px #e9e9e9;
+}
