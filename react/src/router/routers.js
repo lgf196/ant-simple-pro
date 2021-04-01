@@ -183,6 +183,12 @@ export const menuRouter = [
         path: '/editor/graphicsEditor',
         component: HocRouter(lazyComponent('editor/graphicsEditor')),
         title: '图形编辑器',
+      },
+      {
+        exact: true,
+        path: '/editor/markdown',
+        component: HocRouter(lazyComponent('editor/markdown')),
+        title: 'markdown编辑器',
       }
     ]
   },
