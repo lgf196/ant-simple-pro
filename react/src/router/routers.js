@@ -199,6 +199,24 @@ export const menuRouter = [
     component: HocRouter(lazyComponent('table')),
   },
   {
+    exact: true,
+    path: '/emoticons',
+    title: '表情库',
+    component: HocRouter(lazyComponent('emoticons')),
+  },
+  {
+    exact: true,
+    path: '/copy',
+    title: '复制',
+    component: HocRouter(lazyComponent('copy')),
+  },
+  {
+    exact: true,
+    path: '/qrcode',
+    title: '二维码',
+    component: HocRouter(lazyComponent('qrCode')),
+  },
+  {
     path: '/404',
     title: '404',
     component: Error,
