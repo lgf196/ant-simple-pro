@@ -81,27 +81,21 @@ export const menuRouter = [
     routes: [
       {
         exact: true,
-        path: '/component/chart',
-        title: '图表',
-        component: HocRouter(lazy(() => import('@/pages/package/chart'))),
-      },
-      {
-        exact: true,
         path: '/component/everUse',
-        component: HocRouter(lazy(() => import('@/pages/package/everUse'))),
+        component: HocRouter(lazyComponent('package/everUse')),
         title: '常用组件',
       },
       {
         exact: true,
-        path: '/component/form',
-        component: HocRouter(lazy(() => import('@/pages/package/form'))),
-        title: '表单组件',
+        path: '/component/colorPickers',
+        component: HocRouter(lazyComponent('package/colorPickers')),
+        title: '色板',
       },
       {
         exact: true,
-        path: '/component/table',
-        component: HocRouter(lazy(() => import('@/pages/package/table'))),
-        title: 'table组件',
+        path: '/component/downFile',
+        component: HocRouter(lazyComponent('package/downFile')),
+        title: '下载文件',
       },
     ]
   },
