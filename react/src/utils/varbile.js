@@ -52,3 +52,27 @@ export const environment = () => {
   }
   return parps;
 }
+
+/**
+ * @description 生成随机26位字符串
+ * @return {String} 字符串
+ */
+ export const getRandomStr = () => {
+  return new Date().getTime() + Math.random().toString(16).slice(2)
+}
+
+/**
+ * @author lgf
+ * @description 判断json是否为空
+ * @param {Object} json
+ * @return {Number} 将有值得数据进行累加
+ */
+ export const isJsonVal = (json) => {
+  let jsonLength = 0;
+  for (var i in json){
+    if(json[i]!==undefined && json[i]!=='undefined' && json[i]!==null){
+      jsonLength++;
+    }
+  }
+  return jsonLength;
+}

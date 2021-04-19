@@ -97,6 +97,18 @@ export const menuRouter = [
         component: HocRouter(lazyComponent('package/downFile')),
         title: '下载文件',
       },
+      {
+        exact: true,
+        path: '/component/editUploadImage',
+        component: HocRouter(lazyComponent('package/editUploadImage')),
+        title: '图片剪辑',
+      },
+      {
+        exact: true,
+        path: '/component/rightClickCompent',
+        component: HocRouter(lazyComponent('package/rightClickCompent')),
+        title: '右键组件',
+      },
     ]
   },
   {
@@ -209,6 +221,12 @@ export const menuRouter = [
     path: '/qrcode',
     title: '二维码',
     component: HocRouter(lazyComponent('qrCode')),
+  },
+  {
+    exact: true,
+    path: '/drag',
+    title: '拖拽',
+    component: HocRouter(lazyComponent('drag')),
   },
   {
     path: '/404',

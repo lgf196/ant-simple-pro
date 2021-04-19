@@ -22,7 +22,7 @@ const Index = memo(function Index() {
 
   const [form] = Form.useForm();
 
-  const [base64Url,setBase64Url] = useState();
+  const [base64Url,setBase64Url] = useState(Logo);
 
   const [config,setConfig] = useSetState(defalutVal);
 
@@ -38,7 +38,9 @@ const Index = memo(function Index() {
     }]})
   }, [])
 
-  const onFinish = (values) => setConfig(Object.assign({},values,{logoUrl:base64Url}));
+  const onFinish = (values) => {
+    setConfig(Object.assign({},values,{logoUrl:base64Url}))
+  };
 
   const dowm = ()=>{
     const canvasImg = document.getElementById('qrCode');
@@ -86,7 +88,7 @@ const Index = memo(function Index() {
             <Form.Item label="二维码大小" name="size" rules={[{ required: true, message: '请填写' }]}>
               <InputNumber min={50}/>
             </Form.Item>
-            <Form.Item label="中间logo图url" name="logoUrl"  valuePropName="fileList" >
+            <Form.Item label={(<p>中间logo图url<span style={{color:'red'}}>必须是透明的底</span></p>)} name="logoUrl"  valuePropName="fileList" >
               <ImgUpload limit={1} onChange={handleChnage} />
             </Form.Item>
             <Form.Item label="logon宽" name="logoW" >

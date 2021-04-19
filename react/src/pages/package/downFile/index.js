@@ -12,7 +12,6 @@ const styel = {
   height:'320px'
 }
 
-
 const Index = memo(function Index(props) {
 
   const [value, setValue] = useState(1);
