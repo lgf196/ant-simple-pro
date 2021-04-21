@@ -3,9 +3,21 @@ import NoData from '@/components/noData'
 import { LayoutTableComponent } from '@/components/layoutTable'
 import { SAGA_GET_USER_LIST } from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
-import { Image } from 'antd';
-import { export_txt_to_zip } from '@/utils/downZip'
-import { tHeader,filterVal,fileDataformat } from '@/pages/excel/exportExcel'
+import { Image,Radio,Button } from 'antd';
+import { export_json_to_excel } from '@/utils/downExcel'
+
+export const tHeader = ['Id', 'Email', '名称', '介绍', '头像'];
+
+export const filterVal = ['id', 'email', 'username', 'introduct', 'iconUrl'];
+
+/**
+ * @param {Array<any>} list 要处理的数据
+ * @param {Array<any>} filterVal 过滤数据的key
+ * @returns {Array<any[]>} 新的二维数组
+ */
+export const fileDataformat = (list,filterVal )=>{
+  return  list.map(item=>filterVal.map(k=>item[k]));
+}
 
 const User = memo(function User({ dispatch, getUserList, loading }) {
 
@@ -55,7 +67,11 @@ const User = memo(function User({ dispatch, getUserList, loading }) {
     }
   ];
 
+  const typeList = ['xlsx','csv','txt'];
+
   const [ dowmLoading,setDowmLoading ] = useState(false);
+
+  const [ type,setType ] = useState('xlsx');
 
   const initFetch = useCallback(() => dispatch({ type: SAGA_GET_USER_LIST}), [dispatch]);
 
@@ -63,12 +79,18 @@ const User = memo(function User({ dispatch, getUserList, loading }) {
     initFetch()
   }, [initFetch]);
 
+  const typeChange = useCallback((e)=>setType(e.target.value));
+
   const datas = {
     btnGrounp: [{
-      title:  '下载zip',
-      onClick: (e) => dowmZip(),
-      iconClass: 'zip',
-      loading:dowmLoading
+      component: (<>
+        <Radio.Group onChange={typeChange} defaultValue={type}>
+          {typeList.map(item=>(
+            <Radio value={item} key={item}>{item}</Radio>
+          ))}
+        </Radio.Group>
+        <Button type="primary" onClick={()=>dowmZip()} loading={dowmLoading}>导出{type}</Button>
+      </>)
     }],
     tableProps: { columns, dataSource: getUserList },
     receive: () => initFetch(),
@@ -77,7 +99,13 @@ const User = memo(function User({ dispatch, getUserList, loading }) {
 
   const dowmZip = async ()=>{
     setDowmLoading(true);
-    await export_txt_to_zip(tHeader, fileDataformat(getUserList,filterVal), 'user','user');
+    await export_json_to_excel({
+      header: tHeader,
+      data:fileDataformat(getUserList,filterVal),
+      filename: 'user',
+      autoWidth: true,
+      bookType: type
+    });
     setDowmLoading(false);
   }
 

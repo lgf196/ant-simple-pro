@@ -240,6 +240,25 @@ export const menuRouter = [
     component: HocRouter(lazyComponent('zip')),
   },
   {
+    path: '/excel',
+    title: 'excel',
+    component: FatherLayout,
+    routes: [
+      {
+        exact: true,
+        path: '/excel/export-excel',
+        component: HocRouter(lazyComponent('excel/exportExcel')),
+        title: '导出Excel',
+      },
+      {
+        exact: true,
+        path: '/excel/select-export-excel',
+        component: HocRouter(lazyComponent('excel/selectExportExcel')),
+        title: '导出选择项',
+      }
+    ]
+  },
+  {
     path: '/404',
     title: '404',
     component: Error,

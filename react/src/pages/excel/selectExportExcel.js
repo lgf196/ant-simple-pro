@@ -1,10 +1,13 @@
 import React, { memo, useEffect, useCallback, useState } from 'react'
+import { useSetState } from '@/hooks'
 import NoData from '@/components/noData'
 import { LayoutTableComponent } from '@/components/layoutTable'
 import { SAGA_GET_USER_LIST } from '@/redux/constants/sagaType'
 import { connect } from 'react-redux';
-import { Image } from 'antd';
-import { export_txt_to_zip } from '@/utils/downZip'
+import { Image,Radio,Button } from 'antd';
+import { export_json_to_excel } from '@/utils/downExcel'
+import { requestCode } from '@/utils/varbile'
+import { toast } from '@/utils/function'
 import { tHeader,filterVal,fileDataformat } from '@/pages/excel/exportExcel'
 
 const User = memo(function User({ dispatch, getUserList, loading }) {
@@ -55,7 +58,13 @@ const User = memo(function User({ dispatch, getUserList, loading }) {
     }
   ];
 
+  const [selectAllData, setSelectAllData] = useSetState({selectedRowKeys:[],selectedRows:[]});
+
+  const typeList = ['xlsx','csv','txt'];
+
   const [ dowmLoading,setDowmLoading ] = useState(false);
+
+  const [ type,setType ] = useState('xlsx');
 
   const initFetch = useCallback(() => dispatch({ type: SAGA_GET_USER_LIST}), [dispatch]);
 
@@ -63,22 +72,55 @@ const User = memo(function User({ dispatch, getUserList, loading }) {
     initFetch()
   }, [initFetch]);
 
+  const typeChange = useCallback((e)=>setType(e.target.value));
+
+  const rowSelection = {
+    onChange: useCallback((selectedRowKeys, selectedRows) => {
+      setSelectAllData({selectedRowKeys,selectedRows});
+    }),
+  };
+
   const datas = {
     btnGrounp: [{
-      title:  '下载zip',
-      onClick: (e) => dowmZip(),
-      iconClass: 'zip',
-      loading:dowmLoading
+      component: (<>
+        <Radio.Group onChange={typeChange} defaultValue={type}>
+          {typeList.map(item=>(
+            <Radio value={item} key={item}>{item}</Radio>
+          ))}
+        </Radio.Group>
+        <Button type="primary" onClick={()=>dowmZip()} loading={dowmLoading}>导出{type}</Button>
+      </>)
     }],
-    tableProps: { columns, dataSource: getUserList },
+    tableProps: {
+      columns,
+      dataSource: getUserList,
+      rowSelection:{
+        type:'checkbox',
+        ...rowSelection,
+        checkStrictly:true,
+        selectedRowKeys:selectAllData.selectedRowKeys // 为了后面的清空操作
+      },
+    },
     receive: () => initFetch(),
     loading
   }
 
   const dowmZip = async ()=>{
+    const { selectedRows } = selectAllData;
+    if(!selectedRows.length){
+      toast(requestCode.failedCode,'请先选择要导出的数据');
+      return;
+    }
     setDowmLoading(true);
-    await export_txt_to_zip(tHeader, fileDataformat(getUserList,filterVal), 'user','user');
+    await export_json_to_excel({
+      header: tHeader,
+      data:fileDataformat(selectedRows,filterVal),
+      filename: 'user',
+      autoWidth: true,
+      bookType: type
+    });
     setDowmLoading(false);
+    setSelectAllData({selectedRowKeys:[],selectedRows:[]});
   }
 
   return (
