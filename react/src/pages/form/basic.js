@@ -71,9 +71,9 @@ const FormCompent = memo(function FormCompent(props) {
         status: 'success',
         response: {
           code: requestCode.successCode,
-          data: { url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg' },
+          data: { url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1618975957299.jpg' },
         },
-        url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg',
+        url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1618975957299.jpg',
       },]
     });
   }, []);

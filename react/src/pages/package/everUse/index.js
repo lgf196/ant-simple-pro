@@ -13,14 +13,14 @@ const EverUse = memo(function EverUse(props) {
       status: 'success',
       response: {
         code: requestCode.successCode,
-        data: { url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg' },
+        data: { url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1618975957299.jpg' },
       },
-      url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg',
+      url: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1618975957299.jpg',
     },
     {
       uid: '-2',
       status: 'error',
-      thumbUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600943901147&di=8ecded57b624cfcea1564f56fe7c0f1b&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170614%2F8d13542028fd458e8d92fe99037dda70_th.jpg',
+      thumbUrl: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1618975957299.jpg',
       response: '服务异常'
     },
   ];

@@ -1,8 +1,8 @@
 /**
  *
- * @param {String} src @description url加载地址
- * @param {Object} existVariable @description 创建的对象
- * @param {Function} callback @description 回调函数
+ * @param {String} src url加载地址
+ * @param {Object} existVariable 创建的对象
+ * @param {Function} callback 回调函数
  */
 const asyncLoadScript = (src, existVariable, callback) => {
   const existingScript = document.getElementById(src)

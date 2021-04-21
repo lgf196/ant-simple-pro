@@ -7,6 +7,23 @@ import Error from '@/pages/error'
 import Login from '@/pages/login'
 import MapCompent from '@/pages/visualization/map'
 import { lazyComponent } from '@/utils/function'
+import { environment } from '@/utils/varbile'
+
+const menuSet = environment() === 'dev' ? [
+  {
+    path: '/system',
+    title: '系统',
+    component: FatherLayout,
+    routes: [
+      {
+        exact: true,
+        path: '/system/menu',
+        component: HocRouter(lazyComponent('stystem/menu')),
+        title: '菜单管理',
+      },
+    ]
+  }
+] : [];
 
 /**
  * @description 没有权限和不依赖BasicLayout组价的路由
@@ -55,19 +72,7 @@ export const staticRouter = [
  * @description 权限路由
  */
 export const menuRouter = [
-  {
-    path: '/system',
-    title: '系统',
-    component: FatherLayout,
-    routes: [
-      {
-        exact: true,
-        path: '/system/menu',
-        component: HocRouter(lazyComponent('stystem/menu')),
-        title: '菜单管理',
-      },
-    ]
-  },
+  ...menuSet,
   {
     exact: true,
     path: '/userManage',
@@ -227,6 +232,12 @@ export const menuRouter = [
     path: '/drag',
     title: '拖拽',
     component: HocRouter(lazyComponent('drag')),
+  },
+  {
+    exact: true,
+    path: '/zip',
+    title: 'zip下载',
+    component: HocRouter(lazyComponent('zip')),
   },
   {
     path: '/404',
