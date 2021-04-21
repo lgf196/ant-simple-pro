@@ -114,6 +114,12 @@ export const menuRouter = [
         component: HocRouter(lazyComponent('package/rightClickCompent')),
         title: '右键组件',
       },
+      {
+        exact: true,
+        path: '/component/hotkeys',
+        component: HocRouter(lazyComponent('package/hotkeys')),
+        title: '按键监听',
+      },
     ]
   },
   {

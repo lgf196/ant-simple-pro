@@ -83,6 +83,7 @@
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",
     "react-grid-layout": "^1.2.4",
+    "react-hotkeys-hook": "^3.3.0",
     "react-i18next": "^11.7.3",
     "react-redux": "^7.2.2",
     "react-refresh": "^0.8.3",
