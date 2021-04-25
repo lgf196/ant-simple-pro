@@ -8,6 +8,7 @@ import Login from '@/pages/login'
 import MapCompent from '@/pages/visualization/map'
 import { lazyComponent } from '@/utils/function'
 import { environment } from '@/utils/varbile'
+import PageError from '@/pages/error/pageError'
 
 const menuSet = environment() === 'dev' ? [
   {
@@ -43,6 +44,11 @@ export const noLayoutRouter = [
     path: '/map',
     exact: true,
     component: MapCompent,
+  },
+  {
+    path: '/pageError',
+    exact: true,
+    component: PageError,
   },
 ]
 /**
