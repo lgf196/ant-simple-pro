@@ -1,6 +1,9 @@
 .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
     border-right: none;
 }
+.ant-menu-item-icon{
+  margin-right: 0!important;
+}
 /* .ant-layout-sider {
     background:#fff;
 } */

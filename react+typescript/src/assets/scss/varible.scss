@@ -2,73 +2,83 @@ $siderbarWidth: 220px;
 $topbarHeight: 48px;
 $siderbarWidth: 220px;
 $topbarHeight: 48px;
-$topbarColor:rgba(105,123,140,.7);
+$topbarColor:rgba(105, 123, 140, .7);
 $color1:#fff;
-@mixin flexContainer($jc){
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: $jc;
-} 
+$borderColor:#f0f0f0;
+@mixin flexContainer($jc) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: $jc;
+}
+
 @mixin flexItem($n) {
-  box-sizing: border-box;
-  flex-grow: $n;
-}
-@mixin style($size,$color,$bold:normal){  
-  font-size:$size;
-  color: $color;
-  font-weight: $bold;
-}
-@mixin wh($w,$h){
-  width: $w;
-  height: $h;
-}
-@mixin center(){
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%,-50%)
-}
-@mixin textOverflow($n){
-  overflow:hidden; 
-  text-overflow:ellipsis;
-  display:-webkit-box; 
-  /* autoprefixer: off */  //针对打包不显示的问题
-  -webkit-box-orient: vertical; 
-  /* autoprefixer: on */
-  -webkit-line-clamp:$n; 
-}
-@mixin cicle($size:8px){ 
-  border-radius:$size;
-}
-@mixin lh($h){
-  line-height:$h;
-}
-@mixin fixed($t,$l){
-  position: fixed;
-  top: $t;
-  left:$l;
-}
-@mixin textAlign($h){
- height:$h;
- line-height: $h;
- text-align: center;
- vertical-align: middle;
-}
-@mixin  auto($l,$r) {
-  margin: $l auto $r auto;
-}
-@mixin  gradientBG (){
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+    box-sizing: border-box;
+    flex-grow: $n;
 }
 
+@mixin style($size, $color, $bold:normal) {
+    font-size: $size;
+    color: $color;
+    font-weight: $bold;
+}
 
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin center() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+@mixin textOverflow($n) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* autoprefixer: off */ //针对打包不显示的问题
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+    -webkit-line-clamp: $n;
+}
+
+@mixin cicle($size:8px) {
+    border-radius: $size;
+}
+
+@mixin lh($h) {
+    line-height: $h;
+}
+
+@mixin fixed($t, $l) {
+    position: fixed;
+    top: $t;
+    left: $l;
+}
+
+@mixin textAlign($h) {
+    height: $h;
+    line-height: $h;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@mixin auto($l, $r) {
+    margin: $l auto $r auto;
+}
+@mixin mask() {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+@mixin position($type,$top:auto,$right:auto,$bottom:auto,$left:auto) {
+    position: $type;
+    top: $top;
+    left:$left;
+    bottom: $bottom;
+    right: $right;
+}

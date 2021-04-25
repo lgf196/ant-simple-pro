@@ -1,0 +1,28 @@
+@import '@/assets/scss/varible.scss';
+.popus{
+  @include wh(100%,100%);
+  .mask{
+    @include mask;
+    z-index: 3000;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+  .content{
+    @include mask;
+    z-index: 3100;
+    .box{
+      @include position(absolute,40%,auto,auto,50%);
+      transform:translate(-50%,-50%);
+      vertical-align: middle;
+      .close{
+        @include position(absolute,-30px,-30px,auto,auto);
+        @include style(30px,#fff);
+      }
+      a{
+        display: block;
+      }
+      img{
+        max-width: 750px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '@/assets/scss/varible.scss';
+.TopAd{
+  a{
+    display: block;
+     height:80px;
+  }
+  .image{
+    height: 80px;
+    background-size: cover;
+    width: 1190px;
+    position: relative;
+    margin: 0 auto;
+    .close{
+      @include style(25px,#fff);
+      z-index: 1000;
+      @include position(absolute,0,0,auto,auto);
+    }
+  }
+}
