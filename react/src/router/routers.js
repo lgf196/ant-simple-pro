@@ -246,6 +246,12 @@ export const menuRouter = [
     component: HocRouter(lazyComponent('zip')),
   },
   {
+    exact: true,
+    path: '/advice',
+    title: '广告栏',
+    component: HocRouter(lazyComponent('advice')),
+  },
+  {
     path: '/excel',
     title: 'excel',
     component: FatherLayout,

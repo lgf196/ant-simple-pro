@@ -68,3 +68,17 @@ $borderColor:#f0f0f0;
 @mixin auto($l, $r) {
     margin: $l auto $r auto;
 }
+@mixin mask() {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+@mixin position($type,$top:auto,$right:auto,$bottom:auto,$left:auto) {
+    position: $type;
+    top: $top;
+    left:$left;
+    bottom: $bottom;
+    right: $right;
+}
