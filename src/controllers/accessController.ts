@@ -22,6 +22,7 @@ class AccessModule {
         return await mysqlDb.execute(sqlStr);
     }
     public getCurrentUserMenuAuthTree = asyncHandler((async (req: Request, res: Response) => {
+        const surroundings = process.env.NODE_ENV;
         let result = await this.findMenuList({});
         const arr = result.data;
         let fatherElement: menuAccessType[] = arr.filter((item: menuAccessType) => item.pid === 0).map((item: menuAccessType) => Object.assign({}, item, { createTime: new Date(item.createTime).getTime() })); //取出父节点
@@ -35,7 +36,7 @@ class AccessModule {
             });
         }
         renders(fatherElement, arr);
-        sendResponse(res, 200, sucessCallbackVal(code.successCode, fatherElement, '成功', true));
+        sendResponse(res, 200, sucessCallbackVal(code.successCode, surroundings === 'prod' ? fatherElement.filter(item=>item.id!==18) : fatherElement, '成功', true));
     }))
     public getMenuList = asyncHandler(async (req: Request, res: Response) => {
         const {page,size,sort} = req.query as unknown as pagationType;
@@ -74,9 +75,9 @@ class AccessModule {
         if (!id) {
             return sendResponse(res, 200, sucessCallbackVal(code.failedCode, null, 'id必须', false));
         }
-        if(defaultIdList.includes(parseInt(id))){
-            return sendResponse(res, 200, sucessCallbackVal(code.failedCode, null, '默认路由不得删除', false));
-        }
+        // if(defaultIdList.includes(parseInt(id))){
+        //     return sendResponse(res, 200, sucessCallbackVal(code.failedCode, null, '默认路由不得删除', false));
+        // }
         const sqlStr = `delete from access where id=?`;
         await mysqlDb.execute(sqlStr, [id]);
         sendResponse(res, 200, sucessCallbackVal(code.successCode, null, '删除成功', true));

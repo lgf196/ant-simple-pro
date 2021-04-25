@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "dev": "npx ts-node-dev src/index.ts",
+    "start": "cross-env NODE_ENV=prod node dist/index.js",
+    "dev": "cross-env NODE_ENV=dev npx ts-node-dev src/index.ts",
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [], 
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -35,6 +35,7 @@
     "@types/ali-oss": "^6.0.5",
     "@types/co": "^4.6.2",
     "@types/multer": "^1.4.4",
+    "cross-env": "^7.0.3",
     "ts-node": "^8.10.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.9.3"
