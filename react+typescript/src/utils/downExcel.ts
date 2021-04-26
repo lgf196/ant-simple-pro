@@ -173,6 +173,8 @@ export type export_json_to_excel_type = {
   bookType:BookType
 }
 
+export type BookTypes = BookType;
+
 export function export_json_to_excel<T extends export_json_to_excel_type>({
   multiHeader = [],
   header,
@@ -181,7 +183,7 @@ export function export_json_to_excel<T extends export_json_to_excel_type>({
   merges = [],
   autoWidth = true,
   bookType = 'xlsx',
-} = {} as T) {
+}:T = {} as T) {
   return new Promise((resolve, reject) => {
     /* original data */
     filename = filename || 'excel-list';
