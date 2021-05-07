@@ -8,6 +8,7 @@ import Error from '@/pages/error'
 import Login from '@/pages/login'
 import { lazyComponent } from '@/utils/function'
 import { environment } from '@/utils/varbile'
+import MapCompent from '@/pages/visualization/map'
 
 const menuSet:RouteConfig[] = environment() === 'dev' ? [
   {
@@ -38,7 +39,12 @@ export const noLayoutRouter:RouteConfig[] = [
     path: '/login',
     exact: true,
     component: Login,
-  }
+  },
+  {
+    path: '/map',
+    exact: true,
+    component: MapCompent,
+  },
 ]
 /**
  * @descriptio 含BasicLayout布局路由，静态

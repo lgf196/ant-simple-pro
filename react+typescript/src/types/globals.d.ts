@@ -1,6 +1,7 @@
 
 interface Window { //给这个属性申明一下
   __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  AMap:any
 }
 interface HTMLElement {
   // 进入全屏
