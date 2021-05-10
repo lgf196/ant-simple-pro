@@ -13,36 +13,13 @@
       }"
       :onRefresh="query"
     >
-      <template #search>
-        <a-form ref="form" layout="inline" :model="{}">
-          <a-form-item label="名称">
-            <a-input
-              v-model:value="username"
-              placeholder="请输入"
-              allowClear
-            ></a-input>
-          </a-form-item>
-          <a-form-item>
-            <a-space>
-              <a-button type="primary" @click="query">查询</a-button>
-              <a-button @click="onReset">重置</a-button>
-            </a-space>
-          </a-form-item>
-        </a-form>
-      </template>
       <template #buttons>
-        <a-input-search
-          v-model:value="username"
-          placeholder="请输入用户名"
-          enter-button
-          allowClear
-          @search="onSearch"
-        />
-      </template>
-      <template #extraIcons>
-        <a-tooltip title="下载" placement="bottom">
-          <ArrowDownOutlined @click="onDownload" />
-        </a-tooltip>
+        <a-button type="primary" @click="onExport">
+          <template #icon>
+            <FileZipOutlined />
+          </template>
+          下载zip
+        </a-button>
       </template>
       <template #index="{ index }">
         <span>
@@ -59,30 +36,23 @@
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
-      <template #action="{ record }">
-        <span>
-          <a @click="onUpdate(record)">编辑</a>
-        </span>
-      </template>
     </LayoutTable>
-    <UpdateUserModal
-      v-model:visible="visible"
-      :currentRow="currentRow"
-      @update-success="onUpdateSuccess"
-    ></UpdateUserModal>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, reactive, toRefs, computed, unref } from 'vue'
-import userStore from '@/store/modules/user'
 import LayoutTable from '@/components/layout-table'
-import { ArrowDownOutlined, UserOutlined } from '@ant-design/icons-vue'
-import { getUsers, getUsersBuffer } from './service'
+import { UserOutlined, FileZipOutlined } from '@ant-design/icons-vue'
+import { getUsers } from '@/views/user/service'
 import { useAsync } from '@/hooks'
-import { downloadExcel } from '@/utils'
-import UpdateUserModal from './update-user-modal.vue'
 import imagePreview from '@/components/image/image-preview'
+import { exportTxtToZip } from '@/utils/zip'
+import {
+  excelHeader,
+  excelKeyList,
+  normalizeExcelData
+} from '@/views/excel/types'
 const columns = [
   {
     dataIndex: 'index',
@@ -121,29 +91,24 @@ const columns = [
     align: 'center',
     title: '头像',
     slots: { customRender: 'avatar' }
-  },
-  {
-    key: 'action',
-    align: 'center',
-    title: '操作',
-    slots: { customRender: 'action' }
   }
 ]
 
 export default defineComponent({
-  name: 'User',
+  name: 'Zip',
   components: {
     LayoutTable,
-    ArrowDownOutlined,
     UserOutlined,
-    UpdateUserModal
+    FileZipOutlined
   },
   setup() {
     const username = ref('')
+    const type = ref('xlsx')
     const state = reactive({
       columns,
       visible: false,
-      currentRow: {}
+      currentRow: {},
+      typeList: ['xlsx', 'csv', 'txt']
     })
 
     const { data: userList, loading, run: query } = useAsync(
@@ -161,17 +126,6 @@ export default defineComponent({
       return userList.value.map(v => v.iconUrl)
     })
 
-    function onUpdate(row: Record<string, unknown>) {
-      state.currentRow = row
-      state.visible = true
-    }
-
-    function onSearch() {
-      setTimeout(() => {
-        query()
-      }, 20)
-    }
-
     function onReset() {
       username.value = ''
       query()
@@ -185,18 +139,13 @@ export default defineComponent({
       })
     }
 
-    function onUpdateSuccess() {
-      query()
-      userStore.getUserInfo()
-    }
-
-    async function onDownload() {
-      try {
-        const data = await getUsersBuffer()
-        downloadExcel(data, '用户信息.xlsx')
-      } catch (err) {
-        console.log(err)
-      }
+    function onExport() {
+      exportTxtToZip(
+        excelHeader,
+        normalizeExcelData(unref(userList), excelKeyList),
+        'user',
+        'user'
+      )
     }
 
     return {
@@ -205,13 +154,11 @@ export default defineComponent({
       ...toRefs(state),
       username,
       urlList,
-      onDownload,
       query,
-      onUpdate,
-      onSearch,
       onReset,
       onImageClick,
-      onUpdateSuccess
+      type,
+      onExport
     }
   }
 })

@@ -15,7 +15,7 @@
         </a-radio-button>
       </a-radio-group>
       <a href="https://github.com/intlify/vue-i18n-next" target="_blank">
-        <a-button type="link"> 了解vue-i18n-next </a-button>
+        <a-button type="link">了解vue-i18n-next</a-button>
       </a>
     </div>
     <a-list item-layout="vertical" size="large" :data-source="listData">

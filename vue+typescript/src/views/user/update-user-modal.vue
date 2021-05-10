@@ -26,9 +26,9 @@
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" :loading="submitting" @click="onSubmit"
-        >编辑</a-button
-      >
+      <a-button type="primary" :loading="submitting" @click="onSubmit">
+        编辑
+      </a-button>
       <a-button @click="onReset">重置</a-button>
     </template>
   </a-modal>

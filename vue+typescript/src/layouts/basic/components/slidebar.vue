@@ -19,8 +19,7 @@
         :menus="accessMenus"
         :collapsed="collapsed"
         :theme="sliderTheme"
-      >
-      </RouteMenu>
+      ></RouteMenu>
     </div>
     <a-row
       class="toggle-theme"

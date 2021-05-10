@@ -76,7 +76,7 @@
         <a-checkbox v-model:checked="form.remember">记住</a-checkbox>
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }">
-        <a-button type="primary" @click="onSubmit"> 提交 </a-button>
+        <a-button type="primary" @click="onSubmit">提交</a-button>
       </a-form-item>
     </a-form>
   </div>

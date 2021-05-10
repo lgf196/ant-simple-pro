@@ -1,23 +1,12 @@
-@fade-linear-transition: opacity .2s linear;
+@fade-linear-transition: opacity .3s linear;
 @md-fade-transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1), opacity .3s cubic-bezier(0.23, 1, 0.32, 1);
-
-.fade-in-linear-enter-active,
-.fade-in-linear-leave-active {
-  transition: @fade-linear-transition;
-}
-.fade-in-linear-enter,
-.fade-in-linear-leave,
-.fade-in-linear-leave-active {
-  opacity: 0;
-}
 
 .com-fade-in-linear-enter-active,
 .com-fade-in-linear-leave-active {
   transition: @fade-linear-transition;
 }
-.com-fade-in-linear-enter,
-.com-fade-in-linear-leave,
-.com-fade-in-linear-leave-active {
+.com-fade-in-linear-enter-from,
+.com-fade-in-linear-leave-to {
   opacity: 0;
 }
 
@@ -25,8 +14,8 @@
 .com-fade-in-leave-active {
   transition: all .3s cubic-bezier(.55,0,.1,1);
 }
-.com-fade-in-enter,
-.com-fade-in-leave-active {
+.com-fade-in-enter-from,
+.com-fade-in-leave-to {
   opacity: 0;
 }
 
@@ -34,10 +23,10 @@
 .com-zoom-in-center-leave-active {
   transition: all .3s cubic-bezier(.55,0,.1,1);
 }
-.com-zoom-in-center-enter,
-.com-zoom-in-center-leave-active {
+.com-zoom-in-center-enter-from,
+.com-zoom-in-center-leave-to {
   opacity: 0;
-  transform: scaleX(0);
+  transform: scale(0);
 }
 
 .com-zoom-in-top-enter-active,

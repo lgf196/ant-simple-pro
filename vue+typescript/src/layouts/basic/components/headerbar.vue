@@ -50,14 +50,15 @@
         </a-dropdown>
         <a-dropdown placement="bottomRight">
           <a-button size="small" class="more-button">
-            更多 <DownOutlined />
+            更多
+            <DownOutlined />
           </a-button>
           <template #overlay>
             <a-menu>
               <a-menu-item v-for="(item, index) in moreList" :key="index">
-                <a :href="item.url" target="_blank" rel="noopener noreferrer">{{
-                  item.name
-                }}</a>
+                <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                  {{ item.name }}
+                </a>
               </a-menu-item>
             </a-menu>
           </template>
@@ -180,7 +181,8 @@ export default defineComponent({
   justify-content: space-between;
 }
 .header-trigger {
-  width: @header-height;
+  // width: @header-height;
+  width: 44px;
   height: @header-height;
   display: flex;
   justify-content: center;

@@ -1,13 +1,19 @@
 import axios, { Canceler } from 'axios'
 import request, { LoadingCallback } from '@/utils/request'
+import { MenuListItem } from './types'
 
-export type getMenusParamsType = {
+export type QueryMenusParams = {
   page: number
   size: number
   sort?: 'desc' | 'asc'
 }
 
-export type updateMenuParamsType = {
+export type QueryMenusResult = {
+  list: MenuListItem[]
+  total: number
+}
+
+export type UpdateMenuParams = {
   id: number | null
   title: string
   url: string
@@ -15,7 +21,9 @@ export type updateMenuParamsType = {
   pid: number[] | null
 }
 
-export const getMenus = (params: getMenusParamsType) => {
+export const getMenus = (
+  params: QueryMenusParams
+): Promise<QueryMenusResult> => {
   return request({
     method: 'get',
     url: '/menu/getCurrentList',
@@ -31,7 +39,7 @@ export const getMenuTree = () => {
 }
 
 export const updateMenu = (
-  data: updateMenuParamsType,
+  data: UpdateMenuParams,
   loadingCb: LoadingCallback,
   cancelCallback: (cancel: Canceler) => void
 ) => {

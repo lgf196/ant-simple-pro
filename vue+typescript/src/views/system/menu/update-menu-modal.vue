@@ -42,9 +42,9 @@
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" :loading="submitting" @click="onSubmit">{{
-        currentRow.id ? '编辑' : '创建'
-      }}</a-button>
+      <a-button type="primary" :loading="submitting" @click="onSubmit">
+        {{ currentRow.id ? '编辑' : '创建' }}
+      </a-button>
       <a-button @click="onReset">重置</a-button>
     </template>
   </a-modal>
@@ -63,9 +63,9 @@ import {
 import { Canceler } from 'axios'
 import { message } from 'ant-design-vue'
 import { Form } from 'ant-design-vue/types/form/form'
-import { updateMenu, updateMenuParamsType } from './service'
+import { updateMenu, UpdateMenuParams } from './service'
 
-type FormType = Omit<updateMenuParamsType, 'pid'> & {
+type FormType = Omit<UpdateMenuParams, 'pid'> & {
   pid: number[]
 }
 

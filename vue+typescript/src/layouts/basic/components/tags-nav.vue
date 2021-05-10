@@ -31,8 +31,8 @@
         </a>
         <template #overlay>
           <a-menu @click="onTagMenuClick">
-            <a-menu-item key="1"> 关闭其它 </a-menu-item>
-            <a-menu-item key="2"> 关闭标签 </a-menu-item>
+            <a-menu-item key="1">关闭其它</a-menu-item>
+            <a-menu-item key="2">关闭标签</a-menu-item>
           </a-menu>
         </template>
       </a-dropdown>
@@ -201,7 +201,6 @@ export default {
   height: 26px;
   line-height: 26px;
   margin-top: 4px;
-  margin-left: 5px;
   background: #fff;
   border: 1px solid #e9eaec;
   border-radius: 3px;
@@ -210,6 +209,10 @@ export default {
   color: #666;
   font-weight: 400;
   vertical-align: middle;
+  margin-left: 8px;
+  &:first-of-type {
+    margin-left: 3px;
+  }
   &.active {
     background: #e6f7ff;
     color: #1890ff;

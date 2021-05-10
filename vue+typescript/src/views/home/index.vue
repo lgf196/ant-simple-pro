@@ -11,10 +11,10 @@
               <ComSvgIcon name="logo" class="avatar"></ComSvgIcon>
             </template>
             <template #description>
-              <span
-                >简洁，美观，快速上手，支持3大框架；Concise, beautiful, quick to
-                get started, support 3 big frameworks</span
-              >
+              <span>
+                简洁，美观，快速上手，支持3大框架；Concise, beautiful, quick to
+                get started, support 3 big frameworks
+              </span>
             </template>
           </a-card-meta>
           <ul>

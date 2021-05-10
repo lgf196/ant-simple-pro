@@ -1,5 +1,6 @@
 import axios, { Canceler } from 'axios'
 import request, { LoadingCallback } from '@/utils/request'
+import { UserListItem } from './types'
 
 export type GetUsersParamsType = {
   username: string
@@ -15,8 +16,8 @@ export type UpdateUsersParamsType = {
 
 export const getUsers = (
   params: GetUsersParamsType,
-  loadingCb: LoadingCallback
-) => {
+  loadingCb: LoadingCallback = () => {} // eslint-disable-line
+): Promise<UserListItem[]> => {
   return request({
     method: 'get',
     url: '/user/find',

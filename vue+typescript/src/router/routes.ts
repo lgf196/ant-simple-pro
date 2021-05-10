@@ -102,6 +102,45 @@ export const basicRoutes: RouteRecordRaw[] = [
     path: '/icon',
     name: 'icon',
     component: () => import('@/views/icon/index.vue')
+  },
+  {
+    path: '/advice',
+    name: 'advice',
+    component: () => import('@/views/advice/index.vue'),
+    meta: {
+      title: '广告栏'
+    }
+  },
+  {
+    path: '/excel',
+    name: 'excel',
+    component: BlankLayout,
+    children: [
+      {
+        path: '/excel/select-export-excel',
+        name: 'selectExportExcel',
+        component: () => import('@/views/excel/select-export-excel/index.vue'),
+        meta: {
+          title: '导出选择项'
+        }
+      },
+      {
+        path: '/excel/export-excel',
+        name: 'exportExcel',
+        component: () => import('@/views/excel/export-excel/index.vue'),
+        meta: {
+          title: '导出excel'
+        }
+      }
+    ]
+  },
+  {
+    path: '/zip',
+    name: 'zip',
+    component: () => import('@/views/zip/index.vue'),
+    meta: {
+      title: 'zip'
+    }
   }
 ]
 
