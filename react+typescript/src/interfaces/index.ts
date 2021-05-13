@@ -1,6 +1,8 @@
 import { requestCode } from '@/utils/varbile'
 import { buttonProps } from '@/components/button'
+
 export type statusCode = requestCode;
+
 export type sortType = 'desc' | 'asc';
 export interface menuAccessType {  //权限列表
   id: number;
@@ -51,4 +53,8 @@ export interface getUserType<T = string> {
   username: string,
   introduct: string,
   iconUrl: T
+}
+export interface selectListType<T = number> {
+  label:string;
+  value:T
 }

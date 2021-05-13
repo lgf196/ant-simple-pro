@@ -38,6 +38,7 @@
     "braft-editor": "^2.3.9",
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
+    "codemirror": "^5.61.0",
     "connected-react-router": "^6.8.0",
     "core-js": "^3.7.0",
     "css-loader": "3.4.2",

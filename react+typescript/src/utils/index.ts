@@ -59,4 +59,10 @@ export default class Tools {
     arrRes = rev(data2, nodeId2);
     return arrRes.map(item => item.id);;
   }
+  getTime(date: string | number | Date){
+    return new Date(date).getTime();
+  }
+  getMonthDay(year: number, month: number) {
+   return new Date(year, month + 1, 0).getDate();
+  }
 }
