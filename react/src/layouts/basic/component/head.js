@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useMemo } from 'react'
 import { Dropdown, Menu, Spin, Tooltip, Button } from 'antd'
 import { Link } from "react-router-dom"
-import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined, QuestionCircleOutlined, DownOutlined} from '@ant-design/icons';
+import { MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, LogoutOutlined, QuestionCircleOutlined, DownOutlined,QqOutlined} from '@ant-design/icons';
 import { FullScreeOut } from '@/components/layoutTable'
 import { useDispatch, useSelector } from 'react-redux';
 import { SAGA_GET_USER_INFO } from '@/redux/constants/sagaType'
@@ -91,6 +91,14 @@ const TopBar = memo(function TopBar({ collapsed, onToggle, width, setIsMobileDra
         </div>
       </div>
       <div className={`${style.menuList} fr`}>
+          <Tooltip title={(
+            <>
+            <p>扫码，加入交流群，大牛多</p>
+            <img width='200' src='https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6d6d3f624f4143fe8833d2458aeaf002~tplv-k3u1fbpfcp-zoom-1.image' alt="" />
+            </>
+          )}>
+            <QqOutlined className={style.icon} />
+          </Tooltip>
         <a href="http://blog.lgf196.top/ant-simple-pro-document/" target='_blank'>
           <Tooltip title="文档">
             <QuestionCircleOutlined className={style.icon} />

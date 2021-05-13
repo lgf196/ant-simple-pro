@@ -1,25 +1,23 @@
-import React, { memo,useRef,useEffect } from 'react'
-import PageLayout from '@/layouts/pageLayout'
-import { Graph, Addon } from '@antv/x6'
-import style from '@/pages/editor/compent/graphics.module.scss'
-import { rect,rectangle, cicle, ellipse,polygon } from './shape'
+import React, { memo, useRef, useEffect } from 'react';
+import PageLayout from '@/layouts/pageLayout';
+import { Graph, Addon } from '@antv/x6';
+import style from '@/pages/editor/compent/graphics.module.scss';
+import { rect, rectangle, cicle, ellipse, polygon } from './shape';
 
 /**
  * @description 这个图形编辑器，只是给各位同学们一个参考的作用，并不是很完善的，只是提供一个思路
  */
 
-const { Stencil } = Addon
+const { Stencil } = Addon;
 
 const GraphicsEditor = memo(function GraphicsEditor() {
-
   const container = useRef(null);
 
   const sliderContainer = useRef(null);
 
   useEffect(() => {
-
     const graph = new Graph({
-      container:container.current,
+      container: container.current,
       grid: true,
       selecting: {
         enabled: true,
@@ -45,7 +43,7 @@ const GraphicsEditor = memo(function GraphicsEditor() {
         allowNode: true,
         allowEdge: true,
         allowPort: true,
-        router:{
+        router: {
           name: 'manhattan',
         },
         createEdge() {
@@ -63,21 +61,20 @@ const GraphicsEditor = memo(function GraphicsEditor() {
                 },
               },
             },
-          })
-        }
-      }
+          });
+        },
+      },
     });
 
     const changePortsVisible = (visible) => {
-      const ports = container.current.querySelectorAll(
-        '.x6-port-body',
-      );
+      const ports = container.current.querySelectorAll('.x6-port-body');
       for (let i = 0, len = ports.length; i < len; i = i + 1) {
-        ports[i].style.visibility = visible ? 'visible' : 'hidden'
+        ports[i].style.visibility = visible ? 'visible' : 'hidden';
       }
-    }
+    };
 
-    graph.on('cell:mouseenter', ({ cell }) => { // 隐藏连接状
+    graph.on('cell:mouseenter', ({ cell }) => {
+      // 隐藏连接状
       if (cell.isNode()) {
         cell.addTools([
           {
@@ -99,21 +96,21 @@ const GraphicsEditor = memo(function GraphicsEditor() {
               offset: { x: 10, y: 10 },
             },
           },
-        ])
+        ]);
       }
     });
 
     graph.on('cell:mouseleave', ({ cell }) => {
-      cell.removeTools()
+      cell.removeTools();
     });
 
     graph.on('node:mouseenter', () => {
-      changePortsVisible(true)
-    })
+      changePortsVisible(true);
+    });
 
     graph.on('node:mouseleave', () => {
-      changePortsVisible(false)
-    })
+      changePortsVisible(false);
+    });
 
     const stencil = new Stencil({
       target: graph,
@@ -124,24 +121,23 @@ const GraphicsEditor = memo(function GraphicsEditor() {
           name: 'group1',
           title: '基础图形',
           collapsable: false,
-        }
+        },
       ],
-    })
+    });
 
     sliderContainer.current.appendChild(stencil.container);
 
-    stencil.load([rect,rectangle, cicle, ellipse,polygon], 'group1');
-
-  }, [])
+    stencil.load([rect, rectangle, cicle, ellipse, polygon], 'group1');
+  }, []);
 
   return (
     <PageLayout>
-      <div className={style.graphics} >
+      <div className={style.graphics}>
         <div className={style.sidebar} ref={sliderContainer}></div>
-        <div className={style.content} ref={container} ></div>
+        <div className={style.content} ref={container}></div>
       </div>
     </PageLayout>
-  )
-})
+  );
+});
 
 export default GraphicsEditor;

@@ -6,6 +6,7 @@ import Select from '@/components/select'
 import { langeList } from '@/assets/js/staticData'
 import { DeleteOutlined } from '@ant-design/icons';
 import TimeRangeSelection from '@/components/timeRangeSelection'
+import { ButtonType } from 'antd/lib/button/button'
 import moment from 'moment';
 
 export type monthTime<T> = T extends string ? string : moment.Moment | undefined;
@@ -44,7 +45,7 @@ const AdvancedForm = memo(function AdvancedForm(props) {
                <Divider>信息{index+1}</Divider>
                 <div>
                     {
-                      index>0 &&  <Button type="dashed" onClick={()=>removeStemp(index)} shape="circle" icon={<DeleteOutlined style={{color:'#fff'}}/>} className='fr' style={{marginLeft:'20px'}}/>
+                      index>0 &&  <Button type={'danger' as (ButtonType & 'danger')} onClick={()=>removeStemp(index)} shape="circle" icon={<DeleteOutlined style={{color:'#fff'}}/>} className='fr' style={{marginLeft:'20px'}}/>
                     }
                 </div>
                 <Form.Item label='名字' labelAlign='left'  name={["userInfoList", index, "names"]}  rules={[{required: true, message: '请填写描述!' }]}>

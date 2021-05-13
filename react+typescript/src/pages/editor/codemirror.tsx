@@ -1,13 +1,12 @@
-import React, { memo } from 'react'
-import PageLayout from '@/layouts/pageLayout'
-import {UnControlled as CodeMirror} from 'react-codemirror2'
+import React, { memo } from 'react';
+import PageLayout from '@/layouts/pageLayout';
+import { UnControlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 require('codemirror/mode/xml/xml');
 require('codemirror/mode/javascript/javascript');
 
 const Codemirror = memo(function Codemirror(props) {
-
   const jsCode = `
   // pages/home
   import React, {useEffect,useState} from 'react'
@@ -40,19 +39,18 @@ const Codemirror = memo(function Codemirror(props) {
   return (
     <PageLayout>
       <CodeMirror
-      value={jsCode}
-      options={{
-        mode: 'javascript',
-        theme: 'material',
-        lineNumbers: true
-      }}
-      autoScroll={false}
-      className='CodeMirrorStyle'
-      onChange={(editor, data, value) => {
-      }}
-/>
+        value={jsCode}
+        options={{
+          mode: 'javascript',
+          theme: 'material',
+          lineNumbers: true,
+        }}
+        autoScroll={false}
+        className="CodeMirrorStyle"
+        onChange={(editor, data, value) => {}}
+      />
     </PageLayout>
-  )
-})
+  );
+});
 
-export default Codemirror
+export default Codemirror;
