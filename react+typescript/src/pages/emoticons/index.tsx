@@ -1,14 +1,13 @@
-import React, { memo,useCallback } from 'react'
-import PageLayout from '@/layouts/pageLayout'
-import 'emoji-mart/css/emoji-mart.css'
-import { Picker,EmojiData } from 'emoji-mart'
+import React, { memo, useCallback } from 'react';
+import PageLayout from '@/layouts/pageLayout';
+import 'emoji-mart/css/emoji-mart.css';
+import { Picker, EmojiData } from 'emoji-mart';
 import { Col, Row } from 'antd';
 
 const Index = memo(function Index() {
-
-  const addEmoji = useCallback((val:EmojiData)=>{
-    console.log(`输出的结果===>>`, val)
-  },[])
+  const addEmoji = useCallback((val: EmojiData) => {
+    console.log(`输出的结果===>>`, val);
+  }, []);
 
   const I18nConfig = {
     search: '搜索',
@@ -38,21 +37,21 @@ const Index = memo(function Index() {
       5: 'Medium-Dark Skin Tone',
       6: 'Dark Skin Tone',
     },
-  }
+  };
 
   return (
     <PageLayout>
       <Row>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-          <h2 style={{fontSize:'20px',marginBottom:"10px"}} >中文版：</h2>
-          <Picker onSelect={addEmoji} i18n={ I18nConfig } />
+          <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>中文版：</h2>
+          <Picker onSelect={addEmoji} i18n={I18nConfig} />
         </Col>
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-          <h2 style={{fontSize:'20px',marginBottom:"10px"}} >英文版：</h2>
-          <Picker title='选择' emoji='point_up' />
+          <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>英文版：</h2>
+          <Picker title="选择" emoji="point_up" />
         </Col>
       </Row>
     </PageLayout>
-  )
-})
-export default Index
+  );
+});
+export default Index;

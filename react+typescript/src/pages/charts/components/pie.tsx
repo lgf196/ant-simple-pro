@@ -1,7 +1,9 @@
 import React, { memo } from 'react'
 import { Pie } from '@ant-design/charts';
+import { PieConfig } from '@ant-design/charts/es/pie'
 
 const PieCompent = memo(function Pies(props) {
+
   const data = [
     {
       type: '分类一',
@@ -29,7 +31,7 @@ const PieCompent = memo(function Pies(props) {
     },
   ];
 
-  const config = {
+  const config:PieConfig = {
     appendPadding: 10,
     data: data,
     angleField: 'value',
@@ -38,7 +40,7 @@ const PieCompent = memo(function Pies(props) {
     innerRadius: 0.64,
     meta: {
       value: {
-        formatter: function formatter(v: any) {
+        formatter: function formatter(v) {
           return ''.concat(v, ' \xA5');
         },
       },
@@ -57,32 +59,6 @@ const PieCompent = memo(function Pies(props) {
     ]
   };
 
-  /*
-  const config = {
-    forceFit: true,
-    title: {
-      visible: true,
-      text: '环图',
-    },
-    description: {
-      visible: true,
-      text: '环图的外半径决定环图的大小\uFF0C而内半径决定环图的厚度\u3002',
-    },
-    radius: 0.8,
-    padding: 'auto',
-    data,
-    angleField: 'value',
-    colorField: 'type',
-    legend:{
-        text:{
-            formatter:(text:any,cfg:any):string=>{
-                const value=data.filter((item)=>item.type===text)[0].value;
-               return text +'  |  ' +value+'%'
-            }
-        }
-    },
-  };
-*/
   return (
     <div className='bgW padding-10px'>
       <Pie {...config} />

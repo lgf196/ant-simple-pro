@@ -1,7 +1,9 @@
 import React, { memo } from 'react'
 import { Column } from '@ant-design/charts';
+import { ColumnConfig } from '@ant-design/charts/es/column'
 
 const Columnar = memo(function Columnar() {
+
   const data = [
     {
       type: '家具家电',
@@ -37,7 +39,7 @@ const Columnar = memo(function Columnar() {
     },
   ];
 
-  const config: any = {
+  const config:ColumnConfig = {
     data: data,
     xField: 'type',
     yField: 'sales',
