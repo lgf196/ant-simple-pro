@@ -31,7 +31,7 @@ type StateType<D> = {
  * @param  {Function} options.onError 失败回调
  */
 
-export default function <T = any>(pro: Service<T>, options: OptionsType = {}) {
+export function useAsync<T = any>(pro: Service<T>, options: OptionsType = {}) {
   const {
     manual = false,
     initialData,

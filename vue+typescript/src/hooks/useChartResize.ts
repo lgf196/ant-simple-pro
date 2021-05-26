@@ -2,7 +2,7 @@ import { onMounted, onBeforeUnmount, watch, Ref } from 'vue'
 import echarts from 'echarts'
 import appStore from '@/store/modules/app'
 
-export default function (chartIns: Ref<echarts.ECharts | null>) {
+export function useChartResize(chartIns: Ref<echarts.ECharts | null>) {
   function onResize() {
     chartIns.value && chartIns.value.resize()
   }

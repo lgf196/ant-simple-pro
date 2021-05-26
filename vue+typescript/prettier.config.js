@@ -1,7 +1,7 @@
 // https://prettier.io/docs/en/options.html
 module.exports = {
-  // 单行最多 80 个字符 default
-  printWidth: 80,
+  // 单行最多 120 个字符 default
+  printWidth: 120,
   // 不使用 tab 缩进 default
   useTabs: false,
   // 没有分号
@@ -25,12 +25,12 @@ module.exports = {
   // 维持现有的行尾/换行
   endOfLine: 'lf',
   // 对HTML全局空白不敏感
-  htmlWhitespaceSensitivity: 'ignore',
+  htmlWhitespaceSensitivity: 'strict',
   // 无需顶部注释即可格式化
   requirePragma: false,
   // 在已被preitter格式化的文件顶部加上标注
   insertPragma: false,
-  proseWrap: 'preserve',
+  proseWrap: 'never',
   // 对引用代码进行格式化
   embeddedLanguageFormatting: 'auto'
 }

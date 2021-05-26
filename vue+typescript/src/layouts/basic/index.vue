@@ -47,7 +47,7 @@ import TagsNav from './components/tags-nav.vue'
 import FooterBar from '@/components/footerbar/index.vue'
 import BackTop from './components/back-top.vue'
 import useMobile from './useMobile'
-import useResizeWidth from '@/hooks/useResizeWidth'
+import { useResizeWidth } from '@/hooks'
 import './index.less'
 
 export default defineComponent({

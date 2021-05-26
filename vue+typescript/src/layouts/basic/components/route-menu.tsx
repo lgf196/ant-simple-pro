@@ -37,7 +37,7 @@ type RouteMenuDataType = {
 
 export default defineComponent({
   name: 'RouteMenu',
-  emitEvents: ['select'],
+  emits: ['select'],
   props: {
     menus: {
       type: Array as PropType<AccessMenuItem[]>,

@@ -27,7 +27,7 @@
       </div>
     </template>
     <template v-else>
-      <PlusOutlined />
+      <PlusOutlined v-if="fileList.length < limit" />
     </template>
   </a-upload>
 </template>

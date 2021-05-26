@@ -10,6 +10,9 @@
       </div>
       <div v-else></div>
       <a-row class="header-right" type="flex" align="middle">
+        <a-row class="communication" type="flex" align="middle">
+          <Communication />
+        </a-row>
         <a-row class="docs" type="flex" align="middle">
           <a
             class="docs-link"
@@ -81,6 +84,7 @@ import appStore from '@/store/modules/app'
 import userStore from '@/store/modules/user'
 import Notification from './notification.vue'
 import Fullscreen from '@/components/fullscreen/index.vue'
+import Communication from './communication.vue'
 const oriMoreList = [
   {
     name: 'ant-simple-pro(afterEnd)',
@@ -116,7 +120,8 @@ export default defineComponent({
     QuestionCircleOutlined,
     DownOutlined,
     Notification,
-    Fullscreen
+    Fullscreen,
+    Communication
   },
   props: {
     drawerVisible: Boolean,
@@ -199,6 +204,9 @@ export default defineComponent({
 .header-right {
   padding-right: 15px;
 }
+.communication {
+  padding: 0 10px;
+}
 .docs {
   padding: 0 10px;
   .docs-link {
@@ -210,6 +218,7 @@ export default defineComponent({
 }
 .header {
   ::v-deep(.header-right) {
+    .anticon-qq,
     .anticon-question-circle,
     .icon-bell,
     .fullscreen {
@@ -251,6 +260,7 @@ export default defineComponent({
   }
 }
 .more-button {
+  margin-left: 8px;
   color: rgba(105, 123, 140, 0.7);
 }
 </style>

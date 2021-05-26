@@ -25,7 +25,7 @@
 <script lang="ts">
 import { defineComponent, ref, reactive, onMounted, toRefs } from 'vue'
 import { getOption } from './pie-option'
-import useChartResize from '@/hooks/useChartResize'
+import { useChartResize } from '@/hooks'
 type DataItemType = {
   value: number
   name: string

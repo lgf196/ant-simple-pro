@@ -66,7 +66,8 @@ import {
   reactive,
   toRefs,
   // ref,
-  createVNode
+  createVNode,
+  computed
 } from 'vue'
 import { Modal, message } from 'ant-design-vue'
 import { Canceler } from 'axios'
@@ -170,6 +171,8 @@ export default defineComponent({
       }
     )
 
+    const list = computed(() => menuData.value.list)
+
     const { data: menuTree } = useAsync(
       () => {
         return getMenuTree()
@@ -237,6 +240,7 @@ export default defineComponent({
 
     return {
       ...toRefs(state),
+      list,
       menuData,
       menuTree,
       loading,

@@ -1,5 +1,7 @@
 const path = require('path')
+const webpack = require('webpack')
 const dayjs = require('dayjs')
+const pkg = require('./package.json')
 const isDev = process.env.NODE_ENV === 'development'
 const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
 
@@ -11,11 +13,11 @@ const PORT = process.env.PORT || 3000
 const cdn = {
   dev: {
     css: [],
-    js: [publicPath + 'echarts/echarts.js']
+    js: [publicPath + 'echarts4.9.0/echarts.js']
   },
   build: {
     css: [],
-    js: [publicPath + 'echarts/echarts.min.js']
+    js: [publicPath + 'echarts4.9.0/echarts.min.js']
   }
 }
 
@@ -56,10 +58,11 @@ module.exports = {
       patterns: [resolve('./src/assets/styles/var.less')]
     }
   },
-  // configureWebpack: {
-  //   plugins: [
-  //   ]
-  // },
+  configureWebpack: {
+    plugins: [
+      new webpack.IgnorePlugin(/^\.\/locale\/[^zh\-cn.js]$/, /moment$/)
+    ]
+  },
   chainWebpack(config) {
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
@@ -84,6 +87,7 @@ module.exports = {
     config.plugin('define').tap(args => {
       // DefinePlugin 设置值 必须 JSON 序列化 或者 使用 双引号 包起来
       args[0]['process.env'].NOW = JSON.stringify(now)
+      args[0]['process.env'].EMOJI_DATASOURCE_VERSION = JSON.stringify(pkg.dependencies['emoji-datasource'])
       return args
     })
   },

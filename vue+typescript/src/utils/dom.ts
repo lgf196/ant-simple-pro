@@ -6,7 +6,7 @@ export const on = (
   event: keyof GlobalEventHandlersEventMap,
   handler: handler
 ) => {
-  if (element && event && handler) {
+  if (element && event) {
     element.addEventListener(event, handler, false)
   }
 }
@@ -16,7 +16,7 @@ export const off = (
   event: keyof GlobalEventHandlersEventMap,
   handler: handler
 ) => {
-  if (element && event && handler) {
+  if (element && event) {
     element.removeEventListener(event, handler, false)
   }
 }

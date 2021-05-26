@@ -95,6 +95,13 @@ export const basicRoutes: RouteRecordRaw[] = [
         meta: {
           title: '表格组件'
         }
+      },
+      {
+        path: '/component/hotkeys',
+        component: () => import('@/views/component/hotkeys/index.vue'),
+        meta: {
+          title: '按键监听'
+        }
       }
     ]
   },
@@ -141,6 +148,146 @@ export const basicRoutes: RouteRecordRaw[] = [
     meta: {
       title: 'zip'
     }
+  },
+  {
+    path: '/drag',
+    name: 'drag',
+    component: () => import('@/views/drag/index.vue'),
+    meta: {
+      title: '拖拽'
+    }
+  },
+  {
+    path: '/qrcode',
+    name: 'qrcode',
+    component: () => import('@/views/qrcode/index.vue'),
+    meta: {
+      title: '二维码'
+    }
+  },
+  {
+    path: '/copy',
+    name: 'copy',
+    component: () => import('@/views/copy/index.vue'),
+    meta: {
+      title: '复制'
+    }
+  },
+  {
+    path: '/editor',
+    name: 'editor',
+    component: BlankLayout,
+    children: [
+      {
+        path: '/editor/markdown',
+        name: 'markdown',
+        component: () => import('@/views/editor/markdown.vue'),
+        meta: {
+          title: 'markdown编辑器'
+        }
+      },
+      {
+        path: '/editor/graphicsEditor',
+        name: 'graphicsEditor',
+        component: () => import('@/views/editor/graphics-editor.vue'),
+        meta: {
+          title: '图形编辑器'
+        }
+      },
+      {
+        path: '/editor/richTextEditor',
+        name: 'richTextEditor',
+        component: () => import('@/views/editor/richtext-editor.vue'),
+        meta: {
+          title: '富文本编辑器'
+        }
+      },
+      {
+        path: '/editor/jsonEditor',
+        name: 'jsonEditor',
+        component: () => import('@/views/editor/json-editor.vue'),
+        meta: {
+          title: 'json编辑器'
+        }
+      },
+      {
+        path: '/editor/codemirror',
+        name: 'codemirror',
+        component: () => import('@/views/editor/codemirror.vue'),
+        meta: {
+          title: '代码编辑器'
+        }
+      }
+    ]
+  },
+  {
+    path: '/form',
+    name: 'form',
+    component: BlankLayout,
+    children: [
+      {
+        path: '/form/tableForm',
+        name: 'tableForm',
+        component: () => import('@/views/form/table-form.vue'),
+        meta: {
+          title: '表格表单'
+        }
+      },
+      {
+        path: '/form/advancedForm',
+        name: 'advancedForm',
+        component: () => import('@/views/form/advanced-form.vue'),
+        meta: {
+          title: '高级表单'
+        }
+      },
+      {
+        path: '/form/findTemplate',
+        name: 'findTemplate',
+        component: () => import('@/views/form/query-template.vue'),
+        meta: {
+          title: '查询模板'
+        }
+      },
+      {
+        path: '/form/basic',
+        name: 'basic',
+        component: () => import('@/views/form/basic.vue'),
+        meta: {
+          title: '基础模板'
+        }
+      }
+    ]
+  },
+  {
+    path: '/charts',
+    name: 'charts',
+    component: BlankLayout,
+    children: [
+      {
+        path: '/charts/ordinary',
+        name: 'ordinary',
+        component: () => import('@/views/charts/ordinary.vue'),
+        meta: {
+          title: '普通图表'
+        }
+      },
+      {
+        path: '/charts/customize',
+        name: 'customize',
+        component: () => import('@/views/charts/customize.vue'),
+        meta: {
+          title: '自定义图表'
+        }
+      }
+    ]
+  },
+  {
+    path: '/table',
+    component: () => import('@/views/user/index.vue'),
+    meta: {
+      title: '表格'
+    }
   }
 ]
 
@@ -154,6 +301,11 @@ export default [
     meta: {
       title: '登录'
     }
+  },
+  {
+    path: '/map',
+    name: 'map',
+    component: () => import('@/views/visualization/map.vue')
   },
   {
     path: '/redirect',

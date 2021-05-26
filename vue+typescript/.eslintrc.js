@@ -67,6 +67,7 @@ module.exports = {
     'space-infix-ops': 2, // 操作符周围必须有空格
     'spaced-comment': ['error', 'always'], // 注释后面必须跟随至少一个空白
     'object-curly-spacing': 0,
+    'no-unused-expressions': 0,
 
     /**
      * ECMAScript6
@@ -102,6 +103,7 @@ module.exports = {
     ],
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
 
     'vue/no-dupe-keys': 0
   }

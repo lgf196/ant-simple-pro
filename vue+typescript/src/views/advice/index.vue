@@ -21,7 +21,7 @@
 import { defineComponent, ref } from 'vue'
 import TopAdvice from './components/top-advice.vue'
 import Popup from './components/popup.vue'
-import { TopAdPropsType, PopupPropsType } from './types'
+import { TopAdPropsType, PopupPropsType } from './type'
 export default defineComponent({
   name: 'Advice',
   components: {

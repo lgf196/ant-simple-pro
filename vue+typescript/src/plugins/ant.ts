@@ -5,6 +5,7 @@ import {
   Button,
   Form,
   Input,
+  InputNumber,
   Checkbox,
   Row,
   Col,
@@ -44,6 +45,7 @@ export default function (app: App) {
     .use(Button)
     .use(Form)
     .use(Input)
+    .use(InputNumber)
     .use(Checkbox)
     .use(Row)
     .use(Col)

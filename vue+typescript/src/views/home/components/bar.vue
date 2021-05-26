@@ -5,7 +5,7 @@
 <script lang="ts">
 import { defineComponent, PropType, ref, onMounted } from 'vue'
 import { getOption } from './bar-option'
-import useChartResize from '@/hooks/useChartResize'
+import { useChartResize } from '@/hooks'
 
 export default defineComponent({
   props: {
