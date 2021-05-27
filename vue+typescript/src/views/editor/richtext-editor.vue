@@ -11,15 +11,10 @@
         />
       </a-form-item>
       <a-form-item label="文章正文" name="content">
-        <TinymceEditor
-          v-model:value="form.content"
-          placeholder="请输入"
-        ></TinymceEditor>
+        <TinymceEditor v-model:value="form.content" placeholder="请输入"></TinymceEditor>
       </a-form-item>
       <a-form-item class="form-item--submit">
-        <a-button class="submit-btn" type="primary" html-type="submit">
-          提交
-        </a-button>
+        <a-button class="submit-btn" type="primary" html-type="submit"> 提交 </a-button>
       </a-form-item>
       <pre><div v-html="preview"></div></pre>
     </a-form>
@@ -44,10 +39,7 @@ function calcLetterLen(html: string) {
   return txt.length
 }
 
-function genTinymceValidator(
-  rule: Record<string, unknown>,
-  value: string
-): Promise<Error | void> {
+function genTinymceValidator(rule: Record<string, unknown>, value: string): Promise<Error | void> {
   if (!value) {
     return Promise.reject(new Error('请输入内容'))
   }

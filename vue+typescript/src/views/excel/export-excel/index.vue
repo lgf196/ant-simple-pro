@@ -27,12 +27,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage
-          className="avatar"
-          :src="text"
-          @click="onImageClick(text)"
-          fit="cover"
-        >
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>

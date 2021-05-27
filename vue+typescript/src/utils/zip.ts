@@ -1,12 +1,7 @@
 import { saveAs } from 'file-saver'
 import JSZip from 'jszip'
 
-export function exportTxtToZip(
-  th: string[],
-  jsonData: any[][],
-  txtName: string,
-  zipName: string
-) {
+export function exportTxtToZip(th: string[], jsonData: any[][], txtName: string, zipName: string) {
   return new Promise((resolve, reject) => {
     const zip = new JSZip()
     const fileTxtName = txtName || 'file'

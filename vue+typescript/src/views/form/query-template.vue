@@ -1,12 +1,7 @@
 <template>
   <div class="com-page p20">
     <a-divider>基础查询</a-divider>
-    <QueryTemplate
-      name="basic"
-      :options="basicConfig"
-      @submit="onBasicSubmit"
-      @reset="onBasicReset"
-    ></QueryTemplate>
+    <QueryTemplate name="basic" :options="basicConfig" @submit="onBasicSubmit" @reset="onBasicReset"></QueryTemplate>
     <a-divider>高级查询</a-divider>
     <QueryTemplate
       name="advanced"
@@ -21,9 +16,7 @@
       @submit="onDefaultSubmit"
       @reset="onDefaultReset"
     ></QueryTemplate>
-    <p class="text-color-danger">
-      只需配置即可生成模板，还有一些配置项，具体的请看源码和案例。
-    </p>
+    <p class="text-color-danger"> 只需配置即可生成模板，还有一些配置项，具体的请看源码和案例。 </p>
   </div>
 </template>
 

@@ -19,10 +19,7 @@
       <template #buttons>
         <a-button type="primary" @click="onCreate">
           <template #icon>
-            <ComSvgIcon
-              class="anticon add-button__icon"
-              name="add"
-            ></ComSvgIcon>
+            <ComSvgIcon class="anticon add-button__icon" name="add"></ComSvgIcon>
           </template>
           <span>新增</span>
         </a-button>

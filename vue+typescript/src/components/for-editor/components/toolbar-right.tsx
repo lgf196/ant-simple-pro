@@ -43,24 +43,12 @@ export default defineComponent({
               onClick={() => onClick('expand')}
               title={expandActive ? words.fullscreenOff : words.fullscreenOn}
             >
-              {expandActive ? (
-                <i class="foricon for-contract" />
-              ) : (
-                <i class="foricon for-expand" />
-              )}
+              {expandActive ? <i class="foricon for-contract" /> : <i class="foricon for-expand" />}
             </li>
           )}
           {toolbar.preview && (
-            <li
-              class={previewActive}
-              onClick={() => onClick('preview')}
-              title={words.preview}
-            >
-              {previewActive ? (
-                <i class="foricon for-eye-off" />
-              ) : (
-                <i class="foricon for-eye" />
-              )}
+            <li class={previewActive} onClick={() => onClick('preview')} title={words.preview}>
+              {previewActive ? <i class="foricon for-eye-off" /> : <i class="foricon for-eye" />}
             </li>
           )}
           {toolbar.subfield && (

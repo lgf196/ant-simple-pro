@@ -1,9 +1,7 @@
 import type { Editor, PluginManager } from 'tinymce'
 
 export function initCustomerImagePlugin() {
-  const pluginManager = window.tinymce.util.Tools.resolve(
-    'tinymce.PluginManager'
-  ) as PluginManager
+  const pluginManager = window.tinymce.util.Tools.resolve('tinymce.PluginManager') as PluginManager
 
   function createFileInput() {
     return new Promise(resolve => {
@@ -23,9 +21,7 @@ export function initCustomerImagePlugin() {
     editor.addCommand('mceImageUpload', () => {
       createFileInput().then(file => {
         function success(url: string) {
-          editor.insertContent(
-            `<img src="${url}" alt="加载失败" style="max-width: 100%;height: auto;" />`
-          )
+          editor.insertContent(`<img src="${url}" alt="加载失败" style="max-width: 100%;height: auto;" />`)
         }
         // 对外暴露上传回调
         editor.settings.imageSelectorCallback(file, success)

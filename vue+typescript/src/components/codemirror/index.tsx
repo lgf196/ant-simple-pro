@@ -31,10 +31,7 @@ export default defineComponent({
 
     onMounted(() => {
       if (container.value) {
-        const editor = (editorInstance.value = codemirror.fromTextArea(
-          container.value,
-          props.options
-        ))
+        const editor = (editorInstance.value = codemirror.fromTextArea(container.value, props.options))
         hasInit.value = true
 
         editor.on('change', () => {

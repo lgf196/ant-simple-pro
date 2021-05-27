@@ -1,14 +1,7 @@
 import { getData, getSanitizedData, intersect } from '..'
 import { uncompress, Data, Emoji } from '../data'
 import store from '../store'
-import {
-  EmojiSkin,
-  BaseEmoji,
-  CustomEmoji,
-  EmojiData,
-  EmojiEntry,
-  EmojiSet
-} from '../types'
+import { EmojiSkin, BaseEmoji, CustomEmoji, EmojiData, EmojiEntry, EmojiSet } from '../types'
 
 export default class NimbleEmojiIndex {
   data: Data
@@ -57,12 +50,7 @@ export default class NimbleEmojiIndex {
         if (id) {
           this.emojis[id] = {}
           for (let skinTone = 1; skinTone <= 6; skinTone++) {
-            this.emojis[id][skinTone] = getSanitizedData(
-              { id, skin: skinTone },
-              skinTone,
-              this.set,
-              this.data
-            )
+            this.emojis[id][skinTone] = getSanitizedData({ id, skin: skinTone }, skinTone, this.set, this.data)
           }
         }
       } else {
@@ -102,12 +90,8 @@ export default class NimbleEmojiIndex {
     this.index = {}
   }
 
-  search(
-    value,
-    { emojisToShowFilter, maxResults, include, exclude, custom = [] } = {}
-  ) {
-    if (this.customEmojisList != custom)
-      this.addCustomToPool(custom, this.originalPool)
+  search(value, { emojisToShowFilter, maxResults, include, exclude, custom = [] } = {}) {
+    if (this.customEmojisList != custom) this.addCustomToPool(custom, this.originalPool)
 
     const skinTone = store.get('skin') || 1
 
@@ -134,26 +118,18 @@ export default class NimbleEmojiIndex {
         pool = {}
 
         this.data.categories.forEach(category => {
-          const isIncluded =
-            include && include.length ? include.indexOf(category.id) > -1 : true
-          const isExcluded =
-            exclude && exclude.length
-              ? exclude.indexOf(category.id) > -1
-              : false
+          const isIncluded = include && include.length ? include.indexOf(category.id) > -1 : true
+          const isExcluded = exclude && exclude.length ? exclude.indexOf(category.id) > -1 : false
           if (!isIncluded || isExcluded) {
             return
           }
 
-          category.emojis.forEach(
-            emojiId => (pool[emojiId] = this.data.emojis[emojiId])
-          )
+          category.emojis.forEach(emojiId => (pool[emojiId] = this.data.emojis[emojiId]))
         })
 
         if (custom.length) {
-          const customIsIncluded =
-            include && include.length ? include.indexOf('custom') > -1 : true
-          const customIsExcluded =
-            exclude && exclude.length ? exclude.indexOf('custom') > -1 : false
+          const customIsIncluded = include && include.length ? include.indexOf('custom') > -1 : true
+          const customIsExcluded = exclude && exclude.length ? exclude.indexOf('custom') > -1 : false
           if (customIsIncluded && !customIsExcluded) {
             this.addCustomToPool(custom, pool)
           }

@@ -28,12 +28,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage
-          className="avatar"
-          :src="text"
-          @click="onImageClick(text)"
-          fit="cover"
-        >
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -150,10 +145,7 @@ export default defineComponent({
 
     function onExport() {
       exportJsonToExcel({
-        data: normalizeExcelData(
-          getSelectedRows(state.selectedRowKeys, unref(userList)),
-          excelKeyList
-        ),
+        data: normalizeExcelData(getSelectedRows(state.selectedRowKeys, unref(userList)), excelKeyList),
         header: excelHeader,
         filename: 'user',
         autoWidth: false,

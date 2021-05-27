@@ -1,12 +1,6 @@
 <template>
   <div class="com-page p20">
-    <a-form
-      class="form"
-      :model="form"
-      :rules="rules"
-      label-align="left"
-      @finish="onFinish"
-    >
+    <a-form class="form" :model="form" :rules="rules" label-align="left" @finish="onFinish">
       <a-row :gutter="[10, 20]" type="flex">
         <a-col :xs="24" :sm="24" :md="12" :lg="8" :xl="8">
           <a-form-item label="平台" name="platform">
@@ -14,11 +8,7 @@
           </a-form-item>
           <a-form-item label="语言" name="lang">
             <a-select v-model:value="form.lang">
-              <a-select-option
-                v-for="item in langeList"
-                :key="item.value"
-                :value="item.value"
-              >
+              <a-select-option v-for="item in langeList" :key="item.value" :value="item.value">
                 {{ item.label }}
               </a-select-option>
             </a-select>
@@ -27,19 +17,10 @@
             <TimeRangeSelection v-model:value="form.times"></TimeRangeSelection>
           </a-form-item>
           <transition-group name="list">
-            <div
-              v-for="(item, index) in form.userInfoList"
-              :key="index"
-              class="item"
-            >
+            <div v-for="(item, index) in form.userInfoList" :key="index" class="item">
               <a-divider>信息{{ index + 1 }}</a-divider>
               <div v-show="index > 0">
-                <a-button
-                  class="button--delete"
-                  type="danger"
-                  shape="circle"
-                  @click="onRemoveStep(index)"
-                >
+                <a-button class="button--delete" type="danger" shape="circle" @click="onRemoveStep(index)">
                   <template #icon><DeleteOutlined /></template>
                 </a-button>
               </div>
@@ -92,18 +73,14 @@
           </transition-group>
           <a-form-item>
             <a-row type="flex" align="middle" class="button-group">
-              <a-button type="danger" @click="onAddStep" class="mr8">
-                新增信息
-              </a-button>
+              <a-button type="danger" @click="onAddStep" class="mr8"> 新增信息 </a-button>
               <a-button type="primary" html-type="submit">提交信息</a-button>
             </a-row>
           </a-form-item>
         </a-col>
         <a-col :xs="24" :sm="24" :md="12" :lg="16" :xl="16">
           <a-row type="flex" align="middle" class="button-group">
-            <a-button type="danger" @click="onAddStep" class="mr8">
-              新增信息
-            </a-button>
+            <a-button type="danger" @click="onAddStep" class="mr8"> 新增信息 </a-button>
             <a-button type="primary" html-type="submit">提交信息</a-button>
           </a-row>
         </a-col>

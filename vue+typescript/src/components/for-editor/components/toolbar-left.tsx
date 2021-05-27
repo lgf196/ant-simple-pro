@@ -56,18 +56,12 @@ export default defineComponent({
       return (
         <ul>
           {toolbar.undo && (
-            <li
-              onClick={() => onClick('undo')}
-              title={`${words.undo} (ctrl+z)`}
-            >
+            <li onClick={() => onClick('undo')} title={`${words.undo} (ctrl+z)`}>
               <i class="foricon for-undo" />
             </li>
           )}
           {toolbar.redo && (
-            <li
-              onClick={() => onClick('redo')}
-              title={`${words.redo} (ctrl+y)`}
-            >
+            <li onClick={() => onClick('redo')} title={`${words.redo} (ctrl+y)`}>
               <i class="foricon for-redo" />
             </li>
           )}
@@ -92,11 +86,7 @@ export default defineComponent({
             </li>
           )}
           {toolbar.img && (
-            <li
-              class="for-toolbar-img"
-              onMouseover={() => imgMouseOver()}
-              onMouseout={() => imgMouseOut()}
-            >
+            <li class="for-toolbar-img" onMouseover={() => imgMouseOver()} onMouseout={() => imgMouseOut()}>
               <i class="foricon for-image" />
               <ul style={imgHidden.value ? { display: 'none' } : {}}>
                 <li onClick={() => addImgUrl()}>{words.addImgLink}</li>
@@ -122,10 +112,7 @@ export default defineComponent({
             </li>
           )}
           {toolbar.save && (
-            <li
-              onClick={() => onClick('save')}
-              title={`${words.save} (ctrl+s)`}
-            >
+            <li onClick={() => onClick('save')} title={`${words.save} (ctrl+s)`}>
               <i class="foricon for-save" />
             </li>
           )}

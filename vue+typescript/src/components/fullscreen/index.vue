@@ -11,10 +11,7 @@
 import { defineComponent } from 'vue'
 import screenfull from 'screenfull'
 import { Modal } from 'ant-design-vue'
-import {
-  FullscreenOutlined,
-  FullscreenExitOutlined
-} from '@ant-design/icons-vue'
+import { FullscreenOutlined, FullscreenExitOutlined } from '@ant-design/icons-vue'
 export default defineComponent({
   name: 'Fullscreen',
   components: {

@@ -23,11 +23,7 @@
       <SlideBar />
     </a-drawer>
     <div class="layout-content">
-      <HeaderBar
-        @open-drawer="onOpenDrawer"
-        :windowWidth="windowWidth"
-        :drawerVisible="drawerVisible"
-      />
+      <HeaderBar @open-drawer="onOpenDrawer" :windowWidth="windowWidth" :drawerVisible="drawerVisible" />
       <TagsNav />
       <main class="main">
         <router-view />

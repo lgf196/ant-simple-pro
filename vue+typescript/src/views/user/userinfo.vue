@@ -5,31 +5,16 @@
         <ComUploadImage v-model:value="form.iconUrl"></ComUploadImage>
       </a-form-item>
       <a-form-item label="email" name="email">
-        <a-input
-          v-model:value="form.email"
-          placeholder="请输入"
-          allowClear
-          disabled
-        />
+        <a-input v-model:value="form.email" placeholder="请输入" allowClear disabled />
       </a-form-item>
       <a-form-item label="名称" name="username">
-        <a-input
-          v-model:value="form.username"
-          placeholder="请输入"
-          allowClear
-        />
+        <a-input v-model:value="form.username" placeholder="请输入" allowClear />
       </a-form-item>
       <a-form-item label="名称" name="introduct">
-        <a-textarea
-          v-model:value="form.introduct"
-          :autoSize="{ minRows: 4 }"
-          placeholder="请输入"
-        />
+        <a-textarea v-model:value="form.introduct" :autoSize="{ minRows: 4 }" placeholder="请输入" />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }">
-        <a-button type="primary" :loading="submitting" @click="onSubmit">
-          提交
-        </a-button>
+        <a-button type="primary" :loading="submitting" @click="onSubmit"> 提交 </a-button>
       </a-form-item>
     </a-form>
   </div>

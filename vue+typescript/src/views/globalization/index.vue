@@ -1,16 +1,8 @@
 <template>
   <div class="com-page">
     <div>
-      <a-radio-group
-        v-model:value="language"
-        button-style="solid"
-        @change="onToggle"
-      >
-        <a-radio-button
-          v-for="(item, index) in languages"
-          :key="index"
-          :value="item.value"
-        >
+      <a-radio-group v-model:value="language" button-style="solid" @change="onToggle">
+        <a-radio-button v-for="(item, index) in languages" :key="index" :value="item.value">
           {{ item.title }}
         </a-radio-button>
       </a-radio-group>
@@ -28,11 +20,7 @@
             </span>
           </template>
           <template #extra>
-            <img
-              width="272"
-              alt="logo"
-              src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-            />
+            <img width="272" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />
           </template>
           <a-list-item-meta :description="$t('description')">
             <template #title>
@@ -55,11 +43,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import {
-  StarOutlined,
-  LikeOutlined,
-  MessageOutlined
-} from '@ant-design/icons-vue'
+import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-vue'
 type ListDataItem = {
   href: string
   avatar: string

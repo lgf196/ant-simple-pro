@@ -13,13 +13,7 @@
     @preview="onPreview"
   >
     <template v-if="isSingle">
-      <ComImage
-        v-if="value"
-        class="image"
-        :src="value"
-        alt="avatar"
-        fit="cover"
-      />
+      <ComImage v-if="value" class="image" :src="value" alt="avatar" fit="cover" />
       <div v-else>
         <LoadingOutlined v-if="loading" />
         <PlusOutlined v-else />
@@ -34,11 +28,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import {
-  UploadFile,
-  VcFile,
-  UploadChangeParam
-} from 'ant-design-vue/types/upload'
+import { UploadFile, VcFile, UploadChangeParam } from 'ant-design-vue/types/upload'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
 import imagePreview from '@/components/image/image-preview'
@@ -129,11 +119,7 @@ export default defineComponent({
       }
     },
     beforeUpload(file: VcFile) {
-      if (
-        this.isMultiple &&
-        this.limit &&
-        this.limit === this.fileList.length
-      ) {
+      if (this.isMultiple && this.limit && this.limit === this.fileList.length) {
         this.$message.destroy()
         this.$message.error(`最多上传 ${this.limit} 张!`)
         return false
@@ -153,20 +139,13 @@ export default defineComponent({
       return true
     },
     onRemove(file: UploadFile) {
-      const ret = this.fileList
-        .filter(v => v.uid !== file.uid)
-        .map(v => v.url) as string[]
+      const ret = this.fileList.filter(v => v.uid !== file.uid).map(v => v.url) as string[]
       this.emitValue(ret)
       return true
     },
     onPreview(file: UploadFile) {
       imagePreview({
-        urlList: this.fileList.map(
-          v =>
-            v.url ||
-            (v.response && v.response.data && v.response.data.url) ||
-            v.thumbUrl
-        ),
+        urlList: this.fileList.map(v => v.url || (v.response && v.response.data && v.response.data.url) || v.thumbUrl),
         initialIndex: this.fileList.findIndex(v => v.uid === file.uid)
       })
     }

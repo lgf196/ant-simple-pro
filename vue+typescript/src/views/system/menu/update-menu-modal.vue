@@ -1,32 +1,14 @@
 <template>
   <a-modal :title="title" :visible="visible" @cancel="onClose">
-    <a-form
-      ref="formRef"
-      :model="form"
-      :rules="rules"
-      :label-col="labelCol"
-      :wrapper-col="wrapperCol"
-    >
+    <a-form ref="formRef" :model="form" :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="菜单名字" name="title">
-        <a-input
-          v-model:value="form.title"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.title" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="菜单url" name="url">
-        <a-input
-          v-model:value="form.url"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.url" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="菜单icon" name="icon">
-        <a-input
-          v-model:value="form.icon"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.icon" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="上级菜单" name="pid">
         <a-cascader
@@ -51,15 +33,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  nextTick,
-  ref,
-  reactive,
-  toRefs,
-  watch,
-  computed
-} from 'vue'
+import { defineComponent, nextTick, ref, reactive, toRefs, watch, computed } from 'vue'
 import { Canceler } from 'axios'
 import { message } from 'ant-design-vue'
 import { Form } from 'ant-design-vue/types/form/form'

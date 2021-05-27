@@ -4,10 +4,7 @@ import { saveAs } from 'file-saver'
 function datenum(v: any, date1904?: boolean) {
   if (date1904) v += 1462
   const epoch = Date.parse(v)
-  return (
-    (epoch - ((new Date(Date.UTC(1899, 11, 30)) as unknown) as number)) /
-    (24 * 60 * 60 * 1000)
-  )
+  return (epoch - ((new Date(Date.UTC(1899, 11, 30)) as unknown) as number)) / (24 * 60 * 60 * 1000)
 }
 
 function sheetFromArrayOfArrays(data: any) {
@@ -84,15 +81,7 @@ export type ExportJsonToExcelType = {
 }
 
 export function exportJsonToExcel(options: ExportJsonToExcelType) {
-  const {
-    multiHeader = [],
-    header,
-    data,
-    filename,
-    merges = [],
-    autoWidth = true,
-    bookType = 'xlsx'
-  } = options || {}
+  const { multiHeader = [], header, data, filename, merges = [], autoWidth = true, bookType = 'xlsx' } = options || {}
   const downloadFilename = filename || 'excel-list'
   const cloneData = data.slice()
   cloneData.unshift(header)

@@ -1,10 +1,4 @@
-import {
-  VuexModule,
-  getModule,
-  Module,
-  Mutation,
-  Action
-} from 'vuex-module-decorators'
+import { VuexModule, getModule, Module, Mutation, Action } from 'vuex-module-decorators'
 import store from '@/store'
 import { getUserInfo, getAccessMenus } from '@/api/global'
 import {

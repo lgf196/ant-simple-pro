@@ -28,12 +28,7 @@ type scrollToType = {
   endCallback?: () => void
 }
 
-export function scrollTo({
-  el,
-  to,
-  duration = 500,
-  endCallback
-}: scrollToType) {
+export function scrollTo({ el, to, duration = 500, endCallback }: scrollToType) {
   if (!window.requestAnimationFrame) {
     window.requestAnimationFrame =
       window.webkitRequestAnimationFrame ||
@@ -88,10 +83,7 @@ export function camelCase(name: string) {
  * @param {String} styleName 样式属性名 驼峰形式
  * @return {String} style 样式
  */
-export const getStyle = function (
-  element: HTMLElement,
-  styleName: keyof CSSStyleDeclaration
-) {
+export const getStyle = function (element: HTMLElement, styleName: keyof CSSStyleDeclaration) {
   if (!element || !styleName) {
     return null
   }
@@ -130,19 +122,13 @@ export function isScroll(el: HTMLElement, vertical: boolean) {
  * @param {String} value 样式属性值
  * @return {void}
  */
-export function setStyle(
-  element: HTMLElement,
-  styleName: keyof CSSStyleDeclaration,
-  value: number
-) {
+export function setStyle(element: HTMLElement, styleName: keyof CSSStyleDeclaration, value: number) {
   if (!element || !styleName) {
     return
   }
 
   if (styleName === 'opacity') {
-    element.style.filter = isNaN(value)
-      ? ''
-      : 'alpha(opacity=' + value * 100 + ')'
+    element.style.filter = isNaN(value) ? '' : 'alpha(opacity=' + value * 100 + ')'
   } else {
     // @ts-ignore
     element.style[styleName] = value
@@ -178,11 +164,7 @@ export function isInContainer(el: HTMLElement, container: HTMLElement) {
   const elRect = el.getBoundingClientRect()
   let containerRect = null
 
-  if (
-    [window, document, document.documentElement, null, undefined].includes(
-      container
-    )
-  ) {
+  if ([window, document, document.documentElement, null, undefined].includes(container)) {
     containerRect = {
       top: 0,
       right: window.innerWidth,
@@ -202,17 +184,9 @@ export function isInContainer(el: HTMLElement, container: HTMLElement) {
 }
 
 export function getWindowtWidth() {
-  return (
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth
-  )
+  return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
 }
 
 export function getWindowHeight() {
-  return (
-    window.innerHeight ||
-    document.documentElement.clientHeight ||
-    document.body.clientHeight
-  )
+  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 }

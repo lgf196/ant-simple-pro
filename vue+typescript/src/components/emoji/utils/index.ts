@@ -13,17 +13,7 @@ function unifiedToNative(unified: string) {
 }
 
 function sanitize(emoji: any) {
-  const {
-    name,
-    short_names,
-    skin_tone,
-    skin_variations,
-    emoticons,
-    unified,
-    custom,
-    customCategory,
-    imageUrl
-  } = emoji
+  const { name, short_names, skin_tone, skin_variations, emoticons, unified, custom, customCategory, imageUrl } = emoji
   const id = emoji.id || short_names[0]
   let colons = `:${id}:`
 
@@ -57,17 +47,10 @@ function sanitize(emoji: any) {
 }
 
 function getSanitizedData() {
-  return sanitize(
-    getData(...(arguments as [Emoji | string, EmojiSkin, EmojiSet, Data]))
-  )
+  return sanitize(getData(...(arguments as [Emoji | string, EmojiSkin, EmojiSet, Data])))
 }
 
-function getData(
-  emoji: Emoji | string,
-  skin: EmojiSkin,
-  set: EmojiSet,
-  data: Data
-) {
+function getData(emoji: Emoji | string, skin: EmojiSkin, set: EmojiSet, data: Data) {
   let emojiData: Emoji = {}
 
   if (typeof emoji === 'string') {
@@ -124,12 +107,7 @@ function getData(
         delete emojiData.variations
       }
 
-      if (
-        (set &&
-          (variationData[`has_img_${set}`] == undefined ||
-            variationData[`has_img_${set}`])) ||
-        !set
-      ) {
+      if ((set && (variationData[`has_img_${set}`] == undefined || variationData[`has_img_${set}`])) || !set) {
         emojiData.skin_tone = skin
 
         for (const k in variationData) {
@@ -252,8 +230,7 @@ function measureScrollbar() {
 // Use requestIdleCallback() if available, else fall back to setTimeout().
 // Throttle so as not to run too frequently.
 function throttleIdleTask(func) {
-  const doIdleTask =
-    typeof requestIdleCallback === 'function' ? requestIdleCallback : setTimeout
+  const doIdleTask = typeof requestIdleCallback === 'function' ? requestIdleCallback : setTimeout
 
   let running = false
 

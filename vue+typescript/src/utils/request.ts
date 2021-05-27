@@ -59,12 +59,7 @@ const pending = new Map()
  * @param {AxiosRequestConfig} config
  */
 export const addPending = (config: AxiosRequestConfig) => {
-  const url = [
-    config.method,
-    config.url,
-    qs.stringify(config.params),
-    qs.stringify(config.data)
-  ].join('&')
+  const url = [config.method, config.url, qs.stringify(config.params), qs.stringify(config.data)].join('&')
   config.cancelToken =
     config.cancelToken ||
     new axios.CancelToken(cancel => {
@@ -79,12 +74,7 @@ export const addPending = (config: AxiosRequestConfig) => {
  * @param {AxiosRequestConfig} config
  */
 export const removePending = (config: AxiosRequestConfig) => {
-  const url = [
-    config.method,
-    config.url,
-    qs.stringify(config.params),
-    qs.stringify(config.data)
-  ].join('&')
+  const url = [config.method, config.url, qs.stringify(config.params), qs.stringify(config.data)].join('&')
   if (pending.has(url)) {
     // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
     const cancel = pending.get(url)
@@ -123,11 +113,7 @@ const getErrorMsg = (error: AxiosError, errorMsg: string) => {
 }
 
 // 请求之前
-const requestStart = (
-  config: AxiosRequestConfig,
-  loadingCb: LoadingCallback,
-  showLoading: boolean
-) => {
+const requestStart = (config: AxiosRequestConfig, loadingCb: LoadingCallback, showLoading: boolean) => {
   loadingCb(true)
   startCount()
   if (showLoading) {
@@ -152,14 +138,7 @@ type RequestThenEndType = {
   throwWarningError: boolean
 }
 const requestThenEnd = (options: RequestThenEndType) => {
-  const {
-    response,
-    loadingCb,
-    showLoading,
-    showWarning,
-    warningMsg,
-    throwWarningError
-  } = options
+  const { response, loadingCb, showLoading, showWarning, warningMsg, throwWarningError } = options
   loadingCb(false)
   endCount()
   if (showLoading) {
@@ -201,14 +180,7 @@ type RequestCatchEndType = {
   throwHttpError: boolean
 }
 const requestCatchEnd = (options: RequestCatchEndType) => {
-  const {
-    error,
-    loadingCb,
-    showLoading,
-    showError,
-    errorMsg,
-    throwHttpError
-  } = options
+  const { error, loadingCb, showLoading, showError, errorMsg, throwHttpError } = options
   loadingCb(false)
   endCount()
   if (showLoading) {

@@ -51,12 +51,10 @@ const QueryTemplate = defineComponent({
     onMounted(() => {
       for (let i = 0; i < props.options.length; i++) {
         const item = props.options[i] // eslint-disable-line
-        defaultForm[item.fieldName] =
-          typeof item.defaultValue !== 'undefined' ? item.defaultValue : ''
+        defaultForm[item.fieldName] = typeof item.defaultValue !== 'undefined' ? item.defaultValue : ''
       }
 
-      const filteredOptions =
-        props.options.filter(item => item.defaultValue) || []
+      const filteredOptions = props.options.filter(item => item.defaultValue) || []
       if (filteredOptions.length) {
         filteredOptions.forEach(item => {
           if (item.type === 'monthDatePicker') {
@@ -106,16 +104,12 @@ const QueryTemplate = defineComponent({
             }
 
             case 'monthDatePicker': {
-              formData[item.fieldName] =
-                rangeValue && moment(rangeValue).format('YYYY-MM')
+              formData[item.fieldName] = rangeValue && moment(rangeValue).format('YYYY-MM')
               break
             }
 
             case 'dayDatePicker': {
-              formData[item.fieldName] =
-                rangeValue &&
-                rangeValue.format &&
-                rangeValue.format('YYYY-MM-DD')
+              formData[item.fieldName] = rangeValue && rangeValue.format && rangeValue.format('YYYY-MM-DD')
               break
             }
 
@@ -141,12 +135,7 @@ const QueryTemplate = defineComponent({
 
     function getTemplateByType(type: string, opts: Required<OptionsType>) {
       const templateObj = {
-        input: (
-          <a-input
-            v-model={[form[opts.fieldName], 'value']}
-            placeholder={opts.placeholder || '请填写'}
-          ></a-input>
-        ),
+        input: <a-input v-model={[form[opts.fieldName], 'value']} placeholder={opts.placeholder || '请填写'}></a-input>,
         select: (
           <a-select
             v-model={[form[opts.fieldName], 'value']}
@@ -221,23 +210,10 @@ const QueryTemplate = defineComponent({
 
     return () => {
       return (
-        <a-form
-          ref={formRef}
-          model={form}
-          onFinish={onFinish}
-          class="search-template"
-          name={props.name}
-        >
+        <a-form ref={formRef} model={form} onFinish={onFinish} class="search-template" name={props.name}>
           <a-row gutter={[15, 15]}>
             {props.options.map((item, index) => (
-              <a-col
-                xs={24}
-                sm={12}
-                md={12}
-                lg={8}
-                xl={props.options.length > 3 ? 6 : 8}
-                key={index}
-              >
+              <a-col xs={24} sm={12} md={12} lg={8} xl={props.options.length > 3 ? 6 : 8} key={index}>
                 <a-form-item
                   label={item.title}
                   name={item.fieldName}
@@ -248,13 +224,7 @@ const QueryTemplate = defineComponent({
                 </a-form-item>
               </a-col>
             ))}
-            <a-col
-              xs={24}
-              sm={12}
-              md={12}
-              lg={8}
-              xl={props.options.length > 3 ? 6 : 8}
-            >
+            <a-col xs={24} sm={12} md={12} lg={8} xl={props.options.length > 3 ? 6 : 8}>
               <a-form-item>
                 <a-button type="primary" htmlType="submit">
                   查询

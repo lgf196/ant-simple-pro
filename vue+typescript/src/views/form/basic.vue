@@ -9,18 +9,10 @@
       :rules="rules"
     >
       <a-form-item label="姓名" name="username">
-        <a-input
-          v-model:value="form.username"
-          placeholder="请填写"
-          allowClear
-        />
+        <a-input v-model:value="form.username" placeholder="请填写" allowClear />
       </a-form-item>
       <a-form-item label="外号" name="nickname">
-        <a-input
-          v-model:value="form.nickname"
-          placeholder="请填写"
-          allowClear
-        />
+        <a-input v-model:value="form.nickname" placeholder="请填写" allowClear />
       </a-form-item>
       <a-form-item label="性别" name="sex">
         <a-radio-group v-model:value="form.sex">
@@ -30,34 +22,17 @@
       </a-form-item>
       <a-form-item label="爱好" name="hobby">
         <a-checkbox-group v-model:value="form.hobby">
-          <a-checkbox
-            v-for="(item, index) in hobbyOptions"
-            :key="index"
-            :value="item.value"
-          >
+          <a-checkbox v-for="(item, index) in hobbyOptions" :key="index" :value="item.value">
             {{ item.label }}
           </a-checkbox>
         </a-checkbox-group>
       </a-form-item>
       <a-form-item label="日期" name="date">
-        <a-range-picker
-          v-model:value="form.date"
-          valueFormat="YYYY-MM-DD"
-          allowClear
-        />
+        <a-range-picker v-model:value="form.date" valueFormat="YYYY-MM-DD" allowClear />
       </a-form-item>
       <a-form-item label="技术栈" name="skill">
-        <a-select
-          mode="multiple"
-          placeholder="请选择"
-          v-model:value="form.skill"
-          allowClear
-        >
-          <a-select-option
-            v-for="(item, index) in skillList"
-            :key="index"
-            :value="item.id"
-          >
+        <a-select mode="multiple" placeholder="请选择" v-model:value="form.skill" allowClear>
+          <a-select-option v-for="(item, index) in skillList" :key="index" :value="item.id">
             {{ item.name }}
           </a-select-option>
         </a-select>
@@ -66,11 +41,7 @@
         <ComUploadImage v-model:value="form.photo"></ComUploadImage>
       </a-form-item>
       <a-form-item label="描述" name="description">
-        <a-textarea
-          v-model:value="form.description"
-          :autoSize="{ minRows: 2 }"
-          placeholder="请填写"
-        />
+        <a-textarea v-model:value="form.description" :autoSize="{ minRows: 2 }" placeholder="请填写" />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }" name="remember">
         <a-checkbox v-model:checked="form.remember">记住</a-checkbox>
@@ -83,15 +54,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  ref,
-  reactive,
-  toRefs,
-  onMounted,
-  onBeforeUnmount,
-  toRaw
-} from 'vue'
+import { defineComponent, ref, reactive, toRefs, onMounted, onBeforeUnmount, toRaw } from 'vue'
 import { message } from 'ant-design-vue'
 import { useForm } from '@ant-design-vue/use'
 import { Form } from 'ant-design-vue/types/form/form'
@@ -150,9 +113,7 @@ export default defineComponent({
     onMounted(() => {
       timer = window.setTimeout(() => {
         Object.assign(form, {
-          photo: [
-            'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg'
-          ]
+          photo: ['https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg']
         })
       }, 1000)
     })

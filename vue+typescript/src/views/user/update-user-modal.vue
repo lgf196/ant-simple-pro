@@ -1,34 +1,18 @@
 <template>
   <a-modal title="编辑" :visible="visible" @cancel="onClose">
-    <a-form
-      ref="formRef"
-      :model="form"
-      :rules="rules"
-      :label-col="labelCol"
-      :wrapper-col="wrapperCol"
-    >
+    <a-form ref="formRef" :model="form" :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="名称" name="username">
-        <a-input
-          v-model:value="form.username"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.username" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="介绍" name="introduct">
-        <a-input
-          v-model:value="form.introduct"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.introduct" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="头像" name="iconUrl">
         <ComUploadImage v-model:value="form.iconUrl"></ComUploadImage>
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" :loading="submitting" @click="onSubmit">
-        编辑
-      </a-button>
+      <a-button type="primary" :loading="submitting" @click="onSubmit"> 编辑 </a-button>
       <a-button @click="onReset">重置</a-button>
     </template>
   </a-modal>

@@ -1,13 +1,4 @@
-import {
-  defineComponent,
-  PropType,
-  ref,
-  onMounted,
-  toRefs,
-  unref,
-  watch,
-  onBeforeUpdate
-} from 'vue'
+import { defineComponent, PropType, ref, onMounted, toRefs, unref, watch, onBeforeUpdate } from 'vue'
 import QRCode from 'qr.js/lib/QRCode'
 import ErrorCorrectLevel from 'qr.js/lib/ErrorCorrectLevel'
 import { omit } from 'lodash'
@@ -35,8 +26,7 @@ function convertStr(str: string) {
       out += String.fromCharCode(0x80 | (charcode & 0x3f))
     } else {
       i++
-      charcode =
-        0x10000 + (((charcode & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff))
+      charcode = 0x10000 + (((charcode & 0x3ff) << 10) | (str.charCodeAt(i) & 0x3ff))
       out += String.fromCharCode(0xf0 | (charcode >> 18))
       out += String.fromCharCode(0x80 | ((charcode >> 12) & 0x3f))
       out += String.fromCharCode(0x80 | ((charcode >> 6) & 0x3f))
@@ -82,9 +72,7 @@ function generatePath(modules: Modules, margin = 0) {
     let start: number | null = null
     row.forEach((cell, x) => {
       if (!cell && start !== null) {
-        ops.push(
-          `M${start + margin} ${y + margin}h${x - start}v1H${start + margin}z`
-        )
+        ops.push(`M${start + margin} ${y + margin}h${x - start}v1H${start + margin}z`)
         start = null
         return
       }
@@ -96,11 +84,7 @@ function generatePath(modules: Modules, margin = 0) {
         if (start === null) {
           ops.push(`M${x + margin},${y + margin} h1v1H${x + margin}z`)
         } else {
-          ops.push(
-            `M${start + margin},${y + margin} h${x + 1 - start}v1H${
-              start + margin
-            }z`
-          )
+          ops.push(`M${start + margin},${y + margin} h${x + 1 - start}v1H${start + margin}z`)
         }
         return
       }
@@ -147,10 +131,8 @@ function getImageSettings(
   const scale = numCells / size
   const w = (imageSettings.width || defaultSize) * scale
   const h = (imageSettings.height || defaultSize) * scale
-  const x =
-    imageSettings.x == null ? cells.length / 2 - w / 2 : imageSettings.x * scale
-  const y =
-    imageSettings.y == null ? cells.length / 2 - h / 2 : imageSettings.y * scale
+  const x = imageSettings.x == null ? cells.length / 2 - w / 2 : imageSettings.x * scale
+  const y = imageSettings.y == null ? cells.length / 2 - h / 2 : imageSettings.y * scale
 
   let excavation = null
   if (imageSettings.excavate) {
@@ -250,15 +232,7 @@ export default defineComponent({
     }
 
     function update() {
-      const {
-        value,
-        size,
-        level,
-        bgColor,
-        fgColor,
-        includeMargin,
-        imageSettings
-      } = toRefs(props)
+      const { value, size, level, bgColor, fgColor, includeMargin, imageSettings } = toRefs(props)
       const qrcode = new QRCode(-1, ErrorCorrectLevel[level.value])
       qrcode.addData(convertStr(unref(value)))
       qrcode.make()
@@ -304,11 +278,7 @@ export default defineComponent({
             })
           })
         }
-        if (
-          imgLoaded.value &&
-          imageRef.value &&
-          calculatedImageSettings !== null
-        ) {
+        if (imgLoaded.value && imageRef.value && calculatedImageSettings !== null) {
           ctx.drawImage(
             imageRef.value,
             calculatedImageSettings.x + margin,
@@ -330,36 +300,22 @@ export default defineComponent({
     )
 
     return () => {
-      const {
-        size,
-        style,
-        imageSettings,
-        canvasClass,
-        ...otherProps
-      } = omit(props, ['value', 'level', 'bgColor', 'fgColor', 'includeMargin'])
+      const { size, style, imageSettings, canvasClass, ...otherProps } = omit(props, [
+        'value',
+        'level',
+        'bgColor',
+        'fgColor',
+        'includeMargin'
+      ])
       const canvasStyle = { height: size, width: size, ...style }
       let img = null
       const imgSrc = imageSettings && imageSettings.src
       if (imageSettings != null && imgSrc != null) {
-        img = (
-          <img
-            src={imgSrc}
-            style={{ display: 'none' }}
-            onLoad={handleImageLoad}
-            ref={imageRef}
-          />
-        )
+        img = <img src={imgSrc} style={{ display: 'none' }} onLoad={handleImageLoad} ref={imageRef} />
       }
       return (
         <>
-          <canvas
-            class={canvasClass}
-            style={canvasStyle}
-            height={size}
-            width={size}
-            ref={canvasRef}
-            {...otherProps}
-          />
+          <canvas class={canvasClass} style={canvasStyle} height={size} width={size} ref={canvasRef} {...otherProps} />
           {img}
         </>
       )

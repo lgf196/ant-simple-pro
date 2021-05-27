@@ -15,59 +15,34 @@
             excavate: config.excavate
           }"
         ></VueQrcode>
-        <a-button type="primary" @click="onDown" class="mt10">
-          下载二维码
-        </a-button>
+        <a-button type="primary" @click="onDown" class="mt10"> 下载二维码 </a-button>
       </a-col>
       <a-col :xs="24" :sm="24" :md="12" :lg="19" :xl="19">
-        <a-form
-          class="form"
-          :model="form"
-          :rules="rules"
-          @finish="onFinish"
-          label-align="left"
-        >
+        <a-form class="form" :model="form" :rules="rules" @finish="onFinish" label-align="left">
           <a-form-item label="链接url" name="linkUrl">
             <a-input v-model:value="form.linkUrl" placeholder="请填写" />
           </a-form-item>
           <a-form-item label="二维码大小" name="size">
-            <a-input-number
-              v-model:value="form.size"
-              placeholder="请填写"
-              :min="50"
-            />
+            <a-input-number v-model:value="form.size" placeholder="请填写" :min="50" />
           </a-form-item>
           <a-form-item name="fileList">
             <template #label>
               <span>中间logo图url</span>
               <span class="text-color-danger">必须是透明的底</span>
             </template>
-            <ComUploadImage
-              v-model:value="form.fileList"
-              :limit="1"
-            ></ComUploadImage>
+            <ComUploadImage v-model:value="form.fileList" :limit="1"></ComUploadImage>
           </a-form-item>
           <a-form-item label="logo宽" name="logoW">
-            <a-input-number
-              v-model:value="form.logoW"
-              placeholder="请填写"
-              :min="10"
-            />
+            <a-input-number v-model:value="form.logoW" placeholder="请填写" :min="10" />
           </a-form-item>
           <a-form-item label="logo高" name="logoH">
-            <a-input-number
-              v-model:value="form.logoH"
-              placeholder="请填写"
-              :min="10"
-            />
+            <a-input-number v-model:value="form.logoH" placeholder="请填写" :min="10" />
           </a-form-item>
           <a-form-item label="是否镂空" name="excavate">
             <a-switch v-model:checked="form.excavate"></a-switch>
           </a-form-item>
           <a-form-item class="form-item--submit">
-            <a-button class="submit-btn" type="primary" html-type="submit">
-              生成二维码
-            </a-button>
+            <a-button class="submit-btn" type="primary" html-type="submit"> 生成二维码 </a-button>
           </a-form-item>
         </a-form>
       </a-col>
@@ -127,9 +102,7 @@ export default defineComponent({
 
     function onDown() {
       // const canvas = unref(qrcodeRef)
-      const canvas = document.querySelector(
-        '.canvas-qrcode'
-      ) as HTMLCanvasElement
+      const canvas = document.querySelector('.canvas-qrcode') as HTMLCanvasElement
       console.log('canvas', canvas)
       canvas.setAttribute('crossorigin', 'Anonymous')
       canvas.toBlob(blob => {
