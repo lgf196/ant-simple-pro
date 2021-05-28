@@ -25,7 +25,9 @@ English  |  [简体中文](./README.zh-CN.md)
 
 
 ## Introduction
-![https://cdn.gudsen.com/2021/05/28/fbc499acaca140a8b8d376e22431ed39.gif](https://cdn.gudsen.com/2021/05/28/fbc499acaca140a8b8d376e22431ed39.gif)
+<p align="center">
+  <img width="320" src="https://cdn.gudsen.com/2021/05/28/fbc499acaca140a8b8d376e22431ed39.gif">
+</p>
 [ant-simple-pro](https://github.com/lgf196/ant-simple-pro) is a support [vue3.0](https://github.com/vuejs/vue), [react](https://github.com/facebook/react) [angular](https://github.com/angular/angular), [typescript](https://github.com/microsoft/TypeScript) and other multi-framework The supported front-end solutions for middle and Taiwan, ui is implemented using [antd](https://github.com/ant-design/ant-design), it uses the latest front-end technology stack, and has built-in i18 international solutions, Dynamic routing, responsive design, out-of-the-box use, it can help you quickly build enterprise-level middle and back-end product prototypes, whether you are a vue developer, react, or angular, you can find the version you want here.
 
 - [Preview](https://lgf196.top/react/login)
