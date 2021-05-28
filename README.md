@@ -20,9 +20,7 @@
   </a>
 </p>
 
-
-English  |  [简体中文](./README.zh-CN.md) 
-
+English | [简体中文](./README.zh-CN.md)
 
 ## Introduction
 
@@ -104,17 +102,18 @@ If you think this project helped you, you can give the author a like，the autho
 
 ## Browsers support
 
- Modern browsers does not support IE browser
+Modern browsers does not support IE browser
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IEdge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Edge                                                         | last 2 versions                                              | last 2 versions                                              | last 2 versions                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Edge                                                                                                                                                                                                         | last 2 versions                                                                                                                                                                                                    | last 2 versions                                                                                                                                                                                                | last 2 versions                                                                                                                                                                                                |
 
-##  Ecosphere
+## Ecosphere
 
 - [anferEnd](https://github.com/lgf196/ant-simple-pro/tree/afterEnd) is the back-end project of `ant-simple-pro`, implemented by typescript+node+mysql+docker.
 - [ant-desgin](https://ant.design/index-cn) is the ui of this project. The ant components are rich and beautiful, and the ant ecology is powerful. It is the best choice for middle-Taiwan solutions
 - [h5-Dooring](https://github.com/MrXujiang/h5-Dooring) H5 Page Maker, H5 Editor. Make H5 as easy as building blocks
+
 ## License
 
 [MIT](https://github.com/lgf196/ant-simple-pro/blob/master/LICENSE)
