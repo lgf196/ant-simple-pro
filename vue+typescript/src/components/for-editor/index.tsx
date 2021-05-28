@@ -1,11 +1,4 @@
-import {
-  defineComponent,
-  ref,
-  PropType,
-  onMounted,
-  watch,
-  onUpdated
-} from 'vue'
+import { defineComponent, ref, PropType, onMounted, watch, onUpdated } from 'vue'
 import classNames from 'classnames'
 import marked from './lib/helpers/marked'
 import keydownListen from './lib/helpers/keydownListen'
@@ -196,8 +189,7 @@ export default defineComponent({
     )
 
     function initLanguage() {
-      const lang =
-        CONFIG.langList.indexOf(props.language) >= 0 ? props.language : 'zh-CN'
+      const lang = CONFIG.langList.indexOf(props.language) >= 0 ? props.language : 'zh-CN'
       words.value = CONFIG.language[lang]
     }
 
@@ -367,13 +359,8 @@ export default defineComponent({
     function handleScoll(e: Event) {
       const currentTarget = e.currentTarget as HTMLDivElement
       /* eslint-disable @typescript-eslint/no-non-null-assertion */
-      const radio =
-        $blockEdit.value!.scrollTop /
-        ($scrollEdit.value!.scrollHeight - currentTarget.offsetHeight)
-      $blockPreview.value!.scrollTop =
-        ($scrollPreview.value!.scrollHeight -
-          $blockPreview.value!.offsetHeight) *
-        radio
+      const radio = $blockEdit.value!.scrollTop / ($scrollEdit.value!.scrollHeight - currentTarget.offsetHeight)
+      $blockPreview.value!.scrollTop = ($scrollPreview.value!.scrollHeight - $blockPreview.value!.offsetHeight) * radio
     }
 
     return () => {
@@ -431,12 +418,7 @@ export default defineComponent({
           {/* 内容区 */}
           <div class="for-editor" style={{ fontSize }}>
             {/* 编辑区 */}
-            <div
-              class={editorClass}
-              ref={$blockEdit}
-              onScroll={handleScoll}
-              onClick={focusText}
-            >
+            <div class={editorClass} ref={$blockEdit} onScroll={handleScoll} onClick={focusText}>
               <div class="for-editor-block" ref={$scrollEdit}>
                 {lineNum()}
                 <div class="for-editor-content">

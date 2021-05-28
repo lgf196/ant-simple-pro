@@ -38,14 +38,8 @@ export default defineComponent({
         moment(new Date().setDate(new Date().getDate() - 1)),
         moment(new Date().setDate(new Date().getDate() - 1))
       ],
-      最近7天: [
-        moment(new Date().getTime() - 3600 * 1000 * 24 * 6),
-        moment(new Date())
-      ],
-      最近30天: [
-        moment(new Date().getTime() - 3600 * 1000 * 24 * 29),
-        moment(new Date())
-      ],
+      最近7天: [moment(new Date().getTime() - 3600 * 1000 * 24 * 6), moment(new Date())],
+      最近30天: [moment(new Date().getTime() - 3600 * 1000 * 24 * 29), moment(new Date())],
       本月: [moment().startOf('month'), moment().endOf('month')],
       上月: [moment(getPrevMonthDays().start), moment(getPrevMonthDays().end)]
     })

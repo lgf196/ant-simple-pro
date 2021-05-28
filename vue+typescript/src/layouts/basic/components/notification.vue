@@ -14,10 +14,7 @@
                     <template #avatar>
                       <a-avatar :size="30" style="backgroundcolor: #fff">
                         <template #icon>
-                          <ComSvgIcon
-                            name="logo"
-                            class="icon-logo"
-                          ></ComSvgIcon>
+                          <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
                         </template>
                       </a-avatar>
                     </template>
@@ -25,13 +22,7 @@
                       <span>{{ item.title }}</span>
                     </template>
                   </a-list-item-meta>
-                  <a-button
-                    type="primary"
-                    size="small"
-                    ghost
-                    :disabled="item.isRead"
-                    @click="onRead(item)"
-                  >
+                  <a-button type="primary" size="small" ghost :disabled="item.isRead" @click="onRead(item)">
                     未读
                   </a-button>
                 </a-list-item>
@@ -46,10 +37,7 @@
                     <template #avatar>
                       <a-avatar :size="30" style="backgroundcolor: #fff">
                         <template #icon>
-                          <ComSvgIcon
-                            name="logo"
-                            class="icon-logo"
-                          ></ComSvgIcon>
+                          <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
                         </template>
                       </a-avatar>
                     </template>
@@ -57,13 +45,7 @@
                       <span>{{ item.title }}</span>
                     </template>
                   </a-list-item-meta>
-                  <a-button
-                    type="primary"
-                    size="small"
-                    ghost
-                    :disabled="item.isRead"
-                    @click="onRead(item)"
-                  >
+                  <a-button type="primary" size="small" ghost :disabled="item.isRead" @click="onRead(item)">
                     未读
                   </a-button>
                 </a-list-item>
@@ -176,7 +158,6 @@ export default defineComponent({
   background: #fff;
   padding: 15px;
   border-radius: 4px;
-  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 }
 </style>

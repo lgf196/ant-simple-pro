@@ -29,11 +29,7 @@ export const getOption = (
         fontSize: 12
       },
       formatter(data) {
-        const {
-          name,
-          value,
-          marker
-        } = data as echarts.EChartOption.Tooltip.Format
+        const { name, value, marker } = data as echarts.EChartOption.Tooltip.Format
         return `
         <p style="margin-bottom: 8px">${name}</p>
         <div>${marker}

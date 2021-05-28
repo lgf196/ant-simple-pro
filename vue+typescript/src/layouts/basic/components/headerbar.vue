@@ -2,10 +2,7 @@
   <header class="header">
     <div class="header-inner">
       <div class="header-trigger" @click="onToggle" v-if="!drawerVisible">
-        <ComSvgIcon
-          :name="collapsed ? 'menu-unfold' : 'menu-fold'"
-          v-if="windowWidth > 750"
-        ></ComSvgIcon>
+        <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'" v-if="windowWidth > 750"></ComSvgIcon>
         <ComSvgIcon name="menu-unfold" v-else></ComSvgIcon>
       </div>
       <div v-else></div>
@@ -14,11 +11,7 @@
           <Communication />
         </a-row>
         <a-row class="docs" type="flex" align="middle">
-          <a
-            class="docs-link"
-            href="http://blog.lgf196.top/ant-simple-pro-document/"
-            target="_blank"
-          >
+          <a class="docs-link" href="http://blog.lgf196.top/ant-simple-pro-document/" target="_blank">
             <a-tooltip title="文档" placement="bottom">
               <QuestionCircleOutlined />
             </a-tooltip>

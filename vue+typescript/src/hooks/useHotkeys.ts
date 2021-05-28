@@ -6,17 +6,10 @@ type AvailableTags = 'INPUT' | 'TEXTAREA' | 'SELECT'
 // We implement our own custom filter system.
 hotkeys.filter = () => true
 
-const tagFilter = (
-  { target }: KeyboardEvent,
-  enableOnTags?: AvailableTags[]
-) => {
+const tagFilter = ({ target }: KeyboardEvent, enableOnTags?: AvailableTags[]) => {
   const targetTagName = target && (target as HTMLElement).tagName
 
-  return Boolean(
-    targetTagName &&
-      enableOnTags &&
-      enableOnTags.includes(targetTagName as AvailableTags)
-  )
+  return Boolean(targetTagName && enableOnTags && enableOnTags.includes(targetTagName as AvailableTags))
 }
 
 const isKeyboardEventTriggeredByInput = (ev: KeyboardEvent) => {
@@ -35,16 +28,8 @@ export type Options = {
   keydown?: boolean // Trigger on keydown event? (Default: true)
 }
 
-export function useHotkeys<T extends Element>(
-  keys: string,
-  callback: KeyHandler,
-  options?: Options
-): Ref<T | void>
-export function useHotkeys<T extends Element>(
-  keys: string,
-  callback: KeyHandler,
-  deps?: any[]
-): Ref<T | void>
+export function useHotkeys<T extends Element>(keys: string, callback: KeyHandler, options?: Options): Ref<T | void>
+export function useHotkeys<T extends Element>(keys: string, callback: KeyHandler, deps?: any[]): Ref<T | void>
 export function useHotkeys<T extends Element>(
   keys: string,
   callback: KeyHandler,
@@ -72,20 +57,15 @@ export function useHotkeys<T extends Element>(
     enableOnContentEditable = false
   } = options || {}
 
-  function keyHandler(
-    keyboardEvent: KeyboardEvent,
-    hotkeysEvent: HotkeysEvent
-  ) {
+  function keyHandler(keyboardEvent: KeyboardEvent, hotkeysEvent: HotkeysEvent) {
     if (filter && !filter(keyboardEvent)) {
       return !filterPreventDefault
     }
 
     // Check whether the hotkeys was triggered inside an input and that input is enabled or if it was triggered by a content editable tag and it is enabled.
     if (
-      (isKeyboardEventTriggeredByInput(keyboardEvent) &&
-        !tagFilter(keyboardEvent, enableOnTags)) ||
-      ((keyboardEvent.target as HTMLElement)?.isContentEditable &&
-        !enableOnContentEditable)
+      (isKeyboardEventTriggeredByInput(keyboardEvent) && !tagFilter(keyboardEvent, enableOnTags)) ||
+      ((keyboardEvent.target as HTMLElement)?.isContentEditable && !enableOnContentEditable)
     ) {
       return true
     }

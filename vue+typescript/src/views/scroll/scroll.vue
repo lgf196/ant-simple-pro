@@ -3,11 +3,7 @@
     <div class="scroll-wrap">
       <ScrollPane ref="scrollPane">
         <ul>
-          <li
-            v-for="(item, index) in 600"
-            :key="index"
-            :style="{ border: '1px solid #eee' }"
-          >
+          <li v-for="(item, index) in 600" :key="index" :style="{ border: '1px solid #eee' }">
             {{ item }}
           </li>
         </ul>

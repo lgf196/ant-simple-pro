@@ -20,12 +20,7 @@ export const getRandomStr = () => {
 export const getAffixTags = (routes: RouteRecordRaw[] = []) => {
   let result: TagItemType[] = []
   routes.forEach(item => {
-    if (
-      item.path &&
-      item.path !== '/:pathMatch(.*)*' &&
-      item.meta &&
-      item.meta.affix
-    ) {
+    if (item.path && item.path !== '/:pathMatch(.*)*' && item.meta && item.meta.affix) {
       result.push(item)
     }
     if (Array.isArray(item.children)) {

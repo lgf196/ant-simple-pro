@@ -89,9 +89,7 @@ export default defineComponent({
         <div ref="wrapper" class="wrapper">
           <a-spin spinning={this.loading}>
             <div class="layout-table">
-              {this.$slots.search && (
-                <div class="layout-table__header">{search()}</div>
-              )}
+              {this.$slots.search && <div class="layout-table__header">{search()}</div>}
               <div class="layout-table__toolbar">
                 <div class="toolbar-left">{this.tableTitle}</div>
                 <div class="toolbar-right">
@@ -101,10 +99,7 @@ export default defineComponent({
                     <a-tooltip title="刷新" placement="bottom">
                       <SyncOutlined onClick={this.onRefresh} />
                     </a-tooltip>
-                    <FilterColumns
-                      columns={columns}
-                      onChange={onFilterChange}
-                    />
+                    <FilterColumns columns={columns} onChange={onFilterChange} />
                     <TableSize onChange={onTableSizeChange} />
                     <Fullscreen el={() => this.$refs.wrapper} />
                     {extraIcons()}
@@ -117,9 +112,7 @@ export default defineComponent({
                 tableProps,
                 restSlots
               )}
-              <div class="layout-table__pagination">
-                {h(Pagination, paginationProps)}
-              </div>
+              <div class="layout-table__pagination">{h(Pagination, paginationProps)}</div>
             </div>
           </a-spin>
         </div>

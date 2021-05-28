@@ -5,14 +5,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  onBeforeUnmount,
-  onMounted,
-  ref,
-  watch,
-  nextTick
-} from 'vue'
+import { defineComponent, onBeforeUnmount, onMounted, ref, watch, nextTick } from 'vue'
 import { message } from 'ant-design-vue'
 import type { Editor } from 'tinymce'
 import { getRandomStr } from '@/utils'

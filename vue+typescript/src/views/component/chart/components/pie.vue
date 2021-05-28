@@ -9,10 +9,7 @@
         :key="index"
         @click="onLegendItemClick(index)"
       >
-        <div
-          class="round"
-          :style="{ backgroundColor: originalColors[index] }"
-        ></div>
+        <div class="round" :style="{ backgroundColor: originalColors[index] }"></div>
         <div class="content">
           <span class="name">{{ item.name }}</span>
           <span class="percent">{{ item.percent }}%</span>
@@ -50,14 +47,7 @@ export default defineComponent({
     let chart: echarts.ECharts // eslint-disable-line
     let list: DataItemType[] = []
     let colors: string[] = []
-    const color = [
-      '#6394f9',
-      '#62daaa',
-      '#657797',
-      '#f6c021',
-      '#e96b5a',
-      '#74caed'
-    ]
+    const color = ['#6394f9', '#62daaa', '#657797', '#f6c021', '#e96b5a', '#74caed']
     const chartData = [
       { value: 27, name: '分类一' },
       { value: 25, name: '分类二' },
@@ -112,20 +102,14 @@ export default defineComponent({
     function onLegendItemClick(clickIndex: number) {
       if (state.disabledLegendIndexs.indexOf(clickIndex) >= 0) {
         // 选中集合中已有，放出当前点击数据
-        state.disabledLegendIndexs = state.disabledLegendIndexs.filter(
-          v => v !== clickIndex
-        )
+        state.disabledLegendIndexs = state.disabledLegendIndexs.filter(v => v !== clickIndex)
       } else {
         // 选中集合中没有，排除当前点击数据
         state.disabledLegendIndexs.push(clickIndex)
       }
       // 计算出新的数据后渲染
-      list = state.originalList.filter(
-        (_, i) => state.disabledLegendIndexs.indexOf(i) < 0
-      )
-      colors = state.originalColors.filter(
-        (_, i) => state.disabledLegendIndexs.indexOf(i) < 0
-      )
+      list = state.originalList.filter((_, i) => state.disabledLegendIndexs.indexOf(i) < 0)
+      colors = state.originalColors.filter((_, i) => state.disabledLegendIndexs.indexOf(i) < 0)
       renderChart()
     }
 

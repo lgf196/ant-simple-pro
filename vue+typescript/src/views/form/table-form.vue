@@ -4,25 +4,13 @@
       <a-row :gutter="[15, 15]" type="flex" class="flex-wrap pb10">
         <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8">
           <a-form-item label="日期" name="date">
-            <TimeRangeSelection
-              v-model:value="form.date"
-              style="width: 100%"
-            ></TimeRangeSelection>
+            <TimeRangeSelection v-model:value="form.date" style="width: 100%"></TimeRangeSelection>
           </a-form-item>
         </a-col>
         <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8">
           <a-form-item label="语言" name="lang">
-            <a-select
-              v-model:value="form.lang"
-              show-search
-              option-filter-prop="children"
-              filter-option
-            >
-              <a-select-option
-                v-for="item in langeListOptions"
-                :key="item.value"
-                :value="item.value"
-              >
+            <a-select v-model:value="form.lang" show-search option-filter-prop="children" filter-option>
+              <a-select-option v-for="item in langeListOptions" :key="item.value" :value="item.value">
                 {{ item.label }}
               </a-select-option>
             </a-select>
@@ -30,10 +18,7 @@
         </a-col>
         <a-col :xs="24" :sm="12" :md="12" :lg="8" :xl="8">
           <a-form-item label="介绍" name="platform">
-            <a-input
-              v-model:value="form.platform"
-              placeholder="请填写"
-            ></a-input>
+            <a-input v-model:value="form.platform" placeholder="请填写"></a-input>
           </a-form-item>
         </a-col>
         <a-col style="flex: 0 0 160px; width: 160px">
@@ -47,11 +32,7 @@
           </a-form-item>
         </a-col>
       </a-row>
-      <a-table
-        :columns="columns"
-        :data-source="form.dataSource"
-        rowKey="productId"
-      >
+      <a-table :columns="columns" :data-source="form.dataSource" rowKey="productId">
         <template #index="{ index }">
           <span>
             {{ index + 1 }}
@@ -63,10 +44,7 @@
             :name="['dataSource', index, 'productNumber']"
             :rules="[{ required: true, message: '请填写' }]"
           >
-            <a-input-number
-              v-model:value="form.dataSource[index].productNumber"
-              :min="0"
-            ></a-input-number>
+            <a-input-number v-model:value="form.dataSource[index].productNumber" :min="0"></a-input-number>
           </a-form-item>
         </template>
         <template #firstJourneyExpenses="{ index }">
@@ -75,20 +53,11 @@
             :name="['dataSource', index, 'firstJourneyExpenses']"
             :rules="[{ required: true, message: '请填写' }]"
           >
-            <a-input-number
-              v-model:value="form.dataSource[index].firstJourneyExpenses"
-              :min="0"
-            ></a-input-number>
+            <a-input-number v-model:value="form.dataSource[index].firstJourneyExpenses" :min="0"></a-input-number>
           </a-form-item>
         </template>
         <template #pictureurls="{ text }">
-          <ComImage
-            v-if="text"
-            className="avatar"
-            :src="text"
-            @click="onImageClick(text)"
-            fit="cover"
-          >
+          <ComImage v-if="text" className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
             <template v-slot:error><UserOutlined /></template>
           </ComImage>
         </template>
@@ -158,16 +127,14 @@ export default defineComponent({
       dataSource: [
         {
           productId: 'odde43-de',
-          pictureurls:
-            'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1616494356149.png',
+          pictureurls: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1616494356149.png',
           productNumber: 0,
           firstJourneyExpenses: 0,
           remarks: '今天天气真好'
         },
         {
           productId: 'odde41-de',
-          pictureurls:
-            'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1616494473689.jpg',
+          pictureurls: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1616494473689.jpg',
           productNumber: 0,
           firstJourneyExpenses: 0,
           remarks: '你真的好漂亮呀'

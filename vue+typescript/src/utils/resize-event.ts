@@ -16,10 +16,7 @@ const resizeHandler = function (entries: ResizeObserverEntry[]) {
   }
 }
 
-export const addResizeListener = function (
-  element: ResizeElement,
-  fn: () => void
-) {
+export const addResizeListener = function (element: ResizeElement, fn: () => void) {
   if (!element.__resizeListeners__) {
     element.__resizeListeners__ = []
     element.__ro__ = new ResizeObserver(resizeHandler)
@@ -28,10 +25,7 @@ export const addResizeListener = function (
   element.__resizeListeners__.push(fn)
 }
 
-export const removeResizeListener = function (
-  element: ResizeElement,
-  fn: () => void
-) {
+export const removeResizeListener = function (element: ResizeElement, fn: () => void) {
   if (!element || !element.__resizeListeners__) {
     return
   }

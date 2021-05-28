@@ -1,10 +1,5 @@
 <template>
-  <Scrollbar
-    ref="scrollbarRef"
-    wrapClass="scrollbar__wrap"
-    viewClass="scrollbar__view"
-    class="scroll-container"
-  >
+  <Scrollbar ref="scrollbarRef" wrapClass="scrollbar__wrap" viewClass="scrollbar__view" class="scroll-container">
     <slot></slot>
   </Scrollbar>
 </template>
@@ -33,9 +28,7 @@ export default defineComponent({
         return
       }
       nextTick(() => {
-        const wrap = scrollbar.$el.querySelector(
-          '.scrollbar__wrap'
-        ) as HTMLElement
+        const wrap = scrollbar.$el.querySelector('.scrollbar__wrap') as HTMLElement
         if (!wrap) {
           return
         }
@@ -63,9 +56,7 @@ export default defineComponent({
         return
       }
       nextTick(() => {
-        const wrap = scrollbar.$el.querySelector(
-          '.scrollbar__wrap'
-        ) as HTMLElement
+        const wrap = scrollbar.$el.querySelector('.scrollbar__wrap') as HTMLElement
         if (!wrap) {
           return
         }

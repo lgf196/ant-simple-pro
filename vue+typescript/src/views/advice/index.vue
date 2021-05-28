@@ -1,11 +1,7 @@
 <template>
   <div class="com-page p20">
     <a-divider>顶部广告栏</a-divider>
-    <TopAdvice
-      :imageUrl="topConfig.imageUrl"
-      :linkUrl="topConfig.linkUrl"
-      :bg="topConfig.bg"
-    ></TopAdvice>
+    <TopAdvice :imageUrl="topConfig.imageUrl" :linkUrl="topConfig.linkUrl" :bg="topConfig.bg"></TopAdvice>
     <a-divider />
     <a-button type="primary" @click="onOpen">弹窗广告栏</a-button>
     <Popup
@@ -47,8 +43,7 @@ export default defineComponent({
     const popupConfig: PopupPropsType = {
       visible: popupVisible,
       onClose,
-      imageUrl:
-        'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1619162519739.png',
+      imageUrl: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1619162519739.png',
       linkUrl: 'https://github.com/lgf196/ant-simple-pro'
     }
     return {

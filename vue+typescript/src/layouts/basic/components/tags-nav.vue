@@ -1,11 +1,6 @@
 <template>
   <div class="tags-nav" v-if="tagsNavVisible">
-    <ScrollPane
-      :horizontalBar="false"
-      :verticalBar="false"
-      ref="scrollPane"
-      class="scroll-pane"
-    >
+    <ScrollPane :horizontalBar="false" :verticalBar="false" ref="scrollPane" class="scroll-pane">
       <div
         v-for="(item, index) in totalTags"
         :key="index"
@@ -16,11 +11,7 @@
         @click="onClickTag(item)"
       >
         <span class="nav-tag__title">{{ item.meta && item.meta.title }}</span>
-        <CloseOutlined
-          v-if="!isAffix(item)"
-          class="nav-tag__icon"
-          @click.stop="onDeleteTag(item)"
-        />
+        <CloseOutlined v-if="!isAffix(item)" class="nav-tag__icon" @click.stop="onDeleteTag(item)" />
       </div>
     </ScrollPane>
     <div class="tag-option">

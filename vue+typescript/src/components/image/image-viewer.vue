@@ -1,10 +1,5 @@
 <template>
-  <div
-    tabindex="-1"
-    ref="com-image-viewer__wrapper"
-    class="com-image-viewer__wrapper"
-    :style="{ 'z-index': zIndex }"
-  >
+  <div tabindex="-1" ref="com-image-viewer__wrapper" class="com-image-viewer__wrapper" :style="{ 'z-index': zIndex }">
     <div class="com-image-viewer__mask"></div>
     <!-- CLOSE -->
     <span class="com-image-viewer__btn com-image-viewer__close" @click="hide">
@@ -30,25 +25,13 @@
     <!-- ACTIONS -->
     <div class="com-image-viewer__btn com-image-viewer__actions">
       <div class="com-image-viewer__actions__inner">
-        <ComSvgIcon
-          name="zoom-out"
-          @click="handleActions('zoomOut')"
-        ></ComSvgIcon>
-        <ComSvgIcon
-          name="zoom-in"
-          @click="handleActions('zoomIn')"
-        ></ComSvgIcon>
+        <ComSvgIcon name="zoom-out" @click="handleActions('zoomOut')"></ComSvgIcon>
+        <ComSvgIcon name="zoom-in" @click="handleActions('zoomIn')"></ComSvgIcon>
         <i class="com-image-viewer__actions__divider"></i>
         <ComSvgIcon :name="mode.icon" @click="toggleMode"></ComSvgIcon>
         <i class="com-image-viewer__actions__divider"></i>
-        <ComSvgIcon
-          name="refresh-left"
-          @click="handleActions('anticlocelise')"
-        ></ComSvgIcon>
-        <ComSvgIcon
-          name="refresh-right"
-          @click="handleActions('clocelise')"
-        ></ComSvgIcon>
+        <ComSvgIcon name="refresh-left" @click="handleActions('anticlocelise')"></ComSvgIcon>
+        <ComSvgIcon name="refresh-right" @click="handleActions('clocelise')"></ComSvgIcon>
       </div>
     </div>
     <!-- CANVAS -->
@@ -234,22 +217,20 @@ export default defineComponent({
         const handler = o[keyCode]
         handler && handler()
       })
-      this._mouseWheelHandler = rafThrottle(
-        (e: WheelEvent & { wheelDelta: number }) => {
-          const delta = e.wheelDelta ? e.wheelDelta : -e.detail
-          if (delta > 0) {
-            this.handleActions('zoomIn', {
-              zoomRate: 0.015,
-              enableTransition: false
-            })
-          } else {
-            this.handleActions('zoomOut', {
-              zoomRate: 0.015,
-              enableTransition: false
-            })
-          }
+      this._mouseWheelHandler = rafThrottle((e: WheelEvent & { wheelDelta: number }) => {
+        const delta = e.wheelDelta ? e.wheelDelta : -e.detail
+        if (delta > 0) {
+          this.handleActions('zoomIn', {
+            zoomRate: 0.015,
+            enableTransition: false
+          })
+        } else {
+          this.handleActions('zoomOut', {
+            zoomRate: 0.015,
+            enableTransition: false
+          })
         }
-      )
+      })
       on(document, 'keydown', this._keyDownHandler)
       on(document, mousewheelEventName, this._mouseWheelHandler)
     },
@@ -320,10 +301,7 @@ export default defineComponent({
       const len = this.urlList.length
       this.index = (this.index + 1) % len
     },
-    handleActions(
-      action: 'zoomOut' | 'zoomIn' | 'anticlocelise' | 'clocelise',
-      options = {}
-    ) {
+    handleActions(action: 'zoomOut' | 'zoomIn' | 'anticlocelise' | 'clocelise', options = {}) {
       if (this.loading) return
       const { zoomRate, rotateDeg, enableTransition } = {
         zoomRate: 0.2,
@@ -335,9 +313,7 @@ export default defineComponent({
       switch (action) {
         case 'zoomOut':
           if (transform.scale > 0.2) {
-            transform.scale = parseFloat(
-              (transform.scale - zoomRate).toFixed(3)
-            )
+            transform.scale = parseFloat((transform.scale - zoomRate).toFixed(3))
           }
           break
         case 'zoomIn':

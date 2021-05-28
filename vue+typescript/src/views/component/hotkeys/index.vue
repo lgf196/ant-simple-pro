@@ -5,12 +5,7 @@
       <li class="p20">按下<code>ctrl+s</code>键保存当前文本</li>
     </ul>
     <p class="p20">{{ text }}</p>
-    <a-textarea
-      v-model:value="text"
-      type="textarea"
-      :disabled="disabled"
-      :autoSize="{ minRows: 3 }"
-    ></a-textarea>
+    <a-textarea v-model:value="text" type="textarea" :disabled="disabled" :autoSize="{ minRows: 3 }"></a-textarea>
   </div>
 </template>
 

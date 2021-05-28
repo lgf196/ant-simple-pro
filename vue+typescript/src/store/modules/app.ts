@@ -1,12 +1,7 @@
 import { VuexModule, getModule, Module, Mutation } from 'vuex-module-decorators'
 import { _RouteLocationBase } from 'vue-router'
 import store from '@/store'
-import {
-  getCollapse,
-  setCollapse,
-  getSideBarTheme,
-  setSideBarTheme
-} from '@/utils/local'
+import { getCollapse, setCollapse, getSideBarTheme, setSideBarTheme } from '@/utils/local'
 
 export type TagItemType = Partial<_RouteLocationBase>
 export type ThemeValue = 'dark' | 'light'

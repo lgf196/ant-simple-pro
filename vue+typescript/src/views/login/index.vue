@@ -7,30 +7,16 @@
           <img class="image" src="@/assets/images/logo.png" />
           <h1 class="title">Ant Simple Pro</h1>
         </a-row>
-        <a-form
-          class="form"
-          :model="form"
-          :rules="rules"
-          @finish="handleFinish"
-        >
+        <a-form class="form" :model="form" :rules="rules" @finish="handleFinish">
           <a-form-item has-feedback name="email">
-            <a-input
-              v-model:value="form.email"
-              placeholder="请填写邮箱"
-              size="large"
-            >
+            <a-input v-model:value="form.email" placeholder="请填写邮箱" size="large">
               <template #prefix>
                 <UserOutlined class="form-item-prefix" />
               </template>
             </a-input>
           </a-form-item>
           <a-form-item has-feedback name="password">
-            <a-input
-              type="password"
-              v-model:value="form.password"
-              placeholder="请填写密码"
-              size="large"
-            >
+            <a-input type="password" v-model:value="form.password" placeholder="请填写密码" size="large">
               <template #prefix>
                 <LockOutlined class="form-item-prefix" />
               </template>
@@ -42,13 +28,7 @@
             </a-checkbox>
           </a-form-item> -->
           <a-form-item class="form-item--submit">
-            <a-button
-              class="submit-btn"
-              type="primary"
-              html-type="submit"
-              size="large"
-              :loading="loading"
-            >
+            <a-button class="submit-btn" type="primary" html-type="submit" size="large" :loading="loading">
               登录
             </a-button>
           </a-form-item>
@@ -67,12 +47,7 @@ import userStore from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { message } from 'ant-design-vue'
 import { login } from './service'
-import {
-  getRememberUser,
-  setRememberUser,
-  removeRememberUser,
-  setToken
-} from '@/utils/local'
+import { getRememberUser, setRememberUser, removeRememberUser, setToken } from '@/utils/local'
 import FooterBar from '@/components/footerbar/index.vue'
 type LoginFormType = {
   email: string
@@ -164,8 +139,7 @@ export default defineComponent({
   width: 360px;
   padding: 50px;
   border-radius: 2px;
-  box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1),
-    0 55px 85px -60px rgba(24, 144, 255, 0.31);
+  box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1), 0 55px 85px -60px rgba(24, 144, 255, 0.31);
   background-color: #fff;
   .logo {
     .image {

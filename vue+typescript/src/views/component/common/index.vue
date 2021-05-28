@@ -62,8 +62,7 @@ export default defineComponent({
       urls: [] as string[]
     })
     const timer = setTimeout(() => {
-      url.value =
-        'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg'
+      url.value = 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg'
       state.urls = [
         'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1600419769390.jpeg',
         'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1606805525442.jpg'

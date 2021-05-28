@@ -32,8 +32,7 @@ import { isString, isHtmlElement } from '@/utils/type'
 import { throttle } from 'lodash'
 import './index.less'
 
-const isSupportObjectFit = () =>
-  document.documentElement.style.objectFit !== undefined
+const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined
 
 const ObjectFit = {
   NONE: 'none',
@@ -86,9 +85,7 @@ export default defineComponent({
     imageStyle(): Record<string, unknown> {
       const { fit } = this
       if (fit) {
-        return isSupportObjectFit()
-          ? { 'object-fit': fit }
-          : this.getImageStyle(fit)
+        return isSupportObjectFit() ? { 'object-fit': fit } : this.getImageStyle(fit)
       }
       return {}
     },
@@ -203,19 +200,14 @@ export default defineComponent({
      */
     getImageStyle(fit: string) {
       const { imageWidth, imageHeight } = this
-      const {
-        clientWidth: containerWidth,
-        clientHeight: containerHeight
-      } = this.$el
+      const { clientWidth: containerWidth, clientHeight: containerHeight } = this.$el
 
-      if (!imageWidth || !imageHeight || !containerWidth || !containerHeight)
-        return {}
+      if (!imageWidth || !imageHeight || !containerWidth || !containerHeight) return {}
 
       const vertical = imageWidth / imageHeight < 1
 
       if (fit === ObjectFit.SCALE_DOWN) {
-        const isSmaller =
-          imageWidth < containerWidth && imageHeight < containerHeight
+        const isSmaller = imageWidth < containerWidth && imageHeight < containerHeight
         fit = isSmaller ? ObjectFit.NONE : ObjectFit.CONTAIN
       }
 

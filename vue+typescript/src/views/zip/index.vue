@@ -27,12 +27,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage
-          className="avatar"
-          :src="text"
-          @click="onImageClick(text)"
-          fit="cover"
-        >
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -48,11 +43,7 @@ import { getUsers } from '@/views/user/service'
 import { useAsync } from '@/hooks'
 import imagePreview from '@/components/image/image-preview'
 import { exportTxtToZip } from '@/utils/zip'
-import {
-  excelHeader,
-  excelKeyList,
-  normalizeExcelData
-} from '@/views/excel/types'
+import { excelHeader, excelKeyList, normalizeExcelData } from '@/views/excel/types'
 const columns = [
   {
     dataIndex: 'index',
@@ -140,12 +131,7 @@ export default defineComponent({
     }
 
     function onExport() {
-      exportTxtToZip(
-        excelHeader,
-        normalizeExcelData(unref(userList), excelKeyList),
-        'user',
-        'user'
-      )
+      exportTxtToZip(excelHeader, normalizeExcelData(unref(userList), excelKeyList), 'user', 'user')
     }
 
     return {

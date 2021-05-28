@@ -15,18 +15,9 @@
       </transition>
     </router-link>
     <div class="menu">
-      <RouteMenu
-        :menus="accessMenus"
-        :collapsed="collapsed"
-        :theme="sliderTheme"
-      ></RouteMenu>
+      <RouteMenu :menus="accessMenus" :collapsed="collapsed" :theme="sliderTheme"></RouteMenu>
     </div>
-    <a-row
-      class="toggle-theme"
-      type="flex"
-      justify="space-between"
-      align="middle"
-    >
+    <a-row class="toggle-theme" type="flex" justify="space-between" align="middle">
       <a-tooltip title="主题" v-if="!collapsed" placement="right">
         <BulbOutlined />
       </a-tooltip>

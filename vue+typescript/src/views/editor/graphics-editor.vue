@@ -73,9 +73,7 @@ export default defineComponent({
 
       function changePortsVisible(visible: boolean) {
         if (container.value) {
-          const ports = container.value.querySelectorAll(
-            '.x6-port-body'
-          ) as NodeListOf<HTMLDivElement>
+          const ports = container.value.querySelectorAll('.x6-port-body') as NodeListOf<HTMLDivElement>
           for (let i = 0, len = ports.length; i < len; i = i + 1) {
             ports[i].style.visibility = visible ? 'visible' : 'hidden'
           }

@@ -18,10 +18,7 @@ export default defineComponent({
   render() {
     const columns = this.columns || []
     const popoverContent = (
-      <a-checkbox-group
-        onChange={this.onChange}
-        defaultValue={columns.map(v => v.key)}
-      >
+      <a-checkbox-group onChange={this.onChange} defaultValue={columns.map(v => v.key)}>
         {columns.map((item, index) => (
           <div key={index}>
             <a-checkbox value={item.key}>

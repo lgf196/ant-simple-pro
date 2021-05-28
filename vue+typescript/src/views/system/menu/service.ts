@@ -21,9 +21,7 @@ export type UpdateMenuParams = {
   pid: number[] | null
 }
 
-export const getMenus = (
-  params: QueryMenusParams
-): Promise<QueryMenusResult> => {
+export const getMenus = (params: QueryMenusParams): Promise<QueryMenusResult> => {
   return request({
     method: 'get',
     url: '/menu/getCurrentList',
@@ -52,10 +50,7 @@ export const updateMenu = (
   })
 }
 
-export const deleteMenu = (
-  id: number,
-  cancelCallback: (cancel: Canceler) => void
-) => {
+export const deleteMenu = (id: number, cancelCallback: (cancel: Canceler) => void) => {
   return request({
     method: 'post',
     url: '/menu/delete',

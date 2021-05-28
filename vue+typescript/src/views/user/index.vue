@@ -16,11 +16,7 @@
       <template #search>
         <a-form ref="form" layout="inline" :model="{}">
           <a-form-item label="名称">
-            <a-input
-              v-model:value="username"
-              placeholder="请输入"
-              allowClear
-            ></a-input>
+            <a-input v-model:value="username" placeholder="请输入" allowClear></a-input>
           </a-form-item>
           <a-form-item>
             <a-space>
@@ -50,12 +46,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage
-          className="avatar"
-          :src="text"
-          @click="onImageClick(text)"
-          fit="cover"
-        >
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
