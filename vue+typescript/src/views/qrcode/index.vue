@@ -55,7 +55,7 @@ import { defineComponent, ref, ComponentPublicInstance } from 'vue'
 import { saveAs } from 'file-saver'
 import VueQrcode from '@/components/qrcode'
 import Logo from '@/assets/images/Icon_512x512-15@1x@1x.png'
-const defalutVal = {
+export const defalutVal = {
   linkUrl: 'https://lgf196.top/react/home',
   size: 200,
   logoUrl: Logo,

@@ -116,6 +116,13 @@ export const basicRoutes: RouteRecordRaw[] = [
         meta: {
           title: '图片裁切'
         }
+      },
+      {
+        path: '/component/downFile',
+        component: () => import('@/views/component/download/index.vue'),
+        meta: {
+          title: '下载文件'
+        }
       }
     ]
   },
