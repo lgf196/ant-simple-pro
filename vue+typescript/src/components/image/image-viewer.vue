@@ -1,54 +1,62 @@
 <template>
-  <div tabindex="-1" ref="com-image-viewer__wrapper" class="com-image-viewer__wrapper" :style="{ 'z-index': zIndex }">
-    <div class="com-image-viewer__mask"></div>
-    <!-- CLOSE -->
-    <span class="com-image-viewer__btn com-image-viewer__close" @click="hide">
-      <CloseCircleOutlined class="com-icon-circle-close" />
-    </span>
-    <!-- ARROW -->
-    <template v-if="!isSingle">
-      <span
-        class="com-image-viewer__btn com-image-viewer__prev"
-        :class="{ 'is-disabled': !infinite && isFirst }"
-        @click="prev"
-      >
-        <ComSvgIcon name="arrow-left"></ComSvgIcon>
+  <transition name="com-zoom-in-center" appear>
+    <div
+      v-if="visible"
+      tabindex="-1"
+      ref="com-image-viewer__wrapper"
+      class="com-image-viewer__wrapper"
+      :style="{ 'z-index': zIndex }"
+    >
+      <div class="com-image-viewer__mask"></div>
+      <!-- CLOSE -->
+      <span class="com-image-viewer__btn com-image-viewer__close" @click="hide">
+        <CloseCircleOutlined class="com-icon-circle-close" />
       </span>
-      <span
-        class="com-image-viewer__btn com-image-viewer__next"
-        :class="{ 'is-disabled': !infinite && isLast }"
-        @click="next"
-      >
-        <ComSvgIcon name="arrow-right"></ComSvgIcon>
-      </span>
-    </template>
-    <!-- ACTIONS -->
-    <div class="com-image-viewer__btn com-image-viewer__actions">
-      <div class="com-image-viewer__actions__inner">
-        <ComSvgIcon name="zoom-out" @click="handleActions('zoomOut')"></ComSvgIcon>
-        <ComSvgIcon name="zoom-in" @click="handleActions('zoomIn')"></ComSvgIcon>
-        <i class="com-image-viewer__actions__divider"></i>
-        <ComSvgIcon :name="mode.icon" @click="toggleMode"></ComSvgIcon>
-        <i class="com-image-viewer__actions__divider"></i>
-        <ComSvgIcon name="refresh-left" @click="handleActions('anticlocelise')"></ComSvgIcon>
-        <ComSvgIcon name="refresh-right" @click="handleActions('clocelise')"></ComSvgIcon>
+      <!-- ARROW -->
+      <template v-if="!isSingle">
+        <span
+          class="com-image-viewer__btn com-image-viewer__prev"
+          :class="{ 'is-disabled': !infinite && isFirst }"
+          @click="prev"
+        >
+          <ComSvgIcon name="arrow-left"></ComSvgIcon>
+        </span>
+        <span
+          class="com-image-viewer__btn com-image-viewer__next"
+          :class="{ 'is-disabled': !infinite && isLast }"
+          @click="next"
+        >
+          <ComSvgIcon name="arrow-right"></ComSvgIcon>
+        </span>
+      </template>
+      <!-- ACTIONS -->
+      <div class="com-image-viewer__btn com-image-viewer__actions">
+        <div class="com-image-viewer__actions__inner">
+          <ComSvgIcon name="zoom-out" @click="handleActions('zoomOut')"></ComSvgIcon>
+          <ComSvgIcon name="zoom-in" @click="handleActions('zoomIn')"></ComSvgIcon>
+          <i class="com-image-viewer__actions__divider"></i>
+          <ComSvgIcon :name="mode.icon" @click="toggleMode"></ComSvgIcon>
+          <i class="com-image-viewer__actions__divider"></i>
+          <ComSvgIcon name="refresh-left" @click="handleActions('anticlocelise')"></ComSvgIcon>
+          <ComSvgIcon name="refresh-right" @click="handleActions('clocelise')"></ComSvgIcon>
+        </div>
+      </div>
+      <!-- CANVAS -->
+      <div class="com-image-viewer__canvas">
+        <img
+          v-for="(url, i) in currentUrlList"
+          :ref="setImgRef"
+          class="com-image-viewer__img"
+          :key="i"
+          :src="currentImg"
+          :style="imgStyle"
+          @load="handleImgLoad"
+          @error="handleImgError"
+          @mousedown="handleMouseDown"
+        />
       </div>
     </div>
-    <!-- CANVAS -->
-    <div class="com-image-viewer__canvas">
-      <img
-        v-for="(url, i) in currentUrlList"
-        :ref="setImgRef"
-        class="com-image-viewer__img"
-        :key="i"
-        :src="currentImg"
-        :style="imgStyle"
-        @load="handleImgLoad"
-        @error="handleImgError"
-        @mousedown="handleMouseDown"
-      />
-    </div>
-  </div>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -106,7 +114,7 @@ export default defineComponent({
   data() {
     return {
       index: this.initialIndex,
-      isShow: false,
+      visible: false,
       infinite: true,
       loading: false,
       mode: Mode.CONTAIN,
@@ -168,15 +176,6 @@ export default defineComponent({
         }
       })
     }
-    // visible(val) {
-    //   if (val) {
-    //     // prevent body scroll
-    //     prevOverflow = document.body.style.overflow
-    //     document.body.style.overflow = 'hidden'
-    //   } else {
-    //     document.body.style.overflow = prevOverflow
-    //   }
-    // }
   },
   mounted() {
     this.deviceSupportInstall()
@@ -201,7 +200,8 @@ export default defineComponent({
     hide() {
       this.deviceSupportUninstall()
       // this.onClose()
-      this.destroy()
+      // this.destroy()
+      this.visible = false
     },
     deviceSupportInstall() {
       this._keyDownHandler = rafThrottle((e: KeyboardEvent) => {

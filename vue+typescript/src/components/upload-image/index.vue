@@ -33,7 +33,7 @@ import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
 import imagePreview from '@/components/image/image-preview'
 export default defineComponent({
-  emits: ['update:value', 'change', 'input'],
+  emits: ['update:value', 'change', 'input', 'file-change'],
   components: {
     LoadingOutlined,
     PlusOutlined
@@ -54,6 +54,10 @@ export default defineComponent({
     mode: {
       type: String as PropType<'single' | 'multiple'>,
       default: 'single'
+    },
+    autoUpload: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -136,7 +140,12 @@ export default defineComponent({
         this.$message.error(`最大不能超过 ${this.limitSize}M !`)
         return false
       }
-      return true
+      if (!this.autoUpload) {
+        return new Promise(resolve => {
+          this.$emit('file-change', file, resolve)
+        })
+      }
+      return this.autoUpload
     },
     onRemove(file: UploadFile) {
       const ret = this.fileList.filter(v => v.uid !== file.uid).map(v => v.url) as string[]

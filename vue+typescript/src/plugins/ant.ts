@@ -34,7 +34,8 @@ import {
   Progress,
   Switch,
   BackTop,
-  Drawer
+  Drawer,
+  Slider
 } from 'ant-design-vue'
 
 export default function (app: App) {
@@ -75,6 +76,7 @@ export default function (app: App) {
     .use(Switch)
     .use(BackTop)
     .use(Drawer)
+    .use(Slider)
 
   g.$message = message
   g.$info = Modal.info
