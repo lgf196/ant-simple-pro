@@ -12,7 +12,7 @@ enum ErrorCorrentLevel {
 // 	MODE_KANJI = 1 << 3
 // }
 
-class QR8bitByte {
+declare class QR8bitByte {
   mode: number
   data: string
   constructor(data: string)
@@ -22,7 +22,7 @@ class QR8bitByte {
   write(buffer: QRBitBuffer): void
 }
 
-class QRBitBuffer {
+declare class QRBitBuffer {
   buffer: number[]
   length: number
 

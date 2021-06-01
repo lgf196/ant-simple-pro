@@ -123,6 +123,13 @@ export const basicRoutes: RouteRecordRaw[] = [
         meta: {
           title: '下载文件'
         }
+      },
+      {
+        path: '/component/colorPickers',
+        component: () => import('@/views/component/color-picker/index.vue'),
+        meta: {
+          title: '色板'
+        }
       }
     ]
   },
