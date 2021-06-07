@@ -66,6 +66,9 @@ module.exports = {
   chainWebpack(config) {
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
+
+    config.resolve.alias.set('vue-emoji-mart', resolve('./src/components/emoji-mart'))
+
     // set svg-sprite-loader
     config.module.rule('svg').exclude.add(resolve('src/assets/icons')).end()
     config.module

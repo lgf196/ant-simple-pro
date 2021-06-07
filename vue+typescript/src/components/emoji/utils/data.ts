@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 export interface Data {
   compressed: boolean
   categories: Category[]
@@ -67,7 +68,7 @@ export interface SkinVariation {
   obsoletes?: string
 }
 
-const mapping = {
+const mapping: Record<string, string> = {
   name: 'a',
   unified: 'b',
   non_qualified: 'c',
@@ -83,7 +84,7 @@ const mapping = {
   added_in: 'o'
 }
 
-const buildSearch = (emoji: Emoji) => {
+const buildSearch = (emoji: any) => {
   const search: string[] = []
 
   const addToSearch = (strings: string | string[], split: boolean) => {
@@ -95,7 +96,7 @@ const buildSearch = (emoji: Emoji) => {
       ;(split ? string.split(/[-|_|\s]+/) : [string]).forEach(s => {
         s = s.toLowerCase()
 
-        if (search.indexOf(s) == -1) {
+        if (search.indexOf(s) === -1) {
           search.push(s)
         }
       })
@@ -110,8 +111,8 @@ const buildSearch = (emoji: Emoji) => {
   return search.join(',')
 }
 
-const compress = (emoji: Emoji) => {
-  emoji.short_names = emoji.short_names.filter(short_name => {
+const compress = (emoji: any) => {
+  emoji.short_names = emoji.short_names.filter((short_name: any) => {
     return short_name !== emoji.short_name
   })
   delete emoji.short_name
@@ -120,7 +121,7 @@ const compress = (emoji: Emoji) => {
   delete emoji.sheet_x
   delete emoji.sheet_y
 
-  emoji.added_in = parseInt(emoji.added_in)
+  emoji.added_in = parseInt(emoji.added_in, 10)
   if (emoji.added_in === 6) {
     delete emoji.added_in
   }
@@ -172,4 +173,4 @@ const uncompress = (data: Data) => {
   }
 }
 
-export { buildSearch, uncompress }
+export { buildSearch, uncompress, compress }

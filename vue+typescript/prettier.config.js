@@ -1,6 +1,6 @@
 // https://prettier.io/docs/en/options.html
 module.exports = {
-  // 单行最多 120 个字符 default
+  // 单行最多 120 个字符
   printWidth: 120,
   // 不使用 tab 缩进 default
   useTabs: false,

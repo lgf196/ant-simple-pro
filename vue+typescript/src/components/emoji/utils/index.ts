@@ -1,15 +1,15 @@
-import { buildSearch, uncompress, Emoji, Data } from './data'
+import { buildSearch, uncompress, Data } from './data'
 import stringFromCodePoint from '../polyfills/stringFromCodePoint'
-import { EmojiData, EmojiSkin, EmojiSet } from './types'
+import { EmojiSkin, EmojiSet } from './types'
 
+/* eslint-disable @typescript-eslint/camelcase,no-useless-escape */
 const COLONS_REGEX = /^(?:\:([^\:]+)\:)(?:\:skin-tone-(\d)\:)?$/
 const SKINS = ['1F3FA', '1F3FB', '1F3FC', '1F3FD', '1F3FE', '1F3FF']
 
 function unifiedToNative(unified: string) {
   const unicodes = unified.split('-')
   const codePoints = unicodes.map(u => Number(`0x${u}`))
-
-  return stringFromCodePoint.apply(null, codePoints)
+  return stringFromCodePoint(...codePoints)
 }
 
 function sanitize(emoji: any) {
@@ -46,12 +46,12 @@ function sanitize(emoji: any) {
   }
 }
 
-function getSanitizedData() {
-  return sanitize(getData(...(arguments as [Emoji | string, EmojiSkin, EmojiSet, Data])))
+function getSanitizedData(...rest: Parameters<typeof getData>) { // eslint-disable-line
+  return sanitize(getData(...rest)) // eslint-disable-line
 }
 
-function getData(emoji: Emoji | string, skin: EmojiSkin, set: EmojiSet, data: Data) {
-  let emojiData: Emoji = {}
+function getData(emoji: any, skin: EmojiSkin | null, set: EmojiSet | null, data = {} as Data) {
+  let emojiData: Record<string, any> = {}
 
   if (typeof emoji === 'string') {
     const matches = emoji.match(COLONS_REGEX)
@@ -64,21 +64,21 @@ function getData(emoji: Emoji | string, skin: EmojiSkin, set: EmojiSet, data: Da
       }
     }
 
-    if (data.aliases.hasOwnProperty(emoji)) {
+    if (Object.prototype.hasOwnProperty.call(data.aliases, emoji)) {
       emoji = data.aliases[emoji]
     }
 
-    if (data.emojis.hasOwnProperty(emoji)) {
+    if (Object.prototype.hasOwnProperty.call(data.emojis, emoji)) {
       emojiData = data.emojis[emoji]
     } else {
       return null
     }
   } else if (emoji.id) {
-    if (data.aliases.hasOwnProperty(emoji.id)) {
+    if (Object.prototype.hasOwnProperty.call(data.aliases, emoji.id)) {
       emoji.id = data.aliases[emoji.id]
     }
 
-    if (data.emojis.hasOwnProperty(emoji.id)) {
+    if (Object.prototype.hasOwnProperty.call(data.emojis, emoji.id)) {
       emojiData = data.emojis[emoji.id]
       skin || (skin = emoji.skin)
     }
@@ -96,10 +96,10 @@ function getData(emoji: Emoji | string, skin: EmojiSkin, set: EmojiSet, data: Da
   emojiData.emoticons || (emojiData.emoticons = [])
   emojiData.variations || (emojiData.variations = [])
 
-  if (emojiData.skin_variations && skin > 1) {
+  if (emojiData.skin_variations && Number(skin) > 1) {
     emojiData = JSON.parse(JSON.stringify(emojiData))
 
-    const skinKey = SKINS[skin - 1]
+    const skinKey = SKINS[Number(skin) - 1]
     const variationData = emojiData.skin_variations[skinKey]
 
     if (variationData) {
@@ -107,7 +107,7 @@ function getData(emoji: Emoji | string, skin: EmojiSkin, set: EmojiSet, data: Da
         delete emojiData.variations
       }
 
-      if ((set && (variationData[`has_img_${set}`] == undefined || variationData[`has_img_${set}`])) || !set) {
+      if ((set && (variationData[`has_img_${set}`] === undefined || variationData[`has_img_${set}`])) || !set) {
         emojiData.skin_tone = skin
 
         for (const k in variationData) {
@@ -126,7 +126,7 @@ function getData(emoji: Emoji | string, skin: EmojiSkin, set: EmojiSet, data: Da
   return emojiData
 }
 
-function getEmojiDataFromNative(nativeString, set, data) {
+function getEmojiDataFromNative(nativeString: string, set: EmojiSet, data: any) {
   if (data.compressed) {
     uncompress(data)
   }
@@ -134,8 +134,8 @@ function getEmojiDataFromNative(nativeString, set, data) {
   const skinTones = ['🏻', '🏼', '🏽', '🏾', '🏿']
   const skinCodes = ['1F3FB', '1F3FC', '1F3FD', '1F3FE', '1F3FF']
 
-  let skin
-  let skinCode
+  let skin = 0
+  let skinCode = ''
   const baseNativeString = nativeString
 
   skinTones.forEach((skinTone, skinToneIndex) => {
@@ -145,7 +145,7 @@ function getEmojiDataFromNative(nativeString, set, data) {
     }
   })
 
-  let emojiData
+  let emojiData = null
 
   for (const id in data.emojis) {
     const emoji = data.emojis[id]
@@ -160,7 +160,9 @@ function getEmojiDataFromNative(nativeString, set, data) {
       emojiUnified = emoji.skin_variations[skinCode].unified
     }
 
-    if (unifiedToNative(emojiUnified) === baseNativeString) emojiData = emoji
+    if (unifiedToNative(emojiUnified) === baseNativeString) {
+      emojiData = emoji
+    }
   }
 
   if (!emojiData) {
@@ -169,10 +171,10 @@ function getEmojiDataFromNative(nativeString, set, data) {
 
   emojiData.id = emojiData.short_names[0]
 
-  return getSanitizedData(emojiData, skin, set, data)
+  return getSanitizedData(emojiData, skin as EmojiSkin, set, data)
 }
 
-function uniq(arr) {
+function uniq(arr: any[]) {
   return arr.reduce((acc, item) => {
     if (acc.indexOf(item) === -1) {
       acc.push(item)
@@ -181,21 +183,21 @@ function uniq(arr) {
   }, [])
 }
 
-function intersect(a, b) {
+function intersect(a: any[], b: any[]) {
   const uniqA = uniq(a)
   const uniqB = uniq(b)
 
-  return uniqA.filter(item => uniqB.indexOf(item) >= 0)
+  return uniqA.filter((item: any) => uniqB.indexOf(item) >= 0)
 }
 
-function deepMerge(a, b) {
-  const o = {}
+function deepMerge(a: any, b: any) {
+  const o: Record<string, any> = {}
 
   for (const key in a) {
     const originalValue = a[key]
     let value = originalValue
 
-    if (b.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(b, key)) {
       value = b[key]
     }
 
@@ -229,8 +231,8 @@ function measureScrollbar() {
 
 // Use requestIdleCallback() if available, else fall back to setTimeout().
 // Throttle so as not to run too frequently.
-function throttleIdleTask(func) {
-  const doIdleTask = typeof requestIdleCallback === 'function' ? requestIdleCallback : setTimeout
+function throttleIdleTask(func: () => void) {
+  const doIdleTask = setTimeout
 
   let running = false
 

@@ -60,7 +60,8 @@ export default defineComponent({
     const timer = ref(0)
     const form = reactive({
       title: '',
-      content: ''
+      // eslint-disable-next-line
+      content: `\n<p><span style=\"font-size: 20px; font-family: 'PingFang SC';\">题目：给定一个天平，选择4个砝码，并使用这些砝码称出1-40g里所有整数的重量。</span></p>\n`
     })
     const rules = reactive({
       title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
@@ -69,7 +70,6 @@ export default defineComponent({
         { validator: genTinymceValidator, trigger: 'blur' }
       ]
     })
-
     const preview = ref('')
 
     onMounted(() => {

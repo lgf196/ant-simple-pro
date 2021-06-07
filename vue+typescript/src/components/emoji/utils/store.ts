@@ -21,13 +21,6 @@ function setNamespace(namespace: string) {
   NAMESPACE = namespace
 }
 
-function update(state: Record<string, any>) {
-  for (const key in state) {
-    const value = state[key]
-    set(key, value)
-  }
-}
-
 function set(key: string, value: any) {
   if (setter) {
     setter(key, value)
@@ -58,6 +51,13 @@ function get(key: string) {
     }
   } catch (e) {
     console.log(e)
+  }
+}
+
+function update(state: Record<string, any>) {
+  for (const key in state) {
+    const value = state[key]
+    set(key, value)
   }
 }
 

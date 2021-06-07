@@ -27,4 +27,6 @@ declare module '*.svg' {
   export default src
 }
 
+declare module '*.json'
+
 declare module 'ant-design-vue/lib/locale-provider/zh_CN'

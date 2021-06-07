@@ -64,6 +64,14 @@ export const basicRoutes: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('@/views/test'),
+    meta: {
+      title: '测试页面'
+    }
+  },
+  {
     path: '/component',
     name: 'component',
     component: BlankLayout,
@@ -199,6 +207,14 @@ export const basicRoutes: RouteRecordRaw[] = [
     component: () => import('@/views/copy/index.vue'),
     meta: {
       title: '复制'
+    }
+  },
+  {
+    path: '/emoticons',
+    name: 'emoticons',
+    component: () => import('@/views/emoticons/index.vue'),
+    meta: {
+      title: '表情库'
     }
   },
   {

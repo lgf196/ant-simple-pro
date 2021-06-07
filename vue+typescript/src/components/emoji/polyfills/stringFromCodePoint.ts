@@ -1,22 +1,22 @@
 export default String.fromCodePoint ||
-  function stringFromCodePoint() {
+  function stringFromCodePoint(...rest) {
     const MAX_SIZE = 0x4000
     const codeUnits: number[] = []
     let highSurrogate = 0
     let lowSurrogate = 0
     let index = -1
-    const length = arguments.length
+    const length = rest.length
     if (!length) {
       return ''
     }
     let result = ''
     while (++index < length) {
-      let codePoint = Number(arguments[index])
+      let codePoint = Number(rest[index])
       if (
         !isFinite(codePoint) || // `NaN`, `+Infinity`, or `-Infinity`
         codePoint < 0 || // not a valid Unicode code point
         codePoint > 0x10ffff || // not a valid Unicode code point
-        Math.floor(codePoint) != codePoint // not an integer
+        Math.floor(codePoint) !== codePoint // not an integer
       ) {
         throw RangeError('Invalid code point: ' + codePoint)
       }

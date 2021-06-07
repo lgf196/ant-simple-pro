@@ -10,6 +10,7 @@ import {
   CustomEmoji,
   CustomIcons
 } from './types'
+import { Data } from './data'
 
 const setList = ['apple', 'google', 'twitter', 'facebook']
 
@@ -21,7 +22,7 @@ const themeList = ['auto', 'light', 'dark']
 
 export const emojiPropTypes = {
   data: {
-    type: Object as PropType<Record<string, any>>,
+    type: Object as PropType<Data>,
     required: true
   },
   onOver: {
@@ -34,7 +35,7 @@ export const emojiPropTypes = {
     type: Function as PropType<(emoji: EmojiData, e: MouseEvent) => void>
   },
   fallback: {
-    type: Function as PropType<(emoji: EmojiData) => JSX.Element>
+    type: Function as PropType<(data: Data | null, emoji: EmojiData | string) => JSX.Element>
   },
   backgroundImageFn: {
     type: Function,
@@ -106,7 +107,7 @@ export const pickerPropTypes = {
     default: () => {} // eslint-disable-line
   },
   onSkinChange: {
-    type: Function as PropType<(skin: EmojiSkin, e: MouseEvent) => void>,
+    type: Function as PropType<(skin: EmojiSkin, e?: MouseEvent) => void>,
     default: () => {} // eslint-disable-line
   },
   perLine: {
@@ -118,7 +119,7 @@ export const pickerPropTypes = {
     default: 24
   },
   i18n: {
-    type: Object as PartialI18n,
+    type: Object as PropType<PartialI18n>,
     default: () => ({})
   },
   style: {
@@ -153,8 +154,7 @@ export const pickerPropTypes = {
   backgroundImageFn: emojiPropTypes.backgroundImageFn,
   sheetSize: emojiPropTypes.sheetSize,
   emojisToShowFilter: {
-    type: [Function, null] as PropType<Function | null>,
-    default: null
+    type: Function
   },
   showPreview: {
     type: Boolean,

@@ -62,7 +62,7 @@ function get(perLine: number) {
   const frequentlyKeys = []
 
   for (const key in frequently) {
-    if (frequently.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(frequently, key)) {
       frequentlyKeys.push(key)
     }
   }
@@ -72,7 +72,7 @@ function get(perLine: number) {
 
   const last = store.get('last')
 
-  if (last && sliced.indexOf(last) == -1) {
+  if (last && sliced.indexOf(last) === -1) {
     sliced.pop()
     sliced.push(last)
   }

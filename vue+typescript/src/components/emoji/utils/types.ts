@@ -15,6 +15,7 @@ export interface BaseEmoji {
   unified: string
   skin: EmojiSkin | null
   native: string
+  [propName: string]: any
 }
 
 export interface CustomEmoji {
@@ -28,6 +29,7 @@ export interface CustomEmoji {
   emoticons?: string[]
   keywords?: string[]
   imageUrl: string
+  [propName: string]: any
 }
 
 export type EmojiData = BaseEmoji | CustomEmoji
