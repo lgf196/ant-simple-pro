@@ -45,7 +45,7 @@
             :i="item.i"
             :key="item.i"
           >
-            <component :is="item.type" @contextmenu="e => onComponentClick(e, item)"></component>
+            <component :is="item.type" @contextmenu="e => onComponentClick(e, item)" :data-i="item.i"></component>
           </GridItem>
         </GridLayout>
         <a-empty
@@ -75,7 +75,7 @@ import { GridLayout, GridItem } from '@/components/grid-layout'
 import Draggable from 'vuedraggable'
 import { maxBy } from 'lodash'
 import createContextMenu from '@/components/context-menu/create-context-menu'
-import { getRandomStr } from '@/utils'
+// import { getRandomStr } from '@/utils'
 import templates, { TempBanner, TempList, TempNews } from './templates'
 
 const mouseXY = {
@@ -98,7 +98,7 @@ type LayoutItem = {
   i: string
   type?: string
 }
-
+let index = 0
 export default defineComponent({
   components: {
     Draggable,
@@ -149,12 +149,13 @@ export default defineComponent({
           h = currentItem.value.h / 35 // default: rowHeight = 35
         }
         const max = maxBy(layout.value, v => v.y)
+        index += 1
         console.log({
           x: 0,
           y: max ? max.y + h : len + 12,
           w,
           h,
-          i: getRandomStr(),
+          i: String(index),
           type: currentItem.value?.type
         })
         layout.value.push({
@@ -162,7 +163,7 @@ export default defineComponent({
           y: max ? max.y + h : len + 12,
           w,
           h,
-          i: getRandomStr(),
+          i: String(index),
           type: currentItem.value?.type
         })
       }
@@ -182,6 +183,8 @@ export default defineComponent({
     }
 
     function onComponentClick(e: MouseEvent, item: LayoutItem) {
+      const id = item.i
+      console.log('id', id)
       createContextMenu({
         event: e,
         menus: [
@@ -190,20 +193,22 @@ export default defineComponent({
             handler() {
               const max = maxBy(layout.value, v => v.y)
               console.log(max ? max.y + item.h : layout.value.length + 12)
+              index += 1
               layout.value.push({
                 x: item.x + item.w,
                 y: max ? max.y + item.h : layout.value.length + 12,
                 w: item.w,
                 h: item.h,
                 type: item.type,
-                i: getRandomStr()
+                i: String(index)
               })
             }
           },
           {
             label: '删除',
             handler() {
-              layout.value = layout.value.filter(v => v.i !== item.i)
+              const idx = layout.value.findIndex(v => v.i === id)
+              layout.value.splice(idx, 1)
             }
           },
           {
