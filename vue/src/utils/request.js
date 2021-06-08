@@ -37,6 +37,66 @@ const codeMessage = {
 }
 const genEmptyPromise = () => new Promise(() => {}) // eslint-disable-line
 
+/**
+ * 过滤空参数
+ * @param {Object} params 参数对象
+ */
+export const paramsSerializer = params => {
+  const data = {}
+  for (const k in params) {
+    const value = params[k]
+    if (value !== '' && value !== null && value !== undefined) {
+      data[k] = value
+    }
+  }
+  return qs.stringify(data)
+}
+// 声明一个 Map 用于存储每个请求的标识 和 取消函数
+const pending = new Map()
+/**
+ * 添加请求
+ * @param {AxiosRequestConfig} config
+ */
+export const addPending = config => {
+  const url = [config.method, config.url, qs.stringify(config.params), qs.stringify(config.data)].join('&')
+  config.cancelToken =
+    config.cancelToken ||
+    new axios.CancelToken(cancel => {
+      if (!pending.has(url)) {
+        // 如果 pending 中不存在当前请求，则添加进去
+        pending.set(url, cancel)
+      }
+    })
+}
+/**
+ * 移除请求
+ * @param {AxiosRequestConfig} config
+ */
+export const removePending = config => {
+  const url = [config.method, config.url, qs.stringify(config.params), qs.stringify(config.data)].join('&')
+  if (pending.has(url)) {
+    // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
+    const cancel = pending.get(url)
+    cancel(url)
+    pending.delete(url)
+  }
+}
+/**
+ * 清空 pending 中的请求（在路由跳转时调用）
+ * @param {Object} config
+ */
+export const clearPending = () => {
+  for (const [url, cancel] of pending) {
+    cancel(url)
+  }
+  pending.clear()
+}
+
+/**
+ * 获取错误信息
+ * @param {AxiosError} error
+ * @param {String} errorMsg
+ */
 const getErrorMsg = (error, errorMsg) => {
   let msg = ''
   if (errorMsg) {
@@ -55,7 +115,13 @@ const getErrorMsg = (error, errorMsg) => {
   }
   return msg || '操作失败'
 }
-// 请求之前
+
+/**
+ * 请求之前
+ * @param {AxiosRequestConfig} config
+ * @param {Function} loadingCb
+ * @param {Boolean} showLoading
+ */
 const requestStart = (config, loadingCb, showLoading) => {
   loadingCb(true)
   startCount()
@@ -70,15 +136,18 @@ const requestStart = (config, loadingCb, showLoading) => {
     config.headers.accesstoken = token
   }
 }
-// 响应正常
-const requestThenEnd = ({
-  response,
-  loadingCb,
-  showLoading,
-  showWarning,
-  warningMsg,
-  throwWarningError
-}) => {
+
+/**
+ * 响应正常
+ * @param {AxiosResponse} options.response
+ * @param {Function} options.loadingCb
+ * @param {Boolean} options.showLoading
+ * @param {Boolean} options.showWarning
+ * @param {String} options.warningMsg
+ * @param {Boolean} options.throwWarningError
+ */
+const requestThenEnd = options => {
+  const { response, loadingCb, showLoading, showWarning, warningMsg, throwWarningError } = options
   loadingCb(false)
   endCount()
   if (showLoading) {
@@ -91,7 +160,7 @@ const requestThenEnd = ({
     return responseData.data
   }
   if (responseData.code === 202) {
-    store.dispatch('user/Logout').then(() => {
+    store.dispatch('user/logout').then(() => {
       // this.$router.replace('/login')
       location.reload(true)
     })
@@ -109,15 +178,18 @@ const requestThenEnd = ({
   }
   return genEmptyPromise()
 }
-// 响应异常
-const requestCatchEnd = ({
-  error,
-  loadingCb,
-  showLoading,
-  showError,
-  errorMsg,
-  throwHttpError
-}) => {
+
+/**
+ * 响应异常
+ * @param {AxiosError} options.error
+ * @param {Function} options.loadingCb
+ * @param {Boolean} options.showLoading
+ * @param {Boolean} options.showError
+ * @param {String} options.errorMsg
+ * @param {Boolean} options.throwHttpError
+ */
+const requestCatchEnd = options => {
+  const { error, loadingCb, showLoading, showError, errorMsg, throwHttpError } = options
   loadingCb(false)
   endCount()
   if (showLoading) {
@@ -151,70 +223,7 @@ const requestCatchEnd = ({
   }
   return genEmptyPromise()
 }
-/**
- * 过滤空参数
- * @param {Object} params 参数对象
- */
-const paramsSerializer = params => {
-  const data = {}
-  for (const k in params) {
-    const value = params[k]
-    if (value !== '' && value !== null && value !== undefined) {
-      data[k] = value
-    }
-  }
-  return qs.stringify(data)
-}
-// 声明一个 Map 用于存储每个请求的标识 和 取消函数
-const pending = new Map()
-/**
- * 添加请求
- * @param {Object} config
- */
-const addPending = config => {
-  const url = [
-    config.method,
-    config.url,
-    qs.stringify(config.params),
-    qs.stringify(config.data)
-  ].join('&')
-  config.cancelToken =
-    config.cancelToken ||
-    new axios.CancelToken(cancel => {
-      if (!pending.has(url)) {
-        // 如果 pending 中不存在当前请求，则添加进去
-        pending.set(url, cancel)
-      }
-    })
-}
-/**
- * 移除请求
- * @param {Object} config
- */
-const removePending = config => {
-  const url = [
-    config.method,
-    config.url,
-    qs.stringify(config.params),
-    qs.stringify(config.data)
-  ].join('&')
-  if (pending.has(url)) {
-    // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
-    const cancel = pending.get(url)
-    cancel(url)
-    pending.delete(url)
-  }
-}
-/**
- * 清空 pending 中的请求（在路由跳转时调用）
- * @param {Object} config
- */
-export const clearPending = () => {
-  for (const [url, cancel] of pending) {
-    cancel(url)
-  }
-  pending.clear()
-}
+
 const instance = axios.create({
   baseURL,
   // 只作用于 params（手动拼接在 url 后的参数不走这里）
@@ -227,37 +236,41 @@ const instance = axios.create({
   transformRequest: [
     function (data, headers) {
       if (headers['Content-Type'] === FORMDATA_CONTENT_TYPE) {
-        return qs.stringify(data)
+        return qs.stringify(data, {
+          skipNulls: true
+        })
       }
       return data
     }
   ]
 })
+
 /**
  * @param {Object} options 请求配置参数
  * @param {Boolean} [options.showWarning=true] 是否显示业务错误提示（请求成功，但业务状态码非成功状态）
  * @param {Boolean} [options.showError=true] 是否显示http错误提示（http请求失败）
  * @param {Boolean} [options.showLoading=true] 是否显示 loading
  * @param {Function} [options.loadingCb=()=>{}] loading 状态回调
- * @param {Boolean} [options.throwWarningError=false] 是否抛出业务逻辑错误（请求成功，但业务状态码非成功状态）
- * @param {Boolean} [options.throwHttpError=false] 是否显示http错误（http请求失败）
+ * @param {Boolean} [options.throwWarningError=true] 是否抛出业务逻辑错误（请求成功，但业务状态码非成功状态）
+ * @param {Boolean} [options.throwHttpError=true] 是否显示http错误（http请求失败）
  * @param {String} [options.warningMsg=''] 业务错误提示
  * @param {String} [options.errorMsg=''] http错误提示
  * @return {Promise} Promise
  */
-const request = ({
-  showWarning = true,
-  showError = true,
-  showLoading = true,
+const request = options => {
+  const {
+    showWarning = true,
+    showError = true,
+    showLoading = true,
     loadingCb = () => {}, // eslint-disable-line
-  throwWarningError = false,
-  throwHttpError = false,
-  warningMsg = '',
-  errorMsg = '',
-  ...options
-} = {}) => {
-  requestStart(options, loadingCb, showLoading)
-  return instance(options)
+    throwWarningError = true,
+    throwHttpError = true,
+    warningMsg = '',
+    errorMsg = '',
+    ...config
+  } = options
+  requestStart(config, loadingCb, showLoading)
+  return instance(config)
     .then(response => {
       return requestThenEnd({
         response,

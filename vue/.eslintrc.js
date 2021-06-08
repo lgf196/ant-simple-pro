@@ -4,13 +4,14 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/essential',
+    'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/standard',
     '@vue/prettier'
   ],
   parserOptions: {
-    parser: 'babel-eslint'
+    // parser: 'babel-eslint',
+    ecmaVersion: 2020
   },
   globals: {
     require: false,
@@ -42,7 +43,7 @@ module.exports = {
      * 风格指南
      */
     // 'array-bracket-spacing': ['error', 'always'], // 数组方括号内必须空格
-    'space-before-function-paren': 0, // 函数括号前无需空格
+    'space-before-function-paren': 0,
     'array-bracket-spacing': 0, // 数组方括号内必须空格
     'comma-dangle': 2, // 禁止末尾逗号
     'eol-last': 2, // 要求文件末尾存在空行
@@ -65,6 +66,7 @@ module.exports = {
     'space-infix-ops': 2, // 操作符周围必须有空格
     'spaced-comment': ['error', 'always'], // 注释后面必须跟随至少一个空白
     'object-curly-spacing': 0,
+    'no-unused-expressions': 0,
 
     /**
      * ECMAScript6
@@ -79,6 +81,8 @@ module.exports = {
     /**
      * vue
      */
-    'vue/valid-v-model': 0
+    'vue/valid-v-model': 0,
+
+    'vue/no-dupe-keys': 0
   }
 }

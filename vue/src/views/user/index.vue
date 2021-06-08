@@ -11,21 +11,17 @@
       :pagination="{
         hideOnSinglePage: true
       }"
-      :onRefresh="run"
+      :onRefresh="query"
     >
       <template #search>
         <a-form ref="form" layout="inline" :model="{}">
           <a-form-item label="名称">
-            <a-input
-              v-model:value="username"
-              placeholder="请输入"
-              allowClear
-            ></a-input>
+            <a-input v-model:value="username" placeholder="请输入" allowClear></a-input>
           </a-form-item>
           <a-form-item>
             <a-space>
-              <a-button type="primary" @click="handleSubmit"> 查询 </a-button>
-              <a-button @click="onReset"> 重置 </a-button>
+              <a-button type="primary" @click="query">查询</a-button>
+              <a-button @click="onReset">重置</a-button>
             </a-space>
           </a-form-item>
         </a-form>
@@ -50,12 +46,7 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage
-          className="avatar"
-          :src="text"
-          @click="onImageClick(text)"
-          fit="cover"
-        >
+        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
           <template v-slot:error><UserOutlined /></template>
         </ComImage>
       </template>
@@ -68,20 +59,21 @@
     <UpdateUserModal
       v-model:visible="visible"
       :currentRow="currentRow"
-      @updateSuccess="onUpdateSuccess"
-    >
-    </UpdateUserModal>
+      @update-success="onUpdateSuccess"
+    ></UpdateUserModal>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import { defineComponent, ref, reactive, toRefs, computed, unref } from 'vue'
+import store from '@/store'
 import LayoutTable from '@/components/layout-table'
 import { ArrowDownOutlined, UserOutlined } from '@ant-design/icons-vue'
 import { getUsers, getUsersBuffer } from './service'
-import useRequest from '@/hooks/useRequest'
+import { useAsync } from '@/hooks'
 import { downloadExcel } from '@/utils'
-import UpdateUserModal from './update-user-modal'
+import UpdateUserModal from './update-user-modal.vue'
+import imagePreview from '@/components/image/image-preview'
 const columns = [
   {
     dataIndex: 'index',
@@ -129,7 +121,7 @@ const columns = [
   }
 ]
 
-export default {
+export default defineComponent({
   name: 'User',
   components: {
     LayoutTable,
@@ -137,70 +129,83 @@ export default {
     UserOutlined,
     UpdateUserModal
   },
-  data() {
-    return {
+  setup() {
+    const username = ref('')
+    const state = reactive({
       columns,
       visible: false,
       currentRow: {}
-    }
-  },
-  computed: {
-    urlList() {
-      return this.userList.map(v => v.iconUrl)
-    }
-  },
-  setup() {
-    const username = ref('')
-    const { data: userList = [], run, loading } = useRequest(() =>
-      getUsers({
-        username: username.value
-      })
+    })
+
+    const { data: userList, loading, run: query } = useAsync(
+      () => {
+        return getUsers({
+          username: username.value
+        })
+      },
+      {
+        initialData: []
+      }
     )
-    console.log('userList', userList)
-    return {
-      userList,
-      username,
-      run,
-      loading
+
+    const urlList = computed(() => {
+      return userList.value.map(v => v.iconUrl)
+    })
+
+    function onUpdate(row) {
+      state.currentRow = row
+      state.visible = true
     }
-  },
-  methods: {
-    handleSubmit() {
-      this.run()
-    },
-    onUpdate(row) {
-      this.currentRow = row
-      this.visible = true
-    },
-    onSearch() {
+
+    function onSearch() {
       setTimeout(() => {
-        this.run()
+        query()
       }, 20)
-    },
-    onReset() {
-      this.username = ''
-      this.run()
-    },
-    onImageClick(url) {
-      this.$imagePreview({
-        urlList: this.urlList,
-        initialIndex: this.urlList.findIndex(v => v === url)
+    }
+
+    function onReset() {
+      username.value = ''
+      query()
+    }
+
+    function onImageClick(url) {
+      const urls = unref(urlList)
+      imagePreview({
+        urlList: urls,
+        initialIndex: urls.findIndex(v => v === url)
       })
-    },
-    async onDownload() {
+    }
+
+    function onUpdateSuccess() {
+      query()
+      store.dispatch('user/getUserInfo')
+    }
+
+    async function onDownload() {
       try {
         const data = await getUsersBuffer()
         downloadExcel(data, '用户信息.xlsx')
       } catch (err) {
         console.log(err)
       }
-    },
-    onUpdateSuccess() {
-      this.run()
-      this.$store.dispatch('user/GetUserInfo')
+    }
+
+    return {
+      userList,
+      loading,
+      ...toRefs(state),
+      username,
+      urlList,
+      onDownload,
+      query,
+      onUpdate,
+      onSearch,
+      onReset,
+      onImageClick,
+      onUpdateSuccess
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

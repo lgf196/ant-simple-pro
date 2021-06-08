@@ -1,9 +1,4 @@
-import {
-  getCollapse,
-  setCollapse,
-  getSideBarTheme,
-  setSideBarTheme
-} from '@/utils/local'
+import { getCollapse, setCollapse, getSideBarTheme, setSideBarTheme } from '@/utils/local'
 
 export default {
   namespaced: true,

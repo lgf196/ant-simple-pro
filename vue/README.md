@@ -3,7 +3,7 @@
 git clone https://github.com/lgf196/ant-simple-pro.git
 
 # enter the project directory
-cd ant-simple-pro
+cd ant-simple-pro/vue
 
 #choose the version you like
 

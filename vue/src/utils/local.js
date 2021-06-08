@@ -41,10 +41,10 @@ export const removeToken = () => {
   return localStorage.removeItem(TOKEN)
 }
 export const setCollapse = value => {
-  return localStorage.setItem(COLLAPSE, value)
+  return localStorage.setItem(COLLAPSE, String(value))
 }
 export const getCollapse = () => {
-  return JSON.parse(localStorage.getItem(COLLAPSE))
+  return JSON.parse(localStorage.getItem(COLLAPSE) || 'null')
 }
 
 export const setRememberUser = data => {
@@ -63,9 +63,13 @@ export const setTagNav = data => {
   return localStorage.setItem(TAG_NAV, JSON.stringify(data))
 }
 
+export const removeTagNav = () => {
+  return localStorage.removeItem(TAG_NAV)
+}
+
 export const getTagNav = () => {
   try {
-    const data = localStorage.getItem(TAG_NAV)
+    const data = localStorage.getItem(TAG_NAV) || 'null'
     return JSON.parse(data)
   } catch (err) {
     console.log(err)
@@ -73,17 +77,17 @@ export const getTagNav = () => {
   }
 }
 
-export const removeTagNav = () => {
-  return localStorage.removeItem(TAG_NAV)
-}
-
 export const setAccessMenus = data => {
   return localStorage.setItem(ACCESS_MENU, JSON.stringify(data))
 }
 
+export const removeAccessMenus = () => {
+  return localStorage.removeItem(ACCESS_MENU)
+}
+
 export const getAccessMenus = () => {
   try {
-    const data = localStorage.getItem(ACCESS_MENU)
+    const data = localStorage.getItem(ACCESS_MENU) || 'null'
     return JSON.parse(data)
   } catch (err) {
     console.log(err)
@@ -91,26 +95,22 @@ export const getAccessMenus = () => {
   }
 }
 
-export const removeAccessMenus = () => {
-  return localStorage.removeItem(ACCESS_MENU)
-}
-
 export const setUserInfo = data => {
   return localStorage.setItem(USERINFO, JSON.stringify(data))
 }
 
+export const removeUserInfo = () => {
+  return localStorage.removeItem(USERINFO)
+}
+
 export const getUserInfo = () => {
   try {
-    const data = localStorage.getItem(USERINFO)
+    const data = localStorage.getItem(USERINFO) || 'null'
     return JSON.parse(data)
   } catch (err) {
     console.log(err)
     removeUserInfo()
   }
-}
-
-export const removeUserInfo = () => {
-  return localStorage.removeItem(USERINFO)
 }
 
 export const getSideBarTheme = () => {

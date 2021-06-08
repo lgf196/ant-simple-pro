@@ -1,6 +1,7 @@
 const path = require('path')
+const webpack = require('webpack')
 const dayjs = require('dayjs')
-// const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin')
+const pkg = require('./package.json')
 const isDev = process.env.NODE_ENV === 'development'
 const now = dayjs().format('YYYY-MM-DD HH:mm:ss')
 
@@ -12,17 +13,14 @@ const PORT = process.env.PORT || 3000
 const cdn = {
   dev: {
     css: [],
-    js: [
-      publicPath + 'echarts/echarts.js'
-    ]
+    js: [publicPath + 'echarts4.9.0/echarts.js']
   },
   build: {
     css: [],
-    js: [
-      publicPath + 'echarts/echarts.min.js'
-    ]
+    js: [publicPath + 'echarts4.9.0/echarts.min.js']
   }
 }
+
 module.exports = {
   publicPath,
   outputDir: 'dist',
@@ -34,15 +32,6 @@ module.exports = {
     overlay: {
       warnings: true,
       errors: true
-    },
-    before(app) {
-      app.post('/upload', (req, res) => {
-        setTimeout(() => {
-          res.send({
-            data: 'https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/image/1605845717285.png'
-          })
-        }, 1500)
-      })
     },
     proxy: {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
@@ -59,13 +48,6 @@ module.exports = {
         pathRewrite: {
           '^/api': '/'
         }
-      },
-      '/server': {
-        target: 'http://qyhever.com/e-admin',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/server': '/'
-        }
       }
     }
   },
@@ -76,19 +58,17 @@ module.exports = {
       patterns: [resolve('./src/assets/styles/var.less')]
     }
   },
-  // configureWebpack: {
-  //   plugins: [
-  //     new AntdDayjsWebpackPlugin()
-  //   ]
-  // },
+  configureWebpack: {
+    plugins: [
+      new webpack.IgnorePlugin(/^\.\/locale\/[^zh\-cn.js]$/, /moment$/)
+    ]
+  },
   chainWebpack(config) {
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
+
     // set svg-sprite-loader
-    config.module
-      .rule('svg')
-      .exclude.add(resolve('src/assets/icons'))
-      .end()
+    config.module.rule('svg').exclude.add(resolve('src/assets/icons')).end()
     config.module
       .rule('icons')
       .test(/\.svg$/)
@@ -101,13 +81,14 @@ module.exports = {
       })
 
     config.plugin('html').tap(args => {
-      args[0].cdn = isDev? cdn.dev : cdn.build
+      args[0].cdn = isDev ? cdn.dev : cdn.build
       return args
     })
 
-    config.plugin('define').tap((args) => {
+    config.plugin('define').tap(args => {
       // DefinePlugin 设置值 必须 JSON 序列化 或者 使用 双引号 包起来
       args[0]['process.env'].NOW = JSON.stringify(now)
+      args[0]['process.env'].EMOJI_DATASOURCE_VERSION = JSON.stringify(pkg.dependencies['emoji-datasource'])
       return args
     })
   },

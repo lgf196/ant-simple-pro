@@ -4,18 +4,18 @@ import router from './router'
 import store from './store'
 import i18n from './locales'
 
-import './permission'
+import './router/permission'
 import './assets/icons'
 import './assets/styles/index.less'
 import initPlugin from './plugins'
 
 const app = createApp(App)
 
-app.config.productionTip = false
 app.use(router)
 app.use(store)
 app.use(i18n)
 initPlugin(app)
+
 app.mount('#app')
 
 if (process.env.NODE_ENV !== 'development') {

@@ -1,58 +1,29 @@
 <template>
   <div class="com-page">
-    <a-form
-      class="user-form"
-      ref="formRef"
-      :model="form"
-      layout="vertical"
-      :rules="rules"
-    >
+    <a-form ref="formRef" :model="form" layout="vertical" :rules="rules">
       <a-form-item label="头像" name="iconUrl">
         <ComUploadImage v-model:value="form.iconUrl"></ComUploadImage>
       </a-form-item>
       <a-form-item label="email" name="email">
-        <a-input
-          v-model:value="form.email"
-          placeholder="请输入"
-          allowClear
-          disabled
-        />
+        <a-input v-model:value="form.email" placeholder="请输入" allowClear disabled />
       </a-form-item>
       <a-form-item label="名称" name="username">
-        <a-input
-          v-model:value="form.username"
-          placeholder="请输入"
-          allowClear
-        />
+        <a-input v-model:value="form.username" placeholder="请输入" allowClear />
       </a-form-item>
       <a-form-item label="名称" name="introduct">
-        <a-textarea
-          v-model:value="form.introduct"
-          :autoSize="{ minRows: 4 }"
-          placeholder="请输入"
-        />
+        <a-textarea v-model:value="form.introduct" :autoSize="{ minRows: 4 }" placeholder="请输入" />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }">
-        <a-button type="primary" :loading="submitting" @click="onSubmit">
-          提交
-        </a-button>
+        <a-button type="primary" :loading="submitting" @click="onSubmit"> 提交 </a-button>
       </a-form-item>
     </a-form>
   </div>
 </template>
 
 <script>
-import {
-  defineComponent,
-  ref,
-  reactive,
-  toRefs,
-  toRaw,
-  onMounted,
-  computed
-} from 'vue'
-import store from '@/store'
+import { defineComponent, ref, reactive, toRefs, toRaw, onMounted } from 'vue'
 import { message } from 'ant-design-vue'
+import store from '@/store'
 import { updateUser } from './service'
 export default defineComponent({
   name: 'UserInfo',
@@ -73,17 +44,13 @@ export default defineComponent({
       introduct: ''
     })
 
-    const currentUser = computed(() => {
-      return store.getters.user
-    })
-
     onMounted(() => {
       Object.assign(form, {
-        id: currentUser.value.id,
-        iconUrl: currentUser.value.iconUrl,
-        email: currentUser.value.email,
-        username: currentUser.value.username,
-        introduct: currentUser.value.introduct
+        id: store.getters.user.id,
+        iconUrl: store.getters.user.iconUrl,
+        email: store.getters.user.email,
+        username: store.getters.user.username,
+        introduct: store.getters.user.introduct
       })
     })
 
@@ -97,7 +64,7 @@ export default defineComponent({
           const params = toRaw(form)
           console.log('form', params)
           await updateUser(params, v => (state.submitting = v))
-          store.dispatch('user/GetUserInfo')
+          store.dispatch('user/getUserInfo')
           message.destroy()
           message.success('保存成功')
         })
@@ -117,8 +84,5 @@ export default defineComponent({
 <style lang="less" scoped>
 .com-page {
   padding: 20px;
-}
-.user-form {
-  width: 75%;
 }
 </style>

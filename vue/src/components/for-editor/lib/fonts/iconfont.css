@@ -1,0 +1,64 @@
+@font-face {font-family: "foricon";
+  src: url('iconfont.eot?t=1560850902819'); /* IE9 */
+  src: url('iconfont.eot?t=1560850902819#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'),
+  url('iconfont.woff?t=1560850902819') format('woff'),
+  url('iconfont.ttf?t=1560850902819') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1560850902819#foricon') format('svg'); /* iOS 4.1- */
+}
+
+.foricon {
+  font-family: "foricon" !important;
+  font-size: inherit;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.for-code:before {
+  content: "\e620";
+}
+
+.for-image:before {
+  content: "\e621";
+}
+
+.for-eye:before {
+  content: "\e622";
+}
+
+.for-expand:before {
+  content: "\e623";
+}
+
+.for-redo:before {
+  content: "\e624";
+}
+
+.for-undo:before {
+  content: "\e625";
+}
+
+.for-quote:before {
+  content: "\e626";
+}
+
+.for-link:before {
+  content: "\e627";
+}
+
+.for-save:before {
+  content: "\e628";
+}
+
+.for-contract:before {
+  content: "\e629";
+}
+
+.for-eye-off:before {
+  content: "\e62a";
+}
+
+.for-subfield:before {
+  content: "\e62b";
+}

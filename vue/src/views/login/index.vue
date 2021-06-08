@@ -7,30 +7,16 @@
           <img class="image" src="@/assets/images/logo.png" />
           <h1 class="title">Ant Simple Pro</h1>
         </a-row>
-        <a-form
-          class="form"
-          :model="form"
-          :rules="rules"
-          @finish="handleFinish"
-        >
+        <a-form class="form" :model="form" :rules="rules" @finish="handleFinish">
           <a-form-item has-feedback name="email">
-            <a-input
-              v-model:value="form.email"
-              placeholder="请填写邮箱"
-              size="large"
-            >
+            <a-input v-model:value="form.email" placeholder="请填写邮箱" size="large">
               <template #prefix>
                 <UserOutlined class="form-item-prefix" />
               </template>
             </a-input>
           </a-form-item>
           <a-form-item has-feedback name="password">
-            <a-input
-              type="password"
-              v-model:value="form.password"
-              placeholder="请填写密码"
-              size="large"
-            >
+            <a-input type="password" v-model:value="form.password" placeholder="请填写密码" size="large">
               <template #prefix>
                 <LockOutlined class="form-item-prefix" />
               </template>
@@ -42,13 +28,7 @@
             </a-checkbox>
           </a-form-item> -->
           <a-form-item class="form-item--submit">
-            <a-button
-              class="submit-btn"
-              type="primary"
-              html-type="submit"
-              size="large"
-              :loading="loading"
-            >
+            <a-button class="submit-btn" type="primary" html-type="submit" size="large" :loading="loading">
               登录
             </a-button>
           </a-form-item>
@@ -60,25 +40,24 @@
 </template>
 
 <script>
-// import md5 from 'md5'
-import { mapGetters } from 'vuex'
+import { defineComponent, reactive, toRefs, onMounted, computed } from 'vue'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
+import store from '@/store'
+import { useRouter } from 'vue-router'
+import { message } from 'ant-design-vue'
 import { login } from './service'
-import {
-  getRememberUser,
-  setRememberUser,
-  removeRememberUser,
-  setToken
-} from '@/utils/local'
-import FooterBar from '@/components/footerbar'
-export default {
+import { getRememberUser, setRememberUser, removeRememberUser, setToken } from '@/utils/local'
+import FooterBar from '@/components/footerbar/index.vue'
+
+export default defineComponent({
   components: {
     FooterBar,
     UserOutlined,
     LockOutlined
   },
-  data() {
-    return {
+  setup() {
+    const loading = computed(() => store.getters.loading)
+    const state = reactive({
       form: {
         email: '',
         password: '',
@@ -91,19 +70,15 @@ export default {
         ],
         password: [{ required: true, message: '请填写密码!', trigger: 'blur' }]
       }
-    }
-  },
-  computed: {
-    ...mapGetters(['loading'])
-  },
-  mounted() {
-    const rememberUser = getRememberUser()
-    if (rememberUser) {
-      this.form = rememberUser
-    }
-  },
-  methods: {
-    async handleFinish(values) {
+    })
+    onMounted(() => {
+      const rememberUser = getRememberUser()
+      if (rememberUser) {
+        state.form = rememberUser
+      }
+    })
+    const router = useRouter()
+    const handleFinish = async values => {
       if (values.remember) {
         setRememberUser(values)
       } else {
@@ -117,16 +92,21 @@ export default {
       try {
         const token = await login(params)
         setToken(token) // save local
-        await this.$store.dispatch('user/GetUserData')
-        this.$router.push('/')
-        this.$message.destroy()
-        this.$message.success('登录成功')
+        await store.dispatch('user/getUserData')
+        router.push('/')
+        message.destroy()
+        message.success('登录成功')
       } catch (err) {
         console.log(err)
       }
     }
+    return {
+      ...toRefs(state),
+      handleFinish,
+      loading
+    }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>
@@ -154,8 +134,7 @@ export default {
   width: 360px;
   padding: 50px;
   border-radius: 2px;
-  box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1),
-    0 55px 85px -60px rgba(24, 144, 255, 0.31);
+  box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1), 0 55px 85px -60px rgba(24, 144, 255, 0.31);
   background-color: #fff;
   .logo {
     .image {

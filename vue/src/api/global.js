@@ -12,25 +12,17 @@ export function getAccessMenus() {
   })
 }
 
-export function getTotalRoles(loadingCb) {
+/**
+ * 上传文件
+ * @param {File | Blob} file 文件流
+ * @returns Promise
+ */
+export function uploadFile(file) {
+  const fd = new FormData()
+  fd.append('file', file)
   return request({
-    url: '/role/total',
-    loadingCb
-  })
-}
-
-export const getTotalDirs = loadingCb => {
-  return request({
-    method: 'get',
-    url: '/resource/dir',
-    loadingCb
-  })
-}
-
-export const getTotalResources = loadingCb => {
-  return request({
-    method: 'get',
-    url: '/resource/total',
-    loadingCb
+    method: 'post',
+    url: '/api/fileUpload',
+    data: fd
   })
 }

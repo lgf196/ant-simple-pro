@@ -1,32 +1,14 @@
 <template>
   <a-modal :title="title" :visible="visible" @cancel="onClose">
-    <a-form
-      ref="form"
-      :model="form"
-      :rules="rules"
-      :label-col="labelCol"
-      :wrapper-col="wrapperCol"
-    >
+    <a-form ref="formRef" :model="form" :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="菜单名字" name="title">
-        <a-input
-          v-model:value="form.title"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.title" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="菜单url" name="url">
-        <a-input
-          v-model:value="form.url"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.url" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="菜单icon" name="icon">
-        <a-input
-          v-model:value="form.icon"
-          placeholder="请输入"
-          allowClear
-        ></a-input>
+        <a-input v-model:value="form.icon" placeholder="请输入" allowClear></a-input>
       </a-form-item>
       <a-form-item label="上级菜单" name="pid">
         <a-cascader
@@ -42,18 +24,21 @@
       </a-form-item>
     </a-form>
     <template #footer>
-      <a-button type="primary" :loading="submitting" @click="onSubmit"
-        >编辑</a-button
-      >
+      <a-button type="primary" :loading="submitting" @click="onSubmit">
+        {{ currentRow.id ? '编辑' : '创建' }}
+      </a-button>
       <a-button @click="onReset">重置</a-button>
     </template>
   </a-modal>
 </template>
 
 <script>
+import { defineComponent, nextTick, ref, reactive, toRefs, watch, computed } from 'vue'
+import { message } from 'ant-design-vue'
 import { updateMenu } from './service'
-export default {
-  emits: ['update:visible', 'updateSuccess', 'createSuccess'],
+
+export default defineComponent({
+  emits: ['update:visible', 'update-success', 'create-success'],
   props: {
     visible: {
       type: Boolean,
@@ -68,8 +53,8 @@ export default {
       default: () => []
     }
   },
-  data() {
-    return {
+  setup(props, { emit }) {
+    const state = reactive({
       labelCol: { span: 6 },
       wrapperCol: { span: 18 },
       submitting: false,
@@ -80,67 +65,90 @@ export default {
         icon: '',
         pid: []
       }
-    }
-  },
-  computed: {
-    title() {
-      return this.currentRow.id ? '编辑' : '新增'
-    },
-    rules() {
+    })
+
+    const formRef = ref(null)
+    let cancel = null
+
+    const title = computed(() => {
+      return props.currentRow.id ? '编辑' : '新增'
+    })
+
+    const rules = computed(() => {
       return {
         title: [{ required: true, message: '请输入菜单名字' }],
         url: [{ required: true, message: '请输入菜单url' }],
-        icon: [{ required: !this.currentRow.id, message: '请输入菜单icon' }]
+        icon: [{ required: !props.currentRow.id, message: '请输入菜单icon' }]
       }
-    }
-  },
-  watch: {
-    visible(newVal) {
-      if (newVal) {
-        this.$nextTick(() => {
-          this.form = {
-            id: this.currentRow.id || null,
-            title: this.currentRow.title || '',
-            url: this.currentRow.url || '',
-            icon: this.currentRow.icon || '',
-            pid: this.currentRow.pid ? [this.currentRow.pid] : []
-          }
-        })
+    })
+
+    // 打开弹窗时 回显数据
+    watch(
+      () => props.visible,
+      newVal => {
+        if (newVal) {
+          nextTick(() => {
+            state.form = {
+              id: props.currentRow.id || null,
+              title: props.currentRow.title || '',
+              url: props.currentRow.url || '',
+              icon: props.currentRow.icon || '',
+              pid: props.currentRow.pid ? [props.currentRow.pid] : []
+            }
+          })
+        }
       }
+    )
+
+    function updateVisible(val) {
+      emit('update:visible', val)
     }
-  },
-  methods: {
-    onClose() {
-      this.updateVisible(false)
-      this.cancel && this.cancel()
-    },
-    onReset() {
-      this.$refs.form.resetFields()
-    },
-    async onSubmit() {
+
+    function onClose() {
+      updateVisible(false)
+      cancel && cancel()
+    }
+
+    function onReset() {
+      const form = formRef.value
+      if (!form) {
+        return
+      }
+      form.resetFields()
+    }
+
+    async function onSubmit() {
       try {
         const params = {
-          ...this.form,
-          pid: this.form.pid ? [this.form.pid] : null
+          ...state.form,
+          pid: state.form.pid.length ? state.form.pid : null
         }
         await updateMenu(
           params,
-          v => (this.submitting = v),
-          cancel => (this.cancel = cancel)
+          v => (state.submitting = v),
+          c => (cancel = c)
         )
-        this.$message.destroy()
-        this.$message.success(this.title + '成功')
-        this.$emit(this.currentRow.id ? 'updateSuccess' : 'createSuccess')
-        this.onClose()
+        message.destroy()
+        message.success(title.value + '成功')
+        emit(props.currentRow.id ? 'update-success' : 'create-success')
+        onClose()
       } catch (err) {
         console.log(err)
       }
-    },
-    updateVisible(val) {
-      this.$emit('update:visible', val)
+    }
+
+    return {
+      ...toRefs(state),
+      title,
+      rules,
+      formRef,
+      updateVisible,
+      onClose,
+      onReset,
+      onSubmit
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

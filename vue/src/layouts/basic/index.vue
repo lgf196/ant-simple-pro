@@ -5,13 +5,12 @@
       mobile,
       collapsed,
       'hidden-tags-nav': !tagsNavVisible,
-      'hidden-tags-nav': !tagsNavVisible,
       'slidebar-fixed': windowWidth > 750,
       'has-drawer': windowWidth <= 750
     }"
   >
     <template v-if="windowWidth > 750">
-      <SlideBar></SlideBar>
+      <SlideBar />
     </template>
     <a-drawer
       v-else
@@ -21,56 +20,48 @@
       v-model:visible="drawerVisible"
       :width="200"
     >
-      <SlideBar></SlideBar>
+      <SlideBar />
     </a-drawer>
     <div class="layout-content">
-      <HeaderBar
-        @open-drawer="onOpenDrawer"
-        :windowWidth="windowWidth"
-        :drawerVisible="drawerVisible"
-      ></HeaderBar>
-      <TagsNav></TagsNav>
+      <HeaderBar @open-drawer="onOpenDrawer" :windowWidth="windowWidth" :drawerVisible="drawerVisible" />
+      <TagsNav />
       <main class="main">
         <router-view />
       </main>
-      <FooterBar class="footer"></FooterBar>
+      <FooterBar class="footer" />
     </div>
     <BackTop />
   </section>
 </template>
 
 <script>
-import { watch, ref } from 'vue'
-import { mapGetters, useStore } from 'vuex'
-import HeaderBar from './headerbar'
-import SlideBar from './slidebar'
-import TagsNav from './tags-nav'
-import FooterBar from '@/components/footerbar'
-import BackTop from './back-top'
-import { isMobile } from '@/utils/system'
-import useResizeWidth from '@/hooks/useResizeWidth'
+import { defineComponent, computed, watch, ref } from 'vue'
+import store from '@/store'
+import HeaderBar from './components/headerbar.vue'
+import SlideBar from './components/slidebar.vue'
+import TagsNav from './components/tags-nav.vue'
+import FooterBar from '@/components/footerbar/index.vue'
+import BackTop from './components/back-top.vue'
+import useMobile from './useMobile'
+import { useResizeWidth } from '@/hooks'
 import './index.less'
-export default {
+
+export default defineComponent({
   name: 'BasicLayout',
   components: {
     HeaderBar,
     SlideBar,
-    TagsNav,
     FooterBar,
+    TagsNav,
     BackTop
-  },
-  data() {
-    return {
-      mobile: isMobile()
-    }
-  },
-  computed: {
-    ...mapGetters(['collapsed', 'tagsNavVisible'])
   },
   setup() {
     const drawerVisible = ref(false)
+    const mobile = useMobile()
+    const collapsed = computed(() => store.getters.collapsed)
+    const tagsNavVisible = computed(() => store.getters.tagsNavVisible)
     const { width } = useResizeWidth()
-    const store = useStore()
+
     watch(
       width,
       newWidth => {
@@ -87,10 +78,13 @@ export default {
     }
 
     return {
+      mobile,
+      collapsed,
+      tagsNavVisible,
       windowWidth: width,
       drawerVisible,
       onOpenDrawer
     }
   }
-}
+})
 </script>

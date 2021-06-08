@@ -25,14 +25,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 // import ImageViewer from './image-viewer'
 import { on, off, getScrollContainer, isInContainer } from '@/utils/dom'
 import { isString, isHtmlElement } from '@/utils/type'
 import { throttle } from 'lodash'
 import './index.less'
 
-const isSupportObjectFit = () =>
-  document.documentElement.style.objectFit !== undefined
+const isSupportObjectFit = () => document.documentElement.style.objectFit !== undefined
 
 const ObjectFit = {
   NONE: 'none',
@@ -42,7 +42,7 @@ const ObjectFit = {
   SCALE_DOWN: 'scale-down'
 }
 
-export default {
+export default defineComponent({
   name: 'ComImage',
 
   inheritAttrs: false,
@@ -74,7 +74,9 @@ export default {
       show: !this.lazy,
       imageWidth: 0,
       imageHeight: 0,
-      showViewer: false
+      showViewer: false,
+      _scrollContainer: null,  // eslint-disable-line
+      _lazyLoadHandler: (() => {})  // eslint-disable-line
     }
   },
 
@@ -82,9 +84,7 @@ export default {
     imageStyle() {
       const { fit } = this
       if (fit) {
-        return isSupportObjectFit()
-          ? { 'object-fit': fit }
-          : this.getImageStyle(fit)
+        return isSupportObjectFit() ? { 'object-fit': fit } : this.getImageStyle(fit)
       }
       return {}
     },
@@ -142,7 +142,9 @@ export default {
         const value = this.$attrs[key]
         img.setAttribute(key, value)
       })
-      img.src = this.src
+      if (this.src) {
+        img.src = this.src
+      }
     },
     handleLoad(e, img) {
       this.imageWidth = img.width
@@ -156,6 +158,9 @@ export default {
       this.$emit('error', e)
     },
     handleLazyLoad() {
+      if (!this._scrollContainer) {
+        return
+      }
       if (isInContainer(this.$el, this._scrollContainer)) {
         this.show = true
         this.removeLazyLoadListener()
@@ -194,19 +199,14 @@ export default {
      */
     getImageStyle(fit) {
       const { imageWidth, imageHeight } = this
-      const {
-        clientWidth: containerWidth,
-        clientHeight: containerHeight
-      } = this.$el
+      const { clientWidth: containerWidth, clientHeight: containerHeight } = this.$el
 
-      if (!imageWidth || !imageHeight || !containerWidth || !containerHeight)
-        return {}
+      if (!imageWidth || !imageHeight || !containerWidth || !containerHeight) return {}
 
       const vertical = imageWidth / imageHeight < 1
 
       if (fit === ObjectFit.SCALE_DOWN) {
-        const isSmaller =
-          imageWidth < containerWidth && imageHeight < containerHeight
+        const isSmaller = imageWidth < containerWidth && imageHeight < containerHeight
         fit = isSmaller ? ObjectFit.NONE : ObjectFit.CONTAIN
       }
 
@@ -232,5 +232,5 @@ export default {
       this.showViewer = false
     }
   }
-}
+})
 </script>

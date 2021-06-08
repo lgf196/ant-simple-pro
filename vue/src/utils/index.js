@@ -1,5 +1,5 @@
-import { omit } from 'lodash'
 import { saveAs } from 'file-saver'
+import Clipboard from 'clipboard'
 
 /**
  * 生成随机字符串
@@ -10,63 +10,21 @@ export const getRandomStr = () => {
 }
 
 /**
- * 判断当前路由是否拥有权限
- * @param {Object} route 当前路由对象
- * @param {Array<string>} resourceCodes 当前用户拥有的所有权限 code list
- * @return {Boolean} 是否拥有权限
+ * 获取固定显示的 tags
+ * @param {Array<RouteRecordRaw>} routes 路由表
+ * @return {Array<TagItemType>} 固定的
  */
-export const hasPermission = (route, resourceCodes = []) => {
-  if (
-    route.meta &&
-    route.meta.permission &&
-    Array.isArray(route.meta.permission)
-  ) {
-    return route.meta.permission.some(code => resourceCodes.includes(code))
-  }
-  return true
-}
-
-/**
- * 生成有权限的路由
- * @param {Array} routes 路由表
- * @param {Array<string>} resourceCodes 当前用户拥有的所有权限 code list
- * @return {Array} accessRoutes
- */
-export const getAccessRoutes = (routes, resourceCodes) => {
-  return routes.filter(item => {
-    if (Array.isArray(item.children)) {
-      item.children = getAccessRoutes(item.children, resourceCodes)
+export const getAffixTags = (routes = []) => {
+  let result = []
+  routes.forEach(item => {
+    if (item.path && item.path !== '/:pathMatch(.*)*' && item.meta && item.meta.affix) {
+      result.push(item)
     }
-    return hasPermission(item, resourceCodes)
-  })
-}
-
-/**
- * 生成根据路由生成菜单
- * @param {Array} routes 路由表
- * @return {Array} menus
- */
-export const getAccessMenus = routes => {
-  return routes.map(item => {
     if (Array.isArray(item.children)) {
-      item.children = getAccessMenus(item.children)
+      result = result.concat(getAffixTags(item.children))
     }
-    return omit(item, ['component'])
   })
-}
-
-/**
- * 生成固定在 tags-nav 的列表
- * @param {Array} menus 菜单
- * @return {Array} affixTags
- */
-export const getAffixTags = menus => {
-  return menus.filter(item => {
-    if (Array.isArray(item.children)) {
-      item.children = getAffixTags(item.children)
-    }
-    return item.meta && item.meta.affix
-  })
+  return result
 }
 
 export function rafThrottle(fn) {
@@ -87,4 +45,19 @@ export function downloadExcel(data, filename) {
     type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
   })
   saveAs(b, filename)
+}
+
+export const copy = (text, event) => {
+  const el = event.target
+  const clipboard = new Clipboard(el, {
+    text: () => text
+  })
+  clipboard.on('success', () => {
+    clipboard.destroy()
+  })
+  clipboard.on('error', err => {
+    console.log(err)
+    clipboard.destroy()
+  })
+  clipboard.onClick(event)
 }

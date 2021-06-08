@@ -1,7 +1,11 @@
 import { onMounted, onBeforeUnmount, watch } from 'vue'
 import store from '@/store'
 
-export default function (chartIns) {
+/**
+ * useChartResize
+ * @param {Ref<echarts.ECharts | null>} chartIns  chartIns
+ */
+export function useChartResize(chartIns) {
   function onResize() {
     chartIns.value && chartIns.value.resize()
   }
@@ -11,7 +15,7 @@ export default function (chartIns) {
   watch(
     () => store.getters.collapsed,
     () => {
-      timer = setTimeout(() => {
+      timer = window.setTimeout(() => {
         onResize()
       }, 500)
     }

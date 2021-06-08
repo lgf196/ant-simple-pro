@@ -18,11 +18,12 @@
 </template>
 
 <script>
-import Column from './components/column'
-import Bar from './components/bar'
-import Line from './components/line'
-import Pie from './components/pie'
-export default {
+import { defineComponent } from 'vue'
+import Column from './components/column.vue'
+import Bar from './components/bar.vue'
+import Line from './components/line.vue'
+import Pie from './components/pie.vue'
+export default defineComponent({
   name: 'Chart',
   components: {
     Column,
@@ -33,7 +34,7 @@ export default {
   data() {
     return {}
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

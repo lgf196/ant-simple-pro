@@ -30,7 +30,7 @@ export const getOption = list => {
       splitLine: {
         show: false
       },
-      data: [...list].reverse().map(v => v.name)
+      data: list.map(v => v.name)
     },
     tooltip: {
       show: true,

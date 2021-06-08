@@ -1,0 +1,20 @@
+{
+  "placeholder": "Begin editing...",
+  "undo": "Undo",
+  "redo": "Redo",
+  "h1": "Header 1",
+  "h2": "Header 2",
+  "h3": "Header 3",
+  "h4": "Header 4",
+  "img": "Image Link",
+  "link": "Link",
+  "code": "Code",
+  "save": "Save",
+  "preview": "Preview",
+  "singleColumn": "Single Column",
+  "doubleColumn": "Double Columns",
+  "fullscreenOn": "FullScreen ON",
+  "fullscreenOff": "FullScreen OFF",
+  "addImgLink": "Add Image Link",
+  "addImg": "Upload Image"
+}

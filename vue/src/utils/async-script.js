@@ -1,11 +1,4 @@
-/**
- * 动态加载 js 文件
- * @param {String} src js 文件路径
- * @param {Any} existVariable 在全局声明的变量，如：window.echarts
- * @param {Function} callback 回调函数
- * @return {void}
- */
-function asyncLoadScript(src, existVariable, callback) {
+const asyncLoadScript = (src, existVariable, callback) => {
   const existingScript = document.getElementById(src)
   const cb = callback || function() {} // eslint-disable-line
 
@@ -14,8 +7,8 @@ function asyncLoadScript(src, existVariable, callback) {
     script.src = src
     script.id = src
     document.body.appendChild(script)
-    const onEnd = 'onload' in script ? stdOnEnd : ieOnEnd
-    onEnd(script)
+    const onEnd = 'onload' in script ? stdOnEnd : ieOnEnd // eslint-disable-line
+    onEnd(script) // eslint-disable-line
   }
 
   if (existingScript && cb) {

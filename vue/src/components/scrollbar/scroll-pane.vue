@@ -1,9 +1,5 @@
 <template>
-  <Scrollbar
-    ref="scrollbarRef"
-    class="scroll-container"
-    @wheel.prevent="handleScroll"
-  >
+  <Scrollbar ref="scrollbarRef" class="scroll-container" @wheel.prevent="handleScroll">
     <slot></slot>
   </Scrollbar>
 </template>
@@ -64,14 +60,10 @@ export default defineComponent({
         const prevTag = tagList[currentIndex - 1]
         const nextTag = tagList[currentIndex + 1]
         // the tag's offsetLeft after of nextTag
-        const afterNextTagOffsetLeft =
-          nextTag.offsetLeft + nextTag.offsetWidth + tagAndTagSpacing
+        const afterNextTagOffsetLeft = nextTag.offsetLeft + nextTag.offsetWidth + tagAndTagSpacing
         // the tag's offsetLeft before of prevTag
         const beforePrevTagOffsetLeft = prevTag.offsetLeft - tagAndTagSpacing
-        if (
-          $scrollWrapper.scrollLeft <
-          afterNextTagOffsetLeft - $containerWidth
-        ) {
+        if ($scrollWrapper.scrollLeft < afterNextTagOffsetLeft - $containerWidth) {
           // 当前标签隐藏在右边
           $scrollWrapper.scrollLeft = afterNextTagOffsetLeft - $containerWidth
         } else if (beforePrevTagOffsetLeft < $scrollWrapper.scrollLeft) {

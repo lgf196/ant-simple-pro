@@ -5,7 +5,7 @@
       <div class="line"></div>
       <span class="name">Ant Simple Pro</span>
     </div>
-    <p>Copyright © 2020 Lgf&qyh</p>
+    <p>Copyright © 2021 Lgf&qyh</p>
   </div>
 </template>
 

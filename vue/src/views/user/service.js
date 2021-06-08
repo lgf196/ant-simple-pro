@@ -1,7 +1,10 @@
 import axios from 'axios'
 import request from '@/utils/request'
 
-export const getUsers = (params, loadingCb) => {
+export const getUsers = (
+  params,
+  loadingCb = () => {} // eslint-disable-line
+) => {
   return request({
     method: 'get',
     url: '/user/find',
@@ -17,7 +20,11 @@ export const getUsersBuffer = () => {
   })
 }
 
-export const updateUser = (data, loadingCb, cancelCallback = () => {}) => { // eslint-disable-line
+export const updateUser = (
+  data,
+  loadingCb,
+  cancelCallback = () => {} // eslint-disable-line
+) => {
   return request({
     method: 'post',
     url: '/user/edit',

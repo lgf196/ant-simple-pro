@@ -4,6 +4,7 @@ import {
   Button,
   Form,
   Input,
+  InputNumber,
   Checkbox,
   Row,
   Col,
@@ -32,7 +33,10 @@ import {
   Progress,
   Switch,
   BackTop,
-  Drawer
+  Drawer,
+  Slider,
+  Carousel,
+  Empty
 } from 'ant-design-vue'
 
 export default function (app) {
@@ -43,6 +47,7 @@ export default function (app) {
     .use(Button)
     .use(Form)
     .use(Input)
+    .use(InputNumber)
     .use(Checkbox)
     .use(Row)
     .use(Col)
@@ -72,6 +77,9 @@ export default function (app) {
     .use(Switch)
     .use(BackTop)
     .use(Drawer)
+    .use(Slider)
+    .use(Carousel)
+    .use(Empty)
 
   g.$message = message
   g.$info = Modal.info

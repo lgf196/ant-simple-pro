@@ -13,13 +13,7 @@
     @preview="onPreview"
   >
     <template v-if="isSingle">
-      <ComImage
-        v-if="value"
-        class="upload-image"
-        :src="value"
-        alt="avatar"
-        fit="cover"
-      />
+      <ComImage v-if="value" class="image" :src="value" alt="avatar" fit="cover" />
       <div v-else>
         <LoadingOutlined v-if="loading" />
         <PlusOutlined v-else />
@@ -27,16 +21,18 @@
       </div>
     </template>
     <template v-else>
-      <PlusOutlined />
+      <PlusOutlined v-if="fileList.length < limit" />
     </template>
   </a-upload>
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
-export default {
-  emits: ['update:value', 'change'],
+import imagePreview from '@/components/image/image-preview'
+export default defineComponent({
+  emits: ['update:value', 'change', 'input', 'file-change'],
   components: {
     LoadingOutlined,
     PlusOutlined
@@ -55,16 +51,19 @@ export default {
       default: ''
     },
     mode: {
-      validator(value) {
-        return ['single', 'multiple'].indexOf(value) >= 0
-      },
+      type: String,
       default: 'single'
+    },
+    autoUpload: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
       loading: false,
-      fileList: []
+      fileList: [],
+      inited: false
     }
   },
   computed: {
@@ -76,8 +75,11 @@ export default {
     }
   },
   watch: {
-    value() {
-      this.updateFileList()
+    value: {
+      handler() {
+        this.updateFileList()
+      },
+      deep: true
     }
   },
   mounted() {
@@ -86,9 +88,10 @@ export default {
   methods: {
     updateFileList() {
       if (this.isMultiple && !this.inited) {
-        if (!this.value.length) {
+        if (!Array.isArray(this.value) || !this.value.length) {
           return
         }
+        console.log('updateFileList', this.value)
         this.inited = true
         this.fileList = this.value.map(url => ({
           uid: getRandomStr(),
@@ -100,6 +103,7 @@ export default {
     emitValue(val) {
       this.$emit('update:value', val)
       this.$emit('change', val)
+      this.$emit('input', val)
     },
     handleChange(info) {
       // console.log(this.fileList)
@@ -118,11 +122,7 @@ export default {
       }
     },
     beforeUpload(file) {
-      if (
-        this.isMultiple &&
-        this.limit &&
-        this.limit === this.fileList.length
-      ) {
+      if (this.isMultiple && this.limit && this.limit === this.fileList.length) {
         this.$message.destroy()
         this.$message.error(`最多上传 ${this.limit} 张!`)
         return false
@@ -139,7 +139,12 @@ export default {
         this.$message.error(`最大不能超过 ${this.limitSize}M !`)
         return false
       }
-      return true
+      if (!this.autoUpload) {
+        return new Promise(resolve => {
+          this.$emit('file-change', file, resolve)
+        })
+      }
+      return this.autoUpload
     },
     onRemove(file) {
       const ret = this.fileList.filter(v => v.uid !== file.uid).map(v => v.url)
@@ -147,18 +152,13 @@ export default {
       return true
     },
     onPreview(file) {
-      this.$imagePreview({
-        urlList: this.fileList.map(
-          v =>
-            v.url ||
-            (v.response && v.response.data && v.response.data.url) ||
-            v.thumbUrl
-        ),
+      imagePreview({
+        urlList: this.fileList.map(v => v.url || (v.response && v.response.data && v.response.data.url) || v.thumbUrl),
         initialIndex: this.fileList.findIndex(v => v.uid === file.uid)
       })
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>

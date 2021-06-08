@@ -15,7 +15,6 @@ export default {
 
   state: {
     currentUser: getLocalUserInfo() || {},
-    resourceList: [],
     accessMenus: getLocalAccessMenus() || []
   },
 
@@ -24,24 +23,21 @@ export default {
       state.currentUser = data || {}
       setUserInfo(data)
     },
-    SET_RESOURCE_LIST(state, data) {
-      state.resourceList = data
-    },
     SET_ACCESS_MENUS(state, data) {
       state.accessMenus = data || []
       setAccessMenus(data)
     }
   },
   actions: {
-    async GetUserInfo({ commit }) {
+    async getUserInfo({ commit }) {
       const user = await getUserInfo()
       commit('SET_USERINFO', user)
     },
-    async GetAccessMenus({ commit }) {
+    async getAccessMenus({ commit }) {
       const menus = await getAccessMenus()
       commit('SET_ACCESS_MENUS', menus)
     },
-    async GetUserData({ commit }) {
+    async getUserData({ commit }) {
       const [user, menus] = await Promise.all([getUserInfo(), getAccessMenus()])
       commit('SET_ACCESS_MENUS', menus)
       commit('SET_USERINFO', user)
@@ -65,7 +61,7 @@ export default {
     //       })
     //   })
     // },
-    Logout({ commit }) {
+    logout({ commit }) {
       return new Promise(resolve => {
         commit('SET_USERINFO', {})
         removeUserInfo()

@@ -5,7 +5,7 @@
 <script>
 import { defineComponent, ref, onMounted } from 'vue'
 import { getOption } from './pie-option'
-import useChartResize from '@/hooks/useChartResize'
+import { useChartResize } from '@/hooks'
 
 export default defineComponent({
   props: {

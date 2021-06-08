@@ -8,13 +8,11 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import screenfull from 'screenfull'
 import { Modal } from 'ant-design-vue'
-import {
-  FullscreenOutlined,
-  FullscreenExitOutlined
-} from '@ant-design/icons-vue'
-export default {
+import { FullscreenOutlined, FullscreenExitOutlined } from '@ant-design/icons-vue'
+export default defineComponent({
   name: 'Fullscreen',
   components: {
     FullscreenOutlined,
@@ -50,7 +48,6 @@ export default {
           content: '您的浏览器不支持全屏功能'
         })
       }
-      console.log(this.el())
       if (this.el()) {
         screenfull.toggle(this.el())
       } else {
@@ -62,5 +59,5 @@ export default {
       this.$emit('change', screenfull.isFullscreen)
     }
   }
-}
+})
 </script>

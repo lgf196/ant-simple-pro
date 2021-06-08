@@ -1,0 +1,64 @@
+/**
+ * Get from offsetParent
+ * @param {MouseEvent} evt 事件源参数
+ * @returns {x: number; y: number}
+ */
+export function offsetXYFromParentOf(evt) {
+  const offsetParent = evt.target.offsetParent || document.body
+  const offsetParentRect = offsetParent === document.body ? { left: 0, top: 0 } : offsetParent.getBoundingClientRect()
+
+  const x = evt.clientX + offsetParent.scrollLeft - offsetParentRect.left
+  const y = evt.clientY + offsetParent.scrollTop - offsetParentRect.top
+
+  /* const x = Math.round(evt.clientX + offsetParent.scrollLeft - offsetParentRect.left);
+  const y = Math.round(evt.clientY + offsetParent.scrollTop - offsetParentRect.top);*/
+
+  return { x, y }
+}
+
+/**
+ * Get {x, y} positions from event.
+ * @param {MouseEvent} evt 事件源参数
+ * @returns {x: Number; y: Number}
+ */
+export function getControlPosition(e) {
+  return offsetXYFromParentOf(e)
+}
+
+function isNum(num) {
+  return typeof num === 'number' && !isNaN(num)
+}
+
+/**
+ * Create an data object exposed by <DraggableCore>'s events
+ * @param {Number} lastX lastX
+ * @param {Number} lastY lastY
+ * @param {Number} x x
+ * @param {Number} y y
+ * @returns { deltaX: number; deltaY: number; lastX: number; lastY: number; x: number; y: number }
+ */
+export function createCoreData(lastX, lastY, x, y) {
+  // State changes are often (but not always!) async. We want the latest value.
+  const isStart = !isNum(lastX)
+
+  if (isStart) {
+    // If this is our first move, use the x and y as last coords.
+    return {
+      deltaX: 0,
+      deltaY: 0,
+      lastX: x,
+      lastY: y,
+      x,
+      y
+    }
+  }
+  // Otherwise calculate proper values.
+  return {
+    deltaX: x - lastX,
+    deltaY: y - lastY,
+    lastX,
+    lastY,
+    x,
+    y
+  }
+}

@@ -1,21 +1,13 @@
 <template>
   <div class="com-page">
     <div>
-      <a-radio-group
-        v-model:value="language"
-        button-style="solid"
-        @change="onToggle"
-      >
-        <a-radio-button
-          v-for="(item, index) in languages"
-          :key="index"
-          :value="item.value"
-        >
+      <a-radio-group v-model:value="language" button-style="solid" @change="onToggle">
+        <a-radio-button v-for="(item, index) in languages" :key="index" :value="item.value">
           {{ item.title }}
         </a-radio-button>
       </a-radio-group>
       <a href="https://github.com/intlify/vue-i18n-next" target="_blank">
-        <a-button type="link"> 了解vue-i18n-next </a-button>
+        <a-button type="link">了解vue-i18n-next</a-button>
       </a>
     </div>
     <a-list item-layout="vertical" size="large" :data-source="listData">
@@ -28,11 +20,7 @@
             </span>
           </template>
           <template #extra>
-            <img
-              width="272"
-              alt="logo"
-              src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-            />
+            <img width="272" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png" />
           </template>
           <a-list-item-meta :description="$t('description')">
             <template #title>
@@ -54,11 +42,9 @@
 </template>
 
 <script>
-import {
-  StarOutlined,
-  LikeOutlined,
-  MessageOutlined
-} from '@ant-design/icons-vue'
+import { defineComponent } from 'vue'
+import { StarOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons-vue'
+
 const listData = []
 for (let i = 0; i < 3; i++) {
   listData.push({
@@ -66,7 +52,8 @@ for (let i = 0; i < 3; i++) {
     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
   })
 }
-export default {
+
+export default defineComponent({
   name: 'Globalization',
   components: {
     StarOutlined,
@@ -94,17 +81,17 @@ export default {
       this.$i18n.locale = this.language
     }
   }
-}
+})
 </script>
 
 <style lang="less" scoped>
+.com-page {
+  padding: 20px;
+}
 .icon-logo {
   font-size: 30px;
 }
 ::v-deep(.ant-list-item) {
   padding: 16px 24px;
-}
-.com-page {
-  padding: 20px;
 }
 </style>

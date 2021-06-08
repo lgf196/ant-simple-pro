@@ -1,26 +1,83 @@
-import { createApp } from 'vue'
-import ImageViewer from './image-viewer'
+import { h, createApp } from 'vue'
+import ImageViewer from './image-viewer.vue'
 
-let app = null
+// const defaultOptions = {
+//   urlList: []
+// }
 
-export default function (options = {}) {
+let instance = null
+
+function newInstance(options, callback) {
   const div = document.createElement('div')
+  div.className = 'image-preview-wrapper-root'
   document.body.appendChild(div)
-  const destroy = () => {
-    app.unmount(div)
-    if (div.parentNode) {
-      div.parentNode.removeChild(div)
-    }
-  }
-  const props = {
-    ...options,
-    destroy
-  }
-  app = createApp({
+  const app = createApp({
+    mounted() {
+      const self = this // eslint-disable-line
+      this.$nextTick(() => {
+        callback({ // eslint-disable-line
+          open() {
+            self.$refs.imageViewer.visible = true
+          },
+          close() {
+            self.$refs.imageViewer.visible = false
+          },
+          destroy() {
+            app && app.unmount(div)
+            if (div.parentNode) {
+              div.parentNode.removeChild(div)
+            }
+          }
+        })
+      })
+    },
     render() {
-      return <ImageViewer {...props} />
+      const props = {
+        ...options,
+        ref: 'imageViewer'
+      }
+      return h(ImageViewer, props)
     }
   })
   app.mount(div)
-  return destroy
 }
+
+function getInstance(options, callback) {
+  if (instance) {
+    callback(instance)
+    return
+  }
+  newInstance(options, ins => {
+    instance = ins
+    callback(ins)
+  })
+}
+
+export default function imagePreview(options) {
+  getInstance(options, ins => {
+    ins.open()
+  })
+}
+
+// export default function (options: OptionsType = defaultOptions) {
+//   const div = document.createElement('div')
+//   document.body.appendChild(div)
+//   const destroy = () => {
+//     app && app.unmount(div)
+//     if (div.parentNode) {
+//       div.parentNode.removeChild(div)
+//     }
+//   }
+//   const props = {
+//     ...options,
+//     destroy,
+//     ref: 'imageViewer'
+//   }
+//   app = createApp({
+//     render() {
+//       return h(ImageViewer, props)
+//     }
+//   })
+//   app.mount(div)
+//   return destroy
+// }
