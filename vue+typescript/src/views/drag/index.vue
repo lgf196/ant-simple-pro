@@ -74,7 +74,7 @@ import { defineComponent, onBeforeUnmount, ref } from 'vue'
 import { GridLayout, GridItem } from '@/components/grid-layout'
 import Draggable from 'vuedraggable'
 import { maxBy } from 'lodash'
-import createContextMenu from '@/components/context-menu/create-context-menu'
+import { createContextMenu } from '@/components/context-menu/create-context-menu'
 // import { getRandomStr } from '@/utils'
 import templates, { TempBanner, TempList, TempNews } from './templates'
 

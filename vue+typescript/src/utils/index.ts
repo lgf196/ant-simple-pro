@@ -63,6 +63,5 @@ export const copy = (text: string, event: Event) => {
     console.log(err)
     clipboard.destroy()
   })
-  // @ts-ignore
-  clipboard.onClick(event)
+  ;(clipboard as any).onClick(event)
 }

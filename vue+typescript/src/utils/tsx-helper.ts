@@ -1,4 +1,4 @@
-import { Slots } from 'vue'
+import { Slots, Component, createApp } from 'vue'
 import { isFunc } from '@/utils/type'
 
 /**
@@ -45,4 +45,20 @@ export function getListeners(attrs: Record<string, unknown>) {
     }
   })
   return listeners
+}
+
+export function mountComponent(RootComponent: Component, className = '') {
+  const app = createApp(RootComponent)
+  const root = document.createElement('div')
+  root.className = className
+
+  document.body.appendChild(root)
+
+  return {
+    instance: app.mount(root),
+    unmount() {
+      app.unmount(root)
+      document.body.removeChild(root)
+    }
+  }
 }

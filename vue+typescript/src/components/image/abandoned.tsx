@@ -1,3 +1,6 @@
+/**
+ * 废弃
+ */
 import { h, createApp, ComponentPublicInstance } from 'vue'
 import ImageViewer from './image-viewer.vue'
 

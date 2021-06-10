@@ -41,7 +41,7 @@ import LayoutTable from '@/components/layout-table'
 import { UserOutlined, FileZipOutlined } from '@ant-design/icons-vue'
 import { getUsers } from '@/views/user/service'
 import { useAsync } from '@/hooks'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 import { exportTxtToZip } from '@/utils/zip'
 import { excelHeader, excelKeyList, normalizeExcelData } from '@/views/excel/types'
 const columns = [

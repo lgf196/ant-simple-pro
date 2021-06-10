@@ -31,7 +31,7 @@ import { defineComponent, PropType } from 'vue'
 import { UploadFile, VcFile, UploadChangeParam } from 'ant-design-vue/types/upload'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 export default defineComponent({
   emits: ['update:value', 'change', 'input', 'file-change'],
   components: {

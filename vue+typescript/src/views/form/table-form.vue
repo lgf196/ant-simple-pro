@@ -72,7 +72,7 @@ import { UserOutlined } from '@ant-design/icons-vue'
 import type { Form } from 'ant-design-vue/types/form/form'
 import TimeRangeSelection from '@/components/time-range-selection/index.vue'
 import { enumLangList } from '@/utils/enum'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 
 const columnsData = [
   {

@@ -18,6 +18,7 @@ const Item: FunctionalComponent<ItemContentProps> = props => {
 export default defineComponent({
   name: 'ContextMenu',
   inheritAttrs: false,
+  emits: ['update:visible'],
   props: {
     width: {
       type: Number,
@@ -40,16 +41,6 @@ export default defineComponent({
       default: false
     }
   },
-  data() {
-    return {
-      sVisible: this.visible
-    }
-  },
-  watch: {
-    visible(newVal) {
-      this.sVisible = newVal
-    }
-  },
   mounted() {
     document.body.addEventListener('click', this.hide)
   },
@@ -58,14 +49,13 @@ export default defineComponent({
   },
   methods: {
     hide() {
-      this.sVisible = false
+      this.$emit('update:visible', false)
     },
     handleAction(item: ContextMenuItem, e: MouseEvent) {
       const { handler, disabled } = item
       if (disabled) {
         return
       }
-      // showRef.value = false
       e.stopPropagation()
       e.preventDefault()
       handler && handler(item, e)
@@ -74,7 +64,7 @@ export default defineComponent({
   },
   render() {
     const self = this // eslint-disable-line
-    const { sVisible } = this
+    const { visible } = this
 
     function renderMenuItem(menus: ContextMenuItem[]) {
       return menus.map(item => {
@@ -101,7 +91,7 @@ export default defineComponent({
     }
     return (
       <Transition name="com-fade-in" appear>
-        {sVisible && (
+        {visible && (
           <div>
             <Menu
               class={`context-menu ${this.menuClass}`}
@@ -119,64 +109,4 @@ export default defineComponent({
       </Transition>
     )
   }
-  // setup(props) {
-  //   const menuRef = ref<HTMLElement>()
-  //   const visible = ref(false)
-
-  //   function handleAction(item: ContextMenuItem, e: MouseEvent) {
-  //     const { handler, disabled } = item
-  //     if (disabled) {
-  //       return
-  //     }
-  //     // showRef.value = false
-  //     e.stopPropagation()
-  //     e.preventDefault()
-  //     handler && handler()
-  //   }
-
-  //   function renderMenuItem(menus: ContextMenuItem[]) {
-  //     return menus.map(item => {
-  //       const { disabled, label, children } = item
-
-  //       if (!children || !children.length) {
-  //         return (
-  //           <Menu.Item disabled={disabled} class="context-menu-item" key={label}>
-  //             <Item item={item} handler={handleAction} />
-  //           </Menu.Item>
-  //         )
-  //       }
-  //       // if (!unref(showRef)) return null
-  //       return (
-  //         <Menu.SubMenu key={label} disabled={disabled} popupClassName="context-menu-popup">
-  //           {{
-  //             // slots
-  //             title: () => <Item item={item} handler={handleAction} />,
-  //             default: () => renderMenuItem(children)
-  //           }}
-  //         </Menu.SubMenu>
-  //       )
-  //     })
-  //   }
-
-  //   return () => {
-  //     return (
-  //       <Transition name="com-zoom-in-top" appear>
-  //         {visible.value && (
-  //           <Menu
-  //             class={`context-menu ${props.menuClass}`}
-  //             mode="vertical"
-  //             ref={menuRef}
-  //             style={{
-  //               width: props.width + 'px',
-  //               top: props.position.x + 'px',
-  //               left: props.position.y + 'px'
-  //             }}
-  //           >
-  //             {renderMenuItem(props.menus)}
-  //           </Menu>
-  //         )}
-  //       </Transition>
-  //     )
-  //   }
-  // }
 })

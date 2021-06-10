@@ -73,7 +73,7 @@ import { getUsers, getUsersBuffer } from './service'
 import { useAsync } from '@/hooks'
 import { downloadExcel } from '@/utils'
 import UpdateUserModal from './update-user-modal.vue'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 const columns = [
   {
     dataIndex: 'index',
