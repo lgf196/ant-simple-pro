@@ -71,7 +71,7 @@ import { computed, defineComponent, reactive, ref, unref } from 'vue'
 import { UserOutlined } from '@ant-design/icons-vue'
 import TimeRangeSelection from '@/components/time-range-selection/index.vue'
 import { enumLangList } from '@/utils/enum'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 
 const columnsData = [
   {

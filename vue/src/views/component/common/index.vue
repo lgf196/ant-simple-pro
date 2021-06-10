@@ -53,7 +53,7 @@
 
 <script>
 import { defineComponent, ref, reactive, toRefs, onBeforeUnmount } from 'vue'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 export default defineComponent({
   name: 'Common',
   setup() {

@@ -1,13 +1,13 @@
 <template>
   <transition name="com-zoom-in-center" appear>
     <div
-      v-if="visible"
+      v-if="show"
       tabindex="-1"
       ref="com-image-viewer__wrapper"
       class="com-image-viewer__wrapper"
       :style="{ 'z-index': zIndex }"
     >
-      <div class="com-image-viewer__mask"></div>
+      <div class="com-image-viewer__mask" @click.self="handleMaskClick"></div>
       <!-- CLOSE -->
       <span class="com-image-viewer__btn com-image-viewer__close" @click="hide">
         <CloseCircleOutlined class="com-icon-circle-close" />
@@ -97,13 +97,17 @@ export default defineComponent({
       type: Function,
       default: () => {} // eslint-disable-line
     },
-    destroy: {
-      type: Function,
-      default: () => {} // eslint-disable-line
-    },
     initialIndex: {
       type: Number,
       default: 0
+    },
+    show: {
+      type: Boolean,
+      default: false
+    },
+    maskClosable: {
+      type: Boolean,
+      default: true
     }
   },
   components: {
@@ -113,7 +117,7 @@ export default defineComponent({
   data() {
     return {
       index: this.initialIndex,
-      visible: false,
+      // visible: false,
       infinite: true,
       loading: false,
       mode: Mode.CONTAIN,
@@ -154,7 +158,7 @@ export default defineComponent({
         'margin-left': `${offsetX}px`,
         'margin-top': `${offsetY}px`
       }
-      if (this.mode === Mode.CONTAIN) {
+      if (this.mode.name === Mode.CONTAIN.name) {
         style.maxWidth = style.maxHeight = '100%'
       }
       return style
@@ -198,9 +202,7 @@ export default defineComponent({
     },
     hide() {
       this.deviceSupportUninstall()
-      // this.onClose()
-      // this.destroy()
-      this.visible = false
+      this.$emit('update:show', false)
     },
     deviceSupportInstall() {
       this._keyDownHandler = rafThrottle(e => {
@@ -269,6 +271,11 @@ export default defineComponent({
 
       e.preventDefault()
     },
+    handleMaskClick() {
+      if (this.maskClosable) {
+        this.hide()
+      }
+    },
     reset() {
       this.transform = {
         scale: 1,
@@ -284,7 +291,7 @@ export default defineComponent({
       }
       const modeNames = Object.keys(Mode)
       const modeValues = Object.values(Mode)
-      const index = modeValues.indexOf(this.mode)
+      const index = modeValues.findIndex(v => v.name === this.mode.name)
       const nextIndex = (index + 1) % modeNames.length
       this.mode = Mode[modeNames[nextIndex]]
       this.reset()

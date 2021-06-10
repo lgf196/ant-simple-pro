@@ -30,7 +30,7 @@
 import { defineComponent } from 'vue'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
-import imagePreview from '@/components/image/image-preview'
+import { imagePreview } from '@/components/image/image-preview'
 export default defineComponent({
   emits: ['update:value', 'change', 'input', 'file-change'],
   components: {

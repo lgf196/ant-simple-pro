@@ -25,7 +25,7 @@
 import { defineComponent, reactive, ref } from 'vue'
 import { message } from 'ant-design-vue'
 import { cloneDeep } from 'lodash'
-import createContextMenu from '@/components/context-menu/create-context-menu'
+import { createContextMenu } from '@/components/context-menu/create-context-menu'
 import logoImage from '@/assets/images/Icon_512x512-15@1x@1x.png'
 import { copy } from '@/utils'
 const defaultForm = {

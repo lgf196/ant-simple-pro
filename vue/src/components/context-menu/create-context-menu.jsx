@@ -1,93 +1,83 @@
-import { h, createApp } from 'vue'
+import { h, ref, getCurrentInstance } from 'vue'
 import { omit } from 'lodash'
+import { mountComponent } from '@/utils/jsx-helper'
 import ContextMenu from './index'
 
-let position = {
-  x: 0,
-  y: 0
+const defaultProps = {
+  width: 160,
+  menuClass: '',
+  position: { x: 0, y: 0 },
+  menus: []
 }
 
-// const defaultProps = {
-//   width: 160,
-//   menuClass: '',
-//   postion: { x: 0, y: 0 },
-//   menus: [] as ContextMenuItem[]
-// }
+let ins = null
 
-let instance = null
+function createInstance() {
+  const comp = {
+    setup() {
+      const visible = ref(false)
 
-function newInstance(options, callback) {
-  const div = document.createElement('div')
-  div.className = 'context-menu-wrapper-root'
-  document.body.appendChild(div)
-  const app = createApp({
-    data() {
-      return {
-        appProps: {
-          ...options,
-          ref: 'contextMenu'
-        }
+      let attrs = {}
+      const open = opts => {
+        visible.value = true
+        attrs = opts
       }
-    },
-    mounted() {
-      const self = this // eslint-disable-line
-      callback({ // eslint-disable-line
-        open() {
-          self.appProps.position = position
-          self.$refs.contextMenu.sVisible = false
-          setTimeout(() => {
-            self.$refs.contextMenu.sVisible = true
-          }, 20)
-        },
-        close() {
-          self.$refs.contextMenu.sVisible = false
-        },
-        destroy() {
-          app && app.unmount(div)
-          if (div.parentNode) {
-            div.parentNode.removeChild(div)
-          }
+
+      const close = () => {
+        visible.value = false
+      }
+
+      const toggle = val => {
+        visible.value = val
+      }
+
+      const render = () => {
+        attrs = {
+          ...attrs,
+          visible: visible.value,
+          'onUpdate:visible': toggle
         }
-      })
-      // this.$nextTick(() => {
-      // })
-    },
-    render() {
-      // const props = {
-      //   ...options,
-      //   ref: 'contextMenu'
-      // }
-      return h(ContextMenu, this.appProps)
+
+        return h(ContextMenu, attrs)
+      }
+
+      // rewrite render function
+      getCurrentInstance().render = render
+
+      return {
+        open,
+        close
+      }
     }
-  })
-  app.mount(div)
-}
-
-function getInstance(options, callback) {
-  if (instance) {
-    callback(instance)
-    return
   }
-  newInstance(options, ins => {
-    instance = ins
-    callback(ins)
-  })
+  const { instance } = mountComponent(comp, 'context-menu-wrapper-root')
+
+  return instance
 }
 
-export default function createContextMenu(options) {
+function getInstance() {
+  if (ins) {
+    return ins
+  }
+  ins = createInstance()
+  return ins
+}
+
+function createContextMenu(options) {
   const { event } = options
   event.preventDefault()
-  const props = Object.assign({}, omit(options, ['event']), {
+  const props = Object.assign({}, defaultProps, omit(options, ['event']), {
     position: {
       x: event.clientX,
       y: event.clientY
     }
   })
-  getInstance(props, ins => {
-    position = {
-      x: event.clientX,
-      y: event.clientY
-    }
-    ins.open()
-  })
+  const mInstance = getInstance()
+  mInstance.close()
+  setTimeout(() => {
+    mInstance.open(props)
+  }, 20)
+  return mInstance
 }
+
+export { createContextMenu }

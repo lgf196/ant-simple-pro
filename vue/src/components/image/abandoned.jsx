@@ -1,3 +1,6 @@
+/**
+ * 废弃
+ */
 import { h, createApp } from 'vue'
 import ImageViewer from './image-viewer.vue'
 
