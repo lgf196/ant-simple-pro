@@ -77,7 +77,6 @@ export default defineComponent({
             </Menu.Item>
           )
         }
-        // if (!unref(showRef)) return null
         return (
           <Menu.SubMenu key={label} disabled={disabled} popupClassName="context-menu-popup">
             {{

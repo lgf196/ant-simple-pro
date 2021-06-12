@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from 'vue'
+import { defineComponent, onMounted, ref, watch, markRaw } from 'vue'
 import Codemirror from 'codemirror'
 export default defineComponent({
   name: 'VCodemirror',
@@ -27,9 +27,13 @@ export default defineComponent({
       type: Object,
       default: () => ({})
     },
-    globalOptions: {
-      type: Object,
-      default: () => ({})
+    width: {
+      type: [Number, String],
+      default: '100%'
+    },
+    height: {
+      type: [Number, String],
+      default: '600px'
     }
   },
   setup(props, { emit }) {
@@ -58,10 +62,12 @@ export default defineComponent({
     )
 
     function init() {
-      const opts = Object.assign({}, props.globalOptions, props.options)
+      const opts = Object.assign({}, props.options)
       if (textarea.value) {
-        ins.value = Codemirror.fromTextArea(textarea.value, opts)
+        // 使用 markRaw 返回原始对象，避免被包装成响应式对象后报错
+        ins.value = markRaw(Codemirror.fromTextArea(textarea.value, opts))
         ins.value.setValue(props.value || content.value)
+        ins.value.setSize(props.width, props.height)
       }
       ins.value?.on('change', cm => {
         content.value = cm.getValue()
@@ -103,7 +109,6 @@ export default defineComponent({
 
     return {
       content,
-      ins,
       textarea
     }
   }
