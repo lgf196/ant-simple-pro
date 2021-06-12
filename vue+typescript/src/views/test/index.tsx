@@ -1,6 +1,47 @@
-import { defineComponent, ref, computed, watch } from 'vue'
+import { defineComponent, ref, computed, watch, onMounted } from 'vue'
 import { imagePreview } from '@/components/image/image-preview'
 import { createContextMenu } from '@/components/context-menu/create-context-menu'
+import VCodemirror from '@/components/vue-codemirror/index.vue'
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material.css'
+require('codemirror/mode/xml/xml')
+require('codemirror/mode/javascript/javascript')
+
+const code = `
+  // pages/home
+  import { defineComponent, ref, onMounted } from 'vue'
+  import { userList } from '@/api/login'
+  export type UserListType={
+    name: string
+    aga: number
+    sex: string
+  }
+  const App = defineComponent({
+    setup() {
+      const result = ref<UserListType[]>([])
+      onMounted(() => {
+        ;(async () => {
+          const res = await userList({ username: 'li' })
+          result.value = res.data
+        })()
+      })
+      return () => {
+        return (
+          <>
+            {
+              !!result.value.length
+              && (
+                result.value.map((item, index) => (
+                  <p key={index}>{item.name}</p>
+                ))
+              )
+            }
+          </>
+        )
+      }
+    }
+  })
+  `
 
 type CounterExposeData = {
   count: number
@@ -32,6 +73,7 @@ const Counter = defineComponent({
 export default defineComponent({
   setup() {
     const counterComp = ref<CounterExposeData>()
+    const value = ref('')
 
     const num = computed(() => {
       return counterComp.value?.count
@@ -43,6 +85,12 @@ export default defineComponent({
         console.log(newVal)
       }
     )
+
+    onMounted(() => {
+      setTimeout(() => {
+        value.value = code
+      }, 500)
+    })
 
     function onClick() {
       imagePreview({
@@ -83,6 +131,14 @@ export default defineComponent({
           <a-button type="primary" onClick={onClick}>
             预览
           </a-button>
+          <VCodemirror
+            value={value.value}
+            options={{
+              mode: 'javascript',
+              theme: 'material',
+              lineNumbers: true
+            }}
+          ></VCodemirror>
           <div style="height: 300px; border: 1px solid pink" onContextmenu={onContextmenu}>
             右键
           </div>

@@ -7,7 +7,7 @@
   </a-tooltip>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import screenfull from 'screenfull'
 import { Modal } from 'ant-design-vue'
@@ -55,8 +55,8 @@ export default defineComponent({
       }
     },
     change() {
-      this.isFullscreen = screenfull.isFullscreen
-      this.$emit('change', screenfull.isFullscreen)
+      this.isFullscreen = (screenfull as screenfull.Screenfull).isFullscreen
+      this.$emit('change', (screenfull as screenfull.Screenfull).isFullscreen)
     }
   }
 })

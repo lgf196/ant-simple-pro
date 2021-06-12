@@ -7,14 +7,13 @@
         theme: 'material',
         lineNumbers: true
       }"
-      :autoScroll="false"
     ></Codemirror>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import Codemirror from '@/components/codemirror'
+import { defineComponent, onMounted, ref } from 'vue'
+import Codemirror from '@/components/vue-codemirror/index.vue'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 require('codemirror/mode/xml/xml')
@@ -61,7 +60,12 @@ export default defineComponent({
     Codemirror
   },
   setup() {
-    const content = ref(code)
+    const content = ref('')
+    onMounted(() => {
+      setTimeout(() => {
+        content.value = code
+      }, 200)
+    })
     return {
       content
     }
@@ -70,9 +74,5 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.com-page {
-  ::v-deep .CodeMirror {
-    height: 600px;
-  }
-}
+// ...
 </style>
