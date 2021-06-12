@@ -35,6 +35,10 @@ const TopBar = memo(function TopBar({
       url: 'https://github.com/lgf196/ant-simple-pro/tree/afterEnd',
     },
     {
+      title: 'ant-simple-draw(图形编辑器)',
+      url: 'https://github.com/lgf196/ant-simple-draw',
+    },
+    {
       title: 'ant-simple-pro(angular)',
       url: 'https://github.com/lgf196/ant-simple-pro/tree/angular/angular',
     },

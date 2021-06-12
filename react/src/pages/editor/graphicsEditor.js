@@ -132,6 +132,16 @@ const GraphicsEditor = memo(function GraphicsEditor() {
 
   return (
     <PageLayout>
+      <p style={{ textAlign: 'center', padding: '10px 0' }}>
+        实现一个简单的可视化页面生成器
+        <code>
+          (简易版本，大致的架子，要想开发完整的，请查看这个项目
+          <a href="https://github.com/lgf196/ant-simple-draw">
+            ant-simple-draw
+          </a>
+          )
+        </code>
+      </p>
       <div className={style.graphics}>
         <div className={style.sidebar} ref={sliderContainer}></div>
         <div className={style.content} ref={container}></div>

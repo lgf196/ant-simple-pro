@@ -78,7 +78,7 @@ const Layouts = memo(function Layouts({ route, location }) {
             <div className={style.pageContent}>
               {renderRoutes(route.routes, {}, { location })}
             </div>
-            <Footer name="Ant Simple Pro" ahthor="Lgf&qyh" />
+            <Footer name="Ant Simple Pro" ahthor="lgf&qyh" />
           </div>
         </div>
         <BackTop element="#content" />
