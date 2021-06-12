@@ -36,6 +36,8 @@
 
 #### [:book:使用文档](http://blog.lgf196.top/ant-simple-pro-document/)（强烈建议看:point_left:）
 
+##### [ant-simple-draw](https://github.com/lgf196/ant-simple-draw)一款在线图解编辑器，也是笔者在维护:stuck_out_tongue_closed_eyes:
+
 ## 前序准备
 你需要在本地安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)，异步请求数据用[axios](https://github.com/axios/axios)，所有的异步接口均采用node+typescript+mysql+[docker](https://www.docker.com/)实现的，本项目技术栈基于vue3.0,react,angular,typescrpt,antd等技术，所以最好先了解如下知识：
 
