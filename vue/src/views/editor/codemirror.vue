@@ -14,7 +14,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import Codemirror from '@/components/codemirror'
+import Codemirror from '@/components/vue-codemirror'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 require('codemirror/mode/xml/xml')
@@ -24,14 +24,9 @@ const code = `
   // pages/home
   import { defineComponent, ref, onMounted } from 'vue'
   import { userList } from '@/api/login'
-  export type UserListType={
-    name: string
-    aga: number
-    sex: string
-  }
   const App = defineComponent({
     setup() {
-      const result = ref<UserListType[]>([])
+      const result = ref([])
       onMounted(() => {
         ;(async () => {
           const res = await userList({ username: 'li' })
@@ -70,9 +65,5 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.com-page {
-  ::v-deep .CodeMirror {
-    height: 600px;
-  }
-}
+// ...
 </style>
