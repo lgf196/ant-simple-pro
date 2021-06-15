@@ -38,6 +38,11 @@
 
 ##### [ant-simple-draw](https://github.com/lgf196/ant-simple-draw)一款在线图解编辑器，也是笔者在维护:stuck_out_tongue_closed_eyes:
 
+#### 扫如下码，进行bug提问，和学习交流。
+<p align="left">
+  <img width="100" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6d6d3f624f4143fe8833d2458aeaf002~tplv-k3u1fbpfcp-zoom-1.image">
+</p>
+
 ## 前序准备
 你需要在本地安装 [node](http://nodejs.org/) 和 [git](https://git-scm.com/)，异步请求数据用[axios](https://github.com/axios/axios)，所有的异步接口均采用node+typescript+mysql+[docker](https://www.docker.com/)实现的，本项目技术栈基于vue3.0,react,angular,typescrpt,antd等技术，所以最好先了解如下知识：
 
@@ -98,11 +103,6 @@ npm run build:prod
 ## 赞赏
 
 如果您认为该项目对您有所帮助，则可以给作者一个赞，作者非常感激:blush::blush::rose:
-
-- 技术交流群扫码进入，一起学习，一起成长，不懂问题大家一起讨论
-<p align="left">
-  <img width="100" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6d6d3f624f4143fe8833d2458aeaf002~tplv-k3u1fbpfcp-zoom-1.image">
-</p>
 
 ## Browsers support
 
