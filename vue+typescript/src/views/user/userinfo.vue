@@ -23,13 +23,12 @@
 <script lang="ts">
 import { defineComponent, ref, reactive, toRefs, toRaw, onMounted } from 'vue'
 import { message } from 'ant-design-vue'
-import { Form } from 'ant-design-vue/types/form/form'
 import userStore from '@/store/modules/user'
 import { updateUser } from './service'
 export default defineComponent({
   name: 'UserInfo',
   setup() {
-    const formRef = ref<Form | null>(null)
+    const formRef = ref()
     const state = reactive({
       labelCol: { xs: { span: 24 }, sm: { span: 6 } },
       wrapperCol: { xs: { span: 24 }, sm: { span: 18 } },

@@ -57,11 +57,10 @@
 import { defineComponent, ref, reactive, toRefs, onMounted, onBeforeUnmount, toRaw } from 'vue'
 import { message } from 'ant-design-vue'
 import { useForm } from '@ant-design-vue/use'
-import { Form } from 'ant-design-vue/types/form/form'
 export default defineComponent({
   name: 'FormPage',
   setup() {
-    const formRef = ref<Form | null>(null)
+    const formRef = ref()
     const state = reactive({
       labelCol: { span: 2 },
       wrapperCol: { span: 9 },

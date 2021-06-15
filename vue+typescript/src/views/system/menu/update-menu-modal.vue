@@ -36,7 +36,6 @@
 import { defineComponent, nextTick, ref, reactive, toRefs, watch, computed } from 'vue'
 import { Canceler } from 'axios'
 import { message } from 'ant-design-vue'
-import { Form } from 'ant-design-vue/types/form/form'
 import { updateMenu, UpdateMenuParams } from './service'
 
 type FormType = Omit<UpdateMenuParams, 'pid'> & {
@@ -73,7 +72,7 @@ export default defineComponent({
       } as FormType
     })
 
-    const formRef = ref<Form | null>(null)
+    const formRef = ref()
     let cancel: Canceler | null = null
 
     const title = computed(() => {

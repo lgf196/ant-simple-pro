@@ -1,7 +1,6 @@
 import { h, defineComponent, PropType } from 'vue'
 import { SyncOutlined } from '@ant-design/icons-vue'
 import { Table, Pagination } from 'ant-design-vue'
-import { Pagination as PaginationType } from 'ant-design-vue/types/pagination'
 import FilterColumns from './filter-columns'
 import TableSize, { TableSizeType } from './table-size'
 import Fullscreen from '@/components/fullscreen/index.vue'
@@ -16,6 +15,12 @@ type TablePropsType = {
   columns: ColumnItemType[]
 }
 
+type PaginationType = {
+  current: number
+  pageSize: number
+  onChange: () => void
+}
+
 export default defineComponent({
   name: 'LayoutTable',
   emits: ['change'],
@@ -28,7 +33,7 @@ export default defineComponent({
       default: () => ({})
     },
     pagination: {
-      type: [Object, Boolean] as PropType<PaginationType['$props']>,
+      type: [Object, Boolean] as PropType<PaginationType>,
       default: false
     },
     loading: {

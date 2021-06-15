@@ -28,10 +28,28 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { UploadFile, VcFile, UploadChangeParam } from 'ant-design-vue/types/upload'
+// import { VcFile } from 'ant-design-vue/es/upload/interface'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
 import { getRandomStr } from '@/utils'
 import { imagePreview } from '@/components/image/image-preview'
+
+interface FileItem {
+  uid: string
+  name?: string
+  status?: string
+  response: any
+  url?: string
+  type?: string
+  size: number
+  originFileObj: any
+  thumbUrl?: string
+}
+
+interface FileInfo {
+  file: FileItem
+  fileList: FileItem[]
+}
+
 export default defineComponent({
   emits: ['update:value', 'change', 'input', 'file-change'],
   components: {
@@ -63,7 +81,7 @@ export default defineComponent({
   data() {
     return {
       loading: false,
-      fileList: [] as Partial<UploadFile>[],
+      fileList: [] as Partial<FileItem>[],
       inited: false
     }
   },
@@ -106,7 +124,7 @@ export default defineComponent({
       this.$emit('change', val)
       this.$emit('input', val)
     },
-    handleChange(info: UploadChangeParam) {
+    handleChange(info: FileInfo) {
       // console.log(this.fileList)
       if (info.file.status === 'uploading') {
         this.loading = true
@@ -122,13 +140,13 @@ export default defineComponent({
         this.loading = false
       }
     },
-    beforeUpload(file: VcFile) {
+    beforeUpload(file: FileItem) {
       if (this.isMultiple && this.limit && this.limit === this.fileList.length) {
         this.$message.destroy()
         this.$message.error(`最多上传 ${this.limit} 张!`)
         return false
       }
-      const isImg = /^image\/\w+$/i.test(file.type)
+      const isImg = /^image\/\w+$/i.test(file.type as string)
       if (!isImg) {
         this.$message.destroy()
         this.$message.error('只能上传 JPG、PNG、GIF 格式!')
@@ -147,12 +165,12 @@ export default defineComponent({
       }
       return this.autoUpload
     },
-    onRemove(file: UploadFile) {
+    onRemove(file: FileItem) {
       const ret = this.fileList.filter(v => v.uid !== file.uid).map(v => v.url) as string[]
       this.emitValue(ret)
       return true
     },
-    onPreview(file: UploadFile) {
+    onPreview(file: FileItem) {
       imagePreview({
         urlList: this.fileList.map(v => v.url || (v.response && v.response.data && v.response.data.url) || v.thumbUrl),
         initialIndex: this.fileList.findIndex(v => v.uid === file.uid)

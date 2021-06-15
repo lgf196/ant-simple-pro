@@ -22,7 +22,6 @@
 import { defineComponent, nextTick, ref, reactive, toRefs, watch } from 'vue'
 import { Canceler } from 'axios'
 import { message } from 'ant-design-vue'
-import { Form } from 'ant-design-vue/types/form/form'
 import { updateUser } from './service'
 
 export default defineComponent({
@@ -52,7 +51,7 @@ export default defineComponent({
         username: [{ required: true, message: '请输入名称' }]
       }
     })
-    const formRef = ref<Form | null>(null)
+    const formRef = ref()
     let cancel: Canceler | null = null
 
     // 打开弹窗时 回显数据

@@ -1,5 +1,4 @@
 import { defineComponent, PropType, onMounted, reactive, ref, toRaw } from 'vue'
-import type { Form } from 'ant-design-vue/types/form/form'
 import moment from 'moment'
 import TimeRangeSelection from '../time-range-selection/index.vue'
 import './index.less'
@@ -43,7 +42,7 @@ const QueryTemplate = defineComponent({
     }
   },
   setup(props, { emit }) {
-    const formRef = ref<Form>()
+    const formRef = ref()
     // default form fields
     const defaultForm: Record<string, any> = {}
     const form = reactive<Record<string, any>>(defaultForm)
