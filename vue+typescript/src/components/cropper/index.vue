@@ -2,10 +2,10 @@
   <a-modal :width="840" v-model:visible="sVisible" @cancel="onCancel" @ok="onOk" forceRender>
     <div class="cropper-container">
       <div class="img-box">
-        <img ref="image" class="cropper-image" alt="404" />
+        <img ref="imageEl" class="cropper-image" alt="404" />
       </div>
       <div class="control-container">
-        <div ref="preview" class="preview-box"></div>
+        <div ref="previewEl" class="preview-box"></div>
         <div class="control">
           <a-button type="primary" @click="onZoomSub">
             <template #icon>
@@ -65,7 +65,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref, watch } from 'vue'
 import {
   MinusOutlined,
   PlusOutlined,
@@ -80,12 +80,7 @@ import {
 } from '@ant-design/icons-vue'
 import Cropper from 'cropperjs'
 import 'cropperjs/dist/cropper.min.css'
-
-type CropperCompState = {
-  instance: Cropper | null
-  insideSrc: string
-  sVisible: boolean
-}
+import { fileToDataURI } from '@/utils/image'
 
 type VFile = File & {
   uid: string
@@ -110,10 +105,6 @@ export default defineComponent({
       type: Boolean,
       default: false
     },
-    src: {
-      type: String,
-      default: ''
-    },
     moveStep: {
       type: Number,
       default: 4
@@ -122,71 +113,96 @@ export default defineComponent({
       type: Object as PropType<VFile>
     }
   },
-  data(): CropperCompState {
-    return {
-      instance: null,
-      insideSrc: '',
-      sVisible: false
-    }
-  },
-  watch: {
-    visible(newVal) {
-      this.sVisible = newVal
-      if (newVal) {
-        setTimeout(() => {
-          const imageEl = this.$refs.image as HTMLImageElement
-          const previewEl = this.$refs.preview as HTMLDivElement
-          if (imageEl && previewEl) {
-            this.instance = new Cropper(imageEl, {
-              preview: previewEl,
-              checkCrossOrigin: false
-            })
-            this.instance.replace(this.src)
-          }
-        }, 20)
-      } else {
-        this.instance?.destroy()
+  setup(props, { emit }) {
+    const imageEl = ref<HTMLImageElement>()
+    const previewEl = ref<HTMLDivElement>()
+    const instance = ref<Cropper>()
+    const sVisible = ref(false)
+
+    watch(
+      () => props.visible,
+      newVal => {
+        sVisible.value = props.visible
+        if (newVal) {
+          setTimeout(() => {
+            if (imageEl.value && previewEl.value && props.file) {
+              instance.value = new Cropper(imageEl.value, {
+                preview: previewEl.value,
+                checkCrossOrigin: false
+              })
+              fileToDataURI(props.file).then(dataURI => {
+                instance.value?.replace(dataURI)
+              })
+            }
+          }, 20)
+        } else {
+          instance.value?.destroy()
+        }
       }
+    )
+
+    function onCancel() {
+      emit('update:visible', false)
     }
-  },
-  methods: {
-    onCancel() {
-      this.$emit('update:visible', false)
-    },
-    onOk() {
-      this.instance?.getCroppedCanvas().toBlob(blob => {
-        if (blob && this.file) {
-          const { type, name, uid } = this.file
+
+    function onOk() {
+      instance.value?.getCroppedCanvas().toBlob(blob => {
+        if (blob && props.file) {
+          const { type, name, uid } = props.file
           const newFile = new File([blob], name, { type }) as VFile
           newFile.uid = uid
-          this.$emit('submit', newFile)
-          this.$emit('update:visible', false)
+          emit('submit', newFile)
+          emit('update:visible', false)
         }
       })
-    },
-    onZoomSub() {
-      this.instance?.zoom(-0.1)
-    },
-    onZoomAdd() {
-      this.instance?.zoom(0.1)
-    },
-    onRotateSub() {
-      this.instance?.rotate(-45)
-    },
-    onRotateAdd() {
-      this.instance?.rotate(45)
-    },
-    onReset() {
-      this.instance?.reset()
-    },
-    onMove(...rest: [number, number]) {
-      this.instance?.move(...rest)
-    },
-    onScaleX() {
-      this.instance?.scaleX(-this.instance?.getData().scaleX)
-    },
-    onScaleY() {
-      this.instance?.scaleY(-this.instance?.getData().scaleY)
+    }
+
+    function onZoomSub() {
+      instance.value?.zoom(-0.1)
+    }
+
+    function onZoomAdd() {
+      instance.value?.zoom(0.1)
+    }
+
+    function onRotateSub() {
+      instance.value?.rotate(-45)
+    }
+
+    function onRotateAdd() {
+      instance.value?.rotate(45)
+    }
+
+    function onReset() {
+      instance.value?.reset()
+    }
+
+    function onMove(...rest: [number, number]) {
+      instance.value?.move(...rest)
+    }
+
+    function onScaleX() {
+      instance.value?.scaleX(-instance.value?.getData().scaleX)
+    }
+
+    function onScaleY() {
+      instance.value?.scaleY(-instance.value?.getData().scaleY)
+    }
+
+    return {
+      imageEl,
+      previewEl,
+      sVisible,
+      onCancel,
+      onOk,
+      onZoomSub,
+      onZoomAdd,
+      onRotateSub,
+      onRotateAdd,
+      onReset,
+      onMove,
+      onScaleX,
+      onScaleY
     }
   }
 })
