@@ -36,7 +36,7 @@
     "jsoneditor": "^9.4.1",
     "jszip": "^3.6.0",
     "lodash": "^4.17.20",
-    "marked": "^1.1.1",
+    "marked": "^2.0.0",
     "material-colors": "^1.2.6",
     "mathjs": "^9.4.1",
     "md5": "^2.3.0",
