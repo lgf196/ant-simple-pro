@@ -1,14 +1,14 @@
 <template>
   <div class="com-page p20">
     <a-divider>顶部广告栏</a-divider>
-    <TopAdvice :imageUrl="topConfig.imageUrl" :linkUrl="topConfig.linkUrl" :bg="topConfig.bg"></TopAdvice>
+    <TopAdvice :image-url="topConfig.imageUrl" :link-url="topConfig.linkUrl" :bg="topConfig.bg"></TopAdvice>
     <a-divider />
     <a-button type="primary" @click="onOpen">弹窗广告栏</a-button>
     <Popup
       :visible="popupConfig.visible"
-      :onClose="popupConfig.onClose"
-      :imageUrl="popupConfig.imageUrl"
-      :linkUrl="popupConfig.linkUrl"
+      :on-close="popupConfig.onClose"
+      :image-url="popupConfig.imageUrl"
+      :link-url="popupConfig.linkUrl"
     ></Popup>
   </div>
 </template>

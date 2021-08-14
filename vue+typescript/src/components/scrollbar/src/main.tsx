@@ -28,13 +28,20 @@ export default defineComponent({
     },
     wrapClass: {
       type: String,
-      required: false
+      default: ''
     },
-    viewClass: String,
+    viewClass: {
+      type: String,
+      default: ''
+    },
     viewStyle: {
-      type: Object as PropType<unknown>
+      type: Object as PropType<unknown>,
+      default: () => ({})
     },
-    noresize: Boolean,
+    noresize: {
+      type: Boolean,
+      default: false
+    },
     tag: {
       type: String,
       default: 'div'

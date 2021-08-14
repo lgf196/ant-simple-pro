@@ -3,16 +3,16 @@
     <ul class="vc-grayscale-colors" role="listbox">
       <li
         v-for="c in paletteUpperCase(palette)"
+        :key="c"
         role="option"
         :aria-label="'Color:' + c"
         :aria-selected="c === pick"
-        :key="c"
         class="vc-grayscale-color-item"
         :class="{ 'vc-grayscale-color-item--white': c == '#FFFFFF' }"
         :style="{ background: c }"
         @click="handlerClick(c)"
       >
-        <div class="vc-grayscale-dot" v-show="c === pick"></div>
+        <div v-show="c === pick" class="vc-grayscale-dot"></div>
       </li>
     </ul>
   </div>
@@ -65,11 +65,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get(): ColorResult {
@@ -82,6 +77,11 @@ export default defineComponent({
     },
     pick(): string {
       return this.colors.hex.toUpperCase()
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {
@@ -108,12 +108,14 @@ export default defineComponent({
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.16);
   background-color: #fff;
 }
+
 .vc-grayscale-colors {
   border-radius: 2px;
   overflow: hidden;
   padding: 0;
   margin: 0;
 }
+
 .vc-grayscale-color-item {
   list-style: none;
   width: 25px;
@@ -122,6 +124,7 @@ export default defineComponent({
   position: relative;
   cursor: pointer;
 }
+
 .vc-grayscale-color-item--white .vc-grayscale-dot {
   background: #000;
 }

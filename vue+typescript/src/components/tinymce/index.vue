@@ -17,8 +17,8 @@ import font from './font'
 // customer plugins
 import { initCustomerImagePlugin } from './customer-image'
 
-const suffix = process.env.NODE_ENV === 'development' ? '' : '.min'
-const scriptSrc = process.env.BASE_URL + 'tinymce5.8.0/tinymce' + suffix + '.js'
+const suffix = import.meta.env.VITE_APP_MODE === 'dev' ? '' : '.min'
+const scriptSrc = import.meta.env.BASE_URL + 'tinymce5.8.0/tinymce' + suffix + '.js'
 
 const menubar = ['file', 'edit', 'insert', 'view', 'format', 'table', 'tools'] as const
 type MenubarItem = typeof menubar[number] | 'help'
@@ -87,7 +87,7 @@ export default defineComponent({
       // init plugins
       initCustomerImagePlugin()
       // init editor
-      /* eslint-disable @typescript-eslint/camelcase */
+      // eslint-disable @typescript-eslint/camelcase
       window.tinymce.init({
         selector: '#' + id.value,
         language: 'zh_CN',

@@ -1,5 +1,5 @@
 <template>
-  <a-modal :width="840" v-model:visible="sVisible" @cancel="onCancel" @ok="onOk" forceRender>
+  <a-modal v-model:visible="sVisible" :width="840" force-render @cancel="onCancel" @ok="onOk">
     <div class="cropper-container">
       <div class="img-box">
         <img ref="imageEl" class="cropper-image" alt="404" />
@@ -87,7 +87,6 @@ type VFile = File & {
 }
 
 export default defineComponent({
-  emits: ['update:visible', 'submit'],
   components: {
     MinusOutlined,
     PlusOutlined,
@@ -100,6 +99,7 @@ export default defineComponent({
     ColumnHeightOutlined,
     ColumnWidthOutlined
   },
+  emits: ['update:visible', 'submit'],
   props: {
     visible: {
       type: Boolean,
@@ -212,23 +212,27 @@ export default defineComponent({
 .bg {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
 }
+
 .img-box {
   display: inline-block;
   height: 340px;
   width: 430px;
   border: 1px solid #ebebeb;
   .bg;
+
   img {
     max-width: 100%;
     display: block;
   }
 }
+
 .control-container {
   display: inline-block;
   width: 350px;
   padding: 0 10px;
   vertical-align: top;
 }
+
 .preview-box {
   height: 150px !important;
   width: 150px !important;
@@ -236,13 +240,16 @@ export default defineComponent({
   border: 1px solid #ebebeb;
   .bg;
 }
+
 .control {
   margin-top: 15px;
 }
-.control ::v-deep .ant-btn {
+
+.control ::v-deep(.ant-btn) {
   margin-right: 8px;
   margin-bottom: 15px;
 }
+
 .reset-button {
   width: 100%;
 }

@@ -9,9 +9,9 @@
           v-model:modelValue="dragList"
           :group="{ name: 'comps', pull: 'clone', put: false }"
           :sort="false"
+          item-key="icon"
           @start="onStart"
           @end="onEnd"
-          item-key="icon"
         >
           <template #item="{ element }">
             <div class="drag-item" :data-type="element.type">
@@ -21,7 +21,7 @@
           </template>
         </Draggable>
       </div>
-      <div class="grid-container" @dragenter="allowDrop" @dragover="allowDrop" ref="gridContainer">
+      <div ref="gridContainer" class="grid-container" @dragenter="allowDrop" @dragover="allowDrop">
         <GridLayout
           v-if="layout.length"
           ref="gridLayout"
@@ -36,21 +36,21 @@
           :use-css-transforms="true"
         >
           <GridItem
-            :ref="setItemRef"
             v-for="item in layout"
+            :ref="setItemRef"
+            :key="item.i"
             :x="item.x"
             :y="item.y"
             :w="item.w"
             :h="item.h"
             :i="item.i"
-            :key="item.i"
           >
-            <component :is="item.type" @contextmenu="e => onComponentClick(e, item)" :data-i="item.i"></component>
+            <component :is="item.type" :data-i="item.i" @contextmenu="e => onComponentClick(e, item)"></component>
           </GridItem>
         </GridLayout>
         <a-empty
-          style="height: 100%; padding-top: 200px"
           v-else
+          style="height: 100%; padding-top: 200px"
           image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
           :image-style="{
             height: '60px'
@@ -77,6 +77,7 @@ import { maxBy } from 'lodash'
 import { createContextMenu } from '@/components/context-menu/create-context-menu'
 // import { getRandomStr } from '@/utils'
 import templates, { TempBanner, TempList, TempNews } from './templates'
+import { AnyFunction } from '@/types/common'
 
 const mouseXY = {
   x: 0,
@@ -241,12 +242,14 @@ export default defineComponent({
 .main-container {
   min-height: 600px;
 }
+
 .drag-container {
   width: 180px;
   flex: 0 0 180px;
   padding-right: 10px;
   border-right: 1px solid #f0f0f0;
 }
+
 .grid-container {
   position: relative;
   flex: 1;
@@ -254,6 +257,7 @@ export default defineComponent({
   box-shadow: 0 0 10px 1px #e9e9e9;
   background: #fff;
 }
+
 .drag-item {
   padding: 10px;
   margin: 10px;
@@ -262,19 +266,24 @@ export default defineComponent({
   color: #393e46;
   text-align: center;
   cursor: move;
+
   &:hover {
     border: 2px solid #06c;
   }
-  ::v-deep .svg-icon {
+
+  ::v-deep(.svg-icon) {
     font-size: 18px;
   }
 }
-.grid-container ::v-deep .vue-grid-placeholder {
+
+.grid-container ::v-deep(.vue-grid-placeholder) {
   background-color: pink;
 }
-.grid-container ::v-deep .vue-grid-item {
+
+.grid-container ::v-deep(.vue-grid-item) {
   padding: 10px;
   overflow: hidden;
+
   &:hover {
     border: 2px solid #06c;
   }

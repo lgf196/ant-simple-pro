@@ -3,7 +3,7 @@
     <a-row>
       <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <h2 class="mb10 font-size-20">中文版：</h2>
-        <Picker :data="emojiIndex" set="apple" @select="onSelect" :i18n="i18nConfig" />
+        <Picker :data="emojiIndex" set="apple" :i18n="i18nConfig" @select="onSelect" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <h2 class="mb10 font-size-20">英文版：</h2>

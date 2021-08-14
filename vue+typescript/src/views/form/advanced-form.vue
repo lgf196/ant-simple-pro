@@ -73,14 +73,14 @@
           </transition-group>
           <a-form-item>
             <a-row type="flex" align="middle" class="button-group">
-              <a-button type="danger" @click="onAddStep" class="mr8"> 新增信息 </a-button>
+              <a-button type="danger" class="mr8" @click="onAddStep"> 新增信息 </a-button>
               <a-button type="primary" html-type="submit">提交信息</a-button>
             </a-row>
           </a-form-item>
         </a-col>
         <a-col :xs="24" :sm="24" :md="12" :lg="16" :xl="16">
           <a-row type="flex" align="middle" class="button-group">
-            <a-button type="danger" @click="onAddStep" class="mr8"> 新增信息 </a-button>
+            <a-button type="danger" class="mr8" @click="onAddStep"> 新增信息 </a-button>
             <a-button type="primary" html-type="submit">提交信息</a-button>
           </a-row>
         </a-col>
@@ -172,30 +172,36 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .form {
-  ::v-deep .ant-form-item {
+  ::v-deep(.ant-form-item) {
     display: flex;
   }
-  ::v-deep .ant-form-item-control-wrapper {
+
+  ::v-deep(.ant-form-item-control-wrapper) {
     flex: 1;
   }
 }
+
 .button-group {
   height: 100%;
   border-left: 1px solid #f0f0f0;
   padding-left: 20px;
   margin-left: 20px;
 }
+
 .item {
   position: relative;
 }
+
 .button--delete {
   float: right;
   margin-left: 20px;
 }
+
 .list-enter-active,
 .list-leave-active {
   transition: all 0.3s;
 }
+
 .list-enter-from,
 .list-leave-to {
   opacity: 0;

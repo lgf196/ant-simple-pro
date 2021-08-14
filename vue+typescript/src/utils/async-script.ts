@@ -1,6 +1,6 @@
 const asyncLoadScript = (src: string, existVariable: any, callback: (err: Error | null, el: HTMLElement) => void) => {
   const existingScript = document.getElementById(src)
-  const cb = callback || function() {} // eslint-disable-line
+  const cb = callback || function () {} // eslint-disable-line
 
   if (!existingScript) {
     const script = document.createElement('script')

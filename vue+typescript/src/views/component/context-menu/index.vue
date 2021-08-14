@@ -1,17 +1,17 @@
 <template>
   <div class="com-page p20">
     <a-row type="flex" class="menu-container" align="middle" @contextmenu="onContainerRightClick">
-      <ComImage className="image" :src="logo" alt="logo" />
+      <ComImage class-name="image" :src="logo" alt="logo" />
       <h2 class="title">{{ data.title }}</h2>
       <section class="font-size-16">{{ data.description }}</section>
     </a-row>
-    <a-drawer title="编辑" :closable="false" v-model:visible="visible">
+    <a-drawer v-model:visible="visible" title="编辑" :closable="false">
       <a-form class="form" :model="form" @finish="onFinish">
         <a-form-item label="标题" name="title" :rules="[{ required: true, message: '请填写' }]">
           <a-input v-model:value="form.title" placeholder="请填写"></a-input>
         </a-form-item>
         <a-form-item label="描述" name="description">
-          <a-textarea v-model:value="form.description" placeholder="请填写" :autoSize="{ minRows: 2 }"></a-textarea>
+          <a-textarea v-model:value="form.description" placeholder="请填写" :auto-size="{ minRows: 2 }"></a-textarea>
         </a-form-item>
         <a-form-item>
           <a-button type="primary" html-type="submit">修改</a-button>
@@ -85,10 +85,12 @@ export default defineComponent({
   flex-direction: column;
   border: 1px solid #f0f0f0;
 }
+
 .image {
   width: 120px;
   height: 120px;
 }
+
 .title {
   padding: 20px;
   font-size: 20px;

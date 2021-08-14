@@ -24,7 +24,7 @@ const local = {
       localStorage.removeItem(key)
     }
   },
-  set(key: string, value: object) {
+  set(key: string, value: Record<string, any>) {
     const encodeText = Base64.encode(JSON.stringify(value))
     return localStorage.setItem(key, encodeText)
   }
@@ -48,7 +48,7 @@ export const getCollapse = () => {
   return JSON.parse(localStorage.getItem(COLLAPSE) || 'null')
 }
 
-export const setRememberUser = (data: object) => {
+export const setRememberUser = (data: Record<string, any>) => {
   return local.set(REMEMBER_LOGIN_USER, data)
 }
 
@@ -60,7 +60,7 @@ export const removeRememberUser = () => {
   return localStorage.removeItem(REMEMBER_LOGIN_USER)
 }
 
-export const setTagNav = (data: object) => {
+export const setTagNav = (data: Record<string, any>) => {
   return localStorage.setItem(TAG_NAV, JSON.stringify(data))
 }
 
@@ -96,7 +96,7 @@ export const getAccessMenus = (): AccessMenuItem[] | null | undefined => {
   }
 }
 
-export const setUserInfo = (data: object) => {
+export const setUserInfo = (data: Record<string, any>) => {
   return localStorage.setItem(USERINFO, JSON.stringify(data))
 }
 

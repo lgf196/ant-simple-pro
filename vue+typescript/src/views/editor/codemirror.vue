@@ -16,8 +16,8 @@ import { defineComponent, onMounted, ref } from 'vue'
 import Codemirror from '@/components/vue-codemirror/index.vue'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
-require('codemirror/mode/xml/xml')
-require('codemirror/mode/javascript/javascript')
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/javascript/javascript'
 
 const code = `
   // pages/home

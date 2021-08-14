@@ -24,10 +24,10 @@ import Checkboard from './checkboard.vue'
 import { ColorResult, AlphaChangeData } from '../../types'
 
 export default defineComponent({
-  emits: ['change'],
   components: {
     Checkboard
   },
+  emits: ['change'],
   props: {
     value: {
       type: Object as PropType<ColorResult>,
@@ -97,26 +97,29 @@ export default defineComponent({
 <style>
 .vc-alpha {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
+
 .vc-alpha-checkboard-wrap {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   overflow: hidden;
 }
+
 .vc-alpha-gradient {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
+
 .vc-alpha-container {
   cursor: pointer;
   position: relative;
@@ -125,10 +128,12 @@ export default defineComponent({
   margin: 0 3px;
   -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
+
 .vc-alpha-pointer {
   z-index: 2;
   position: absolute;
 }
+
 .vc-alpha-picker {
   cursor: pointer;
   width: 4px;

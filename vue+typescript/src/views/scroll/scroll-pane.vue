@@ -1,5 +1,5 @@
 <template>
-  <Scrollbar ref="scrollbarRef" wrapClass="scrollbar__wrap" viewClass="scrollbar__view" class="scroll-container">
+  <Scrollbar ref="scrollbarRef" wrap-class="scrollbar__wrap" view-class="scrollbar__view" class="scroll-container">
     <slot></slot>
   </Scrollbar>
 </template>

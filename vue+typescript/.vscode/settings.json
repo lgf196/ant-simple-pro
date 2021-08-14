@@ -1,0 +1,18 @@
+{
+  "editor.fontSize": 18,
+  "editor.tabSize": 2,
+  "emmet.triggerExpansionOnTab": true,
+  // "editor.formatOnSave": true,
+  // json 文件可以写注释
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "eslint.autoFixOnSave": true
+  },
+  "vetur.format.enable": false,
+  "[*.d.ts]": {
+    "editor.formatOnSave": false
+  },
+}

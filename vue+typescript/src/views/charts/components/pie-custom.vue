@@ -1,15 +1,15 @@
 <template>
   <a-row class="pie" :gutter="[15, 15]">
     <a-col :span="12">
-      <div class="chart" ref="chartRef"></div>
+      <div ref="chartRef" class="chart"></div>
     </a-col>
     <a-col :span="12">
       <ul class="legend-list">
         <li
-          class="legend-item"
-          :class="{ disabled: disabledLegendIndexs.includes(index) }"
           v-for="(item, index) in originalList"
           :key="index"
+          class="legend-item"
+          :class="{ disabled: disabledLegendIndexs.includes(index) }"
           @click="onLegendItemClick(index)"
         >
           <div class="round" :style="{ backgroundColor: originalColors[index] }"></div>
@@ -131,10 +131,12 @@ export default defineComponent({
   height: 400px;
   display: flex;
 }
+
 .chart {
   flex: 1;
   height: 100%;
 }
+
 .legend-list {
   width: 100%;
   height: 100%;
@@ -143,6 +145,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-around;
 }
+
 .legend-item {
   width: 100%;
   display: flex;
@@ -151,27 +154,33 @@ export default defineComponent({
   margin-bottom: 8px;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.65);
+
   &:last-child {
     margin-bottom: 0;
   }
+
   &.disabled {
     .round {
       background-color: #999 !important;
     }
+
     .name,
     .percent {
       color: #999;
     }
   }
+
   .round {
     width: 15px;
     height: 5px;
     margin-right: 10px;
   }
+
   .name {
     // margin: 0 5px;
     color: #151d35;
   }
+
   .line {
     position: relative;
     top: 0.18em;
@@ -181,6 +190,7 @@ export default defineComponent({
     border-top: 0;
     border-left: 1px solid rgba(0, 0, 0, 0.06);
   }
+
   .percent {
     display: inline-block;
     width: 100px;

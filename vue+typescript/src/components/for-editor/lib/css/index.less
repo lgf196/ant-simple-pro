@@ -5,7 +5,7 @@
   height: 600px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 12px;
   background: #fff;
   font-size: 14px;
 
@@ -152,6 +152,7 @@
         width: 0;
         flex: 0 0 0;
       }
+
       .for-editor-block {
         display: flex;
         min-height: 100%;
@@ -163,9 +164,11 @@
         padding: 8px 0 120px;
         min-width: 30px;
         text-align: center;
+
         &.hidden {
           display: none;
         }
+
         li {
           list-style: none;
         }
@@ -237,7 +240,6 @@
       padding: 0;
       margin: 0 0 0.6em;
       font-weight: 600;
-
       text-indent: 0;
 
       &:target {

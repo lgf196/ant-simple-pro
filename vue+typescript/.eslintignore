@@ -1,4 +1,5 @@
 node_modules
 public/
 src/types
-vue.config.js
+src/components/emoji-mart
+./types/

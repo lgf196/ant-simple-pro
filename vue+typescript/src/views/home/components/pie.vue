@@ -1,11 +1,13 @@
 <template>
-  <div class="chart" ref="chartRef"></div>
+  <div ref="chartRef" class="chart"></div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref, onMounted } from 'vue'
 import { getOption } from './pie-option'
 import { useChartResize } from '@/hooks'
+import echarts from 'echarts'
+import { ChartDataItem } from '@/types/common'
 
 export default defineComponent({
   props: {

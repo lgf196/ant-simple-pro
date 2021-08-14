@@ -2,10 +2,10 @@
   <div role="tablist" class="emoji-mart-anchors">
     <button
       v-for="category in categories"
+      :key="category.id"
       role="tab"
       :aria-label="category.name"
       :aria-selected="category.id == activeCategory.id"
-      :key="category.id"
       :class="{
         'emoji-mart-anchor': true,
         'emoji-mart-anchor-selected': category.id == activeCategory.id

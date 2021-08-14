@@ -1,11 +1,11 @@
 <template>
   <a-range-picker
-    dropdownClassName="time-range-selection"
+    dropdown-class-name="time-range-selection"
     :value="value"
-    @change="onChange"
     :ranges="ranges"
     :style="style"
     :placeholder="placeholder"
+    @change="onChange"
   />
 </template>
 
@@ -15,8 +15,8 @@ import moment from 'moment'
 import { getPrevMonthDays } from '@/utils/date'
 
 export default defineComponent({
-  emits: ['update:value'],
   inheritAttrs: false,
+  emits: ['update:value'],
   props: {
     value: {
       type: Array,
@@ -27,7 +27,7 @@ export default defineComponent({
       default: ''
     },
     placeholder: {
-      type: Object as PropType<[string, string]>,
+      type: Array as PropType<Array<string>>,
       default: () => ['开始日期', '结束日期']
     }
   },

@@ -21,12 +21,14 @@ export default {
   text-align: center;
   color: rgba(0, 0, 0, 0.45);
 }
+
 .logo,
 .line,
 .name {
   display: inline-block;
   vertical-align: middle;
 }
+
 .line {
   width: 1px;
   height: 15px;

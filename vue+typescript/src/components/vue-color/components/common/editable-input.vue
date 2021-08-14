@@ -1,14 +1,14 @@
 <template>
   <div class="vc-editable-input">
     <input
+      ref="input"
+      v-model="val"
       :aria-labelledby="labelId"
       class="vc-input__input"
-      v-model="val"
       @keydown="handleKeyDown"
       @input="update"
-      ref="input"
     />
-    <span :for="label" class="vc-input__label" :id="labelId">{{ labelSpanText }}</span>
+    <span :id="labelId" :for="label" class="vc-input__label">{{ labelSpanText }}</span>
     <span class="vc-input__desc">{{ desc }}</span>
   </div>
 </template>
@@ -17,18 +17,33 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'editableInput',
+  name: 'EditableInput',
   emits: ['change'],
   props: {
-    label: String,
-    labelText: String,
-    desc: String,
+    label: {
+      type: String,
+      default: ''
+    },
+    labelText: {
+      type: String,
+      default: ''
+    },
+    desc: {
+      type: String,
+      default: ''
+    },
     value: {
       type: [String, Number],
       required: true
     },
-    max: Number,
-    min: Number,
+    max: {
+      type: Number,
+      default: 6
+    },
+    min: {
+      type: Number,
+      default: 1
+    },
     arrowOffset: {
       type: Number,
       default: 1
@@ -100,11 +115,13 @@ export default defineComponent({
 .vc-editable-input {
   position: relative;
 }
+
 .vc-input__input {
   padding: 0;
   border: 0;
   outline: none;
 }
+
 .vc-input__label {
   text-transform: capitalize;
 }

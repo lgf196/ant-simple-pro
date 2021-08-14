@@ -1,6 +1,6 @@
 <template>
   <div class="com-page p20">
-    <a-textarea class="textarea" v-model:value="txt" :rows="2"></a-textarea>
+    <a-textarea v-model:value="txt" class="textarea" :rows="2"></a-textarea>
     <a-button type="primary" @click="onClick">复制</a-button>
   </div>
 </template>

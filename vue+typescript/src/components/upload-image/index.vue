@@ -1,12 +1,12 @@
 <template>
   <a-upload
+    v-model:fileList="fileList"
     class="image-uploader"
     action="/api/fileUpload"
     name="file"
     list-type="picture-card"
     :multiple="isMultiple"
     :show-upload-list="isMultiple"
-    v-model:fileList="fileList"
     :before-upload="beforeUpload"
     :remove="onRemove"
     @change="handleChange"
@@ -30,6 +30,7 @@
 import { defineComponent, PropType } from 'vue'
 // import { VcFile } from 'ant-design-vue/es/upload/interface'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue'
+import { message } from 'ant-design-vue'
 import { getRandomStr } from '@/utils'
 import { imagePreview } from '@/components/image/image-preview'
 
@@ -51,11 +52,11 @@ interface FileInfo {
 }
 
 export default defineComponent({
-  emits: ['update:value', 'change', 'input', 'file-change'],
   components: {
     LoadingOutlined,
     PlusOutlined
   },
+  emits: ['update:value', 'change', 'input', 'file-change'],
   props: {
     limit: {
       type: Number,
@@ -142,20 +143,20 @@ export default defineComponent({
     },
     beforeUpload(file: FileItem) {
       if (this.isMultiple && this.limit && this.limit === this.fileList.length) {
-        this.$message.destroy()
-        this.$message.error(`最多上传 ${this.limit} 张!`)
+        message.destroy()
+        message.error(`最多上传 ${this.limit} 张!`)
         return false
       }
       const isImg = /^image\/\w+$/i.test(file.type as string)
       if (!isImg) {
-        this.$message.destroy()
-        this.$message.error('只能上传 JPG、PNG、GIF 格式!')
+        message.destroy()
+        message.error('只能上传 JPG、PNG、GIF 格式!')
         return false
       }
       const isLtMB = file.size / 1024 / 1024 < this.limitSize
       if (!isLtMB) {
-        this.$message.destroy()
-        this.$message.error(`最大不能超过 ${this.limitSize}M !`)
+        message.destroy()
+        message.error(`最大不能超过 ${this.limitSize}M !`)
         return false
       }
       if (!this.autoUpload) {
@@ -186,12 +187,14 @@ export default defineComponent({
     .ant-upload {
       position: relative;
     }
+
     .com-image {
       position: absolute;
       top: 8px;
       left: 8px;
       right: 8px;
       bottom: 0;
+
       .image {
         height: auto;
       }

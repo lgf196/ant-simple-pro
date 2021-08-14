@@ -3,11 +3,11 @@
     <a-form class="form" :model="form" :rules="rules" @finish="onFinish">
       <a-form-item label="文章标题" name="title">
         <a-input
-          style="width: 300px"
           v-model:value="form.title"
+          style="width: 300px"
           placeholder="请输入"
           :maxlength="20"
-          autoComplete="off"
+          auto-complete="off"
         />
       </a-form-item>
       <a-form-item label="文章正文" name="content">
@@ -99,10 +99,11 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .form {
-  ::v-deep .ant-form-item {
+  ::v-deep(.ant-form-item) {
     display: flex;
   }
-  ::v-deep .ant-form-item-control-wrapper {
+
+  ::v-deep(.ant-form-item-control-wrapper) {
     flex: 1;
   }
 }

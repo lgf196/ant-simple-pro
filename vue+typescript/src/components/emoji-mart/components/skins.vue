@@ -13,13 +13,13 @@
 <script>
 export default {
   name: 'Skins',
-  emits: ['change'],
   props: {
     skin: {
       type: Number,
       required: true
     }
   },
+  emits: ['change'],
   data() {
     return {
       opened: false

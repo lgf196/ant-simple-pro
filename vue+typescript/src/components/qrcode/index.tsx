@@ -122,7 +122,7 @@ function getImageSettings(
   excavation: Excavation | null
 } {
   const { imageSettings, size, includeMargin } = props
-  if (imageSettings == null) {
+  if (typeof imageSettings === 'undefined') {
     return null
   }
   const margin = includeMargin ? MARGIN_SIZE : 0
@@ -131,8 +131,8 @@ function getImageSettings(
   const scale = numCells / size
   const w = (imageSettings.width || defaultSize) * scale
   const h = (imageSettings.height || defaultSize) * scale
-  const x = imageSettings.x == null ? cells.length / 2 - w / 2 : imageSettings.x * scale
-  const y = imageSettings.y == null ? cells.length / 2 - h / 2 : imageSettings.y * scale
+  const x = typeof imageSettings.x === 'undefined' ? cells.length / 2 - w / 2 : imageSettings.x * scale
+  const y = typeof imageSettings.y === 'undefined' ? cells.length / 2 - h / 2 : imageSettings.y * scale
 
   let excavation = null
   if (imageSettings.excavate) {
@@ -186,7 +186,8 @@ export default defineComponent({
       default: '#000000'
     },
     style: {
-      type: Object as PropType<Record<string, any>>
+      type: Object as PropType<Record<string, any>>,
+      default: () => ({})
     },
     includeMargin: {
       type: Boolean,
@@ -200,7 +201,16 @@ export default defineComponent({
         excavate: boolean
         x?: number
         y?: number
-      }>
+      }>,
+      default: () =>
+        ({} as {
+          src: string
+          height: number
+          width: number
+          excavate: boolean
+          x?: number
+          y?: number
+        })
     }
   },
   setup(props) {
@@ -310,7 +320,7 @@ export default defineComponent({
       const canvasStyle = { height: size, width: size, ...style }
       let img = null
       const imgSrc = imageSettings && imageSettings.src
-      if (imageSettings != null && imgSrc != null) {
+      if (imageSettings && imgSrc) {
         img = <img src={imgSrc} style={{ display: 'none' }} onLoad={handleImageLoad} ref={imageRef} />
       }
       return (

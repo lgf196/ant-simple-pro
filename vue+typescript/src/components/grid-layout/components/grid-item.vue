@@ -14,6 +14,7 @@ import { getDocumentDir } from '../helpers/dom'
 
 export default defineComponent({
   name: 'GridItem',
+  inject: ['eventBus'],
   emits: ['container-resized', 'resize', 'resized', 'move', 'moved'],
   props: {
     // cols: {
@@ -85,6 +86,7 @@ export default defineComponent({
       required: true
     },
     i: {
+      type: [Number, String],
       required: true
     },
     dragIgnoreFrom: {
@@ -100,7 +102,6 @@ export default defineComponent({
       default: 'a, button'
     }
   },
-  inject: ['eventBus'],
   data() {
     return {
       cols: 1,
@@ -133,79 +134,37 @@ export default defineComponent({
       innerH: this.h
     }
   },
-  created() {
-    // Accessible refernces of functions for removing in beforeDestroy
-    this.updateWidthHandler = width => {
-      this.updateWidth(width)
-    }
-    this.compactHandler = layout => {
-      this.compact(layout)
-    }
-    this.setDraggableHandler = isDraggable => {
-      if (this.isDraggable === null) {
-        this.draggable = isDraggable
+  computed: {
+    classObj() {
+      return {
+        'vue-resizable': this.resizableAndNotStatic,
+        static: this.static,
+        resizing: this.isResizing,
+        'vue-draggable-dragging': this.isDragging,
+        cssTransforms: this.useCssTransforms,
+        'render-rtl': this.renderRtl,
+        'disable-userselect': this.isDragging,
+        'no-touch': this.isAndroid && this.draggableOrResizableAndNotStatic
       }
-    }
-    this.setResizableHandler = isResizable => {
-      if (this.isResizable === null) {
-        this.resizable = isResizable
+    },
+    resizableAndNotStatic() {
+      return this.resizable && !this.static
+    },
+    draggableOrResizableAndNotStatic() {
+      return (this.draggable || this.resizable) && !this.static
+    },
+    isAndroid() {
+      return navigator.userAgent.toLowerCase().indexOf('android') !== -1
+    },
+    renderRtl() {
+      return this.$parent.isMirrored ? !this.rtl : this.rtl
+    },
+    resizableHandleClass() {
+      if (this.renderRtl) {
+        return 'vue-resizable-handle vue-rtl-resizable-handle'
       }
+      return 'vue-resizable-handle'
     }
-    this.setRowHeightHandler = rowHeight => {
-      this.rowHeight = rowHeight
-    }
-    this.setMaxRowsHandler = maxRows => {
-      this.maxRows = maxRows
-    }
-    this.directionchangeHandler = () => {
-      this.rtl = getDocumentDir() === 'rtl'
-      this.compact()
-    }
-    this.setColNum = colNum => {
-      this.cols = parseInt(colNum, 10)
-    }
-    this.eventBus.on('updateWidth', this.updateWidthHandler)
-    this.eventBus.on('compact', this.compactHandler)
-    this.eventBus.on('setDraggable', this.setDraggableHandler)
-    this.eventBus.on('setResizable', this.setResizableHandler)
-    this.eventBus.on('setRowHeight', this.setRowHeightHandler)
-    this.eventBus.on('setMaxRows', this.setMaxRowsHandler)
-    this.eventBus.on('directionchange', this.directionchangeHandler)
-    this.eventBus.on('setColNum', this.setColNum)
-    this.rtl = getDocumentDir() === 'rtl'
-  },
-  beforeUnmount() {
-    // Remove listeners
-    this.eventBus.off('updateWidth', this.updateWidthHandler)
-    this.eventBus.off('compact', this.compactHandler)
-    this.eventBus.off('setDraggable', this.setDraggableHandler)
-    this.eventBus.off('setResizable', this.setResizableHandler)
-    this.eventBus.off('setRowHeight', this.setRowHeightHandler)
-    this.eventBus.off('setMaxRows', this.setMaxRowsHandler)
-    this.eventBus.off('directionchange', this.directionchangeHandler)
-    this.eventBus.off('setColNum', this.setColNum)
-    if (this.interactObj) {
-      this.interactObj.unset() // destroy interact intance
-    }
-  },
-  mounted() {
-    this.cols = this.$parent.colNum
-    this.rowHeight = this.$parent.rowHeight
-    this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100
-    this.margin = this.$parent.margin !== undefined ? this.$parent.margin : [10, 10]
-    this.maxRows = this.$parent.maxRows
-    if (this.isDraggable === null) {
-      this.draggable = this.$parent.isDraggable
-    } else {
-      this.draggable = this.isDraggable
-    }
-    if (this.isResizable === null) {
-      this.resizable = this.$parent.isResizable
-    } else {
-      this.resizable = this.isResizable
-    }
-    this.useCssTransforms = this.$parent.useCssTransforms
-    this.createStyle()
   },
   watch: {
     isDraggable() {
@@ -282,37 +241,79 @@ export default defineComponent({
       this.emitContainerResized()
     }
   },
-  computed: {
-    classObj() {
-      return {
-        'vue-resizable': this.resizableAndNotStatic,
-        static: this.static,
-        resizing: this.isResizing,
-        'vue-draggable-dragging': this.isDragging,
-        cssTransforms: this.useCssTransforms,
-        'render-rtl': this.renderRtl,
-        'disable-userselect': this.isDragging,
-        'no-touch': this.isAndroid && this.draggableOrResizableAndNotStatic
-      }
-    },
-    resizableAndNotStatic() {
-      return this.resizable && !this.static
-    },
-    draggableOrResizableAndNotStatic() {
-      return (this.draggable || this.resizable) && !this.static
-    },
-    isAndroid() {
-      return navigator.userAgent.toLowerCase().indexOf('android') !== -1
-    },
-    renderRtl() {
-      return this.$parent.isMirrored ? !this.rtl : this.rtl
-    },
-    resizableHandleClass() {
-      if (this.renderRtl) {
-        return 'vue-resizable-handle vue-rtl-resizable-handle'
-      }
-      return 'vue-resizable-handle'
+  created() {
+    // Accessible refernces of functions for removing in beforeDestroy
+    this.updateWidthHandler = width => {
+      this.updateWidth(width)
     }
+    this.compactHandler = layout => {
+      this.compact(layout)
+    }
+    this.setDraggableHandler = isDraggable => {
+      if (this.isDraggable === null) {
+        this.draggable = isDraggable
+      }
+    }
+    this.setResizableHandler = isResizable => {
+      if (this.isResizable === null) {
+        this.resizable = isResizable
+      }
+    }
+    this.setRowHeightHandler = rowHeight => {
+      this.rowHeight = rowHeight
+    }
+    this.setMaxRowsHandler = maxRows => {
+      this.maxRows = maxRows
+    }
+    this.directionchangeHandler = () => {
+      this.rtl = getDocumentDir() === 'rtl'
+      this.compact()
+    }
+    this.setColNum = colNum => {
+      this.cols = parseInt(colNum, 10)
+    }
+    this.eventBus.on('updateWidth', this.updateWidthHandler)
+    this.eventBus.on('compact', this.compactHandler)
+    this.eventBus.on('setDraggable', this.setDraggableHandler)
+    this.eventBus.on('setResizable', this.setResizableHandler)
+    this.eventBus.on('setRowHeight', this.setRowHeightHandler)
+    this.eventBus.on('setMaxRows', this.setMaxRowsHandler)
+    this.eventBus.on('directionchange', this.directionchangeHandler)
+    this.eventBus.on('setColNum', this.setColNum)
+    this.rtl = getDocumentDir() === 'rtl'
+  },
+  beforeUnmount() {
+    // Remove listeners
+    this.eventBus.off('updateWidth', this.updateWidthHandler)
+    this.eventBus.off('compact', this.compactHandler)
+    this.eventBus.off('setDraggable', this.setDraggableHandler)
+    this.eventBus.off('setResizable', this.setResizableHandler)
+    this.eventBus.off('setRowHeight', this.setRowHeightHandler)
+    this.eventBus.off('setMaxRows', this.setMaxRowsHandler)
+    this.eventBus.off('directionchange', this.directionchangeHandler)
+    this.eventBus.off('setColNum', this.setColNum)
+    if (this.interactObj) {
+      this.interactObj.unset() // destroy interact intance
+    }
+  },
+  mounted() {
+    this.cols = this.$parent.colNum
+    this.rowHeight = this.$parent.rowHeight
+    this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100
+    this.margin = this.$parent.margin !== undefined ? this.$parent.margin : [10, 10]
+    this.maxRows = this.$parent.maxRows
+    if (this.isDraggable === null) {
+      this.draggable = this.$parent.isDraggable
+    } else {
+      this.draggable = this.isDraggable
+    }
+    if (this.isResizable === null) {
+      this.resizable = this.$parent.isResizable
+    } else {
+      this.resizable = this.isResizable
+    }
+    this.useCssTransforms = this.$parent.useCssTransforms
+    this.createStyle()
   },
   methods: {
     createStyle() {
@@ -373,7 +374,7 @@ export default defineComponent({
       if (this.static) return
       const position = getControlPosition(event)
       // Get the current drag point from the event. This is used as the offset.
-      if (position == null) return // not possible but satisfies flow
+      if (position === null) return // not possible but satisfies flow
       const { x, y } = position
       const newSize = { width: 0, height: 0 }
       let pos = null
@@ -739,29 +740,36 @@ export default defineComponent({
 .vue-grid-item {
   transition: all 200ms ease;
   transition-property: left, top, right;
+
   /* add right for rtl */
 }
+
 .vue-grid-item.no-touch {
   -ms-touch-action: none;
   touch-action: none;
 }
+
 .vue-grid-item.cssTransforms {
   transition-property: transform;
   left: 0;
   right: auto;
 }
+
 .vue-grid-item.cssTransforms.render-rtl {
   left: auto;
   right: 0;
 }
+
 .vue-grid-item.resizing {
   opacity: 0.6;
   z-index: 3;
 }
+
 .vue-grid-item.vue-draggable-dragging {
   transition: none;
   z-index: 3;
 }
+
 .vue-grid-item.vue-grid-placeholder {
   background: pink;
   transition-duration: 100ms;
@@ -772,6 +780,7 @@ export default defineComponent({
   -o-user-select: none;
   user-select: none;
 }
+
 .vue-grid-item > .vue-resizable-handle {
   position: absolute;
   width: 20px;
@@ -786,6 +795,7 @@ export default defineComponent({
   box-sizing: border-box;
   cursor: se-resize;
 }
+
 .vue-grid-item > .vue-rtl-resizable-handle {
   bottom: 0;
   left: 0;
@@ -797,6 +807,7 @@ export default defineComponent({
   cursor: sw-resize;
   right: auto;
 }
+
 .vue-grid-item.disable-userselect {
   user-select: none;
 }

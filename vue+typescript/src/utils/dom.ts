@@ -123,7 +123,7 @@ export function isScroll(el: HTMLElement, vertical: boolean) {
  * @return {void}
  */
 export function setStyle(element: HTMLElement, styleName: keyof CSSStyleDeclaration, value: number) {
-  if (!element || !styleName) {
+  if (!element || !styleName || typeof styleName === 'number') {
     return
   }
 

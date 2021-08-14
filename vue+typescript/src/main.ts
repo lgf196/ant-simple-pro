@@ -1,11 +1,16 @@
+import 'virtual:svg-icons-register'
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import i18n from './locales'
 
+if (import.meta.env.VITE_APP_MODE === 'dev') {
+  import('ant-design-vue/dist/antd.less')
+}
+
 import './router/permission'
-import './assets/icons'
 import './assets/styles/index.less'
 import initPlugin from './plugins'
 
@@ -17,7 +22,8 @@ app.use(i18n)
 initPlugin(app)
 
 app.mount('#app')
-
-if (process.env.NODE_ENV !== 'development') {
-  console.log(`latest delopy: %c${process.env.NOW}`, 'color: #67C23A')
+// console.log('import.meta.env', import.meta.env)
+if (import.meta.env.VITE_APP_MODE !== 'dev') {
+  const lastBuildTime = __LAST_BUILD_TIME__
+  console.log(`latest delopy: %c${lastBuildTime}`, 'color: #67C23A')
 }

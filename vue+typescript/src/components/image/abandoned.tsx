@@ -36,7 +36,8 @@ function newInstance(options: OptionsType, callback: (ins: ImageViewerInstance) 
     mounted(this: ComponentPublicInstance) {
       const self = this // eslint-disable-line
       this.$nextTick(() => {
-        callback({ // eslint-disable-line
+        callback({
+          // eslint-disable-line
           open() {
             ;(self.$refs as any).imageViewer.visible = true
           },

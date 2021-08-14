@@ -99,7 +99,8 @@ export function useHotkeys<T extends Element>(
     hotkeys.unbind(keys, keyHandler)
   })
 
-  watch(deps ? deps.map(v => () => v) : [], () => { // eslint-disable-line
+  watch(deps ? deps.map(v => () => v) : [], () => {
+    // eslint-disable-line
     setHotKeys()
   })
 

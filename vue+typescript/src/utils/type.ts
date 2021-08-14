@@ -1,3 +1,4 @@
+import { AnyFunction } from '@/types/common'
 const toString = Object.prototype.toString
 
 function createCheckTypeFn<T>(type: string) {
@@ -6,10 +7,10 @@ function createCheckTypeFn<T>(type: string) {
   }
 }
 
-export const isFunc = createCheckTypeFn<Function>('Function')
+export const isFunc = createCheckTypeFn<AnyFunction>('Function')
 export const isUndefined = createCheckTypeFn<undefined>('Undefined')
 export const isString = createCheckTypeFn<string>('String')
-export const isObject = createCheckTypeFn<object>('Object')
+export const isObject = createCheckTypeFn<Record<string, any>>('Object')
 export const isNumber = createCheckTypeFn<number>('Number')
 
 // eslint-disable-next-line

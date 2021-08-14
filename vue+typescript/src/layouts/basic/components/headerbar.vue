@@ -1,9 +1,9 @@
 <template>
   <header class="header">
     <div class="header-inner">
-      <div class="header-trigger" @click="onToggle" v-if="!drawerVisible">
-        <ComSvgIcon :name="collapsed ? 'menu-unfold' : 'menu-fold'" v-if="windowWidth > 750"></ComSvgIcon>
-        <ComSvgIcon name="menu-unfold" v-else></ComSvgIcon>
+      <div v-if="!drawerVisible" class="header-trigger" @click="onToggle">
+        <ComSvgIcon v-if="windowWidth > 750" :name="collapsed ? 'menu-unfold' : 'menu-fold'"></ComSvgIcon>
+        <ComSvgIcon v-else name="menu-unfold"></ComSvgIcon>
       </div>
       <div v-else></div>
       <a-row class="header-right" type="flex" align="middle">
@@ -26,7 +26,7 @@
         <a-dropdown placement="bottomRight">
           <a-row type="flex" align="middle" class="user-container">
             <a-avatar :size="26" :src="user.iconUrl">
-              <template v-slot:icon><UserOutlined /></template>
+              <template #icon><UserOutlined /></template>
             </a-avatar>
             <span class="username">{{ user.username }}</span>
           </a-row>
@@ -73,6 +73,7 @@ import {
   QuestionCircleOutlined,
   DownOutlined
 } from '@ant-design/icons-vue'
+import { Modal } from 'ant-design-vue'
 import appStore from '@/store/modules/app'
 import userStore from '@/store/modules/user'
 import Notification from './notification.vue'
@@ -106,7 +107,6 @@ const oriMoreList = [
 ]
 export default defineComponent({
   name: 'HeaderBar',
-  emits: ['open-drawer'],
   components: {
     UserOutlined,
     LogoutOutlined,
@@ -116,15 +116,13 @@ export default defineComponent({
     Fullscreen,
     Communication
   },
+  emits: ['open-drawer'],
   props: {
     drawerVisible: Boolean,
     windowWidth: {
       type: Number,
       default: 0
     }
-  },
-  data() {
-    return {}
   },
   setup() {
     const collapsed = computed(() => appStore.collapsed)
@@ -136,6 +134,9 @@ export default defineComponent({
       moreList
     }
   },
+  data() {
+    return {}
+  },
   methods: {
     onToggle() {
       if (this.windowWidth <= 750) {
@@ -145,7 +146,7 @@ export default defineComponent({
       }
     },
     onLogout() {
-      this.$confirm({
+      Modal.confirm({
         title: '温馨提示',
         content: '确定要退出登录吗',
         icon: createVNode(ExclamationCircleOutlined),
@@ -172,12 +173,24 @@ export default defineComponent({
   height: @header-height;
   padding-right: 24px;
   background: #fff;
+
+  ::v-deep(.header-right) {
+    .anticon-qq,
+    .anticon-question-circle,
+    .icon-bell,
+    .fullscreen {
+      font-size: 18px;
+      color: rgba(105, 123, 140, 0.7);
+    }
+  }
 }
+
 .header-inner {
   flex: auto;
   display: flex;
   justify-content: space-between;
 }
+
 .header-trigger {
   // width: @header-height;
   width: 44px;
@@ -189,59 +202,57 @@ export default defineComponent({
   cursor: pointer;
   color: @color-text-regular;
   font-size: @font-size-extra-large;
+
   &:hover {
     // color: @color-primary;
     background-color: #f9f9fc;
   }
 }
+
 .header-right {
   padding-right: 15px;
 }
+
 .communication {
   padding: 0 10px;
 }
+
 .docs {
   padding: 0 10px;
+
   .docs-link {
     display: flex;
   }
 }
-.notification {
-  padding: 0 10px;
-}
-.header {
-  ::v-deep(.header-right) {
-    .anticon-qq,
-    .anticon-question-circle,
-    .icon-bell,
-    .fullscreen {
-      font-size: 18px;
-      color: rgba(105, 123, 140, 0.7);
-    }
-  }
-}
+
 .fullscreen {
   height: 100%;
   padding: 0 10px;
   cursor: pointer;
 }
+
 .user-container {
   height: 100%;
   padding: 0 12px;
   transition: background-color 0.2s;
   cursor: pointer;
+
   &:hover {
     // color: @color-primary;
     background-color: #f9f9fc;
   }
+
   .username {
     margin-left: 8px;
     color: rgba(105, 123, 140, 0.7);
   }
 }
+
 .notification {
   height: 100%;
+  padding: 0 10px;
   cursor: pointer;
+
   ::v-deep(.ant-badge) .ant-badge-count {
     min-width: 14px;
     height: 14px;
@@ -252,6 +263,7 @@ export default defineComponent({
     background: #ff4d4f;
   }
 }
+
 .more-button {
   margin-left: 8px;
   color: rgba(105, 123, 140, 0.7);

@@ -1,10 +1,10 @@
 <template>
   <div class="popup">
     <transition name="com-fade-in-linear">
-      <div class="shadow" v-show="visible"></div>
+      <div v-show="visible" class="shadow"></div>
     </transition>
     <transition name="com-zoom-in-center">
-      <div class="wrapper" v-show="visible">
+      <div v-show="visible" class="wrapper">
         <div class="wrapper-inner">
           <CloseOutlined class="close" @click="onClose" />
           <a class="link" :href="linkUrl">
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, PropType, Ref } from 'vue'
+import { defineComponent, toRefs, PropType, Ref, ref } from 'vue'
 import { CloseOutlined } from '@ant-design/icons-vue'
 export default defineComponent({
   components: {
@@ -26,7 +26,7 @@ export default defineComponent({
   props: {
     visible: {
       type: Object as PropType<Ref<boolean>>,
-      default: true
+      default: () => ref(true)
     },
     linkUrl: {
       type: String,
@@ -57,21 +57,27 @@ export default defineComponent({
 .popup {
   width: 100%;
   height: 100%;
+
   .shadow {
     z-index: 3000;
     .mask;
+
     background-color: rgba(0, 0, 0, 0.45);
   }
+
   .wrapper {
     z-index: 3100;
     .mask;
+
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .wrapper-inner {
     position: relative;
   }
+
   .close {
     position: absolute;
     top: -30px;
@@ -79,9 +85,11 @@ export default defineComponent({
     font-size: 30px;
     color: #fff;
   }
+
   .link {
     display: block;
   }
+
   .image {
     max-width: 750px;
   }

@@ -29,13 +29,16 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   overflow: hidden;
-  ::v-deep .slick-slider {
+
+  ::v-deep(.slick-slider) {
     height: 100%;
   }
+
   img {
     pointer-events: none;
   }
 }
+
 .image-wrapper {
   display: inline-block;
 }

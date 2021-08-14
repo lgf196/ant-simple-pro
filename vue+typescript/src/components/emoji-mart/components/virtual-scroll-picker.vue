@@ -1,6 +1,6 @@
 <template>
   <div class="emoji-mart" :style="customStyles">
-    <div class="emoji-mart-bar emoji-mart-bar-anchors" v-if="showCategories">
+    <div v-if="showCategories" class="emoji-mart-bar emoji-mart-bar-anchors">
       <anchors
         :data="data"
         :i18n="mergedI18n"
@@ -25,10 +25,10 @@
 
     <category
       v-show="searchEmojis"
+      id="search"
       class="emoji-mart-search-results"
       :data="data"
       :i18n="mergedI18n"
-      id="search"
       name="Search"
       :emojis="searchEmojis"
       :emoji-props="emojiProps"
@@ -44,15 +44,15 @@
       :emit-update="true"
       @update="onScrollUpdate"
     >
-      <template v-slot:default="{ item, active, index }">
+      <template #default="{ item, active, index }">
         <DynamicScrollerItem :item="item" :active="active" :data-index="index">
           <category
             v-show="item.show"
+            :id="item.category.id"
             ref="categories"
             :key="item.category.id"
             :data="item.data"
             :i18n="item.mergedI18n"
-            :id="item.category.id"
             :name="item.category.name"
             :emojis="item.category.emojis"
             :emoji-props="item.emojiProps"
@@ -72,7 +72,7 @@
       :skin-props="skinProps"
       :on-skin-change="onSkinChange"
     >
-      <div class="emoji-mart-bar emoji-mart-bar-preview" v-if="showPreview">
+      <div v-if="showPreview" class="emoji-mart-bar emoji-mart-bar-preview">
         <preview
           :data="data"
           :title="title"
@@ -138,7 +138,6 @@ const I18N = {
 }
 export default {
   name: 'VirtualScrollPicker',
-  emits: ['select', 'skin-change'],
   components: {
     Anchors,
     Category,
@@ -154,6 +153,7 @@ export default {
       required: true
     }
   },
+  emits: ['select', 'skin-change'],
   data() {
     return {
       activeSkin: this.skin || store.get('skin') || this.defaultSkin,

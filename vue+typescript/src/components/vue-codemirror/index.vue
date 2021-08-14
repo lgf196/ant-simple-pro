@@ -11,10 +11,22 @@ export default defineComponent({
   name: 'VCodemirror',
   emits: ['update:value'],
   props: {
-    code: String,
-    value: String,
-    marker: Function,
-    unseenLines: Array,
+    code: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
+    },
+    marker: {
+      type: Function,
+      default: () => {} // eslint-disable-line
+    },
+    unseenLines: {
+      type: Array,
+      default: () => []
+    },
     name: {
       type: String,
       default: 'codemirror'
