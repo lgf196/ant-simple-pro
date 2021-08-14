@@ -1,9423 +1,9520 @@
 // Source: npm package: emojilib, file:emojis.json
-window.tinymce.Resource.add("tinymce.plugins.emoticons", {
+window.tinymce.Resource.add('tinymce.plugins.emoticons', {
   grinning: {
-    keywords: [ "face", "smile", "happy", "joy", ":D", "grin" ],
-    "char": "\ud83d\ude00",
+    keywords: ['face', 'smile', 'happy', 'joy', ':D', 'grin'],
+    char: '\ud83d\ude00',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   grimacing: {
-    keywords: [ "face", "grimace", "teeth" ],
-    "char": "\ud83d\ude2c",
+    keywords: ['face', 'grimace', 'teeth'],
+    char: '\ud83d\ude2c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   grin: {
-    keywords: [ "face", "happy", "smile", "joy", "kawaii" ],
-    "char": "\ud83d\ude01",
+    keywords: ['face', 'happy', 'smile', 'joy', 'kawaii'],
+    char: '\ud83d\ude01',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   joy: {
-    keywords: [ "face", "cry", "tears", "weep", "happy", "happytears", "haha" ],
-    "char": "\ud83d\ude02",
+    keywords: ['face', 'cry', 'tears', 'weep', 'happy', 'happytears', 'haha'],
+    char: '\ud83d\ude02',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   rofl: {
-    keywords: [ "face", "rolling", "floor", "laughing", "lol", "haha" ],
-    "char": "\ud83e\udd23",
+    keywords: ['face', 'rolling', 'floor', 'laughing', 'lol', 'haha'],
+    char: '\ud83e\udd23',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   partying: {
-    keywords: [ "face", "celebration", "woohoo" ],
-    "char": "\ud83e\udd73",
+    keywords: ['face', 'celebration', 'woohoo'],
+    char: '\ud83e\udd73',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smiley: {
-    keywords: [ "face", "happy", "joy", "haha", ":D", ":)", "smile", "funny" ],
-    "char": "\ud83d\ude03",
+    keywords: ['face', 'happy', 'joy', 'haha', ':D', ':)', 'smile', 'funny'],
+    char: '\ud83d\ude03',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smile: {
-    keywords: [ "face", "happy", "joy", "funny", "haha", "laugh", "like", ":D", ":)" ],
-    "char": "\ud83d\ude04",
+    keywords: ['face', 'happy', 'joy', 'funny', 'haha', 'laugh', 'like', ':D', ':)'],
+    char: '\ud83d\ude04',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sweat_smile: {
-    keywords: [ "face", "hot", "happy", "laugh", "sweat", "smile", "relief" ],
-    "char": "\ud83d\ude05",
+    keywords: ['face', 'hot', 'happy', 'laugh', 'sweat', 'smile', 'relief'],
+    char: '\ud83d\ude05',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   laughing: {
-    keywords: [ "happy", "joy", "lol", "satisfied", "haha", "face", "glad", "XD", "laugh" ],
-    "char": "\ud83d\ude06",
+    keywords: ['happy', 'joy', 'lol', 'satisfied', 'haha', 'face', 'glad', 'XD', 'laugh'],
+    char: '\ud83d\ude06',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   innocent: {
-    keywords: [ "face", "angel", "heaven", "halo" ],
-    "char": "\ud83d\ude07",
+    keywords: ['face', 'angel', 'heaven', 'halo'],
+    char: '\ud83d\ude07',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   wink: {
-    keywords: [ "face", "happy", "mischievous", "secret", ";)", "smile", "eye" ],
-    "char": "\ud83d\ude09",
+    keywords: ['face', 'happy', 'mischievous', 'secret', ';)', 'smile', 'eye'],
+    char: '\ud83d\ude09',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   blush: {
-    keywords: [ "face", "smile", "happy", "flushed", "crush", "embarrassed", "shy", "joy" ],
-    "char": "\ud83d\ude0a",
+    keywords: ['face', 'smile', 'happy', 'flushed', 'crush', 'embarrassed', 'shy', 'joy'],
+    char: '\ud83d\ude0a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   slightly_smiling_face: {
-    keywords: [ "face", "smile" ],
-    "char": "\ud83d\ude42",
+    keywords: ['face', 'smile'],
+    char: '\ud83d\ude42',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   upside_down_face: {
-    keywords: [ "face", "flipped", "silly", "smile" ],
-    "char": "\ud83d\ude43",
+    keywords: ['face', 'flipped', 'silly', 'smile'],
+    char: '\ud83d\ude43',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   relaxed: {
-    keywords: [ "face", "blush", "massage", "happiness" ],
-    "char": "\u263a\ufe0f",
+    keywords: ['face', 'blush', 'massage', 'happiness'],
+    char: '\u263a\ufe0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   yum: {
-    keywords: [ "happy", "joy", "tongue", "smile", "face", "silly", "yummy", "nom", "delicious", "savouring" ],
-    "char": "\ud83d\ude0b",
+    keywords: ['happy', 'joy', 'tongue', 'smile', 'face', 'silly', 'yummy', 'nom', 'delicious', 'savouring'],
+    char: '\ud83d\ude0b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   relieved: {
-    keywords: [ "face", "relaxed", "phew", "massage", "happiness" ],
-    "char": "\ud83d\ude0c",
+    keywords: ['face', 'relaxed', 'phew', 'massage', 'happiness'],
+    char: '\ud83d\ude0c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   heart_eyes: {
-    keywords: [ "face", "love", "like", "affection", "valentines", "infatuation", "crush", "heart" ],
-    "char": "\ud83d\ude0d",
+    keywords: ['face', 'love', 'like', 'affection', 'valentines', 'infatuation', 'crush', 'heart'],
+    char: '\ud83d\ude0d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smiling_face_with_three_hearts: {
-    keywords: [ "face", "love", "like", "affection", "valentines", "infatuation", "crush", "hearts", "adore" ],
-    "char": "\ud83e\udd70",
+    keywords: ['face', 'love', 'like', 'affection', 'valentines', 'infatuation', 'crush', 'hearts', 'adore'],
+    char: '\ud83e\udd70',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kissing_heart: {
-    keywords: [ "face", "love", "like", "affection", "valentines", "infatuation", "kiss" ],
-    "char": "\ud83d\ude18",
+    keywords: ['face', 'love', 'like', 'affection', 'valentines', 'infatuation', 'kiss'],
+    char: '\ud83d\ude18',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kissing: {
-    keywords: [ "love", "like", "face", "3", "valentines", "infatuation", "kiss" ],
-    "char": "\ud83d\ude17",
+    keywords: ['love', 'like', 'face', '3', 'valentines', 'infatuation', 'kiss'],
+    char: '\ud83d\ude17',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kissing_smiling_eyes: {
-    keywords: [ "face", "affection", "valentines", "infatuation", "kiss" ],
-    "char": "\ud83d\ude19",
+    keywords: ['face', 'affection', 'valentines', 'infatuation', 'kiss'],
+    char: '\ud83d\ude19',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kissing_closed_eyes: {
-    keywords: [ "face", "love", "like", "affection", "valentines", "infatuation", "kiss" ],
-    "char": "\ud83d\ude1a",
+    keywords: ['face', 'love', 'like', 'affection', 'valentines', 'infatuation', 'kiss'],
+    char: '\ud83d\ude1a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   stuck_out_tongue_winking_eye: {
-    keywords: [ "face", "prank", "childish", "playful", "mischievous", "smile", "wink", "tongue" ],
-    "char": "\ud83d\ude1c",
+    keywords: ['face', 'prank', 'childish', 'playful', 'mischievous', 'smile', 'wink', 'tongue'],
+    char: '\ud83d\ude1c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   zany: {
-    keywords: [ "face", "goofy", "crazy" ],
-    "char": "\ud83e\udd2a",
+    keywords: ['face', 'goofy', 'crazy'],
+    char: '\ud83e\udd2a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   raised_eyebrow: {
-    keywords: [ "face", "distrust", "scepticism", "disapproval", "disbelief", "surprise" ],
-    "char": "\ud83e\udd28",
+    keywords: ['face', 'distrust', 'scepticism', 'disapproval', 'disbelief', 'surprise'],
+    char: '\ud83e\udd28',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   monocle: {
-    keywords: [ "face", "stuffy", "wealthy" ],
-    "char": "\ud83e\uddd0",
+    keywords: ['face', 'stuffy', 'wealthy'],
+    char: '\ud83e\uddd0',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   stuck_out_tongue_closed_eyes: {
-    keywords: [ "face", "prank", "playful", "mischievous", "smile", "tongue" ],
-    "char": "\ud83d\ude1d",
+    keywords: ['face', 'prank', 'playful', 'mischievous', 'smile', 'tongue'],
+    char: '\ud83d\ude1d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   stuck_out_tongue: {
-    keywords: [ "face", "prank", "childish", "playful", "mischievous", "smile", "tongue" ],
-    "char": "\ud83d\ude1b",
+    keywords: ['face', 'prank', 'childish', 'playful', 'mischievous', 'smile', 'tongue'],
+    char: '\ud83d\ude1b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   money_mouth_face: {
-    keywords: [ "face", "rich", "dollar", "money" ],
-    "char": "\ud83e\udd11",
+    keywords: ['face', 'rich', 'dollar', 'money'],
+    char: '\ud83e\udd11',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   nerd_face: {
-    keywords: [ "face", "nerdy", "geek", "dork" ],
-    "char": "\ud83e\udd13",
+    keywords: ['face', 'nerdy', 'geek', 'dork'],
+    char: '\ud83e\udd13',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sunglasses: {
-    keywords: [ "face", "cool", "smile", "summer", "beach", "sunglass" ],
-    "char": "\ud83d\ude0e",
+    keywords: ['face', 'cool', 'smile', 'summer', 'beach', 'sunglass'],
+    char: '\ud83d\ude0e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   star_struck: {
-    keywords: [ "face", "smile", "starry", "eyes", "grinning" ],
-    "char": "\ud83e\udd29",
+    keywords: ['face', 'smile', 'starry', 'eyes', 'grinning'],
+    char: '\ud83e\udd29',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   clown_face: {
-    keywords: [ "face" ],
-    "char": "\ud83e\udd21",
+    keywords: ['face'],
+    char: '\ud83e\udd21',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   cowboy_hat_face: {
-    keywords: [ "face", "cowgirl", "hat" ],
-    "char": "\ud83e\udd20",
+    keywords: ['face', 'cowgirl', 'hat'],
+    char: '\ud83e\udd20',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   hugs: {
-    keywords: [ "face", "smile", "hug" ],
-    "char": "\ud83e\udd17",
+    keywords: ['face', 'smile', 'hug'],
+    char: '\ud83e\udd17',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smirk: {
-    keywords: [ "face", "smile", "mean", "prank", "smug", "sarcasm" ],
-    "char": "\ud83d\ude0f",
+    keywords: ['face', 'smile', 'mean', 'prank', 'smug', 'sarcasm'],
+    char: '\ud83d\ude0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   no_mouth: {
-    keywords: [ "face", "hellokitty" ],
-    "char": "\ud83d\ude36",
+    keywords: ['face', 'hellokitty'],
+    char: '\ud83d\ude36',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   neutral_face: {
-    keywords: [ "indifference", "meh", ":|", "neutral" ],
-    "char": "\ud83d\ude10",
+    keywords: ['indifference', 'meh', ':|', 'neutral'],
+    char: '\ud83d\ude10',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   expressionless: {
-    keywords: [ "face", "indifferent", "-_-", "meh", "deadpan" ],
-    "char": "\ud83d\ude11",
+    keywords: ['face', 'indifferent', '-_-', 'meh', 'deadpan'],
+    char: '\ud83d\ude11',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   unamused: {
-    keywords: [ "indifference", "bored", "straight face", "serious", "sarcasm", "unimpressed", "skeptical", "dubious", "side_eye" ],
-    "char": "\ud83d\ude12",
+    keywords: [
+      'indifference',
+      'bored',
+      'straight face',
+      'serious',
+      'sarcasm',
+      'unimpressed',
+      'skeptical',
+      'dubious',
+      'side_eye'
+    ],
+    char: '\ud83d\ude12',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   roll_eyes: {
-    keywords: [ "face", "eyeroll", "frustrated" ],
-    "char": "\ud83d\ude44",
+    keywords: ['face', 'eyeroll', 'frustrated'],
+    char: '\ud83d\ude44',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   thinking: {
-    keywords: [ "face", "hmmm", "think", "consider" ],
-    "char": "\ud83e\udd14",
+    keywords: ['face', 'hmmm', 'think', 'consider'],
+    char: '\ud83e\udd14',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   lying_face: {
-    keywords: [ "face", "lie", "pinocchio" ],
-    "char": "\ud83e\udd25",
+    keywords: ['face', 'lie', 'pinocchio'],
+    char: '\ud83e\udd25',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   hand_over_mouth: {
-    keywords: [ "face", "whoops", "shock", "surprise" ],
-    "char": "\ud83e\udd2d",
+    keywords: ['face', 'whoops', 'shock', 'surprise'],
+    char: '\ud83e\udd2d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   shushing: {
-    keywords: [ "face", "quiet", "shhh" ],
-    "char": "\ud83e\udd2b",
+    keywords: ['face', 'quiet', 'shhh'],
+    char: '\ud83e\udd2b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   symbols_over_mouth: {
-    keywords: [ "face", "swearing", "cursing", "cussing", "profanity", "expletive" ],
-    "char": "\ud83e\udd2c",
+    keywords: ['face', 'swearing', 'cursing', 'cussing', 'profanity', 'expletive'],
+    char: '\ud83e\udd2c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   exploding_head: {
-    keywords: [ "face", "shocked", "mind", "blown" ],
-    "char": "\ud83e\udd2f",
+    keywords: ['face', 'shocked', 'mind', 'blown'],
+    char: '\ud83e\udd2f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   flushed: {
-    keywords: [ "face", "blush", "shy", "flattered" ],
-    "char": "\ud83d\ude33",
+    keywords: ['face', 'blush', 'shy', 'flattered'],
+    char: '\ud83d\ude33',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   disappointed: {
-    keywords: [ "face", "sad", "upset", "depressed", ":(" ],
-    "char": "\ud83d\ude1e",
+    keywords: ['face', 'sad', 'upset', 'depressed', ':('],
+    char: '\ud83d\ude1e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   worried: {
-    keywords: [ "face", "concern", "nervous", ":(" ],
-    "char": "\ud83d\ude1f",
+    keywords: ['face', 'concern', 'nervous', ':('],
+    char: '\ud83d\ude1f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   angry: {
-    keywords: [ "mad", "face", "annoyed", "frustrated" ],
-    "char": "\ud83d\ude20",
+    keywords: ['mad', 'face', 'annoyed', 'frustrated'],
+    char: '\ud83d\ude20',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   rage: {
-    keywords: [ "angry", "mad", "hate", "despise" ],
-    "char": "\ud83d\ude21",
+    keywords: ['angry', 'mad', 'hate', 'despise'],
+    char: '\ud83d\ude21',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   pensive: {
-    keywords: [ "face", "sad", "depressed", "upset" ],
-    "char": "\ud83d\ude14",
+    keywords: ['face', 'sad', 'depressed', 'upset'],
+    char: '\ud83d\ude14',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   confused: {
-    keywords: [ "face", "indifference", "huh", "weird", "hmmm", ":/" ],
-    "char": "\ud83d\ude15",
+    keywords: ['face', 'indifference', 'huh', 'weird', 'hmmm', ':/'],
+    char: '\ud83d\ude15',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   slightly_frowning_face: {
-    keywords: [ "face", "frowning", "disappointed", "sad", "upset" ],
-    "char": "\ud83d\ude41",
+    keywords: ['face', 'frowning', 'disappointed', 'sad', 'upset'],
+    char: '\ud83d\ude41',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   frowning_face: {
-    keywords: [ "face", "sad", "upset", "frown" ],
-    "char": "\u2639",
+    keywords: ['face', 'sad', 'upset', 'frown'],
+    char: '\u2639',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   persevere: {
-    keywords: [ "face", "sick", "no", "upset", "oops" ],
-    "char": "\ud83d\ude23",
+    keywords: ['face', 'sick', 'no', 'upset', 'oops'],
+    char: '\ud83d\ude23',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   confounded: {
-    keywords: [ "face", "confused", "sick", "unwell", "oops", ":S" ],
-    "char": "\ud83d\ude16",
+    keywords: ['face', 'confused', 'sick', 'unwell', 'oops', ':S'],
+    char: '\ud83d\ude16',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   tired_face: {
-    keywords: [ "sick", "whine", "upset", "frustrated" ],
-    "char": "\ud83d\ude2b",
+    keywords: ['sick', 'whine', 'upset', 'frustrated'],
+    char: '\ud83d\ude2b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   weary: {
-    keywords: [ "face", "tired", "sleepy", "sad", "frustrated", "upset" ],
-    "char": "\ud83d\ude29",
+    keywords: ['face', 'tired', 'sleepy', 'sad', 'frustrated', 'upset'],
+    char: '\ud83d\ude29',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   pleading: {
-    keywords: [ "face", "begging", "mercy" ],
-    "char": "\ud83e\udd7a",
+    keywords: ['face', 'begging', 'mercy'],
+    char: '\ud83e\udd7a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   triumph: {
-    keywords: [ "face", "gas", "phew", "proud", "pride" ],
-    "char": "\ud83d\ude24",
+    keywords: ['face', 'gas', 'phew', 'proud', 'pride'],
+    char: '\ud83d\ude24',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   open_mouth: {
-    keywords: [ "face", "surprise", "impressed", "wow", "whoa", ":O" ],
-    "char": "\ud83d\ude2e",
+    keywords: ['face', 'surprise', 'impressed', 'wow', 'whoa', ':O'],
+    char: '\ud83d\ude2e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   scream: {
-    keywords: [ "face", "munch", "scared", "omg" ],
-    "char": "\ud83d\ude31",
+    keywords: ['face', 'munch', 'scared', 'omg'],
+    char: '\ud83d\ude31',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   fearful: {
-    keywords: [ "face", "scared", "terrified", "nervous", "oops", "huh" ],
-    "char": "\ud83d\ude28",
+    keywords: ['face', 'scared', 'terrified', 'nervous', 'oops', 'huh'],
+    char: '\ud83d\ude28',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   cold_sweat: {
-    keywords: [ "face", "nervous", "sweat" ],
-    "char": "\ud83d\ude30",
+    keywords: ['face', 'nervous', 'sweat'],
+    char: '\ud83d\ude30',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   hushed: {
-    keywords: [ "face", "woo", "shh" ],
-    "char": "\ud83d\ude2f",
+    keywords: ['face', 'woo', 'shh'],
+    char: '\ud83d\ude2f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   frowning: {
-    keywords: [ "face", "aw", "what" ],
-    "char": "\ud83d\ude26",
+    keywords: ['face', 'aw', 'what'],
+    char: '\ud83d\ude26',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   anguished: {
-    keywords: [ "face", "stunned", "nervous" ],
-    "char": "\ud83d\ude27",
+    keywords: ['face', 'stunned', 'nervous'],
+    char: '\ud83d\ude27',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   cry: {
-    keywords: [ "face", "tears", "sad", "depressed", "upset", ":'(" ],
-    "char": "\ud83d\ude22",
+    keywords: ['face', 'tears', 'sad', 'depressed', 'upset', ":'("],
+    char: '\ud83d\ude22',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   disappointed_relieved: {
-    keywords: [ "face", "phew", "sweat", "nervous" ],
-    "char": "\ud83d\ude25",
+    keywords: ['face', 'phew', 'sweat', 'nervous'],
+    char: '\ud83d\ude25',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   drooling_face: {
-    keywords: [ "face" ],
-    "char": "\ud83e\udd24",
+    keywords: ['face'],
+    char: '\ud83e\udd24',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sleepy: {
-    keywords: [ "face", "tired", "rest", "nap" ],
-    "char": "\ud83d\ude2a",
+    keywords: ['face', 'tired', 'rest', 'nap'],
+    char: '\ud83d\ude2a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sweat: {
-    keywords: [ "face", "hot", "sad", "tired", "exercise" ],
-    "char": "\ud83d\ude13",
+    keywords: ['face', 'hot', 'sad', 'tired', 'exercise'],
+    char: '\ud83d\ude13',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   hot: {
-    keywords: [ "face", "feverish", "heat", "red", "sweating" ],
-    "char": "\ud83e\udd75",
+    keywords: ['face', 'feverish', 'heat', 'red', 'sweating'],
+    char: '\ud83e\udd75',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   cold: {
-    keywords: [ "face", "blue", "freezing", "frozen", "frostbite", "icicles" ],
-    "char": "\ud83e\udd76",
+    keywords: ['face', 'blue', 'freezing', 'frozen', 'frostbite', 'icicles'],
+    char: '\ud83e\udd76',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sob: {
-    keywords: [ "face", "cry", "tears", "sad", "upset", "depressed" ],
-    "char": "\ud83d\ude2d",
+    keywords: ['face', 'cry', 'tears', 'sad', 'upset', 'depressed'],
+    char: '\ud83d\ude2d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   dizzy_face: {
-    keywords: [ "spent", "unconscious", "xox", "dizzy" ],
-    "char": "\ud83d\ude35",
+    keywords: ['spent', 'unconscious', 'xox', 'dizzy'],
+    char: '\ud83d\ude35',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   astonished: {
-    keywords: [ "face", "xox", "surprised", "poisoned" ],
-    "char": "\ud83d\ude32",
+    keywords: ['face', 'xox', 'surprised', 'poisoned'],
+    char: '\ud83d\ude32',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   zipper_mouth_face: {
-    keywords: [ "face", "sealed", "zipper", "secret" ],
-    "char": "\ud83e\udd10",
+    keywords: ['face', 'sealed', 'zipper', 'secret'],
+    char: '\ud83e\udd10',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   nauseated_face: {
-    keywords: [ "face", "vomit", "gross", "green", "sick", "throw up", "ill" ],
-    "char": "\ud83e\udd22",
+    keywords: ['face', 'vomit', 'gross', 'green', 'sick', 'throw up', 'ill'],
+    char: '\ud83e\udd22',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sneezing_face: {
-    keywords: [ "face", "gesundheit", "sneeze", "sick", "allergy" ],
-    "char": "\ud83e\udd27",
+    keywords: ['face', 'gesundheit', 'sneeze', 'sick', 'allergy'],
+    char: '\ud83e\udd27',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   vomiting: {
-    keywords: [ "face", "sick" ],
-    "char": "\ud83e\udd2e",
+    keywords: ['face', 'sick'],
+    char: '\ud83e\udd2e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   mask: {
-    keywords: [ "face", "sick", "ill", "disease" ],
-    "char": "\ud83d\ude37",
+    keywords: ['face', 'sick', 'ill', 'disease'],
+    char: '\ud83d\ude37',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   face_with_thermometer: {
-    keywords: [ "sick", "temperature", "thermometer", "cold", "fever" ],
-    "char": "\ud83e\udd12",
+    keywords: ['sick', 'temperature', 'thermometer', 'cold', 'fever'],
+    char: '\ud83e\udd12',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   face_with_head_bandage: {
-    keywords: [ "injured", "clumsy", "bandage", "hurt" ],
-    "char": "\ud83e\udd15",
+    keywords: ['injured', 'clumsy', 'bandage', 'hurt'],
+    char: '\ud83e\udd15',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   woozy: {
-    keywords: [ "face", "dizzy", "intoxicated", "tipsy", "wavy" ],
-    "char": "\ud83e\udd74",
+    keywords: ['face', 'dizzy', 'intoxicated', 'tipsy', 'wavy'],
+    char: '\ud83e\udd74',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sleeping: {
-    keywords: [ "face", "tired", "sleepy", "night", "zzz" ],
-    "char": "\ud83d\ude34",
+    keywords: ['face', 'tired', 'sleepy', 'night', 'zzz'],
+    char: '\ud83d\ude34',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   zzz: {
-    keywords: [ "sleepy", "tired", "dream" ],
-    "char": "\ud83d\udca4",
+    keywords: ['sleepy', 'tired', 'dream'],
+    char: '\ud83d\udca4',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   poop: {
-    keywords: [ "hankey", "shitface", "fail", "turd", "shit" ],
-    "char": "\ud83d\udca9",
+    keywords: ['hankey', 'shitface', 'fail', 'turd', 'shit'],
+    char: '\ud83d\udca9',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smiling_imp: {
-    keywords: [ "devil", "horns" ],
-    "char": "\ud83d\ude08",
+    keywords: ['devil', 'horns'],
+    char: '\ud83d\ude08',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   imp: {
-    keywords: [ "devil", "angry", "horns" ],
-    "char": "\ud83d\udc7f",
+    keywords: ['devil', 'angry', 'horns'],
+    char: '\ud83d\udc7f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   japanese_ogre: {
-    keywords: [ "monster", "red", "mask", "halloween", "scary", "creepy", "devil", "demon", "japanese", "ogre" ],
-    "char": "\ud83d\udc79",
+    keywords: ['monster', 'red', 'mask', 'halloween', 'scary', 'creepy', 'devil', 'demon', 'japanese', 'ogre'],
+    char: '\ud83d\udc79',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   japanese_goblin: {
-    keywords: [ "red", "evil", "mask", "monster", "scary", "creepy", "japanese", "goblin" ],
-    "char": "\ud83d\udc7a",
+    keywords: ['red', 'evil', 'mask', 'monster', 'scary', 'creepy', 'japanese', 'goblin'],
+    char: '\ud83d\udc7a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   skull: {
-    keywords: [ "dead", "skeleton", "creepy", "death" ],
-    "char": "\ud83d\udc80",
+    keywords: ['dead', 'skeleton', 'creepy', 'death'],
+    char: '\ud83d\udc80',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   ghost: {
-    keywords: [ "halloween", "spooky", "scary" ],
-    "char": "\ud83d\udc7b",
+    keywords: ['halloween', 'spooky', 'scary'],
+    char: '\ud83d\udc7b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   alien: {
-    keywords: [ "UFO", "paul", "weird", "outer_space" ],
-    "char": "\ud83d\udc7d",
+    keywords: ['UFO', 'paul', 'weird', 'outer_space'],
+    char: '\ud83d\udc7d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   robot: {
-    keywords: [ "computer", "machine", "bot" ],
-    "char": "\ud83e\udd16",
+    keywords: ['computer', 'machine', 'bot'],
+    char: '\ud83e\udd16',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smiley_cat: {
-    keywords: [ "animal", "cats", "happy", "smile" ],
-    "char": "\ud83d\ude3a",
+    keywords: ['animal', 'cats', 'happy', 'smile'],
+    char: '\ud83d\ude3a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smile_cat: {
-    keywords: [ "animal", "cats", "smile" ],
-    "char": "\ud83d\ude38",
+    keywords: ['animal', 'cats', 'smile'],
+    char: '\ud83d\ude38',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   joy_cat: {
-    keywords: [ "animal", "cats", "haha", "happy", "tears" ],
-    "char": "\ud83d\ude39",
+    keywords: ['animal', 'cats', 'haha', 'happy', 'tears'],
+    char: '\ud83d\ude39',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   heart_eyes_cat: {
-    keywords: [ "animal", "love", "like", "affection", "cats", "valentines", "heart" ],
-    "char": "\ud83d\ude3b",
+    keywords: ['animal', 'love', 'like', 'affection', 'cats', 'valentines', 'heart'],
+    char: '\ud83d\ude3b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   smirk_cat: {
-    keywords: [ "animal", "cats", "smirk" ],
-    "char": "\ud83d\ude3c",
+    keywords: ['animal', 'cats', 'smirk'],
+    char: '\ud83d\ude3c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kissing_cat: {
-    keywords: [ "animal", "cats", "kiss" ],
-    "char": "\ud83d\ude3d",
+    keywords: ['animal', 'cats', 'kiss'],
+    char: '\ud83d\ude3d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   scream_cat: {
-    keywords: [ "animal", "cats", "munch", "scared", "scream" ],
-    "char": "\ud83d\ude40",
+    keywords: ['animal', 'cats', 'munch', 'scared', 'scream'],
+    char: '\ud83d\ude40',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   crying_cat_face: {
-    keywords: [ "animal", "tears", "weep", "sad", "cats", "upset", "cry" ],
-    "char": "\ud83d\ude3f",
+    keywords: ['animal', 'tears', 'weep', 'sad', 'cats', 'upset', 'cry'],
+    char: '\ud83d\ude3f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   pouting_cat: {
-    keywords: [ "animal", "cats" ],
-    "char": "\ud83d\ude3e",
+    keywords: ['animal', 'cats'],
+    char: '\ud83d\ude3e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   palms_up: {
-    keywords: [ "hands", "gesture", "cupped", "prayer" ],
-    "char": "\ud83e\udd32",
+    keywords: ['hands', 'gesture', 'cupped', 'prayer'],
+    char: '\ud83e\udd32',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   raised_hands: {
-    keywords: [ "gesture", "hooray", "yea", "celebration", "hands" ],
-    "char": "\ud83d\ude4c",
+    keywords: ['gesture', 'hooray', 'yea', 'celebration', 'hands'],
+    char: '\ud83d\ude4c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   clap: {
-    keywords: [ "hands", "praise", "applause", "congrats", "yay" ],
-    "char": "\ud83d\udc4f",
+    keywords: ['hands', 'praise', 'applause', 'congrats', 'yay'],
+    char: '\ud83d\udc4f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   wave: {
-    keywords: [ "hands", "gesture", "goodbye", "solong", "farewell", "hello", "hi", "palm" ],
-    "char": "\ud83d\udc4b",
+    keywords: ['hands', 'gesture', 'goodbye', 'solong', 'farewell', 'hello', 'hi', 'palm'],
+    char: '\ud83d\udc4b',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   call_me_hand: {
-    keywords: [ "hands", "gesture" ],
-    "char": "\ud83e\udd19",
+    keywords: ['hands', 'gesture'],
+    char: '\ud83e\udd19',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
-  "+1": {
-    keywords: [ "thumbsup", "yes", "awesome", "good", "agree", "accept", "cool", "hand", "like" ],
-    "char": "\ud83d\udc4d",
+  '+1': {
+    keywords: ['thumbsup', 'yes', 'awesome', 'good', 'agree', 'accept', 'cool', 'hand', 'like'],
+    char: '\ud83d\udc4d',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
-  "-1": {
-    keywords: [ "thumbsdown", "no", "dislike", "hand" ],
-    "char": "\ud83d\udc4e",
+  '-1': {
+    keywords: ['thumbsdown', 'no', 'dislike', 'hand'],
+    char: '\ud83d\udc4e',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   facepunch: {
-    keywords: [ "angry", "violence", "fist", "hit", "attack", "hand" ],
-    "char": "\ud83d\udc4a",
+    keywords: ['angry', 'violence', 'fist', 'hit', 'attack', 'hand'],
+    char: '\ud83d\udc4a',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   fist: {
-    keywords: [ "fingers", "hand", "grasp" ],
-    "char": "\u270a",
+    keywords: ['fingers', 'hand', 'grasp'],
+    char: '\u270a',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   fist_left: {
-    keywords: [ "hand", "fistbump" ],
-    "char": "\ud83e\udd1b",
+    keywords: ['hand', 'fistbump'],
+    char: '\ud83e\udd1b',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   fist_right: {
-    keywords: [ "hand", "fistbump" ],
-    "char": "\ud83e\udd1c",
+    keywords: ['hand', 'fistbump'],
+    char: '\ud83e\udd1c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   v: {
-    keywords: [ "fingers", "ohyeah", "hand", "peace", "victory", "two" ],
-    "char": "\u270c",
+    keywords: ['fingers', 'ohyeah', 'hand', 'peace', 'victory', 'two'],
+    char: '\u270c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   ok_hand: {
-    keywords: [ "fingers", "limbs", "perfect", "ok", "okay" ],
-    "char": "\ud83d\udc4c",
+    keywords: ['fingers', 'limbs', 'perfect', 'ok', 'okay'],
+    char: '\ud83d\udc4c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   raised_hand: {
-    keywords: [ "fingers", "stop", "highfive", "palm", "ban" ],
-    "char": "\u270b",
+    keywords: ['fingers', 'stop', 'highfive', 'palm', 'ban'],
+    char: '\u270b',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   raised_back_of_hand: {
-    keywords: [ "fingers", "raised", "backhand" ],
-    "char": "\ud83e\udd1a",
+    keywords: ['fingers', 'raised', 'backhand'],
+    char: '\ud83e\udd1a',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   open_hands: {
-    keywords: [ "fingers", "butterfly", "hands", "open" ],
-    "char": "\ud83d\udc50",
+    keywords: ['fingers', 'butterfly', 'hands', 'open'],
+    char: '\ud83d\udc50',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   muscle: {
-    keywords: [ "arm", "flex", "hand", "summer", "strong", "biceps" ],
-    "char": "\ud83d\udcaa",
+    keywords: ['arm', 'flex', 'hand', 'summer', 'strong', 'biceps'],
+    char: '\ud83d\udcaa',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   pray: {
-    keywords: [ "please", "hope", "wish", "namaste", "highfive" ],
-    "char": "\ud83d\ude4f",
+    keywords: ['please', 'hope', 'wish', 'namaste', 'highfive'],
+    char: '\ud83d\ude4f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   foot: {
-    keywords: [ "kick", "stomp" ],
-    "char": "\ud83e\uddb6",
+    keywords: ['kick', 'stomp'],
+    char: '\ud83e\uddb6',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   leg: {
-    keywords: [ "kick", "limb" ],
-    "char": "\ud83e\uddb5",
+    keywords: ['kick', 'limb'],
+    char: '\ud83e\uddb5',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   handshake: {
-    keywords: [ "agreement", "shake" ],
-    "char": "\ud83e\udd1d",
+    keywords: ['agreement', 'shake'],
+    char: '\ud83e\udd1d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   point_up: {
-    keywords: [ "hand", "fingers", "direction", "up" ],
-    "char": "\u261d",
+    keywords: ['hand', 'fingers', 'direction', 'up'],
+    char: '\u261d',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   point_up_2: {
-    keywords: [ "fingers", "hand", "direction", "up" ],
-    "char": "\ud83d\udc46",
+    keywords: ['fingers', 'hand', 'direction', 'up'],
+    char: '\ud83d\udc46',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   point_down: {
-    keywords: [ "fingers", "hand", "direction", "down" ],
-    "char": "\ud83d\udc47",
+    keywords: ['fingers', 'hand', 'direction', 'down'],
+    char: '\ud83d\udc47',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   point_left: {
-    keywords: [ "direction", "fingers", "hand", "left" ],
-    "char": "\ud83d\udc48",
+    keywords: ['direction', 'fingers', 'hand', 'left'],
+    char: '\ud83d\udc48',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   point_right: {
-    keywords: [ "fingers", "hand", "direction", "right" ],
-    "char": "\ud83d\udc49",
+    keywords: ['fingers', 'hand', 'direction', 'right'],
+    char: '\ud83d\udc49',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   fu: {
-    keywords: [ "hand", "fingers", "rude", "middle", "flipping" ],
-    "char": "\ud83d\udd95",
+    keywords: ['hand', 'fingers', 'rude', 'middle', 'flipping'],
+    char: '\ud83d\udd95',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   raised_hand_with_fingers_splayed: {
-    keywords: [ "hand", "fingers", "palm" ],
-    "char": "\ud83d\udd90",
+    keywords: ['hand', 'fingers', 'palm'],
+    char: '\ud83d\udd90',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   love_you: {
-    keywords: [ "hand", "fingers", "gesture" ],
-    "char": "\ud83e\udd1f",
+    keywords: ['hand', 'fingers', 'gesture'],
+    char: '\ud83e\udd1f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   metal: {
-    keywords: [ "hand", "fingers", "evil_eye", "sign_of_horns", "rock_on" ],
-    "char": "\ud83e\udd18",
+    keywords: ['hand', 'fingers', 'evil_eye', 'sign_of_horns', 'rock_on'],
+    char: '\ud83e\udd18',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   crossed_fingers: {
-    keywords: [ "good", "lucky" ],
-    "char": "\ud83e\udd1e",
+    keywords: ['good', 'lucky'],
+    char: '\ud83e\udd1e',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   vulcan_salute: {
-    keywords: [ "hand", "fingers", "spock", "star trek" ],
-    "char": "\ud83d\udd96",
+    keywords: ['hand', 'fingers', 'spock', 'star trek'],
+    char: '\ud83d\udd96',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   writing_hand: {
-    keywords: [ "lower_left_ballpoint_pen", "stationery", "write", "compose" ],
-    "char": "\u270d",
+    keywords: ['lower_left_ballpoint_pen', 'stationery', 'write', 'compose'],
+    char: '\u270d',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   selfie: {
-    keywords: [ "camera", "phone" ],
-    "char": "\ud83e\udd33",
+    keywords: ['camera', 'phone'],
+    char: '\ud83e\udd33',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   nail_care: {
-    keywords: [ "beauty", "manicure", "finger", "fashion", "nail" ],
-    "char": "\ud83d\udc85",
+    keywords: ['beauty', 'manicure', 'finger', 'fashion', 'nail'],
+    char: '\ud83d\udc85',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   lips: {
-    keywords: [ "mouth", "kiss" ],
-    "char": "\ud83d\udc44",
+    keywords: ['mouth', 'kiss'],
+    char: '\ud83d\udc44',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   tooth: {
-    keywords: [ "teeth", "dentist" ],
-    "char": "\ud83e\uddb7",
+    keywords: ['teeth', 'dentist'],
+    char: '\ud83e\uddb7',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   tongue: {
-    keywords: [ "mouth", "playful" ],
-    "char": "\ud83d\udc45",
+    keywords: ['mouth', 'playful'],
+    char: '\ud83d\udc45',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   ear: {
-    keywords: [ "face", "hear", "sound", "listen" ],
-    "char": "\ud83d\udc42",
+    keywords: ['face', 'hear', 'sound', 'listen'],
+    char: '\ud83d\udc42',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   nose: {
-    keywords: [ "smell", "sniff" ],
-    "char": "\ud83d\udc43",
+    keywords: ['smell', 'sniff'],
+    char: '\ud83d\udc43',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   eye: {
-    keywords: [ "face", "look", "see", "watch", "stare" ],
-    "char": "\ud83d\udc41",
+    keywords: ['face', 'look', 'see', 'watch', 'stare'],
+    char: '\ud83d\udc41',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   eyes: {
-    keywords: [ "look", "watch", "stalk", "peek", "see" ],
-    "char": "\ud83d\udc40",
+    keywords: ['look', 'watch', 'stalk', 'peek', 'see'],
+    char: '\ud83d\udc40',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   brain: {
-    keywords: [ "smart", "intelligent" ],
-    "char": "\ud83e\udde0",
+    keywords: ['smart', 'intelligent'],
+    char: '\ud83e\udde0',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   bust_in_silhouette: {
-    keywords: [ "user", "person", "human" ],
-    "char": "\ud83d\udc64",
+    keywords: ['user', 'person', 'human'],
+    char: '\ud83d\udc64',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   busts_in_silhouette: {
-    keywords: [ "user", "person", "human", "group", "team" ],
-    "char": "\ud83d\udc65",
+    keywords: ['user', 'person', 'human', 'group', 'team'],
+    char: '\ud83d\udc65',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   speaking_head: {
-    keywords: [ "user", "person", "human", "sing", "say", "talk" ],
-    "char": "\ud83d\udde3",
+    keywords: ['user', 'person', 'human', 'sing', 'say', 'talk'],
+    char: '\ud83d\udde3',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   baby: {
-    keywords: [ "child", "boy", "girl", "toddler" ],
-    "char": "\ud83d\udc76",
+    keywords: ['child', 'boy', 'girl', 'toddler'],
+    char: '\ud83d\udc76',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   child: {
-    keywords: [ "gender-neutral", "young" ],
-    "char": "\ud83e\uddd2",
+    keywords: ['gender-neutral', 'young'],
+    char: '\ud83e\uddd2',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   boy: {
-    keywords: [ "man", "male", "guy", "teenager" ],
-    "char": "\ud83d\udc66",
+    keywords: ['man', 'male', 'guy', 'teenager'],
+    char: '\ud83d\udc66',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   girl: {
-    keywords: [ "female", "woman", "teenager" ],
-    "char": "\ud83d\udc67",
+    keywords: ['female', 'woman', 'teenager'],
+    char: '\ud83d\udc67',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   adult: {
-    keywords: [ "gender-neutral", "person" ],
-    "char": "\ud83e\uddd1",
+    keywords: ['gender-neutral', 'person'],
+    char: '\ud83e\uddd1',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man: {
-    keywords: [ "mustache", "father", "dad", "guy", "classy", "sir", "moustache" ],
-    "char": "\ud83d\udc68",
+    keywords: ['mustache', 'father', 'dad', 'guy', 'classy', 'sir', 'moustache'],
+    char: '\ud83d\udc68',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman: {
-    keywords: [ "female", "girls", "lady" ],
-    "char": "\ud83d\udc69",
+    keywords: ['female', 'girls', 'lady'],
+    char: '\ud83d\udc69',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   blonde_woman: {
-    keywords: [ "woman", "female", "girl", "blonde", "person" ],
-    "char": "\ud83d\udc71\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'girl', 'blonde', 'person'],
+    char: '\ud83d\udc71\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   blonde_man: {
-    keywords: [ "man", "male", "boy", "blonde", "guy", "person" ],
-    "char": "\ud83d\udc71",
+    keywords: ['man', 'male', 'boy', 'blonde', 'guy', 'person'],
+    char: '\ud83d\udc71',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   bearded_person: {
-    keywords: [ "person", "bewhiskered" ],
-    "char": "\ud83e\uddd4",
+    keywords: ['person', 'bewhiskered'],
+    char: '\ud83e\uddd4',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   older_adult: {
-    keywords: [ "human", "elder", "senior", "gender-neutral" ],
-    "char": "\ud83e\uddd3",
+    keywords: ['human', 'elder', 'senior', 'gender-neutral'],
+    char: '\ud83e\uddd3',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   older_man: {
-    keywords: [ "human", "male", "men", "old", "elder", "senior" ],
-    "char": "\ud83d\udc74",
+    keywords: ['human', 'male', 'men', 'old', 'elder', 'senior'],
+    char: '\ud83d\udc74',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   older_woman: {
-    keywords: [ "human", "female", "women", "lady", "old", "elder", "senior" ],
-    "char": "\ud83d\udc75",
+    keywords: ['human', 'female', 'women', 'lady', 'old', 'elder', 'senior'],
+    char: '\ud83d\udc75',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_with_gua_pi_mao: {
-    keywords: [ "male", "boy", "chinese" ],
-    "char": "\ud83d\udc72",
+    keywords: ['male', 'boy', 'chinese'],
+    char: '\ud83d\udc72',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_with_headscarf: {
-    keywords: [ "female", "hijab", "mantilla", "tichel" ],
-    "char": "\ud83e\uddd5",
+    keywords: ['female', 'hijab', 'mantilla', 'tichel'],
+    char: '\ud83e\uddd5',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_with_turban: {
-    keywords: [ "female", "indian", "hinduism", "arabs", "woman" ],
-    "char": "\ud83d\udc73\u200d\u2640\ufe0f",
+    keywords: ['female', 'indian', 'hinduism', 'arabs', 'woman'],
+    char: '\ud83d\udc73\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_with_turban: {
-    keywords: [ "male", "indian", "hinduism", "arabs" ],
-    "char": "\ud83d\udc73",
+    keywords: ['male', 'indian', 'hinduism', 'arabs'],
+    char: '\ud83d\udc73',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   policewoman: {
-    keywords: [ "woman", "police", "law", "legal", "enforcement", "arrest", "911", "female" ],
-    "char": "\ud83d\udc6e\u200d\u2640\ufe0f",
+    keywords: ['woman', 'police', 'law', 'legal', 'enforcement', 'arrest', '911', 'female'],
+    char: '\ud83d\udc6e\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   policeman: {
-    keywords: [ "man", "police", "law", "legal", "enforcement", "arrest", "911" ],
-    "char": "\ud83d\udc6e",
+    keywords: ['man', 'police', 'law', 'legal', 'enforcement', 'arrest', '911'],
+    char: '\ud83d\udc6e',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   construction_worker_woman: {
-    keywords: [ "female", "human", "wip", "build", "construction", "worker", "labor", "woman" ],
-    "char": "\ud83d\udc77\u200d\u2640\ufe0f",
+    keywords: ['female', 'human', 'wip', 'build', 'construction', 'worker', 'labor', 'woman'],
+    char: '\ud83d\udc77\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   construction_worker_man: {
-    keywords: [ "male", "human", "wip", "guy", "build", "construction", "worker", "labor" ],
-    "char": "\ud83d\udc77",
+    keywords: ['male', 'human', 'wip', 'guy', 'build', 'construction', 'worker', 'labor'],
+    char: '\ud83d\udc77',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   guardswoman: {
-    keywords: [ "uk", "gb", "british", "female", "royal", "woman" ],
-    "char": "\ud83d\udc82\u200d\u2640\ufe0f",
+    keywords: ['uk', 'gb', 'british', 'female', 'royal', 'woman'],
+    char: '\ud83d\udc82\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   guardsman: {
-    keywords: [ "uk", "gb", "british", "male", "guy", "royal" ],
-    "char": "\ud83d\udc82",
+    keywords: ['uk', 'gb', 'british', 'male', 'guy', 'royal'],
+    char: '\ud83d\udc82',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   female_detective: {
-    keywords: [ "human", "spy", "detective", "female", "woman" ],
-    "char": "\ud83d\udd75\ufe0f\u200d\u2640\ufe0f",
+    keywords: ['human', 'spy', 'detective', 'female', 'woman'],
+    char: '\ud83d\udd75\ufe0f\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   male_detective: {
-    keywords: [ "human", "spy", "detective" ],
-    "char": "\ud83d\udd75",
+    keywords: ['human', 'spy', 'detective'],
+    char: '\ud83d\udd75',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_health_worker: {
-    keywords: [ "doctor", "nurse", "therapist", "healthcare", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\u2695\ufe0f",
+    keywords: ['doctor', 'nurse', 'therapist', 'healthcare', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\u2695\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_health_worker: {
-    keywords: [ "doctor", "nurse", "therapist", "healthcare", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\u2695\ufe0f",
+    keywords: ['doctor', 'nurse', 'therapist', 'healthcare', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\u2695\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_farmer: {
-    keywords: [ "rancher", "gardener", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udf3e",
+    keywords: ['rancher', 'gardener', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udf3e',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_farmer: {
-    keywords: [ "rancher", "gardener", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udf3e",
+    keywords: ['rancher', 'gardener', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udf3e',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_cook: {
-    keywords: [ "chef", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udf73",
+    keywords: ['chef', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udf73',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_cook: {
-    keywords: [ "chef", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udf73",
+    keywords: ['chef', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udf73',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_student: {
-    keywords: [ "graduate", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udf93",
+    keywords: ['graduate', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udf93',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_student: {
-    keywords: [ "graduate", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udf93",
+    keywords: ['graduate', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udf93',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_singer: {
-    keywords: [ "rockstar", "entertainer", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udfa4",
+    keywords: ['rockstar', 'entertainer', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udfa4',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_singer: {
-    keywords: [ "rockstar", "entertainer", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udfa4",
+    keywords: ['rockstar', 'entertainer', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udfa4',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_teacher: {
-    keywords: [ "instructor", "professor", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udfeb",
+    keywords: ['instructor', 'professor', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udfeb',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_teacher: {
-    keywords: [ "instructor", "professor", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udfeb",
+    keywords: ['instructor', 'professor', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udfeb',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_factory_worker: {
-    keywords: [ "assembly", "industrial", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udfed",
+    keywords: ['assembly', 'industrial', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udfed',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_factory_worker: {
-    keywords: [ "assembly", "industrial", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udfed",
+    keywords: ['assembly', 'industrial', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udfed',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_technologist: {
-    keywords: [ "coder", "developer", "engineer", "programmer", "software", "woman", "human", "laptop", "computer" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udcbb",
+    keywords: ['coder', 'developer', 'engineer', 'programmer', 'software', 'woman', 'human', 'laptop', 'computer'],
+    char: '\ud83d\udc69\u200d\ud83d\udcbb',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_technologist: {
-    keywords: [ "coder", "developer", "engineer", "programmer", "software", "man", "human", "laptop", "computer" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udcbb",
+    keywords: ['coder', 'developer', 'engineer', 'programmer', 'software', 'man', 'human', 'laptop', 'computer'],
+    char: '\ud83d\udc68\u200d\ud83d\udcbb',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_office_worker: {
-    keywords: [ "business", "manager", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udcbc",
+    keywords: ['business', 'manager', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83d\udcbc',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_office_worker: {
-    keywords: [ "business", "manager", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udcbc",
+    keywords: ['business', 'manager', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83d\udcbc',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_mechanic: {
-    keywords: [ "plumber", "woman", "human", "wrench" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udd27",
+    keywords: ['plumber', 'woman', 'human', 'wrench'],
+    char: '\ud83d\udc69\u200d\ud83d\udd27',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_mechanic: {
-    keywords: [ "plumber", "man", "human", "wrench" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udd27",
+    keywords: ['plumber', 'man', 'human', 'wrench'],
+    char: '\ud83d\udc68\u200d\ud83d\udd27',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_scientist: {
-    keywords: [ "biologist", "chemist", "engineer", "physicist", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udd2c",
+    keywords: ['biologist', 'chemist', 'engineer', 'physicist', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83d\udd2c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_scientist: {
-    keywords: [ "biologist", "chemist", "engineer", "physicist", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udd2c",
+    keywords: ['biologist', 'chemist', 'engineer', 'physicist', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83d\udd2c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_artist: {
-    keywords: [ "painter", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83c\udfa8",
+    keywords: ['painter', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83c\udfa8',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_artist: {
-    keywords: [ "painter", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83c\udfa8",
+    keywords: ['painter', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83c\udfa8',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_firefighter: {
-    keywords: [ "fireman", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83d\ude92",
+    keywords: ['fireman', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83d\ude92',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_firefighter: {
-    keywords: [ "fireman", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83d\ude92",
+    keywords: ['fireman', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83d\ude92',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_pilot: {
-    keywords: [ "aviator", "plane", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\u2708\ufe0f",
+    keywords: ['aviator', 'plane', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\u2708\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_pilot: {
-    keywords: [ "aviator", "plane", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\u2708\ufe0f",
+    keywords: ['aviator', 'plane', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\u2708\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_astronaut: {
-    keywords: [ "space", "rocket", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\ud83d\ude80",
+    keywords: ['space', 'rocket', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\ud83d\ude80',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_astronaut: {
-    keywords: [ "space", "rocket", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\ud83d\ude80",
+    keywords: ['space', 'rocket', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\ud83d\ude80',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_judge: {
-    keywords: [ "justice", "court", "woman", "human" ],
-    "char": "\ud83d\udc69\u200d\u2696\ufe0f",
+    keywords: ['justice', 'court', 'woman', 'human'],
+    char: '\ud83d\udc69\u200d\u2696\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_judge: {
-    keywords: [ "justice", "court", "man", "human" ],
-    "char": "\ud83d\udc68\u200d\u2696\ufe0f",
+    keywords: ['justice', 'court', 'man', 'human'],
+    char: '\ud83d\udc68\u200d\u2696\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_superhero: {
-    keywords: [ "woman", "female", "good", "heroine", "superpowers" ],
-    "char": "\ud83e\uddb8\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'good', 'heroine', 'superpowers'],
+    char: '\ud83e\uddb8\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_superhero: {
-    keywords: [ "man", "male", "good", "hero", "superpowers" ],
-    "char": "\ud83e\uddb8\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'good', 'hero', 'superpowers'],
+    char: '\ud83e\uddb8\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_supervillain: {
-    keywords: [ "woman", "female", "evil", "bad", "criminal", "heroine", "superpowers" ],
-    "char": "\ud83e\uddb9\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'evil', 'bad', 'criminal', 'heroine', 'superpowers'],
+    char: '\ud83e\uddb9\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_supervillain: {
-    keywords: [ "man", "male", "evil", "bad", "criminal", "hero", "superpowers" ],
-    "char": "\ud83e\uddb9\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'evil', 'bad', 'criminal', 'hero', 'superpowers'],
+    char: '\ud83e\uddb9\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   mrs_claus: {
-    keywords: [ "woman", "female", "xmas", "mother christmas" ],
-    "char": "\ud83e\udd36",
+    keywords: ['woman', 'female', 'xmas', 'mother christmas'],
+    char: '\ud83e\udd36',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   santa: {
-    keywords: [ "festival", "man", "male", "xmas", "father christmas" ],
-    "char": "\ud83c\udf85",
+    keywords: ['festival', 'man', 'male', 'xmas', 'father christmas'],
+    char: '\ud83c\udf85',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   sorceress: {
-    keywords: [ "woman", "female", "mage", "witch" ],
-    "char": "\ud83e\uddd9\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'mage', 'witch'],
+    char: '\ud83e\uddd9\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   wizard: {
-    keywords: [ "man", "male", "mage", "sorcerer" ],
-    "char": "\ud83e\uddd9\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'mage', 'sorcerer'],
+    char: '\ud83e\uddd9\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_elf: {
-    keywords: [ "woman", "female" ],
-    "char": "\ud83e\udddd\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female'],
+    char: '\ud83e\udddd\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_elf: {
-    keywords: [ "man", "male" ],
-    "char": "\ud83e\udddd\u200d\u2642\ufe0f",
+    keywords: ['man', 'male'],
+    char: '\ud83e\udddd\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_vampire: {
-    keywords: [ "woman", "female" ],
-    "char": "\ud83e\udddb\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female'],
+    char: '\ud83e\udddb\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_vampire: {
-    keywords: [ "man", "male", "dracula" ],
-    "char": "\ud83e\udddb\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'dracula'],
+    char: '\ud83e\udddb\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_zombie: {
-    keywords: [ "woman", "female", "undead", "walking dead" ],
-    "char": "\ud83e\udddf\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'undead', 'walking dead'],
+    char: '\ud83e\udddf\u200d\u2640\ufe0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   man_zombie: {
-    keywords: [ "man", "male", "dracula", "undead", "walking dead" ],
-    "char": "\ud83e\udddf\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'dracula', 'undead', 'walking dead'],
+    char: '\ud83e\udddf\u200d\u2642\ufe0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   woman_genie: {
-    keywords: [ "woman", "female" ],
-    "char": "\ud83e\uddde\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female'],
+    char: '\ud83e\uddde\u200d\u2640\ufe0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   man_genie: {
-    keywords: [ "man", "male" ],
-    "char": "\ud83e\uddde\u200d\u2642\ufe0f",
+    keywords: ['man', 'male'],
+    char: '\ud83e\uddde\u200d\u2642\ufe0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   mermaid: {
-    keywords: [ "woman", "female", "merwoman", "ariel" ],
-    "char": "\ud83e\udddc\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'merwoman', 'ariel'],
+    char: '\ud83e\udddc\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   merman: {
-    keywords: [ "man", "male", "triton" ],
-    "char": "\ud83e\udddc\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'triton'],
+    char: '\ud83e\udddc\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_fairy: {
-    keywords: [ "woman", "female" ],
-    "char": "\ud83e\uddda\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female'],
+    char: '\ud83e\uddda\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_fairy: {
-    keywords: [ "man", "male" ],
-    "char": "\ud83e\uddda\u200d\u2642\ufe0f",
+    keywords: ['man', 'male'],
+    char: '\ud83e\uddda\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   angel: {
-    keywords: [ "heaven", "wings", "halo" ],
-    "char": "\ud83d\udc7c",
+    keywords: ['heaven', 'wings', 'halo'],
+    char: '\ud83d\udc7c',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   pregnant_woman: {
-    keywords: [ "baby" ],
-    "char": "\ud83e\udd30",
+    keywords: ['baby'],
+    char: '\ud83e\udd30',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   breastfeeding: {
-    keywords: [ "nursing", "baby" ],
-    "char": "\ud83e\udd31",
+    keywords: ['nursing', 'baby'],
+    char: '\ud83e\udd31',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   princess: {
-    keywords: [ "girl", "woman", "female", "blond", "crown", "royal", "queen" ],
-    "char": "\ud83d\udc78",
+    keywords: ['girl', 'woman', 'female', 'blond', 'crown', 'royal', 'queen'],
+    char: '\ud83d\udc78',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   prince: {
-    keywords: [ "boy", "man", "male", "crown", "royal", "king" ],
-    "char": "\ud83e\udd34",
+    keywords: ['boy', 'man', 'male', 'crown', 'royal', 'king'],
+    char: '\ud83e\udd34',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   bride_with_veil: {
-    keywords: [ "couple", "marriage", "wedding", "woman", "bride" ],
-    "char": "\ud83d\udc70",
+    keywords: ['couple', 'marriage', 'wedding', 'woman', 'bride'],
+    char: '\ud83d\udc70',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_in_tuxedo: {
-    keywords: [ "couple", "marriage", "wedding", "groom" ],
-    "char": "\ud83e\udd35",
+    keywords: ['couple', 'marriage', 'wedding', 'groom'],
+    char: '\ud83e\udd35',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   running_woman: {
-    keywords: [ "woman", "walking", "exercise", "race", "running", "female" ],
-    "char": "\ud83c\udfc3\u200d\u2640\ufe0f",
+    keywords: ['woman', 'walking', 'exercise', 'race', 'running', 'female'],
+    char: '\ud83c\udfc3\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   running_man: {
-    keywords: [ "man", "walking", "exercise", "race", "running" ],
-    "char": "\ud83c\udfc3",
+    keywords: ['man', 'walking', 'exercise', 'race', 'running'],
+    char: '\ud83c\udfc3',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   walking_woman: {
-    keywords: [ "human", "feet", "steps", "woman", "female" ],
-    "char": "\ud83d\udeb6\u200d\u2640\ufe0f",
+    keywords: ['human', 'feet', 'steps', 'woman', 'female'],
+    char: '\ud83d\udeb6\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   walking_man: {
-    keywords: [ "human", "feet", "steps" ],
-    "char": "\ud83d\udeb6",
+    keywords: ['human', 'feet', 'steps'],
+    char: '\ud83d\udeb6',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   dancer: {
-    keywords: [ "female", "girl", "woman", "fun" ],
-    "char": "\ud83d\udc83",
+    keywords: ['female', 'girl', 'woman', 'fun'],
+    char: '\ud83d\udc83',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_dancing: {
-    keywords: [ "male", "boy", "fun", "dancer" ],
-    "char": "\ud83d\udd7a",
+    keywords: ['male', 'boy', 'fun', 'dancer'],
+    char: '\ud83d\udd7a',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   dancing_women: {
-    keywords: [ "female", "bunny", "women", "girls" ],
-    "char": "\ud83d\udc6f",
+    keywords: ['female', 'bunny', 'women', 'girls'],
+    char: '\ud83d\udc6f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   dancing_men: {
-    keywords: [ "male", "bunny", "men", "boys" ],
-    "char": "\ud83d\udc6f\u200d\u2642\ufe0f",
+    keywords: ['male', 'bunny', 'men', 'boys'],
+    char: '\ud83d\udc6f\u200d\u2642\ufe0f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   couple: {
-    keywords: [ "pair", "people", "human", "love", "date", "dating", "like", "affection", "valentines", "marriage" ],
-    "char": "\ud83d\udc6b",
+    keywords: ['pair', 'people', 'human', 'love', 'date', 'dating', 'like', 'affection', 'valentines', 'marriage'],
+    char: '\ud83d\udc6b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   two_men_holding_hands: {
-    keywords: [ "pair", "couple", "love", "like", "bromance", "friendship", "people", "human" ],
-    "char": "\ud83d\udc6c",
+    keywords: ['pair', 'couple', 'love', 'like', 'bromance', 'friendship', 'people', 'human'],
+    char: '\ud83d\udc6c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   two_women_holding_hands: {
-    keywords: [ "pair", "friendship", "couple", "love", "like", "female", "people", "human" ],
-    "char": "\ud83d\udc6d",
+    keywords: ['pair', 'friendship', 'couple', 'love', 'like', 'female', 'people', 'human'],
+    char: '\ud83d\udc6d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   bowing_woman: {
-    keywords: [ "woman", "female", "girl" ],
-    "char": "\ud83d\ude47\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'girl'],
+    char: '\ud83d\ude47\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   bowing_man: {
-    keywords: [ "man", "male", "boy" ],
-    "char": "\ud83d\ude47",
+    keywords: ['man', 'male', 'boy'],
+    char: '\ud83d\ude47',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_facepalming: {
-    keywords: [ "man", "male", "boy", "disbelief" ],
-    "char": "\ud83e\udd26\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'boy', 'disbelief'],
+    char: '\ud83e\udd26\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_facepalming: {
-    keywords: [ "woman", "female", "girl", "disbelief" ],
-    "char": "\ud83e\udd26\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'girl', 'disbelief'],
+    char: '\ud83e\udd26\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_shrugging: {
-    keywords: [ "woman", "female", "girl", "confused", "indifferent", "doubt" ],
-    "char": "\ud83e\udd37",
+    keywords: ['woman', 'female', 'girl', 'confused', 'indifferent', 'doubt'],
+    char: '\ud83e\udd37',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_shrugging: {
-    keywords: [ "man", "male", "boy", "confused", "indifferent", "doubt" ],
-    "char": "\ud83e\udd37\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'boy', 'confused', 'indifferent', 'doubt'],
+    char: '\ud83e\udd37\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   tipping_hand_woman: {
-    keywords: [ "female", "girl", "woman", "human", "information" ],
-    "char": "\ud83d\udc81",
+    keywords: ['female', 'girl', 'woman', 'human', 'information'],
+    char: '\ud83d\udc81',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   tipping_hand_man: {
-    keywords: [ "male", "boy", "man", "human", "information" ],
-    "char": "\ud83d\udc81\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man', 'human', 'information'],
+    char: '\ud83d\udc81\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   no_good_woman: {
-    keywords: [ "female", "girl", "woman", "nope" ],
-    "char": "\ud83d\ude45",
+    keywords: ['female', 'girl', 'woman', 'nope'],
+    char: '\ud83d\ude45',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   no_good_man: {
-    keywords: [ "male", "boy", "man", "nope" ],
-    "char": "\ud83d\ude45\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man', 'nope'],
+    char: '\ud83d\ude45\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   ok_woman: {
-    keywords: [ "women", "girl", "female", "pink", "human", "woman" ],
-    "char": "\ud83d\ude46",
+    keywords: ['women', 'girl', 'female', 'pink', 'human', 'woman'],
+    char: '\ud83d\ude46',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   ok_man: {
-    keywords: [ "men", "boy", "male", "blue", "human", "man" ],
-    "char": "\ud83d\ude46\u200d\u2642\ufe0f",
+    keywords: ['men', 'boy', 'male', 'blue', 'human', 'man'],
+    char: '\ud83d\ude46\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   raising_hand_woman: {
-    keywords: [ "female", "girl", "woman" ],
-    "char": "\ud83d\ude4b",
+    keywords: ['female', 'girl', 'woman'],
+    char: '\ud83d\ude4b',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   raising_hand_man: {
-    keywords: [ "male", "boy", "man" ],
-    "char": "\ud83d\ude4b\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man'],
+    char: '\ud83d\ude4b\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   pouting_woman: {
-    keywords: [ "female", "girl", "woman" ],
-    "char": "\ud83d\ude4e",
+    keywords: ['female', 'girl', 'woman'],
+    char: '\ud83d\ude4e',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   pouting_man: {
-    keywords: [ "male", "boy", "man" ],
-    "char": "\ud83d\ude4e\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man'],
+    char: '\ud83d\ude4e\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   frowning_woman: {
-    keywords: [ "female", "girl", "woman", "sad", "depressed", "discouraged", "unhappy" ],
-    "char": "\ud83d\ude4d",
+    keywords: ['female', 'girl', 'woman', 'sad', 'depressed', 'discouraged', 'unhappy'],
+    char: '\ud83d\ude4d',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   frowning_man: {
-    keywords: [ "male", "boy", "man", "sad", "depressed", "discouraged", "unhappy" ],
-    "char": "\ud83d\ude4d\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man', 'sad', 'depressed', 'discouraged', 'unhappy'],
+    char: '\ud83d\ude4d\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   haircut_woman: {
-    keywords: [ "female", "girl", "woman" ],
-    "char": "\ud83d\udc87",
+    keywords: ['female', 'girl', 'woman'],
+    char: '\ud83d\udc87',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   haircut_man: {
-    keywords: [ "male", "boy", "man" ],
-    "char": "\ud83d\udc87\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man'],
+    char: '\ud83d\udc87\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   massage_woman: {
-    keywords: [ "female", "girl", "woman", "head" ],
-    "char": "\ud83d\udc86",
+    keywords: ['female', 'girl', 'woman', 'head'],
+    char: '\ud83d\udc86',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   massage_man: {
-    keywords: [ "male", "boy", "man", "head" ],
-    "char": "\ud83d\udc86\u200d\u2642\ufe0f",
+    keywords: ['male', 'boy', 'man', 'head'],
+    char: '\ud83d\udc86\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   woman_in_steamy_room: {
-    keywords: [ "female", "woman", "spa", "steamroom", "sauna" ],
-    "char": "\ud83e\uddd6\u200d\u2640\ufe0f",
+    keywords: ['female', 'woman', 'spa', 'steamroom', 'sauna'],
+    char: '\ud83e\uddd6\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   man_in_steamy_room: {
-    keywords: [ "male", "man", "spa", "steamroom", "sauna" ],
-    "char": "\ud83e\uddd6\u200d\u2642\ufe0f",
+    keywords: ['male', 'man', 'spa', 'steamroom', 'sauna'],
+    char: '\ud83e\uddd6\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "people"
+    category: 'people'
   },
   couple_with_heart_woman_man: {
-    keywords: [ "pair", "love", "like", "affection", "human", "dating", "valentines", "marriage" ],
-    "char": "\ud83d\udc91",
+    keywords: ['pair', 'love', 'like', 'affection', 'human', 'dating', 'valentines', 'marriage'],
+    char: '\ud83d\udc91',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   couple_with_heart_woman_woman: {
-    keywords: [ "pair", "love", "like", "affection", "human", "dating", "valentines", "marriage" ],
-    "char": "\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc69",
+    keywords: ['pair', 'love', 'like', 'affection', 'human', 'dating', 'valentines', 'marriage'],
+    char: '\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc69',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   couple_with_heart_man_man: {
-    keywords: [ "pair", "love", "like", "affection", "human", "dating", "valentines", "marriage" ],
-    "char": "\ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc68",
+    keywords: ['pair', 'love', 'like', 'affection', 'human', 'dating', 'valentines', 'marriage'],
+    char: '\ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc68',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   couplekiss_man_woman: {
-    keywords: [ "pair", "valentines", "love", "like", "dating", "marriage" ],
-    "char": "\ud83d\udc8f",
+    keywords: ['pair', 'valentines', 'love', 'like', 'dating', 'marriage'],
+    char: '\ud83d\udc8f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   couplekiss_woman_woman: {
-    keywords: [ "pair", "valentines", "love", "like", "dating", "marriage" ],
-    "char": "\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc69",
+    keywords: ['pair', 'valentines', 'love', 'like', 'dating', 'marriage'],
+    char: '\ud83d\udc69\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc69',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   couplekiss_man_man: {
-    keywords: [ "pair", "valentines", "love", "like", "dating", "marriage" ],
-    "char": "\ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc68",
+    keywords: ['pair', 'valentines', 'love', 'like', 'dating', 'marriage'],
+    char: '\ud83d\udc68\u200d\u2764\ufe0f\u200d\ud83d\udc8b\u200d\ud83d\udc68',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_woman_boy: {
-    keywords: [ "home", "parents", "child", "mom", "dad", "father", "mother", "people", "human" ],
-    "char": "\ud83d\udc6a",
+    keywords: ['home', 'parents', 'child', 'mom', 'dad', 'father', 'mother', 'people', 'human'],
+    char: '\ud83d\udc6a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_woman_girl: {
-    keywords: [ "home", "parents", "people", "human", "child" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67",
+    keywords: ['home', 'parents', 'people', 'human', 'child'],
+    char: '\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_woman_girl_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_woman_boy_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_woman_girl_girl: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc67",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_woman_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_woman_girl: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_woman_girl_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_woman_boy_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_woman_girl_girl: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc67",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_man_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_man_girl: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_man_girl_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_man_boy_boy: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc66\u200d\ud83d\udc66",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc66\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_man_girl_girl: {
-    keywords: [ "home", "parents", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc67",
+    keywords: ['home', 'parents', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_boy: {
-    keywords: [ "home", "parent", "people", "human", "child" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc66",
+    keywords: ['home', 'parent', 'people', 'human', 'child'],
+    char: '\ud83d\udc69\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_girl: {
-    keywords: [ "home", "parent", "people", "human", "child" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc67",
+    keywords: ['home', 'parent', 'people', 'human', 'child'],
+    char: '\ud83d\udc69\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_girl_boy: {
-    keywords: [ "home", "parent", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    keywords: ['home', 'parent', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_boy_boy: {
-    keywords: [ "home", "parent", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66",
+    keywords: ['home', 'parent', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc66\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_woman_girl_girl: {
-    keywords: [ "home", "parent", "people", "human", "children" ],
-    "char": "\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc67",
+    keywords: ['home', 'parent', 'people', 'human', 'children'],
+    char: '\ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_boy: {
-    keywords: [ "home", "parent", "people", "human", "child" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc66",
+    keywords: ['home', 'parent', 'people', 'human', 'child'],
+    char: '\ud83d\udc68\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_girl: {
-    keywords: [ "home", "parent", "people", "human", "child" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc67",
+    keywords: ['home', 'parent', 'people', 'human', 'child'],
+    char: '\ud83d\udc68\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_girl_boy: {
-    keywords: [ "home", "parent", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc66",
+    keywords: ['home', 'parent', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_boy_boy: {
-    keywords: [ "home", "parent", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc66\u200d\ud83d\udc66",
+    keywords: ['home', 'parent', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc66\u200d\ud83d\udc66',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   family_man_girl_girl: {
-    keywords: [ "home", "parent", "people", "human", "children" ],
-    "char": "\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc67",
+    keywords: ['home', 'parent', 'people', 'human', 'children'],
+    char: '\ud83d\udc68\u200d\ud83d\udc67\u200d\ud83d\udc67',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   yarn: {
-    keywords: [ "ball", "crochet", "knit" ],
-    "char": "\ud83e\uddf6",
+    keywords: ['ball', 'crochet', 'knit'],
+    char: '\ud83e\uddf6',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   thread: {
-    keywords: [ "needle", "sewing", "spool", "string" ],
-    "char": "\ud83e\uddf5",
+    keywords: ['needle', 'sewing', 'spool', 'string'],
+    char: '\ud83e\uddf5',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   coat: {
-    keywords: [ "jacket" ],
-    "char": "\ud83e\udde5",
+    keywords: ['jacket'],
+    char: '\ud83e\udde5',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   labcoat: {
-    keywords: [ "doctor", "experiment", "scientist", "chemist" ],
-    "char": "\ud83e\udd7c",
+    keywords: ['doctor', 'experiment', 'scientist', 'chemist'],
+    char: '\ud83e\udd7c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   womans_clothes: {
-    keywords: [ "fashion", "shopping_bags", "female" ],
-    "char": "\ud83d\udc5a",
+    keywords: ['fashion', 'shopping_bags', 'female'],
+    char: '\ud83d\udc5a',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   tshirt: {
-    keywords: [ "fashion", "cloth", "casual", "shirt", "tee" ],
-    "char": "\ud83d\udc55",
+    keywords: ['fashion', 'cloth', 'casual', 'shirt', 'tee'],
+    char: '\ud83d\udc55',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   jeans: {
-    keywords: [ "fashion", "shopping" ],
-    "char": "\ud83d\udc56",
+    keywords: ['fashion', 'shopping'],
+    char: '\ud83d\udc56',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   necktie: {
-    keywords: [ "shirt", "suitup", "formal", "fashion", "cloth", "business" ],
-    "char": "\ud83d\udc54",
+    keywords: ['shirt', 'suitup', 'formal', 'fashion', 'cloth', 'business'],
+    char: '\ud83d\udc54',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   dress: {
-    keywords: [ "clothes", "fashion", "shopping" ],
-    "char": "\ud83d\udc57",
+    keywords: ['clothes', 'fashion', 'shopping'],
+    char: '\ud83d\udc57',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   bikini: {
-    keywords: [ "swimming", "female", "woman", "girl", "fashion", "beach", "summer" ],
-    "char": "\ud83d\udc59",
+    keywords: ['swimming', 'female', 'woman', 'girl', 'fashion', 'beach', 'summer'],
+    char: '\ud83d\udc59',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kimono: {
-    keywords: [ "dress", "fashion", "women", "female", "japanese" ],
-    "char": "\ud83d\udc58",
+    keywords: ['dress', 'fashion', 'women', 'female', 'japanese'],
+    char: '\ud83d\udc58',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   lipstick: {
-    keywords: [ "female", "girl", "fashion", "woman" ],
-    "char": "\ud83d\udc84",
+    keywords: ['female', 'girl', 'fashion', 'woman'],
+    char: '\ud83d\udc84',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   kiss: {
-    keywords: [ "face", "lips", "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc8b",
+    keywords: ['face', 'lips', 'love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc8b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   footprints: {
-    keywords: [ "feet", "tracking", "walking", "beach" ],
-    "char": "\ud83d\udc63",
+    keywords: ['feet', 'tracking', 'walking', 'beach'],
+    char: '\ud83d\udc63',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   flat_shoe: {
-    keywords: [ "ballet", "slip-on", "slipper" ],
-    "char": "\ud83e\udd7f",
+    keywords: ['ballet', 'slip-on', 'slipper'],
+    char: '\ud83e\udd7f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   high_heel: {
-    keywords: [ "fashion", "shoes", "female", "pumps", "stiletto" ],
-    "char": "\ud83d\udc60",
+    keywords: ['fashion', 'shoes', 'female', 'pumps', 'stiletto'],
+    char: '\ud83d\udc60',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   sandal: {
-    keywords: [ "shoes", "fashion", "flip flops" ],
-    "char": "\ud83d\udc61",
+    keywords: ['shoes', 'fashion', 'flip flops'],
+    char: '\ud83d\udc61',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   boot: {
-    keywords: [ "shoes", "fashion" ],
-    "char": "\ud83d\udc62",
+    keywords: ['shoes', 'fashion'],
+    char: '\ud83d\udc62',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   mans_shoe: {
-    keywords: [ "fashion", "male" ],
-    "char": "\ud83d\udc5e",
+    keywords: ['fashion', 'male'],
+    char: '\ud83d\udc5e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   athletic_shoe: {
-    keywords: [ "shoes", "sports", "sneakers" ],
-    "char": "\ud83d\udc5f",
+    keywords: ['shoes', 'sports', 'sneakers'],
+    char: '\ud83d\udc5f',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   hiking_boot: {
-    keywords: [ "backpacking", "camping", "hiking" ],
-    "char": "\ud83e\udd7e",
+    keywords: ['backpacking', 'camping', 'hiking'],
+    char: '\ud83e\udd7e',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   socks: {
-    keywords: [ "stockings", "clothes" ],
-    "char": "\ud83e\udde6",
+    keywords: ['stockings', 'clothes'],
+    char: '\ud83e\udde6',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   gloves: {
-    keywords: [ "hands", "winter", "clothes" ],
-    "char": "\ud83e\udde4",
+    keywords: ['hands', 'winter', 'clothes'],
+    char: '\ud83e\udde4',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   scarf: {
-    keywords: [ "neck", "winter", "clothes" ],
-    "char": "\ud83e\udde3",
+    keywords: ['neck', 'winter', 'clothes'],
+    char: '\ud83e\udde3',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   womans_hat: {
-    keywords: [ "fashion", "accessories", "female", "lady", "spring" ],
-    "char": "\ud83d\udc52",
+    keywords: ['fashion', 'accessories', 'female', 'lady', 'spring'],
+    char: '\ud83d\udc52',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   tophat: {
-    keywords: [ "magic", "gentleman", "classy", "circus" ],
-    "char": "\ud83c\udfa9",
+    keywords: ['magic', 'gentleman', 'classy', 'circus'],
+    char: '\ud83c\udfa9',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   billed_hat: {
-    keywords: [ "cap", "baseball" ],
-    "char": "\ud83e\udde2",
+    keywords: ['cap', 'baseball'],
+    char: '\ud83e\udde2',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   rescue_worker_helmet: {
-    keywords: [ "construction", "build" ],
-    "char": "\u26d1",
+    keywords: ['construction', 'build'],
+    char: '\u26d1',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   mortar_board: {
-    keywords: [ "school", "college", "degree", "university", "graduation", "cap", "hat", "legal", "learn", "education" ],
-    "char": "\ud83c\udf93",
+    keywords: ['school', 'college', 'degree', 'university', 'graduation', 'cap', 'hat', 'legal', 'learn', 'education'],
+    char: '\ud83c\udf93',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   crown: {
-    keywords: [ "king", "kod", "leader", "royalty", "lord" ],
-    "char": "\ud83d\udc51",
+    keywords: ['king', 'kod', 'leader', 'royalty', 'lord'],
+    char: '\ud83d\udc51',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   school_satchel: {
-    keywords: [ "student", "education", "bag", "backpack" ],
-    "char": "\ud83c\udf92",
+    keywords: ['student', 'education', 'bag', 'backpack'],
+    char: '\ud83c\udf92',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   luggage: {
-    keywords: [ "packing", "travel" ],
-    "char": "\ud83e\uddf3",
+    keywords: ['packing', 'travel'],
+    char: '\ud83e\uddf3',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   pouch: {
-    keywords: [ "bag", "accessories", "shopping" ],
-    "char": "\ud83d\udc5d",
+    keywords: ['bag', 'accessories', 'shopping'],
+    char: '\ud83d\udc5d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   purse: {
-    keywords: [ "fashion", "accessories", "money", "sales", "shopping" ],
-    "char": "\ud83d\udc5b",
+    keywords: ['fashion', 'accessories', 'money', 'sales', 'shopping'],
+    char: '\ud83d\udc5b',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   handbag: {
-    keywords: [ "fashion", "accessory", "accessories", "shopping" ],
-    "char": "\ud83d\udc5c",
+    keywords: ['fashion', 'accessory', 'accessories', 'shopping'],
+    char: '\ud83d\udc5c',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   briefcase: {
-    keywords: [ "business", "documents", "work", "law", "legal", "job", "career" ],
-    "char": "\ud83d\udcbc",
+    keywords: ['business', 'documents', 'work', 'law', 'legal', 'job', 'career'],
+    char: '\ud83d\udcbc',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   eyeglasses: {
-    keywords: [ "fashion", "accessories", "eyesight", "nerdy", "dork", "geek" ],
-    "char": "\ud83d\udc53",
+    keywords: ['fashion', 'accessories', 'eyesight', 'nerdy', 'dork', 'geek'],
+    char: '\ud83d\udc53',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   dark_sunglasses: {
-    keywords: [ "face", "cool", "accessories" ],
-    "char": "\ud83d\udd76",
+    keywords: ['face', 'cool', 'accessories'],
+    char: '\ud83d\udd76',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   goggles: {
-    keywords: [ "eyes", "protection", "safety" ],
-    "char": "\ud83e\udd7d",
+    keywords: ['eyes', 'protection', 'safety'],
+    char: '\ud83e\udd7d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   ring: {
-    keywords: [ "wedding", "propose", "marriage", "valentines", "diamond", "fashion", "jewelry", "gem", "engagement" ],
-    "char": "\ud83d\udc8d",
+    keywords: ['wedding', 'propose', 'marriage', 'valentines', 'diamond', 'fashion', 'jewelry', 'gem', 'engagement'],
+    char: '\ud83d\udc8d',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   closed_umbrella: {
-    keywords: [ "weather", "rain", "drizzle" ],
-    "char": "\ud83c\udf02",
+    keywords: ['weather', 'rain', 'drizzle'],
+    char: '\ud83c\udf02',
     fitzpatrick_scale: false,
-    category: "people"
+    category: 'people'
   },
   dog: {
-    keywords: [ "animal", "friend", "nature", "woof", "puppy", "pet", "faithful" ],
-    "char": "\ud83d\udc36",
+    keywords: ['animal', 'friend', 'nature', 'woof', 'puppy', 'pet', 'faithful'],
+    char: '\ud83d\udc36',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cat: {
-    keywords: [ "animal", "meow", "nature", "pet", "kitten" ],
-    "char": "\ud83d\udc31",
+    keywords: ['animal', 'meow', 'nature', 'pet', 'kitten'],
+    char: '\ud83d\udc31',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   mouse: {
-    keywords: [ "animal", "nature", "cheese_wedge", "rodent" ],
-    "char": "\ud83d\udc2d",
+    keywords: ['animal', 'nature', 'cheese_wedge', 'rodent'],
+    char: '\ud83d\udc2d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hamster: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc39",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc39',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   rabbit: {
-    keywords: [ "animal", "nature", "pet", "spring", "magic", "bunny" ],
-    "char": "\ud83d\udc30",
+    keywords: ['animal', 'nature', 'pet', 'spring', 'magic', 'bunny'],
+    char: '\ud83d\udc30',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   fox_face: {
-    keywords: [ "animal", "nature", "face" ],
-    "char": "\ud83e\udd8a",
+    keywords: ['animal', 'nature', 'face'],
+    char: '\ud83e\udd8a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   bear: {
-    keywords: [ "animal", "nature", "wild" ],
-    "char": "\ud83d\udc3b",
+    keywords: ['animal', 'nature', 'wild'],
+    char: '\ud83d\udc3b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   panda_face: {
-    keywords: [ "animal", "nature", "panda" ],
-    "char": "\ud83d\udc3c",
+    keywords: ['animal', 'nature', 'panda'],
+    char: '\ud83d\udc3c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   koala: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc28",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc28',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   tiger: {
-    keywords: [ "animal", "cat", "danger", "wild", "nature", "roar" ],
-    "char": "\ud83d\udc2f",
+    keywords: ['animal', 'cat', 'danger', 'wild', 'nature', 'roar'],
+    char: '\ud83d\udc2f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   lion: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83e\udd81",
+    keywords: ['animal', 'nature'],
+    char: '\ud83e\udd81',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cow: {
-    keywords: [ "beef", "ox", "animal", "nature", "moo", "milk" ],
-    "char": "\ud83d\udc2e",
+    keywords: ['beef', 'ox', 'animal', 'nature', 'moo', 'milk'],
+    char: '\ud83d\udc2e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   pig: {
-    keywords: [ "animal", "oink", "nature" ],
-    "char": "\ud83d\udc37",
+    keywords: ['animal', 'oink', 'nature'],
+    char: '\ud83d\udc37',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   pig_nose: {
-    keywords: [ "animal", "oink" ],
-    "char": "\ud83d\udc3d",
+    keywords: ['animal', 'oink'],
+    char: '\ud83d\udc3d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   frog: {
-    keywords: [ "animal", "nature", "croak", "toad" ],
-    "char": "\ud83d\udc38",
+    keywords: ['animal', 'nature', 'croak', 'toad'],
+    char: '\ud83d\udc38',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   squid: {
-    keywords: [ "animal", "nature", "ocean", "sea" ],
-    "char": "\ud83e\udd91",
+    keywords: ['animal', 'nature', 'ocean', 'sea'],
+    char: '\ud83e\udd91',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   octopus: {
-    keywords: [ "animal", "creature", "ocean", "sea", "nature", "beach" ],
-    "char": "\ud83d\udc19",
+    keywords: ['animal', 'creature', 'ocean', 'sea', 'nature', 'beach'],
+    char: '\ud83d\udc19',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   shrimp: {
-    keywords: [ "animal", "ocean", "nature", "seafood" ],
-    "char": "\ud83e\udd90",
+    keywords: ['animal', 'ocean', 'nature', 'seafood'],
+    char: '\ud83e\udd90',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   monkey_face: {
-    keywords: [ "animal", "nature", "circus" ],
-    "char": "\ud83d\udc35",
+    keywords: ['animal', 'nature', 'circus'],
+    char: '\ud83d\udc35',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   gorilla: {
-    keywords: [ "animal", "nature", "circus" ],
-    "char": "\ud83e\udd8d",
+    keywords: ['animal', 'nature', 'circus'],
+    char: '\ud83e\udd8d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   see_no_evil: {
-    keywords: [ "monkey", "animal", "nature", "haha" ],
-    "char": "\ud83d\ude48",
+    keywords: ['monkey', 'animal', 'nature', 'haha'],
+    char: '\ud83d\ude48',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hear_no_evil: {
-    keywords: [ "animal", "monkey", "nature" ],
-    "char": "\ud83d\ude49",
+    keywords: ['animal', 'monkey', 'nature'],
+    char: '\ud83d\ude49',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   speak_no_evil: {
-    keywords: [ "monkey", "animal", "nature", "omg" ],
-    "char": "\ud83d\ude4a",
+    keywords: ['monkey', 'animal', 'nature', 'omg'],
+    char: '\ud83d\ude4a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   monkey: {
-    keywords: [ "animal", "nature", "banana", "circus" ],
-    "char": "\ud83d\udc12",
+    keywords: ['animal', 'nature', 'banana', 'circus'],
+    char: '\ud83d\udc12',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   chicken: {
-    keywords: [ "animal", "cluck", "nature", "bird" ],
-    "char": "\ud83d\udc14",
+    keywords: ['animal', 'cluck', 'nature', 'bird'],
+    char: '\ud83d\udc14',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   penguin: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc27",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc27',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   bird: {
-    keywords: [ "animal", "nature", "fly", "tweet", "spring" ],
-    "char": "\ud83d\udc26",
+    keywords: ['animal', 'nature', 'fly', 'tweet', 'spring'],
+    char: '\ud83d\udc26',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   baby_chick: {
-    keywords: [ "animal", "chicken", "bird" ],
-    "char": "\ud83d\udc24",
+    keywords: ['animal', 'chicken', 'bird'],
+    char: '\ud83d\udc24',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hatching_chick: {
-    keywords: [ "animal", "chicken", "egg", "born", "baby", "bird" ],
-    "char": "\ud83d\udc23",
+    keywords: ['animal', 'chicken', 'egg', 'born', 'baby', 'bird'],
+    char: '\ud83d\udc23',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hatched_chick: {
-    keywords: [ "animal", "chicken", "baby", "bird" ],
-    "char": "\ud83d\udc25",
+    keywords: ['animal', 'chicken', 'baby', 'bird'],
+    char: '\ud83d\udc25',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   duck: {
-    keywords: [ "animal", "nature", "bird", "mallard" ],
-    "char": "\ud83e\udd86",
+    keywords: ['animal', 'nature', 'bird', 'mallard'],
+    char: '\ud83e\udd86',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   eagle: {
-    keywords: [ "animal", "nature", "bird" ],
-    "char": "\ud83e\udd85",
+    keywords: ['animal', 'nature', 'bird'],
+    char: '\ud83e\udd85',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   owl: {
-    keywords: [ "animal", "nature", "bird", "hoot" ],
-    "char": "\ud83e\udd89",
+    keywords: ['animal', 'nature', 'bird', 'hoot'],
+    char: '\ud83e\udd89',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   bat: {
-    keywords: [ "animal", "nature", "blind", "vampire" ],
-    "char": "\ud83e\udd87",
+    keywords: ['animal', 'nature', 'blind', 'vampire'],
+    char: '\ud83e\udd87',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   wolf: {
-    keywords: [ "animal", "nature", "wild" ],
-    "char": "\ud83d\udc3a",
+    keywords: ['animal', 'nature', 'wild'],
+    char: '\ud83d\udc3a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   boar: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc17",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc17',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   horse: {
-    keywords: [ "animal", "brown", "nature" ],
-    "char": "\ud83d\udc34",
+    keywords: ['animal', 'brown', 'nature'],
+    char: '\ud83d\udc34',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   unicorn: {
-    keywords: [ "animal", "nature", "mystical" ],
-    "char": "\ud83e\udd84",
+    keywords: ['animal', 'nature', 'mystical'],
+    char: '\ud83e\udd84',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   honeybee: {
-    keywords: [ "animal", "insect", "nature", "bug", "spring", "honey" ],
-    "char": "\ud83d\udc1d",
+    keywords: ['animal', 'insect', 'nature', 'bug', 'spring', 'honey'],
+    char: '\ud83d\udc1d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   bug: {
-    keywords: [ "animal", "insect", "nature", "worm" ],
-    "char": "\ud83d\udc1b",
+    keywords: ['animal', 'insect', 'nature', 'worm'],
+    char: '\ud83d\udc1b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   butterfly: {
-    keywords: [ "animal", "insect", "nature", "caterpillar" ],
-    "char": "\ud83e\udd8b",
+    keywords: ['animal', 'insect', 'nature', 'caterpillar'],
+    char: '\ud83e\udd8b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   snail: {
-    keywords: [ "slow", "animal", "shell" ],
-    "char": "\ud83d\udc0c",
+    keywords: ['slow', 'animal', 'shell'],
+    char: '\ud83d\udc0c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   beetle: {
-    keywords: [ "animal", "insect", "nature", "ladybug" ],
-    "char": "\ud83d\udc1e",
+    keywords: ['animal', 'insect', 'nature', 'ladybug'],
+    char: '\ud83d\udc1e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   ant: {
-    keywords: [ "animal", "insect", "nature", "bug" ],
-    "char": "\ud83d\udc1c",
+    keywords: ['animal', 'insect', 'nature', 'bug'],
+    char: '\ud83d\udc1c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   grasshopper: {
-    keywords: [ "animal", "cricket", "chirp" ],
-    "char": "\ud83e\udd97",
+    keywords: ['animal', 'cricket', 'chirp'],
+    char: '\ud83e\udd97',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   spider: {
-    keywords: [ "animal", "arachnid" ],
-    "char": "\ud83d\udd77",
+    keywords: ['animal', 'arachnid'],
+    char: '\ud83d\udd77',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   scorpion: {
-    keywords: [ "animal", "arachnid" ],
-    "char": "\ud83e\udd82",
+    keywords: ['animal', 'arachnid'],
+    char: '\ud83e\udd82',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   crab: {
-    keywords: [ "animal", "crustacean" ],
-    "char": "\ud83e\udd80",
+    keywords: ['animal', 'crustacean'],
+    char: '\ud83e\udd80',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   snake: {
-    keywords: [ "animal", "evil", "nature", "hiss", "python" ],
-    "char": "\ud83d\udc0d",
+    keywords: ['animal', 'evil', 'nature', 'hiss', 'python'],
+    char: '\ud83d\udc0d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   lizard: {
-    keywords: [ "animal", "nature", "reptile" ],
-    "char": "\ud83e\udd8e",
+    keywords: ['animal', 'nature', 'reptile'],
+    char: '\ud83e\udd8e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
-  "t-rex": {
-    keywords: [ "animal", "nature", "dinosaur", "tyrannosaurus", "extinct" ],
-    "char": "\ud83e\udd96",
+  't-rex': {
+    keywords: ['animal', 'nature', 'dinosaur', 'tyrannosaurus', 'extinct'],
+    char: '\ud83e\udd96',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sauropod: {
-    keywords: [ "animal", "nature", "dinosaur", "brachiosaurus", "brontosaurus", "diplodocus", "extinct" ],
-    "char": "\ud83e\udd95",
+    keywords: ['animal', 'nature', 'dinosaur', 'brachiosaurus', 'brontosaurus', 'diplodocus', 'extinct'],
+    char: '\ud83e\udd95',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   turtle: {
-    keywords: [ "animal", "slow", "nature", "tortoise" ],
-    "char": "\ud83d\udc22",
+    keywords: ['animal', 'slow', 'nature', 'tortoise'],
+    char: '\ud83d\udc22',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   tropical_fish: {
-    keywords: [ "animal", "swim", "ocean", "beach", "nemo" ],
-    "char": "\ud83d\udc20",
+    keywords: ['animal', 'swim', 'ocean', 'beach', 'nemo'],
+    char: '\ud83d\udc20',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   fish: {
-    keywords: [ "animal", "food", "nature" ],
-    "char": "\ud83d\udc1f",
+    keywords: ['animal', 'food', 'nature'],
+    char: '\ud83d\udc1f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   blowfish: {
-    keywords: [ "animal", "nature", "food", "sea", "ocean" ],
-    "char": "\ud83d\udc21",
+    keywords: ['animal', 'nature', 'food', 'sea', 'ocean'],
+    char: '\ud83d\udc21',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dolphin: {
-    keywords: [ "animal", "nature", "fish", "sea", "ocean", "flipper", "fins", "beach" ],
-    "char": "\ud83d\udc2c",
+    keywords: ['animal', 'nature', 'fish', 'sea', 'ocean', 'flipper', 'fins', 'beach'],
+    char: '\ud83d\udc2c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   shark: {
-    keywords: [ "animal", "nature", "fish", "sea", "ocean", "jaws", "fins", "beach" ],
-    "char": "\ud83e\udd88",
+    keywords: ['animal', 'nature', 'fish', 'sea', 'ocean', 'jaws', 'fins', 'beach'],
+    char: '\ud83e\udd88',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   whale: {
-    keywords: [ "animal", "nature", "sea", "ocean" ],
-    "char": "\ud83d\udc33",
+    keywords: ['animal', 'nature', 'sea', 'ocean'],
+    char: '\ud83d\udc33',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   whale2: {
-    keywords: [ "animal", "nature", "sea", "ocean" ],
-    "char": "\ud83d\udc0b",
+    keywords: ['animal', 'nature', 'sea', 'ocean'],
+    char: '\ud83d\udc0b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   crocodile: {
-    keywords: [ "animal", "nature", "reptile", "lizard", "alligator" ],
-    "char": "\ud83d\udc0a",
+    keywords: ['animal', 'nature', 'reptile', 'lizard', 'alligator'],
+    char: '\ud83d\udc0a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   leopard: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc06",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc06',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   zebra: {
-    keywords: [ "animal", "nature", "stripes", "safari" ],
-    "char": "\ud83e\udd93",
+    keywords: ['animal', 'nature', 'stripes', 'safari'],
+    char: '\ud83e\udd93',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   tiger2: {
-    keywords: [ "animal", "nature", "roar" ],
-    "char": "\ud83d\udc05",
+    keywords: ['animal', 'nature', 'roar'],
+    char: '\ud83d\udc05',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   water_buffalo: {
-    keywords: [ "animal", "nature", "ox", "cow" ],
-    "char": "\ud83d\udc03",
+    keywords: ['animal', 'nature', 'ox', 'cow'],
+    char: '\ud83d\udc03',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   ox: {
-    keywords: [ "animal", "cow", "beef" ],
-    "char": "\ud83d\udc02",
+    keywords: ['animal', 'cow', 'beef'],
+    char: '\ud83d\udc02',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cow2: {
-    keywords: [ "beef", "ox", "animal", "nature", "moo", "milk" ],
-    "char": "\ud83d\udc04",
+    keywords: ['beef', 'ox', 'animal', 'nature', 'moo', 'milk'],
+    char: '\ud83d\udc04',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   deer: {
-    keywords: [ "animal", "nature", "horns", "venison" ],
-    "char": "\ud83e\udd8c",
+    keywords: ['animal', 'nature', 'horns', 'venison'],
+    char: '\ud83e\udd8c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dromedary_camel: {
-    keywords: [ "animal", "hot", "desert", "hump" ],
-    "char": "\ud83d\udc2a",
+    keywords: ['animal', 'hot', 'desert', 'hump'],
+    char: '\ud83d\udc2a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   camel: {
-    keywords: [ "animal", "nature", "hot", "desert", "hump" ],
-    "char": "\ud83d\udc2b",
+    keywords: ['animal', 'nature', 'hot', 'desert', 'hump'],
+    char: '\ud83d\udc2b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   giraffe: {
-    keywords: [ "animal", "nature", "spots", "safari" ],
-    "char": "\ud83e\udd92",
+    keywords: ['animal', 'nature', 'spots', 'safari'],
+    char: '\ud83e\udd92',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   elephant: {
-    keywords: [ "animal", "nature", "nose", "th", "circus" ],
-    "char": "\ud83d\udc18",
+    keywords: ['animal', 'nature', 'nose', 'th', 'circus'],
+    char: '\ud83d\udc18',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   rhinoceros: {
-    keywords: [ "animal", "nature", "horn" ],
-    "char": "\ud83e\udd8f",
+    keywords: ['animal', 'nature', 'horn'],
+    char: '\ud83e\udd8f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   goat: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc10",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc10',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   ram: {
-    keywords: [ "animal", "sheep", "nature" ],
-    "char": "\ud83d\udc0f",
+    keywords: ['animal', 'sheep', 'nature'],
+    char: '\ud83d\udc0f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sheep: {
-    keywords: [ "animal", "nature", "wool", "shipit" ],
-    "char": "\ud83d\udc11",
+    keywords: ['animal', 'nature', 'wool', 'shipit'],
+    char: '\ud83d\udc11',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   racehorse: {
-    keywords: [ "animal", "gamble", "luck" ],
-    "char": "\ud83d\udc0e",
+    keywords: ['animal', 'gamble', 'luck'],
+    char: '\ud83d\udc0e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   pig2: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83d\udc16",
+    keywords: ['animal', 'nature'],
+    char: '\ud83d\udc16',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   rat: {
-    keywords: [ "animal", "mouse", "rodent" ],
-    "char": "\ud83d\udc00",
+    keywords: ['animal', 'mouse', 'rodent'],
+    char: '\ud83d\udc00',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   mouse2: {
-    keywords: [ "animal", "nature", "rodent" ],
-    "char": "\ud83d\udc01",
+    keywords: ['animal', 'nature', 'rodent'],
+    char: '\ud83d\udc01',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   rooster: {
-    keywords: [ "animal", "nature", "chicken" ],
-    "char": "\ud83d\udc13",
+    keywords: ['animal', 'nature', 'chicken'],
+    char: '\ud83d\udc13',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   turkey: {
-    keywords: [ "animal", "bird" ],
-    "char": "\ud83e\udd83",
+    keywords: ['animal', 'bird'],
+    char: '\ud83e\udd83',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dove: {
-    keywords: [ "animal", "bird" ],
-    "char": "\ud83d\udd4a",
+    keywords: ['animal', 'bird'],
+    char: '\ud83d\udd4a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dog2: {
-    keywords: [ "animal", "nature", "friend", "doge", "pet", "faithful" ],
-    "char": "\ud83d\udc15",
+    keywords: ['animal', 'nature', 'friend', 'doge', 'pet', 'faithful'],
+    char: '\ud83d\udc15',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   poodle: {
-    keywords: [ "dog", "animal", "101", "nature", "pet" ],
-    "char": "\ud83d\udc29",
+    keywords: ['dog', 'animal', '101', 'nature', 'pet'],
+    char: '\ud83d\udc29',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cat2: {
-    keywords: [ "animal", "meow", "pet", "cats" ],
-    "char": "\ud83d\udc08",
+    keywords: ['animal', 'meow', 'pet', 'cats'],
+    char: '\ud83d\udc08',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   rabbit2: {
-    keywords: [ "animal", "nature", "pet", "magic", "spring" ],
-    "char": "\ud83d\udc07",
+    keywords: ['animal', 'nature', 'pet', 'magic', 'spring'],
+    char: '\ud83d\udc07',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   chipmunk: {
-    keywords: [ "animal", "nature", "rodent", "squirrel" ],
-    "char": "\ud83d\udc3f",
+    keywords: ['animal', 'nature', 'rodent', 'squirrel'],
+    char: '\ud83d\udc3f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hedgehog: {
-    keywords: [ "animal", "nature", "spiny" ],
-    "char": "\ud83e\udd94",
+    keywords: ['animal', 'nature', 'spiny'],
+    char: '\ud83e\udd94',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   raccoon: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83e\udd9d",
+    keywords: ['animal', 'nature'],
+    char: '\ud83e\udd9d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   llama: {
-    keywords: [ "animal", "nature", "alpaca" ],
-    "char": "\ud83e\udd99",
+    keywords: ['animal', 'nature', 'alpaca'],
+    char: '\ud83e\udd99',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hippopotamus: {
-    keywords: [ "animal", "nature" ],
-    "char": "\ud83e\udd9b",
+    keywords: ['animal', 'nature'],
+    char: '\ud83e\udd9b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   kangaroo: {
-    keywords: [ "animal", "nature", "australia", "joey", "hop", "marsupial" ],
-    "char": "\ud83e\udd98",
+    keywords: ['animal', 'nature', 'australia', 'joey', 'hop', 'marsupial'],
+    char: '\ud83e\udd98',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   badger: {
-    keywords: [ "animal", "nature", "honey" ],
-    "char": "\ud83e\udda1",
+    keywords: ['animal', 'nature', 'honey'],
+    char: '\ud83e\udda1',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   swan: {
-    keywords: [ "animal", "nature", "bird" ],
-    "char": "\ud83e\udda2",
+    keywords: ['animal', 'nature', 'bird'],
+    char: '\ud83e\udda2',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   peacock: {
-    keywords: [ "animal", "nature", "peahen", "bird" ],
-    "char": "\ud83e\udd9a",
+    keywords: ['animal', 'nature', 'peahen', 'bird'],
+    char: '\ud83e\udd9a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   parrot: {
-    keywords: [ "animal", "nature", "bird", "pirate", "talk" ],
-    "char": "\ud83e\udd9c",
+    keywords: ['animal', 'nature', 'bird', 'pirate', 'talk'],
+    char: '\ud83e\udd9c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   lobster: {
-    keywords: [ "animal", "nature", "bisque", "claws", "seafood" ],
-    "char": "\ud83e\udd9e",
+    keywords: ['animal', 'nature', 'bisque', 'claws', 'seafood'],
+    char: '\ud83e\udd9e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   mosquito: {
-    keywords: [ "animal", "nature", "insect", "malaria" ],
-    "char": "\ud83e\udd9f",
+    keywords: ['animal', 'nature', 'insect', 'malaria'],
+    char: '\ud83e\udd9f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   paw_prints: {
-    keywords: [ "animal", "tracking", "footprints", "dog", "cat", "pet", "feet" ],
-    "char": "\ud83d\udc3e",
+    keywords: ['animal', 'tracking', 'footprints', 'dog', 'cat', 'pet', 'feet'],
+    char: '\ud83d\udc3e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dragon: {
-    keywords: [ "animal", "myth", "nature", "chinese", "green" ],
-    "char": "\ud83d\udc09",
+    keywords: ['animal', 'myth', 'nature', 'chinese', 'green'],
+    char: '\ud83d\udc09',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dragon_face: {
-    keywords: [ "animal", "myth", "nature", "chinese", "green" ],
-    "char": "\ud83d\udc32",
+    keywords: ['animal', 'myth', 'nature', 'chinese', 'green'],
+    char: '\ud83d\udc32',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cactus: {
-    keywords: [ "vegetable", "plant", "nature" ],
-    "char": "\ud83c\udf35",
+    keywords: ['vegetable', 'plant', 'nature'],
+    char: '\ud83c\udf35',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   christmas_tree: {
-    keywords: [ "festival", "vacation", "december", "xmas", "celebration" ],
-    "char": "\ud83c\udf84",
+    keywords: ['festival', 'vacation', 'december', 'xmas', 'celebration'],
+    char: '\ud83c\udf84',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   evergreen_tree: {
-    keywords: [ "plant", "nature" ],
-    "char": "\ud83c\udf32",
+    keywords: ['plant', 'nature'],
+    char: '\ud83c\udf32',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   deciduous_tree: {
-    keywords: [ "plant", "nature" ],
-    "char": "\ud83c\udf33",
+    keywords: ['plant', 'nature'],
+    char: '\ud83c\udf33',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   palm_tree: {
-    keywords: [ "plant", "vegetable", "nature", "summer", "beach", "mojito", "tropical" ],
-    "char": "\ud83c\udf34",
+    keywords: ['plant', 'vegetable', 'nature', 'summer', 'beach', 'mojito', 'tropical'],
+    char: '\ud83c\udf34',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   seedling: {
-    keywords: [ "plant", "nature", "grass", "lawn", "spring" ],
-    "char": "\ud83c\udf31",
+    keywords: ['plant', 'nature', 'grass', 'lawn', 'spring'],
+    char: '\ud83c\udf31',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   herb: {
-    keywords: [ "vegetable", "plant", "medicine", "weed", "grass", "lawn" ],
-    "char": "\ud83c\udf3f",
+    keywords: ['vegetable', 'plant', 'medicine', 'weed', 'grass', 'lawn'],
+    char: '\ud83c\udf3f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   shamrock: {
-    keywords: [ "vegetable", "plant", "nature", "irish", "clover" ],
-    "char": "\u2618",
+    keywords: ['vegetable', 'plant', 'nature', 'irish', 'clover'],
+    char: '\u2618',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   four_leaf_clover: {
-    keywords: [ "vegetable", "plant", "nature", "lucky", "irish" ],
-    "char": "\ud83c\udf40",
+    keywords: ['vegetable', 'plant', 'nature', 'lucky', 'irish'],
+    char: '\ud83c\udf40',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   bamboo: {
-    keywords: [ "plant", "nature", "vegetable", "panda", "pine_decoration" ],
-    "char": "\ud83c\udf8d",
+    keywords: ['plant', 'nature', 'vegetable', 'panda', 'pine_decoration'],
+    char: '\ud83c\udf8d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   tanabata_tree: {
-    keywords: [ "plant", "nature", "branch", "summer" ],
-    "char": "\ud83c\udf8b",
+    keywords: ['plant', 'nature', 'branch', 'summer'],
+    char: '\ud83c\udf8b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   leaves: {
-    keywords: [ "nature", "plant", "tree", "vegetable", "grass", "lawn", "spring" ],
-    "char": "\ud83c\udf43",
+    keywords: ['nature', 'plant', 'tree', 'vegetable', 'grass', 'lawn', 'spring'],
+    char: '\ud83c\udf43',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   fallen_leaf: {
-    keywords: [ "nature", "plant", "vegetable", "leaves" ],
-    "char": "\ud83c\udf42",
+    keywords: ['nature', 'plant', 'vegetable', 'leaves'],
+    char: '\ud83c\udf42',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   maple_leaf: {
-    keywords: [ "nature", "plant", "vegetable", "ca", "fall" ],
-    "char": "\ud83c\udf41",
+    keywords: ['nature', 'plant', 'vegetable', 'ca', 'fall'],
+    char: '\ud83c\udf41',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   ear_of_rice: {
-    keywords: [ "nature", "plant" ],
-    "char": "\ud83c\udf3e",
+    keywords: ['nature', 'plant'],
+    char: '\ud83c\udf3e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   hibiscus: {
-    keywords: [ "plant", "vegetable", "flowers", "beach" ],
-    "char": "\ud83c\udf3a",
+    keywords: ['plant', 'vegetable', 'flowers', 'beach'],
+    char: '\ud83c\udf3a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sunflower: {
-    keywords: [ "nature", "plant", "fall" ],
-    "char": "\ud83c\udf3b",
+    keywords: ['nature', 'plant', 'fall'],
+    char: '\ud83c\udf3b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   rose: {
-    keywords: [ "flowers", "valentines", "love", "spring" ],
-    "char": "\ud83c\udf39",
+    keywords: ['flowers', 'valentines', 'love', 'spring'],
+    char: '\ud83c\udf39',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   wilted_flower: {
-    keywords: [ "plant", "nature", "flower" ],
-    "char": "\ud83e\udd40",
+    keywords: ['plant', 'nature', 'flower'],
+    char: '\ud83e\udd40',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   tulip: {
-    keywords: [ "flowers", "plant", "nature", "summer", "spring" ],
-    "char": "\ud83c\udf37",
+    keywords: ['flowers', 'plant', 'nature', 'summer', 'spring'],
+    char: '\ud83c\udf37',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   blossom: {
-    keywords: [ "nature", "flowers", "yellow" ],
-    "char": "\ud83c\udf3c",
+    keywords: ['nature', 'flowers', 'yellow'],
+    char: '\ud83c\udf3c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cherry_blossom: {
-    keywords: [ "nature", "plant", "spring", "flower" ],
-    "char": "\ud83c\udf38",
+    keywords: ['nature', 'plant', 'spring', 'flower'],
+    char: '\ud83c\udf38',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   bouquet: {
-    keywords: [ "flowers", "nature", "spring" ],
-    "char": "\ud83d\udc90",
+    keywords: ['flowers', 'nature', 'spring'],
+    char: '\ud83d\udc90',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   mushroom: {
-    keywords: [ "plant", "vegetable" ],
-    "char": "\ud83c\udf44",
+    keywords: ['plant', 'vegetable'],
+    char: '\ud83c\udf44',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   chestnut: {
-    keywords: [ "food", "squirrel" ],
-    "char": "\ud83c\udf30",
+    keywords: ['food', 'squirrel'],
+    char: '\ud83c\udf30',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   jack_o_lantern: {
-    keywords: [ "halloween", "light", "pumpkin", "creepy", "fall" ],
-    "char": "\ud83c\udf83",
+    keywords: ['halloween', 'light', 'pumpkin', 'creepy', 'fall'],
+    char: '\ud83c\udf83',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   shell: {
-    keywords: [ "nature", "sea", "beach" ],
-    "char": "\ud83d\udc1a",
+    keywords: ['nature', 'sea', 'beach'],
+    char: '\ud83d\udc1a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   spider_web: {
-    keywords: [ "animal", "insect", "arachnid", "silk" ],
-    "char": "\ud83d\udd78",
+    keywords: ['animal', 'insect', 'arachnid', 'silk'],
+    char: '\ud83d\udd78',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   earth_americas: {
-    keywords: [ "globe", "world", "USA", "international" ],
-    "char": "\ud83c\udf0e",
+    keywords: ['globe', 'world', 'USA', 'international'],
+    char: '\ud83c\udf0e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   earth_africa: {
-    keywords: [ "globe", "world", "international" ],
-    "char": "\ud83c\udf0d",
+    keywords: ['globe', 'world', 'international'],
+    char: '\ud83c\udf0d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   earth_asia: {
-    keywords: [ "globe", "world", "east", "international" ],
-    "char": "\ud83c\udf0f",
+    keywords: ['globe', 'world', 'east', 'international'],
+    char: '\ud83c\udf0f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   full_moon: {
-    keywords: [ "nature", "yellow", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf15",
+    keywords: ['nature', 'yellow', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf15',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   waning_gibbous_moon: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep", "waxing_gibbous_moon" ],
-    "char": "\ud83c\udf16",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep', 'waxing_gibbous_moon'],
+    char: '\ud83c\udf16',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   last_quarter_moon: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf17",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf17',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   waning_crescent_moon: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf18",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf18',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   new_moon: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf11",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf11',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   waxing_crescent_moon: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf12",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf12',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   first_quarter_moon: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf13",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf13',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   waxing_gibbous_moon: {
-    keywords: [ "nature", "night", "sky", "gray", "twilight", "planet", "space", "evening", "sleep" ],
-    "char": "\ud83c\udf14",
+    keywords: ['nature', 'night', 'sky', 'gray', 'twilight', 'planet', 'space', 'evening', 'sleep'],
+    char: '\ud83c\udf14',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   new_moon_with_face: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf1a",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf1a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   full_moon_with_face: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf1d",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf1d',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   first_quarter_moon_with_face: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf1b",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf1b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   last_quarter_moon_with_face: {
-    keywords: [ "nature", "twilight", "planet", "space", "night", "evening", "sleep" ],
-    "char": "\ud83c\udf1c",
+    keywords: ['nature', 'twilight', 'planet', 'space', 'night', 'evening', 'sleep'],
+    char: '\ud83c\udf1c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sun_with_face: {
-    keywords: [ "nature", "morning", "sky" ],
-    "char": "\ud83c\udf1e",
+    keywords: ['nature', 'morning', 'sky'],
+    char: '\ud83c\udf1e',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   crescent_moon: {
-    keywords: [ "night", "sleep", "sky", "evening", "magic" ],
-    "char": "\ud83c\udf19",
+    keywords: ['night', 'sleep', 'sky', 'evening', 'magic'],
+    char: '\ud83c\udf19',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   star: {
-    keywords: [ "night", "yellow" ],
-    "char": "\u2b50",
+    keywords: ['night', 'yellow'],
+    char: '\u2b50',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   star2: {
-    keywords: [ "night", "sparkle", "awesome", "good", "magic" ],
-    "char": "\ud83c\udf1f",
+    keywords: ['night', 'sparkle', 'awesome', 'good', 'magic'],
+    char: '\ud83c\udf1f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dizzy: {
-    keywords: [ "star", "sparkle", "shoot", "magic" ],
-    "char": "\ud83d\udcab",
+    keywords: ['star', 'sparkle', 'shoot', 'magic'],
+    char: '\ud83d\udcab',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sparkles: {
-    keywords: [ "stars", "shine", "shiny", "cool", "awesome", "good", "magic" ],
-    "char": "\u2728",
+    keywords: ['stars', 'shine', 'shiny', 'cool', 'awesome', 'good', 'magic'],
+    char: '\u2728',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   comet: {
-    keywords: [ "space" ],
-    "char": "\u2604",
+    keywords: ['space'],
+    char: '\u2604',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sunny: {
-    keywords: [ "weather", "nature", "brightness", "summer", "beach", "spring" ],
-    "char": "\u2600\ufe0f",
+    keywords: ['weather', 'nature', 'brightness', 'summer', 'beach', 'spring'],
+    char: '\u2600\ufe0f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sun_behind_small_cloud: {
-    keywords: [ "weather" ],
-    "char": "\ud83c\udf24",
+    keywords: ['weather'],
+    char: '\ud83c\udf24',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   partly_sunny: {
-    keywords: [ "weather", "nature", "cloudy", "morning", "fall", "spring" ],
-    "char": "\u26c5",
+    keywords: ['weather', 'nature', 'cloudy', 'morning', 'fall', 'spring'],
+    char: '\u26c5',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sun_behind_large_cloud: {
-    keywords: [ "weather" ],
-    "char": "\ud83c\udf25",
+    keywords: ['weather'],
+    char: '\ud83c\udf25',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sun_behind_rain_cloud: {
-    keywords: [ "weather" ],
-    "char": "\ud83c\udf26",
+    keywords: ['weather'],
+    char: '\ud83c\udf26',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cloud: {
-    keywords: [ "weather", "sky" ],
-    "char": "\u2601\ufe0f",
+    keywords: ['weather', 'sky'],
+    char: '\u2601\ufe0f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cloud_with_rain: {
-    keywords: [ "weather" ],
-    "char": "\ud83c\udf27",
+    keywords: ['weather'],
+    char: '\ud83c\udf27',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cloud_with_lightning_and_rain: {
-    keywords: [ "weather", "lightning" ],
-    "char": "\u26c8",
+    keywords: ['weather', 'lightning'],
+    char: '\u26c8',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cloud_with_lightning: {
-    keywords: [ "weather", "thunder" ],
-    "char": "\ud83c\udf29",
+    keywords: ['weather', 'thunder'],
+    char: '\ud83c\udf29',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   zap: {
-    keywords: [ "thunder", "weather", "lightning bolt", "fast" ],
-    "char": "\u26a1",
+    keywords: ['thunder', 'weather', 'lightning bolt', 'fast'],
+    char: '\u26a1',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   fire: {
-    keywords: [ "hot", "cook", "flame" ],
-    "char": "\ud83d\udd25",
+    keywords: ['hot', 'cook', 'flame'],
+    char: '\ud83d\udd25',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   boom: {
-    keywords: [ "bomb", "explode", "explosion", "collision", "blown" ],
-    "char": "\ud83d\udca5",
+    keywords: ['bomb', 'explode', 'explosion', 'collision', 'blown'],
+    char: '\ud83d\udca5',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   snowflake: {
-    keywords: [ "winter", "season", "cold", "weather", "christmas", "xmas" ],
-    "char": "\u2744\ufe0f",
+    keywords: ['winter', 'season', 'cold', 'weather', 'christmas', 'xmas'],
+    char: '\u2744\ufe0f',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   cloud_with_snow: {
-    keywords: [ "weather" ],
-    "char": "\ud83c\udf28",
+    keywords: ['weather'],
+    char: '\ud83c\udf28',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   snowman: {
-    keywords: [ "winter", "season", "cold", "weather", "christmas", "xmas", "frozen", "without_snow" ],
-    "char": "\u26c4",
+    keywords: ['winter', 'season', 'cold', 'weather', 'christmas', 'xmas', 'frozen', 'without_snow'],
+    char: '\u26c4',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   snowman_with_snow: {
-    keywords: [ "winter", "season", "cold", "weather", "christmas", "xmas", "frozen" ],
-    "char": "\u2603",
+    keywords: ['winter', 'season', 'cold', 'weather', 'christmas', 'xmas', 'frozen'],
+    char: '\u2603',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   wind_face: {
-    keywords: [ "gust", "air" ],
-    "char": "\ud83c\udf2c",
+    keywords: ['gust', 'air'],
+    char: '\ud83c\udf2c',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   dash: {
-    keywords: [ "wind", "air", "fast", "shoo", "fart", "smoke", "puff" ],
-    "char": "\ud83d\udca8",
+    keywords: ['wind', 'air', 'fast', 'shoo', 'fart', 'smoke', 'puff'],
+    char: '\ud83d\udca8',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   tornado: {
-    keywords: [ "weather", "cyclone", "twister" ],
-    "char": "\ud83c\udf2a",
+    keywords: ['weather', 'cyclone', 'twister'],
+    char: '\ud83c\udf2a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   fog: {
-    keywords: [ "weather" ],
-    "char": "\ud83c\udf2b",
+    keywords: ['weather'],
+    char: '\ud83c\udf2b',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   open_umbrella: {
-    keywords: [ "weather", "spring" ],
-    "char": "\u2602",
+    keywords: ['weather', 'spring'],
+    char: '\u2602',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   umbrella: {
-    keywords: [ "rainy", "weather", "spring" ],
-    "char": "\u2614",
+    keywords: ['rainy', 'weather', 'spring'],
+    char: '\u2614',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   droplet: {
-    keywords: [ "water", "drip", "faucet", "spring" ],
-    "char": "\ud83d\udca7",
+    keywords: ['water', 'drip', 'faucet', 'spring'],
+    char: '\ud83d\udca7',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   sweat_drops: {
-    keywords: [ "water", "drip", "oops" ],
-    "char": "\ud83d\udca6",
+    keywords: ['water', 'drip', 'oops'],
+    char: '\ud83d\udca6',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   ocean: {
-    keywords: [ "sea", "water", "wave", "nature", "tsunami", "disaster" ],
-    "char": "\ud83c\udf0a",
+    keywords: ['sea', 'water', 'wave', 'nature', 'tsunami', 'disaster'],
+    char: '\ud83c\udf0a',
     fitzpatrick_scale: false,
-    category: "animals_and_nature"
+    category: 'animals_and_nature'
   },
   green_apple: {
-    keywords: [ "fruit", "nature" ],
-    "char": "\ud83c\udf4f",
+    keywords: ['fruit', 'nature'],
+    char: '\ud83c\udf4f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   apple: {
-    keywords: [ "fruit", "mac", "school" ],
-    "char": "\ud83c\udf4e",
+    keywords: ['fruit', 'mac', 'school'],
+    char: '\ud83c\udf4e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   pear: {
-    keywords: [ "fruit", "nature", "food" ],
-    "char": "\ud83c\udf50",
+    keywords: ['fruit', 'nature', 'food'],
+    char: '\ud83c\udf50',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   tangerine: {
-    keywords: [ "food", "fruit", "nature", "orange" ],
-    "char": "\ud83c\udf4a",
+    keywords: ['food', 'fruit', 'nature', 'orange'],
+    char: '\ud83c\udf4a',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   lemon: {
-    keywords: [ "fruit", "nature" ],
-    "char": "\ud83c\udf4b",
+    keywords: ['fruit', 'nature'],
+    char: '\ud83c\udf4b',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   banana: {
-    keywords: [ "fruit", "food", "monkey" ],
-    "char": "\ud83c\udf4c",
+    keywords: ['fruit', 'food', 'monkey'],
+    char: '\ud83c\udf4c',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   watermelon: {
-    keywords: [ "fruit", "food", "picnic", "summer" ],
-    "char": "\ud83c\udf49",
+    keywords: ['fruit', 'food', 'picnic', 'summer'],
+    char: '\ud83c\udf49',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   grapes: {
-    keywords: [ "fruit", "food", "wine" ],
-    "char": "\ud83c\udf47",
+    keywords: ['fruit', 'food', 'wine'],
+    char: '\ud83c\udf47',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   strawberry: {
-    keywords: [ "fruit", "food", "nature" ],
-    "char": "\ud83c\udf53",
+    keywords: ['fruit', 'food', 'nature'],
+    char: '\ud83c\udf53',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   melon: {
-    keywords: [ "fruit", "nature", "food" ],
-    "char": "\ud83c\udf48",
+    keywords: ['fruit', 'nature', 'food'],
+    char: '\ud83c\udf48',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cherries: {
-    keywords: [ "food", "fruit" ],
-    "char": "\ud83c\udf52",
+    keywords: ['food', 'fruit'],
+    char: '\ud83c\udf52',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   peach: {
-    keywords: [ "fruit", "nature", "food" ],
-    "char": "\ud83c\udf51",
+    keywords: ['fruit', 'nature', 'food'],
+    char: '\ud83c\udf51',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   pineapple: {
-    keywords: [ "fruit", "nature", "food" ],
-    "char": "\ud83c\udf4d",
+    keywords: ['fruit', 'nature', 'food'],
+    char: '\ud83c\udf4d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   coconut: {
-    keywords: [ "fruit", "nature", "food", "palm" ],
-    "char": "\ud83e\udd65",
+    keywords: ['fruit', 'nature', 'food', 'palm'],
+    char: '\ud83e\udd65',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   kiwi_fruit: {
-    keywords: [ "fruit", "food" ],
-    "char": "\ud83e\udd5d",
+    keywords: ['fruit', 'food'],
+    char: '\ud83e\udd5d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   mango: {
-    keywords: [ "fruit", "food", "tropical" ],
-    "char": "\ud83e\udd6d",
+    keywords: ['fruit', 'food', 'tropical'],
+    char: '\ud83e\udd6d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   avocado: {
-    keywords: [ "fruit", "food" ],
-    "char": "\ud83e\udd51",
+    keywords: ['fruit', 'food'],
+    char: '\ud83e\udd51',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   broccoli: {
-    keywords: [ "fruit", "food", "vegetable" ],
-    "char": "\ud83e\udd66",
+    keywords: ['fruit', 'food', 'vegetable'],
+    char: '\ud83e\udd66',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   tomato: {
-    keywords: [ "fruit", "vegetable", "nature", "food" ],
-    "char": "\ud83c\udf45",
+    keywords: ['fruit', 'vegetable', 'nature', 'food'],
+    char: '\ud83c\udf45',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   eggplant: {
-    keywords: [ "vegetable", "nature", "food", "aubergine" ],
-    "char": "\ud83c\udf46",
+    keywords: ['vegetable', 'nature', 'food', 'aubergine'],
+    char: '\ud83c\udf46',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cucumber: {
-    keywords: [ "fruit", "food", "pickle" ],
-    "char": "\ud83e\udd52",
+    keywords: ['fruit', 'food', 'pickle'],
+    char: '\ud83e\udd52',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   carrot: {
-    keywords: [ "vegetable", "food", "orange" ],
-    "char": "\ud83e\udd55",
+    keywords: ['vegetable', 'food', 'orange'],
+    char: '\ud83e\udd55',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   hot_pepper: {
-    keywords: [ "food", "spicy", "chilli", "chili" ],
-    "char": "\ud83c\udf36",
+    keywords: ['food', 'spicy', 'chilli', 'chili'],
+    char: '\ud83c\udf36',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   potato: {
-    keywords: [ "food", "tuber", "vegatable", "starch" ],
-    "char": "\ud83e\udd54",
+    keywords: ['food', 'tuber', 'vegatable', 'starch'],
+    char: '\ud83e\udd54',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   corn: {
-    keywords: [ "food", "vegetable", "plant" ],
-    "char": "\ud83c\udf3d",
+    keywords: ['food', 'vegetable', 'plant'],
+    char: '\ud83c\udf3d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   leafy_greens: {
-    keywords: [ "food", "vegetable", "plant", "bok choy", "cabbage", "kale", "lettuce" ],
-    "char": "\ud83e\udd6c",
+    keywords: ['food', 'vegetable', 'plant', 'bok choy', 'cabbage', 'kale', 'lettuce'],
+    char: '\ud83e\udd6c',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   sweet_potato: {
-    keywords: [ "food", "nature" ],
-    "char": "\ud83c\udf60",
+    keywords: ['food', 'nature'],
+    char: '\ud83c\udf60',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   peanuts: {
-    keywords: [ "food", "nut" ],
-    "char": "\ud83e\udd5c",
+    keywords: ['food', 'nut'],
+    char: '\ud83e\udd5c',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   honey_pot: {
-    keywords: [ "bees", "sweet", "kitchen" ],
-    "char": "\ud83c\udf6f",
+    keywords: ['bees', 'sweet', 'kitchen'],
+    char: '\ud83c\udf6f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   croissant: {
-    keywords: [ "food", "bread", "french" ],
-    "char": "\ud83e\udd50",
+    keywords: ['food', 'bread', 'french'],
+    char: '\ud83e\udd50',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   bread: {
-    keywords: [ "food", "wheat", "breakfast", "toast" ],
-    "char": "\ud83c\udf5e",
+    keywords: ['food', 'wheat', 'breakfast', 'toast'],
+    char: '\ud83c\udf5e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   baguette_bread: {
-    keywords: [ "food", "bread", "french" ],
-    "char": "\ud83e\udd56",
+    keywords: ['food', 'bread', 'french'],
+    char: '\ud83e\udd56',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   bagel: {
-    keywords: [ "food", "bread", "bakery", "schmear" ],
-    "char": "\ud83e\udd6f",
+    keywords: ['food', 'bread', 'bakery', 'schmear'],
+    char: '\ud83e\udd6f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   pretzel: {
-    keywords: [ "food", "bread", "twisted" ],
-    "char": "\ud83e\udd68",
+    keywords: ['food', 'bread', 'twisted'],
+    char: '\ud83e\udd68',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cheese: {
-    keywords: [ "food", "chadder" ],
-    "char": "\ud83e\uddc0",
+    keywords: ['food', 'chadder'],
+    char: '\ud83e\uddc0',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   egg: {
-    keywords: [ "food", "chicken", "breakfast" ],
-    "char": "\ud83e\udd5a",
+    keywords: ['food', 'chicken', 'breakfast'],
+    char: '\ud83e\udd5a',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   bacon: {
-    keywords: [ "food", "breakfast", "pork", "pig", "meat" ],
-    "char": "\ud83e\udd53",
+    keywords: ['food', 'breakfast', 'pork', 'pig', 'meat'],
+    char: '\ud83e\udd53',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   steak: {
-    keywords: [ "food", "cow", "meat", "cut", "chop", "lambchop", "porkchop" ],
-    "char": "\ud83e\udd69",
+    keywords: ['food', 'cow', 'meat', 'cut', 'chop', 'lambchop', 'porkchop'],
+    char: '\ud83e\udd69',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   pancakes: {
-    keywords: [ "food", "breakfast", "flapjacks", "hotcakes" ],
-    "char": "\ud83e\udd5e",
+    keywords: ['food', 'breakfast', 'flapjacks', 'hotcakes'],
+    char: '\ud83e\udd5e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   poultry_leg: {
-    keywords: [ "food", "meat", "drumstick", "bird", "chicken", "turkey" ],
-    "char": "\ud83c\udf57",
+    keywords: ['food', 'meat', 'drumstick', 'bird', 'chicken', 'turkey'],
+    char: '\ud83c\udf57',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   meat_on_bone: {
-    keywords: [ "good", "food", "drumstick" ],
-    "char": "\ud83c\udf56",
+    keywords: ['good', 'food', 'drumstick'],
+    char: '\ud83c\udf56',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   bone: {
-    keywords: [ "skeleton" ],
-    "char": "\ud83e\uddb4",
+    keywords: ['skeleton'],
+    char: '\ud83e\uddb4',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   fried_shrimp: {
-    keywords: [ "food", "animal", "appetizer", "summer" ],
-    "char": "\ud83c\udf64",
+    keywords: ['food', 'animal', 'appetizer', 'summer'],
+    char: '\ud83c\udf64',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   fried_egg: {
-    keywords: [ "food", "breakfast", "kitchen", "egg" ],
-    "char": "\ud83c\udf73",
+    keywords: ['food', 'breakfast', 'kitchen', 'egg'],
+    char: '\ud83c\udf73',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   hamburger: {
-    keywords: [ "meat", "fast food", "beef", "cheeseburger", "mcdonalds", "burger king" ],
-    "char": "\ud83c\udf54",
+    keywords: ['meat', 'fast food', 'beef', 'cheeseburger', 'mcdonalds', 'burger king'],
+    char: '\ud83c\udf54',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   fries: {
-    keywords: [ "chips", "snack", "fast food" ],
-    "char": "\ud83c\udf5f",
+    keywords: ['chips', 'snack', 'fast food'],
+    char: '\ud83c\udf5f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   stuffed_flatbread: {
-    keywords: [ "food", "flatbread", "stuffed", "gyro" ],
-    "char": "\ud83e\udd59",
+    keywords: ['food', 'flatbread', 'stuffed', 'gyro'],
+    char: '\ud83e\udd59',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   hotdog: {
-    keywords: [ "food", "frankfurter" ],
-    "char": "\ud83c\udf2d",
+    keywords: ['food', 'frankfurter'],
+    char: '\ud83c\udf2d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   pizza: {
-    keywords: [ "food", "party" ],
-    "char": "\ud83c\udf55",
+    keywords: ['food', 'party'],
+    char: '\ud83c\udf55',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   sandwich: {
-    keywords: [ "food", "lunch", "bread" ],
-    "char": "\ud83e\udd6a",
+    keywords: ['food', 'lunch', 'bread'],
+    char: '\ud83e\udd6a',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   canned_food: {
-    keywords: [ "food", "soup" ],
-    "char": "\ud83e\udd6b",
+    keywords: ['food', 'soup'],
+    char: '\ud83e\udd6b',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   spaghetti: {
-    keywords: [ "food", "italian", "noodle" ],
-    "char": "\ud83c\udf5d",
+    keywords: ['food', 'italian', 'noodle'],
+    char: '\ud83c\udf5d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   taco: {
-    keywords: [ "food", "mexican" ],
-    "char": "\ud83c\udf2e",
+    keywords: ['food', 'mexican'],
+    char: '\ud83c\udf2e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   burrito: {
-    keywords: [ "food", "mexican" ],
-    "char": "\ud83c\udf2f",
+    keywords: ['food', 'mexican'],
+    char: '\ud83c\udf2f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   green_salad: {
-    keywords: [ "food", "healthy", "lettuce" ],
-    "char": "\ud83e\udd57",
+    keywords: ['food', 'healthy', 'lettuce'],
+    char: '\ud83e\udd57',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   shallow_pan_of_food: {
-    keywords: [ "food", "cooking", "casserole", "paella" ],
-    "char": "\ud83e\udd58",
+    keywords: ['food', 'cooking', 'casserole', 'paella'],
+    char: '\ud83e\udd58',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   ramen: {
-    keywords: [ "food", "japanese", "noodle", "chopsticks" ],
-    "char": "\ud83c\udf5c",
+    keywords: ['food', 'japanese', 'noodle', 'chopsticks'],
+    char: '\ud83c\udf5c',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   stew: {
-    keywords: [ "food", "meat", "soup" ],
-    "char": "\ud83c\udf72",
+    keywords: ['food', 'meat', 'soup'],
+    char: '\ud83c\udf72',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   fish_cake: {
-    keywords: [ "food", "japan", "sea", "beach", "narutomaki", "pink", "swirl", "kamaboko", "surimi", "ramen" ],
-    "char": "\ud83c\udf65",
+    keywords: ['food', 'japan', 'sea', 'beach', 'narutomaki', 'pink', 'swirl', 'kamaboko', 'surimi', 'ramen'],
+    char: '\ud83c\udf65',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   fortune_cookie: {
-    keywords: [ "food", "prophecy" ],
-    "char": "\ud83e\udd60",
+    keywords: ['food', 'prophecy'],
+    char: '\ud83e\udd60',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   sushi: {
-    keywords: [ "food", "fish", "japanese", "rice" ],
-    "char": "\ud83c\udf63",
+    keywords: ['food', 'fish', 'japanese', 'rice'],
+    char: '\ud83c\udf63',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   bento: {
-    keywords: [ "food", "japanese", "box" ],
-    "char": "\ud83c\udf71",
+    keywords: ['food', 'japanese', 'box'],
+    char: '\ud83c\udf71',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   curry: {
-    keywords: [ "food", "spicy", "hot", "indian" ],
-    "char": "\ud83c\udf5b",
+    keywords: ['food', 'spicy', 'hot', 'indian'],
+    char: '\ud83c\udf5b',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   rice_ball: {
-    keywords: [ "food", "japanese" ],
-    "char": "\ud83c\udf59",
+    keywords: ['food', 'japanese'],
+    char: '\ud83c\udf59',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   rice: {
-    keywords: [ "food", "china", "asian" ],
-    "char": "\ud83c\udf5a",
+    keywords: ['food', 'china', 'asian'],
+    char: '\ud83c\udf5a',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   rice_cracker: {
-    keywords: [ "food", "japanese" ],
-    "char": "\ud83c\udf58",
+    keywords: ['food', 'japanese'],
+    char: '\ud83c\udf58',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   oden: {
-    keywords: [ "food", "japanese" ],
-    "char": "\ud83c\udf62",
+    keywords: ['food', 'japanese'],
+    char: '\ud83c\udf62',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   dango: {
-    keywords: [ "food", "dessert", "sweet", "japanese", "barbecue", "meat" ],
-    "char": "\ud83c\udf61",
+    keywords: ['food', 'dessert', 'sweet', 'japanese', 'barbecue', 'meat'],
+    char: '\ud83c\udf61',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   shaved_ice: {
-    keywords: [ "hot", "dessert", "summer" ],
-    "char": "\ud83c\udf67",
+    keywords: ['hot', 'dessert', 'summer'],
+    char: '\ud83c\udf67',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   ice_cream: {
-    keywords: [ "food", "hot", "dessert" ],
-    "char": "\ud83c\udf68",
+    keywords: ['food', 'hot', 'dessert'],
+    char: '\ud83c\udf68',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   icecream: {
-    keywords: [ "food", "hot", "dessert", "summer" ],
-    "char": "\ud83c\udf66",
+    keywords: ['food', 'hot', 'dessert', 'summer'],
+    char: '\ud83c\udf66',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   pie: {
-    keywords: [ "food", "dessert", "pastry" ],
-    "char": "\ud83e\udd67",
+    keywords: ['food', 'dessert', 'pastry'],
+    char: '\ud83e\udd67',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cake: {
-    keywords: [ "food", "dessert" ],
-    "char": "\ud83c\udf70",
+    keywords: ['food', 'dessert'],
+    char: '\ud83c\udf70',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cupcake: {
-    keywords: [ "food", "dessert", "bakery", "sweet" ],
-    "char": "\ud83e\uddc1",
+    keywords: ['food', 'dessert', 'bakery', 'sweet'],
+    char: '\ud83e\uddc1',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   moon_cake: {
-    keywords: [ "food", "autumn" ],
-    "char": "\ud83e\udd6e",
+    keywords: ['food', 'autumn'],
+    char: '\ud83e\udd6e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   birthday: {
-    keywords: [ "food", "dessert", "cake" ],
-    "char": "\ud83c\udf82",
+    keywords: ['food', 'dessert', 'cake'],
+    char: '\ud83c\udf82',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   custard: {
-    keywords: [ "dessert", "food" ],
-    "char": "\ud83c\udf6e",
+    keywords: ['dessert', 'food'],
+    char: '\ud83c\udf6e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   candy: {
-    keywords: [ "snack", "dessert", "sweet", "lolly" ],
-    "char": "\ud83c\udf6c",
+    keywords: ['snack', 'dessert', 'sweet', 'lolly'],
+    char: '\ud83c\udf6c',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   lollipop: {
-    keywords: [ "food", "snack", "candy", "sweet" ],
-    "char": "\ud83c\udf6d",
+    keywords: ['food', 'snack', 'candy', 'sweet'],
+    char: '\ud83c\udf6d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   chocolate_bar: {
-    keywords: [ "food", "snack", "dessert", "sweet" ],
-    "char": "\ud83c\udf6b",
+    keywords: ['food', 'snack', 'dessert', 'sweet'],
+    char: '\ud83c\udf6b',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   popcorn: {
-    keywords: [ "food", "movie theater", "films", "snack" ],
-    "char": "\ud83c\udf7f",
+    keywords: ['food', 'movie theater', 'films', 'snack'],
+    char: '\ud83c\udf7f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   dumpling: {
-    keywords: [ "food", "empanada", "pierogi", "potsticker" ],
-    "char": "\ud83e\udd5f",
+    keywords: ['food', 'empanada', 'pierogi', 'potsticker'],
+    char: '\ud83e\udd5f',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   doughnut: {
-    keywords: [ "food", "dessert", "snack", "sweet", "donut" ],
-    "char": "\ud83c\udf69",
+    keywords: ['food', 'dessert', 'snack', 'sweet', 'donut'],
+    char: '\ud83c\udf69',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cookie: {
-    keywords: [ "food", "snack", "oreo", "chocolate", "sweet", "dessert" ],
-    "char": "\ud83c\udf6a",
+    keywords: ['food', 'snack', 'oreo', 'chocolate', 'sweet', 'dessert'],
+    char: '\ud83c\udf6a',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   milk_glass: {
-    keywords: [ "beverage", "drink", "cow" ],
-    "char": "\ud83e\udd5b",
+    keywords: ['beverage', 'drink', 'cow'],
+    char: '\ud83e\udd5b',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   beer: {
-    keywords: [ "relax", "beverage", "drink", "drunk", "party", "pub", "summer", "alcohol", "booze" ],
-    "char": "\ud83c\udf7a",
+    keywords: ['relax', 'beverage', 'drink', 'drunk', 'party', 'pub', 'summer', 'alcohol', 'booze'],
+    char: '\ud83c\udf7a',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   beers: {
-    keywords: [ "relax", "beverage", "drink", "drunk", "party", "pub", "summer", "alcohol", "booze" ],
-    "char": "\ud83c\udf7b",
+    keywords: ['relax', 'beverage', 'drink', 'drunk', 'party', 'pub', 'summer', 'alcohol', 'booze'],
+    char: '\ud83c\udf7b',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   clinking_glasses: {
-    keywords: [ "beverage", "drink", "party", "alcohol", "celebrate", "cheers", "wine", "champagne", "toast" ],
-    "char": "\ud83e\udd42",
+    keywords: ['beverage', 'drink', 'party', 'alcohol', 'celebrate', 'cheers', 'wine', 'champagne', 'toast'],
+    char: '\ud83e\udd42',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   wine_glass: {
-    keywords: [ "drink", "beverage", "drunk", "alcohol", "booze" ],
-    "char": "\ud83c\udf77",
+    keywords: ['drink', 'beverage', 'drunk', 'alcohol', 'booze'],
+    char: '\ud83c\udf77',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   tumbler_glass: {
-    keywords: [ "drink", "beverage", "drunk", "alcohol", "liquor", "booze", "bourbon", "scotch", "whisky", "glass", "shot" ],
-    "char": "\ud83e\udd43",
+    keywords: [
+      'drink',
+      'beverage',
+      'drunk',
+      'alcohol',
+      'liquor',
+      'booze',
+      'bourbon',
+      'scotch',
+      'whisky',
+      'glass',
+      'shot'
+    ],
+    char: '\ud83e\udd43',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cocktail: {
-    keywords: [ "drink", "drunk", "alcohol", "beverage", "booze", "mojito" ],
-    "char": "\ud83c\udf78",
+    keywords: ['drink', 'drunk', 'alcohol', 'beverage', 'booze', 'mojito'],
+    char: '\ud83c\udf78',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   tropical_drink: {
-    keywords: [ "beverage", "cocktail", "summer", "beach", "alcohol", "booze", "mojito" ],
-    "char": "\ud83c\udf79",
+    keywords: ['beverage', 'cocktail', 'summer', 'beach', 'alcohol', 'booze', 'mojito'],
+    char: '\ud83c\udf79',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   champagne: {
-    keywords: [ "drink", "wine", "bottle", "celebration" ],
-    "char": "\ud83c\udf7e",
+    keywords: ['drink', 'wine', 'bottle', 'celebration'],
+    char: '\ud83c\udf7e',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   sake: {
-    keywords: [ "wine", "drink", "drunk", "beverage", "japanese", "alcohol", "booze" ],
-    "char": "\ud83c\udf76",
+    keywords: ['wine', 'drink', 'drunk', 'beverage', 'japanese', 'alcohol', 'booze'],
+    char: '\ud83c\udf76',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   tea: {
-    keywords: [ "drink", "bowl", "breakfast", "green", "british" ],
-    "char": "\ud83c\udf75",
+    keywords: ['drink', 'bowl', 'breakfast', 'green', 'british'],
+    char: '\ud83c\udf75',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   cup_with_straw: {
-    keywords: [ "drink", "soda" ],
-    "char": "\ud83e\udd64",
+    keywords: ['drink', 'soda'],
+    char: '\ud83e\udd64',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   coffee: {
-    keywords: [ "beverage", "caffeine", "latte", "espresso" ],
-    "char": "\u2615",
+    keywords: ['beverage', 'caffeine', 'latte', 'espresso'],
+    char: '\u2615',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   baby_bottle: {
-    keywords: [ "food", "container", "milk" ],
-    "char": "\ud83c\udf7c",
+    keywords: ['food', 'container', 'milk'],
+    char: '\ud83c\udf7c',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   salt: {
-    keywords: [ "condiment", "shaker" ],
-    "char": "\ud83e\uddc2",
+    keywords: ['condiment', 'shaker'],
+    char: '\ud83e\uddc2',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   spoon: {
-    keywords: [ "cutlery", "kitchen", "tableware" ],
-    "char": "\ud83e\udd44",
+    keywords: ['cutlery', 'kitchen', 'tableware'],
+    char: '\ud83e\udd44',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   fork_and_knife: {
-    keywords: [ "cutlery", "kitchen" ],
-    "char": "\ud83c\udf74",
+    keywords: ['cutlery', 'kitchen'],
+    char: '\ud83c\udf74',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   plate_with_cutlery: {
-    keywords: [ "food", "eat", "meal", "lunch", "dinner", "restaurant" ],
-    "char": "\ud83c\udf7d",
+    keywords: ['food', 'eat', 'meal', 'lunch', 'dinner', 'restaurant'],
+    char: '\ud83c\udf7d',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   bowl_with_spoon: {
-    keywords: [ "food", "breakfast", "cereal", "oatmeal", "porridge" ],
-    "char": "\ud83e\udd63",
+    keywords: ['food', 'breakfast', 'cereal', 'oatmeal', 'porridge'],
+    char: '\ud83e\udd63',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   takeout_box: {
-    keywords: [ "food", "leftovers" ],
-    "char": "\ud83e\udd61",
+    keywords: ['food', 'leftovers'],
+    char: '\ud83e\udd61',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   chopsticks: {
-    keywords: [ "food" ],
-    "char": "\ud83e\udd62",
+    keywords: ['food'],
+    char: '\ud83e\udd62',
     fitzpatrick_scale: false,
-    category: "food_and_drink"
+    category: 'food_and_drink'
   },
   soccer: {
-    keywords: [ "sports", "football" ],
-    "char": "\u26bd",
+    keywords: ['sports', 'football'],
+    char: '\u26bd',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   basketball: {
-    keywords: [ "sports", "balls", "NBA" ],
-    "char": "\ud83c\udfc0",
+    keywords: ['sports', 'balls', 'NBA'],
+    char: '\ud83c\udfc0',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   football: {
-    keywords: [ "sports", "balls", "NFL" ],
-    "char": "\ud83c\udfc8",
+    keywords: ['sports', 'balls', 'NFL'],
+    char: '\ud83c\udfc8',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   baseball: {
-    keywords: [ "sports", "balls" ],
-    "char": "\u26be",
+    keywords: ['sports', 'balls'],
+    char: '\u26be',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   softball: {
-    keywords: [ "sports", "balls" ],
-    "char": "\ud83e\udd4e",
+    keywords: ['sports', 'balls'],
+    char: '\ud83e\udd4e',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   tennis: {
-    keywords: [ "sports", "balls", "green" ],
-    "char": "\ud83c\udfbe",
+    keywords: ['sports', 'balls', 'green'],
+    char: '\ud83c\udfbe',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   volleyball: {
-    keywords: [ "sports", "balls" ],
-    "char": "\ud83c\udfd0",
+    keywords: ['sports', 'balls'],
+    char: '\ud83c\udfd0',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   rugby_football: {
-    keywords: [ "sports", "team" ],
-    "char": "\ud83c\udfc9",
+    keywords: ['sports', 'team'],
+    char: '\ud83c\udfc9',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   flying_disc: {
-    keywords: [ "sports", "frisbee", "ultimate" ],
-    "char": "\ud83e\udd4f",
+    keywords: ['sports', 'frisbee', 'ultimate'],
+    char: '\ud83e\udd4f',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
-  "8ball": {
-    keywords: [ "pool", "hobby", "game", "luck", "magic" ],
-    "char": "\ud83c\udfb1",
+  '8ball': {
+    keywords: ['pool', 'hobby', 'game', 'luck', 'magic'],
+    char: '\ud83c\udfb1',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   golf: {
-    keywords: [ "sports", "business", "flag", "hole", "summer" ],
-    "char": "\u26f3",
+    keywords: ['sports', 'business', 'flag', 'hole', 'summer'],
+    char: '\u26f3',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   golfing_woman: {
-    keywords: [ "sports", "business", "woman", "female" ],
-    "char": "\ud83c\udfcc\ufe0f\u200d\u2640\ufe0f",
+    keywords: ['sports', 'business', 'woman', 'female'],
+    char: '\ud83c\udfcc\ufe0f\u200d\u2640\ufe0f',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   golfing_man: {
-    keywords: [ "sports", "business" ],
-    "char": "\ud83c\udfcc",
+    keywords: ['sports', 'business'],
+    char: '\ud83c\udfcc',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   ping_pong: {
-    keywords: [ "sports", "pingpong" ],
-    "char": "\ud83c\udfd3",
+    keywords: ['sports', 'pingpong'],
+    char: '\ud83c\udfd3',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   badminton: {
-    keywords: [ "sports" ],
-    "char": "\ud83c\udff8",
+    keywords: ['sports'],
+    char: '\ud83c\udff8',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   goal_net: {
-    keywords: [ "sports" ],
-    "char": "\ud83e\udd45",
+    keywords: ['sports'],
+    char: '\ud83e\udd45',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   ice_hockey: {
-    keywords: [ "sports" ],
-    "char": "\ud83c\udfd2",
+    keywords: ['sports'],
+    char: '\ud83c\udfd2',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   field_hockey: {
-    keywords: [ "sports" ],
-    "char": "\ud83c\udfd1",
+    keywords: ['sports'],
+    char: '\ud83c\udfd1',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   lacrosse: {
-    keywords: [ "sports", "ball", "stick" ],
-    "char": "\ud83e\udd4d",
+    keywords: ['sports', 'ball', 'stick'],
+    char: '\ud83e\udd4d',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   cricket: {
-    keywords: [ "sports" ],
-    "char": "\ud83c\udfcf",
+    keywords: ['sports'],
+    char: '\ud83c\udfcf',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   ski: {
-    keywords: [ "sports", "winter", "cold", "snow" ],
-    "char": "\ud83c\udfbf",
+    keywords: ['sports', 'winter', 'cold', 'snow'],
+    char: '\ud83c\udfbf',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   skier: {
-    keywords: [ "sports", "winter", "snow" ],
-    "char": "\u26f7",
+    keywords: ['sports', 'winter', 'snow'],
+    char: '\u26f7',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   snowboarder: {
-    keywords: [ "sports", "winter" ],
-    "char": "\ud83c\udfc2",
+    keywords: ['sports', 'winter'],
+    char: '\ud83c\udfc2',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   person_fencing: {
-    keywords: [ "sports", "fencing", "sword" ],
-    "char": "\ud83e\udd3a",
+    keywords: ['sports', 'fencing', 'sword'],
+    char: '\ud83e\udd3a',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   women_wrestling: {
-    keywords: [ "sports", "wrestlers" ],
-    "char": "\ud83e\udd3c\u200d\u2640\ufe0f",
+    keywords: ['sports', 'wrestlers'],
+    char: '\ud83e\udd3c\u200d\u2640\ufe0f',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   men_wrestling: {
-    keywords: [ "sports", "wrestlers" ],
-    "char": "\ud83e\udd3c\u200d\u2642\ufe0f",
+    keywords: ['sports', 'wrestlers'],
+    char: '\ud83e\udd3c\u200d\u2642\ufe0f',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   woman_cartwheeling: {
-    keywords: [ "gymnastics" ],
-    "char": "\ud83e\udd38\u200d\u2640\ufe0f",
+    keywords: ['gymnastics'],
+    char: '\ud83e\udd38\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   man_cartwheeling: {
-    keywords: [ "gymnastics" ],
-    "char": "\ud83e\udd38\u200d\u2642\ufe0f",
+    keywords: ['gymnastics'],
+    char: '\ud83e\udd38\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   woman_playing_handball: {
-    keywords: [ "sports" ],
-    "char": "\ud83e\udd3e\u200d\u2640\ufe0f",
+    keywords: ['sports'],
+    char: '\ud83e\udd3e\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   man_playing_handball: {
-    keywords: [ "sports" ],
-    "char": "\ud83e\udd3e\u200d\u2642\ufe0f",
+    keywords: ['sports'],
+    char: '\ud83e\udd3e\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   ice_skate: {
-    keywords: [ "sports" ],
-    "char": "\u26f8",
+    keywords: ['sports'],
+    char: '\u26f8',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   curling_stone: {
-    keywords: [ "sports" ],
-    "char": "\ud83e\udd4c",
+    keywords: ['sports'],
+    char: '\ud83e\udd4c',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   skateboard: {
-    keywords: [ "board" ],
-    "char": "\ud83d\udef9",
+    keywords: ['board'],
+    char: '\ud83d\udef9',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   sled: {
-    keywords: [ "sleigh", "luge", "toboggan" ],
-    "char": "\ud83d\udef7",
+    keywords: ['sleigh', 'luge', 'toboggan'],
+    char: '\ud83d\udef7',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   bow_and_arrow: {
-    keywords: [ "sports" ],
-    "char": "\ud83c\udff9",
+    keywords: ['sports'],
+    char: '\ud83c\udff9',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   fishing_pole_and_fish: {
-    keywords: [ "food", "hobby", "summer" ],
-    "char": "\ud83c\udfa3",
+    keywords: ['food', 'hobby', 'summer'],
+    char: '\ud83c\udfa3',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   boxing_glove: {
-    keywords: [ "sports", "fighting" ],
-    "char": "\ud83e\udd4a",
+    keywords: ['sports', 'fighting'],
+    char: '\ud83e\udd4a',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   martial_arts_uniform: {
-    keywords: [ "judo", "karate", "taekwondo" ],
-    "char": "\ud83e\udd4b",
+    keywords: ['judo', 'karate', 'taekwondo'],
+    char: '\ud83e\udd4b',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   rowing_woman: {
-    keywords: [ "sports", "hobby", "water", "ship", "woman", "female" ],
-    "char": "\ud83d\udea3\u200d\u2640\ufe0f",
+    keywords: ['sports', 'hobby', 'water', 'ship', 'woman', 'female'],
+    char: '\ud83d\udea3\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   rowing_man: {
-    keywords: [ "sports", "hobby", "water", "ship" ],
-    "char": "\ud83d\udea3",
+    keywords: ['sports', 'hobby', 'water', 'ship'],
+    char: '\ud83d\udea3',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   climbing_woman: {
-    keywords: [ "sports", "hobby", "woman", "female", "rock" ],
-    "char": "\ud83e\uddd7\u200d\u2640\ufe0f",
+    keywords: ['sports', 'hobby', 'woman', 'female', 'rock'],
+    char: '\ud83e\uddd7\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   climbing_man: {
-    keywords: [ "sports", "hobby", "man", "male", "rock" ],
-    "char": "\ud83e\uddd7\u200d\u2642\ufe0f",
+    keywords: ['sports', 'hobby', 'man', 'male', 'rock'],
+    char: '\ud83e\uddd7\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   swimming_woman: {
-    keywords: [ "sports", "exercise", "human", "athlete", "water", "summer", "woman", "female" ],
-    "char": "\ud83c\udfca\u200d\u2640\ufe0f",
+    keywords: ['sports', 'exercise', 'human', 'athlete', 'water', 'summer', 'woman', 'female'],
+    char: '\ud83c\udfca\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   swimming_man: {
-    keywords: [ "sports", "exercise", "human", "athlete", "water", "summer" ],
-    "char": "\ud83c\udfca",
+    keywords: ['sports', 'exercise', 'human', 'athlete', 'water', 'summer'],
+    char: '\ud83c\udfca',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   woman_playing_water_polo: {
-    keywords: [ "sports", "pool" ],
-    "char": "\ud83e\udd3d\u200d\u2640\ufe0f",
+    keywords: ['sports', 'pool'],
+    char: '\ud83e\udd3d\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   man_playing_water_polo: {
-    keywords: [ "sports", "pool" ],
-    "char": "\ud83e\udd3d\u200d\u2642\ufe0f",
+    keywords: ['sports', 'pool'],
+    char: '\ud83e\udd3d\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   woman_in_lotus_position: {
-    keywords: [ "woman", "female", "meditation", "yoga", "serenity", "zen", "mindfulness" ],
-    "char": "\ud83e\uddd8\u200d\u2640\ufe0f",
+    keywords: ['woman', 'female', 'meditation', 'yoga', 'serenity', 'zen', 'mindfulness'],
+    char: '\ud83e\uddd8\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   man_in_lotus_position: {
-    keywords: [ "man", "male", "meditation", "yoga", "serenity", "zen", "mindfulness" ],
-    "char": "\ud83e\uddd8\u200d\u2642\ufe0f",
+    keywords: ['man', 'male', 'meditation', 'yoga', 'serenity', 'zen', 'mindfulness'],
+    char: '\ud83e\uddd8\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   surfing_woman: {
-    keywords: [ "sports", "ocean", "sea", "summer", "beach", "woman", "female" ],
-    "char": "\ud83c\udfc4\u200d\u2640\ufe0f",
+    keywords: ['sports', 'ocean', 'sea', 'summer', 'beach', 'woman', 'female'],
+    char: '\ud83c\udfc4\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   surfing_man: {
-    keywords: [ "sports", "ocean", "sea", "summer", "beach" ],
-    "char": "\ud83c\udfc4",
+    keywords: ['sports', 'ocean', 'sea', 'summer', 'beach'],
+    char: '\ud83c\udfc4',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   bath: {
-    keywords: [ "clean", "shower", "bathroom" ],
-    "char": "\ud83d\udec0",
+    keywords: ['clean', 'shower', 'bathroom'],
+    char: '\ud83d\udec0',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   basketball_woman: {
-    keywords: [ "sports", "human", "woman", "female" ],
-    "char": "\u26f9\ufe0f\u200d\u2640\ufe0f",
+    keywords: ['sports', 'human', 'woman', 'female'],
+    char: '\u26f9\ufe0f\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   basketball_man: {
-    keywords: [ "sports", "human" ],
-    "char": "\u26f9",
+    keywords: ['sports', 'human'],
+    char: '\u26f9',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   weight_lifting_woman: {
-    keywords: [ "sports", "training", "exercise", "woman", "female" ],
-    "char": "\ud83c\udfcb\ufe0f\u200d\u2640\ufe0f",
+    keywords: ['sports', 'training', 'exercise', 'woman', 'female'],
+    char: '\ud83c\udfcb\ufe0f\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   weight_lifting_man: {
-    keywords: [ "sports", "training", "exercise" ],
-    "char": "\ud83c\udfcb",
+    keywords: ['sports', 'training', 'exercise'],
+    char: '\ud83c\udfcb',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   biking_woman: {
-    keywords: [ "sports", "bike", "exercise", "hipster", "woman", "female" ],
-    "char": "\ud83d\udeb4\u200d\u2640\ufe0f",
+    keywords: ['sports', 'bike', 'exercise', 'hipster', 'woman', 'female'],
+    char: '\ud83d\udeb4\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   biking_man: {
-    keywords: [ "sports", "bike", "exercise", "hipster" ],
-    "char": "\ud83d\udeb4",
+    keywords: ['sports', 'bike', 'exercise', 'hipster'],
+    char: '\ud83d\udeb4',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   mountain_biking_woman: {
-    keywords: [ "transportation", "sports", "human", "race", "bike", "woman", "female" ],
-    "char": "\ud83d\udeb5\u200d\u2640\ufe0f",
+    keywords: ['transportation', 'sports', 'human', 'race', 'bike', 'woman', 'female'],
+    char: '\ud83d\udeb5\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   mountain_biking_man: {
-    keywords: [ "transportation", "sports", "human", "race", "bike" ],
-    "char": "\ud83d\udeb5",
+    keywords: ['transportation', 'sports', 'human', 'race', 'bike'],
+    char: '\ud83d\udeb5',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   horse_racing: {
-    keywords: [ "animal", "betting", "competition", "gambling", "luck" ],
-    "char": "\ud83c\udfc7",
+    keywords: ['animal', 'betting', 'competition', 'gambling', 'luck'],
+    char: '\ud83c\udfc7',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   business_suit_levitating: {
-    keywords: [ "suit", "business", "levitate", "hover", "jump" ],
-    "char": "\ud83d\udd74",
+    keywords: ['suit', 'business', 'levitate', 'hover', 'jump'],
+    char: '\ud83d\udd74',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   trophy: {
-    keywords: [ "win", "award", "contest", "place", "ftw", "ceremony" ],
-    "char": "\ud83c\udfc6",
+    keywords: ['win', 'award', 'contest', 'place', 'ftw', 'ceremony'],
+    char: '\ud83c\udfc6',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   running_shirt_with_sash: {
-    keywords: [ "play", "pageant" ],
-    "char": "\ud83c\udfbd",
+    keywords: ['play', 'pageant'],
+    char: '\ud83c\udfbd',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   medal_sports: {
-    keywords: [ "award", "winning" ],
-    "char": "\ud83c\udfc5",
+    keywords: ['award', 'winning'],
+    char: '\ud83c\udfc5',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   medal_military: {
-    keywords: [ "award", "winning", "army" ],
-    "char": "\ud83c\udf96",
+    keywords: ['award', 'winning', 'army'],
+    char: '\ud83c\udf96',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
-  "1st_place_medal": {
-    keywords: [ "award", "winning", "first" ],
-    "char": "\ud83e\udd47",
+  '1st_place_medal': {
+    keywords: ['award', 'winning', 'first'],
+    char: '\ud83e\udd47',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
-  "2nd_place_medal": {
-    keywords: [ "award", "second" ],
-    "char": "\ud83e\udd48",
+  '2nd_place_medal': {
+    keywords: ['award', 'second'],
+    char: '\ud83e\udd48',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
-  "3rd_place_medal": {
-    keywords: [ "award", "third" ],
-    "char": "\ud83e\udd49",
+  '3rd_place_medal': {
+    keywords: ['award', 'third'],
+    char: '\ud83e\udd49',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   reminder_ribbon: {
-    keywords: [ "sports", "cause", "support", "awareness" ],
-    "char": "\ud83c\udf97",
+    keywords: ['sports', 'cause', 'support', 'awareness'],
+    char: '\ud83c\udf97',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   rosette: {
-    keywords: [ "flower", "decoration", "military" ],
-    "char": "\ud83c\udff5",
+    keywords: ['flower', 'decoration', 'military'],
+    char: '\ud83c\udff5',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   ticket: {
-    keywords: [ "event", "concert", "pass" ],
-    "char": "\ud83c\udfab",
+    keywords: ['event', 'concert', 'pass'],
+    char: '\ud83c\udfab',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   tickets: {
-    keywords: [ "sports", "concert", "entrance" ],
-    "char": "\ud83c\udf9f",
+    keywords: ['sports', 'concert', 'entrance'],
+    char: '\ud83c\udf9f',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   performing_arts: {
-    keywords: [ "acting", "theater", "drama" ],
-    "char": "\ud83c\udfad",
+    keywords: ['acting', 'theater', 'drama'],
+    char: '\ud83c\udfad',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   art: {
-    keywords: [ "design", "paint", "draw", "colors" ],
-    "char": "\ud83c\udfa8",
+    keywords: ['design', 'paint', 'draw', 'colors'],
+    char: '\ud83c\udfa8',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   circus_tent: {
-    keywords: [ "festival", "carnival", "party" ],
-    "char": "\ud83c\udfaa",
+    keywords: ['festival', 'carnival', 'party'],
+    char: '\ud83c\udfaa',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   woman_juggling: {
-    keywords: [ "juggle", "balance", "skill", "multitask" ],
-    "char": "\ud83e\udd39\u200d\u2640\ufe0f",
+    keywords: ['juggle', 'balance', 'skill', 'multitask'],
+    char: '\ud83e\udd39\u200d\u2640\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   man_juggling: {
-    keywords: [ "juggle", "balance", "skill", "multitask" ],
-    "char": "\ud83e\udd39\u200d\u2642\ufe0f",
+    keywords: ['juggle', 'balance', 'skill', 'multitask'],
+    char: '\ud83e\udd39\u200d\u2642\ufe0f',
     fitzpatrick_scale: true,
-    category: "activity"
+    category: 'activity'
   },
   microphone: {
-    keywords: [ "sound", "music", "PA", "sing", "talkshow" ],
-    "char": "\ud83c\udfa4",
+    keywords: ['sound', 'music', 'PA', 'sing', 'talkshow'],
+    char: '\ud83c\udfa4',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   headphones: {
-    keywords: [ "music", "score", "gadgets" ],
-    "char": "\ud83c\udfa7",
+    keywords: ['music', 'score', 'gadgets'],
+    char: '\ud83c\udfa7',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   musical_score: {
-    keywords: [ "treble", "clef", "compose" ],
-    "char": "\ud83c\udfbc",
+    keywords: ['treble', 'clef', 'compose'],
+    char: '\ud83c\udfbc',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   musical_keyboard: {
-    keywords: [ "piano", "instrument", "compose" ],
-    "char": "\ud83c\udfb9",
+    keywords: ['piano', 'instrument', 'compose'],
+    char: '\ud83c\udfb9',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   drum: {
-    keywords: [ "music", "instrument", "drumsticks", "snare" ],
-    "char": "\ud83e\udd41",
+    keywords: ['music', 'instrument', 'drumsticks', 'snare'],
+    char: '\ud83e\udd41',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   saxophone: {
-    keywords: [ "music", "instrument", "jazz", "blues" ],
-    "char": "\ud83c\udfb7",
+    keywords: ['music', 'instrument', 'jazz', 'blues'],
+    char: '\ud83c\udfb7',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   trumpet: {
-    keywords: [ "music", "brass" ],
-    "char": "\ud83c\udfba",
+    keywords: ['music', 'brass'],
+    char: '\ud83c\udfba',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   guitar: {
-    keywords: [ "music", "instrument" ],
-    "char": "\ud83c\udfb8",
+    keywords: ['music', 'instrument'],
+    char: '\ud83c\udfb8',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   violin: {
-    keywords: [ "music", "instrument", "orchestra", "symphony" ],
-    "char": "\ud83c\udfbb",
+    keywords: ['music', 'instrument', 'orchestra', 'symphony'],
+    char: '\ud83c\udfbb',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   clapper: {
-    keywords: [ "movie", "film", "record" ],
-    "char": "\ud83c\udfac",
+    keywords: ['movie', 'film', 'record'],
+    char: '\ud83c\udfac',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   video_game: {
-    keywords: [ "play", "console", "PS4", "controller" ],
-    "char": "\ud83c\udfae",
+    keywords: ['play', 'console', 'PS4', 'controller'],
+    char: '\ud83c\udfae',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   space_invader: {
-    keywords: [ "game", "arcade", "play" ],
-    "char": "\ud83d\udc7e",
+    keywords: ['game', 'arcade', 'play'],
+    char: '\ud83d\udc7e',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   dart: {
-    keywords: [ "game", "play", "bar", "target", "bullseye" ],
-    "char": "\ud83c\udfaf",
+    keywords: ['game', 'play', 'bar', 'target', 'bullseye'],
+    char: '\ud83c\udfaf',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   game_die: {
-    keywords: [ "dice", "random", "tabletop", "play", "luck" ],
-    "char": "\ud83c\udfb2",
+    keywords: ['dice', 'random', 'tabletop', 'play', 'luck'],
+    char: '\ud83c\udfb2',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   chess_pawn: {
-    keywords: [ "expendable" ],
-    "char": "\u265f",
+    keywords: ['expendable'],
+    char: '\u265f',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   slot_machine: {
-    keywords: [ "bet", "gamble", "vegas", "fruit machine", "luck", "casino" ],
-    "char": "\ud83c\udfb0",
+    keywords: ['bet', 'gamble', 'vegas', 'fruit machine', 'luck', 'casino'],
+    char: '\ud83c\udfb0',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   jigsaw: {
-    keywords: [ "interlocking", "puzzle", "piece" ],
-    "char": "\ud83e\udde9",
+    keywords: ['interlocking', 'puzzle', 'piece'],
+    char: '\ud83e\udde9',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   bowling: {
-    keywords: [ "sports", "fun", "play" ],
-    "char": "\ud83c\udfb3",
+    keywords: ['sports', 'fun', 'play'],
+    char: '\ud83c\udfb3',
     fitzpatrick_scale: false,
-    category: "activity"
+    category: 'activity'
   },
   red_car: {
-    keywords: [ "red", "transportation", "vehicle" ],
-    "char": "\ud83d\ude97",
+    keywords: ['red', 'transportation', 'vehicle'],
+    char: '\ud83d\ude97',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   taxi: {
-    keywords: [ "uber", "vehicle", "cars", "transportation" ],
-    "char": "\ud83d\ude95",
+    keywords: ['uber', 'vehicle', 'cars', 'transportation'],
+    char: '\ud83d\ude95',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   blue_car: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude99",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude99',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   bus: {
-    keywords: [ "car", "vehicle", "transportation" ],
-    "char": "\ud83d\ude8c",
+    keywords: ['car', 'vehicle', 'transportation'],
+    char: '\ud83d\ude8c',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   trolleybus: {
-    keywords: [ "bart", "transportation", "vehicle" ],
-    "char": "\ud83d\ude8e",
+    keywords: ['bart', 'transportation', 'vehicle'],
+    char: '\ud83d\ude8e',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   racing_car: {
-    keywords: [ "sports", "race", "fast", "formula", "f1" ],
-    "char": "\ud83c\udfce",
+    keywords: ['sports', 'race', 'fast', 'formula', 'f1'],
+    char: '\ud83c\udfce',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   police_car: {
-    keywords: [ "vehicle", "cars", "transportation", "law", "legal", "enforcement" ],
-    "char": "\ud83d\ude93",
+    keywords: ['vehicle', 'cars', 'transportation', 'law', 'legal', 'enforcement'],
+    char: '\ud83d\ude93',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   ambulance: {
-    keywords: [ "health", "911", "hospital" ],
-    "char": "\ud83d\ude91",
+    keywords: ['health', '911', 'hospital'],
+    char: '\ud83d\ude91',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   fire_engine: {
-    keywords: [ "transportation", "cars", "vehicle" ],
-    "char": "\ud83d\ude92",
+    keywords: ['transportation', 'cars', 'vehicle'],
+    char: '\ud83d\ude92',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   minibus: {
-    keywords: [ "vehicle", "car", "transportation" ],
-    "char": "\ud83d\ude90",
+    keywords: ['vehicle', 'car', 'transportation'],
+    char: '\ud83d\ude90',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   truck: {
-    keywords: [ "cars", "transportation" ],
-    "char": "\ud83d\ude9a",
+    keywords: ['cars', 'transportation'],
+    char: '\ud83d\ude9a',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   articulated_lorry: {
-    keywords: [ "vehicle", "cars", "transportation", "express" ],
-    "char": "\ud83d\ude9b",
+    keywords: ['vehicle', 'cars', 'transportation', 'express'],
+    char: '\ud83d\ude9b',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   tractor: {
-    keywords: [ "vehicle", "car", "farming", "agriculture" ],
-    "char": "\ud83d\ude9c",
+    keywords: ['vehicle', 'car', 'farming', 'agriculture'],
+    char: '\ud83d\ude9c',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   kick_scooter: {
-    keywords: [ "vehicle", "kick", "razor" ],
-    "char": "\ud83d\udef4",
+    keywords: ['vehicle', 'kick', 'razor'],
+    char: '\ud83d\udef4',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   motorcycle: {
-    keywords: [ "race", "sports", "fast" ],
-    "char": "\ud83c\udfcd",
+    keywords: ['race', 'sports', 'fast'],
+    char: '\ud83c\udfcd',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   bike: {
-    keywords: [ "sports", "bicycle", "exercise", "hipster" ],
-    "char": "\ud83d\udeb2",
+    keywords: ['sports', 'bicycle', 'exercise', 'hipster'],
+    char: '\ud83d\udeb2',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   motor_scooter: {
-    keywords: [ "vehicle", "vespa", "sasha" ],
-    "char": "\ud83d\udef5",
+    keywords: ['vehicle', 'vespa', 'sasha'],
+    char: '\ud83d\udef5',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   rotating_light: {
-    keywords: [ "police", "ambulance", "911", "emergency", "alert", "error", "pinged", "law", "legal" ],
-    "char": "\ud83d\udea8",
+    keywords: ['police', 'ambulance', '911', 'emergency', 'alert', 'error', 'pinged', 'law', 'legal'],
+    char: '\ud83d\udea8',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   oncoming_police_car: {
-    keywords: [ "vehicle", "law", "legal", "enforcement", "911" ],
-    "char": "\ud83d\ude94",
+    keywords: ['vehicle', 'law', 'legal', 'enforcement', '911'],
+    char: '\ud83d\ude94',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   oncoming_bus: {
-    keywords: [ "vehicle", "transportation" ],
-    "char": "\ud83d\ude8d",
+    keywords: ['vehicle', 'transportation'],
+    char: '\ud83d\ude8d',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   oncoming_automobile: {
-    keywords: [ "car", "vehicle", "transportation" ],
-    "char": "\ud83d\ude98",
+    keywords: ['car', 'vehicle', 'transportation'],
+    char: '\ud83d\ude98',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   oncoming_taxi: {
-    keywords: [ "vehicle", "cars", "uber" ],
-    "char": "\ud83d\ude96",
+    keywords: ['vehicle', 'cars', 'uber'],
+    char: '\ud83d\ude96',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   aerial_tramway: {
-    keywords: [ "transportation", "vehicle", "ski" ],
-    "char": "\ud83d\udea1",
+    keywords: ['transportation', 'vehicle', 'ski'],
+    char: '\ud83d\udea1',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   mountain_cableway: {
-    keywords: [ "transportation", "vehicle", "ski" ],
-    "char": "\ud83d\udea0",
+    keywords: ['transportation', 'vehicle', 'ski'],
+    char: '\ud83d\udea0',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   suspension_railway: {
-    keywords: [ "vehicle", "transportation" ],
-    "char": "\ud83d\ude9f",
+    keywords: ['vehicle', 'transportation'],
+    char: '\ud83d\ude9f',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   railway_car: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude83",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude83',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   train: {
-    keywords: [ "transportation", "vehicle", "carriage", "public", "travel" ],
-    "char": "\ud83d\ude8b",
+    keywords: ['transportation', 'vehicle', 'carriage', 'public', 'travel'],
+    char: '\ud83d\ude8b',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   monorail: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude9d",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude9d',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   bullettrain_side: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude84",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude84',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   bullettrain_front: {
-    keywords: [ "transportation", "vehicle", "speed", "fast", "public", "travel" ],
-    "char": "\ud83d\ude85",
+    keywords: ['transportation', 'vehicle', 'speed', 'fast', 'public', 'travel'],
+    char: '\ud83d\ude85',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   light_rail: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude88",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude88',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   mountain_railway: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude9e",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude9e',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   steam_locomotive: {
-    keywords: [ "transportation", "vehicle", "train" ],
-    "char": "\ud83d\ude82",
+    keywords: ['transportation', 'vehicle', 'train'],
+    char: '\ud83d\ude82',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   train2: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude86",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude86',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   metro: {
-    keywords: [ "transportation", "blue-square", "mrt", "underground", "tube" ],
-    "char": "\ud83d\ude87",
+    keywords: ['transportation', 'blue-square', 'mrt', 'underground', 'tube'],
+    char: '\ud83d\ude87',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   tram: {
-    keywords: [ "transportation", "vehicle" ],
-    "char": "\ud83d\ude8a",
+    keywords: ['transportation', 'vehicle'],
+    char: '\ud83d\ude8a',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   station: {
-    keywords: [ "transportation", "vehicle", "public" ],
-    "char": "\ud83d\ude89",
+    keywords: ['transportation', 'vehicle', 'public'],
+    char: '\ud83d\ude89',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   flying_saucer: {
-    keywords: [ "transportation", "vehicle", "ufo" ],
-    "char": "\ud83d\udef8",
+    keywords: ['transportation', 'vehicle', 'ufo'],
+    char: '\ud83d\udef8',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   helicopter: {
-    keywords: [ "transportation", "vehicle", "fly" ],
-    "char": "\ud83d\ude81",
+    keywords: ['transportation', 'vehicle', 'fly'],
+    char: '\ud83d\ude81',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   small_airplane: {
-    keywords: [ "flight", "transportation", "fly", "vehicle" ],
-    "char": "\ud83d\udee9",
+    keywords: ['flight', 'transportation', 'fly', 'vehicle'],
+    char: '\ud83d\udee9',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   airplane: {
-    keywords: [ "vehicle", "transportation", "flight", "fly" ],
-    "char": "\u2708\ufe0f",
+    keywords: ['vehicle', 'transportation', 'flight', 'fly'],
+    char: '\u2708\ufe0f',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   flight_departure: {
-    keywords: [ "airport", "flight", "landing" ],
-    "char": "\ud83d\udeeb",
+    keywords: ['airport', 'flight', 'landing'],
+    char: '\ud83d\udeeb',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   flight_arrival: {
-    keywords: [ "airport", "flight", "boarding" ],
-    "char": "\ud83d\udeec",
+    keywords: ['airport', 'flight', 'boarding'],
+    char: '\ud83d\udeec',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   sailboat: {
-    keywords: [ "ship", "summer", "transportation", "water", "sailing" ],
-    "char": "\u26f5",
+    keywords: ['ship', 'summer', 'transportation', 'water', 'sailing'],
+    char: '\u26f5',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   motor_boat: {
-    keywords: [ "ship" ],
-    "char": "\ud83d\udee5",
+    keywords: ['ship'],
+    char: '\ud83d\udee5',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   speedboat: {
-    keywords: [ "ship", "transportation", "vehicle", "summer" ],
-    "char": "\ud83d\udea4",
+    keywords: ['ship', 'transportation', 'vehicle', 'summer'],
+    char: '\ud83d\udea4',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   ferry: {
-    keywords: [ "boat", "ship", "yacht" ],
-    "char": "\u26f4",
+    keywords: ['boat', 'ship', 'yacht'],
+    char: '\u26f4',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   passenger_ship: {
-    keywords: [ "yacht", "cruise", "ferry" ],
-    "char": "\ud83d\udef3",
+    keywords: ['yacht', 'cruise', 'ferry'],
+    char: '\ud83d\udef3',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   rocket: {
-    keywords: [ "launch", "ship", "staffmode", "NASA", "outer space", "outer_space", "fly" ],
-    "char": "\ud83d\ude80",
+    keywords: ['launch', 'ship', 'staffmode', 'NASA', 'outer space', 'outer_space', 'fly'],
+    char: '\ud83d\ude80',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   artificial_satellite: {
-    keywords: [ "communication", "gps", "orbit", "spaceflight", "NASA", "ISS" ],
-    "char": "\ud83d\udef0",
+    keywords: ['communication', 'gps', 'orbit', 'spaceflight', 'NASA', 'ISS'],
+    char: '\ud83d\udef0',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   seat: {
-    keywords: [ "sit", "airplane", "transport", "bus", "flight", "fly" ],
-    "char": "\ud83d\udcba",
+    keywords: ['sit', 'airplane', 'transport', 'bus', 'flight', 'fly'],
+    char: '\ud83d\udcba',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   canoe: {
-    keywords: [ "boat", "paddle", "water", "ship" ],
-    "char": "\ud83d\udef6",
+    keywords: ['boat', 'paddle', 'water', 'ship'],
+    char: '\ud83d\udef6',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   anchor: {
-    keywords: [ "ship", "ferry", "sea", "boat" ],
-    "char": "\u2693",
+    keywords: ['ship', 'ferry', 'sea', 'boat'],
+    char: '\u2693',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   construction: {
-    keywords: [ "wip", "progress", "caution", "warning" ],
-    "char": "\ud83d\udea7",
+    keywords: ['wip', 'progress', 'caution', 'warning'],
+    char: '\ud83d\udea7',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   fuelpump: {
-    keywords: [ "gas station", "petroleum" ],
-    "char": "\u26fd",
+    keywords: ['gas station', 'petroleum'],
+    char: '\u26fd',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   busstop: {
-    keywords: [ "transportation", "wait" ],
-    "char": "\ud83d\ude8f",
+    keywords: ['transportation', 'wait'],
+    char: '\ud83d\ude8f',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   vertical_traffic_light: {
-    keywords: [ "transportation", "driving" ],
-    "char": "\ud83d\udea6",
+    keywords: ['transportation', 'driving'],
+    char: '\ud83d\udea6',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   traffic_light: {
-    keywords: [ "transportation", "signal" ],
-    "char": "\ud83d\udea5",
+    keywords: ['transportation', 'signal'],
+    char: '\ud83d\udea5',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   checkered_flag: {
-    keywords: [ "contest", "finishline", "race", "gokart" ],
-    "char": "\ud83c\udfc1",
+    keywords: ['contest', 'finishline', 'race', 'gokart'],
+    char: '\ud83c\udfc1',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   ship: {
-    keywords: [ "transportation", "titanic", "deploy" ],
-    "char": "\ud83d\udea2",
+    keywords: ['transportation', 'titanic', 'deploy'],
+    char: '\ud83d\udea2',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   ferris_wheel: {
-    keywords: [ "photo", "carnival", "londoneye" ],
-    "char": "\ud83c\udfa1",
+    keywords: ['photo', 'carnival', 'londoneye'],
+    char: '\ud83c\udfa1',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   roller_coaster: {
-    keywords: [ "carnival", "playground", "photo", "fun" ],
-    "char": "\ud83c\udfa2",
+    keywords: ['carnival', 'playground', 'photo', 'fun'],
+    char: '\ud83c\udfa2',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   carousel_horse: {
-    keywords: [ "photo", "carnival" ],
-    "char": "\ud83c\udfa0",
+    keywords: ['photo', 'carnival'],
+    char: '\ud83c\udfa0',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   building_construction: {
-    keywords: [ "wip", "working", "progress" ],
-    "char": "\ud83c\udfd7",
+    keywords: ['wip', 'working', 'progress'],
+    char: '\ud83c\udfd7',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   foggy: {
-    keywords: [ "photo", "mountain" ],
-    "char": "\ud83c\udf01",
+    keywords: ['photo', 'mountain'],
+    char: '\ud83c\udf01',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   tokyo_tower: {
-    keywords: [ "photo", "japanese" ],
-    "char": "\ud83d\uddfc",
+    keywords: ['photo', 'japanese'],
+    char: '\ud83d\uddfc',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   factory: {
-    keywords: [ "building", "industry", "pollution", "smoke" ],
-    "char": "\ud83c\udfed",
+    keywords: ['building', 'industry', 'pollution', 'smoke'],
+    char: '\ud83c\udfed',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   fountain: {
-    keywords: [ "photo", "summer", "water", "fresh" ],
-    "char": "\u26f2",
+    keywords: ['photo', 'summer', 'water', 'fresh'],
+    char: '\u26f2',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   rice_scene: {
-    keywords: [ "photo", "japan", "asia", "tsukimi" ],
-    "char": "\ud83c\udf91",
+    keywords: ['photo', 'japan', 'asia', 'tsukimi'],
+    char: '\ud83c\udf91',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   mountain: {
-    keywords: [ "photo", "nature", "environment" ],
-    "char": "\u26f0",
+    keywords: ['photo', 'nature', 'environment'],
+    char: '\u26f0',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   mountain_snow: {
-    keywords: [ "photo", "nature", "environment", "winter", "cold" ],
-    "char": "\ud83c\udfd4",
+    keywords: ['photo', 'nature', 'environment', 'winter', 'cold'],
+    char: '\ud83c\udfd4',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   mount_fuji: {
-    keywords: [ "photo", "mountain", "nature", "japanese" ],
-    "char": "\ud83d\uddfb",
+    keywords: ['photo', 'mountain', 'nature', 'japanese'],
+    char: '\ud83d\uddfb',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   volcano: {
-    keywords: [ "photo", "nature", "disaster" ],
-    "char": "\ud83c\udf0b",
+    keywords: ['photo', 'nature', 'disaster'],
+    char: '\ud83c\udf0b',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   japan: {
-    keywords: [ "nation", "country", "japanese", "asia" ],
-    "char": "\ud83d\uddfe",
+    keywords: ['nation', 'country', 'japanese', 'asia'],
+    char: '\ud83d\uddfe',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   camping: {
-    keywords: [ "photo", "outdoors", "tent" ],
-    "char": "\ud83c\udfd5",
+    keywords: ['photo', 'outdoors', 'tent'],
+    char: '\ud83c\udfd5',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   tent: {
-    keywords: [ "photo", "camping", "outdoors" ],
-    "char": "\u26fa",
+    keywords: ['photo', 'camping', 'outdoors'],
+    char: '\u26fa',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   national_park: {
-    keywords: [ "photo", "environment", "nature" ],
-    "char": "\ud83c\udfde",
+    keywords: ['photo', 'environment', 'nature'],
+    char: '\ud83c\udfde',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   motorway: {
-    keywords: [ "road", "cupertino", "interstate", "highway" ],
-    "char": "\ud83d\udee3",
+    keywords: ['road', 'cupertino', 'interstate', 'highway'],
+    char: '\ud83d\udee3',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   railway_track: {
-    keywords: [ "train", "transportation" ],
-    "char": "\ud83d\udee4",
+    keywords: ['train', 'transportation'],
+    char: '\ud83d\udee4',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   sunrise: {
-    keywords: [ "morning", "view", "vacation", "photo" ],
-    "char": "\ud83c\udf05",
+    keywords: ['morning', 'view', 'vacation', 'photo'],
+    char: '\ud83c\udf05',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   sunrise_over_mountains: {
-    keywords: [ "view", "vacation", "photo" ],
-    "char": "\ud83c\udf04",
+    keywords: ['view', 'vacation', 'photo'],
+    char: '\ud83c\udf04',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   desert: {
-    keywords: [ "photo", "warm", "saharah" ],
-    "char": "\ud83c\udfdc",
+    keywords: ['photo', 'warm', 'saharah'],
+    char: '\ud83c\udfdc',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   beach_umbrella: {
-    keywords: [ "weather", "summer", "sunny", "sand", "mojito" ],
-    "char": "\ud83c\udfd6",
+    keywords: ['weather', 'summer', 'sunny', 'sand', 'mojito'],
+    char: '\ud83c\udfd6',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   desert_island: {
-    keywords: [ "photo", "tropical", "mojito" ],
-    "char": "\ud83c\udfdd",
+    keywords: ['photo', 'tropical', 'mojito'],
+    char: '\ud83c\udfdd',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   city_sunrise: {
-    keywords: [ "photo", "good morning", "dawn" ],
-    "char": "\ud83c\udf07",
+    keywords: ['photo', 'good morning', 'dawn'],
+    char: '\ud83c\udf07',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   city_sunset: {
-    keywords: [ "photo", "evening", "sky", "buildings" ],
-    "char": "\ud83c\udf06",
+    keywords: ['photo', 'evening', 'sky', 'buildings'],
+    char: '\ud83c\udf06',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   cityscape: {
-    keywords: [ "photo", "night life", "urban" ],
-    "char": "\ud83c\udfd9",
+    keywords: ['photo', 'night life', 'urban'],
+    char: '\ud83c\udfd9',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   night_with_stars: {
-    keywords: [ "evening", "city", "downtown" ],
-    "char": "\ud83c\udf03",
+    keywords: ['evening', 'city', 'downtown'],
+    char: '\ud83c\udf03',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   bridge_at_night: {
-    keywords: [ "photo", "sanfrancisco" ],
-    "char": "\ud83c\udf09",
+    keywords: ['photo', 'sanfrancisco'],
+    char: '\ud83c\udf09',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   milky_way: {
-    keywords: [ "photo", "space", "stars" ],
-    "char": "\ud83c\udf0c",
+    keywords: ['photo', 'space', 'stars'],
+    char: '\ud83c\udf0c',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   stars: {
-    keywords: [ "night", "photo" ],
-    "char": "\ud83c\udf20",
+    keywords: ['night', 'photo'],
+    char: '\ud83c\udf20',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   sparkler: {
-    keywords: [ "stars", "night", "shine" ],
-    "char": "\ud83c\udf87",
+    keywords: ['stars', 'night', 'shine'],
+    char: '\ud83c\udf87',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   fireworks: {
-    keywords: [ "photo", "festival", "carnival", "congratulations" ],
-    "char": "\ud83c\udf86",
+    keywords: ['photo', 'festival', 'carnival', 'congratulations'],
+    char: '\ud83c\udf86',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   rainbow: {
-    keywords: [ "nature", "happy", "unicorn_face", "photo", "sky", "spring" ],
-    "char": "\ud83c\udf08",
+    keywords: ['nature', 'happy', 'unicorn_face', 'photo', 'sky', 'spring'],
+    char: '\ud83c\udf08',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   houses: {
-    keywords: [ "buildings", "photo" ],
-    "char": "\ud83c\udfd8",
+    keywords: ['buildings', 'photo'],
+    char: '\ud83c\udfd8',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   european_castle: {
-    keywords: [ "building", "royalty", "history" ],
-    "char": "\ud83c\udff0",
+    keywords: ['building', 'royalty', 'history'],
+    char: '\ud83c\udff0',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   japanese_castle: {
-    keywords: [ "photo", "building" ],
-    "char": "\ud83c\udfef",
+    keywords: ['photo', 'building'],
+    char: '\ud83c\udfef',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   stadium: {
-    keywords: [ "photo", "place", "sports", "concert", "venue" ],
-    "char": "\ud83c\udfdf",
+    keywords: ['photo', 'place', 'sports', 'concert', 'venue'],
+    char: '\ud83c\udfdf',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   statue_of_liberty: {
-    keywords: [ "american", "newyork" ],
-    "char": "\ud83d\uddfd",
+    keywords: ['american', 'newyork'],
+    char: '\ud83d\uddfd',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   house: {
-    keywords: [ "building", "home" ],
-    "char": "\ud83c\udfe0",
+    keywords: ['building', 'home'],
+    char: '\ud83c\udfe0',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   house_with_garden: {
-    keywords: [ "home", "plant", "nature" ],
-    "char": "\ud83c\udfe1",
+    keywords: ['home', 'plant', 'nature'],
+    char: '\ud83c\udfe1',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   derelict_house: {
-    keywords: [ "abandon", "evict", "broken", "building" ],
-    "char": "\ud83c\udfda",
+    keywords: ['abandon', 'evict', 'broken', 'building'],
+    char: '\ud83c\udfda',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   office: {
-    keywords: [ "building", "bureau", "work" ],
-    "char": "\ud83c\udfe2",
+    keywords: ['building', 'bureau', 'work'],
+    char: '\ud83c\udfe2',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   department_store: {
-    keywords: [ "building", "shopping", "mall" ],
-    "char": "\ud83c\udfec",
+    keywords: ['building', 'shopping', 'mall'],
+    char: '\ud83c\udfec',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   post_office: {
-    keywords: [ "building", "envelope", "communication" ],
-    "char": "\ud83c\udfe3",
+    keywords: ['building', 'envelope', 'communication'],
+    char: '\ud83c\udfe3',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   european_post_office: {
-    keywords: [ "building", "email" ],
-    "char": "\ud83c\udfe4",
+    keywords: ['building', 'email'],
+    char: '\ud83c\udfe4',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   hospital: {
-    keywords: [ "building", "health", "surgery", "doctor" ],
-    "char": "\ud83c\udfe5",
+    keywords: ['building', 'health', 'surgery', 'doctor'],
+    char: '\ud83c\udfe5',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   bank: {
-    keywords: [ "building", "money", "sales", "cash", "business", "enterprise" ],
-    "char": "\ud83c\udfe6",
+    keywords: ['building', 'money', 'sales', 'cash', 'business', 'enterprise'],
+    char: '\ud83c\udfe6',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   hotel: {
-    keywords: [ "building", "accomodation", "checkin" ],
-    "char": "\ud83c\udfe8",
+    keywords: ['building', 'accomodation', 'checkin'],
+    char: '\ud83c\udfe8',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   convenience_store: {
-    keywords: [ "building", "shopping", "groceries" ],
-    "char": "\ud83c\udfea",
+    keywords: ['building', 'shopping', 'groceries'],
+    char: '\ud83c\udfea',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   school: {
-    keywords: [ "building", "student", "education", "learn", "teach" ],
-    "char": "\ud83c\udfeb",
+    keywords: ['building', 'student', 'education', 'learn', 'teach'],
+    char: '\ud83c\udfeb',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   love_hotel: {
-    keywords: [ "like", "affection", "dating" ],
-    "char": "\ud83c\udfe9",
+    keywords: ['like', 'affection', 'dating'],
+    char: '\ud83c\udfe9',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   wedding: {
-    keywords: [ "love", "like", "affection", "couple", "marriage", "bride", "groom" ],
-    "char": "\ud83d\udc92",
+    keywords: ['love', 'like', 'affection', 'couple', 'marriage', 'bride', 'groom'],
+    char: '\ud83d\udc92',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   classical_building: {
-    keywords: [ "art", "culture", "history" ],
-    "char": "\ud83c\udfdb",
+    keywords: ['art', 'culture', 'history'],
+    char: '\ud83c\udfdb',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   church: {
-    keywords: [ "building", "religion", "christ" ],
-    "char": "\u26ea",
+    keywords: ['building', 'religion', 'christ'],
+    char: '\u26ea',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   mosque: {
-    keywords: [ "islam", "worship", "minaret" ],
-    "char": "\ud83d\udd4c",
+    keywords: ['islam', 'worship', 'minaret'],
+    char: '\ud83d\udd4c',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   synagogue: {
-    keywords: [ "judaism", "worship", "temple", "jewish" ],
-    "char": "\ud83d\udd4d",
+    keywords: ['judaism', 'worship', 'temple', 'jewish'],
+    char: '\ud83d\udd4d',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   kaaba: {
-    keywords: [ "mecca", "mosque", "islam" ],
-    "char": "\ud83d\udd4b",
+    keywords: ['mecca', 'mosque', 'islam'],
+    char: '\ud83d\udd4b',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   shinto_shrine: {
-    keywords: [ "temple", "japan", "kyoto" ],
-    "char": "\u26e9",
+    keywords: ['temple', 'japan', 'kyoto'],
+    char: '\u26e9',
     fitzpatrick_scale: false,
-    category: "travel_and_places"
+    category: 'travel_and_places'
   },
   watch: {
-    keywords: [ "time", "accessories" ],
-    "char": "\u231a",
+    keywords: ['time', 'accessories'],
+    char: '\u231a',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   iphone: {
-    keywords: [ "technology", "apple", "gadgets", "dial" ],
-    "char": "\ud83d\udcf1",
+    keywords: ['technology', 'apple', 'gadgets', 'dial'],
+    char: '\ud83d\udcf1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   calling: {
-    keywords: [ "iphone", "incoming" ],
-    "char": "\ud83d\udcf2",
+    keywords: ['iphone', 'incoming'],
+    char: '\ud83d\udcf2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   computer: {
-    keywords: [ "technology", "laptop", "screen", "display", "monitor" ],
-    "char": "\ud83d\udcbb",
+    keywords: ['technology', 'laptop', 'screen', 'display', 'monitor'],
+    char: '\ud83d\udcbb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   keyboard: {
-    keywords: [ "technology", "computer", "type", "input", "text" ],
-    "char": "\u2328",
+    keywords: ['technology', 'computer', 'type', 'input', 'text'],
+    char: '\u2328',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   desktop_computer: {
-    keywords: [ "technology", "computing", "screen" ],
-    "char": "\ud83d\udda5",
+    keywords: ['technology', 'computing', 'screen'],
+    char: '\ud83d\udda5',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   printer: {
-    keywords: [ "paper", "ink" ],
-    "char": "\ud83d\udda8",
+    keywords: ['paper', 'ink'],
+    char: '\ud83d\udda8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   computer_mouse: {
-    keywords: [ "click" ],
-    "char": "\ud83d\uddb1",
+    keywords: ['click'],
+    char: '\ud83d\uddb1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   trackball: {
-    keywords: [ "technology", "trackpad" ],
-    "char": "\ud83d\uddb2",
+    keywords: ['technology', 'trackpad'],
+    char: '\ud83d\uddb2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   joystick: {
-    keywords: [ "game", "play" ],
-    "char": "\ud83d\udd79",
+    keywords: ['game', 'play'],
+    char: '\ud83d\udd79',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   clamp: {
-    keywords: [ "tool" ],
-    "char": "\ud83d\udddc",
+    keywords: ['tool'],
+    char: '\ud83d\udddc',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   minidisc: {
-    keywords: [ "technology", "record", "data", "disk", "90s" ],
-    "char": "\ud83d\udcbd",
+    keywords: ['technology', 'record', 'data', 'disk', '90s'],
+    char: '\ud83d\udcbd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   floppy_disk: {
-    keywords: [ "oldschool", "technology", "save", "90s", "80s" ],
-    "char": "\ud83d\udcbe",
+    keywords: ['oldschool', 'technology', 'save', '90s', '80s'],
+    char: '\ud83d\udcbe',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   cd: {
-    keywords: [ "technology", "dvd", "disk", "disc", "90s" ],
-    "char": "\ud83d\udcbf",
+    keywords: ['technology', 'dvd', 'disk', 'disc', '90s'],
+    char: '\ud83d\udcbf',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   dvd: {
-    keywords: [ "cd", "disk", "disc" ],
-    "char": "\ud83d\udcc0",
+    keywords: ['cd', 'disk', 'disc'],
+    char: '\ud83d\udcc0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   vhs: {
-    keywords: [ "record", "video", "oldschool", "90s", "80s" ],
-    "char": "\ud83d\udcfc",
+    keywords: ['record', 'video', 'oldschool', '90s', '80s'],
+    char: '\ud83d\udcfc',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   camera: {
-    keywords: [ "gadgets", "photography" ],
-    "char": "\ud83d\udcf7",
+    keywords: ['gadgets', 'photography'],
+    char: '\ud83d\udcf7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   camera_flash: {
-    keywords: [ "photography", "gadgets" ],
-    "char": "\ud83d\udcf8",
+    keywords: ['photography', 'gadgets'],
+    char: '\ud83d\udcf8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   video_camera: {
-    keywords: [ "film", "record" ],
-    "char": "\ud83d\udcf9",
+    keywords: ['film', 'record'],
+    char: '\ud83d\udcf9',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   movie_camera: {
-    keywords: [ "film", "record" ],
-    "char": "\ud83c\udfa5",
+    keywords: ['film', 'record'],
+    char: '\ud83c\udfa5',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   film_projector: {
-    keywords: [ "video", "tape", "record", "movie" ],
-    "char": "\ud83d\udcfd",
+    keywords: ['video', 'tape', 'record', 'movie'],
+    char: '\ud83d\udcfd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   film_strip: {
-    keywords: [ "movie" ],
-    "char": "\ud83c\udf9e",
+    keywords: ['movie'],
+    char: '\ud83c\udf9e',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   telephone_receiver: {
-    keywords: [ "technology", "communication", "dial" ],
-    "char": "\ud83d\udcde",
+    keywords: ['technology', 'communication', 'dial'],
+    char: '\ud83d\udcde',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   phone: {
-    keywords: [ "technology", "communication", "dial", "telephone" ],
-    "char": "\u260e\ufe0f",
+    keywords: ['technology', 'communication', 'dial', 'telephone'],
+    char: '\u260e\ufe0f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pager: {
-    keywords: [ "bbcall", "oldschool", "90s" ],
-    "char": "\ud83d\udcdf",
+    keywords: ['bbcall', 'oldschool', '90s'],
+    char: '\ud83d\udcdf',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   fax: {
-    keywords: [ "communication", "technology" ],
-    "char": "\ud83d\udce0",
+    keywords: ['communication', 'technology'],
+    char: '\ud83d\udce0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   tv: {
-    keywords: [ "technology", "program", "oldschool", "show", "television" ],
-    "char": "\ud83d\udcfa",
+    keywords: ['technology', 'program', 'oldschool', 'show', 'television'],
+    char: '\ud83d\udcfa',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   radio: {
-    keywords: [ "communication", "music", "podcast", "program" ],
-    "char": "\ud83d\udcfb",
+    keywords: ['communication', 'music', 'podcast', 'program'],
+    char: '\ud83d\udcfb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   studio_microphone: {
-    keywords: [ "sing", "recording", "artist", "talkshow" ],
-    "char": "\ud83c\udf99",
+    keywords: ['sing', 'recording', 'artist', 'talkshow'],
+    char: '\ud83c\udf99',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   level_slider: {
-    keywords: [ "scale" ],
-    "char": "\ud83c\udf9a",
+    keywords: ['scale'],
+    char: '\ud83c\udf9a',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   control_knobs: {
-    keywords: [ "dial" ],
-    "char": "\ud83c\udf9b",
+    keywords: ['dial'],
+    char: '\ud83c\udf9b',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   compass: {
-    keywords: [ "magnetic", "navigation", "orienteering" ],
-    "char": "\ud83e\udded",
+    keywords: ['magnetic', 'navigation', 'orienteering'],
+    char: '\ud83e\udded',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   stopwatch: {
-    keywords: [ "time", "deadline" ],
-    "char": "\u23f1",
+    keywords: ['time', 'deadline'],
+    char: '\u23f1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   timer_clock: {
-    keywords: [ "alarm" ],
-    "char": "\u23f2",
+    keywords: ['alarm'],
+    char: '\u23f2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   alarm_clock: {
-    keywords: [ "time", "wake" ],
-    "char": "\u23f0",
+    keywords: ['time', 'wake'],
+    char: '\u23f0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mantelpiece_clock: {
-    keywords: [ "time" ],
-    "char": "\ud83d\udd70",
+    keywords: ['time'],
+    char: '\ud83d\udd70',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hourglass_flowing_sand: {
-    keywords: [ "oldschool", "time", "countdown" ],
-    "char": "\u23f3",
+    keywords: ['oldschool', 'time', 'countdown'],
+    char: '\u23f3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hourglass: {
-    keywords: [ "time", "clock", "oldschool", "limit", "exam", "quiz", "test" ],
-    "char": "\u231b",
+    keywords: ['time', 'clock', 'oldschool', 'limit', 'exam', 'quiz', 'test'],
+    char: '\u231b',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   satellite: {
-    keywords: [ "communication", "future", "radio", "space" ],
-    "char": "\ud83d\udce1",
+    keywords: ['communication', 'future', 'radio', 'space'],
+    char: '\ud83d\udce1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   battery: {
-    keywords: [ "power", "energy", "sustain" ],
-    "char": "\ud83d\udd0b",
+    keywords: ['power', 'energy', 'sustain'],
+    char: '\ud83d\udd0b',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   electric_plug: {
-    keywords: [ "charger", "power" ],
-    "char": "\ud83d\udd0c",
+    keywords: ['charger', 'power'],
+    char: '\ud83d\udd0c',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bulb: {
-    keywords: [ "light", "electricity", "idea" ],
-    "char": "\ud83d\udca1",
+    keywords: ['light', 'electricity', 'idea'],
+    char: '\ud83d\udca1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   flashlight: {
-    keywords: [ "dark", "camping", "sight", "night" ],
-    "char": "\ud83d\udd26",
+    keywords: ['dark', 'camping', 'sight', 'night'],
+    char: '\ud83d\udd26',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   candle: {
-    keywords: [ "fire", "wax" ],
-    "char": "\ud83d\udd6f",
+    keywords: ['fire', 'wax'],
+    char: '\ud83d\udd6f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   fire_extinguisher: {
-    keywords: [ "quench" ],
-    "char": "\ud83e\uddef",
+    keywords: ['quench'],
+    char: '\ud83e\uddef',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   wastebasket: {
-    keywords: [ "bin", "trash", "rubbish", "garbage", "toss" ],
-    "char": "\ud83d\uddd1",
+    keywords: ['bin', 'trash', 'rubbish', 'garbage', 'toss'],
+    char: '\ud83d\uddd1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   oil_drum: {
-    keywords: [ "barrell" ],
-    "char": "\ud83d\udee2",
+    keywords: ['barrell'],
+    char: '\ud83d\udee2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   money_with_wings: {
-    keywords: [ "dollar", "bills", "payment", "sale" ],
-    "char": "\ud83d\udcb8",
+    keywords: ['dollar', 'bills', 'payment', 'sale'],
+    char: '\ud83d\udcb8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   dollar: {
-    keywords: [ "money", "sales", "bill", "currency" ],
-    "char": "\ud83d\udcb5",
+    keywords: ['money', 'sales', 'bill', 'currency'],
+    char: '\ud83d\udcb5',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   yen: {
-    keywords: [ "money", "sales", "japanese", "dollar", "currency" ],
-    "char": "\ud83d\udcb4",
+    keywords: ['money', 'sales', 'japanese', 'dollar', 'currency'],
+    char: '\ud83d\udcb4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   euro: {
-    keywords: [ "money", "sales", "dollar", "currency" ],
-    "char": "\ud83d\udcb6",
+    keywords: ['money', 'sales', 'dollar', 'currency'],
+    char: '\ud83d\udcb6',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pound: {
-    keywords: [ "british", "sterling", "money", "sales", "bills", "uk", "england", "currency" ],
-    "char": "\ud83d\udcb7",
+    keywords: ['british', 'sterling', 'money', 'sales', 'bills', 'uk', 'england', 'currency'],
+    char: '\ud83d\udcb7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   moneybag: {
-    keywords: [ "dollar", "payment", "coins", "sale" ],
-    "char": "\ud83d\udcb0",
+    keywords: ['dollar', 'payment', 'coins', 'sale'],
+    char: '\ud83d\udcb0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   credit_card: {
-    keywords: [ "money", "sales", "dollar", "bill", "payment", "shopping" ],
-    "char": "\ud83d\udcb3",
+    keywords: ['money', 'sales', 'dollar', 'bill', 'payment', 'shopping'],
+    char: '\ud83d\udcb3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   gem: {
-    keywords: [ "blue", "ruby", "diamond", "jewelry" ],
-    "char": "\ud83d\udc8e",
+    keywords: ['blue', 'ruby', 'diamond', 'jewelry'],
+    char: '\ud83d\udc8e',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   balance_scale: {
-    keywords: [ "law", "fairness", "weight" ],
-    "char": "\u2696",
+    keywords: ['law', 'fairness', 'weight'],
+    char: '\u2696',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   toolbox: {
-    keywords: [ "tools", "diy", "fix", "maintainer", "mechanic" ],
-    "char": "\ud83e\uddf0",
+    keywords: ['tools', 'diy', 'fix', 'maintainer', 'mechanic'],
+    char: '\ud83e\uddf0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   wrench: {
-    keywords: [ "tools", "diy", "ikea", "fix", "maintainer" ],
-    "char": "\ud83d\udd27",
+    keywords: ['tools', 'diy', 'ikea', 'fix', 'maintainer'],
+    char: '\ud83d\udd27',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hammer: {
-    keywords: [ "tools", "build", "create" ],
-    "char": "\ud83d\udd28",
+    keywords: ['tools', 'build', 'create'],
+    char: '\ud83d\udd28',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hammer_and_pick: {
-    keywords: [ "tools", "build", "create" ],
-    "char": "\u2692",
+    keywords: ['tools', 'build', 'create'],
+    char: '\u2692',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hammer_and_wrench: {
-    keywords: [ "tools", "build", "create" ],
-    "char": "\ud83d\udee0",
+    keywords: ['tools', 'build', 'create'],
+    char: '\ud83d\udee0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pick: {
-    keywords: [ "tools", "dig" ],
-    "char": "\u26cf",
+    keywords: ['tools', 'dig'],
+    char: '\u26cf',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   nut_and_bolt: {
-    keywords: [ "handy", "tools", "fix" ],
-    "char": "\ud83d\udd29",
+    keywords: ['handy', 'tools', 'fix'],
+    char: '\ud83d\udd29',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   gear: {
-    keywords: [ "cog" ],
-    "char": "\u2699",
+    keywords: ['cog'],
+    char: '\u2699',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   brick: {
-    keywords: [ "bricks" ],
-    "char": "\ud83e\uddf1",
+    keywords: ['bricks'],
+    char: '\ud83e\uddf1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   chains: {
-    keywords: [ "lock", "arrest" ],
-    "char": "\u26d3",
+    keywords: ['lock', 'arrest'],
+    char: '\u26d3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   magnet: {
-    keywords: [ "attraction", "magnetic" ],
-    "char": "\ud83e\uddf2",
+    keywords: ['attraction', 'magnetic'],
+    char: '\ud83e\uddf2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   gun: {
-    keywords: [ "violence", "weapon", "pistol", "revolver" ],
-    "char": "\ud83d\udd2b",
+    keywords: ['violence', 'weapon', 'pistol', 'revolver'],
+    char: '\ud83d\udd2b',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bomb: {
-    keywords: [ "boom", "explode", "explosion", "terrorism" ],
-    "char": "\ud83d\udca3",
+    keywords: ['boom', 'explode', 'explosion', 'terrorism'],
+    char: '\ud83d\udca3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   firecracker: {
-    keywords: [ "dynamite", "boom", "explode", "explosion", "explosive" ],
-    "char": "\ud83e\udde8",
+    keywords: ['dynamite', 'boom', 'explode', 'explosion', 'explosive'],
+    char: '\ud83e\udde8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hocho: {
-    keywords: [ "knife", "blade", "cutlery", "kitchen", "weapon" ],
-    "char": "\ud83d\udd2a",
+    keywords: ['knife', 'blade', 'cutlery', 'kitchen', 'weapon'],
+    char: '\ud83d\udd2a',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   dagger: {
-    keywords: [ "weapon" ],
-    "char": "\ud83d\udde1",
+    keywords: ['weapon'],
+    char: '\ud83d\udde1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   crossed_swords: {
-    keywords: [ "weapon" ],
-    "char": "\u2694",
+    keywords: ['weapon'],
+    char: '\u2694',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   shield: {
-    keywords: [ "protection", "security" ],
-    "char": "\ud83d\udee1",
+    keywords: ['protection', 'security'],
+    char: '\ud83d\udee1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   smoking: {
-    keywords: [ "kills", "tobacco", "cigarette", "joint", "smoke" ],
-    "char": "\ud83d\udeac",
+    keywords: ['kills', 'tobacco', 'cigarette', 'joint', 'smoke'],
+    char: '\ud83d\udeac',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   skull_and_crossbones: {
-    keywords: [ "poison", "danger", "deadly", "scary", "death", "pirate", "evil" ],
-    "char": "\u2620",
+    keywords: ['poison', 'danger', 'deadly', 'scary', 'death', 'pirate', 'evil'],
+    char: '\u2620',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   coffin: {
-    keywords: [ "vampire", "dead", "die", "death", "rip", "graveyard", "cemetery", "casket", "funeral", "box" ],
-    "char": "\u26b0",
+    keywords: ['vampire', 'dead', 'die', 'death', 'rip', 'graveyard', 'cemetery', 'casket', 'funeral', 'box'],
+    char: '\u26b0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   funeral_urn: {
-    keywords: [ "dead", "die", "death", "rip", "ashes" ],
-    "char": "\u26b1",
+    keywords: ['dead', 'die', 'death', 'rip', 'ashes'],
+    char: '\u26b1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   amphora: {
-    keywords: [ "vase", "jar" ],
-    "char": "\ud83c\udffa",
+    keywords: ['vase', 'jar'],
+    char: '\ud83c\udffa',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   crystal_ball: {
-    keywords: [ "disco", "party", "magic", "circus", "fortune_teller" ],
-    "char": "\ud83d\udd2e",
+    keywords: ['disco', 'party', 'magic', 'circus', 'fortune_teller'],
+    char: '\ud83d\udd2e',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   prayer_beads: {
-    keywords: [ "dhikr", "religious" ],
-    "char": "\ud83d\udcff",
+    keywords: ['dhikr', 'religious'],
+    char: '\ud83d\udcff',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   nazar_amulet: {
-    keywords: [ "bead", "charm" ],
-    "char": "\ud83e\uddff",
+    keywords: ['bead', 'charm'],
+    char: '\ud83e\uddff',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   barber: {
-    keywords: [ "hair", "salon", "style" ],
-    "char": "\ud83d\udc88",
+    keywords: ['hair', 'salon', 'style'],
+    char: '\ud83d\udc88',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   alembic: {
-    keywords: [ "distilling", "science", "experiment", "chemistry" ],
-    "char": "\u2697",
+    keywords: ['distilling', 'science', 'experiment', 'chemistry'],
+    char: '\u2697',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   telescope: {
-    keywords: [ "stars", "space", "zoom", "science", "astronomy" ],
-    "char": "\ud83d\udd2d",
+    keywords: ['stars', 'space', 'zoom', 'science', 'astronomy'],
+    char: '\ud83d\udd2d',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   microscope: {
-    keywords: [ "laboratory", "experiment", "zoomin", "science", "study" ],
-    "char": "\ud83d\udd2c",
+    keywords: ['laboratory', 'experiment', 'zoomin', 'science', 'study'],
+    char: '\ud83d\udd2c',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   hole: {
-    keywords: [ "embarrassing" ],
-    "char": "\ud83d\udd73",
+    keywords: ['embarrassing'],
+    char: '\ud83d\udd73',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pill: {
-    keywords: [ "health", "medicine", "doctor", "pharmacy", "drug" ],
-    "char": "\ud83d\udc8a",
+    keywords: ['health', 'medicine', 'doctor', 'pharmacy', 'drug'],
+    char: '\ud83d\udc8a',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   syringe: {
-    keywords: [ "health", "hospital", "drugs", "blood", "medicine", "needle", "doctor", "nurse" ],
-    "char": "\ud83d\udc89",
+    keywords: ['health', 'hospital', 'drugs', 'blood', 'medicine', 'needle', 'doctor', 'nurse'],
+    char: '\ud83d\udc89',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   dna: {
-    keywords: [ "biologist", "genetics", "life" ],
-    "char": "\ud83e\uddec",
+    keywords: ['biologist', 'genetics', 'life'],
+    char: '\ud83e\uddec',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   microbe: {
-    keywords: [ "amoeba", "bacteria", "germs" ],
-    "char": "\ud83e\udda0",
+    keywords: ['amoeba', 'bacteria', 'germs'],
+    char: '\ud83e\udda0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   petri_dish: {
-    keywords: [ "bacteria", "biology", "culture", "lab" ],
-    "char": "\ud83e\uddeb",
+    keywords: ['bacteria', 'biology', 'culture', 'lab'],
+    char: '\ud83e\uddeb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   test_tube: {
-    keywords: [ "chemistry", "experiment", "lab", "science" ],
-    "char": "\ud83e\uddea",
+    keywords: ['chemistry', 'experiment', 'lab', 'science'],
+    char: '\ud83e\uddea',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   thermometer: {
-    keywords: [ "weather", "temperature", "hot", "cold" ],
-    "char": "\ud83c\udf21",
+    keywords: ['weather', 'temperature', 'hot', 'cold'],
+    char: '\ud83c\udf21',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   broom: {
-    keywords: [ "cleaning", "sweeping", "witch" ],
-    "char": "\ud83e\uddf9",
+    keywords: ['cleaning', 'sweeping', 'witch'],
+    char: '\ud83e\uddf9',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   basket: {
-    keywords: [ "laundry" ],
-    "char": "\ud83e\uddfa",
+    keywords: ['laundry'],
+    char: '\ud83e\uddfa',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   toilet_paper: {
-    keywords: [ "roll" ],
-    "char": "\ud83e\uddfb",
+    keywords: ['roll'],
+    char: '\ud83e\uddfb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   label: {
-    keywords: [ "sale", "tag" ],
-    "char": "\ud83c\udff7",
+    keywords: ['sale', 'tag'],
+    char: '\ud83c\udff7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bookmark: {
-    keywords: [ "favorite", "label", "save" ],
-    "char": "\ud83d\udd16",
+    keywords: ['favorite', 'label', 'save'],
+    char: '\ud83d\udd16',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   toilet: {
-    keywords: [ "restroom", "wc", "washroom", "bathroom", "potty" ],
-    "char": "\ud83d\udebd",
+    keywords: ['restroom', 'wc', 'washroom', 'bathroom', 'potty'],
+    char: '\ud83d\udebd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   shower: {
-    keywords: [ "clean", "water", "bathroom" ],
-    "char": "\ud83d\udebf",
+    keywords: ['clean', 'water', 'bathroom'],
+    char: '\ud83d\udebf',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bathtub: {
-    keywords: [ "clean", "shower", "bathroom" ],
-    "char": "\ud83d\udec1",
+    keywords: ['clean', 'shower', 'bathroom'],
+    char: '\ud83d\udec1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   soap: {
-    keywords: [ "bar", "bathing", "cleaning", "lather" ],
-    "char": "\ud83e\uddfc",
+    keywords: ['bar', 'bathing', 'cleaning', 'lather'],
+    char: '\ud83e\uddfc',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   sponge: {
-    keywords: [ "absorbing", "cleaning", "porous" ],
-    "char": "\ud83e\uddfd",
+    keywords: ['absorbing', 'cleaning', 'porous'],
+    char: '\ud83e\uddfd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   lotion_bottle: {
-    keywords: [ "moisturizer", "sunscreen" ],
-    "char": "\ud83e\uddf4",
+    keywords: ['moisturizer', 'sunscreen'],
+    char: '\ud83e\uddf4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   key: {
-    keywords: [ "lock", "door", "password" ],
-    "char": "\ud83d\udd11",
+    keywords: ['lock', 'door', 'password'],
+    char: '\ud83d\udd11',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   old_key: {
-    keywords: [ "lock", "door", "password" ],
-    "char": "\ud83d\udddd",
+    keywords: ['lock', 'door', 'password'],
+    char: '\ud83d\udddd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   couch_and_lamp: {
-    keywords: [ "read", "chill" ],
-    "char": "\ud83d\udecb",
+    keywords: ['read', 'chill'],
+    char: '\ud83d\udecb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   sleeping_bed: {
-    keywords: [ "bed", "rest" ],
-    "char": "\ud83d\udecc",
+    keywords: ['bed', 'rest'],
+    char: '\ud83d\udecc',
     fitzpatrick_scale: true,
-    category: "objects"
+    category: 'objects'
   },
   bed: {
-    keywords: [ "sleep", "rest" ],
-    "char": "\ud83d\udecf",
+    keywords: ['sleep', 'rest'],
+    char: '\ud83d\udecf',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   door: {
-    keywords: [ "house", "entry", "exit" ],
-    "char": "\ud83d\udeaa",
+    keywords: ['house', 'entry', 'exit'],
+    char: '\ud83d\udeaa',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bellhop_bell: {
-    keywords: [ "service" ],
-    "char": "\ud83d\udece",
+    keywords: ['service'],
+    char: '\ud83d\udece',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   teddy_bear: {
-    keywords: [ "plush", "stuffed" ],
-    "char": "\ud83e\uddf8",
+    keywords: ['plush', 'stuffed'],
+    char: '\ud83e\uddf8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   framed_picture: {
-    keywords: [ "photography" ],
-    "char": "\ud83d\uddbc",
+    keywords: ['photography'],
+    char: '\ud83d\uddbc',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   world_map: {
-    keywords: [ "location", "direction" ],
-    "char": "\ud83d\uddfa",
+    keywords: ['location', 'direction'],
+    char: '\ud83d\uddfa',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   parasol_on_ground: {
-    keywords: [ "weather", "summer" ],
-    "char": "\u26f1",
+    keywords: ['weather', 'summer'],
+    char: '\u26f1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   moyai: {
-    keywords: [ "rock", "easter island", "moai" ],
-    "char": "\ud83d\uddff",
+    keywords: ['rock', 'easter island', 'moai'],
+    char: '\ud83d\uddff',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   shopping: {
-    keywords: [ "mall", "buy", "purchase" ],
-    "char": "\ud83d\udecd",
+    keywords: ['mall', 'buy', 'purchase'],
+    char: '\ud83d\udecd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   shopping_cart: {
-    keywords: [ "trolley" ],
-    "char": "\ud83d\uded2",
+    keywords: ['trolley'],
+    char: '\ud83d\uded2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   balloon: {
-    keywords: [ "party", "celebration", "birthday", "circus" ],
-    "char": "\ud83c\udf88",
+    keywords: ['party', 'celebration', 'birthday', 'circus'],
+    char: '\ud83c\udf88',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   flags: {
-    keywords: [ "fish", "japanese", "koinobori", "carp", "banner" ],
-    "char": "\ud83c\udf8f",
+    keywords: ['fish', 'japanese', 'koinobori', 'carp', 'banner'],
+    char: '\ud83c\udf8f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   ribbon: {
-    keywords: [ "decoration", "pink", "girl", "bowtie" ],
-    "char": "\ud83c\udf80",
+    keywords: ['decoration', 'pink', 'girl', 'bowtie'],
+    char: '\ud83c\udf80',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   gift: {
-    keywords: [ "present", "birthday", "christmas", "xmas" ],
-    "char": "\ud83c\udf81",
+    keywords: ['present', 'birthday', 'christmas', 'xmas'],
+    char: '\ud83c\udf81',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   confetti_ball: {
-    keywords: [ "festival", "party", "birthday", "circus" ],
-    "char": "\ud83c\udf8a",
+    keywords: ['festival', 'party', 'birthday', 'circus'],
+    char: '\ud83c\udf8a',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   tada: {
-    keywords: [ "party", "congratulations", "birthday", "magic", "circus", "celebration" ],
-    "char": "\ud83c\udf89",
+    keywords: ['party', 'congratulations', 'birthday', 'magic', 'circus', 'celebration'],
+    char: '\ud83c\udf89',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   dolls: {
-    keywords: [ "japanese", "toy", "kimono" ],
-    "char": "\ud83c\udf8e",
+    keywords: ['japanese', 'toy', 'kimono'],
+    char: '\ud83c\udf8e',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   wind_chime: {
-    keywords: [ "nature", "ding", "spring", "bell" ],
-    "char": "\ud83c\udf90",
+    keywords: ['nature', 'ding', 'spring', 'bell'],
+    char: '\ud83c\udf90',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   crossed_flags: {
-    keywords: [ "japanese", "nation", "country", "border" ],
-    "char": "\ud83c\udf8c",
+    keywords: ['japanese', 'nation', 'country', 'border'],
+    char: '\ud83c\udf8c',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   izakaya_lantern: {
-    keywords: [ "light", "paper", "halloween", "spooky" ],
-    "char": "\ud83c\udfee",
+    keywords: ['light', 'paper', 'halloween', 'spooky'],
+    char: '\ud83c\udfee',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   red_envelope: {
-    keywords: [ "gift" ],
-    "char": "\ud83e\udde7",
+    keywords: ['gift'],
+    char: '\ud83e\udde7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   email: {
-    keywords: [ "letter", "postal", "inbox", "communication" ],
-    "char": "\u2709\ufe0f",
+    keywords: ['letter', 'postal', 'inbox', 'communication'],
+    char: '\u2709\ufe0f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   envelope_with_arrow: {
-    keywords: [ "email", "communication" ],
-    "char": "\ud83d\udce9",
+    keywords: ['email', 'communication'],
+    char: '\ud83d\udce9',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   incoming_envelope: {
-    keywords: [ "email", "inbox" ],
-    "char": "\ud83d\udce8",
+    keywords: ['email', 'inbox'],
+    char: '\ud83d\udce8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
-  "e-mail": {
-    keywords: [ "communication", "inbox" ],
-    "char": "\ud83d\udce7",
+  'e-mail': {
+    keywords: ['communication', 'inbox'],
+    char: '\ud83d\udce7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   love_letter: {
-    keywords: [ "email", "like", "affection", "envelope", "valentines" ],
-    "char": "\ud83d\udc8c",
+    keywords: ['email', 'like', 'affection', 'envelope', 'valentines'],
+    char: '\ud83d\udc8c',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   postbox: {
-    keywords: [ "email", "letter", "envelope" ],
-    "char": "\ud83d\udcee",
+    keywords: ['email', 'letter', 'envelope'],
+    char: '\ud83d\udcee',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mailbox_closed: {
-    keywords: [ "email", "communication", "inbox" ],
-    "char": "\ud83d\udcea",
+    keywords: ['email', 'communication', 'inbox'],
+    char: '\ud83d\udcea',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mailbox: {
-    keywords: [ "email", "inbox", "communication" ],
-    "char": "\ud83d\udceb",
+    keywords: ['email', 'inbox', 'communication'],
+    char: '\ud83d\udceb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mailbox_with_mail: {
-    keywords: [ "email", "inbox", "communication" ],
-    "char": "\ud83d\udcec",
+    keywords: ['email', 'inbox', 'communication'],
+    char: '\ud83d\udcec',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mailbox_with_no_mail: {
-    keywords: [ "email", "inbox" ],
-    "char": "\ud83d\udced",
+    keywords: ['email', 'inbox'],
+    char: '\ud83d\udced',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
-  "package": {
-    keywords: [ "mail", "gift", "cardboard", "box", "moving" ],
-    "char": "\ud83d\udce6",
+  package: {
+    keywords: ['mail', 'gift', 'cardboard', 'box', 'moving'],
+    char: '\ud83d\udce6',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   postal_horn: {
-    keywords: [ "instrument", "music" ],
-    "char": "\ud83d\udcef",
+    keywords: ['instrument', 'music'],
+    char: '\ud83d\udcef',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   inbox_tray: {
-    keywords: [ "email", "documents" ],
-    "char": "\ud83d\udce5",
+    keywords: ['email', 'documents'],
+    char: '\ud83d\udce5',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   outbox_tray: {
-    keywords: [ "inbox", "email" ],
-    "char": "\ud83d\udce4",
+    keywords: ['inbox', 'email'],
+    char: '\ud83d\udce4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   scroll: {
-    keywords: [ "documents", "ancient", "history", "paper" ],
-    "char": "\ud83d\udcdc",
+    keywords: ['documents', 'ancient', 'history', 'paper'],
+    char: '\ud83d\udcdc',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   page_with_curl: {
-    keywords: [ "documents", "office", "paper" ],
-    "char": "\ud83d\udcc3",
+    keywords: ['documents', 'office', 'paper'],
+    char: '\ud83d\udcc3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bookmark_tabs: {
-    keywords: [ "favorite", "save", "order", "tidy" ],
-    "char": "\ud83d\udcd1",
+    keywords: ['favorite', 'save', 'order', 'tidy'],
+    char: '\ud83d\udcd1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   receipt: {
-    keywords: [ "accounting", "expenses" ],
-    "char": "\ud83e\uddfe",
+    keywords: ['accounting', 'expenses'],
+    char: '\ud83e\uddfe',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   bar_chart: {
-    keywords: [ "graph", "presentation", "stats" ],
-    "char": "\ud83d\udcca",
+    keywords: ['graph', 'presentation', 'stats'],
+    char: '\ud83d\udcca',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   chart_with_upwards_trend: {
-    keywords: [ "graph", "presentation", "stats", "recovery", "business", "economics", "money", "sales", "good", "success" ],
-    "char": "\ud83d\udcc8",
+    keywords: [
+      'graph',
+      'presentation',
+      'stats',
+      'recovery',
+      'business',
+      'economics',
+      'money',
+      'sales',
+      'good',
+      'success'
+    ],
+    char: '\ud83d\udcc8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   chart_with_downwards_trend: {
-    keywords: [ "graph", "presentation", "stats", "recession", "business", "economics", "money", "sales", "bad", "failure" ],
-    "char": "\ud83d\udcc9",
+    keywords: [
+      'graph',
+      'presentation',
+      'stats',
+      'recession',
+      'business',
+      'economics',
+      'money',
+      'sales',
+      'bad',
+      'failure'
+    ],
+    char: '\ud83d\udcc9',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   page_facing_up: {
-    keywords: [ "documents", "office", "paper", "information" ],
-    "char": "\ud83d\udcc4",
+    keywords: ['documents', 'office', 'paper', 'information'],
+    char: '\ud83d\udcc4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   date: {
-    keywords: [ "calendar", "schedule" ],
-    "char": "\ud83d\udcc5",
+    keywords: ['calendar', 'schedule'],
+    char: '\ud83d\udcc5',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   calendar: {
-    keywords: [ "schedule", "date", "planning" ],
-    "char": "\ud83d\udcc6",
+    keywords: ['schedule', 'date', 'planning'],
+    char: '\ud83d\udcc6',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   spiral_calendar: {
-    keywords: [ "date", "schedule", "planning" ],
-    "char": "\ud83d\uddd3",
+    keywords: ['date', 'schedule', 'planning'],
+    char: '\ud83d\uddd3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   card_index: {
-    keywords: [ "business", "stationery" ],
-    "char": "\ud83d\udcc7",
+    keywords: ['business', 'stationery'],
+    char: '\ud83d\udcc7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   card_file_box: {
-    keywords: [ "business", "stationery" ],
-    "char": "\ud83d\uddc3",
+    keywords: ['business', 'stationery'],
+    char: '\ud83d\uddc3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   ballot_box: {
-    keywords: [ "election", "vote" ],
-    "char": "\ud83d\uddf3",
+    keywords: ['election', 'vote'],
+    char: '\ud83d\uddf3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   file_cabinet: {
-    keywords: [ "filing", "organizing" ],
-    "char": "\ud83d\uddc4",
+    keywords: ['filing', 'organizing'],
+    char: '\ud83d\uddc4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   clipboard: {
-    keywords: [ "stationery", "documents" ],
-    "char": "\ud83d\udccb",
+    keywords: ['stationery', 'documents'],
+    char: '\ud83d\udccb',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   spiral_notepad: {
-    keywords: [ "memo", "stationery" ],
-    "char": "\ud83d\uddd2",
+    keywords: ['memo', 'stationery'],
+    char: '\ud83d\uddd2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   file_folder: {
-    keywords: [ "documents", "business", "office" ],
-    "char": "\ud83d\udcc1",
+    keywords: ['documents', 'business', 'office'],
+    char: '\ud83d\udcc1',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   open_file_folder: {
-    keywords: [ "documents", "load" ],
-    "char": "\ud83d\udcc2",
+    keywords: ['documents', 'load'],
+    char: '\ud83d\udcc2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   card_index_dividers: {
-    keywords: [ "organizing", "business", "stationery" ],
-    "char": "\ud83d\uddc2",
+    keywords: ['organizing', 'business', 'stationery'],
+    char: '\ud83d\uddc2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   newspaper_roll: {
-    keywords: [ "press", "headline" ],
-    "char": "\ud83d\uddde",
+    keywords: ['press', 'headline'],
+    char: '\ud83d\uddde',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   newspaper: {
-    keywords: [ "press", "headline" ],
-    "char": "\ud83d\udcf0",
+    keywords: ['press', 'headline'],
+    char: '\ud83d\udcf0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   notebook: {
-    keywords: [ "stationery", "record", "notes", "paper", "study" ],
-    "char": "\ud83d\udcd3",
+    keywords: ['stationery', 'record', 'notes', 'paper', 'study'],
+    char: '\ud83d\udcd3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   closed_book: {
-    keywords: [ "read", "library", "knowledge", "textbook", "learn" ],
-    "char": "\ud83d\udcd5",
+    keywords: ['read', 'library', 'knowledge', 'textbook', 'learn'],
+    char: '\ud83d\udcd5',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   green_book: {
-    keywords: [ "read", "library", "knowledge", "study" ],
-    "char": "\ud83d\udcd7",
+    keywords: ['read', 'library', 'knowledge', 'study'],
+    char: '\ud83d\udcd7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   blue_book: {
-    keywords: [ "read", "library", "knowledge", "learn", "study" ],
-    "char": "\ud83d\udcd8",
+    keywords: ['read', 'library', 'knowledge', 'learn', 'study'],
+    char: '\ud83d\udcd8',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   orange_book: {
-    keywords: [ "read", "library", "knowledge", "textbook", "study" ],
-    "char": "\ud83d\udcd9",
+    keywords: ['read', 'library', 'knowledge', 'textbook', 'study'],
+    char: '\ud83d\udcd9',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   notebook_with_decorative_cover: {
-    keywords: [ "classroom", "notes", "record", "paper", "study" ],
-    "char": "\ud83d\udcd4",
+    keywords: ['classroom', 'notes', 'record', 'paper', 'study'],
+    char: '\ud83d\udcd4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   ledger: {
-    keywords: [ "notes", "paper" ],
-    "char": "\ud83d\udcd2",
+    keywords: ['notes', 'paper'],
+    char: '\ud83d\udcd2',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   books: {
-    keywords: [ "literature", "library", "study" ],
-    "char": "\ud83d\udcda",
+    keywords: ['literature', 'library', 'study'],
+    char: '\ud83d\udcda',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   open_book: {
-    keywords: [ "book", "read", "library", "knowledge", "literature", "learn", "study" ],
-    "char": "\ud83d\udcd6",
+    keywords: ['book', 'read', 'library', 'knowledge', 'literature', 'learn', 'study'],
+    char: '\ud83d\udcd6',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   safety_pin: {
-    keywords: [ "diaper" ],
-    "char": "\ud83e\uddf7",
+    keywords: ['diaper'],
+    char: '\ud83e\uddf7',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   link: {
-    keywords: [ "rings", "url" ],
-    "char": "\ud83d\udd17",
+    keywords: ['rings', 'url'],
+    char: '\ud83d\udd17',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   paperclip: {
-    keywords: [ "documents", "stationery" ],
-    "char": "\ud83d\udcce",
+    keywords: ['documents', 'stationery'],
+    char: '\ud83d\udcce',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   paperclips: {
-    keywords: [ "documents", "stationery" ],
-    "char": "\ud83d\udd87",
+    keywords: ['documents', 'stationery'],
+    char: '\ud83d\udd87',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   scissors: {
-    keywords: [ "stationery", "cut" ],
-    "char": "\u2702\ufe0f",
+    keywords: ['stationery', 'cut'],
+    char: '\u2702\ufe0f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   triangular_ruler: {
-    keywords: [ "stationery", "math", "architect", "sketch" ],
-    "char": "\ud83d\udcd0",
+    keywords: ['stationery', 'math', 'architect', 'sketch'],
+    char: '\ud83d\udcd0',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   straight_ruler: {
-    keywords: [ "stationery", "calculate", "length", "math", "school", "drawing", "architect", "sketch" ],
-    "char": "\ud83d\udccf",
+    keywords: ['stationery', 'calculate', 'length', 'math', 'school', 'drawing', 'architect', 'sketch'],
+    char: '\ud83d\udccf',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   abacus: {
-    keywords: [ "calculation" ],
-    "char": "\ud83e\uddee",
+    keywords: ['calculation'],
+    char: '\ud83e\uddee',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pushpin: {
-    keywords: [ "stationery", "mark", "here" ],
-    "char": "\ud83d\udccc",
+    keywords: ['stationery', 'mark', 'here'],
+    char: '\ud83d\udccc',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   round_pushpin: {
-    keywords: [ "stationery", "location", "map", "here" ],
-    "char": "\ud83d\udccd",
+    keywords: ['stationery', 'location', 'map', 'here'],
+    char: '\ud83d\udccd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   triangular_flag_on_post: {
-    keywords: [ "mark", "milestone", "place" ],
-    "char": "\ud83d\udea9",
+    keywords: ['mark', 'milestone', 'place'],
+    char: '\ud83d\udea9',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   white_flag: {
-    keywords: [ "losing", "loser", "lost", "surrender", "give up", "fail" ],
-    "char": "\ud83c\udff3",
+    keywords: ['losing', 'loser', 'lost', 'surrender', 'give up', 'fail'],
+    char: '\ud83c\udff3',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   black_flag: {
-    keywords: [ "pirate" ],
-    "char": "\ud83c\udff4",
+    keywords: ['pirate'],
+    char: '\ud83c\udff4',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   rainbow_flag: {
-    keywords: [ "flag", "rainbow", "pride", "gay", "lgbt", "glbt", "queer", "homosexual", "lesbian", "bisexual", "transgender" ],
-    "char": "\ud83c\udff3\ufe0f\u200d\ud83c\udf08",
+    keywords: [
+      'flag',
+      'rainbow',
+      'pride',
+      'gay',
+      'lgbt',
+      'glbt',
+      'queer',
+      'homosexual',
+      'lesbian',
+      'bisexual',
+      'transgender'
+    ],
+    char: '\ud83c\udff3\ufe0f\u200d\ud83c\udf08',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   closed_lock_with_key: {
-    keywords: [ "security", "privacy" ],
-    "char": "\ud83d\udd10",
+    keywords: ['security', 'privacy'],
+    char: '\ud83d\udd10',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   lock: {
-    keywords: [ "security", "password", "padlock" ],
-    "char": "\ud83d\udd12",
+    keywords: ['security', 'password', 'padlock'],
+    char: '\ud83d\udd12',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   unlock: {
-    keywords: [ "privacy", "security" ],
-    "char": "\ud83d\udd13",
+    keywords: ['privacy', 'security'],
+    char: '\ud83d\udd13',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   lock_with_ink_pen: {
-    keywords: [ "security", "secret" ],
-    "char": "\ud83d\udd0f",
+    keywords: ['security', 'secret'],
+    char: '\ud83d\udd0f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pen: {
-    keywords: [ "stationery", "writing", "write" ],
-    "char": "\ud83d\udd8a",
+    keywords: ['stationery', 'writing', 'write'],
+    char: '\ud83d\udd8a',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   fountain_pen: {
-    keywords: [ "stationery", "writing", "write" ],
-    "char": "\ud83d\udd8b",
+    keywords: ['stationery', 'writing', 'write'],
+    char: '\ud83d\udd8b',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   black_nib: {
-    keywords: [ "pen", "stationery", "writing", "write" ],
-    "char": "\u2712\ufe0f",
+    keywords: ['pen', 'stationery', 'writing', 'write'],
+    char: '\u2712\ufe0f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   memo: {
-    keywords: [ "write", "documents", "stationery", "pencil", "paper", "writing", "legal", "exam", "quiz", "test", "study", "compose" ],
-    "char": "\ud83d\udcdd",
+    keywords: [
+      'write',
+      'documents',
+      'stationery',
+      'pencil',
+      'paper',
+      'writing',
+      'legal',
+      'exam',
+      'quiz',
+      'test',
+      'study',
+      'compose'
+    ],
+    char: '\ud83d\udcdd',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   pencil2: {
-    keywords: [ "stationery", "write", "paper", "writing", "school", "study" ],
-    "char": "\u270f\ufe0f",
+    keywords: ['stationery', 'write', 'paper', 'writing', 'school', 'study'],
+    char: '\u270f\ufe0f',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   crayon: {
-    keywords: [ "drawing", "creativity" ],
-    "char": "\ud83d\udd8d",
+    keywords: ['drawing', 'creativity'],
+    char: '\ud83d\udd8d',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   paintbrush: {
-    keywords: [ "drawing", "creativity", "art" ],
-    "char": "\ud83d\udd8c",
+    keywords: ['drawing', 'creativity', 'art'],
+    char: '\ud83d\udd8c',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mag: {
-    keywords: [ "search", "zoom", "find", "detective" ],
-    "char": "\ud83d\udd0d",
+    keywords: ['search', 'zoom', 'find', 'detective'],
+    char: '\ud83d\udd0d',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   mag_right: {
-    keywords: [ "search", "zoom", "find", "detective" ],
-    "char": "\ud83d\udd0e",
+    keywords: ['search', 'zoom', 'find', 'detective'],
+    char: '\ud83d\udd0e',
     fitzpatrick_scale: false,
-    category: "objects"
+    category: 'objects'
   },
   heart: {
-    keywords: [ "love", "like", "valentines" ],
-    "char": "\u2764\ufe0f",
+    keywords: ['love', 'like', 'valentines'],
+    char: '\u2764\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   orange_heart: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83e\udde1",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83e\udde1',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   yellow_heart: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc9b",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc9b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   green_heart: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc9a",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc9a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   blue_heart: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc99",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc99',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   purple_heart: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc9c",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc9c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_heart: {
-    keywords: [ "evil" ],
-    "char": "\ud83d\udda4",
+    keywords: ['evil'],
+    char: '\ud83d\udda4',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   broken_heart: {
-    keywords: [ "sad", "sorry", "break", "heart", "heartbreak" ],
-    "char": "\ud83d\udc94",
+    keywords: ['sad', 'sorry', 'break', 'heart', 'heartbreak'],
+    char: '\ud83d\udc94',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_heart_exclamation: {
-    keywords: [ "decoration", "love" ],
-    "char": "\u2763",
+    keywords: ['decoration', 'love'],
+    char: '\u2763',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   two_hearts: {
-    keywords: [ "love", "like", "affection", "valentines", "heart" ],
-    "char": "\ud83d\udc95",
+    keywords: ['love', 'like', 'affection', 'valentines', 'heart'],
+    char: '\ud83d\udc95',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   revolving_hearts: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc9e",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc9e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heartbeat: {
-    keywords: [ "love", "like", "affection", "valentines", "pink", "heart" ],
-    "char": "\ud83d\udc93",
+    keywords: ['love', 'like', 'affection', 'valentines', 'pink', 'heart'],
+    char: '\ud83d\udc93',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heartpulse: {
-    keywords: [ "like", "love", "affection", "valentines", "pink" ],
-    "char": "\ud83d\udc97",
+    keywords: ['like', 'love', 'affection', 'valentines', 'pink'],
+    char: '\ud83d\udc97',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   sparkling_heart: {
-    keywords: [ "love", "like", "affection", "valentines" ],
-    "char": "\ud83d\udc96",
+    keywords: ['love', 'like', 'affection', 'valentines'],
+    char: '\ud83d\udc96',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   cupid: {
-    keywords: [ "love", "like", "heart", "affection", "valentines" ],
-    "char": "\ud83d\udc98",
+    keywords: ['love', 'like', 'heart', 'affection', 'valentines'],
+    char: '\ud83d\udc98',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   gift_heart: {
-    keywords: [ "love", "valentines" ],
-    "char": "\ud83d\udc9d",
+    keywords: ['love', 'valentines'],
+    char: '\ud83d\udc9d',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heart_decoration: {
-    keywords: [ "purple-square", "love", "like" ],
-    "char": "\ud83d\udc9f",
+    keywords: ['purple-square', 'love', 'like'],
+    char: '\ud83d\udc9f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   peace_symbol: {
-    keywords: [ "hippie" ],
-    "char": "\u262e",
+    keywords: ['hippie'],
+    char: '\u262e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   latin_cross: {
-    keywords: [ "christianity" ],
-    "char": "\u271d",
+    keywords: ['christianity'],
+    char: '\u271d',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   star_and_crescent: {
-    keywords: [ "islam" ],
-    "char": "\u262a",
+    keywords: ['islam'],
+    char: '\u262a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   om: {
-    keywords: [ "hinduism", "buddhism", "sikhism", "jainism" ],
-    "char": "\ud83d\udd49",
+    keywords: ['hinduism', 'buddhism', 'sikhism', 'jainism'],
+    char: '\ud83d\udd49',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   wheel_of_dharma: {
-    keywords: [ "hinduism", "buddhism", "sikhism", "jainism" ],
-    "char": "\u2638",
+    keywords: ['hinduism', 'buddhism', 'sikhism', 'jainism'],
+    char: '\u2638',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   star_of_david: {
-    keywords: [ "judaism" ],
-    "char": "\u2721",
+    keywords: ['judaism'],
+    char: '\u2721',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   six_pointed_star: {
-    keywords: [ "purple-square", "religion", "jewish", "hexagram" ],
-    "char": "\ud83d\udd2f",
+    keywords: ['purple-square', 'religion', 'jewish', 'hexagram'],
+    char: '\ud83d\udd2f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   menorah: {
-    keywords: [ "hanukkah", "candles", "jewish" ],
-    "char": "\ud83d\udd4e",
+    keywords: ['hanukkah', 'candles', 'jewish'],
+    char: '\ud83d\udd4e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   yin_yang: {
-    keywords: [ "balance" ],
-    "char": "\u262f",
+    keywords: ['balance'],
+    char: '\u262f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   orthodox_cross: {
-    keywords: [ "suppedaneum", "religion" ],
-    "char": "\u2626",
+    keywords: ['suppedaneum', 'religion'],
+    char: '\u2626',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   place_of_worship: {
-    keywords: [ "religion", "church", "temple", "prayer" ],
-    "char": "\ud83d\uded0",
+    keywords: ['religion', 'church', 'temple', 'prayer'],
+    char: '\ud83d\uded0',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   ophiuchus: {
-    keywords: [ "sign", "purple-square", "constellation", "astrology" ],
-    "char": "\u26ce",
+    keywords: ['sign', 'purple-square', 'constellation', 'astrology'],
+    char: '\u26ce',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   aries: {
-    keywords: [ "sign", "purple-square", "zodiac", "astrology" ],
-    "char": "\u2648",
+    keywords: ['sign', 'purple-square', 'zodiac', 'astrology'],
+    char: '\u2648',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   taurus: {
-    keywords: [ "purple-square", "sign", "zodiac", "astrology" ],
-    "char": "\u2649",
+    keywords: ['purple-square', 'sign', 'zodiac', 'astrology'],
+    char: '\u2649',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   gemini: {
-    keywords: [ "sign", "zodiac", "purple-square", "astrology" ],
-    "char": "\u264a",
+    keywords: ['sign', 'zodiac', 'purple-square', 'astrology'],
+    char: '\u264a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   cancer: {
-    keywords: [ "sign", "zodiac", "purple-square", "astrology" ],
-    "char": "\u264b",
+    keywords: ['sign', 'zodiac', 'purple-square', 'astrology'],
+    char: '\u264b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   leo: {
-    keywords: [ "sign", "purple-square", "zodiac", "astrology" ],
-    "char": "\u264c",
+    keywords: ['sign', 'purple-square', 'zodiac', 'astrology'],
+    char: '\u264c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   virgo: {
-    keywords: [ "sign", "zodiac", "purple-square", "astrology" ],
-    "char": "\u264d",
+    keywords: ['sign', 'zodiac', 'purple-square', 'astrology'],
+    char: '\u264d',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   libra: {
-    keywords: [ "sign", "purple-square", "zodiac", "astrology" ],
-    "char": "\u264e",
+    keywords: ['sign', 'purple-square', 'zodiac', 'astrology'],
+    char: '\u264e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   scorpius: {
-    keywords: [ "sign", "zodiac", "purple-square", "astrology", "scorpio" ],
-    "char": "\u264f",
+    keywords: ['sign', 'zodiac', 'purple-square', 'astrology', 'scorpio'],
+    char: '\u264f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   sagittarius: {
-    keywords: [ "sign", "zodiac", "purple-square", "astrology" ],
-    "char": "\u2650",
+    keywords: ['sign', 'zodiac', 'purple-square', 'astrology'],
+    char: '\u2650',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   capricorn: {
-    keywords: [ "sign", "zodiac", "purple-square", "astrology" ],
-    "char": "\u2651",
+    keywords: ['sign', 'zodiac', 'purple-square', 'astrology'],
+    char: '\u2651',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   aquarius: {
-    keywords: [ "sign", "purple-square", "zodiac", "astrology" ],
-    "char": "\u2652",
+    keywords: ['sign', 'purple-square', 'zodiac', 'astrology'],
+    char: '\u2652',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   pisces: {
-    keywords: [ "purple-square", "sign", "zodiac", "astrology" ],
-    "char": "\u2653",
+    keywords: ['purple-square', 'sign', 'zodiac', 'astrology'],
+    char: '\u2653',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   id: {
-    keywords: [ "purple-square", "words" ],
-    "char": "\ud83c\udd94",
+    keywords: ['purple-square', 'words'],
+    char: '\ud83c\udd94',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   atom_symbol: {
-    keywords: [ "science", "physics", "chemistry" ],
-    "char": "\u269b",
+    keywords: ['science', 'physics', 'chemistry'],
+    char: '\u269b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u7a7a: {
-    keywords: [ "kanji", "japanese", "chinese", "empty", "sky", "blue-square" ],
-    "char": "\ud83c\ude33",
+    keywords: ['kanji', 'japanese', 'chinese', 'empty', 'sky', 'blue-square'],
+    char: '\ud83c\ude33',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u5272: {
-    keywords: [ "cut", "divide", "chinese", "kanji", "pink-square" ],
-    "char": "\ud83c\ude39",
+    keywords: ['cut', 'divide', 'chinese', 'kanji', 'pink-square'],
+    char: '\ud83c\ude39',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   radioactive: {
-    keywords: [ "nuclear", "danger" ],
-    "char": "\u2622",
+    keywords: ['nuclear', 'danger'],
+    char: '\u2622',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   biohazard: {
-    keywords: [ "danger" ],
-    "char": "\u2623",
+    keywords: ['danger'],
+    char: '\u2623',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   mobile_phone_off: {
-    keywords: [ "mute", "orange-square", "silence", "quiet" ],
-    "char": "\ud83d\udcf4",
+    keywords: ['mute', 'orange-square', 'silence', 'quiet'],
+    char: '\ud83d\udcf4',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   vibration_mode: {
-    keywords: [ "orange-square", "phone" ],
-    "char": "\ud83d\udcf3",
+    keywords: ['orange-square', 'phone'],
+    char: '\ud83d\udcf3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u6709: {
-    keywords: [ "orange-square", "chinese", "have", "kanji" ],
-    "char": "\ud83c\ude36",
+    keywords: ['orange-square', 'chinese', 'have', 'kanji'],
+    char: '\ud83c\ude36',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u7121: {
-    keywords: [ "nothing", "chinese", "kanji", "japanese", "orange-square" ],
-    "char": "\ud83c\ude1a",
+    keywords: ['nothing', 'chinese', 'kanji', 'japanese', 'orange-square'],
+    char: '\ud83c\ude1a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u7533: {
-    keywords: [ "chinese", "japanese", "kanji", "orange-square" ],
-    "char": "\ud83c\ude38",
+    keywords: ['chinese', 'japanese', 'kanji', 'orange-square'],
+    char: '\ud83c\ude38',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u55b6: {
-    keywords: [ "japanese", "opening hours", "orange-square" ],
-    "char": "\ud83c\ude3a",
+    keywords: ['japanese', 'opening hours', 'orange-square'],
+    char: '\ud83c\ude3a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u6708: {
-    keywords: [ "chinese", "month", "moon", "japanese", "orange-square", "kanji" ],
-    "char": "\ud83c\ude37\ufe0f",
+    keywords: ['chinese', 'month', 'moon', 'japanese', 'orange-square', 'kanji'],
+    char: '\ud83c\ude37\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   eight_pointed_black_star: {
-    keywords: [ "orange-square", "shape", "polygon" ],
-    "char": "\u2734\ufe0f",
+    keywords: ['orange-square', 'shape', 'polygon'],
+    char: '\u2734\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   vs: {
-    keywords: [ "words", "orange-square" ],
-    "char": "\ud83c\udd9a",
+    keywords: ['words', 'orange-square'],
+    char: '\ud83c\udd9a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   accept: {
-    keywords: [ "ok", "good", "chinese", "kanji", "agree", "yes", "orange-circle" ],
-    "char": "\ud83c\ude51",
+    keywords: ['ok', 'good', 'chinese', 'kanji', 'agree', 'yes', 'orange-circle'],
+    char: '\ud83c\ude51',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_flower: {
-    keywords: [ "japanese", "spring" ],
-    "char": "\ud83d\udcae",
+    keywords: ['japanese', 'spring'],
+    char: '\ud83d\udcae',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   ideograph_advantage: {
-    keywords: [ "chinese", "kanji", "obtain", "get", "circle" ],
-    "char": "\ud83c\ude50",
+    keywords: ['chinese', 'kanji', 'obtain', 'get', 'circle'],
+    char: '\ud83c\ude50',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   secret: {
-    keywords: [ "privacy", "chinese", "sshh", "kanji", "red-circle" ],
-    "char": "\u3299\ufe0f",
+    keywords: ['privacy', 'chinese', 'sshh', 'kanji', 'red-circle'],
+    char: '\u3299\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   congratulations: {
-    keywords: [ "chinese", "kanji", "japanese", "red-circle" ],
-    "char": "\u3297\ufe0f",
+    keywords: ['chinese', 'kanji', 'japanese', 'red-circle'],
+    char: '\u3297\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u5408: {
-    keywords: [ "japanese", "chinese", "join", "kanji", "red-square" ],
-    "char": "\ud83c\ude34",
+    keywords: ['japanese', 'chinese', 'join', 'kanji', 'red-square'],
+    char: '\ud83c\ude34',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u6e80: {
-    keywords: [ "full", "chinese", "japanese", "red-square", "kanji" ],
-    "char": "\ud83c\ude35",
+    keywords: ['full', 'chinese', 'japanese', 'red-square', 'kanji'],
+    char: '\ud83c\ude35',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u7981: {
-    keywords: [ "kanji", "japanese", "chinese", "forbidden", "limit", "restricted", "red-square" ],
-    "char": "\ud83c\ude32",
+    keywords: ['kanji', 'japanese', 'chinese', 'forbidden', 'limit', 'restricted', 'red-square'],
+    char: '\ud83c\ude32',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   a: {
-    keywords: [ "red-square", "alphabet", "letter" ],
-    "char": "\ud83c\udd70\ufe0f",
+    keywords: ['red-square', 'alphabet', 'letter'],
+    char: '\ud83c\udd70\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   b: {
-    keywords: [ "red-square", "alphabet", "letter" ],
-    "char": "\ud83c\udd71\ufe0f",
+    keywords: ['red-square', 'alphabet', 'letter'],
+    char: '\ud83c\udd71\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   ab: {
-    keywords: [ "red-square", "alphabet" ],
-    "char": "\ud83c\udd8e",
+    keywords: ['red-square', 'alphabet'],
+    char: '\ud83c\udd8e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   cl: {
-    keywords: [ "alphabet", "words", "red-square" ],
-    "char": "\ud83c\udd91",
+    keywords: ['alphabet', 'words', 'red-square'],
+    char: '\ud83c\udd91',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   o2: {
-    keywords: [ "alphabet", "red-square", "letter" ],
-    "char": "\ud83c\udd7e\ufe0f",
+    keywords: ['alphabet', 'red-square', 'letter'],
+    char: '\ud83c\udd7e\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   sos: {
-    keywords: [ "help", "red-square", "words", "emergency", "911" ],
-    "char": "\ud83c\udd98",
+    keywords: ['help', 'red-square', 'words', 'emergency', '911'],
+    char: '\ud83c\udd98',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_entry: {
-    keywords: [ "limit", "security", "privacy", "bad", "denied", "stop", "circle" ],
-    "char": "\u26d4",
+    keywords: ['limit', 'security', 'privacy', 'bad', 'denied', 'stop', 'circle'],
+    char: '\u26d4',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   name_badge: {
-    keywords: [ "fire", "forbid" ],
-    "char": "\ud83d\udcdb",
+    keywords: ['fire', 'forbid'],
+    char: '\ud83d\udcdb',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_entry_sign: {
-    keywords: [ "forbid", "stop", "limit", "denied", "disallow", "circle" ],
-    "char": "\ud83d\udeab",
+    keywords: ['forbid', 'stop', 'limit', 'denied', 'disallow', 'circle'],
+    char: '\ud83d\udeab',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   x: {
-    keywords: [ "no", "delete", "remove", "cancel", "red" ],
-    "char": "\u274c",
+    keywords: ['no', 'delete', 'remove', 'cancel', 'red'],
+    char: '\u274c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   o: {
-    keywords: [ "circle", "round" ],
-    "char": "\u2b55",
+    keywords: ['circle', 'round'],
+    char: '\u2b55',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   stop_sign: {
-    keywords: [ "stop" ],
-    "char": "\ud83d\uded1",
+    keywords: ['stop'],
+    char: '\ud83d\uded1',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   anger: {
-    keywords: [ "angry", "mad" ],
-    "char": "\ud83d\udca2",
+    keywords: ['angry', 'mad'],
+    char: '\ud83d\udca2',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   hotsprings: {
-    keywords: [ "bath", "warm", "relax" ],
-    "char": "\u2668\ufe0f",
+    keywords: ['bath', 'warm', 'relax'],
+    char: '\u2668\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_pedestrians: {
-    keywords: [ "rules", "crossing", "walking", "circle" ],
-    "char": "\ud83d\udeb7",
+    keywords: ['rules', 'crossing', 'walking', 'circle'],
+    char: '\ud83d\udeb7',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   do_not_litter: {
-    keywords: [ "trash", "bin", "garbage", "circle" ],
-    "char": "\ud83d\udeaf",
+    keywords: ['trash', 'bin', 'garbage', 'circle'],
+    char: '\ud83d\udeaf',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_bicycles: {
-    keywords: [ "cyclist", "prohibited", "circle" ],
-    "char": "\ud83d\udeb3",
+    keywords: ['cyclist', 'prohibited', 'circle'],
+    char: '\ud83d\udeb3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
-  "non-potable_water": {
-    keywords: [ "drink", "faucet", "tap", "circle" ],
-    "char": "\ud83d\udeb1",
+  'non-potable_water': {
+    keywords: ['drink', 'faucet', 'tap', 'circle'],
+    char: '\ud83d\udeb1',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   underage: {
-    keywords: [ "18", "drink", "pub", "night", "minor", "circle" ],
-    "char": "\ud83d\udd1e",
+    keywords: ['18', 'drink', 'pub', 'night', 'minor', 'circle'],
+    char: '\ud83d\udd1e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_mobile_phones: {
-    keywords: [ "iphone", "mute", "circle" ],
-    "char": "\ud83d\udcf5",
+    keywords: ['iphone', 'mute', 'circle'],
+    char: '\ud83d\udcf5',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   exclamation: {
-    keywords: [ "heavy_exclamation_mark", "danger", "surprise", "punctuation", "wow", "warning" ],
-    "char": "\u2757",
+    keywords: ['heavy_exclamation_mark', 'danger', 'surprise', 'punctuation', 'wow', 'warning'],
+    char: '\u2757',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   grey_exclamation: {
-    keywords: [ "surprise", "punctuation", "gray", "wow", "warning" ],
-    "char": "\u2755",
+    keywords: ['surprise', 'punctuation', 'gray', 'wow', 'warning'],
+    char: '\u2755',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   question: {
-    keywords: [ "doubt", "confused" ],
-    "char": "\u2753",
+    keywords: ['doubt', 'confused'],
+    char: '\u2753',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   grey_question: {
-    keywords: [ "doubts", "gray", "huh", "confused" ],
-    "char": "\u2754",
+    keywords: ['doubts', 'gray', 'huh', 'confused'],
+    char: '\u2754',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   bangbang: {
-    keywords: [ "exclamation", "surprise" ],
-    "char": "\u203c\ufe0f",
+    keywords: ['exclamation', 'surprise'],
+    char: '\u203c\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   interrobang: {
-    keywords: [ "wat", "punctuation", "surprise" ],
-    "char": "\u2049\ufe0f",
+    keywords: ['wat', 'punctuation', 'surprise'],
+    char: '\u2049\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   100: {
-    keywords: [ "score", "perfect", "numbers", "century", "exam", "quiz", "test", "pass", "hundred" ],
-    "char": "\ud83d\udcaf",
+    keywords: ['score', 'perfect', 'numbers', 'century', 'exam', 'quiz', 'test', 'pass', 'hundred'],
+    char: '\ud83d\udcaf',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   low_brightness: {
-    keywords: [ "sun", "afternoon", "warm", "summer" ],
-    "char": "\ud83d\udd05",
+    keywords: ['sun', 'afternoon', 'warm', 'summer'],
+    char: '\ud83d\udd05',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   high_brightness: {
-    keywords: [ "sun", "light" ],
-    "char": "\ud83d\udd06",
+    keywords: ['sun', 'light'],
+    char: '\ud83d\udd06',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   trident: {
-    keywords: [ "weapon", "spear" ],
-    "char": "\ud83d\udd31",
+    keywords: ['weapon', 'spear'],
+    char: '\ud83d\udd31',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   fleur_de_lis: {
-    keywords: [ "decorative", "scout" ],
-    "char": "\u269c",
+    keywords: ['decorative', 'scout'],
+    char: '\u269c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   part_alternation_mark: {
-    keywords: [ "graph", "presentation", "stats", "business", "economics", "bad" ],
-    "char": "\u303d\ufe0f",
+    keywords: ['graph', 'presentation', 'stats', 'business', 'economics', 'bad'],
+    char: '\u303d\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   warning: {
-    keywords: [ "exclamation", "wip", "alert", "error", "problem", "issue" ],
-    "char": "\u26a0\ufe0f",
+    keywords: ['exclamation', 'wip', 'alert', 'error', 'problem', 'issue'],
+    char: '\u26a0\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   children_crossing: {
-    keywords: [ "school", "warning", "danger", "sign", "driving", "yellow-diamond" ],
-    "char": "\ud83d\udeb8",
+    keywords: ['school', 'warning', 'danger', 'sign', 'driving', 'yellow-diamond'],
+    char: '\ud83d\udeb8',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   beginner: {
-    keywords: [ "badge", "shield" ],
-    "char": "\ud83d\udd30",
+    keywords: ['badge', 'shield'],
+    char: '\ud83d\udd30',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   recycle: {
-    keywords: [ "arrow", "environment", "garbage", "trash" ],
-    "char": "\u267b\ufe0f",
+    keywords: ['arrow', 'environment', 'garbage', 'trash'],
+    char: '\u267b\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   u6307: {
-    keywords: [ "chinese", "point", "green-square", "kanji" ],
-    "char": "\ud83c\ude2f",
+    keywords: ['chinese', 'point', 'green-square', 'kanji'],
+    char: '\ud83c\ude2f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   chart: {
-    keywords: [ "green-square", "graph", "presentation", "stats" ],
-    "char": "\ud83d\udcb9",
+    keywords: ['green-square', 'graph', 'presentation', 'stats'],
+    char: '\ud83d\udcb9',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   sparkle: {
-    keywords: [ "stars", "green-square", "awesome", "good", "fireworks" ],
-    "char": "\u2747\ufe0f",
+    keywords: ['stars', 'green-square', 'awesome', 'good', 'fireworks'],
+    char: '\u2747\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   eight_spoked_asterisk: {
-    keywords: [ "star", "sparkle", "green-square" ],
-    "char": "\u2733\ufe0f",
+    keywords: ['star', 'sparkle', 'green-square'],
+    char: '\u2733\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   negative_squared_cross_mark: {
-    keywords: [ "x", "green-square", "no", "deny" ],
-    "char": "\u274e",
+    keywords: ['x', 'green-square', 'no', 'deny'],
+    char: '\u274e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_check_mark: {
-    keywords: [ "green-square", "ok", "agree", "vote", "election", "answer", "tick" ],
-    "char": "\u2705",
+    keywords: ['green-square', 'ok', 'agree', 'vote', 'election', 'answer', 'tick'],
+    char: '\u2705',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   diamond_shape_with_a_dot_inside: {
-    keywords: [ "jewel", "blue", "gem", "crystal", "fancy" ],
-    "char": "\ud83d\udca0",
+    keywords: ['jewel', 'blue', 'gem', 'crystal', 'fancy'],
+    char: '\ud83d\udca0',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   cyclone: {
-    keywords: [ "weather", "swirl", "blue", "cloud", "vortex", "spiral", "whirlpool", "spin", "tornado", "hurricane", "typhoon" ],
-    "char": "\ud83c\udf00",
+    keywords: [
+      'weather',
+      'swirl',
+      'blue',
+      'cloud',
+      'vortex',
+      'spiral',
+      'whirlpool',
+      'spin',
+      'tornado',
+      'hurricane',
+      'typhoon'
+    ],
+    char: '\ud83c\udf00',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   loop: {
-    keywords: [ "tape", "cassette" ],
-    "char": "\u27bf",
+    keywords: ['tape', 'cassette'],
+    char: '\u27bf',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   globe_with_meridians: {
-    keywords: [ "earth", "international", "world", "internet", "interweb", "i18n" ],
-    "char": "\ud83c\udf10",
+    keywords: ['earth', 'international', 'world', 'internet', 'interweb', 'i18n'],
+    char: '\ud83c\udf10',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   m: {
-    keywords: [ "alphabet", "blue-circle", "letter" ],
-    "char": "\u24c2\ufe0f",
+    keywords: ['alphabet', 'blue-circle', 'letter'],
+    char: '\u24c2\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   atm: {
-    keywords: [ "money", "sales", "cash", "blue-square", "payment", "bank" ],
-    "char": "\ud83c\udfe7",
+    keywords: ['money', 'sales', 'cash', 'blue-square', 'payment', 'bank'],
+    char: '\ud83c\udfe7',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   sa: {
-    keywords: [ "japanese", "blue-square", "katakana" ],
-    "char": "\ud83c\ude02\ufe0f",
+    keywords: ['japanese', 'blue-square', 'katakana'],
+    char: '\ud83c\ude02\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   passport_control: {
-    keywords: [ "custom", "blue-square" ],
-    "char": "\ud83d\udec2",
+    keywords: ['custom', 'blue-square'],
+    char: '\ud83d\udec2',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   customs: {
-    keywords: [ "passport", "border", "blue-square" ],
-    "char": "\ud83d\udec3",
+    keywords: ['passport', 'border', 'blue-square'],
+    char: '\ud83d\udec3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   baggage_claim: {
-    keywords: [ "blue-square", "airport", "transport" ],
-    "char": "\ud83d\udec4",
+    keywords: ['blue-square', 'airport', 'transport'],
+    char: '\ud83d\udec4',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   left_luggage: {
-    keywords: [ "blue-square", "travel" ],
-    "char": "\ud83d\udec5",
+    keywords: ['blue-square', 'travel'],
+    char: '\ud83d\udec5',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   wheelchair: {
-    keywords: [ "blue-square", "disabled", "a11y", "accessibility" ],
-    "char": "\u267f",
+    keywords: ['blue-square', 'disabled', 'a11y', 'accessibility'],
+    char: '\u267f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_smoking: {
-    keywords: [ "cigarette", "blue-square", "smell", "smoke" ],
-    "char": "\ud83d\udead",
+    keywords: ['cigarette', 'blue-square', 'smell', 'smoke'],
+    char: '\ud83d\udead',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   wc: {
-    keywords: [ "toilet", "restroom", "blue-square" ],
-    "char": "\ud83d\udebe",
+    keywords: ['toilet', 'restroom', 'blue-square'],
+    char: '\ud83d\udebe',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   parking: {
-    keywords: [ "cars", "blue-square", "alphabet", "letter" ],
-    "char": "\ud83c\udd7f\ufe0f",
+    keywords: ['cars', 'blue-square', 'alphabet', 'letter'],
+    char: '\ud83c\udd7f\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   potable_water: {
-    keywords: [ "blue-square", "liquid", "restroom", "cleaning", "faucet" ],
-    "char": "\ud83d\udeb0",
+    keywords: ['blue-square', 'liquid', 'restroom', 'cleaning', 'faucet'],
+    char: '\ud83d\udeb0',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   mens: {
-    keywords: [ "toilet", "restroom", "wc", "blue-square", "gender", "male" ],
-    "char": "\ud83d\udeb9",
+    keywords: ['toilet', 'restroom', 'wc', 'blue-square', 'gender', 'male'],
+    char: '\ud83d\udeb9',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   womens: {
-    keywords: [ "purple-square", "woman", "female", "toilet", "loo", "restroom", "gender" ],
-    "char": "\ud83d\udeba",
+    keywords: ['purple-square', 'woman', 'female', 'toilet', 'loo', 'restroom', 'gender'],
+    char: '\ud83d\udeba',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   baby_symbol: {
-    keywords: [ "orange-square", "child" ],
-    "char": "\ud83d\udebc",
+    keywords: ['orange-square', 'child'],
+    char: '\ud83d\udebc',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   restroom: {
-    keywords: [ "blue-square", "toilet", "refresh", "wc", "gender" ],
-    "char": "\ud83d\udebb",
+    keywords: ['blue-square', 'toilet', 'refresh', 'wc', 'gender'],
+    char: '\ud83d\udebb',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   put_litter_in_its_place: {
-    keywords: [ "blue-square", "sign", "human", "info" ],
-    "char": "\ud83d\udeae",
+    keywords: ['blue-square', 'sign', 'human', 'info'],
+    char: '\ud83d\udeae',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   cinema: {
-    keywords: [ "blue-square", "record", "film", "movie", "curtain", "stage", "theater" ],
-    "char": "\ud83c\udfa6",
+    keywords: ['blue-square', 'record', 'film', 'movie', 'curtain', 'stage', 'theater'],
+    char: '\ud83c\udfa6',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   signal_strength: {
-    keywords: [ "blue-square", "reception", "phone", "internet", "connection", "wifi", "bluetooth", "bars" ],
-    "char": "\ud83d\udcf6",
+    keywords: ['blue-square', 'reception', 'phone', 'internet', 'connection', 'wifi', 'bluetooth', 'bars'],
+    char: '\ud83d\udcf6',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   koko: {
-    keywords: [ "blue-square", "here", "katakana", "japanese", "destination" ],
-    "char": "\ud83c\ude01",
+    keywords: ['blue-square', 'here', 'katakana', 'japanese', 'destination'],
+    char: '\ud83c\ude01',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   ng: {
-    keywords: [ "blue-square", "words", "shape", "icon" ],
-    "char": "\ud83c\udd96",
+    keywords: ['blue-square', 'words', 'shape', 'icon'],
+    char: '\ud83c\udd96',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   ok: {
-    keywords: [ "good", "agree", "yes", "blue-square" ],
-    "char": "\ud83c\udd97",
+    keywords: ['good', 'agree', 'yes', 'blue-square'],
+    char: '\ud83c\udd97',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   up: {
-    keywords: [ "blue-square", "above", "high" ],
-    "char": "\ud83c\udd99",
+    keywords: ['blue-square', 'above', 'high'],
+    char: '\ud83c\udd99',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   cool: {
-    keywords: [ "words", "blue-square" ],
-    "char": "\ud83c\udd92",
+    keywords: ['words', 'blue-square'],
+    char: '\ud83c\udd92',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
-  "new": {
-    keywords: [ "blue-square", "words", "start" ],
-    "char": "\ud83c\udd95",
+  new: {
+    keywords: ['blue-square', 'words', 'start'],
+    char: '\ud83c\udd95',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   free: {
-    keywords: [ "blue-square", "words" ],
-    "char": "\ud83c\udd93",
+    keywords: ['blue-square', 'words'],
+    char: '\ud83c\udd93',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   zero: {
-    keywords: [ "0", "numbers", "blue-square", "null" ],
-    "char": "0\ufe0f\u20e3",
+    keywords: ['0', 'numbers', 'blue-square', 'null'],
+    char: '0\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   one: {
-    keywords: [ "blue-square", "numbers", "1" ],
-    "char": "1\ufe0f\u20e3",
+    keywords: ['blue-square', 'numbers', '1'],
+    char: '1\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   two: {
-    keywords: [ "numbers", "2", "prime", "blue-square" ],
-    "char": "2\ufe0f\u20e3",
+    keywords: ['numbers', '2', 'prime', 'blue-square'],
+    char: '2\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   three: {
-    keywords: [ "3", "numbers", "prime", "blue-square" ],
-    "char": "3\ufe0f\u20e3",
+    keywords: ['3', 'numbers', 'prime', 'blue-square'],
+    char: '3\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   four: {
-    keywords: [ "4", "numbers", "blue-square" ],
-    "char": "4\ufe0f\u20e3",
+    keywords: ['4', 'numbers', 'blue-square'],
+    char: '4\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   five: {
-    keywords: [ "5", "numbers", "blue-square", "prime" ],
-    "char": "5\ufe0f\u20e3",
+    keywords: ['5', 'numbers', 'blue-square', 'prime'],
+    char: '5\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   six: {
-    keywords: [ "6", "numbers", "blue-square" ],
-    "char": "6\ufe0f\u20e3",
+    keywords: ['6', 'numbers', 'blue-square'],
+    char: '6\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   seven: {
-    keywords: [ "7", "numbers", "blue-square", "prime" ],
-    "char": "7\ufe0f\u20e3",
+    keywords: ['7', 'numbers', 'blue-square', 'prime'],
+    char: '7\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   eight: {
-    keywords: [ "8", "blue-square", "numbers" ],
-    "char": "8\ufe0f\u20e3",
+    keywords: ['8', 'blue-square', 'numbers'],
+    char: '8\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   nine: {
-    keywords: [ "blue-square", "numbers", "9" ],
-    "char": "9\ufe0f\u20e3",
+    keywords: ['blue-square', 'numbers', '9'],
+    char: '9\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   keycap_ten: {
-    keywords: [ "numbers", "10", "blue-square" ],
-    "char": "\ud83d\udd1f",
+    keywords: ['numbers', '10', 'blue-square'],
+    char: '\ud83d\udd1f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   asterisk: {
-    keywords: [ "star", "keycap" ],
-    "char": "*\u20e3",
+    keywords: ['star', 'keycap'],
+    char: '*\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   1234: {
-    keywords: [ "numbers", "blue-square" ],
-    "char": "\ud83d\udd22",
+    keywords: ['numbers', 'blue-square'],
+    char: '\ud83d\udd22',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   eject_button: {
-    keywords: [ "blue-square" ],
-    "char": "\u23cf\ufe0f",
+    keywords: ['blue-square'],
+    char: '\u23cf\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_forward: {
-    keywords: [ "blue-square", "right", "direction", "play" ],
-    "char": "\u25b6\ufe0f",
+    keywords: ['blue-square', 'right', 'direction', 'play'],
+    char: '\u25b6\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   pause_button: {
-    keywords: [ "pause", "blue-square" ],
-    "char": "\u23f8",
+    keywords: ['pause', 'blue-square'],
+    char: '\u23f8',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   next_track_button: {
-    keywords: [ "forward", "next", "blue-square" ],
-    "char": "\u23ed",
+    keywords: ['forward', 'next', 'blue-square'],
+    char: '\u23ed',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   stop_button: {
-    keywords: [ "blue-square" ],
-    "char": "\u23f9",
+    keywords: ['blue-square'],
+    char: '\u23f9',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   record_button: {
-    keywords: [ "blue-square" ],
-    "char": "\u23fa",
+    keywords: ['blue-square'],
+    char: '\u23fa',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   play_or_pause_button: {
-    keywords: [ "blue-square", "play", "pause" ],
-    "char": "\u23ef",
+    keywords: ['blue-square', 'play', 'pause'],
+    char: '\u23ef',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   previous_track_button: {
-    keywords: [ "backward" ],
-    "char": "\u23ee",
+    keywords: ['backward'],
+    char: '\u23ee',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   fast_forward: {
-    keywords: [ "blue-square", "play", "speed", "continue" ],
-    "char": "\u23e9",
+    keywords: ['blue-square', 'play', 'speed', 'continue'],
+    char: '\u23e9',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   rewind: {
-    keywords: [ "play", "blue-square" ],
-    "char": "\u23ea",
+    keywords: ['play', 'blue-square'],
+    char: '\u23ea',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   twisted_rightwards_arrows: {
-    keywords: [ "blue-square", "shuffle", "music", "random" ],
-    "char": "\ud83d\udd00",
+    keywords: ['blue-square', 'shuffle', 'music', 'random'],
+    char: '\ud83d\udd00',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   repeat: {
-    keywords: [ "loop", "record" ],
-    "char": "\ud83d\udd01",
+    keywords: ['loop', 'record'],
+    char: '\ud83d\udd01',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   repeat_one: {
-    keywords: [ "blue-square", "loop" ],
-    "char": "\ud83d\udd02",
+    keywords: ['blue-square', 'loop'],
+    char: '\ud83d\udd02',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_backward: {
-    keywords: [ "blue-square", "left", "direction" ],
-    "char": "\u25c0\ufe0f",
+    keywords: ['blue-square', 'left', 'direction'],
+    char: '\u25c0\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_up_small: {
-    keywords: [ "blue-square", "triangle", "direction", "point", "forward", "top" ],
-    "char": "\ud83d\udd3c",
+    keywords: ['blue-square', 'triangle', 'direction', 'point', 'forward', 'top'],
+    char: '\ud83d\udd3c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_down_small: {
-    keywords: [ "blue-square", "direction", "bottom" ],
-    "char": "\ud83d\udd3d",
+    keywords: ['blue-square', 'direction', 'bottom'],
+    char: '\ud83d\udd3d',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_double_up: {
-    keywords: [ "blue-square", "direction", "top" ],
-    "char": "\u23eb",
+    keywords: ['blue-square', 'direction', 'top'],
+    char: '\u23eb',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_double_down: {
-    keywords: [ "blue-square", "direction", "bottom" ],
-    "char": "\u23ec",
+    keywords: ['blue-square', 'direction', 'bottom'],
+    char: '\u23ec',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_right: {
-    keywords: [ "blue-square", "next" ],
-    "char": "\u27a1\ufe0f",
+    keywords: ['blue-square', 'next'],
+    char: '\u27a1\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_left: {
-    keywords: [ "blue-square", "previous", "back" ],
-    "char": "\u2b05\ufe0f",
+    keywords: ['blue-square', 'previous', 'back'],
+    char: '\u2b05\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_up: {
-    keywords: [ "blue-square", "continue", "top", "direction" ],
-    "char": "\u2b06\ufe0f",
+    keywords: ['blue-square', 'continue', 'top', 'direction'],
+    char: '\u2b06\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_down: {
-    keywords: [ "blue-square", "direction", "bottom" ],
-    "char": "\u2b07\ufe0f",
+    keywords: ['blue-square', 'direction', 'bottom'],
+    char: '\u2b07\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_upper_right: {
-    keywords: [ "blue-square", "point", "direction", "diagonal", "northeast" ],
-    "char": "\u2197\ufe0f",
+    keywords: ['blue-square', 'point', 'direction', 'diagonal', 'northeast'],
+    char: '\u2197\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_lower_right: {
-    keywords: [ "blue-square", "direction", "diagonal", "southeast" ],
-    "char": "\u2198\ufe0f",
+    keywords: ['blue-square', 'direction', 'diagonal', 'southeast'],
+    char: '\u2198\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_lower_left: {
-    keywords: [ "blue-square", "direction", "diagonal", "southwest" ],
-    "char": "\u2199\ufe0f",
+    keywords: ['blue-square', 'direction', 'diagonal', 'southwest'],
+    char: '\u2199\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_upper_left: {
-    keywords: [ "blue-square", "point", "direction", "diagonal", "northwest" ],
-    "char": "\u2196\ufe0f",
+    keywords: ['blue-square', 'point', 'direction', 'diagonal', 'northwest'],
+    char: '\u2196\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_up_down: {
-    keywords: [ "blue-square", "direction", "way", "vertical" ],
-    "char": "\u2195\ufe0f",
+    keywords: ['blue-square', 'direction', 'way', 'vertical'],
+    char: '\u2195\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   left_right_arrow: {
-    keywords: [ "shape", "direction", "horizontal", "sideways" ],
-    "char": "\u2194\ufe0f",
+    keywords: ['shape', 'direction', 'horizontal', 'sideways'],
+    char: '\u2194\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrows_counterclockwise: {
-    keywords: [ "blue-square", "sync", "cycle" ],
-    "char": "\ud83d\udd04",
+    keywords: ['blue-square', 'sync', 'cycle'],
+    char: '\ud83d\udd04',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_right_hook: {
-    keywords: [ "blue-square", "return", "rotate", "direction" ],
-    "char": "\u21aa\ufe0f",
+    keywords: ['blue-square', 'return', 'rotate', 'direction'],
+    char: '\u21aa\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   leftwards_arrow_with_hook: {
-    keywords: [ "back", "return", "blue-square", "undo", "enter" ],
-    "char": "\u21a9\ufe0f",
+    keywords: ['back', 'return', 'blue-square', 'undo', 'enter'],
+    char: '\u21a9\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_heading_up: {
-    keywords: [ "blue-square", "direction", "top" ],
-    "char": "\u2934\ufe0f",
+    keywords: ['blue-square', 'direction', 'top'],
+    char: '\u2934\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrow_heading_down: {
-    keywords: [ "blue-square", "direction", "bottom" ],
-    "char": "\u2935\ufe0f",
+    keywords: ['blue-square', 'direction', 'bottom'],
+    char: '\u2935\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   hash: {
-    keywords: [ "symbol", "blue-square", "twitter" ],
-    "char": "#\ufe0f\u20e3",
+    keywords: ['symbol', 'blue-square', 'twitter'],
+    char: '#\ufe0f\u20e3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   information_source: {
-    keywords: [ "blue-square", "alphabet", "letter" ],
-    "char": "\u2139\ufe0f",
+    keywords: ['blue-square', 'alphabet', 'letter'],
+    char: '\u2139\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   abc: {
-    keywords: [ "blue-square", "alphabet" ],
-    "char": "\ud83d\udd24",
+    keywords: ['blue-square', 'alphabet'],
+    char: '\ud83d\udd24',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   abcd: {
-    keywords: [ "blue-square", "alphabet" ],
-    "char": "\ud83d\udd21",
+    keywords: ['blue-square', 'alphabet'],
+    char: '\ud83d\udd21',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   capital_abcd: {
-    keywords: [ "alphabet", "words", "blue-square" ],
-    "char": "\ud83d\udd20",
+    keywords: ['alphabet', 'words', 'blue-square'],
+    char: '\ud83d\udd20',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   symbols: {
-    keywords: [ "blue-square", "music", "note", "ampersand", "percent", "glyphs", "characters" ],
-    "char": "\ud83d\udd23",
+    keywords: ['blue-square', 'music', 'note', 'ampersand', 'percent', 'glyphs', 'characters'],
+    char: '\ud83d\udd23',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   musical_note: {
-    keywords: [ "score", "tone", "sound" ],
-    "char": "\ud83c\udfb5",
+    keywords: ['score', 'tone', 'sound'],
+    char: '\ud83c\udfb5',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   notes: {
-    keywords: [ "music", "score" ],
-    "char": "\ud83c\udfb6",
+    keywords: ['music', 'score'],
+    char: '\ud83c\udfb6',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   wavy_dash: {
-    keywords: [ "draw", "line", "moustache", "mustache", "squiggle", "scribble" ],
-    "char": "\u3030\ufe0f",
+    keywords: ['draw', 'line', 'moustache', 'mustache', 'squiggle', 'scribble'],
+    char: '\u3030\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   curly_loop: {
-    keywords: [ "scribble", "draw", "shape", "squiggle" ],
-    "char": "\u27b0",
+    keywords: ['scribble', 'draw', 'shape', 'squiggle'],
+    char: '\u27b0',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_check_mark: {
-    keywords: [ "ok", "nike", "answer", "yes", "tick" ],
-    "char": "\u2714\ufe0f",
+    keywords: ['ok', 'nike', 'answer', 'yes', 'tick'],
+    char: '\u2714\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   arrows_clockwise: {
-    keywords: [ "sync", "cycle", "round", "repeat" ],
-    "char": "\ud83d\udd03",
+    keywords: ['sync', 'cycle', 'round', 'repeat'],
+    char: '\ud83d\udd03',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_plus_sign: {
-    keywords: [ "math", "calculation", "addition", "more", "increase" ],
-    "char": "\u2795",
+    keywords: ['math', 'calculation', 'addition', 'more', 'increase'],
+    char: '\u2795',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_minus_sign: {
-    keywords: [ "math", "calculation", "subtract", "less" ],
-    "char": "\u2796",
+    keywords: ['math', 'calculation', 'subtract', 'less'],
+    char: '\u2796',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_division_sign: {
-    keywords: [ "divide", "math", "calculation" ],
-    "char": "\u2797",
+    keywords: ['divide', 'math', 'calculation'],
+    char: '\u2797',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_multiplication_x: {
-    keywords: [ "math", "calculation" ],
-    "char": "\u2716\ufe0f",
+    keywords: ['math', 'calculation'],
+    char: '\u2716\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   infinity: {
-    keywords: [ "forever" ],
-    "char": "\u267e",
+    keywords: ['forever'],
+    char: '\u267e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   heavy_dollar_sign: {
-    keywords: [ "money", "sales", "payment", "currency", "buck" ],
-    "char": "\ud83d\udcb2",
+    keywords: ['money', 'sales', 'payment', 'currency', 'buck'],
+    char: '\ud83d\udcb2',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   currency_exchange: {
-    keywords: [ "money", "sales", "dollar", "travel" ],
-    "char": "\ud83d\udcb1",
+    keywords: ['money', 'sales', 'dollar', 'travel'],
+    char: '\ud83d\udcb1',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   copyright: {
-    keywords: [ "ip", "license", "circle", "law", "legal" ],
-    "char": "\xa9\ufe0f",
+    keywords: ['ip', 'license', 'circle', 'law', 'legal'],
+    char: '\xa9\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   registered: {
-    keywords: [ "alphabet", "circle" ],
-    "char": "\xae\ufe0f",
+    keywords: ['alphabet', 'circle'],
+    char: '\xae\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   tm: {
-    keywords: [ "trademark", "brand", "law", "legal" ],
-    "char": "\u2122\ufe0f",
+    keywords: ['trademark', 'brand', 'law', 'legal'],
+    char: '\u2122\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   end: {
-    keywords: [ "words", "arrow" ],
-    "char": "\ud83d\udd1a",
+    keywords: ['words', 'arrow'],
+    char: '\ud83d\udd1a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   back: {
-    keywords: [ "arrow", "words", "return" ],
-    "char": "\ud83d\udd19",
+    keywords: ['arrow', 'words', 'return'],
+    char: '\ud83d\udd19',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   on: {
-    keywords: [ "arrow", "words" ],
-    "char": "\ud83d\udd1b",
+    keywords: ['arrow', 'words'],
+    char: '\ud83d\udd1b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   top: {
-    keywords: [ "words", "blue-square" ],
-    "char": "\ud83d\udd1d",
+    keywords: ['words', 'blue-square'],
+    char: '\ud83d\udd1d',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   soon: {
-    keywords: [ "arrow", "words" ],
-    "char": "\ud83d\udd1c",
+    keywords: ['arrow', 'words'],
+    char: '\ud83d\udd1c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   ballot_box_with_check: {
-    keywords: [ "ok", "agree", "confirm", "black-square", "vote", "election", "yes", "tick" ],
-    "char": "\u2611\ufe0f",
+    keywords: ['ok', 'agree', 'confirm', 'black-square', 'vote', 'election', 'yes', 'tick'],
+    char: '\u2611\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   radio_button: {
-    keywords: [ "input", "old", "music", "circle" ],
-    "char": "\ud83d\udd18",
+    keywords: ['input', 'old', 'music', 'circle'],
+    char: '\ud83d\udd18',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_circle: {
-    keywords: [ "shape", "round" ],
-    "char": "\u26aa",
+    keywords: ['shape', 'round'],
+    char: '\u26aa',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_circle: {
-    keywords: [ "shape", "button", "round" ],
-    "char": "\u26ab",
+    keywords: ['shape', 'button', 'round'],
+    char: '\u26ab',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   red_circle: {
-    keywords: [ "shape", "error", "danger" ],
-    "char": "\ud83d\udd34",
+    keywords: ['shape', 'error', 'danger'],
+    char: '\ud83d\udd34',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   large_blue_circle: {
-    keywords: [ "shape", "icon", "button" ],
-    "char": "\ud83d\udd35",
+    keywords: ['shape', 'icon', 'button'],
+    char: '\ud83d\udd35',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   small_orange_diamond: {
-    keywords: [ "shape", "jewel", "gem" ],
-    "char": "\ud83d\udd38",
+    keywords: ['shape', 'jewel', 'gem'],
+    char: '\ud83d\udd38',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   small_blue_diamond: {
-    keywords: [ "shape", "jewel", "gem" ],
-    "char": "\ud83d\udd39",
+    keywords: ['shape', 'jewel', 'gem'],
+    char: '\ud83d\udd39',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   large_orange_diamond: {
-    keywords: [ "shape", "jewel", "gem" ],
-    "char": "\ud83d\udd36",
+    keywords: ['shape', 'jewel', 'gem'],
+    char: '\ud83d\udd36',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   large_blue_diamond: {
-    keywords: [ "shape", "jewel", "gem" ],
-    "char": "\ud83d\udd37",
+    keywords: ['shape', 'jewel', 'gem'],
+    char: '\ud83d\udd37',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   small_red_triangle: {
-    keywords: [ "shape", "direction", "up", "top" ],
-    "char": "\ud83d\udd3a",
+    keywords: ['shape', 'direction', 'up', 'top'],
+    char: '\ud83d\udd3a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_small_square: {
-    keywords: [ "shape", "icon" ],
-    "char": "\u25aa\ufe0f",
+    keywords: ['shape', 'icon'],
+    char: '\u25aa\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_small_square: {
-    keywords: [ "shape", "icon" ],
-    "char": "\u25ab\ufe0f",
+    keywords: ['shape', 'icon'],
+    char: '\u25ab\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_large_square: {
-    keywords: [ "shape", "icon", "button" ],
-    "char": "\u2b1b",
+    keywords: ['shape', 'icon', 'button'],
+    char: '\u2b1b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_large_square: {
-    keywords: [ "shape", "icon", "stone", "button" ],
-    "char": "\u2b1c",
+    keywords: ['shape', 'icon', 'stone', 'button'],
+    char: '\u2b1c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   small_red_triangle_down: {
-    keywords: [ "shape", "direction", "bottom" ],
-    "char": "\ud83d\udd3b",
+    keywords: ['shape', 'direction', 'bottom'],
+    char: '\ud83d\udd3b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_medium_square: {
-    keywords: [ "shape", "button", "icon" ],
-    "char": "\u25fc\ufe0f",
+    keywords: ['shape', 'button', 'icon'],
+    char: '\u25fc\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_medium_square: {
-    keywords: [ "shape", "stone", "icon" ],
-    "char": "\u25fb\ufe0f",
+    keywords: ['shape', 'stone', 'icon'],
+    char: '\u25fb\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_medium_small_square: {
-    keywords: [ "icon", "shape", "button" ],
-    "char": "\u25fe",
+    keywords: ['icon', 'shape', 'button'],
+    char: '\u25fe',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_medium_small_square: {
-    keywords: [ "shape", "stone", "icon", "button" ],
-    "char": "\u25fd",
+    keywords: ['shape', 'stone', 'icon', 'button'],
+    char: '\u25fd',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_square_button: {
-    keywords: [ "shape", "input", "frame" ],
-    "char": "\ud83d\udd32",
+    keywords: ['shape', 'input', 'frame'],
+    char: '\ud83d\udd32',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   white_square_button: {
-    keywords: [ "shape", "input" ],
-    "char": "\ud83d\udd33",
+    keywords: ['shape', 'input'],
+    char: '\ud83d\udd33',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   speaker: {
-    keywords: [ "sound", "volume", "silence", "broadcast" ],
-    "char": "\ud83d\udd08",
+    keywords: ['sound', 'volume', 'silence', 'broadcast'],
+    char: '\ud83d\udd08',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   sound: {
-    keywords: [ "volume", "speaker", "broadcast" ],
-    "char": "\ud83d\udd09",
+    keywords: ['volume', 'speaker', 'broadcast'],
+    char: '\ud83d\udd09',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   loud_sound: {
-    keywords: [ "volume", "noise", "noisy", "speaker", "broadcast" ],
-    "char": "\ud83d\udd0a",
+    keywords: ['volume', 'noise', 'noisy', 'speaker', 'broadcast'],
+    char: '\ud83d\udd0a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   mute: {
-    keywords: [ "sound", "volume", "silence", "quiet" ],
-    "char": "\ud83d\udd07",
+    keywords: ['sound', 'volume', 'silence', 'quiet'],
+    char: '\ud83d\udd07',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   mega: {
-    keywords: [ "sound", "speaker", "volume" ],
-    "char": "\ud83d\udce3",
+    keywords: ['sound', 'speaker', 'volume'],
+    char: '\ud83d\udce3',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   loudspeaker: {
-    keywords: [ "volume", "sound" ],
-    "char": "\ud83d\udce2",
+    keywords: ['volume', 'sound'],
+    char: '\ud83d\udce2',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   bell: {
-    keywords: [ "sound", "notification", "christmas", "xmas", "chime" ],
-    "char": "\ud83d\udd14",
+    keywords: ['sound', 'notification', 'christmas', 'xmas', 'chime'],
+    char: '\ud83d\udd14',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   no_bell: {
-    keywords: [ "sound", "volume", "mute", "quiet", "silent" ],
-    "char": "\ud83d\udd15",
+    keywords: ['sound', 'volume', 'mute', 'quiet', 'silent'],
+    char: '\ud83d\udd15',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   black_joker: {
-    keywords: [ "poker", "cards", "game", "play", "magic" ],
-    "char": "\ud83c\udccf",
+    keywords: ['poker', 'cards', 'game', 'play', 'magic'],
+    char: '\ud83c\udccf',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   mahjong: {
-    keywords: [ "game", "play", "chinese", "kanji" ],
-    "char": "\ud83c\udc04",
+    keywords: ['game', 'play', 'chinese', 'kanji'],
+    char: '\ud83c\udc04',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   spades: {
-    keywords: [ "poker", "cards", "suits", "magic" ],
-    "char": "\u2660\ufe0f",
+    keywords: ['poker', 'cards', 'suits', 'magic'],
+    char: '\u2660\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clubs: {
-    keywords: [ "poker", "cards", "magic", "suits" ],
-    "char": "\u2663\ufe0f",
+    keywords: ['poker', 'cards', 'magic', 'suits'],
+    char: '\u2663\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   hearts: {
-    keywords: [ "poker", "cards", "magic", "suits" ],
-    "char": "\u2665\ufe0f",
+    keywords: ['poker', 'cards', 'magic', 'suits'],
+    char: '\u2665\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   diamonds: {
-    keywords: [ "poker", "cards", "magic", "suits" ],
-    "char": "\u2666\ufe0f",
+    keywords: ['poker', 'cards', 'magic', 'suits'],
+    char: '\u2666\ufe0f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   flower_playing_cards: {
-    keywords: [ "game", "sunset", "red" ],
-    "char": "\ud83c\udfb4",
+    keywords: ['game', 'sunset', 'red'],
+    char: '\ud83c\udfb4',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   thought_balloon: {
-    keywords: [ "bubble", "cloud", "speech", "thinking", "dream" ],
-    "char": "\ud83d\udcad",
+    keywords: ['bubble', 'cloud', 'speech', 'thinking', 'dream'],
+    char: '\ud83d\udcad',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   right_anger_bubble: {
-    keywords: [ "caption", "speech", "thinking", "mad" ],
-    "char": "\ud83d\uddef",
+    keywords: ['caption', 'speech', 'thinking', 'mad'],
+    char: '\ud83d\uddef',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   speech_balloon: {
-    keywords: [ "bubble", "words", "message", "talk", "chatting" ],
-    "char": "\ud83d\udcac",
+    keywords: ['bubble', 'words', 'message', 'talk', 'chatting'],
+    char: '\ud83d\udcac',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   left_speech_bubble: {
-    keywords: [ "words", "message", "talk", "chatting" ],
-    "char": "\ud83d\udde8",
+    keywords: ['words', 'message', 'talk', 'chatting'],
+    char: '\ud83d\udde8',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock1: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd50",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd50',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock2: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd51",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd51',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock3: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd52",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd52',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock4: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd53",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd53',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock5: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd54",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd54',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock6: {
-    keywords: [ "time", "late", "early", "schedule", "dawn", "dusk" ],
-    "char": "\ud83d\udd55",
+    keywords: ['time', 'late', 'early', 'schedule', 'dawn', 'dusk'],
+    char: '\ud83d\udd55',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock7: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd56",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd56',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock8: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd57",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd57',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock9: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd58",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd58',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock10: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd59",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd59',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock11: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd5a",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd5a',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock12: {
-    keywords: [ "time", "noon", "midnight", "midday", "late", "early", "schedule" ],
-    "char": "\ud83d\udd5b",
+    keywords: ['time', 'noon', 'midnight', 'midday', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd5b',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock130: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd5c",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd5c',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock230: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd5d",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd5d',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock330: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd5e",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd5e',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock430: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd5f",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd5f',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock530: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd60",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd60',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock630: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd61",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd61',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock730: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd62",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd62',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock830: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd63",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd63',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock930: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd64",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd64',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock1030: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd65",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd65',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock1130: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd66",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd66',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   clock1230: {
-    keywords: [ "time", "late", "early", "schedule" ],
-    "char": "\ud83d\udd67",
+    keywords: ['time', 'late', 'early', 'schedule'],
+    char: '\ud83d\udd67',
     fitzpatrick_scale: false,
-    category: "symbols"
+    category: 'symbols'
   },
   afghanistan: {
-    keywords: [ "af", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddeb",
+    keywords: ['af', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   aland_islands: {
-    keywords: [ "\xc5land", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddfd",
+    keywords: ['\xc5land', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddfd',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   albania: {
-    keywords: [ "al", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf1",
+    keywords: ['al', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   algeria: {
-    keywords: [ "dz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde9\ud83c\uddff",
+    keywords: ['dz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde9\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   american_samoa: {
-    keywords: [ "american", "ws", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf8",
+    keywords: ['american', 'ws', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   andorra: {
-    keywords: [ "ad", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\udde9",
+    keywords: ['ad', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   angola: {
-    keywords: [ "ao", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf4",
+    keywords: ['ao', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   anguilla: {
-    keywords: [ "ai", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddee",
+    keywords: ['ai', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   antarctica: {
-    keywords: [ "aq", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf6",
+    keywords: ['aq', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   antigua_barbuda: {
-    keywords: [ "antigua", "barbuda", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddec",
+    keywords: ['antigua', 'barbuda', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   argentina: {
-    keywords: [ "ar", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf7",
+    keywords: ['ar', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   armenia: {
-    keywords: [ "am", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf2",
+    keywords: ['am', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   aruba: {
-    keywords: [ "aw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddfc",
+    keywords: ['aw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   australia: {
-    keywords: [ "au", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddfa",
+    keywords: ['au', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   austria: {
-    keywords: [ "at", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddf9",
+    keywords: ['at', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   azerbaijan: {
-    keywords: [ "az", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddff",
+    keywords: ['az', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bahamas: {
-    keywords: [ "bs", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf8",
+    keywords: ['bs', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bahrain: {
-    keywords: [ "bh", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\udded",
+    keywords: ['bh', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bangladesh: {
-    keywords: [ "bd", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\udde9",
+    keywords: ['bd', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   barbados: {
-    keywords: [ "bb", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\udde7",
+    keywords: ['bb', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\udde7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   belarus: {
-    keywords: [ "by", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddfe",
+    keywords: ['by', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   belgium: {
-    keywords: [ "be", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddea",
+    keywords: ['be', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   belize: {
-    keywords: [ "bz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddff",
+    keywords: ['bz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   benin: {
-    keywords: [ "bj", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddef",
+    keywords: ['bj', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddef',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bermuda: {
-    keywords: [ "bm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf2",
+    keywords: ['bm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bhutan: {
-    keywords: [ "bt", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf9",
+    keywords: ['bt', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bolivia: {
-    keywords: [ "bo", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf4",
+    keywords: ['bo', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   caribbean_netherlands: {
-    keywords: [ "bonaire", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf6",
+    keywords: ['bonaire', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bosnia_herzegovina: {
-    keywords: [ "bosnia", "herzegovina", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\udde6",
+    keywords: ['bosnia', 'herzegovina', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   botswana: {
-    keywords: [ "bw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddfc",
+    keywords: ['bw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   brazil: {
-    keywords: [ "br", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf7",
+    keywords: ['br', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   british_indian_ocean_territory: {
-    keywords: [ "british", "indian", "ocean", "territory", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf4",
+    keywords: ['british', 'indian', 'ocean', 'territory', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   british_virgin_islands: {
-    keywords: [ "british", "virgin", "islands", "bvi", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\uddec",
+    keywords: ['british', 'virgin', 'islands', 'bvi', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   brunei: {
-    keywords: [ "bn", "darussalam", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf3",
+    keywords: ['bn', 'darussalam', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   bulgaria: {
-    keywords: [ "bg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddec",
+    keywords: ['bg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   burkina_faso: {
-    keywords: [ "burkina", "faso", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddeb",
+    keywords: ['burkina', 'faso', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   burundi: {
-    keywords: [ "bi", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddee",
+    keywords: ['bi', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cape_verde: {
-    keywords: [ "cabo", "verde", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddfb",
+    keywords: ['cabo', 'verde', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddfb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cambodia: {
-    keywords: [ "kh", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\udded",
+    keywords: ['kh', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cameroon: {
-    keywords: [ "cm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddf2",
+    keywords: ['cm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   canada: {
-    keywords: [ "ca", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\udde6",
+    keywords: ['ca', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   canary_islands: {
-    keywords: [ "canary", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\udde8",
+    keywords: ['canary', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cayman_islands: {
-    keywords: [ "cayman", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddfe",
+    keywords: ['cayman', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   central_african_republic: {
-    keywords: [ "central", "african", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddeb",
+    keywords: ['central', 'african', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   chad: {
-    keywords: [ "td", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\udde9",
+    keywords: ['td', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   chile: {
-    keywords: [ "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddf1",
+    keywords: ['flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cn: {
-    keywords: [ "china", "chinese", "prc", "flag", "country", "nation", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddf3",
+    keywords: ['china', 'chinese', 'prc', 'flag', 'country', 'nation', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   christmas_island: {
-    keywords: [ "christmas", "island", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddfd",
+    keywords: ['christmas', 'island', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddfd',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cocos_islands: {
-    keywords: [ "cocos", "keeling", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\udde8",
+    keywords: ['cocos', 'keeling', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   colombia: {
-    keywords: [ "co", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddf4",
+    keywords: ['co', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   comoros: {
-    keywords: [ "km", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddf2",
+    keywords: ['km', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   congo_brazzaville: {
-    keywords: [ "congo", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddec",
+    keywords: ['congo', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   congo_kinshasa: {
-    keywords: [ "congo", "democratic", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\udde9",
+    keywords: ['congo', 'democratic', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cook_islands: {
-    keywords: [ "cook", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddf0",
+    keywords: ['cook', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   costa_rica: {
-    keywords: [ "costa", "rica", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddf7",
+    keywords: ['costa', 'rica', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   croatia: {
-    keywords: [ "hr", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udded\ud83c\uddf7",
+    keywords: ['hr', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udded\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cuba: {
-    keywords: [ "cu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddfa",
+    keywords: ['cu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   curacao: {
-    keywords: [ "cura\xe7ao", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddfc",
+    keywords: ['cura\xe7ao', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cyprus: {
-    keywords: [ "cy", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddfe",
+    keywords: ['cy', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   czech_republic: {
-    keywords: [ "cz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddff",
+    keywords: ['cz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   denmark: {
-    keywords: [ "dk", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde9\ud83c\uddf0",
+    keywords: ['dk', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde9\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   djibouti: {
-    keywords: [ "dj", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde9\ud83c\uddef",
+    keywords: ['dj', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde9\ud83c\uddef',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   dominica: {
-    keywords: [ "dm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde9\ud83c\uddf2",
+    keywords: ['dm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde9\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   dominican_republic: {
-    keywords: [ "dominican", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde9\ud83c\uddf4",
+    keywords: ['dominican', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde9\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   ecuador: {
-    keywords: [ "ec", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\udde8",
+    keywords: ['ec', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   egypt: {
-    keywords: [ "eg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\uddec",
+    keywords: ['eg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   el_salvador: {
-    keywords: [ "el", "salvador", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddfb",
+    keywords: ['el', 'salvador', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddfb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   equatorial_guinea: {
-    keywords: [ "equatorial", "gn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf6",
+    keywords: ['equatorial', 'gn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   eritrea: {
-    keywords: [ "er", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\uddf7",
+    keywords: ['er', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   estonia: {
-    keywords: [ "ee", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\uddea",
+    keywords: ['ee', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   ethiopia: {
-    keywords: [ "et", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\uddf9",
+    keywords: ['et', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   eu: {
-    keywords: [ "european", "union", "flag", "banner" ],
-    "char": "\ud83c\uddea\ud83c\uddfa",
+    keywords: ['european', 'union', 'flag', 'banner'],
+    char: '\ud83c\uddea\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   falkland_islands: {
-    keywords: [ "falkland", "islands", "malvinas", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddeb\ud83c\uddf0",
+    keywords: ['falkland', 'islands', 'malvinas', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddeb\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   faroe_islands: {
-    keywords: [ "faroe", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddeb\ud83c\uddf4",
+    keywords: ['faroe', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddeb\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   fiji: {
-    keywords: [ "fj", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddeb\ud83c\uddef",
+    keywords: ['fj', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddeb\ud83c\uddef',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   finland: {
-    keywords: [ "fi", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddeb\ud83c\uddee",
+    keywords: ['fi', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddeb\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   fr: {
-    keywords: [ "banner", "flag", "nation", "france", "french", "country" ],
-    "char": "\ud83c\uddeb\ud83c\uddf7",
+    keywords: ['banner', 'flag', 'nation', 'france', 'french', 'country'],
+    char: '\ud83c\uddeb\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   french_guiana: {
-    keywords: [ "french", "guiana", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddeb",
+    keywords: ['french', 'guiana', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   french_polynesia: {
-    keywords: [ "french", "polynesia", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddeb",
+    keywords: ['french', 'polynesia', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   french_southern_territories: {
-    keywords: [ "french", "southern", "territories", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddeb",
+    keywords: ['french', 'southern', 'territories', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   gabon: {
-    keywords: [ "ga", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\udde6",
+    keywords: ['ga', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   gambia: {
-    keywords: [ "gm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf2",
+    keywords: ['gm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   georgia: {
-    keywords: [ "ge", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddea",
+    keywords: ['ge', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   de: {
-    keywords: [ "german", "nation", "flag", "country", "banner" ],
-    "char": "\ud83c\udde9\ud83c\uddea",
+    keywords: ['german', 'nation', 'flag', 'country', 'banner'],
+    char: '\ud83c\udde9\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   ghana: {
-    keywords: [ "gh", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\udded",
+    keywords: ['gh', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   gibraltar: {
-    keywords: [ "gi", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddee",
+    keywords: ['gi', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   greece: {
-    keywords: [ "gr", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf7",
+    keywords: ['gr', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   greenland: {
-    keywords: [ "gl", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf1",
+    keywords: ['gl', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   grenada: {
-    keywords: [ "gd", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\udde9",
+    keywords: ['gd', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guadeloupe: {
-    keywords: [ "gp", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf5",
+    keywords: ['gp', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf5',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guam: {
-    keywords: [ "gu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddfa",
+    keywords: ['gu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guatemala: {
-    keywords: [ "gt", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf9",
+    keywords: ['gt', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guernsey: {
-    keywords: [ "gg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddec",
+    keywords: ['gg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guinea: {
-    keywords: [ "gn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf3",
+    keywords: ['gn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guinea_bissau: {
-    keywords: [ "gw", "bissau", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddfc",
+    keywords: ['gw', 'bissau', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   guyana: {
-    keywords: [ "gy", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddfe",
+    keywords: ['gy', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   haiti: {
-    keywords: [ "ht", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udded\ud83c\uddf9",
+    keywords: ['ht', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udded\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   honduras: {
-    keywords: [ "hn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udded\ud83c\uddf3",
+    keywords: ['hn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udded\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   hong_kong: {
-    keywords: [ "hong", "kong", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udded\ud83c\uddf0",
+    keywords: ['hong', 'kong', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udded\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   hungary: {
-    keywords: [ "hu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udded\ud83c\uddfa",
+    keywords: ['hu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udded\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   iceland: {
-    keywords: [ "is", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf8",
+    keywords: ['is', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   india: {
-    keywords: [ "in", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf3",
+    keywords: ['in', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   indonesia: {
-    keywords: [ "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\udde9",
+    keywords: ['flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   iran: {
-    keywords: [ "iran,", "islamic", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf7",
+    keywords: ['iran,', 'islamic', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   iraq: {
-    keywords: [ "iq", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf6",
+    keywords: ['iq', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   ireland: {
-    keywords: [ "ie", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddea",
+    keywords: ['ie', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   isle_of_man: {
-    keywords: [ "isle", "man", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf2",
+    keywords: ['isle', 'man', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   israel: {
-    keywords: [ "il", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf1",
+    keywords: ['il', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   it: {
-    keywords: [ "italy", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddee\ud83c\uddf9",
+    keywords: ['italy', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddee\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   cote_divoire: {
-    keywords: [ "ivory", "coast", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\uddee",
+    keywords: ['ivory', 'coast', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   jamaica: {
-    keywords: [ "jm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddef\ud83c\uddf2",
+    keywords: ['jm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddef\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   jp: {
-    keywords: [ "japanese", "nation", "flag", "country", "banner" ],
-    "char": "\ud83c\uddef\ud83c\uddf5",
+    keywords: ['japanese', 'nation', 'flag', 'country', 'banner'],
+    char: '\ud83c\uddef\ud83c\uddf5',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   jersey: {
-    keywords: [ "je", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddef\ud83c\uddea",
+    keywords: ['je', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddef\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   jordan: {
-    keywords: [ "jo", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddef\ud83c\uddf4",
+    keywords: ['jo', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddef\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kazakhstan: {
-    keywords: [ "kz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddff",
+    keywords: ['kz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kenya: {
-    keywords: [ "ke", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddea",
+    keywords: ['ke', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kiribati: {
-    keywords: [ "ki", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddee",
+    keywords: ['ki', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kosovo: {
-    keywords: [ "xk", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfd\ud83c\uddf0",
+    keywords: ['xk', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfd\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kuwait: {
-    keywords: [ "kw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddfc",
+    keywords: ['kw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kyrgyzstan: {
-    keywords: [ "kg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddec",
+    keywords: ['kg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   laos: {
-    keywords: [ "lao", "democratic", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\udde6",
+    keywords: ['lao', 'democratic', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   latvia: {
-    keywords: [ "lv", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddfb",
+    keywords: ['lv', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddfb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   lebanon: {
-    keywords: [ "lb", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\udde7",
+    keywords: ['lb', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\udde7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   lesotho: {
-    keywords: [ "ls", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddf8",
+    keywords: ['ls', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   liberia: {
-    keywords: [ "lr", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddf7",
+    keywords: ['lr', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   libya: {
-    keywords: [ "ly", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddfe",
+    keywords: ['ly', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   liechtenstein: {
-    keywords: [ "li", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddee",
+    keywords: ['li', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   lithuania: {
-    keywords: [ "lt", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddf9",
+    keywords: ['lt', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   luxembourg: {
-    keywords: [ "lu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddfa",
+    keywords: ['lu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   macau: {
-    keywords: [ "macao", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf4",
+    keywords: ['macao', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   macedonia: {
-    keywords: [ "macedonia,", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf0",
+    keywords: ['macedonia,', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   madagascar: {
-    keywords: [ "mg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddec",
+    keywords: ['mg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   malawi: {
-    keywords: [ "mw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddfc",
+    keywords: ['mw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   malaysia: {
-    keywords: [ "my", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddfe",
+    keywords: ['my', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   maldives: {
-    keywords: [ "mv", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddfb",
+    keywords: ['mv', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddfb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mali: {
-    keywords: [ "ml", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf1",
+    keywords: ['ml', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   malta: {
-    keywords: [ "mt", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf9",
+    keywords: ['mt', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   marshall_islands: {
-    keywords: [ "marshall", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\udded",
+    keywords: ['marshall', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   martinique: {
-    keywords: [ "mq", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf6",
+    keywords: ['mq', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mauritania: {
-    keywords: [ "mr", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf7",
+    keywords: ['mr', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mauritius: {
-    keywords: [ "mu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddfa",
+    keywords: ['mu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mayotte: {
-    keywords: [ "yt", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfe\ud83c\uddf9",
+    keywords: ['yt', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfe\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mexico: {
-    keywords: [ "mx", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddfd",
+    keywords: ['mx', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddfd',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   micronesia: {
-    keywords: [ "micronesia,", "federated", "states", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddeb\ud83c\uddf2",
+    keywords: ['micronesia,', 'federated', 'states', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddeb\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   moldova: {
-    keywords: [ "moldova,", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\udde9",
+    keywords: ['moldova,', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   monaco: {
-    keywords: [ "mc", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\udde8",
+    keywords: ['mc', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mongolia: {
-    keywords: [ "mn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf3",
+    keywords: ['mn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   montenegro: {
-    keywords: [ "me", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddea",
+    keywords: ['me', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   montserrat: {
-    keywords: [ "ms", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf8",
+    keywords: ['ms', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   morocco: {
-    keywords: [ "ma", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\udde6",
+    keywords: ['ma', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   mozambique: {
-    keywords: [ "mz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddff",
+    keywords: ['mz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   myanmar: {
-    keywords: [ "mm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf2",
+    keywords: ['mm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   namibia: {
-    keywords: [ "na", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\udde6",
+    keywords: ['na', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   nauru: {
-    keywords: [ "nr", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddf7",
+    keywords: ['nr', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   nepal: {
-    keywords: [ "np", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddf5",
+    keywords: ['np', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddf5',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   netherlands: {
-    keywords: [ "nl", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddf1",
+    keywords: ['nl', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   new_caledonia: {
-    keywords: [ "new", "caledonia", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\udde8",
+    keywords: ['new', 'caledonia', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   new_zealand: {
-    keywords: [ "new", "zealand", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddff",
+    keywords: ['new', 'zealand', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   nicaragua: {
-    keywords: [ "ni", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddee",
+    keywords: ['ni', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   niger: {
-    keywords: [ "ne", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddea",
+    keywords: ['ne', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   nigeria: {
-    keywords: [ "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddec",
+    keywords: ['flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   niue: {
-    keywords: [ "nu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddfa",
+    keywords: ['nu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   norfolk_island: {
-    keywords: [ "norfolk", "island", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddeb",
+    keywords: ['norfolk', 'island', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   northern_mariana_islands: {
-    keywords: [ "northern", "mariana", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf2\ud83c\uddf5",
+    keywords: ['northern', 'mariana', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf2\ud83c\uddf5',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   north_korea: {
-    keywords: [ "north", "korea", "nation", "flag", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddf5",
+    keywords: ['north', 'korea', 'nation', 'flag', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddf5',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   norway: {
-    keywords: [ "no", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf3\ud83c\uddf4",
+    keywords: ['no', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf3\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   oman: {
-    keywords: [ "om_symbol", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf4\ud83c\uddf2",
+    keywords: ['om_symbol', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf4\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   pakistan: {
-    keywords: [ "pk", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf0",
+    keywords: ['pk', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   palau: {
-    keywords: [ "pw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddfc",
+    keywords: ['pw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   palestinian_territories: {
-    keywords: [ "palestine", "palestinian", "territories", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf8",
+    keywords: ['palestine', 'palestinian', 'territories', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   panama: {
-    keywords: [ "pa", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\udde6",
+    keywords: ['pa', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   papua_new_guinea: {
-    keywords: [ "papua", "new", "guinea", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddec",
+    keywords: ['papua', 'new', 'guinea', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   paraguay: {
-    keywords: [ "py", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddfe",
+    keywords: ['py', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   peru: {
-    keywords: [ "pe", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddea",
+    keywords: ['pe', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   philippines: {
-    keywords: [ "ph", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\udded",
+    keywords: ['ph', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   pitcairn_islands: {
-    keywords: [ "pitcairn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf3",
+    keywords: ['pitcairn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   poland: {
-    keywords: [ "pl", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf1",
+    keywords: ['pl', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   portugal: {
-    keywords: [ "pt", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf9",
+    keywords: ['pt', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   puerto_rico: {
-    keywords: [ "puerto", "rico", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf7",
+    keywords: ['puerto', 'rico', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   qatar: {
-    keywords: [ "qa", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf6\ud83c\udde6",
+    keywords: ['qa', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf6\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   reunion: {
-    keywords: [ "r\xe9union", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf7\ud83c\uddea",
+    keywords: ['r\xe9union', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf7\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   romania: {
-    keywords: [ "ro", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf7\ud83c\uddf4",
+    keywords: ['ro', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf7\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   ru: {
-    keywords: [ "russian", "federation", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf7\ud83c\uddfa",
+    keywords: ['russian', 'federation', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf7\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   rwanda: {
-    keywords: [ "rw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf7\ud83c\uddfc",
+    keywords: ['rw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf7\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   st_barthelemy: {
-    keywords: [ "saint", "barth\xe9lemy", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde7\ud83c\uddf1",
+    keywords: ['saint', 'barth\xe9lemy', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde7\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   st_helena: {
-    keywords: [ "saint", "helena", "ascension", "tristan", "cunha", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\udded",
+    keywords: ['saint', 'helena', 'ascension', 'tristan', 'cunha', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   st_kitts_nevis: {
-    keywords: [ "saint", "kitts", "nevis", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddf3",
+    keywords: ['saint', 'kitts', 'nevis', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   st_lucia: {
-    keywords: [ "saint", "lucia", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\udde8",
+    keywords: ['saint', 'lucia', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   st_pierre_miquelon: {
-    keywords: [ "saint", "pierre", "miquelon", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf5\ud83c\uddf2",
+    keywords: ['saint', 'pierre', 'miquelon', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf5\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   st_vincent_grenadines: {
-    keywords: [ "saint", "vincent", "grenadines", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\udde8",
+    keywords: ['saint', 'vincent', 'grenadines', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   samoa: {
-    keywords: [ "ws", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfc\ud83c\uddf8",
+    keywords: ['ws', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfc\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   san_marino: {
-    keywords: [ "san", "marino", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf2",
+    keywords: ['san', 'marino', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   sao_tome_principe: {
-    keywords: [ "sao", "tome", "principe", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf9",
+    keywords: ['sao', 'tome', 'principe', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   saudi_arabia: {
-    keywords: [ "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\udde6",
+    keywords: ['flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   senegal: {
-    keywords: [ "sn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf3",
+    keywords: ['sn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   serbia: {
-    keywords: [ "rs", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf7\ud83c\uddf8",
+    keywords: ['rs', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf7\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   seychelles: {
-    keywords: [ "sc", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\udde8",
+    keywords: ['sc', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   sierra_leone: {
-    keywords: [ "sierra", "leone", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf1",
+    keywords: ['sierra', 'leone', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   singapore: {
-    keywords: [ "sg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddec",
+    keywords: ['sg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   sint_maarten: {
-    keywords: [ "sint", "maarten", "dutch", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddfd",
+    keywords: ['sint', 'maarten', 'dutch', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddfd',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   slovakia: {
-    keywords: [ "sk", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf0",
+    keywords: ['sk', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   slovenia: {
-    keywords: [ "si", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddee",
+    keywords: ['si', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   solomon_islands: {
-    keywords: [ "solomon", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\udde7",
+    keywords: ['solomon', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\udde7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   somalia: {
-    keywords: [ "so", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf4",
+    keywords: ['so', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   south_africa: {
-    keywords: [ "south", "africa", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddff\ud83c\udde6",
+    keywords: ['south', 'africa', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddff\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   south_georgia_south_sandwich_islands: {
-    keywords: [ "south", "georgia", "sandwich", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddec\ud83c\uddf8",
+    keywords: ['south', 'georgia', 'sandwich', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddec\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   kr: {
-    keywords: [ "south", "korea", "nation", "flag", "country", "banner" ],
-    "char": "\ud83c\uddf0\ud83c\uddf7",
+    keywords: ['south', 'korea', 'nation', 'flag', 'country', 'banner'],
+    char: '\ud83c\uddf0\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   south_sudan: {
-    keywords: [ "south", "sd", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf8",
+    keywords: ['south', 'sd', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   es: {
-    keywords: [ "spain", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\uddf8",
+    keywords: ['spain', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   sri_lanka: {
-    keywords: [ "sri", "lanka", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf1\ud83c\uddf0",
+    keywords: ['sri', 'lanka', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf1\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   sudan: {
-    keywords: [ "sd", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\udde9",
+    keywords: ['sd', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\udde9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   suriname: {
-    keywords: [ "sr", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddf7",
+    keywords: ['sr', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   swaziland: {
-    keywords: [ "sz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddff",
+    keywords: ['sz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   sweden: {
-    keywords: [ "se", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddea",
+    keywords: ['se', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   switzerland: {
-    keywords: [ "ch", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde8\ud83c\udded",
+    keywords: ['ch', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde8\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   syria: {
-    keywords: [ "syrian", "arab", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf8\ud83c\uddfe",
+    keywords: ['syrian', 'arab', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf8\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   taiwan: {
-    keywords: [ "tw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddfc",
+    keywords: ['tw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tajikistan: {
-    keywords: [ "tj", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddef",
+    keywords: ['tj', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddef',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tanzania: {
-    keywords: [ "tanzania,", "united", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddff",
+    keywords: ['tanzania,', 'united', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   thailand: {
-    keywords: [ "th", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\udded",
+    keywords: ['th', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   timor_leste: {
-    keywords: [ "timor", "leste", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf1",
+    keywords: ['timor', 'leste', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf1',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   togo: {
-    keywords: [ "tg", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddec",
+    keywords: ['tg', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tokelau: {
-    keywords: [ "tk", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf0",
+    keywords: ['tk', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf0',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tonga: {
-    keywords: [ "to", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf4",
+    keywords: ['to', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf4',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   trinidad_tobago: {
-    keywords: [ "trinidad", "tobago", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf9",
+    keywords: ['trinidad', 'tobago', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf9',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tunisia: {
-    keywords: [ "tn", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf3",
+    keywords: ['tn', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tr: {
-    keywords: [ "turkey", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf7",
+    keywords: ['turkey', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   turkmenistan: {
-    keywords: [ "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddf2",
+    keywords: ['flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   turks_caicos_islands: {
-    keywords: [ "turks", "caicos", "islands", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\udde8",
+    keywords: ['turks', 'caicos', 'islands', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\udde8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   tuvalu: {
-    keywords: [ "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddf9\ud83c\uddfb",
+    keywords: ['flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddf9\ud83c\uddfb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   uganda: {
-    keywords: [ "ug", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfa\ud83c\uddec",
+    keywords: ['ug', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfa\ud83c\uddec',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   ukraine: {
-    keywords: [ "ua", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfa\ud83c\udde6",
+    keywords: ['ua', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfa\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   united_arab_emirates: {
-    keywords: [ "united", "arab", "emirates", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\udde6\ud83c\uddea",
+    keywords: ['united', 'arab', 'emirates', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\udde6\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   uk: {
-    keywords: [ "united", "kingdom", "great", "britain", "northern", "ireland", "flag", "nation", "country", "banner", "british", "UK", "english", "england", "union jack" ],
-    "char": "\ud83c\uddec\ud83c\udde7",
+    keywords: [
+      'united',
+      'kingdom',
+      'great',
+      'britain',
+      'northern',
+      'ireland',
+      'flag',
+      'nation',
+      'country',
+      'banner',
+      'british',
+      'UK',
+      'english',
+      'england',
+      'union jack'
+    ],
+    char: '\ud83c\uddec\ud83c\udde7',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   england: {
-    keywords: [ "flag", "english" ],
-    "char": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+    keywords: ['flag', 'english'],
+    char: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   scotland: {
-    keywords: [ "flag", "scottish" ],
-    "char": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+    keywords: ['flag', 'scottish'],
+    char: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   wales: {
-    keywords: [ "flag", "welsh" ],
-    "char": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc77\udb40\udc6c\udb40\udc73\udb40\udc7f",
+    keywords: ['flag', 'welsh'],
+    char: '\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc77\udb40\udc6c\udb40\udc73\udb40\udc7f',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   us: {
-    keywords: [ "united", "states", "america", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfa\ud83c\uddf8",
+    keywords: ['united', 'states', 'america', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfa\ud83c\uddf8',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   us_virgin_islands: {
-    keywords: [ "virgin", "islands", "us", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\uddee",
+    keywords: ['virgin', 'islands', 'us', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\uddee',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   uruguay: {
-    keywords: [ "uy", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfa\ud83c\uddfe",
+    keywords: ['uy', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfa\ud83c\uddfe',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   uzbekistan: {
-    keywords: [ "uz", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfa\ud83c\uddff",
+    keywords: ['uz', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfa\ud83c\uddff',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   vanuatu: {
-    keywords: [ "vu", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\uddfa",
+    keywords: ['vu', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\uddfa',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   vatican_city: {
-    keywords: [ "vatican", "city", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\udde6",
+    keywords: ['vatican', 'city', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\udde6',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   venezuela: {
-    keywords: [ "ve", "bolivarian", "republic", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\uddea",
+    keywords: ['ve', 'bolivarian', 'republic', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   vietnam: {
-    keywords: [ "viet", "nam", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfb\ud83c\uddf3",
+    keywords: ['viet', 'nam', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfb\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   wallis_futuna: {
-    keywords: [ "wallis", "futuna", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfc\ud83c\uddeb",
+    keywords: ['wallis', 'futuna', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfc\ud83c\uddeb',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   western_sahara: {
-    keywords: [ "western", "sahara", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddea\ud83c\udded",
+    keywords: ['western', 'sahara', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddea\ud83c\udded',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   yemen: {
-    keywords: [ "ye", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddfe\ud83c\uddea",
+    keywords: ['ye', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddfe\ud83c\uddea',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   zambia: {
-    keywords: [ "zm", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddff\ud83c\uddf2",
+    keywords: ['zm', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddff\ud83c\uddf2',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   zimbabwe: {
-    keywords: [ "zw", "flag", "nation", "country", "banner" ],
-    "char": "\ud83c\uddff\ud83c\uddfc",
+    keywords: ['zw', 'flag', 'nation', 'country', 'banner'],
+    char: '\ud83c\uddff\ud83c\uddfc',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   united_nations: {
-    keywords: [ "un", "flag", "banner" ],
-    "char": "\ud83c\uddfa\ud83c\uddf3",
+    keywords: ['un', 'flag', 'banner'],
+    char: '\ud83c\uddfa\ud83c\uddf3',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   },
   pirate_flag: {
-    keywords: [ "skull", "crossbones", "flag", "banner" ],
-    "char": "\ud83c\udff4\u200d\u2620\ufe0f",
+    keywords: ['skull', 'crossbones', 'flag', 'banner'],
+    char: '\ud83c\udff4\u200d\u2620\ufe0f',
     fitzpatrick_scale: false,
-    category: "flags"
+    category: 'flags'
   }
-});
+})

@@ -15,7 +15,7 @@
         <a-list-item key="item.title">
           <template #actions>
             <span v-for="{ type, text } in actions" :key="type">
-              <component v-bind:is="type" style="margin-right: 8px" />
+              <component :is="type" style="margin-right: 8px" />
               {{ text }}
             </span>
           </template>
@@ -27,7 +27,7 @@
               <a :href="item.href">Ant Simple Pro</a>
             </template>
             <template #avatar>
-              <a-avatar :size="30" style="backgroundcolor: #fff">
+              <a-avatar :size="30" :style="{ backgroundColor: '#fff' }">
                 <template #icon>
                   <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
                 </template>
@@ -102,9 +102,11 @@ export default defineComponent({
 .com-page {
   padding: 20px;
 }
+
 .icon-logo {
   font-size: 30px;
 }
+
 ::v-deep(.ant-list-item) {
   padding: 16px 24px;
 }

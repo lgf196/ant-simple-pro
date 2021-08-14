@@ -1,8 +1,8 @@
-enum ErrorCorrentLevel {
+declare enum ErrorCorrentLevel {
   L = 1,
-	M = 0,
-	Q = 3,
-	H = 2
+  M = 0,
+  Q = 3,
+  H = 2
 }
 
 // enum Mode {
@@ -43,20 +43,21 @@ declare module 'qr.js/lib/QRCode' {
     moduleCount: number
     dataCache: any[] | null
     dataList: QR8bitByte[]
-  
+
     constructor(typeNumber: number, errorCorrectLevel: 0 | 1 | 2 | 3)
-  
+
     addData(data: string): void
-  
+
     make(): void
   }
 }
 
 declare module 'qr.js/lib/ErrorCorrectLevel' {
-  export default {
-    L: number,
-    M: number,
-    Q: number,
+  const qrcodeErrorCorrectLevel: {
+    L: number
+    M: number
+    Q: number
     H: number
   }
+  export default qrcodeErrorCorrectLevel
 }

@@ -5,14 +5,15 @@
       :model="form"
       :label-col="labelCol"
       :wrapper-col="wrapperCol"
-      labelAlign="left"
+      label-align="left"
       :rules="rules"
+      @finish="onSubmit"
     >
       <a-form-item label="姓名" name="username">
-        <a-input v-model:value="form.username" placeholder="请填写" allowClear />
+        <a-input v-model:value="form.username" placeholder="请填写" allow-clear />
       </a-form-item>
       <a-form-item label="外号" name="nickname">
-        <a-input v-model:value="form.nickname" placeholder="请填写" allowClear />
+        <a-input v-model:value="form.nickname" placeholder="请填写" allow-clear />
       </a-form-item>
       <a-form-item label="性别" name="sex">
         <a-radio-group v-model:value="form.sex">
@@ -28,10 +29,10 @@
         </a-checkbox-group>
       </a-form-item>
       <a-form-item label="日期" name="date">
-        <a-range-picker v-model:value="form.date" valueFormat="YYYY-MM-DD" allowClear />
+        <a-range-picker v-model:value="form.date" value-format="YYYY-MM-DD" allow-clear />
       </a-form-item>
       <a-form-item label="技术栈" name="skill">
-        <a-select mode="multiple" placeholder="请选择" v-model:value="form.skill" allowClear>
+        <a-select v-model:value="form.skill" mode="multiple" placeholder="请选择" allow-clear>
           <a-select-option v-for="(item, index) in skillList" :key="index" :value="item.id">
             {{ item.name }}
           </a-select-option>
@@ -41,13 +42,13 @@
         <ComUploadImage v-model:value="form.photo"></ComUploadImage>
       </a-form-item>
       <a-form-item label="描述" name="description">
-        <a-textarea v-model:value="form.description" :autoSize="{ minRows: 2 }" placeholder="请填写" />
+        <a-textarea v-model:value="form.description" :auto-size="{ minRows: 2 }" placeholder="请填写" />
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }" name="remember">
         <a-checkbox v-model:checked="form.remember">记住</a-checkbox>
       </a-form-item>
       <a-form-item :label-col="{ span: 0 }">
-        <a-button type="primary" @click="onSubmit">提交</a-button>
+        <a-button type="primary" html-type="submit">提交</a-button>
       </a-form-item>
     </a-form>
   </div>
@@ -56,7 +57,6 @@
 <script lang="ts">
 import { defineComponent, ref, reactive, toRefs, onMounted, onBeforeUnmount, toRaw } from 'vue'
 import { message } from 'ant-design-vue'
-import { useForm } from '@ant-design-vue/use'
 export default defineComponent({
   name: 'FormPage',
   setup() {
@@ -99,13 +99,6 @@ export default defineComponent({
       description: '',
       remember: true
     })
-    const rulesRef = reactive({
-      username: [{ required: true, message: '请填写姓名' }],
-      nickname: [{ required: true, message: '请填写外号' }],
-      date: [{ required: true, message: '请选择日期' }]
-    })
-
-    const { validate } = useForm(form, rulesRef)
 
     let timer: number | null = null
 
@@ -122,13 +115,9 @@ export default defineComponent({
     })
 
     function onSubmit() {
-      validate()
-        .then(() => {
-          console.log('form', toRaw(form))
-          message.destroy()
-          message.success('保存成功')
-        })
-        .catch(console.log)
+      console.log('form', toRaw(form))
+      message.destroy()
+      message.success('保存成功')
     }
 
     return {

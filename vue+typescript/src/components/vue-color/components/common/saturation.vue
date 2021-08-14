@@ -1,8 +1,8 @@
 <template>
   <div
+    ref="container"
     class="vc-saturation"
     :style="{ background: bgColor }"
-    ref="container"
     @mousedown="handleMouseDown"
     @touchmove="handleChange"
     @touchstart="handleChange"
@@ -119,13 +119,16 @@ export default defineComponent({
 .vc-saturation--white {
   background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
 }
+
 .vc-saturation--black {
   background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
 }
+
 .vc-saturation-pointer {
   cursor: pointer;
   position: absolute;
 }
+
 .vc-saturation-circle {
   cursor: head;
   width: 4px;

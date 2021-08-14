@@ -1,17 +1,18 @@
-import type { ComponentRenderProxy, VNode } from 'vue'
+import type { VNode } from 'vue'
 
 declare module '*.tsx' {
   import { defineComponent } from 'vue'
-  const component: ReturnType<defineComponent>
+  const component: ReturnType<typeof defineComponent>
   export default component
 }
 
 declare global {
   namespace JSX {
-    type Element = VNode
-    type ElementClass = ComponentRenderProxy
+    // runtime-dom.d.ts already defined
+    // type Element = VNode
+    // type ElementClass = ComponentRenderProxy
     interface ElementAttributesProperty {
-      $props: any
+      $props: {}
     }
     interface IntrinsicElements {
       [elem: string]: any

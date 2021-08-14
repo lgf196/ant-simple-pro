@@ -1,14 +1,13 @@
-
 declare module 'vue-emoji-mart' {
   import { defineComponent } from 'vue'
-  const component: ReturnType<defineComponent>
-  const Picker: component
-  const Emoji: component
-  const Anchors: component
-  const Preview: component
-  const Search: component
-  const Category: component
-  const Skins: component
+  const Component: ReturnType<typeof defineComponent>
+  const Picker: typeof Component
+  const Emoji: typeof Component
+  const Anchors: typeof Component
+  const Preview: typeof Component
+  const Search: typeof Component
+  const Category: typeof Component
+  const Skins: typeof Component
   const EmojiIndex: any
   const EmojiView: any
   const EmojiData: any

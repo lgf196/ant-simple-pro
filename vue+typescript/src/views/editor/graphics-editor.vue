@@ -1,8 +1,8 @@
 <template>
   <div class="com-page p20">
     <div class="graphics">
-      <div class="sidebar" ref="sliderContainer"></div>
-      <div class="content" ref="container"></div>
+      <div ref="sliderContainer" class="sidebar"></div>
+      <div ref="container" class="content"></div>
     </div>
   </div>
 </template>
@@ -73,7 +73,7 @@ export default defineComponent({
 
       function changePortsVisible(visible: boolean) {
         if (container.value) {
-          const ports = container.value.querySelectorAll('.x6-port-body') as NodeListOf<HTMLDivElement>
+          const ports = container.value.querySelectorAll('.x6-port-body') as any as Array<HTMLDivElement>
           for (let i = 0, len = ports.length; i < len; i = i + 1) {
             ports[i].style.visibility = visible ? 'visible' : 'hidden'
           }
@@ -150,11 +150,13 @@ export default defineComponent({
   height: 500px;
   display: flex;
 }
+
 .sidebar {
   width: 220px;
   border: 1px solid #f0f0f0;
   position: relative;
 }
+
 .content {
   height: 100%;
   flex: 1;

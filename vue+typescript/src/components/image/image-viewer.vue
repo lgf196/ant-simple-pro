@@ -2,8 +2,8 @@
   <transition name="com-zoom-in-center" appear>
     <div
       v-if="show"
-      tabindex="-1"
       ref="com-image-viewer__wrapper"
+      tabindex="-1"
       class="com-image-viewer__wrapper"
       :style="{ 'z-index': zIndex }"
     >
@@ -46,8 +46,8 @@
         <img
           v-for="(url, i) in currentUrlList"
           :ref="setImgRef"
-          class="com-image-viewer__img"
           :key="i"
+          class="com-image-viewer__img"
           :src="currentImg"
           :style="imgStyle"
           @load="handleImgLoad"
@@ -84,6 +84,10 @@ let prevOverflow = ''
 
 export default defineComponent({
   name: 'ImageViewer',
+  components: {
+    CloseCircleOutlined,
+    ComSvgIcon
+  },
 
   emits: ['update:show'],
 
@@ -112,10 +116,6 @@ export default defineComponent({
       type: Boolean,
       default: true
     }
-  },
-  components: {
-    CloseCircleOutlined,
-    ComSvgIcon
   },
   data() {
     return {

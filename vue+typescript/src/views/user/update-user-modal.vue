@@ -2,10 +2,10 @@
   <a-modal title="编辑" :visible="visible" @cancel="onClose">
     <a-form ref="formRef" :model="form" :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="名称" name="username">
-        <a-input v-model:value="form.username" placeholder="请输入" allowClear></a-input>
+        <a-input v-model:value="form.username" placeholder="请输入" allow-clear></a-input>
       </a-form-item>
       <a-form-item label="介绍" name="introduct">
-        <a-input v-model:value="form.introduct" placeholder="请输入" allowClear></a-input>
+        <a-input v-model:value="form.introduct" placeholder="请输入" allow-clear></a-input>
       </a-form-item>
       <a-form-item label="头像" name="iconUrl">
         <ComUploadImage v-model:value="form.iconUrl"></ComUploadImage>

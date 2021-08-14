@@ -26,7 +26,8 @@ export default defineComponent({
   emits: ['change'],
   props: {
     tableTitle: {
-      type: String
+      type: String,
+      default: ''
     },
     tableProps: {
       type: Object as PropType<TablePropsType>,
@@ -113,7 +114,7 @@ export default defineComponent({
               </div>
               {h(
                 // eslint-disable-next-line
-                  Table as any,
+                Table as any,
                 tableProps,
                 restSlots
               )}

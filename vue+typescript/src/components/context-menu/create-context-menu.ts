@@ -9,7 +9,7 @@ export type CreateContextMenuProps = ContextMenuProps & {
 }
 
 export type ContextMenuInstance = ComponentPublicInstance<
-  {},
+  Record<string, any>,
   {
     open: (opts: ContextMenuProps) => void
     close: () => void

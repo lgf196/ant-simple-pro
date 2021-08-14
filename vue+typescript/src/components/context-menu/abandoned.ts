@@ -41,7 +41,8 @@ function newInstance(options: ContextMenuProps, callback: (ins: ContextMenuInsta
     },
     mounted(this: ComponentPublicInstance) {
       const self = this // eslint-disable-line
-      callback({ // eslint-disable-line
+      callback({
+        // eslint-disable-line
         open() {
           ;(self as any).appProps.position = position
           ;(self.$refs as any).contextMenu.sVisible = false

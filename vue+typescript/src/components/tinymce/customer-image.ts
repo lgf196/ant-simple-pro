@@ -1,7 +1,7 @@
-import type { Editor, PluginManager } from 'tinymce'
+import type { Editor } from 'tinymce'
 
 export function initCustomerImagePlugin() {
-  const pluginManager = window.tinymce.util.Tools.resolve('tinymce.PluginManager') as PluginManager
+  // const pluginManager = window.tinymce.util.Tools.resolve('tinymce.PluginManager') as PluginManager
 
   function createFileInput() {
     return new Promise(resolve => {
@@ -39,14 +39,14 @@ export function initCustomerImagePlugin() {
     })
   }
 
-  pluginManager.add('customerimageupload', editor => {
+  window.tinymce.PluginManager.add('customerimageupload', editor => {
     componentRegister(editor)
     commandRegister(editor)
   })
 
-  function Plugin() {
+  function PluginA() {
     // ...
   }
 
-  return Plugin
+  return PluginA
 }

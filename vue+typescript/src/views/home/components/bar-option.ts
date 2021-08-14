@@ -1,3 +1,5 @@
+import echarts from 'echarts'
+import { ChartDataItem } from '@/types/common'
 export const getOption = (list: ChartDataItem[]): echarts.EChartOption => {
   const color = ['#6394f9', '#62daaa', '#657797', '#f6c021', '#7666f9']
   const option: echarts.EChartOption = {

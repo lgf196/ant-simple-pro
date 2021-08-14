@@ -8,7 +8,8 @@ export default defineComponent({
       default: () => {} // eslint-disable-line
     },
     addImg: {
-      type: Function as PropType<(file: File, index: number) => void>
+      type: Function as PropType<(file: File, index: number) => void>,
+      default: () => {} // eslint-disable-line
     },
     toolbar: {
       type: Object as PropType<IToolbar>,

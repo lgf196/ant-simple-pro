@@ -16,7 +16,7 @@
             </a-input>
           </a-form-item>
           <a-form-item has-feedback name="password">
-            <a-input type="password" v-model:value="form.password" placeholder="请填写密码" size="large">
+            <a-input v-model:value="form.password" type="password" placeholder="请填写密码" size="large">
               <template #prefix>
                 <LockOutlined class="form-item-prefix" />
               </template>
@@ -122,46 +122,56 @@ export default defineComponent({
   overflow: hidden;
   background: #fff;
 }
+
 .login-main {
   flex: auto;
-  &:before,
-  &:after {
+
+  &::before,
+  &::after {
     content: '';
   }
 }
+
 .aside {
   width: 46.5vw;
   height: 86vh;
-  background: url('~@/assets/images/login.png') center no-repeat;
+  background: url('@/assets/images/login.png') center no-repeat;
   background-size: contain;
 }
+
 .form-container {
   width: 360px;
   padding: 50px;
   border-radius: 2px;
   box-shadow: 0 0 40px 0 rgba(24, 144, 255, 0.1), 0 55px 85px -60px rgba(24, 144, 255, 0.31);
   background-color: #fff;
+
   .logo {
     .image {
       width: 30px;
       height: 30px;
       margin-right: 8px;
     }
+
     .title {
       color: @color-theme;
       font-size: 16px;
     }
   }
+
   .form {
     padding-top: 30px;
+
     .submit-btn {
       width: 100%;
       border: 0;
     }
   }
+
   .form-item-prefix {
     color: rgba(0, 0, 0, 0.25);
   }
+
   .form-item--submit {
     margin-bottom: 0;
     padding-top: 26px;

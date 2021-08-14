@@ -2,9 +2,9 @@
   <div ref="item" class="vue-grid-layout" :style="mergedStyle">
     <slot></slot>
     <grid-item
+      v-show="isDragging"
       ref="gridItem"
       class="vue-grid-placeholder"
-      v-show="isDragging"
       :x="placeholder.x"
       :y="placeholder.y"
       :w="placeholder.w"
@@ -34,6 +34,14 @@ import GridItem from './grid-item.vue'
 import { addWindowEventListener, removeWindowEventListener } from '../helpers/dom'
 export default {
   name: 'GridLayout',
+  components: {
+    GridItem
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus
+    }
+  },
   emits: [
     'layout-created',
     'layout-mounted',
@@ -43,14 +51,6 @@ export default {
     'update:layout',
     'breakpoint-changed'
   ],
-  provide() {
-    return {
-      eventBus: this.eventBus
-    }
-  },
-  components: {
-    GridItem
-  },
   props: {
     // If true, the container height swells and contracts to fit contents
     autoSize: {
@@ -145,54 +145,6 @@ export default {
       originalLayout: null // store original Layout
     }
   },
-  created() {
-    // Accessible refernces of functions for removing in beforeDestroy
-    this.resizeEventHandler = ({ eventType, i, x, y, h, w }) => {
-      this.resizeEvent(eventType, i, x, y, h, w)
-    }
-    this.dragEventHandler = ({ eventType, i, x, y, h, w }) => {
-      this.dragEvent(eventType, i, x, y, h, w)
-    }
-    this.eventBus.on('resizeEvent', this.resizeEventHandler)
-    this.eventBus.on('dragEvent', this.dragEventHandler)
-    this.$emit('layout-created', this.layout)
-  },
-  beforeUnmount() {
-    // Remove listeners
-    this.eventBus.off('resizeEvent', this.resizeEventHandler)
-    this.eventBus.off('dragEvent', this.dragEventHandler)
-    removeWindowEventListener('resize', this.onWindowResize)
-    this.erd.uninstall(this.$refs.item)
-  },
-  beforeMount() {
-    this.$emit('layout-before-mount', this.layout)
-  },
-  mounted() {
-    this.$emit('layout-mounted', this.layout)
-    this.$nextTick(() => {
-      validateLayout(this.layout)
-      this.originalLayout = this.layout
-      this.$nextTick(() => {
-        this.onWindowResize()
-        this.initResponsiveFeatures()
-        // this.width = this.$el.offsetWidth;
-        addWindowEventListener('resize', this.onWindowResize)
-        compact(this.layout, this.verticalCompact)
-        this.$emit('layout-updated', this.layout)
-        this.updateHeight()
-        this.$nextTick(() => {
-          this.erd = elementResizeDetectorMaker({
-            strategy: 'scroll', // <- For ultra performance.
-            // See https://github.com/wnr/element-resize-detector/issues/110 about callOnAdd.
-            callOnAdd: false
-          })
-          this.erd.listenTo(this.$refs.item, () => {
-            this.onWindowResize()
-          })
-        })
-      })
-    })
-  },
   watch: {
     width(newval, oldval) {
       this.$nextTick(() => {
@@ -255,6 +207,54 @@ export default {
     margin() {
       this.updateHeight()
     }
+  },
+  created() {
+    // Accessible refernces of functions for removing in beforeDestroy
+    this.resizeEventHandler = ({ eventType, i, x, y, h, w }) => {
+      this.resizeEvent(eventType, i, x, y, h, w)
+    }
+    this.dragEventHandler = ({ eventType, i, x, y, h, w }) => {
+      this.dragEvent(eventType, i, x, y, h, w)
+    }
+    this.eventBus.on('resizeEvent', this.resizeEventHandler)
+    this.eventBus.on('dragEvent', this.dragEventHandler)
+    this.$emit('layout-created', this.layout)
+  },
+  beforeUnmount() {
+    // Remove listeners
+    this.eventBus.off('resizeEvent', this.resizeEventHandler)
+    this.eventBus.off('dragEvent', this.dragEventHandler)
+    removeWindowEventListener('resize', this.onWindowResize)
+    this.erd.uninstall(this.$refs.item)
+  },
+  beforeMount() {
+    this.$emit('layout-before-mount', this.layout)
+  },
+  mounted() {
+    this.$emit('layout-mounted', this.layout)
+    this.$nextTick(() => {
+      validateLayout(this.layout)
+      this.originalLayout = this.layout
+      this.$nextTick(() => {
+        this.onWindowResize()
+        this.initResponsiveFeatures()
+        // this.width = this.$el.offsetWidth;
+        addWindowEventListener('resize', this.onWindowResize)
+        compact(this.layout, this.verticalCompact)
+        this.$emit('layout-updated', this.layout)
+        this.updateHeight()
+        this.$nextTick(() => {
+          this.erd = elementResizeDetectorMaker({
+            strategy: 'scroll', // <- For ultra performance.
+            // See https://github.com/wnr/element-resize-detector/issues/110 about callOnAdd.
+            callOnAdd: false
+          })
+          this.erd.listenTo(this.$refs.item, () => {
+            this.onWindowResize()
+          })
+        })
+      })
+    })
   },
   methods: {
     getLayoutEl() {
@@ -389,7 +389,7 @@ export default {
       const newBreakpoint = getBreakpointFromWidth(this.breakpoints, this.width)
       const newCols = getColsFromBreakpoint(newBreakpoint, this.cols)
       // save actual layout in layouts
-      if (this.lastBreakpoint != null && !this.layouts[this.lastBreakpoint])
+      if (this.lastBreakpoint !== null && !this.layouts[this.lastBreakpoint])
         this.layouts[this.lastBreakpoint] = cloneLayout(this.layout)
       // Find or generate a new layout.
       const layout = findOrGenerateResponsiveLayout(

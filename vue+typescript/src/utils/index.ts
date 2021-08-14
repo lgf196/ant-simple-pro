@@ -1,6 +1,7 @@
 import { RouteRecordRaw, _RouteLocationBase } from 'vue-router'
 import { saveAs } from 'file-saver'
 import Clipboard from 'clipboard'
+import { AnyFunction } from '@/types/common'
 
 export type TagItemType = Partial<_RouteLocationBase>
 
@@ -29,14 +30,12 @@ export const getAffixTags = (routes: RouteRecordRaw[] = []) => {
   })
   return result
 }
-
-export function rafThrottle<T = Event>(fn: (e: T) => void) {
+export function rafThrottle<T extends AnyFunction<any>>(fn: T): AnyFunction<void> {
   let locked = false
-  return function (...args: unknown[]) {
+  return function (this: unknown, ...args: any[]) {
     if (locked) return
     locked = true
     window.requestAnimationFrame(() => {
-      // @ts-ignore
       fn.apply(this, args)
       locked = false
     })

@@ -1,10 +1,10 @@
 <template>
   <div class="com-page p20">
-    <CropImage v-model:visible="visible" @submit="onCropSubmit" :file="fileRef"></CropImage>
+    <CropImage v-model:visible="visible" :file="fileRef" @submit="onCropSubmit"></CropImage>
     <ComUploadImage
       ref="uploadImage"
       v-model:value="photo"
-      :autoUpload="false"
+      :auto-upload="false"
       @file-change="onFileChange"
     ></ComUploadImage>
   </div>

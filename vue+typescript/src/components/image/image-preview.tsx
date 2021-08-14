@@ -10,7 +10,7 @@ export type ImageViewerPropsType = {
 }
 
 export type ImageViewerInstance = ComponentPublicInstance<
-  {},
+  Record<string, unknown>,
   {
     open: (opts: ImageViewerPropsType) => void
   }

@@ -32,7 +32,7 @@
           </a-form-item>
         </a-col>
       </a-row>
-      <a-table :columns="columns" :data-source="form.dataSource" rowKey="productId">
+      <a-table :columns="columns" :data-source="form.dataSource" row-key="productId">
         <template #index="{ index }">
           <span>
             {{ index + 1 }}
@@ -57,8 +57,8 @@
           </a-form-item>
         </template>
         <template #pictureurls="{ text }">
-          <ComImage v-if="text" className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
-            <template v-slot:error><UserOutlined /></template>
+          <ComImage v-if="text" class-name="avatar" :src="text" fit="cover" @click="onImageClick(text)">
+            <template #error><UserOutlined /></template>
           </ComImage>
         </template>
       </a-table>
@@ -180,14 +180,16 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .form {
-  ::v-deep .ant-form-item {
+  ::v-deep(.ant-form-item) {
     display: flex;
     margin-bottom: 0;
   }
-  ::v-deep .ant-form-item-control-wrapper {
+
+  ::v-deep(.ant-form-item-control-wrapper) {
     flex: 1;
   }
 }
+
 .avatar {
   width: 50px;
   height: 50px;

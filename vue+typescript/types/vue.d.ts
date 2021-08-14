@@ -1,8 +1,7 @@
 import { RouteLocationNormalizedLoaded, Router } from 'vue-router'
-import type { Message } from 'ant-design-vue/types/message'
-import { Modal, ModalOptions, ModalConfirm } from 'ant-design-vue/types/modal'
-import { number, VueI18n } from 'vue-i18n'
+// import { VueI18n } from 'vue-i18n'
 import { TinyMCE, EditorManager, RawEditorSettings, Editor } from 'tinymce'
+import dayjs from 'dayjs'
 
 declare global {
   interface RawEditorSettingsType extends RawEditorSettings {
@@ -14,22 +13,24 @@ declare global {
   interface Window {
     tinymce: TinyMCEType
   }
+  interface AnyFunction<P = any, T = any> {
+    (...args: P[]): T
+  }
 }
 
-module '@vue/runtime-core' {
+declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $route: RouteLocationNormalizedLoaded
     $router: Router
     $formatDate: (date: dayjs.ConfigType) => string
     $formatDateTime: (date: dayjs.ConfigType) => string
-    $message: Message
-    $info(options: ModalOptions): ModalConfirm
-    $success(options: ModalOptions): ModalConfirm
-    $error(options: ModalOptions): ModalConfirm
-    $warning(options: ModalOptions): ModalConfirm
-    $confirm(options: ModalOptions): ModalConfirm
+    $info(options: any): any
+    $success(options: any): any
+    $error(options: any): any
+    $warning(options: any): any
+    $confirm(options: any): any
     destroyAll(): void
-    $i18n: VueI18n
+    // $i18n: VueI18n
   }
 }
 

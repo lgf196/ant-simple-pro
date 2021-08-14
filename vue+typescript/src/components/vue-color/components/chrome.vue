@@ -22,21 +22,21 @@
           <div class="vc-chrome-hue-wrap">
             <hue v-model:value="colors" @change="childChange"></hue>
           </div>
-          <div class="vc-chrome-alpha-wrap" v-if="!disableAlpha">
+          <div v-if="!disableAlpha" class="vc-chrome-alpha-wrap">
             <alpha v-model:value="colors" @change="childChange"></alpha>
           </div>
         </div>
       </div>
 
-      <div class="vc-chrome-fields-wrap" v-if="!disableFields">
-        <div class="vc-chrome-fields" v-show="fieldsIndex === 0">
+      <div v-if="!disableFields" class="vc-chrome-fields-wrap">
+        <div v-show="fieldsIndex === 0" class="vc-chrome-fields">
           <!-- hex -->
           <div class="vc-chrome-field">
             <ed-in v-if="!hasAlpha" label="hex" :value="colors.hex" @change="inputChange"></ed-in>
             <ed-in v-if="hasAlpha" label="hex" :value="colors.hex8" @change="inputChange"></ed-in>
           </div>
         </div>
-        <div class="vc-chrome-fields" v-show="fieldsIndex === 1">
+        <div v-show="fieldsIndex === 1" class="vc-chrome-fields">
           <!-- rgba -->
           <div class="vc-chrome-field">
             <ed-in label="r" :value="colors.rgba.r" @change="inputChange"></ed-in>
@@ -47,11 +47,11 @@
           <div class="vc-chrome-field">
             <ed-in label="b" :value="colors.rgba.b" @change="inputChange"></ed-in>
           </div>
-          <div class="vc-chrome-field" v-if="!disableAlpha">
+          <div v-if="!disableAlpha" class="vc-chrome-field">
             <ed-in label="a" :value="colors.a" :arrow-offset="0.01" :max="1" @change="inputChange"></ed-in>
           </div>
         </div>
-        <div class="vc-chrome-fields" v-show="fieldsIndex === 2">
+        <div v-show="fieldsIndex === 2" class="vc-chrome-fields">
           <!-- hsla -->
           <div class="vc-chrome-field">
             <ed-in label="h" :value="hsl.h" @change="inputChange"></ed-in>
@@ -62,7 +62,7 @@
           <div class="vc-chrome-field">
             <ed-in label="l" :value="hsl.l" @change="inputChange"></ed-in>
           </div>
-          <div class="vc-chrome-field" v-if="!disableAlpha">
+          <div v-if="!disableAlpha" class="vc-chrome-field">
             <ed-in label="a" :value="colors.a" :arrow-offset="0.01" :max="1" @change="inputChange"></ed-in>
           </div>
         </div>
@@ -87,7 +87,7 @@
               />
             </svg>
           </div>
-          <div class="vc-chrome-toggle-icon-highlight" v-show="highlight"></div>
+          <div v-show="highlight" class="vc-chrome-toggle-icon-highlight"></div>
         </div>
         <!-- btn -->
       </div>
@@ -116,7 +116,6 @@ import { getChangeColor, isValidHex } from '../helpers/utils'
 
 export default defineComponent({
   name: 'Chrome',
-  emits: ['update:value'],
   components: {
     Saturation,
     Hue,
@@ -124,6 +123,7 @@ export default defineComponent({
     'ed-in': EditableInput,
     Checkboard
   },
+  emits: ['update:value'],
   props: {
     disableAlpha: {
       type: Boolean,
@@ -144,11 +144,6 @@ export default defineComponent({
       highlight: false,
       val: getChangeColor(this.value),
       oldHue: 0
-    }
-  },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
     }
   },
   computed: {
@@ -175,6 +170,11 @@ export default defineComponent({
     },
     hasAlpha(): boolean {
       return this.colors.a < 1
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {
@@ -265,13 +265,16 @@ export default defineComponent({
   font-family: Menlo;
   background-color: #fff;
 }
+
 .vc-chrome-controls {
   display: flex;
 }
+
 .vc-chrome-color-wrap {
   position: relative;
   width: 36px;
 }
+
 .vc-chrome-active-color {
   position: relative;
   width: 30px;
@@ -280,33 +283,40 @@ export default defineComponent({
   overflow: hidden;
   z-index: 1;
 }
+
 .vc-chrome-color-wrap .vc-checkerboard {
   width: 30px;
   height: 30px;
   border-radius: 15px;
   background-size: auto;
 }
+
 .vc-chrome-sliders {
   flex: 1;
 }
+
 .vc-chrome-fields-wrap {
   display: flex;
   padding-top: 16px;
 }
+
 .vc-chrome-fields {
   display: flex;
   margin-left: -6px;
   flex: 1;
 }
+
 .vc-chrome-field {
   padding-left: 6px;
   width: 100%;
 }
+
 .vc-chrome-toggle-btn {
   width: 32px;
   text-align: right;
   position: relative;
 }
+
 .vc-chrome-toggle-icon {
   margin-right: -4px;
   margin-top: 12px;
@@ -314,6 +324,7 @@ export default defineComponent({
   position: relative;
   z-index: 2;
 }
+
 .vc-chrome-toggle-icon-highlight {
   position: absolute;
   width: 24px;
@@ -323,21 +334,26 @@ export default defineComponent({
   top: 10px;
   left: 12px;
 }
+
 .vc-chrome-hue-wrap {
   position: relative;
   height: 10px;
   margin-bottom: 8px;
 }
+
 .vc-chrome-alpha-wrap {
   position: relative;
   height: 10px;
 }
+
 .vc-chrome-hue-wrap .vc-hue {
   border-radius: 2px;
 }
+
 .vc-chrome-alpha-wrap .vc-alpha-gradient {
   border-radius: 2px;
 }
+
 .vc-chrome-hue-wrap .vc-hue-picker,
 .vc-chrome-alpha-wrap .vc-alpha-picker {
   width: 12px;
@@ -347,10 +363,12 @@ export default defineComponent({
   background-color: rgb(248, 248, 248);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 }
+
 .vc-chrome-body {
   padding: 16px 16px 12px;
   background-color: #fff;
 }
+
 .vc-chrome-saturation-wrap {
   width: 100%;
   padding-bottom: 55%;
@@ -358,6 +376,7 @@ export default defineComponent({
   border-radius: 2px 2px 0 0;
   overflow: hidden;
 }
+
 .vc-chrome-saturation-wrap .vc-saturation-circle {
   width: 12px;
   height: 12px;
@@ -373,6 +392,7 @@ export default defineComponent({
   height: 21px;
   text-align: center;
 }
+
 .vc-chrome-fields .vc-input__label {
   text-transform: uppercase;
   font-size: 11px;
@@ -387,9 +407,11 @@ export default defineComponent({
   width: 18px;
   height: 18px;
 }
+
 .vc-chrome__disable-alpha .vc-chrome-color-wrap {
   width: 30px;
 }
+
 .vc-chrome__disable-alpha .vc-chrome-hue-wrap {
   margin-top: 4px;
   margin-bottom: 4px;

@@ -4,7 +4,7 @@ import { saveAs } from 'file-saver'
 function datenum(v: any, date1904?: boolean) {
   if (date1904) v += 1462
   const epoch = Date.parse(v)
-  return (epoch - ((new Date(Date.UTC(1899, 11, 30)) as unknown) as number)) / (24 * 60 * 60 * 1000)
+  return (epoch - (new Date(Date.UTC(1899, 11, 30)) as unknown as number)) / (24 * 60 * 60 * 1000)
 }
 
 function sheetFromArrayOfArrays(data: any) {
@@ -28,7 +28,7 @@ function sheetFromArrayOfArrays(data: any) {
       const cell: Record<string, any> = {
         v: data[R][C]
       }
-      if (cell.v == null) continue
+      if (cell.v === null) continue
       const cellRef = XLSX.utils.encode_cell({
         c: C,
         r: R
@@ -106,7 +106,7 @@ export function exportJsonToExcel(options: ExportJsonToExcelType) {
     const colWidth = cloneData.map(row =>
       row.map(val => {
         /* 先判断是否为null/undefined*/
-        if (val == null) {
+        if (val === null) {
           return {
             wch: 10
           }

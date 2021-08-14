@@ -1,12 +1,12 @@
 <template>
   <div class="pie">
-    <div class="chart" ref="chartRef"></div>
+    <div ref="chartRef" class="chart"></div>
     <ul class="legend-list">
       <li
-        class="legend-item"
-        :class="{ disabled: disabledLegendIndexs.includes(index) }"
         v-for="(item, index) in originalList"
         :key="index"
+        class="legend-item"
+        :class="{ disabled: disabledLegendIndexs.includes(index) }"
         @click="onLegendItemClick(index)"
       >
         <div class="round" :style="{ backgroundColor: originalColors[index] }"></div>
@@ -127,43 +127,52 @@ export default defineComponent({
   height: 400px;
   display: flex;
 }
+
 .chart {
   flex: 1;
   height: 100%;
 }
+
 .legend-list {
   flex: 0 0 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .legend-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
   font-size: 12px;
   cursor: pointer;
+
   &:last-child {
     margin-bottom: 0;
   }
+
   &.disabled {
     .round {
       background-color: #999 !important;
     }
+
     .name,
     .percent {
       color: #999;
     }
   }
+
   .round {
     width: 8px;
     height: 8px;
     border-radius: 50%;
   }
+
   .name {
     margin: 0 5px;
     color: #151d35;
   }
+
   .percent {
     color: #666;
   }

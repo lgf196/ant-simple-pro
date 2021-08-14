@@ -41,7 +41,7 @@ export default defineComponent({
   props: {
     menus: {
       type: Array as PropType<AccessMenuItem[]>,
-      default: []
+      default: () => []
     },
     collapsed: {
       type: Boolean
