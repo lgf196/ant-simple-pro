@@ -52,7 +52,7 @@
           <template #overlay>
             <a-menu>
               <a-menu-item v-for="(item, index) in moreList" :key="index">
-                <a :href="item.url" target="_blank" rel="noopener noreferrer">
+                <a class="link" :href="item.url" target="_blank" rel="noopener noreferrer">
                   {{ item.name }}
                 </a>
               </a-menu-item>
@@ -267,5 +267,8 @@ export default defineComponent({
 .more-button {
   margin-left: 8px;
   color: rgba(105, 123, 140, 0.7);
+}
+.link {
+  color: rgba(0, 0, 0, 0.85);
 }
 </style>

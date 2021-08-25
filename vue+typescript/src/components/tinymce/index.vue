@@ -14,8 +14,6 @@ import asyncLoadScript from '@/utils/async-script'
 import plugins from './plugins'
 import toolbar from './toolbar'
 import font from './font'
-// customer plugins
-import { initCustomerImagePlugin } from './customer-image'
 
 const suffix = import.meta.env.VITE_APP_MODE === 'dev' ? '' : '.min'
 const scriptSrc = import.meta.env.BASE_URL + 'tinymce5.8.0/tinymce' + suffix + '.js'
@@ -84,8 +82,6 @@ export default defineComponent({
     })
 
     function initTinymce() {
-      // init plugins
-      initCustomerImagePlugin()
       // init editor
       // eslint-disable @typescript-eslint/camelcase
       window.tinymce.init({

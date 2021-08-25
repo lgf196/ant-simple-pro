@@ -20,7 +20,7 @@
             <div v-for="(item, index) in form.userInfoList" :key="index" class="item">
               <a-divider>信息{{ index + 1 }}</a-divider>
               <div v-show="index > 0">
-                <a-button class="button--delete" type="danger" shape="circle" @click="onRemoveStep(index)">
+                <a-button class="button--delete" type="primary" danger shape="circle" @click="onRemoveStep(index)">
                   <template #icon><DeleteOutlined /></template>
                 </a-button>
               </div>
@@ -73,14 +73,14 @@
           </transition-group>
           <a-form-item>
             <a-row type="flex" align="middle" class="button-group">
-              <a-button type="danger" class="mr8" @click="onAddStep"> 新增信息 </a-button>
+              <a-button type="primary" danger class="mr8" @click="onAddStep"> 新增信息 </a-button>
               <a-button type="primary" html-type="submit">提交信息</a-button>
             </a-row>
           </a-form-item>
         </a-col>
         <a-col :xs="24" :sm="24" :md="12" :lg="16" :xl="16">
           <a-row type="flex" align="middle" class="button-group">
-            <a-button type="danger" class="mr8" @click="onAddStep"> 新增信息 </a-button>
+            <a-button type="primary" danger class="mr8" @click="onAddStep"> 新增信息 </a-button>
             <a-button type="primary" html-type="submit">提交信息</a-button>
           </a-row>
         </a-col>
