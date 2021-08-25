@@ -11,7 +11,8 @@ export default defineComponent({
   emits: ['change'],
   props: {
     tableTitle: {
-      type: String
+      type: String,
+      default: ''
     },
     tableProps: {
       type: Object,

@@ -26,7 +26,6 @@ export const getAffixTags = (routes = []) => {
   })
   return result
 }
-
 export function rafThrottle(fn) {
   let locked = false
   return function (...args) {

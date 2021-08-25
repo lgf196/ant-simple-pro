@@ -19,7 +19,6 @@ import { emojiProps } from '../utils/shared-props'
 import { EmojiView } from '../utils/emoji-data'
 export default {
   name: 'Emoji',
-  emits: ['click', 'mouseenter', 'mouseleave'],
   props: {
     ...emojiProps,
     data: {
@@ -27,6 +26,7 @@ export default {
       required: true
     }
   },
+  emits: ['click', 'mouseenter', 'mouseleave'],
   computed: {
     view() {
       return new EmojiView(this.emojiObject, this.skin, this.set, this.native, this.fallback, this.tooltip, this.size)

@@ -5,7 +5,8 @@ import keydownListen from './lib/helpers/keydownListen'
 import ToolbarLeft from './components/toolbar-left'
 import ToolbarRight from './components/toolbar-right'
 import { insertText } from './lib/helpers/function'
-import 'highlight.js/styles/tomorrow.css'
+import 'highlight.js/styles/tomorrow-night-blue.css'
+import 'highlight.js/styles/tomorrow-night-bright.css'
 import './lib/fonts/iconfont.css'
 import './lib/css/index.less'
 import { CONFIG } from './lib'
@@ -14,7 +15,8 @@ export default defineComponent({
   emits: ['update:value'],
   props: {
     value: {
-      type: String
+      type: String,
+      default: ''
     },
     lineNum: {
       type: Boolean,
@@ -29,7 +31,8 @@ export default defineComponent({
       default: () => {} // eslint-disable-line
     },
     placeholder: {
-      type: String
+      type: String,
+      default: ''
     },
     fontSize: {
       type: String,
@@ -44,7 +47,8 @@ export default defineComponent({
       default: () => ({})
     },
     height: {
-      type: String
+      type: String,
+      default: ''
     },
     preview: {
       type: Boolean,
@@ -174,7 +178,7 @@ export default defineComponent({
     }
 
     function save() {
-      props.onSave($vm.value?.value)
+      props.onSave($vm.value && $vm.value.value) // eslint-disable-line
     }
 
     function undo() {
@@ -310,15 +314,13 @@ export default defineComponent({
     }
 
     function focusText() {
-      $vm.value?.focus()
+      $vm.value && $vm.value.focus() // eslint-disable-line
     }
 
     function handleScoll(e) {
       const currentTarget = e.currentTarget
-      const radio = $blockEdit.value?.scrollTop / ($scrollEdit.value?.scrollHeight - currentTarget.offsetHeight)
-      if ($blockPreview.value) {
-        $blockPreview.value.scrollTop = ($scrollPreview.value?.scrollHeight - $blockPreview.value?.offsetHeight) * radio
-      }
+      const radio = $blockEdit.value.scrollTop / ($scrollEdit.value.scrollHeight - currentTarget.offsetHeight)
+      $blockPreview.value.scrollTop = ($scrollPreview.value.scrollHeight - $blockPreview.value.offsetHeight) * radio
     }
 
     return () => {

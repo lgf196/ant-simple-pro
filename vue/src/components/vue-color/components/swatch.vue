@@ -1,7 +1,7 @@
 <template>
   <div role="application" aria-label="Swatches color picker" class="vc-swatches" :data-pick="pick">
     <div class="vc-swatches-box" role="listbox">
-      <div class="vc-swatches-color-group" v-for="(group, index) in palette" :key="index">
+      <div v-for="(group, index) in palette" :key="index" class="vc-swatches-color-group">
         <div
           v-for="item in group"
           :key="item"
@@ -13,7 +13,7 @@
           :data-color="item"
           @click="handlerClick(item)"
         >
-          <div class="vc-swatches-pick" v-show="equal(item)">
+          <div v-show="equal(item)" class="vc-swatches-pick">
             <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
               <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
             </svg>
@@ -87,11 +87,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get() {
@@ -104,6 +99,11 @@ export default defineComponent({
     },
     pick() {
       return this.colors.hex
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {
@@ -133,16 +133,19 @@ export default defineComponent({
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.16);
 }
+
 .vc-swatches-box {
   padding: 16px 0 6px 16px;
   overflow: hidden;
 }
+
 .vc-swatches-color-group {
   padding-bottom: 10px;
   width: 40px;
   float: left;
   margin-right: 10px;
 }
+
 .vc-swatches-color-it {
   box-sizing: border-box;
   width: 40px;
@@ -157,14 +160,17 @@ export default defineComponent({
   -webkit-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
+
 .vc-swatches-color--white {
   border: 1px solid #ddd;
 }
+
 .vc-swatches-pick {
   fill: rgb(255, 255, 255);
   margin-left: 8px;
   display: block;
 }
+
 .vc-swatches-color--white .vc-swatches-pick {
   fill: rgb(51, 51, 51);
 }

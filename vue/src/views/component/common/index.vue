@@ -94,16 +94,20 @@ export default defineComponent({
   margin-bottom: 10px;
   font-weight: 700;
 }
+
 .preview {
   margin-bottom: 10px;
+
   ::v-deep(.svg-icon) {
     color: @color-theme;
     font-size: 30px;
   }
 }
+
 .paragraph {
   margin-bottom: 10px;
 }
+
 code {
   margin: 0 1px;
   padding: 0.2em 0.4em;

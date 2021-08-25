@@ -1,6 +1,6 @@
 <template>
   <section class="emoji-mart emoji-mart-static" :style="customStyles">
-    <div class="emoji-mart-bar emoji-mart-bar-anchors" v-if="showCategories">
+    <div v-if="showCategories" class="emoji-mart-bar emoji-mart-bar-anchors">
       <anchors
         :data="data"
         :i18n="mergedI18n"
@@ -28,16 +28,16 @@
       />
     </slot>
 
-    <div role="tabpanel" class="emoji-mart-scroll" ref="scroll" @scroll="onScroll">
+    <div ref="scroll" role="tabpanel" class="emoji-mart-scroll" @scroll="onScroll">
       <div id="emoji-mart-list" ref="scrollContent" role="listbox" aria-expanded="true">
         <category
           v-for="(category, idx) in view.filteredCategories"
           v-show="infiniteScroll || category == view.activeCategory"
+          :id="category.id"
           :ref="'categories_' + idx"
           :key="category.id"
           :data="data"
           :i18n="mergedI18n"
-          :id="category.id"
           :name="category.name"
           :emojis="category.emojis"
           :emoji-props="emojiProps"
@@ -56,7 +56,7 @@
       :skin-props="skinProps"
       :on-skin-change="onSkinChange"
     >
-      <div class="emoji-mart-bar emoji-mart-bar-preview" v-if="showPreview">
+      <div v-if="showPreview" class="emoji-mart-bar emoji-mart-bar-preview">
         <preview
           :data="data"
           :title="title"
@@ -105,7 +105,6 @@ const I18N = {
 
 export default {
   name: 'VPicker',
-  emits: ['select', 'skin-change'],
   components: {
     Anchors,
     Category,
@@ -119,6 +118,7 @@ export default {
       required: true
     }
   },
+  emits: ['select', 'skin-change'],
   data() {
     return {
       activeSkin: this.skin || store.get('skin') || this.defaultSkin,

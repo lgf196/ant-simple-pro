@@ -1,9 +1,9 @@
 <template>
   <div class="com-page">
     <LayoutTable
-      tableTitle="查询表格"
+      table-title="查询表格"
       :loading="loading"
-      :tableProps="{
+      :table-props="{
         columns,
         dataSource: menuData.list,
         rowKey: v => v.id
@@ -14,7 +14,7 @@
         pageSize: params.size,
         onChange: onPaginationChange
       }"
-      :onRefresh="query"
+      :on-refresh="query"
     >
       <template #buttons>
         <a-button type="primary" @click="onCreate">
@@ -49,8 +49,8 @@
     </LayoutTable>
     <UpdateMenuModal
       v-model:visible="visible"
-      :currentRow="currentRow"
-      :menuCascaderOptions="menuTree"
+      :current-row="currentRow"
+      :menu-cascader-options="menuTree"
       @create-success="onCreateSuccess"
       @update-success="onUpdateSuccess"
     ></UpdateMenuModal>
@@ -146,7 +146,11 @@ export default defineComponent({
 
     let cancel = null
 
-    const { data: menuData, loading, run: query } = useAsync(
+    const {
+      data: menuData,
+      loading,
+      run: query
+    } = useAsync(
       () => {
         return getMenus(state.params)
       },
@@ -248,6 +252,7 @@ export default defineComponent({
 .danger {
   color: rgb(255, 77, 79);
 }
+
 .add-button__icon {
   font-size: 18px;
 }

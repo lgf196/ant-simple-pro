@@ -21,7 +21,8 @@ const QueryTemplate = defineComponent({
       ]
     },
     name: {
-      type: String
+      type: String,
+      default: ''
     }
   },
   setup(props, { emit }) {

@@ -1,4 +1,4 @@
-@color-theme: #1890FF;
+@color-theme: #1890ff;
 
 @color-primary: #346fff;
 @primary-bg-color: #f2f2f2;
@@ -20,8 +20,8 @@
 @color-text-placeholder: #ccc;
 // 线框颜色（一级、二级、三级）
 @border-color-base: #dcdcdc;
-@border-color-light: #E5E7F3;
-@border-color-lighter: #EFF3FC;
+@border-color-light: #e5e7f3;
+@border-color-lighter: #eff3fc;
 // 字体
 @font-size-extra-large: 20px;
 @font-size-large: 18px;
@@ -36,24 +36,24 @@
     opacity: 1;
   }
 
-  /* WebKit browsers*/
+  /* WebKit browsers */
   &::-webkit-input-placeholder {
     color: @color;
   }
 
-  /* Firefox 4-18*/
+  /* Firefox 4-18 */
   &:-moz-placeholder {
     color: @color;
     opacity: 1;
   }
 
-  /* Firefox 19+*/
+  /* Firefox 19+ */
   &::-moz-placeholder {
     color: @color;
     opacity: 1;
   }
 
-  /* IE 10+*/
+  /* IE 10+ */
   &:-ms-input-placeholder {
     color: @color;
   }
@@ -74,7 +74,8 @@
   text-align: justify;
   margin-right: -1em;
   padding-right: 1em;
-  &:before {
+
+  &::before {
     background: @bg;
     content: '...';
     padding: 0 1px;
@@ -82,7 +83,8 @@
     right: 14px;
     bottom: 0;
   }
-  &:after {
+
+  &::after {
     background: white;
     content: '';
     margin-top: 0.2em;

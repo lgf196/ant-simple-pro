@@ -1,9 +1,9 @@
 <template>
   <div class="com-page">
     <LayoutTable
-      tableTitle="查询表格"
+      table-title="查询表格"
       :loading="loading"
-      :tableProps="{
+      :table-props="{
         columns,
         dataSource: userList,
         rowKey: v => v.id,
@@ -12,7 +12,7 @@
       :pagination="{
         hideOnSinglePage: true
       }"
-      :onRefresh="query"
+      :on-refresh="query"
     >
       <template #buttons>
         <a-radio-group v-model:value="type">
@@ -28,8 +28,8 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
-          <template v-slot:error><UserOutlined /></template>
+        <ComImage class-name="avatar" :src="text" fit="cover" @click="onImageClick(text)">
+          <template #error><UserOutlined /></template>
         </ComImage>
       </template>
     </LayoutTable>
@@ -44,8 +44,8 @@ import { getUsers } from '@/views/user/service'
 import { useAsync } from '@/hooks'
 import { imagePreview } from '@/components/image/image-preview'
 import { exportJsonToExcel } from '@/utils/excel'
-import { excelHeader, excelKeyList, normalizeExcelData } from '../types'
 import { isDefined } from '@/utils/type'
+import { excelHeader, excelKeyList, normalizeExcelData } from '../types'
 const columns = [
   {
     dataIndex: 'index',
@@ -106,7 +106,11 @@ export default defineComponent({
       selectedRowKeys: []
     })
 
-    const { data: userList, loading, run: query } = useAsync(
+    const {
+      data: userList,
+      loading,
+      run: query
+    } = useAsync(
       () => {
         return getUsers({
           username: username.value

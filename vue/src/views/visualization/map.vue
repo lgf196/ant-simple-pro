@@ -72,6 +72,7 @@ export default defineComponent({
 .analysis {
   position: relative;
   height: 100vh;
+
   .button-group {
     z-index: 9;
     position: absolute;
@@ -79,12 +80,14 @@ export default defineComponent({
     left: 10px;
     height: 24px;
   }
+
   .back {
     width: 30px;
     margin-right: 10px;
     cursor: pointer;
   }
 }
+
 .map-container {
   height: 100vh;
 }

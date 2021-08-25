@@ -12,7 +12,7 @@
         <div class="vc-sketch-hue-wrap">
           <Hue v-model:value="colors" @change="childChange"></Hue>
         </div>
-        <div class="vc-sketch-alpha-wrap" v-if="!disableAlpha">
+        <div v-if="!disableAlpha" class="vc-sketch-alpha-wrap">
           <Alpha v-model:value="colors" @change="childChange"></Alpha>
         </div>
       </div>
@@ -25,7 +25,7 @@
         <checkboard></checkboard>
       </div>
     </div>
-    <div class="vc-sketch-field" v-if="!disableFields">
+    <div v-if="!disableFields" class="vc-sketch-field">
       <!-- rgba -->
       <div class="vc-sketch-field--double">
         <EditableInput label="hex" :value="hex" @change="inputChange"></EditableInput>
@@ -39,7 +39,7 @@
       <div class="vc-sketch-field--single">
         <EditableInput label="b" :value="colors.rgba.b" @change="inputChange"></EditableInput>
       </div>
-      <div class="vc-sketch-field--single" v-if="!disableAlpha">
+      <div v-if="!disableAlpha" class="vc-sketch-field--single">
         <EditableInput label="a" :value="colors.a" :arrow-offset="0.01" :max="1" @change="inputChange"></EditableInput>
       </div>
     </div>
@@ -47,9 +47,9 @@
       <template v-for="(c, index) in presetColors">
         <div
           v-if="!isTransparent(c)"
+          :key="c"
           class="vc-sketch-presets-color"
           :aria-label="'Color:' + c"
-          :key="c"
           :style="{ background: c }"
           @click="handlePreset(c)"
         >
@@ -92,7 +92,6 @@ const presetColors = [
 
 export default defineComponent({
   name: 'Sketch',
-  emits: ['update:value'],
   components: {
     Saturation,
     Hue,
@@ -100,6 +99,7 @@ export default defineComponent({
     EditableInput,
     Checkboard
   },
+  emits: ['update:value'],
   props: {
     presetColors: {
       type: Array,
@@ -124,11 +124,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get() {
@@ -151,6 +146,11 @@ export default defineComponent({
     activeColor() {
       const rgba = this.colors.rgba
       return 'rgba(' + [rgba.r, rgba.g, rgba.b, rgba.a].join(',') + ')'
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {

@@ -1,5 +1,4 @@
 // export type ResizeEvent = {e: Event, node: HTMLElement, size: Size};
-
 // const isProduction = process.env.NODE_ENV === 'production';
 /**
  * Return the bottom coordinate of the layout.

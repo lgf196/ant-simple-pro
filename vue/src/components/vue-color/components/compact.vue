@@ -3,16 +3,16 @@
     <ul class="vc-compact-colors" role="listbox">
       <li
         v-for="c in paletteUpperCase(palette)"
+        :key="c"
         role="option"
         :aria-label="'color:' + c"
         :aria-selected="c === pick"
         class="vc-compact-color-item"
-        :key="c"
         :class="{ 'vc-compact-color-item--white': c === '#FFFFFF' }"
         :style="{ background: c }"
         @click="handlerClick(c)"
       >
-        <div class="vc-compact-dot" v-show="c === pick"></div>
+        <div v-show="c === pick" class="vc-compact-dot"></div>
       </li>
     </ul>
   </div>
@@ -80,11 +80,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get() {
@@ -97,6 +92,11 @@ export default defineComponent({
     },
     pick() {
       return this.colors.hex.toUpperCase()
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {
@@ -126,11 +126,13 @@ export default defineComponent({
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.16);
   background-color: #fff;
 }
+
 .vc-compact-colors {
   overflow: hidden;
   padding: 0;
   margin: 0;
 }
+
 .vc-compact-color-item {
   list-style: none;
   width: 15px;
@@ -141,9 +143,11 @@ export default defineComponent({
   position: relative;
   cursor: pointer;
 }
+
 .vc-compact-color-item--white {
   box-shadow: inset 0 0 0 1px #ddd;
 }
+
 .vc-compact-color-item--white .vc-compact-dot {
   background: #000;
 }

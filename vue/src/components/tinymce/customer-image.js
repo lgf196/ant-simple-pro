@@ -42,9 +42,9 @@ export function initCustomerImagePlugin() {
     commandRegister(editor)
   })
 
-  function Plugin() {
+  function PluginA() {
     // ...
   }
 
-  return Plugin
+  return PluginA
 }

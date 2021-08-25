@@ -1,10 +1,6 @@
 import { onMounted, onBeforeUnmount, watch } from 'vue'
 import store from '@/store'
 
-/**
- * useChartResize
- * @param {Ref<echarts.ECharts | null>} chartIns  chartIns
- */
 export function useChartResize(chartIns) {
   function onResize() {
     chartIns.value && chartIns.value.resize()

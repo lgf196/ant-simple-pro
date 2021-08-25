@@ -7,26 +7,30 @@
         theme: 'material',
         lineNumbers: true
       }"
-      :autoScroll="false"
     ></Codemirror>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import Codemirror from '@/components/vue-codemirror'
+import { defineComponent, onMounted, ref } from 'vue'
+import Codemirror from '@/components/vue-codemirror/index.vue'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
-require('codemirror/mode/xml/xml')
-require('codemirror/mode/javascript/javascript')
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/javascript/javascript'
 
 const code = `
   // pages/home
   import { defineComponent, ref, onMounted } from 'vue'
   import { userList } from '@/api/login'
+  export type UserListType={
+    name: string
+    aga: number
+    sex: string
+  }
   const App = defineComponent({
     setup() {
-      const result = ref([])
+      const result = ref<UserListType[]>([])
       onMounted(() => {
         ;(async () => {
           const res = await userList({ username: 'li' })
@@ -56,7 +60,12 @@ export default defineComponent({
     Codemirror
   },
   setup() {
-    const content = ref(code)
+    const content = ref('')
+    onMounted(() => {
+      setTimeout(() => {
+        content.value = code
+      }, 200)
+    })
     return {
       content
     }

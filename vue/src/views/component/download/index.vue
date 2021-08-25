@@ -14,11 +14,11 @@
           <h4 class="mb10">canvas下载</h4>
           <VueQrcode
             ref="qrcodeRef"
-            canvasClass="canvas-qrcode"
+            canvas-class="canvas-qrcode"
             :value="qrcode.linkUrl"
             :size="qrcode.size"
             :style="{ margin: 'auto' }"
-            :imageSettings="{
+            :image-settings="{
               src: qrcode.logoUrl,
               width: qrcode.logoW,
               height: qrcode.logoH,
@@ -52,6 +52,7 @@ import { computed, defineComponent, reactive, ref, unref } from 'vue'
 import { saveAs } from 'file-saver'
 import { defalutVal as qrcodeDefaultData } from '@/views/qrcode/index.vue'
 import VueQrcode from '@/components/qrcode'
+
 export default defineComponent({
   components: {
     VueQrcode
@@ -113,6 +114,7 @@ export default defineComponent({
   border: 1px solid #f0f0f0;
   text-align: center;
 }
+
 .image {
   display: block;
   margin: 0 auto;

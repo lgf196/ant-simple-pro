@@ -4,21 +4,21 @@
       <a-col :xs="24" :sm="24" :md="12" :lg="5" :xl="5">
         <VueQrcode
           ref="qrcodeRef"
-          canvasClass="canvas-qrcode"
+          canvas-class="canvas-qrcode"
           :value="config.linkUrl"
           :size="config.size"
           :style="{ margin: 'auto' }"
-          :imageSettings="{
+          :image-settings="{
             src: config.logoUrl,
             width: config.logoW,
             height: config.logoH,
             excavate: config.excavate
           }"
         ></VueQrcode>
-        <a-button type="primary" @click="onDown" class="mt10"> 下载二维码 </a-button>
+        <a-button type="primary" class="mt10" @click="onDown"> 下载二维码 </a-button>
       </a-col>
       <a-col :xs="24" :sm="24" :md="12" :lg="19" :xl="19">
-        <a-form class="form" :model="form" :rules="rules" @finish="onFinish" label-align="left">
+        <a-form class="form" :model="form" :rules="rules" label-align="left" @finish="onFinish">
           <a-form-item label="链接url" name="linkUrl">
             <a-input v-model:value="form.linkUrl" placeholder="请填写" />
           </a-form-item>
@@ -63,7 +63,6 @@ export const defalutVal = {
   logoH: 70,
   excavate: false
 }
-
 export default defineComponent({
   components: {
     VueQrcode
@@ -128,10 +127,11 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .form {
-  ::v-deep .ant-form-item {
+  ::v-deep(.ant-form-item) {
     display: flex;
   }
-  ::v-deep .ant-form-item-control-wrapper {
+
+  ::v-deep(.ant-form-item-control-wrapper) {
     flex: 1;
   }
 }

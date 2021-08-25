@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 const mapping = {
   name: 'a',
   unified: 'b',

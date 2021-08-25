@@ -95,6 +95,7 @@ function useAdvancedSearch() {
       valueName: 'value'
     }
   ])
+
   function onAdvancedSubmit(values) {
     console.log('onAdvancedSubmit', values)
   }

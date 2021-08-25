@@ -7,7 +7,7 @@
             {{ generateIconCode(item) }}
           </template>
           <div class="icon-item">
-            <ComSvgIcon :name="item" class="disabled" />
+            <ComSvgIcon :name="item.replace(/icon\-/g, '')" class="disabled" />
             <span>{{ item }}</span>
           </div>
         </a-tooltip>
@@ -19,7 +19,7 @@
 <script>
 import { defineComponent, reactive } from 'vue'
 import { message } from 'ant-design-vue'
-import svgIcons from './icon'
+import svgIcons from 'virtual:svg-icons-names'
 import { copy } from '@/utils'
 
 export default defineComponent({
@@ -50,11 +50,13 @@ export default defineComponent({
 .com-page {
   padding: 20px;
 }
+
 .grid {
   position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 }
+
 .icon-item {
   margin: 20px;
   height: 85px;
@@ -65,11 +67,13 @@ export default defineComponent({
   color: #24292e;
   cursor: pointer;
 }
+
 span {
   display: block;
   font-size: 16px;
   margin-top: 10px;
 }
+
 .disabled {
   pointer-events: none;
 }

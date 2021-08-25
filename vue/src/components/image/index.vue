@@ -10,13 +10,13 @@
       v-else
       class="com-image__inner"
       v-bind="$attrs"
-      @click="clickHandler"
       :src="src"
       :style="imageStyle"
       :class="{
         'com-image__inner--center': alignCenter,
         'com-image__preview': preview
       }"
+      @click="clickHandler"
     />
     <template v-if="!preview">
       <!-- <image-viewer :zIndex="zIndex" :initialIndex="imageIndex" v-model:visible="showViewer" :onClose="closeViewer" :urlList="previewSrcList"/> -->
@@ -41,22 +41,39 @@ const ObjectFit = {
   FILL: 'fill',
   SCALE_DOWN: 'scale-down'
 }
+// type ObjectFitType = 'none' | 'contain' | 'cover' | 'fill' | 'scale-down'
 
 export default defineComponent({
   name: 'ComImage',
-
-  inheritAttrs: false,
 
   components: {
     // ImageViewer
   },
 
+  inheritAttrs: false,
+  emits: ['error'],
+
   props: {
-    className: String,
-    src: String,
-    fit: String,
-    lazy: Boolean,
-    scrollContainer: {},
+    className: {
+      type: String,
+      default: ''
+    },
+    src: {
+      type: String,
+      default: ''
+    },
+    fit: {
+      type: String,
+      default: ''
+    },
+    lazy: {
+      type: Boolean,
+      default: false
+    },
+    scrollContainer: {
+      type: Object,
+      default: () => ({})
+    },
     previewSrcList: {
       type: Array,
       default: () => []
@@ -75,8 +92,8 @@ export default defineComponent({
       imageWidth: 0,
       imageHeight: 0,
       showViewer: false,
-      _scrollContainer: null,  // eslint-disable-line
-      _lazyLoadHandler: (() => {})  // eslint-disable-line
+      _scrollContainer: null, // eslint-disable-line
+      _lazyLoadHandler: (() => {}) // eslint-disable-line
     }
   },
 

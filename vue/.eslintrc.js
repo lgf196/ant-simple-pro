@@ -1,21 +1,31 @@
-module.exports = {
+const { defineConfig } = require('eslint-define-config')
+
+module.exports = defineConfig({
   root: true,
   env: {
-    node: true
+    node: true,
+    browser: true,
+    es6: true
   },
+  parser: 'vue-eslint-parser',
   extends: [
-    'plugin:vue/vue3-essential',
+    // 'plugin:vue/vue3-essential',
+    'plugin:vue/vue3-recommended',
     'eslint:recommended',
-    '@vue/standard',
-    '@vue/prettier'
+    'prettier',
+    'plugin:prettier/recommended'
   ],
   parserOptions: {
-    // parser: 'babel-eslint',
-    ecmaVersion: 2020
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   globals: {
-    require: false,
-    process: false
+    AMap: false,
+    echarts: false,
+    __LAST_BUILD_TIME__: false
   },
   rules: {
     /**
@@ -27,12 +37,12 @@ module.exports = {
     /**
      * 最佳实践
      */
-    'eqeqeq': 2, // 强制使用 === 和 !==
+    eqeqeq: 2, // 强制使用 === 和 !==
     'default-case': 1, // 要求 switch 语句中有 default 分支
     'no-else-return': 1, // 禁止 if 语句中 return 语句之后有 else 块
     'no-empty-function': 1, // 禁止出现空函数
     'no-multi-spaces': 1, // 禁止使用多个空格
-    'radix': 1, // 强制在parseInt()使用基数参数
+    radix: 1, // 强制在parseInt()使用基数参数
 
     /**
      * 变量声明
@@ -48,21 +58,13 @@ module.exports = {
     'comma-dangle': 2, // 禁止末尾逗号
     'eol-last': 2, // 要求文件末尾存在空行
     // 对象冒号前禁止空格，冒号后必须空格
-    'key-spacing': [
-      'error', { 'beforeColon': false, 'afterColon': true }
-    ],
+    'key-spacing': ['error', { beforeColon: false, afterColon: true }],
     // 关键字（if、else等）前后必须有空格
-    'keyword-spacing': [
-      'error',
-      { 'before': true, 'after': true }
-    ],
+    'keyword-spacing': ['error', { before: true, after: true }],
     // 禁止出现多行空行
-    'no-multiple-empty-lines': [
-      'error',
-      { 'max': 1 }
-    ],
-    'semi': ['error', 'never'], // 禁止末尾分号
-    'quotes': ['error', 'single'],
+    'no-multiple-empty-lines': ['error', { max: 1 }],
+    semi: ['error', 'never'], // 禁止末尾分号
+    quotes: ['error', 'single'],
     'space-infix-ops': 2, // 操作符周围必须有空格
     'spaced-comment': ['error', 'always'], // 注释后面必须跟随至少一个空白
     'object-curly-spacing': 0,
@@ -71,7 +73,7 @@ module.exports = {
     /**
      * ECMAScript6
      */
-    'arrow-spacing': ['error', { 'before': true, 'after': true }], // 强制箭头函数的箭头前后使用空格
+    'arrow-spacing': ['error', { before: true, after: true }], // 强制箭头函数的箭头前后使用空格
     'no-var': 2, // 禁止使用 var 声明变量
     'object-shorthand': 2, // 要求使用对象方法名和属性名简写
     'prefer-arrow-callback': 2, // 要求回调函数使用箭头函数
@@ -81,8 +83,48 @@ module.exports = {
     /**
      * vue
      */
+    'vue/no-v-html': 0,
     'vue/valid-v-model': 0,
-
-    'vue/no-dupe-keys': 0
+    'vue/no-dupe-keys': 0,
+    'vue/order-in-components': [
+      'error',
+      {
+        order: [
+          'el',
+          'name',
+          'key',
+          'parent',
+          'functional',
+          ['delimiters', 'comments'],
+          ['components', 'directives', 'filters'],
+          'extends',
+          'mixins',
+          ['provide', 'inject'],
+          'ROUTER_GUARDS',
+          'layout',
+          'middleware',
+          'validate',
+          'scrollToTop',
+          'transition',
+          'loading',
+          'inheritAttrs',
+          'model',
+          'emits',
+          ['props', 'propsData'],
+          'setup',
+          'asyncData',
+          'data',
+          'fetch',
+          'head',
+          'computed',
+          'watch',
+          'watchQuery',
+          'LIFECYCLE_HOOKS',
+          'methods',
+          ['template', 'render'],
+          'renderError'
+        ]
+      }
+    ]
   }
-}
+})

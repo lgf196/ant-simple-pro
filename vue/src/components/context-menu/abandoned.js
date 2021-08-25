@@ -34,12 +34,13 @@ function newInstance(options, callback) {
     },
     mounted() {
       const self = this // eslint-disable-line
-      callback({ // eslint-disable-line
+      callback({
+        // eslint-disable-line
         open() {
-          self.appProps.position = position
+          self.$refs.appProps.position = position
           self.$refs.contextMenu.sVisible = false
           setTimeout(() => {
-            self.$refs.contextMenu.sVisible = true
+            self.contextMenu.sVisible = true
           }, 20)
         },
         close() {

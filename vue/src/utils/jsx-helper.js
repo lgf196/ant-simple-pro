@@ -24,7 +24,7 @@ export function getSlot(slots, slot = 'default', data) {
  * @param slots
  * @param excludeKeys
  */
-export function extendSlots(slots, excludeKeys = []) {
+export function extendSlots(slots, excludeKeys) {
   const slotKeys = Object.keys(slots)
   const ret = {}
   slotKeys.map(key => {

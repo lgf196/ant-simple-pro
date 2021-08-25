@@ -3,7 +3,7 @@
     <a-row>
       <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <h2 class="mb10 font-size-20">中文版：</h2>
-        <Picker :data="emojiIndex" set="apple" @select="onSelect" :i18n="i18nConfig" />
+        <Picker :data="emojiIndex" set="apple" :i18n="i18nConfig" @select="onSelect" />
       </a-col>
       <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <h2 class="mb10 font-size-20">英文版：</h2>
@@ -16,7 +16,7 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import { Picker, EmojiIndex } from '@/components/emoji-mart'
+import { Picker, EmojiIndex } from 'vue-emoji-mart'
 import data from '@/components/emoji-mart/data/all.json'
 import '@/components/emoji-mart/emoji-mart.css'
 const emojiIndexData = new EmojiIndex(data)

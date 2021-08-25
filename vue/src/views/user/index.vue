@@ -1,9 +1,9 @@
 <template>
-  <div class="com-page">
+  <div id="page" class="com-page">
     <LayoutTable
-      tableTitle="查询表格"
+      table-title="查询表格"
       :loading="loading"
-      :tableProps="{
+      :table-props="{
         columns,
         dataSource: userList,
         rowKey: v => v.id
@@ -11,17 +11,18 @@
       :pagination="{
         hideOnSinglePage: true
       }"
-      :onRefresh="query"
+      :on-refresh="query"
     >
       <template #search>
         <a-form ref="form" layout="inline" :model="{}">
           <a-form-item label="名称">
-            <a-input v-model:value="username" placeholder="请输入" allowClear></a-input>
+            <a-input v-model:value="username" placeholder="请输入" allow-clear></a-input>
           </a-form-item>
           <a-form-item>
             <a-space>
               <a-button type="primary" @click="query">查询</a-button>
               <a-button @click="onReset">重置</a-button>
+              <a-button @click="onPrint">打印</a-button>
             </a-space>
           </a-form-item>
         </a-form>
@@ -31,7 +32,7 @@
           v-model:value="username"
           placeholder="请输入用户名"
           enter-button
-          allowClear
+          allow-clear
           @search="onSearch"
         />
       </template>
@@ -46,8 +47,8 @@
         </span>
       </template>
       <template #avatar="{ text }">
-        <ComImage className="avatar" :src="text" @click="onImageClick(text)" fit="cover">
-          <template v-slot:error><UserOutlined /></template>
+        <ComImage class-name="avatar" :src="text" fit="cover" @click="onImageClick(text)">
+          <template #error><UserOutlined /></template>
         </ComImage>
       </template>
       <template #action="{ record }">
@@ -58,7 +59,7 @@
     </LayoutTable>
     <UpdateUserModal
       v-model:visible="visible"
-      :currentRow="currentRow"
+      :current-row="currentRow"
       @update-success="onUpdateSuccess"
     ></UpdateUserModal>
   </div>
@@ -137,7 +138,11 @@ export default defineComponent({
       currentRow: {}
     })
 
-    const { data: userList, loading, run: query } = useAsync(
+    const {
+      data: userList,
+      loading,
+      run: query
+    } = useAsync(
       () => {
         return getUsers({
           username: username.value
@@ -189,6 +194,9 @@ export default defineComponent({
         console.log(err)
       }
     }
+    function onPrint() {
+      window.print()
+    }
 
     return {
       userList,
@@ -202,7 +210,8 @@ export default defineComponent({
       onSearch,
       onReset,
       onImageClick,
-      onUpdateSuccess
+      onUpdateSuccess,
+      onPrint
     }
   }
 })

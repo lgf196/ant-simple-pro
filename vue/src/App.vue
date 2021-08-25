@@ -4,7 +4,7 @@
   </a-config-provider>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import zhCN from 'ant-design-vue/lib/locale-provider/zh_CN'
 export default defineComponent({

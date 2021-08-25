@@ -2,7 +2,9 @@ import { onMounted, onBeforeUnmount, reactive, toRefs } from 'vue'
 import { throttle } from 'lodash'
 import { getWindowtWidth, getWindowHeight } from '@/utils/dom'
 
-export function useResizeWidth(fn = () => {}) { // eslint-disable-line
+// eslint-disable-next-line
+export function useResizeWidth(fn = () => {}) {
+  // eslint-disable-line
   const state = reactive({
     width: getWindowtWidth(),
     height: getWindowHeight()

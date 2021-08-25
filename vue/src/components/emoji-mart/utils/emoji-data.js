@@ -2,7 +2,7 @@ import { intersect, unifiedToNative } from './index'
 import { uncompress, buildSearch } from './data'
 import frequently from './frequently'
 
-/* eslint-disable no-useless-escape, camelcase */
+/* eslint-disable no-useless-escape, @typescript-eslint/camelcase */
 const SHEET_COLUMNS = 57
 const COLONS_REGEX = /^(?:\:([^\:]+)\:)(?:\:skin-tone-(\d)\:)?$/
 // Skin tones

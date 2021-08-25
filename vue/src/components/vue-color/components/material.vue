@@ -1,22 +1,22 @@
 <template>
   <div role="application" aria-label="Material color picker" class="vc-material">
     <EditableInput
+      v-model:value="colors.hex"
       class="vc-material-hex"
       label="hex"
-      v-model:value="colors.hex"
       :style="{ borderColor: colors.hex }"
       @change="onChange"
     ></EditableInput>
 
     <div class="vc-material-split">
       <div class="vc-material-third">
-        <EditableInput label="r" v-model:value="colors.rgba.r" @change="onChange"></EditableInput>
+        <EditableInput v-model:value="colors.rgba.r" label="r" @change="onChange"></EditableInput>
       </div>
       <div class="vc-material-third">
-        <EditableInput label="g" v-model:value="colors.rgba.g" @change="onChange"></EditableInput>
+        <EditableInput v-model:value="colors.rgba.g" label="g" @change="onChange"></EditableInput>
       </div>
       <div class="vc-material-third">
-        <EditableInput label="b" v-model:value="colors.rgba.b" @change="onChange"></EditableInput>
+        <EditableInput v-model:value="colors.rgba.b" label="b" @change="onChange"></EditableInput>
       </div>
     </div>
   </div>
@@ -29,10 +29,10 @@ import { getChangeColor, isValidHex } from '../helpers/utils'
 
 export default defineComponent({
   name: 'Material',
-  emits: ['update:value'],
   components: {
     EditableInput
   },
+  emits: ['update:value'],
   props: {
     value: {
       type: [Object, String],
@@ -45,11 +45,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get() {
@@ -59,6 +54,11 @@ export default defineComponent({
         this.val = newVal
         this.$emit('update:value', newVal)
       }
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {
@@ -128,11 +128,13 @@ export default defineComponent({
   border-bottom-width: 2px;
   border-bottom-style: solid;
 }
+
 .vc-material-split {
   display: flex;
   margin-right: -10px;
   padding-top: 11px;
 }
+
 .vc-material-third {
   flex: 1;
   padding-right: 10px;

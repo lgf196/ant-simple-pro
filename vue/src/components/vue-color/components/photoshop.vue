@@ -10,7 +10,7 @@
         <saturation v-model:value="colors" @change="childChange"></saturation>
       </div>
       <div class="vc-ps-hue-wrap">
-        <hue v-model:value="colors" @change="childChange" direction="vertical">
+        <hue v-model:value="colors" direction="vertical" @change="childChange">
           <div class="vc-ps-hue-pointer">
             <i class="vc-ps-hue-pointer--left"></i><i class="vc-ps-hue-pointer--right"></i>
           </div>
@@ -34,7 +34,7 @@
           </div>
           <div class="vc-ps-previews__label">{{ currentLabel }}</div>
         </div>
-        <div class="vc-ps-actions" v-if="!disableFields">
+        <div v-if="!disableFields" class="vc-ps-actions">
           <div class="vc-ps-ac-btn" role="button" :aria-label="acceptLabel" @click="handleAccept">{{
             acceptLabel
           }}</div>
@@ -73,12 +73,12 @@ import { getChangeColor, isValidHex } from '../helpers/utils'
 
 export default defineComponent({
   name: 'Photoshop',
-  emits: ['update:value', 'ok', 'cancel', 'reset'],
   components: {
     Saturation,
     Hue,
     'ed-in': EditableInput
   },
+  emits: ['update:value', 'ok', 'cancel', 'reset'],
   props: {
     head: {
       type: String,
@@ -124,11 +124,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get() {
@@ -150,6 +145,11 @@ export default defineComponent({
     hex() {
       const hex = this.colors.hex
       return hex && hex.replace('#', '')
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   created() {
@@ -223,9 +223,11 @@ export default defineComponent({
   width: 513px;
   font-family: Roboto;
 }
+
 .vc-photoshop__disable-fields {
   width: 390px;
 }
+
 .vc-ps-head {
   background-image: linear-gradient(-180deg, #f0f0f0 0%, #d4d4d4 100%);
   border-bottom: 1px solid #b1b1b1;
@@ -237,6 +239,7 @@ export default defineComponent({
   color: #4d4d4d;
   text-align: center;
 }
+
 .vc-ps-body {
   padding: 15px;
   display: flex;
@@ -250,6 +253,7 @@ export default defineComponent({
   border-bottom: 2px solid #f0f0f0;
   overflow: hidden;
 }
+
 .vc-ps-saturation-wrap .vc-saturation-circle {
   width: 12px;
   height: 12px;
@@ -263,9 +267,11 @@ export default defineComponent({
   border: 2px solid #b3b3b3;
   border-bottom: 2px solid #f0f0f0;
 }
+
 .vc-ps-hue-pointer {
   position: relative;
 }
+
 .vc-ps-hue-pointer--left,
 .vc-ps-hue-pointer--right {
   position: absolute;
@@ -275,8 +281,9 @@ export default defineComponent({
   border-width: 5px 0 5px 8px;
   border-color: transparent transparent transparent #555;
 }
-.vc-ps-hue-pointer--left:after,
-.vc-ps-hue-pointer--right:after {
+
+.vc-ps-hue-pointer--left::after,
+.vc-ps-hue-pointer--right::after {
   content: '';
   width: 0;
   height: 0;
@@ -288,9 +295,11 @@ export default defineComponent({
   left: 1px;
   transform: translate(-8px, -5px);
 }
+
 .vc-ps-hue-pointer--left {
   transform: translate(-13px, -4px);
 }
+
 .vc-ps-hue-pointer--right {
   transform: translate(20px, -4px) rotate(180deg);
 }
@@ -300,6 +309,7 @@ export default defineComponent({
   margin-left: 10px;
   display: flex;
 }
+
 .vc-ps-controls__disable-fields {
   width: auto;
 }
@@ -308,9 +318,10 @@ export default defineComponent({
   margin-left: 20px;
   flex: 1;
 }
+
 .vc-ps-ac-btn {
   cursor: pointer;
-  background-image: linear-gradient(-180deg, #ffffff 0%, #e6e6e6 100%);
+  background-image: linear-gradient(-180deg, #fff 0%, #e6e6e6 100%);
   border: 1px solid #878787;
   border-radius: 2px;
   height: 20px;
@@ -321,19 +332,23 @@ export default defineComponent({
   text-align: center;
   margin-bottom: 10px;
 }
+
 .vc-ps-previews {
   width: 60px;
 }
+
 .vc-ps-previews__swatches {
   border: 1px solid #b3b3b3;
   border-bottom: 1px solid #f0f0f0;
   margin-bottom: 2px;
   margin-top: 1px;
 }
+
 .vc-ps-previews__pr-color {
   height: 34px;
   box-shadow: inset 1px 0 0 #000, inset -1px 0 0 #000, inset 0 1px 0 #000;
 }
+
 .vc-ps-previews__label {
   font-size: 14px;
   color: #000;
@@ -346,17 +361,19 @@ export default defineComponent({
   width: 80px;
   position: relative;
 }
+
 .vc-ps-fields .vc-input__input {
   margin-left: 40%;
   width: 40%;
   height: 18px;
-  border: 1px solid #888888;
+  border: 1px solid #888;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 #ececec;
   margin-bottom: 5px;
   font-size: 13px;
   padding-left: 3px;
   margin-right: 10px;
 }
+
 .vc-ps-fields .vc-input__label,
 .vc-ps-fields .vc-input__desc {
   top: 0;
@@ -366,10 +383,12 @@ export default defineComponent({
   line-height: 22px;
   position: absolute;
 }
+
 .vc-ps-fields .vc-input__label {
   left: 0;
   width: 34px;
 }
+
 .vc-ps-fields .vc-input__desc {
   right: 0;
   width: 0;
@@ -383,12 +402,13 @@ export default defineComponent({
   margin-left: 20%;
   width: 80%;
   height: 18px;
-  border: 1px solid #888888;
+  border: 1px solid #888;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 #ececec;
   margin-bottom: 6px;
   font-size: 13px;
   padding-left: 3px;
 }
+
 .vc-ps-fields__hex .vc-input__label {
   position: absolute;
   top: 0;

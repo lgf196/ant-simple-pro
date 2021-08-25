@@ -3,11 +3,11 @@
     <a-form class="form" :model="form" :rules="rules" @finish="onFinish">
       <a-form-item label="文章标题" name="title">
         <a-input
-          style="width: 300px"
           v-model:value="form.title"
+          style="width: 300px"
           placeholder="请输入"
           :maxlength="20"
-          autoComplete="off"
+          auto-complete="off"
         />
       </a-form-item>
       <a-form-item label="文章正文" name="content">
@@ -56,7 +56,7 @@ export default defineComponent({
     const form = reactive({
       title: '',
       // eslint-disable-next-line
-      content: `\n<p><span style=\"font-size: 20px; font-family: 'PingFang SC';\">生命在于折腾</span></p>\n`
+      content: `\n<p><span style=\"font-size: 20px; font-family: 'PingFang SC';\">题目：给定一个天平，选择4个砝码，并使用这些砝码称出1-40g里所有整数的重量。</span></p>\n`
     })
     const rules = reactive({
       title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
@@ -94,10 +94,11 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .form {
-  ::v-deep .ant-form-item {
+  ::v-deep(.ant-form-item) {
     display: flex;
   }
-  ::v-deep .ant-form-item-control-wrapper {
+
+  ::v-deep(.ant-form-item-control-wrapper) {
     flex: 1;
   }
 }

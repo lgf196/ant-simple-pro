@@ -12,11 +12,6 @@ export function getAccessMenus() {
   })
 }
 
-/**
- * 上传文件
- * @param {File | Blob} file 文件流
- * @returns Promise
- */
 export function uploadFile(file) {
   const fd = new FormData()
   fd.append('file', file)

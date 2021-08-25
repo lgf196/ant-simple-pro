@@ -1,6 +1,6 @@
 <template>
   <transition name="com-fade-in-linear">
-    <div class="top-advice" v-show="visible">
+    <div v-show="visible" class="top-advice">
       <a class="link" :href="linkUrl" :style="{ background: bg }">
         <div class="image" :style="{ backgroundImage: `url(${imageUrl})` }">
           <CloseOutlined class="close" @click.stop.prevent="onClose" />
@@ -54,12 +54,14 @@ export default defineComponent({
     display: block;
     height: 80px;
   }
+
   .image {
     position: relative;
     height: 80px;
     background-size: cover;
     width: 1190px;
     margin: 0 auto;
+
     .close {
       z-index: 1000;
       position: absolute;

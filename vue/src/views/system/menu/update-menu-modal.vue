@@ -2,20 +2,20 @@
   <a-modal :title="title" :visible="visible" @cancel="onClose">
     <a-form ref="formRef" :model="form" :rules="rules" :label-col="labelCol" :wrapper-col="wrapperCol">
       <a-form-item label="菜单名字" name="title">
-        <a-input v-model:value="form.title" placeholder="请输入" allowClear></a-input>
+        <a-input v-model:value="form.title" placeholder="请输入" allow-clear></a-input>
       </a-form-item>
       <a-form-item label="菜单url" name="url">
-        <a-input v-model:value="form.url" placeholder="请输入" allowClear></a-input>
+        <a-input v-model:value="form.url" placeholder="请输入" allow-clear></a-input>
       </a-form-item>
       <a-form-item label="菜单icon" name="icon">
-        <a-input v-model:value="form.icon" placeholder="请输入" allowClear></a-input>
+        <a-input v-model:value="form.icon" placeholder="请输入" allow-clear></a-input>
       </a-form-item>
       <a-form-item label="上级菜单" name="pid">
         <a-cascader
           v-model:value="form.pid"
           :options="menuCascaderOptions"
           placeholder="请选择"
-          :fieldNames="{
+          :field-names="{
             label: 'title',
             value: 'id',
             children: 'children'
@@ -67,7 +67,7 @@ export default defineComponent({
       }
     })
 
-    const formRef = ref(null)
+    const formRef = ref()
     let cancel = null
 
     const title = computed(() => {

@@ -1,12 +1,12 @@
 <template>
-  <a-list itemLayout="horizontal" :dataSource="[1, 2]">
+  <a-list item-layout="horizontal" :data-source="[1, 2]">
     <template #renderItem>
       <a-list-item>
         <a-list-item-meta
           description="简洁，美观，快速上手，支持3大框架；Concise, beautiful, quick to get started, support 3 big frameworks"
         >
           <template #avatar>
-            <a-avatar :size="30" style="backgroundcolor: #fff">
+            <a-avatar :size="30" :style="{ backgroundColor: '#fff' }">
               <template #icon>
                 <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
               </template>

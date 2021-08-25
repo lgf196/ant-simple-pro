@@ -1,8 +1,4 @@
-/**
- * Get from offsetParent
- * @param {MouseEvent} evt 事件源参数
- * @returns {x: number; y: number}
- */
+// Get from offsetParent
 export function offsetXYFromParentOf(evt) {
   const offsetParent = evt.target.offsetParent || document.body
   const offsetParentRect = offsetParent === document.body ? { left: 0, top: 0 } : offsetParent.getBoundingClientRect()
@@ -16,11 +12,7 @@ export function offsetXYFromParentOf(evt) {
   return { x, y }
 }
 
-/**
- * Get {x, y} positions from event.
- * @param {MouseEvent} evt 事件源参数
- * @returns {x: Number; y: Number}
- */
+// Get {x, y} positions from event.
 export function getControlPosition(e) {
   return offsetXYFromParentOf(e)
 }
@@ -29,14 +21,7 @@ function isNum(num) {
   return typeof num === 'number' && !isNaN(num)
 }
 
-/**
- * Create an data object exposed by <DraggableCore>'s events
- * @param {Number} lastX lastX
- * @param {Number} lastY lastY
- * @param {Number} x x
- * @param {Number} y y
- * @returns { deltaX: number; deltaY: number; lastX: number; lastY: number; x: number; y: number }
- */
+// Create an data object exposed by <DraggableCore>'s events
 export function createCoreData(lastX, lastY, x, y) {
   // State changes are often (but not always!) async. We want the latest value.
   const isStart = !isNum(lastX)

@@ -7,7 +7,8 @@ export default defineComponent({
       default: () => {} // eslint-disable-line
     },
     addImg: {
-      type: Function
+      type: Function,
+      default: () => {} // eslint-disable-line
     },
     toolbar: {
       type: Object,

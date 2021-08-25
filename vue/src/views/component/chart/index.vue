@@ -41,6 +41,7 @@ export default defineComponent({
 .com-page {
   background-color: transparent;
 }
+
 ::v-deep(.ant-col) > div {
   background-color: #fff;
 }

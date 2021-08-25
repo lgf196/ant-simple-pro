@@ -92,11 +92,6 @@ export const clearPending = () => {
   pending.clear()
 }
 
-/**
- * 获取错误信息
- * @param {AxiosError} error
- * @param {String} errorMsg
- */
 const getErrorMsg = (error, errorMsg) => {
   let msg = ''
   if (errorMsg) {
@@ -116,12 +111,7 @@ const getErrorMsg = (error, errorMsg) => {
   return msg || '操作失败'
 }
 
-/**
- * 请求之前
- * @param {AxiosRequestConfig} config
- * @param {Function} loadingCb
- * @param {Boolean} showLoading
- */
+// 请求之前
 const requestStart = (config, loadingCb, showLoading) => {
   loadingCb(true)
   startCount()
@@ -137,15 +127,6 @@ const requestStart = (config, loadingCb, showLoading) => {
   }
 }
 
-/**
- * 响应正常
- * @param {AxiosResponse} options.response
- * @param {Function} options.loadingCb
- * @param {Boolean} options.showLoading
- * @param {Boolean} options.showWarning
- * @param {String} options.warningMsg
- * @param {Boolean} options.throwWarningError
- */
 const requestThenEnd = options => {
   const { response, loadingCb, showLoading, showWarning, warningMsg, throwWarningError } = options
   loadingCb(false)
@@ -179,15 +160,6 @@ const requestThenEnd = options => {
   return genEmptyPromise()
 }
 
-/**
- * 响应异常
- * @param {AxiosError} options.error
- * @param {Function} options.loadingCb
- * @param {Boolean} options.showLoading
- * @param {Boolean} options.showError
- * @param {String} options.errorMsg
- * @param {Boolean} options.throwHttpError
- */
 const requestCatchEnd = options => {
   const { error, loadingCb, showLoading, showError, errorMsg, throwHttpError } = options
   loadingCb(false)

@@ -1,12 +1,12 @@
 <template>
-  <div class="tags-nav" v-if="tagsNavVisible">
-    <ScrollPane :horizontalBar="false" :verticalBar="false" ref="scrollPane" class="scroll-pane">
+  <div v-if="tagsNavVisible" class="tags-nav">
+    <ScrollPane ref="scrollPane" :horizontal-bar="false" :vertical-bar="false" class="scroll-pane">
       <div
         v-for="(item, index) in totalTags"
         :key="index"
+        :ref="setItemRef"
         class="nav-tag"
         :class="{ active: isActive(item) }"
-        :ref="setItemRef"
         :data-route-path="item.path"
         @click="onClickTag(item)"
       >
@@ -33,7 +33,7 @@
 
 <script>
 import { CloseOutlined, DownOutlined } from '@ant-design/icons-vue'
-import ScrollPane from '@/components/scrollbar/scroll-pane'
+import ScrollPane from '@/components/scrollbar/scroll-pane.vue'
 import { routes } from '@/router/routes'
 import { getAffixTags } from '@/utils'
 export default {
@@ -48,6 +48,14 @@ export default {
       tags: []
     }
   },
+  computed: {
+    tagsNavVisible() {
+      return this.$store.state.app.tagsNavVisible
+    },
+    totalTags() {
+      return getAffixTags(routes).concat(this.tags)
+    }
+  },
   watch: {
     $route: {
       handler(newRoute) {
@@ -55,14 +63,6 @@ export default {
         this.moveToView(newRoute)
       },
       immediate: true
-    }
-  },
-  computed: {
-    tagsNavVisible() {
-      return this.$store.state.app.tagsNavVisible
-    },
-    totalTags() {
-      return getAffixTags(routes).concat(this.tags)
     }
   },
   methods: {
@@ -159,21 +159,25 @@ export default {
   border-top: 1px solid #f0f0f0;
   box-shadow: 0 2px 8px #f0f1f2;
 }
+
 .scroll-pane {
   width: auto;
   flex: 1;
 }
+
 .tag-option {
   padding-left: 7px;
   box-shadow: -10px 0 15px -5px #f0f1f2;
   display: flex;
   align-items: center;
+
   .ant-dropdown-link {
     .title {
       padding-right: 6px;
     }
   }
 }
+
 .item {
   display: inline-block;
   position: relative;
@@ -187,6 +191,7 @@ export default {
   font-size: 12px;
   margin-left: 5px;
 }
+
 .nav-tag {
   display: inline-block;
   height: 26px;
@@ -201,18 +206,22 @@ export default {
   font-weight: 400;
   vertical-align: middle;
   margin-left: 8px;
+
   &:first-of-type {
     margin-left: 3px;
   }
+
   &.active {
     background: #e6f7ff;
     color: #1890ff;
   }
+
   .nav-tag__title {
     float: left;
     white-space: nowrap;
     padding: 0 5px;
   }
+
   .nav-tag__icon {
     padding: 0 5px 0 0;
   }

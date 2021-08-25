@@ -14,16 +14,16 @@
     </template>
     <a-drawer
       v-else
+      v-model:visible="drawerVisible"
       class="basic-drawer"
       placement="left"
       :closable="false"
-      v-model:visible="drawerVisible"
       :width="200"
     >
       <SlideBar />
     </a-drawer>
     <div class="layout-content">
-      <HeaderBar @open-drawer="onOpenDrawer" :windowWidth="windowWidth" :drawerVisible="drawerVisible" />
+      <HeaderBar :window-width="windowWidth" :drawer-visible="drawerVisible" @open-drawer="onOpenDrawer" />
       <TagsNav />
       <main class="main">
         <router-view />

@@ -1,11 +1,11 @@
 <template>
   <section
+    v-if="isVisible && (isSearch || hasResults)"
     :class="{
       'emoji-mart-category': true,
       'emoji-mart-no-results': !hasResults
     }"
     :aria-label="i18n.categories[id]"
-    v-if="isVisible && (isSearch || hasResults)"
   >
     <div class="emoji-mart-category-label">
       <h3 class="emoji-mart-category-label">{{ i18n.categories[id] }}</h3>
@@ -14,6 +14,7 @@
     <template v-for="{ emojiObject, emojiView } in emojiObjects">
       <button
         v-if="emojiView.canRender"
+        :key="emojiObject.id"
         :aria-label="emojiView.ariaLabel"
         role="option"
         aria-selected="false"
@@ -21,7 +22,6 @@
         aria-setsize="1812"
         type="button"
         :data-title="emojiObject.short_name"
-        :key="emojiObject.id"
         :title="emojiView.title"
         class="emoji-mart-emoji"
         :class="activeClass(emojiObject)"

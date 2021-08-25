@@ -1,6 +1,48 @@
-import { defineComponent, ref, computed, watch } from 'vue'
+/* eslint-disable */
+import { defineComponent, ref, computed, watch, onMounted } from 'vue'
 import { imagePreview } from '@/components/image/image-preview'
 import { createContextMenu } from '@/components/context-menu/create-context-menu'
+import VCodemirror from '@/components/vue-codemirror/index.vue'
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material.css'
+import 'codemirror/mode/xml/xml'
+import 'codemirror/mode/javascript/javascript'
+
+const code = `
+  // pages/home
+  import { defineComponent, ref, onMounted } from 'vue'
+  import { userList } from '@/api/login'
+  export type UserListType={
+    name: string
+    aga: number
+    sex: string
+  }
+  const App = defineComponent({
+    setup() {
+      const result = ref<UserListType[]>([])
+      onMounted(() => {
+        ;(async () => {
+          const res = await userList({ username: 'li' })
+          result.value = res.data
+        })()
+      })
+      return () => {
+        return (
+          <>
+            {
+              !!result.value.length
+              && (
+                result.value.map((item, index) => (
+                  <p key={index}>{item.name}</p>
+                ))
+              )
+            }
+          </>
+        )
+      }
+    }
+  })
+  `
 
 const Counter = defineComponent({
   setup(props, { expose }) {
@@ -28,6 +70,7 @@ const Counter = defineComponent({
 export default defineComponent({
   setup() {
     const counterComp = ref()
+    const value = ref('')
 
     const num = computed(() => {
       return counterComp.value?.count
@@ -40,6 +83,12 @@ export default defineComponent({
       }
     )
 
+    onMounted(() => {
+      setTimeout(() => {
+        value.value = code
+      }, 500)
+    })
+
     function onClick() {
       imagePreview({
         urlList: ['https://qiniu.qyhever.com/16112900187552ffa9698851611588493080453.jpg']
@@ -47,6 +96,7 @@ export default defineComponent({
     }
 
     function onContextmenu(e) {
+      console.log('右键')
       createContextMenu({
         event: e,
         menus: [
@@ -78,6 +128,14 @@ export default defineComponent({
           <a-button type="primary" onClick={onClick}>
             预览
           </a-button>
+          <VCodemirror
+            value={value.value}
+            options={{
+              mode: 'javascript',
+              theme: 'material',
+              lineNumbers: true
+            }}
+          ></VCodemirror>
           <div style="height: 300px; border: 1px solid pink" onContextmenu={onContextmenu}>
             右键
           </div>

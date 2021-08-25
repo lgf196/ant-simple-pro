@@ -4,9 +4,9 @@
 import { h, createApp } from 'vue'
 import ImageViewer from './image-viewer.vue'
 
-// const defaultOptions = {
-//   urlList: []
-// }
+const defaultOptions = {
+  urlList: []
+}
 
 let instance = null
 
@@ -18,7 +18,8 @@ function newInstance(options, callback) {
     mounted() {
       const self = this // eslint-disable-line
       this.$nextTick(() => {
-        callback({ // eslint-disable-line
+        callback({
+          // eslint-disable-line
           open() {
             self.$refs.imageViewer.visible = true
           },
@@ -56,7 +57,7 @@ function getInstance(options, callback) {
   })
 }
 
-export default function imagePreview(options) {
+export default function imagePreview(options = defaultOptions) {
   getInstance(options, ins => {
     ins.open()
   })

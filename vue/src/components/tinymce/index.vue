@@ -14,11 +14,12 @@ import plugins from './plugins'
 import toolbar from './toolbar'
 import font from './font'
 // customer plugins
-import { initCustomerImagePlugin } from './customer-image'
+// import { initCustomerImagePlugin } from './customer-image'
 
-const suffix = process.env.NODE_ENV === 'development' ? '' : '.min'
-const scriptSrc = process.env.BASE_URL + 'tinymce5.8.0/tinymce' + suffix + '.js'
+const suffix = import.meta.env.VITE_APP_MODE === 'dev' ? '' : '.min'
+const scriptSrc = import.meta.env.BASE_URL + 'tinymce5.8.0/tinymce' + suffix + '.js'
 
+const menubar = ['file', 'edit', 'insert', 'view', 'format', 'table', 'tools']
 export default defineComponent({
   emits: ['update:value', 'blur'],
   props: {
@@ -31,7 +32,16 @@ export default defineComponent({
       default: 360
     },
     placeholder: {
-      type: String
+      type: String,
+      default: '请输入内容'
+    },
+    toolbar: {
+      type: Array,
+      default: () => toolbar
+    },
+    menubar: {
+      type: Array,
+      default: () => menubar
     }
     // 更多 props...
   },
@@ -73,20 +83,20 @@ export default defineComponent({
 
     function initTinymce() {
       // init plugins
-      initCustomerImagePlugin()
+      // initCustomerImagePlugin()
       // init editor
-      /* eslint-disable camelcase */
+      // eslint-disable @typescript-eslint/camelcase
       window.tinymce.init({
         selector: '#' + id.value,
         language: 'zh_CN',
         content_style: 'img {max-width:100%;}',
-        placeholder: props.placeholder || '请输入内容',
+        placeholder: props.placeholder,
         min_height: props.height,
         height: props.height,
         object_resizing: false,
         plugins,
-        toolbar,
-        menubar: 'file edit insert view format table tools',
+        toolbar: props.toolbar,
+        menubar: props.menubar.join(' '),
         fontsize_formats: '12px 14px 16px 18px 20px 24px 36px',
         font_formats: font,
         autosave_ask_before_unload: false,
@@ -121,12 +131,12 @@ export default defineComponent({
         imageSelectorCallback(file, success) {
           // async upload file
           const reader = new FileReader()
-          reader.readAsDataURL(file)
           reader.onload = e => {
             if (e.target && e.target.result) {
               success(e.target.result)
             }
           }
+          reader.readAsDataURL(file)
         }
       })
     }

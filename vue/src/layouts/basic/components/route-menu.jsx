@@ -106,7 +106,7 @@ export default defineComponent({
     const menuProps = {
       mode: 'inline',
       theme,
-      inlineCollapsed: collapsed,
+      collapsed,
       openKeys: this.openKeys,
       selectedKeys: this.selectedKeys,
       onSelect: menu => {

@@ -28,7 +28,7 @@ function sheetFromArrayOfArrays(data) {
       const cell = {
         v: data[R][C]
       }
-      if (cell.v == null) continue
+      if (cell.v === null) continue
       const cellRef = XLSX.utils.encode_cell({
         c: C,
         r: R
@@ -50,6 +50,8 @@ function sheetFromArrayOfArrays(data) {
 }
 
 class Workbook {
+  SheetNames
+  Sheets
   constructor() {
     this.SheetNames = []
     this.Sheets = {}
@@ -94,7 +96,7 @@ export function exportJsonToExcel(options) {
     const colWidth = cloneData.map(row =>
       row.map(val => {
         /* 先判断是否为null/undefined*/
-        if (val == null) {
+        if (val === null) {
           return {
             wch: 10
           }

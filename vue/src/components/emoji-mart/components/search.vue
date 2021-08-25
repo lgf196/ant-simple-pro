@@ -3,6 +3,7 @@
     <input
       type="text"
       :placeholder="i18n.search"
+      v-model="value"
       role="textbox"
       aria-autocomplete="list"
       aria-owns="emoji-mart-list"
@@ -13,9 +14,8 @@
       @keydown.down="() => $emit('arrow-down')"
       @keydown.up="$event => $emit('arrow-up', $event)"
       @keydown.enter="() => $emit('enter')"
-      v-model="value"
     />
-    <span class="hidden" id="emoji-picker-search-description"
+    <span id="emoji-picker-search-description" class="hidden"
       >Use the left, right, up and down arrow keys to navigate the emoji search results.</span
     >
   </div>
@@ -24,7 +24,6 @@
 <script>
 export default {
   name: 'Search',
-  emits: ['search', 'arrow-left', 'arrow-right', 'arrow-down', 'arrow-up', 'enter'],
   props: {
     data: {
       type: Object,
@@ -63,15 +62,10 @@ export default {
       required: false
     }
   },
+  emits: ['search', 'arrow-left', 'arrow-right', 'arrow-down', 'arrow-up', 'enter'],
   data() {
     return {
       value: ''
-    }
-  },
-  mounted() {
-    const $input = this.$el.querySelector('input')
-    if (this.autoFocus) {
-      $input.focus()
     }
   },
   computed: {
@@ -82,6 +76,12 @@ export default {
   watch: {
     value() {
       this.$emit('search', this.value)
+    }
+  },
+  mounted() {
+    const $input = this.$el.querySelector('input')
+    if (this.autoFocus) {
+      $input.focus()
     }
   },
   methods: {

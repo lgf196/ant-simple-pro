@@ -1,28 +1,18 @@
 .basic-layout {
   background: #f0f2f5;
   overflow-x: hidden;
+
   > .layout-content {
     > .main {
       min-height: calc(100vh - @header-height - @tags-nav-header - 80px);
     }
+
     > .footer {
       padding: 15px 0;
       height: 80px;
     }
   }
-}
-.basic-drawer {
-  .ant-drawer-wrapper-body {
-    overflow: hidden;
-  }
-  .ant-drawer-body {
-    padding: 0;
-  }
-  .slidebar {
-    height: 100vh;
-  }
-}
-.basic-layout {
+
   &.slidebar-fixed {
     .slidebar {
       z-index: 99;
@@ -31,24 +21,29 @@
       top: 0;
       bottom: 0;
     }
+
     .layout-content {
       margin-left: @slide-width;
       transition: all 0.2s;
     }
+
     &.tag-fixed {
       .tags-nav {
         transition: all 0.2s;
       }
     }
+
     &.collapsed {
       &.tag-fixed {
         .tags-nav {
           left: @slide-width--collapse;
         }
       }
+
       .layout-content {
         margin-left: @slide-width--collapse;
       }
+
       &.header-fixed {
         .header {
           left: @slide-width--collapse;
@@ -56,6 +51,7 @@
       }
     }
   }
+
   &.header-fixed {
     .header {
       position: fixed;
@@ -64,10 +60,12 @@
       right: 0;
       transition: all 0.2s;
     }
+
     .layout-content {
       padding-top: @header-height;
     }
   }
+
   &.tag-fixed {
     .tags-nav {
       z-index: 98;
@@ -76,40 +74,63 @@
       left: @slide-width;
       right: 0;
     }
+
     .layout-content {
       padding-top: @tags-nav-header;
     }
   }
+
   &.header-fixed.tag-fixed {
     .layout-content {
       padding-top: @header-height + @tags-nav-header;
     }
   }
+
   &.mobile {
     .logo-container {
       width: @slide-width--collapse;
+
       .title {
         display: none;
       }
     }
   }
+
   &.hidden-tags-nav {
     > .layout-content {
       padding-top: @header-height !important;
+
       > .header {
         box-shadow: 5px 2px 8px #f0f1f2;
       }
+
       > .main {
         min-height: calc(100vh - @header-height - 80px);
       }
     }
   }
+
   &.has-drawer {
     .header {
       left: 0;
     }
+
     .tags-nav {
       left: 0;
     }
+  }
+}
+
+.basic-drawer {
+  .ant-drawer-wrapper-body {
+    overflow: hidden;
+  }
+
+  .ant-drawer-body {
+    padding: 0;
+  }
+
+  .slidebar {
+    height: 100vh;
   }
 }

@@ -1,10 +1,10 @@
 <template>
   <div class="com-page p20">
-    <CropImage v-model:visible="visible" @submit="onCropSubmit" :file="fileRef"></CropImage>
+    <CropImage v-model:visible="visible" :file="fileRef" @submit="onCropSubmit"></CropImage>
     <ComUploadImage
       ref="uploadImage"
       v-model:value="photo"
-      :autoUpload="false"
+      :auto-upload="false"
       @file-change="onFileChange"
     ></ComUploadImage>
   </div>
@@ -20,7 +20,6 @@ export default defineComponent({
   },
   setup() {
     const visible = ref(false)
-    const src = ref('')
     const photo = ref([])
     const uploadImage = ref()
     const resolveFile = ref()
@@ -40,7 +39,6 @@ export default defineComponent({
 
     return {
       visible,
-      src,
       fileRef,
       photo,
       uploadImage,

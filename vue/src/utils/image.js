@@ -1,8 +1,3 @@
-/**
- * 文件流转换 base64
- * @param {File} file 文件流
- * @returns Promise<String> DataURI
- */
 export function fileToDataURI(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()

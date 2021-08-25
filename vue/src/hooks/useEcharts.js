@@ -1,11 +1,6 @@
 import { onBeforeUnmount, ref, watch } from 'vue'
+// import store from '@/store'
 
-/**
- *
- * @param {Ref<HTMLDivElement | null>} chartDOM  chartDOM
- * @param {Ref<echarts.EChartOption | echarts.EChartsResponsiveOption | null>} option  option
- * @returns
- */
 export function useEcharts(chartDOM, option) {
   const chartInstance = ref(null)
 

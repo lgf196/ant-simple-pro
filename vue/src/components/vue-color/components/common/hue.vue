@@ -1,12 +1,12 @@
 <template>
   <div :class="['vc-hue', directionClass]">
     <div
+      ref="container"
       class="vc-hue-container"
       role="slider"
       :aria-valuenow="colors.hsl.h"
       aria-valuemin="0"
       aria-valuemax="360"
-      ref="container"
       @mousedown="handleMouseDown"
       @touchmove="handleChange"
       @touchstart="handleChange"
@@ -40,18 +40,6 @@ export default defineComponent({
       pullDirection: ''
     }
   },
-  watch: {
-    value(newVal) {
-      const h = newVal.hsl.h
-      if (h !== 0 && h - this.oldHue > 0) {
-        this.pullDirection = 'right'
-      }
-      if (h !== 0 && h - this.oldHue < 0) {
-        this.pullDirection = 'left'
-      }
-      this.oldHue = h
-    }
-  },
   computed: {
     colors() {
       return this.value
@@ -79,6 +67,18 @@ export default defineComponent({
         return '100%'
       }
       return (this.colors.hsl.h * 100) / 360 + '%'
+    }
+  },
+  watch: {
+    value(newVal) {
+      const h = newVal.hsl.h
+      if (h !== 0 && h - this.oldHue > 0) {
+        this.pullDirection = 'right'
+      }
+      if (h !== 0 && h - this.oldHue < 0) {
+        this.pullDirection = 'left'
+      }
+      this.oldHue = h
     }
   },
   methods: {
@@ -164,28 +164,33 @@ export default defineComponent({
 <style>
 .vc-hue {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border-radius: 2px;
 }
+
 .vc-hue--horizontal {
   background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
 }
+
 .vc-hue--vertical {
   background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
 }
+
 .vc-hue-container {
   cursor: pointer;
   margin: 0 2px;
   position: relative;
   height: 100%;
 }
+
 .vc-hue-pointer {
   z-index: 2;
   position: absolute;
 }
+
 .vc-hue-picker {
   cursor: pointer;
   margin-top: 1px;

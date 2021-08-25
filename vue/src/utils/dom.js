@@ -1,36 +1,17 @@
 import { isDefined } from '@/utils/type'
 
-/**
- * 绑定事件
- * @param {Element | HTMLElement | Document | Window} element dom元素
- * @param {String} event 事件类型
- * @param {*} handler 事件处理函数
- */
 export const on = (element, event, handler) => {
   if (element && event) {
     element.addEventListener(event, handler, false)
   }
 }
 
-/**
- * 解绑事件
- * @param {Element | HTMLElement | Document | Window} element dom元素
- * @param {String} event 事件类型
- * @param {*} handler 事件处理函数
- */
 export const off = (element, event, handler) => {
   if (element && event) {
     element.removeEventListener(event, handler, false)
   }
 }
 
-/**
- * 滚动函数
- * @param {HTMLElement} [param.el=window]
- * @param {Number} param.to
- * @param {Number} [param.duration=500]
- *  @param {Function} param.endCallback
- */
 export function scrollTo({ el, to, duration = 500, endCallback }) {
   if (!window.requestAnimationFrame) {
     window.requestAnimationFrame =
@@ -126,13 +107,14 @@ export function isScroll(el, vertical) {
  * @return {void}
  */
 export function setStyle(element, styleName, value) {
-  if (!element || !styleName) {
+  if (!element || !styleName || typeof styleName === 'number') {
     return
   }
 
   if (styleName === 'opacity') {
     element.style.filter = isNaN(value) ? '' : 'alpha(opacity=' + value * 100 + ')'
   } else {
+    // @ts-ignore
     element.style[styleName] = value
   }
 }

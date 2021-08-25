@@ -1,8 +1,8 @@
 <template>
   <div class="com-page p20">
     <div class="graphics">
-      <div class="sidebar" ref="sliderContainer"></div>
-      <div class="content" ref="container"></div>
+      <div ref="sliderContainer" class="sidebar"></div>
+      <div ref="container" class="content"></div>
     </div>
   </div>
 </template>
@@ -132,7 +132,7 @@ export default defineComponent({
         ]
       })
 
-      sliderContainer.value?.appendChild(stencil.container)
+      sliderContainer.value?.appendChild(stencil.container) // eslint-disable-line
       stencil.load([rect, rectangle, cicle, ellipse, polygon], 'group1')
     })
 
@@ -150,11 +150,13 @@ export default defineComponent({
   height: 500px;
   display: flex;
 }
+
 .sidebar {
   width: 220px;
   border: 1px solid #f0f0f0;
   position: relative;
 }
+
 .content {
   height: 100%;
   flex: 1;

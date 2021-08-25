@@ -15,13 +15,13 @@
 
     <div class="vc-twitter-body">
       <span
+        v-for="(color, index) in defaultColors"
+        :key="index"
         class="vc-twitter-swatch"
         :style="{
           background: color,
           boxShadow: `0 0 4px ${equal(color) ? color : 'transparent'}`
         }"
-        v-for="(color, index) in defaultColors"
-        :key="index"
         @click="handlerClick(color)"
       >
       </span>
@@ -52,10 +52,10 @@ const defaultColors = [
 
 export default defineComponent({
   name: 'Twitter',
-  emits: ['update:value'],
   components: {
     EditableInput
   },
+  emits: ['update:value'],
   props: {
     width: {
       type: [String, Number],
@@ -82,11 +82,6 @@ export default defineComponent({
       oldHue: 0
     }
   },
-  watch: {
-    value(newVal) {
-      this.val = getChangeColor(newVal)
-    }
-  },
   computed: {
     colors: {
       get() {
@@ -108,6 +103,11 @@ export default defineComponent({
     hex() {
       const hex = this.colors.hex
       return hex && hex.replace('#', '')
+    }
+  },
+  watch: {
+    value(newVal) {
+      this.val = getChangeColor(newVal)
     }
   },
   methods: {
@@ -165,33 +165,38 @@ export default defineComponent({
   border-radius: 4px;
   position: relative;
 }
+
 .vc-twitter-triangle {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-width: 0 9px 10px 9px;
   border-color: transparent transparent #fff transparent;
   position: absolute;
 }
+
 .vc-twitter-triangle-shadow {
-  width: 0px;
-  height: 0px;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-width: 0 9px 10px 9px;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   position: absolute;
 }
+
 .vc-twitter-body {
   padding: 15px 9px 9px 15px;
 }
+
 .vc-twitter .vc-editable-input {
   position: relative;
 }
+
 .vc-twitter .vc-editable-input input {
   width: 100px;
   font-size: 14px;
   color: #666;
-  border: 0px;
+  border: 0;
   outline: none;
   height: 28px;
   box-shadow: inset 0 0 0 1px #f0f0f0;
@@ -201,9 +206,11 @@ export default defineComponent({
   padding: 1px;
   padding-left: 8px;
 }
+
 .vc-twitter .vc-editable-input span {
   display: none;
 }
+
 .vc-twitter-hash {
   background: #f0f0f0;
   height: 30px;
@@ -215,6 +222,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
 }
+
 .vc-twitter-swatch {
   width: 30px;
   height: 30px;
@@ -225,27 +233,34 @@ export default defineComponent({
   position: relative;
   outline: none;
 }
+
 .vc-twitter-clear {
   clear: both;
 }
+
 .vc-twitter-hide-triangle .vc-twitter-triangle {
   display: none;
 }
+
 .vc-twitter-hide-triangle .vc-twitter-triangle-shadow {
   display: none;
 }
+
 .vc-twitter-top-left-triangle .vc-twitter-triangle {
   top: -10px;
   left: 12px;
 }
+
 .vc-twitter-top-left-triangle .vc-twitter-triangle-shadow {
   top: -11px;
   left: 12px;
 }
+
 .vc-twitter-top-right-triangle .vc-twitter-triangle {
   top: -10px;
   right: 12px;
 }
+
 .vc-twitter-top-right-triangle .vc-twitter-triangle-shadow {
   top: -11px;
   right: 12px;

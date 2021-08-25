@@ -1,5 +1,5 @@
 <template>
-  <a-dropdown :trigger="['click']" v-model:visible="visible">
+  <a-dropdown v-model:visible="visible" :trigger="['click']">
     <a-badge :count="unreadCount">
       <BellOutlined class="icon-bell" />
     </a-badge>
@@ -7,12 +7,12 @@
       <div class="notification-overlay">
         <a-tabs v-model:activeKey="activeKey">
           <a-tab-pane key="1" :tab="`通知(${noticeUnreadCount})`">
-            <a-list itemLayout="horizontal" :dataSource="tab1Data">
+            <a-list item-layout="horizontal" :data-source="tab1Data">
               <template #renderItem="{ item }">
                 <a-list-item>
                   <a-list-item-meta description="简单上手快，ui设计漂亮">
                     <template #avatar>
-                      <a-avatar :size="30" style="backgroundcolor: #fff">
+                      <a-avatar :size="30" style="background-color: #fff">
                         <template #icon>
                           <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
                         </template>
@@ -30,12 +30,12 @@
             </a-list>
           </a-tab-pane>
           <a-tab-pane key="2" :tab="`消息(${newsUnreadCount})`">
-            <a-list itemLayout="horizontal" :dataSource="tab2Data">
+            <a-list item-layout="horizontal" :data-source="tab2Data">
               <template #renderItem="{ item }">
                 <a-list-item>
                   <a-list-item-meta description="简单上手快，ui设计漂亮">
                     <template #avatar>
-                      <a-avatar :size="30" style="backgroundcolor: #fff">
+                      <a-avatar :size="30" style="background-color: #fff">
                         <template #icon>
                           <ComSvgIcon name="logo" class="icon-logo"></ComSvgIcon>
                         </template>
@@ -61,7 +61,6 @@
 <script>
 import { defineComponent } from 'vue'
 import { BellOutlined } from '@ant-design/icons-vue'
-
 const tab1Data = [
   {
     title: 'Ant Simple Pro 1',
@@ -91,7 +90,12 @@ const tab2Data = [
     isRead: false
   }
 ]
-
+// type DataType = {
+//   tab1Data: TabDataItem[]
+//   tab2Data: TabDataItem[]
+//   visible: boolean
+//   activeKey: string
+// }
 export default defineComponent({
   components: {
     BellOutlined
