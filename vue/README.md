@@ -14,7 +14,7 @@ npm install
 npm run dev
 ```
 
-This will automatically open http://localhost:3000
+This will automatically open http://localhost:9050
 
 ## Build
 
