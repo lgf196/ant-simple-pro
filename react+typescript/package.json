@@ -13,6 +13,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
+    "antd": "^4.16.13",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
