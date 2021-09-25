@@ -1,8 +1,11 @@
 {
   "singleQuote": true,
   "trailingComma": "all",
-  "prettier.tabWidth": 2, 
+  "prettier.tabWidth": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

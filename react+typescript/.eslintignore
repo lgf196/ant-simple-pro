@@ -1,4 +1,8 @@
 node_modules
-config/
-public/
-scripts/
+.DS_Store
+dist
+coverage
+__tests__
+dist-ssr
+*.local
+node_modules/*
