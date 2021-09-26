@@ -1,0 +1,27 @@
+@import 'src/assets/scss/varible.scss';
+.layouts{
+  // @include wh(100%,100%);
+  // overflow: hidden;
+}
+.contentWrapper{
+  position: absolute;
+  left: $siderbarWidth;
+  right: 0;
+  top:$topbarHeight;
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.2s;
+  background: #f0f2f5;   
+}
+.content {
+  width: auto;
+  // padding: 10px 10px 25px 10px;
+  padding: 10px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  height: 100%;
+  .pageContent{
+    min-height:calc(100vh - 185px);
+  }
+}
+

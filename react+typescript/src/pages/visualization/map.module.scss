@@ -1,0 +1,21 @@
+.analysis {
+    position: relative;
+    height: 100vh;
+    .buttonGroup {
+        z-index: 9;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 24px;
+    }
+    .back,
+    .forward {
+        width: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+}
+
+.mapContainer {
+    height: 100vh;
+}
