@@ -1,19 +1,26 @@
-import { put, takeEvery, call, takeLatest, race } from 'redux-saga/effects'
-import { requestCode } from '@/utils/varbile'
-import * as SAGA from '@/redux/constants/sagaType'
-import { getAccessMenuList, getAccessMenu, userList, userInfo, userListType } from '@/api/login'
-import { getMenuTree, getMenuList, getUserList, getUserInfo, loadingMenuTree, loadingUserInfo } from '@/redux/action/user'
-import { menuAccessType, pagationType } from '@/interfaces'
-import Tools from '@/utils'
+import { put, takeEvery, call, takeLatest, race } from 'redux-saga/effects';
+import { requestCode } from '@/utils/varbile';
+import * as SAGA from '@/redux/constants/sagaType';
+import { getAccessMenuList, getAccessMenu, userList, userInfo, userListType } from '@/api/login';
+import {
+  getMenuTree,
+  getMenuList,
+  getUserList,
+  getUserInfo,
+  loadingMenuTree,
+  loadingUserInfo,
+} from '@/redux/action/user';
+import { menuAccessType, pagationType } from '@/interfaces';
+import Tools from '@/utils';
 
 const tools = new Tools();
 export interface sagaGetMenuListType {
   type: SAGA.SAGA_GETMENULIST;
-  payload: pagationType
-};
+  payload: pagationType;
+}
 export interface sagaGetUserDataType {
   type: SAGA.SAGA_GET_USER_LIST;
-  payload: userListType
+  payload: userListType;
 }
 export const effects = {
   *getMenTree() {
@@ -22,9 +29,8 @@ export const effects = {
       yield put(loadingMenuTree(false));
 
       if (res.code === requestCode.successCode) {
-        yield race([put(loadingMenuTree(true)), put(getMenuTree(res.data))])
+        yield race([put(loadingMenuTree(true)), put(getMenuTree(res.data))]);
       }
-
     } catch (error) {
       yield put(getMenuTree([]));
     }
@@ -37,11 +43,13 @@ export const effects = {
       let { list = [], total = 0 } = res.data;
 
       if (res.code === requestCode.successCode && list.length) {
-        list = list.map((item: menuAccessType) => Object.assign({}, item, { createTime: tools.formatDate(item.createTime, 'YYYY-MM-DD hh:mm:ss') }));
+        list = list.map((item: menuAccessType) =>
+          Object.assign({}, item, {
+            createTime: tools.formatDate(item.createTime, 'YYYY-MM-DD hh:mm:ss'),
+          }),
+        );
       }
-
       yield put(getMenuList({ list, total }));
-
     } catch (error) {
       yield put(getMenuList({ list: [], total: 0 }));
     }
@@ -50,8 +58,9 @@ export const effects = {
   *getUserData({ payload }: sagaGetUserDataType) {
     try {
       const res: responseData = yield call(userList, payload);
-
-      res.code === requestCode.successCode && (yield put(getUserList(res.data)));
+      if (res.code === requestCode.successCode) {
+        yield put(getUserList(res.data));
+      }
     } catch (error) {
       yield put(getUserList([]));
     }
@@ -60,15 +69,15 @@ export const effects = {
   *getUserInfoData() {
     try {
       const res: responseData = yield call(userInfo);
-
       yield put(loadingUserInfo(false));
-
-      res.code === requestCode.successCode && (yield race([put(loadingUserInfo(true)), put(getUserInfo(res.data))]));
+      if (res.code === requestCode.successCode) {
+        yield race([put(loadingUserInfo(true)), put(getUserInfo(res.data))]);
+      }
     } catch (error) {
       yield put(getUserInfo({}));
     }
   },
-}
+};
 export default function* users() {
   yield takeEvery(SAGA.SAGA_GETMENUTREE, effects.getMenTree);
   yield takeLatest(SAGA.SAGA_GETMENULIST, effects.getMenuList);

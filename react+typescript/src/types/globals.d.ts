@@ -1,6 +1,6 @@
 interface Window {
   //给这个属性申明一下
-  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: any;
   AMap: any;
 }
 interface HTMLElement {
@@ -28,13 +28,6 @@ interface Document {
   msExitFullscreen(): Promise<void>;
   mozCancelFullScreen(): Promise<void>;
   webkitCancelFullScreen(): Promise<void>;
-}
-interface responseData {
-  //定义全局的response相应数据模型
-  code: statusCode;
-  data: any[] | any;
-  mes?: string | Error;
-  success?: boolean;
 }
 
 interface Date {
