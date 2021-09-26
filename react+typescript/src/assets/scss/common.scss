@@ -1,0 +1,49 @@
+@import 'src/assets/scss/varible.scss';
+.top-10px{
+    margin-bottom: 10px;
+}
+.bottom-10px{
+  margin-top: 10px;
+}
+.left-10px{
+    margin-left: 10px;
+}
+.view-pagitaion{
+   text-align: right;
+   padding-right: 20px!important;
+   padding-bottom: 20px!important;
+}
+.Error404{
+    background: $color1;
+    min-height: 100%;
+}
+.svg-style{
+    font-size:18px!important;
+    // fill: #fff!important;
+}
+.svg-fontSize{
+  font-size:16px;
+}
+.bgW{
+  background:$color1;
+}
+code{
+  margin: 0 1px;
+    padding: .2em .4em;
+    font-size: .9em;
+    background: #f2f4f5;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+}
+.padding-10px{
+  padding: 20px;
+}
+.CodeMirror{
+ height: 100%!important;
+}
+.CodeMirrorStyle  {
+  height: 600px!important;
+}
+.border{
+  border: 1px solid $borderColor;
+}

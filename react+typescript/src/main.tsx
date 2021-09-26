@@ -1,10 +1,12 @@
 import 'virtual:svg-icons-register';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { ConfigProvider } from 'antd';
+import locale from 'antd/es/locale/zh_CN';
+import App from './index';
 ReactDOM.render(
-  <React.StrictMode>
+  <ConfigProvider locale={locale}>
     <App />
-  </React.StrictMode>,
+  </ConfigProvider>,
   document.getElementById('root'),
 );

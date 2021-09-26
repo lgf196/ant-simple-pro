@@ -1,0 +1,136 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td,
+a,
+div,
+img {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Helvetica Neue', Helvetica, Arial, PingFangSC-Regular,
+    sans-serif, tahoma, arial, \5b8b\4f53;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  margin: 0;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: couriernew, courier, monospace;
+}
+small {
+  font-size: 12px;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #1890ff;
+}
+a:hover {
+  text-decoration: none;
+}
+sup {
+  vertical-align: text-top;
+}
+sub {
+  vertical-align: text-bottom;
+}
+legend {
+  color: #000;
+}
+fieldset,
+img {
+  border: 0;
+}
+button,
+select,
+textarea {
+  font-size: 100%;
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+table,
+textarea {
+  border-collapse: collapse;
+  border-spacing: 0;
+  resize: none;
+}
+input,
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix::after {
+  content: '\200B';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
