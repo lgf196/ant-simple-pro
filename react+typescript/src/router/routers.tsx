@@ -1,39 +1,42 @@
-import React from 'react'
-import HocRouter from './routeInterceptor'
-import FatherLayout from '@/layouts/basic/fatherLayout'
-import BasicLayout from '@/layouts/basic'
-import { RouteConfig } from 'react-router-config'
-import { Redirect } from 'react-router-dom'
-import Error from '@/pages/error'
-import Login from '@/pages/login'
-import { lazyComponent } from '@/utils/function'
-import { environment } from '@/utils/varbile'
-import MapCompent from '@/pages/visualization/map'
+import React, { lazy } from 'react';
+import HocRouter from './routeInterceptor';
+import FatherLayout from '@/layouts/basic/fatherLayout';
+import BasicLayout from '@/layouts/basic';
+import { RouteConfig } from 'react-router-config';
+import { Redirect } from 'react-router-dom';
+import Error from '@/pages/error';
+import Login from '@/pages/login';
+import { lazyComponent } from '@/utils/function';
+import { environment } from '@/utils/varbile';
+import MapCompent from '@/pages/visualization/map';
 
-const menuSet:RouteConfig[] = environment() === 'dev' ? [
-  {
-    path: '/system',
-    title: '系统',
-    component: FatherLayout,
-    routes: [
-      {
-        exact: true,
-        path: '/system/menu',
-        component: HocRouter(lazyComponent('stystem/menu')),
-        title: '菜单管理',
-      },
-    ]
-  }
-] : [];
+const menuSet: RouteConfig[] =
+  environment() === 'dev'
+    ? [
+        {
+          path: '/system',
+          title: '系统',
+          component: FatherLayout,
+          routes: [
+            {
+              exact: true,
+              path: '/system/menu',
+              component: HocRouter(lazyComponent('stystem/menu')),
+              title: '菜单管理',
+            },
+          ],
+        },
+      ]
+    : [];
 
 /**
  * @description 没有权限和不依赖BasicLayout组价的路由
-*/
-export const noLayoutRouter:RouteConfig[] = [
+ */
+export const noLayoutRouter: RouteConfig[] = [
   {
     path: '/',
     exact: true,
-    render: () => <Redirect to={{ pathname: '/home' }} />
+    render: () => <Redirect to={{ pathname: '/home' }} />,
   },
   {
     path: '/login',
@@ -45,15 +48,15 @@ export const noLayoutRouter:RouteConfig[] = [
     exact: true,
     component: MapCompent,
   },
-]
+];
 /**
  * @descriptio 含BasicLayout布局路由，静态
  */
-export const staticRouter:RouteConfig[] = [
+export const staticRouter: RouteConfig[] = [
   {
     exact: true,
     path: '/home',
-    component: HocRouter(lazyComponent('home')),
+    component: HocRouter(lazy(() => import(`@/pages/home`))),
     title: '首页',
   },
   {
@@ -72,7 +75,7 @@ export const staticRouter:RouteConfig[] = [
 /**
  * @description 权限路由
  */
-export const menuRouter:RouteConfig[] = [
+export const menuRouter: RouteConfig[] = [
   ...menuSet,
   {
     exact: true,
@@ -121,7 +124,7 @@ export const menuRouter:RouteConfig[] = [
         component: HocRouter(lazyComponent('package/hotkeys')),
         title: '按键监听',
       },
-    ]
+    ],
   },
   {
     path: '/charts',
@@ -140,7 +143,7 @@ export const menuRouter:RouteConfig[] = [
         component: HocRouter(lazyComponent('charts/customize')),
         title: '自定义',
       },
-    ]
+    ],
   },
   {
     path: '/form',
@@ -171,7 +174,7 @@ export const menuRouter:RouteConfig[] = [
         component: HocRouter(lazyComponent('form/advancedForm')),
         title: '高级表单',
       },
-    ]
+    ],
   },
   {
     path: '/editor',
@@ -207,8 +210,8 @@ export const menuRouter:RouteConfig[] = [
         path: '/editor/markdown',
         component: HocRouter(lazyComponent('editor/markdown')),
         title: 'markdown编辑器',
-      }
-    ]
+      },
+    ],
   },
   {
     exact: true,
@@ -268,8 +271,8 @@ export const menuRouter:RouteConfig[] = [
         path: '/excel/select-export-excel',
         component: HocRouter(lazyComponent('excel/selectExportExcel')),
         title: '导出选择项',
-      }
-    ]
+      },
+    ],
   },
   {
     path: '/404',
@@ -278,17 +281,17 @@ export const menuRouter:RouteConfig[] = [
   },
   {
     path: '*',
-    render: () => <Redirect to={{ pathname: '/404' }} />
+    render: () => <Redirect to={{ pathname: '/404' }} />,
   },
-]
+];
 export default [
   ...noLayoutRouter,
   {
     component: BasicLayout,
-    routes: [...staticRouter, ...menuRouter]
+    routes: [...staticRouter, ...menuRouter],
   },
   {
     path: '*',
-    render: () => <Redirect to={{ pathname: '/404' }} />
-  }
-]
+    render: () => <Redirect to={{ pathname: '/404' }} />,
+  },
+];

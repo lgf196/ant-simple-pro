@@ -8,10 +8,7 @@ const cssOption: CSSOptions = {
       javascriptEnabled: true,
     },
     scss: {
-      additionalData: [
-        '@import "./src/assets/scss/varible.scss";',
-        '@import "./src/assets/scss/animate.scss";',
-      ],
+      additionalData: '@import "./src/assets/scss/varible.scss";',
     },
   },
 };

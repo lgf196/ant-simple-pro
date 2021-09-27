@@ -1,4 +1,5 @@
-import { createBrowserHistory } from 'history'
+import { createBrowserHistory } from 'history';
+import { VITE_APP_BASE } from '../../../config/index';
 export const history = createBrowserHistory({
-  basename: process.env.PUBLIC_URL // 就是page.json里面的homepage
+  basename: VITE_APP_BASE,
 });

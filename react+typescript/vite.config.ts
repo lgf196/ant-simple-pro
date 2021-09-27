@@ -13,6 +13,7 @@ export default defineConfig((configEnv) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
+        src: path.resolve(__dirname, 'src'),
       },
     },
     plugins: createVitePlugins(),

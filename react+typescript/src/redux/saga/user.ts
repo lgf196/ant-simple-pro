@@ -27,7 +27,6 @@ export const effects = {
     try {
       const res: responseData = yield call(getAccessMenuList);
       yield put(loadingMenuTree(false));
-
       if (res.code === requestCode.successCode) {
         yield race([put(loadingMenuTree(true)), put(getMenuTree(res.data))]);
       }
