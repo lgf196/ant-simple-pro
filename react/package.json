@@ -107,7 +107,7 @@
     "webpack-dev-server": "3.11.0",
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "5.1.4",
-    "xlsx": "^0.16.9"
+    "xlsx": "^0.17.0"
   },
   "scripts": {
     "dev": "cross-env ANT_ENV=dev node scripts/start.js",
