@@ -1,8 +1,12 @@
 <p align="center">
-  <img width="320" src="http://blog.lgf196.top/ant-simple-pro-document/logon.png">
+      <img src="https://cdn.gudsen.com/2021/09/30/af90bac80a9447f18156e251ecbc1dff.png" width='180'>
+  <img width="200" src="http://blog.lgf196.top/ant-simple-pro-document/logon.png">
 </p>
 
 <p align="center">
+   <a href="https://cn.vitejs.dev/">
+    <img src="https://img.shields.io/badge/vite-2.0.3-brightgreen.svg" alt="vite">
+  </a>
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-3.0.4-brightgreen.svg" alt="vue">
   </a>
@@ -21,13 +25,20 @@
 </p>
 
 
+
 简体中文 | [English](./README.md) 
 
 ## 简介
 
-[ant-simple-pro](https://github.com/lgf196/ant-simple-pro) 是一款支持[vue3.0](https://github.com/vuejs/vue)，[react](https://github.com/facebook/react)，[angular](https://github.com/angular/angular)，[typescript](https://github.com/microsoft/TypeScript)等多框架支持的中台前端解决方案，ui使用[antd](https://github.com/ant-design/ant-design)实现的，它使用了最新的前端技术栈，内置了 i18 国际化解决方案，动态路由，响应式设计，开箱即用，而且我们写了很多支持`vue3的插件`和`库`，它可以帮助你快速搭建企业级中后台产品原型，不管你是vue开发者，还是react,或者angular，都能在这里找到你想要的版本。
+[ant-simple-pro](https://github.com/lgf196/ant-simple-pro) 是一款支持[vue3.0](https://github.com/vuejs/vue)，[react](https://github.com/facebook/react)，[angular](https://github.com/angular/angular)，[typescript](https://github.com/microsoft/TypeScript)等多框架支持的中台前端解决方案，ui使用[antd](https://github.com/ant-design/ant-design)实现的，它使用了最新的前端技术栈，内置了 i18 国际化解决方案，动态路由，响应式设计，开箱即用，而且我们写了很多支持`vue3的插件`和`库`，它可以帮助你快速搭建企业级中后台产品原型，不管你是`vue`开发者，还是`react`,或者`angular`，都能在这里找到你想要的版本。
 
-#### [:smirk:在线预览](https://lgf196.top/react/login)
+> ##### 温馨提示：
+>
+> `ant-simple-pro`最新版本已近将`webpack`废弃掉了，换成了`vite`做为项目构建工具，`vue`,`react`版本已近全部替换`vite`，如果想在我们项目中找到`webpack`版本的，只需将`tag`切换到`2.xx`版本中即可，[旧版本(v2.xx)地址](https://github.com/lgf196/ant-simple-pro/tree/v2.2.0)
+>
+> `ant-simple-pro`现在体量较大，已近不适合二次基础开发了，而且新版本已经换成了`vite`，不过不用担心，我们提供了一个用`vite`构建的脚手架，纯净版，`ant-simple-pro`就是用的我们自已搭建的`vite`脚手架重构的，[vite-react-cil](https://github.com/lgf196/vite-react-cil)
+
+
 
 #### 登录账号和密码:
 
@@ -36,7 +47,11 @@
 
 #### [:book:使用文档](http://blog.lgf196.top/ant-simple-pro-document/)（强烈建议看:point_left:）
 
-##### [ant-simple-draw](https://github.com/lgf196/ant-simple-draw)一款在线图解编辑器，也是笔者在维护:stuck_out_tongue_closed_eyes:
+##### [vite-react-cil](https://github.com/lgf196/vite-react-cil)一个用vite构建的react脚手架，也是该项目的脚手架
+
+##### [jol-player](https://github.com/lgf196/JoL-player)简洁，美观，功能强大的react播放器
+
+##### [ant-simple-draw](https://github.com/lgf196/ant-simple-draw)一款在线图解编辑器案例
 
 #### 扫如下码，进行bug提问，和学习交流。
 <p align="left">
@@ -115,11 +130,10 @@ npm run build:prod
 ##  生态圈
 
 1.  [anferEnd](https://github.com/lgf196/ant-simple-pro/tree/afterEnd)是 ant-simple-pro的后端项目，由typescript+node+mysql+docker实现。
-2. [ant-desgin](https://ant.design/index-cn)是本项目的ui，ant组件丰富且漂亮，ant生态强大，是做中台方案的不二之选。
-3. [vue-cil](https://cli.vuejs.org/) 是vue官方提供的一个 vue 项目脚手架，本项目也是基于它进行构建的。它帮你封装了大量的 webpack、babel 等其它配置，让你能花更少的精力在搭建环境上，从而能更专注于页面代码的编写。不过所有的脚手架都是针对大部分情况的，所以一些特殊的需求还是需要自己进行配置。建议先阅读一遍它的文档，对一些配置有一些基本的了解。
-4. [create-react-app](https://create-react-app.dev/)是react官方提供的一个react项目的脚手架，本项目也是基于它进行构建的，里面有很多的配置，建议看一下文档。
-5. [angular-cil](https://angular.cn/guide/setup-local)是angular官方提供的一个angular项目脚手架，本项目也是基于它进行构建的，里面有非常多的配置项，还需自已多阅读。
-5. [h5-Dooring](https://github.com/MrXujiang/h5-Dooring) 让H5制作像搭积木一样简单, 轻松搭建H5页面, H5网站, PC端网站, 可视化设计
+2. [vite-react-cil](https://github.com/lgf196/vite-react-cil)一个用vite构建的react脚手架
+3.  [jol-player](https://github.com/lgf196/JoL-player)简洁，美观，功能强大的react播放器
+4.  [ant-simple-draw](https://github.com/lgf196/ant-simple-draw)一款在线图解编辑器案例
+5.  [h5-Dooring](https://github.com/MrXujiang/h5-Dooring) 让H5制作像搭积木一样简单, 轻松搭建H5页面, H5网站, PC端网站, 可视化设计
 
 [MIT](https://github.com/lgf196/ant-simple-pro/blob/master/LICENSE)
 
