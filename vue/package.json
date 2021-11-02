@@ -51,7 +51,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "screenfull": "^5.1.0",
     "tinycolor2": "^1.4.2",
-    "tinymce": "^5.8.2",
+    "tinymce": "^5.10.0",
     "vue": "^3.0.5",
     "vue-i18n": "^9.1.7",
     "vue-router": "^4.0.10",
