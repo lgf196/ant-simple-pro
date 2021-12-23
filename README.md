@@ -134,7 +134,7 @@ npm run build:prod
 3.  [jol-player](https://github.com/lgf196/JoL-player)简洁，美观，功能强大的react播放器
 4.  [ant-simple-draw](https://github.com/lgf196/ant-simple-draw)一款在线图解编辑器案例
 5.  [h5-Dooring](https://github.com/MrXujiang/h5-Dooring) 让H5制作像搭积木一样简单, 轻松搭建H5页面, H5网站, PC端网站, 可视化设计
-
+6.  [vue-admin-box](https://github.com/cmdparkour/vue-admin-box) vue3,vite,element-plus中后台管理系统，集成四套基础模板，大量可利用组件，模板页面
 [MIT](https://github.com/lgf196/ant-simple-pro/blob/master/LICENSE)
 
 Copyright (c) 2021-present LiGuoFeng
