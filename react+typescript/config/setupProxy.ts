@@ -5,7 +5,7 @@ import { ProxyOptions } from 'vite';
 const proxy: Record<string, string | ProxyOptions> = {
   // 选项写法
   '/api': {
-    target: 'http://115.29.224.69:8080',
+    target: 'http://localhost/',
     changeOrigin: true,
     rewrite: (path) => path.replace(/^\/api/, '/api'),
     // 更多请参看：https://cn.vitejs.dev/config/#server-proxy
