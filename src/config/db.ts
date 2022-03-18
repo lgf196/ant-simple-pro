@@ -5,7 +5,7 @@ class mysqlDb<T> {   //创建数据库class
     public connect(){
       let connection= mysql.createPool({  //连接mysql配置
             // host     : 'localhost',
-            host     : '115.29.224.69',
+            host     : '',
             user     : 'root',
             password : 'lgf196',
             database : 'ant-simple-pro'
