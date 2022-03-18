@@ -57,8 +57,8 @@ export const userEdit=asyncHandler(async (req: Request, res: Response, next: Nex
 export const upload=asyncHandler(async (req: Request, res: Response, next: NextFunction)=>{
     const client = new OSS({
             region: 'oss-cn-beijing',//填写你开通的oss
-            accessKeyId: 'LTAI4G1Ne8Zs77nNzD8AY9hX',
-            accessKeySecret:'rIi6299OKtyz1F2oSKG0nv8FoKzzLv'
+            accessKeyId: '',
+            accessKeySecret:''
     });
     const alyOssBucketUrl='https://antd-simple-pro.oss-cn-beijing.aliyuncs.com/'; //oss中的Bucket 域名
     const ali_oss = {
