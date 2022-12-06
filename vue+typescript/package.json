@@ -47,7 +47,7 @@
     "nprogress": "^0.2.0",
     "qr.js": "0.0.0",
     "qrcode": "^1.4.4",
-    "qs": "^6.10.1",
+    "qs": "^6.10.3",
     "resize-observer-polyfill": "^1.5.1",
     "screenfull": "^5.1.0",
     "tinycolor2": "^1.4.2",
